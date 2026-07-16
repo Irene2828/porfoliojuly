@@ -12,7 +12,7 @@ export default function Footer() {
           transition={{ duration: 0.8 }}
           className="cta-section"
         >
-          <h2 className="title-serif text-huge">From Messy Idea -<br/>to Clean Digital Solution</h2>
+          <h2 className="title-serif text-huge">From messy idea -<br/>to clean digital solution</h2>
           <a href="mailto:hello@example.com" className="cta-button">
             Let's Build It Together
           </a>
