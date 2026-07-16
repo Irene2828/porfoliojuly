@@ -74,19 +74,19 @@
   transition: transform 0.5s cubic-bezier(0.2, 0.8, 0.2, 1);
 }
 
-/* Premium Layout: Staggered and subtly tilted */
+/* Premium Layout: Staggered and fanned out like cards in a hand */
 .project-item:nth-child(1) .iphone-bezel-wrapper {
-  transform: translateY(3rem) rotate(-4deg);
+  transform: translateY(4.5rem) rotate(-10deg) translateX(2rem);
   z-index: 1;
 }
 
 .project-item:nth-child(2) .iphone-bezel-wrapper {
-  transform: translateY(-2rem) scale(1.08);
+  transform: translateY(-1.5rem) rotate(-2deg) scale(1.08);
   z-index: 3;
 }
 
 .project-item:nth-child(3) .iphone-bezel-wrapper {
-  transform: translateY(3rem) rotate(4deg);
+  transform: translateY(3.5rem) rotate(8deg) translateX(-2rem);
   z-index: 2;
 }
 
@@ -94,9 +94,9 @@
 .project-item:hover .iphone-bezel-wrapper {
   z-index: 10;
 }
-.project-item:nth-child(1):hover .iphone-bezel-wrapper { transform: translateY(1rem) rotate(-2deg) scale(1.05) !important; }
-.project-item:nth-child(2):hover .iphone-bezel-wrapper { transform: translateY(-3rem) scale(1.12) !important; }
-.project-item:nth-child(3):hover .iphone-bezel-wrapper { transform: translateY(1rem) rotate(2deg) scale(1.05) !important; }
+.project-item:nth-child(1):hover .iphone-bezel-wrapper { transform: translateY(1.5rem) rotate(-5deg) scale(1.05) !important; }
+.project-item:nth-child(2):hover .iphone-bezel-wrapper { transform: translateY(-3.5rem) rotate(0deg) scale(1.12) !important; }
+.project-item:nth-child(3):hover .iphone-bezel-wrapper { transform: translateY(0.5rem) rotate(3deg) scale(1.05) !important; }
 
 .project-desc-text {
   font-family: var(--font-sans);
