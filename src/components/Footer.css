@@ -1,12 +1,12 @@
 .footer {
   background-color: var(--color-text);
   color: var(--color-bg);
-  padding: 8rem 0 2rem;
+  padding: 4rem 0 2rem;
   text-align: center;
 }
 
 .cta-section {
-  margin-bottom: 6rem;
+  margin-bottom: 9rem;
 }
 
 .cta-section h2 {
@@ -31,12 +31,15 @@
   font-size: 0.96rem; /* Scaled down 20% from 1.2rem */
   text-transform: uppercase;
   letter-spacing: 0.1em;
+  background-color: var(--color-bg);
+  color: var(--color-text);
   transition: all 0.3s ease;
 }
 
 .cta-button:hover {
-  background-color: var(--color-bg);
-  color: var(--color-text);
+  background-color: transparent;
+  color: var(--color-bg);
+  border-color: var(--color-bg);
 }
 
 .footer-bottom {

@@ -12,20 +12,43 @@ export default function Services() {
   };
 
   return (
-    <section className="section services-section">
+    <section className="section services-section" id="expertise">
       <div className="container">
-        <div className="services-header grid grid-2">
-          <motion.div 
-            initial="hidden"
-            whileInView="visible"
-            viewport={{ once: true, margin: "-100px" }}
-            variants={arriveIn}
-            className="services-title-col"
-          >
-            <span className="section-number">04</span>
-            <h2 className="text-sans text-large">SKILLS &<br/>EXPERTISE</h2>
-          </motion.div>
-          
+        <div className="services-layout">
+          {/* Left Column: Staggered bulleted lists */}
+          <div className="services-content-left">
+            <motion.div 
+              initial="hidden"
+              whileInView="visible"
+              viewport={{ once: true, margin: "-100px" }}
+              variants={arriveIn}
+              className="service-category"
+            >
+              <h3 className="title-serif service-title">Graphic Design</h3>
+              <ul className="service-items">
+                <li>&ndash; Logo Design</li>
+                <li>&ndash; Brand Identity</li>
+                <li>&ndash; Poster Design</li>
+                <li>&ndash; Environmental Design</li>
+              </ul>
+            </motion.div>
+
+            <motion.div 
+              initial="hidden"
+              whileInView="visible"
+              viewport={{ once: true, margin: "-100px" }}
+              variants={arriveIn}
+              className="service-category"
+            >
+              <h3 className="title-serif service-title">Illustration</h3>
+              <ul className="service-items">
+                <li>&ndash; Digital Illustration</li>
+                <li>&ndash; Street Art and Murals</li>
+              </ul>
+            </motion.div>
+          </div>
+
+          {/* Right Column: Visual image */}
           <motion.div 
             initial="hidden"
             whileInView="visible"
@@ -34,38 +57,6 @@ export default function Services() {
             className="services-image-col"
           >
             <img src="/skills.png" alt="Using drawing tablet" />
-          </motion.div>
-        </div>
-
-        <div className="services-lists grid grid-2">
-          <motion.div 
-            initial="hidden"
-            whileInView="visible"
-            viewport={{ once: true, margin: "-100px" }}
-            variants={arriveIn}
-            className="service-category"
-          >
-            <h3 className="title-serif service-title">Graphic Design</h3>
-            <ul className="service-items">
-              <li>&ndash; Logo Design</li>
-              <li>&ndash; Brand Identity</li>
-              <li>&ndash; Poster Design</li>
-              <li>&ndash; Environmental Design</li>
-            </ul>
-          </motion.div>
-
-          <motion.div 
-            initial="hidden"
-            whileInView="visible"
-            viewport={{ once: true, margin: "-100px" }}
-            variants={arriveIn}
-            className="service-category"
-          >
-            <h3 className="title-serif service-title">Illustration</h3>
-            <ul className="service-items">
-              <li>&ndash; Digital Illustration</li>
-              <li>&ndash; Street Art and Murals</li>
-            </ul>
           </motion.div>
         </div>
       </div>
