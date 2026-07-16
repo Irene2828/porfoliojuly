@@ -63,33 +63,51 @@
 .project-item {
   width: 100%;
   display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.iphone-bezel-wrapper {
+  width: 100%;
+  display: flex;
   justify-content: center;
   transition: transform 0.5s cubic-bezier(0.2, 0.8, 0.2, 1);
 }
 
 /* Premium Layout: Staggered and subtly tilted */
-.project-item:nth-child(1) {
+.project-item:nth-child(1) .iphone-bezel-wrapper {
   transform: translateY(3rem) rotate(-4deg);
   z-index: 1;
 }
 
-.project-item:nth-child(2) {
+.project-item:nth-child(2) .iphone-bezel-wrapper {
   transform: translateY(-2rem) scale(1.08);
   z-index: 3;
 }
 
-.project-item:nth-child(3) {
+.project-item:nth-child(3) .iphone-bezel-wrapper {
   transform: translateY(3rem) rotate(4deg);
   z-index: 2;
 }
 
-/* Hover effects for the whole item */
-.project-item:hover {
+/* Hover effects for the whole item wrapper */
+.project-item:hover .iphone-bezel-wrapper {
   z-index: 10;
 }
-.project-item:nth-child(1):hover { transform: translateY(1rem) rotate(-2deg) scale(1.05) !important; }
-.project-item:nth-child(2):hover { transform: translateY(-3rem) scale(1.12) !important; }
-.project-item:nth-child(3):hover { transform: translateY(1rem) rotate(2deg) scale(1.05) !important; }
+.project-item:nth-child(1):hover .iphone-bezel-wrapper { transform: translateY(1rem) rotate(-2deg) scale(1.05) !important; }
+.project-item:nth-child(2):hover .iphone-bezel-wrapper { transform: translateY(-3rem) scale(1.12) !important; }
+.project-item:nth-child(3):hover .iphone-bezel-wrapper { transform: translateY(1rem) rotate(2deg) scale(1.05) !important; }
+
+.project-desc-text {
+  font-family: var(--font-sans);
+  font-size: 0.85rem;
+  line-height: 1.5;
+  color: #777;
+  max-width: 255px;
+  text-align: left;
+  margin-top: 4.5rem;
+  letter-spacing: 0.01em;
+}
 
 /* iPhone 14 Pro Max Silver Bezel */
 .iphone-bezel {
@@ -211,15 +229,28 @@
     padding: 2rem 0;
   }
   
+  .project-item:nth-child(1) .iphone-bezel-wrapper,
+  .project-item:nth-child(2) .iphone-bezel-wrapper,
+  .project-item:nth-child(3) .iphone-bezel-wrapper {
+    transform: none !important;
+    max-width: 100%;
+  }
+
   .project-item:nth-child(1),
   .project-item:nth-child(2),
   .project-item:nth-child(3) {
-    transform: none !important;
     max-width: 320px;
-    margin: 0 auto;
+    margin: 0 auto 3rem auto; /* Added bottom margin for spacing between stacked items */
   }
 
-  .project-item:hover {
+  .project-desc-text {
+    margin-top: 1.5rem;
+    max-width: 100%;
+    text-align: center;
+    padding: 0 1.5rem;
+  }
+
+  .project-item:hover .iphone-bezel-wrapper {
     transform: scale(1.02) !important;
   }
 }

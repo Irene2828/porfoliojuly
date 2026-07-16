@@ -49,11 +49,22 @@ export default function Projects() {
             } as any}
             className="project-item"
           >
-            <motion.div className="iphone-bezel" drag whileDrag={{ scale: 1.1, zIndex: 50 }}>
-              <div className="iphone-screen">
-                <img src={proj1} alt="Project 1" />
-              </div>
-            </motion.div>
+            <div className="iphone-bezel-wrapper">
+              <motion.div className="iphone-bezel" drag whileDrag={{ scale: 1.1, zIndex: 50 }}>
+                <div className="iphone-screen">
+                  <img src={proj1} alt="Project 1" />
+                </div>
+              </motion.div>
+            </div>
+            <motion.p 
+              className="project-desc-text"
+              variants={{
+                hidden: { y: 20, opacity: 0 },
+                visible: { y: 0, opacity: 1, transition: { duration: 0.6, ease: "easeOut", delay: 0.3 } }
+              }}
+            >
+              &mdash; React Native App, Easy to Use App that takes seconds to plan a weekly meal for a family
+            </motion.p>
           </motion.div>
           
           <motion.div 
@@ -66,11 +77,22 @@ export default function Projects() {
             } as any}
             className="project-item"
           >
-            <motion.div className="iphone-bezel" drag whileDrag={{ scale: 1.1, zIndex: 50 }}>
-              <div className="iphone-screen">
-                <img src={proj2} alt="Project 2" />
-              </div>
-            </motion.div>
+            <div className="iphone-bezel-wrapper">
+              <motion.div className="iphone-bezel" drag whileDrag={{ scale: 1.1, zIndex: 50 }}>
+                <div className="iphone-screen">
+                  <img src={proj2} alt="Project 2" />
+                </div>
+              </motion.div>
+            </div>
+            <motion.p 
+              className="project-desc-text"
+              variants={{
+                hidden: { y: 20, opacity: 0 },
+                visible: { y: 0, opacity: 1, transition: { duration: 0.6, ease: "easeOut", delay: 0.5 } }
+              }}
+            >
+              &mdash; iOS Productivity Suite, designed to organize daily schedule, reminders, and lists
+            </motion.p>
           </motion.div>
 
           <motion.div 
@@ -83,11 +105,22 @@ export default function Projects() {
             } as any}
             className="project-item"
           >
-            <motion.div className="iphone-bezel" drag whileDrag={{ scale: 1.1, zIndex: 50 }}>
-              <div className="iphone-screen">
-                <img src={proj3} alt="Project 3" />
-              </div>
-            </motion.div>
+            <div className="iphone-bezel-wrapper">
+              <motion.div className="iphone-bezel" drag whileDrag={{ scale: 1.1, zIndex: 50 }}>
+                <div className="iphone-screen">
+                  <img src={proj3} alt="Project 3" />
+                </div>
+              </motion.div>
+            </div>
+            <motion.p 
+              className="project-desc-text"
+              variants={{
+                hidden: { y: 20, opacity: 0 },
+                visible: { y: 0, opacity: 1, transition: { duration: 0.6, ease: "easeOut", delay: 0.7 } }
+              }}
+            >
+              &mdash; Smart Explorer, Made in Antigravity, deployed to Vercel
+            </motion.p>
           </motion.div>
         </div>
       </div>
