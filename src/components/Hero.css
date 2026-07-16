@@ -19,7 +19,7 @@
 .hero-text {
   position: relative;
   z-index: 2;
-  background-image: url('../assets/lemons.png');
+  background-image: url('../assets/ocean.png');
   background-size: cover;
   background-position: center;
   background-attachment: fixed;
