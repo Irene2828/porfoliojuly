@@ -3,6 +3,8 @@ import './Projects.css';
 import proj1 from '../assets/work1.png';
 import proj2 from '../assets/work2.png';
 import proj3 from '../assets/work3.png';
+import websiteMockup from '../assets/website_mockup.png';
+import automationMockup from '../assets/automation_mockup.png';
 
 export default function Projects() {
   const arriveIn: any = {
@@ -149,7 +151,7 @@ export default function Projects() {
           </motion.div>
         </div>
 
-        <div className="projects-grid">
+        <div className="single-project-wrapper">
           <motion.div 
             initial="hidden"
             whileInView="visible"
@@ -158,79 +160,18 @@ export default function Projects() {
               hidden: { y: 50, opacity: 0 },
               visible: { y: 0, opacity: 1, transition: { duration: 0.8, ease: "easeOut", delay: 0.1 } }
             } as any}
-            className="project-item"
+            className="single-project-item"
           >
-            <div className="iphone-bezel-wrapper">
-              <motion.div className="iphone-bezel" drag whileDrag={{ scale: 1.1, zIndex: 50 }}>
-                <div className="iphone-screen">
-                  <img src={proj2} alt="E-Commerce Website" />
-                </div>
-              </motion.div>
+            <div className="browser-mockup">
+              <div className="browser-header">
+                <span className="dot"></span>
+                <span className="dot"></span>
+                <span className="dot"></span>
+              </div>
+              <img src={websiteMockup} alt="Aether Flow Landing Page Mockup" />
             </div>
-            <motion.p 
-              className="project-desc-text"
-              variants={{
-                hidden: { y: 20, opacity: 0 },
-                visible: { y: 0, opacity: 1, transition: { duration: 0.6, ease: "easeOut", delay: 0.3 } }
-              }}
-            >
-              &mdash; Next.js Headless E-Commerce storefront with ultra-fast search and dynamic checkout
-            </motion.p>
-          </motion.div>
-          
-          <motion.div 
-            initial="hidden"
-            whileInView="visible"
-            viewport={{ once: true, margin: "-100px" }}
-            variants={{
-              hidden: { y: 100, opacity: 0 },
-              visible: { y: 0, opacity: 1, transition: { duration: 0.8, ease: "easeOut", delay: 0.3 } }
-            } as any}
-            className="project-item"
-          >
-            <div className="iphone-bezel-wrapper">
-              <motion.div className="iphone-bezel" drag whileDrag={{ scale: 1.1, zIndex: 50 }}>
-                <div className="iphone-screen">
-                  <img src={proj3} alt="SaaS Landing Page" />
-                </div>
-              </motion.div>
-            </div>
-            <motion.p 
-              className="project-desc-text"
-              variants={{
-                hidden: { y: 20, opacity: 0 },
-                visible: { y: 0, opacity: 1, transition: { duration: 0.6, ease: "easeOut", delay: 0.5 } }
-              }}
-            >
-              &mdash; Interactive marketing site with custom WebGL animations and responsive pricing tiers
-            </motion.p>
-          </motion.div>
-
-          <motion.div 
-            initial="hidden"
-            whileInView="visible"
-            viewport={{ once: true, margin: "-100px" }}
-            variants={{
-              hidden: { y: 80, opacity: 0 },
-              visible: { y: 0, opacity: 1, transition: { duration: 0.8, ease: "easeOut", delay: 0.5 } }
-            } as any}
-            className="project-item"
-          >
-            <div className="iphone-bezel-wrapper">
-              <motion.div className="iphone-bezel" drag whileDrag={{ scale: 1.1, zIndex: 50 }}>
-                <div className="iphone-screen">
-                  <img src={proj1} alt="Creative Studio Portfolio" />
-                </div>
-              </motion.div>
-            </div>
-            <motion.p 
-              className="project-desc-text"
-              variants={{
-                hidden: { y: 20, opacity: 0 },
-                visible: { y: 0, opacity: 1, transition: { duration: 0.6, ease: "easeOut", delay: 0.7 } }
-              }}
-            >
-              &mdash; Minimalist portfolios showcasing projects, utilizing dynamic page transitions
+            <motion.p className="project-desc-text align-left">
+              &mdash; Web Design: Minimalist SaaS landing page with dark aesthetics and custom layout grid.
             </motion.p>
           </motion.div>
         </div>
@@ -255,11 +196,11 @@ export default function Projects() {
             variants={arriveIn}
             className="projects-desc"
           >
-            <p>CUSTOM BOTS AND AUTOMATIONS INTEGRATING SERVICES TO STREAMLINE BUSINESS OPERATIONS.</p>
+            <p>CUSTOM AUTOMATED PIPELINES DESIGNED TO ACCELERATE DESIGN CREATION AND ASSET DELIVERY FOR TEAMS.</p>
           </motion.div>
         </div>
 
-        <div className="projects-grid">
+        <div className="single-project-wrapper">
           <motion.div 
             initial="hidden"
             whileInView="visible"
@@ -268,79 +209,18 @@ export default function Projects() {
               hidden: { y: 50, opacity: 0 },
               visible: { y: 0, opacity: 1, transition: { duration: 0.8, ease: "easeOut", delay: 0.1 } }
             } as any}
-            className="project-item"
+            className="single-project-item"
           >
-            <div className="iphone-bezel-wrapper">
-              <motion.div className="iphone-bezel" drag whileDrag={{ scale: 1.1, zIndex: 50 }}>
-                <div className="iphone-screen">
-                  <img src={proj3} alt="Slack Sync Bot" />
-                </div>
-              </motion.div>
+            <div className="browser-mockup">
+              <div className="browser-header">
+                <span className="dot"></span>
+                <span className="dot"></span>
+                <span className="dot"></span>
+              </div>
+              <img src={automationMockup} alt="Automated Graphic Work Dashboard" />
             </div>
-            <motion.p 
-              className="project-desc-text"
-              variants={{
-                hidden: { y: 20, opacity: 0 },
-                visible: { y: 0, opacity: 1, transition: { duration: 0.6, ease: "easeOut", delay: 0.3 } }
-              }}
-            >
-              &mdash; Cloud integration pipeline syncing database updates with custom Slack alerts
-            </motion.p>
-          </motion.div>
-          
-          <motion.div 
-            initial="hidden"
-            whileInView="visible"
-            viewport={{ once: true, margin: "-100px" }}
-            variants={{
-              hidden: { y: 100, opacity: 0 },
-              visible: { y: 0, opacity: 1, transition: { duration: 0.8, ease: "easeOut", delay: 0.3 } }
-            } as any}
-            className="project-item"
-          >
-            <div className="iphone-bezel-wrapper">
-              <motion.div className="iphone-bezel" drag whileDrag={{ scale: 1.1, zIndex: 50 }}>
-                <div className="iphone-screen">
-                  <img src={proj1} alt="CRM Automator" />
-                </div>
-              </motion.div>
-            </div>
-            <motion.p 
-              className="project-desc-text"
-              variants={{
-                hidden: { y: 20, opacity: 0 },
-                visible: { y: 0, opacity: 1, transition: { duration: 0.6, ease: "easeOut", delay: 0.5 } }
-              }}
-            >
-              &mdash; Automation script routing lead forms to CRM systems and scheduling responses
-            </motion.p>
-          </motion.div>
-
-          <motion.div 
-            initial="hidden"
-            whileInView="visible"
-            viewport={{ once: true, margin: "-100px" }}
-            variants={{
-              hidden: { y: 80, opacity: 0 },
-              visible: { y: 0, opacity: 1, transition: { duration: 0.8, ease: "easeOut", delay: 0.5 } }
-            } as any}
-            className="project-item"
-          >
-            <div className="iphone-bezel-wrapper">
-              <motion.div className="iphone-bezel" drag whileDrag={{ scale: 1.1, zIndex: 50 }}>
-                <div className="iphone-screen">
-                  <img src={proj2} alt="Reporting Engine" />
-                </div>
-              </motion.div>
-            </div>
-            <motion.p 
-              className="project-desc-text"
-              variants={{
-                hidden: { y: 20, opacity: 0 },
-                visible: { y: 0, opacity: 1, transition: { duration: 0.6, ease: "easeOut", delay: 0.7 } }
-              }}
-            >
-              &mdash; Scheduled analytics aggregator generating weekly PDF summaries automatically
+            <motion.p className="project-desc-text align-left">
+              &mdash; Graphic Automation: Image optimization and delivery pipeline dashboard automatically exporting assets to Slack.
             </motion.p>
           </motion.div>
         </div>
