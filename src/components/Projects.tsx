@@ -152,10 +152,10 @@ export default function Projects() {
                 <span className="dot"></span>
                 <span className="dot"></span>
               </div>
-              <img src={websiteMockup} alt="Aether Flow Landing Page Mockup" />
+              <img src={websiteMockup} alt="Buy Ukrainian in Canada Landing Page Mockup" />
             </div>
             <motion.p className="project-desc-text align-left">
-              &mdash; Web Design: Minimalist SaaS landing page with dark aesthetics and custom layout grid.
+              &mdash; Web Design: Buy Ukrainian in Canada initiative, volunteer project supporting Ukrainian businesses.
             </motion.p>
           </motion.div>
         </div>
