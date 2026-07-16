@@ -1,12 +1,12 @@
 .hero-section {
-  min-height: 100vh;
   display: flex;
   align-items: center;
   justify-content: center;
   text-align: center;
   position: relative;
   overflow: hidden;
-  padding-top: var(--space-xl);
+  padding: var(--space-xl) 0;
+  margin-top: 4rem; /* Buffer for the absolute header */
 }
 
 .hero-container {
@@ -31,11 +31,11 @@
 }
 
 .top-text {
-  margin-bottom: -3vw; /* Adjusted overlap for wide image */
+  margin-bottom: -6vw; /* Adjusted overlap for wide image */
 }
 
 .bottom-text {
-  margin-top: -3vw; /* Adjusted overlap for wide image */
+  margin-top: -6vw; /* Adjusted overlap for wide image */
 }
 
 .hero-image-wrapper {
