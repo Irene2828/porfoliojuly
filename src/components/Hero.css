@@ -5,8 +5,8 @@
   text-align: center;
   position: relative;
   overflow: hidden;
-  padding: var(--space-xl) 0;
-  margin-top: 4rem; /* Buffer for the absolute header */
+  padding: 4rem 0 2rem 0;
+  margin-top: 2rem; /* Reduced buffer for the absolute header */
 }
 
 .hero-container {
@@ -63,7 +63,7 @@
 }
 
 .hero-subtitle {
-  margin-top: var(--space-lg);
+  margin-top: 2rem;
   font-family: var(--font-sans);
   font-size: 1.2rem;
   font-weight: 300;
