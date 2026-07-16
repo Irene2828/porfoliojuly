@@ -2,7 +2,7 @@ import { motion } from 'framer-motion';
 import './Header.css';
 
 export default function Header() {
-  const containerVariants = {
+  const containerVariants: any = {
     hidden: { opacity: 0 },
     visible: {
       opacity: 1,
@@ -13,7 +13,7 @@ export default function Header() {
     }
   };
 
-  const itemVariants = {
+  const itemVariants: any = {
     hidden: { y: -20, opacity: 0, filter: 'blur(10px)' },
     visible: { 
       y: 0, 

@@ -2,7 +2,7 @@ import { motion } from 'framer-motion';
 import './Services.css';
 
 export default function Services() {
-  const arriveIn = {
+  const arriveIn: any = {
     hidden: { y: 50, opacity: 0 },
     visible: { 
       y: 0, 

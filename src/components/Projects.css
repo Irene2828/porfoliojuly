@@ -176,19 +176,19 @@
   
   .projects-grid {
     grid-template-columns: 1fr;
-    gap: 4rem;
+    gap: 2rem;
     padding: 2rem 0;
   }
   
   .project-item:nth-child(1),
   .project-item:nth-child(2),
   .project-item:nth-child(3) {
-    transform: none;
+    transform: none !important;
     max-width: 320px;
     margin: 0 auto;
   }
 
   .project-item:hover {
-    transform: translateY(-10px) !important;
+    transform: scale(1.02) !important;
   }
 }
