@@ -1,0 +1,64 @@
+.hero-section {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  position: relative;
+  overflow: hidden;
+  padding-top: var(--space-xl);
+}
+
+.hero-container {
+  position: relative;
+  z-index: 1;
+}
+
+.hero-text {
+  position: relative;
+  z-index: 2;
+  mix-blend-mode: difference;
+  color: #fff; /* Mix blend will make it black on white bg, white on dark bg */
+}
+
+/* Fallback for mix-blend-mode */
+@supports not (mix-blend-mode: difference) {
+  .hero-text {
+    color: var(--color-text);
+  }
+}
+
+.top-text {
+  margin-bottom: -10vw; /* Overlap with image */
+}
+
+.bottom-text {
+  margin-top: -8vw; /* Overlap with image */
+}
+
+.hero-image-wrapper {
+  position: relative;
+  width: 50vw;
+  max-width: 600px;
+  margin: 0 auto;
+  z-index: 1;
+}
+
+.hero-image {
+  width: 100%;
+  height: auto;
+  filter: grayscale(100%);
+  transition: filter 0.5s ease;
+}
+
+.hero-image:hover {
+  filter: grayscale(0%);
+}
+
+.hero-subtitle {
+  margin-top: var(--space-lg);
+  font-family: var(--font-sans);
+  font-size: 1.2rem;
+  font-weight: 300;
+  color: #555;
+}
