@@ -14,7 +14,7 @@ export default function Footer() {
         >
           <h2 className="title-serif text-huge">From messy idea -<br/>to clean digital solution</h2>
           <a href="mailto:hello@example.com" className="cta-button">
-            Let's Build It Together
+            Let's Build Together
           </a>
         </motion.div>
         
