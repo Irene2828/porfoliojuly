@@ -9,14 +9,19 @@
   margin-bottom: 6rem;
 }
 
+.cta-section h2 {
+  font-size: clamp(2rem, 7vw, 5.6rem); /* Scaled down 30% from text-huge */
+  line-height: 1.1;
+}
+
 .cta-button {
   display: inline-block;
   margin-top: 3rem;
-  padding: 1rem 3rem;
+  padding: 0.8rem 2.4rem; /* Scaled down 20% */
   border: 1px solid var(--color-bg);
   border-radius: 50px;
   font-family: var(--font-sans);
-  font-size: 1.2rem;
+  font-size: 0.96rem; /* Scaled down 20% from 1.2rem */
   text-transform: uppercase;
   letter-spacing: 0.1em;
   transition: all 0.3s ease;
