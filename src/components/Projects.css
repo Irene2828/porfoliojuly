@@ -3,12 +3,24 @@
   padding: 8rem 0;
 }
 
-/* Desktop layout for Projects: Text on left, Mockups on right */
+.project-row {
+  margin-bottom: 12rem;
+}
+
+.project-row:last-child {
+  margin-bottom: 0;
+}
+
+/* Desktop layout for Projects: Text on one side, Mockups on the other */
 @media (min-width: 1025px) {
-  .projects-section .container {
+  .project-row {
     display: flex;
     justify-content: space-between;
     align-items: center;
+  }
+  
+  .project-row.row-reverse {
+    flex-direction: row-reverse;
   }
 }
 
@@ -218,6 +230,10 @@
 }
 
 @media (max-width: 768px) {
+  .project-row {
+    margin-bottom: 6rem;
+  }
+
   .projects-header {
     flex-direction: column;
     gap: 2rem;
