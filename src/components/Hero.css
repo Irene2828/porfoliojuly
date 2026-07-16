@@ -31,11 +31,11 @@
 }
 
 .top-text {
-  margin-bottom: -6vw; /* Adjusted overlap for wide image */
+  margin-bottom: -3vw; /* Adjusted overlap for wide image */
 }
 
 .bottom-text {
-  margin-top: -6vw; /* Adjusted overlap for wide image */
+  margin-top: -3vw; /* Adjusted overlap for wide image */
 }
 
 .hero-image-wrapper {
