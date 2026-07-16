@@ -12,6 +12,13 @@
 .cta-section h2 {
   font-size: clamp(2rem, 7vw, 5.6rem); /* Scaled down 30% from text-huge */
   line-height: 1.1;
+  background-image: url('../assets/images/1.webp');
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  color: transparent;
 }
 
 .cta-button {
