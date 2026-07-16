@@ -101,7 +101,7 @@
   border-radius: 8px;
   overflow: hidden;
   box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
-  margin-bottom: 1.5rem;
+  margin-bottom: 0;
   transition: transform 0.5s cubic-bezier(0.2, 0.8, 0.2, 1);
 }
 
@@ -159,28 +159,42 @@
 }
 
 /* Premium Layout: Staggered and fanned out like cards in a hand */
+.project-item:nth-child(1) {
+  transform: translateY(4.5rem);
+}
 .project-item:nth-child(1) .iphone-bezel-wrapper {
-  transform: translateY(4.5rem) rotate(-10deg) translateX(2rem);
+  transform: rotate(-10deg) translateX(2rem);
   z-index: 1;
 }
 
+.project-item:nth-child(2) {
+  transform: translateY(-1.5rem);
+}
 .project-item:nth-child(2) .iphone-bezel-wrapper {
-  transform: translateY(-1.5rem) rotate(-2deg) scale(1.08);
+  transform: rotate(-2deg) scale(1.08);
   z-index: 3;
 }
 
+.project-item:nth-child(3) {
+  transform: translateY(3.5rem);
+}
 .project-item:nth-child(3) .iphone-bezel-wrapper {
-  transform: translateY(3.5rem) rotate(8deg) translateX(-2rem);
+  transform: rotate(8deg) translateX(-2rem);
   z-index: 2;
 }
 
 /* Hover effects for the whole item wrapper */
-.project-item:hover .iphone-bezel-wrapper {
+.project-item:hover {
   z-index: 10;
 }
-.project-item:nth-child(1):hover .iphone-bezel-wrapper { transform: translateY(1.5rem) rotate(-5deg) scale(1.05) !important; }
-.project-item:nth-child(2):hover .iphone-bezel-wrapper { transform: translateY(-3.5rem) rotate(0deg) scale(1.12) !important; }
-.project-item:nth-child(3):hover .iphone-bezel-wrapper { transform: translateY(0.5rem) rotate(3deg) scale(1.05) !important; }
+.project-item:nth-child(1):hover { transform: translateY(1.5rem) !important; }
+.project-item:nth-child(1):hover .iphone-bezel-wrapper { transform: rotate(-5deg) scale(1.05) !important; }
+
+.project-item:nth-child(2):hover { transform: translateY(-3.5rem) !important; }
+.project-item:nth-child(2):hover .iphone-bezel-wrapper { transform: rotate(0deg) scale(1.12) !important; }
+
+.project-item:nth-child(3):hover { transform: translateY(0.5rem) !important; }
+.project-item:nth-child(3):hover .iphone-bezel-wrapper { transform: rotate(3deg) scale(1.05) !important; }
 
 .project-desc-text {
   font-family: var(--font-sans);
@@ -189,7 +203,7 @@
   color: #777;
   max-width: 255px;
   text-align: left;
-  margin-top: 4.5rem;
+  margin-top: 0.75rem;
   letter-spacing: 0.01em;
 }
 
@@ -327,12 +341,13 @@
   .project-item:nth-child(1),
   .project-item:nth-child(2),
   .project-item:nth-child(3) {
+    transform: none !important;
     max-width: 320px;
     margin: 0 auto 3rem auto; /* Added bottom margin for spacing between stacked items */
   }
 
   .project-desc-text {
-    margin-top: 1.5rem;
+    margin-top: 0.75rem;
     max-width: 100%;
     text-align: center;
     padding: 0 1.5rem;
