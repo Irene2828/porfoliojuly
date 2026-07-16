@@ -30,15 +30,7 @@ export default function Projects() {
             <span className="section-number">02</span>
             <h2 className="text-sans text-large">Mobile Apps</h2>
           </motion.div>
-          <motion.div
-            initial="hidden"
-            whileInView="visible"
-            viewport={{ once: true, margin: "-100px" }}
-            variants={arriveIn}
-            className="projects-desc"
-          >
-            <p>A SELECTION OF RECENT MOBILE APPLICATIONS SHOWCASING UI/UX AND DRAG-AND-DROP INTERACTIONS.</p>
-          </motion.div>
+
         </div>
 
         <div className="projects-grid">
@@ -140,15 +132,7 @@ export default function Projects() {
             <span className="section-number">03</span>
             <h2 className="text-sans text-large">Websites</h2>
           </motion.div>
-          <motion.div
-            initial="hidden"
-            whileInView="visible"
-            viewport={{ once: true, margin: "-100px" }}
-            variants={arriveIn}
-            className="projects-desc"
-          >
-            <p>HIGH-CONVERTING WEBSITES, DEVELOPED WITH MODERN FRAMEWORKS AND OPTIMIZED FOR OUTSTANDING PERFORMANCE.</p>
-          </motion.div>
+
         </div>
 
         <div className="single-project-wrapper">
@@ -189,15 +173,7 @@ export default function Projects() {
             <span className="section-number">04</span>
             <h2 className="text-sans text-large">Workflow Automation</h2>
           </motion.div>
-          <motion.div
-            initial="hidden"
-            whileInView="visible"
-            viewport={{ once: true, margin: "-100px" }}
-            variants={arriveIn}
-            className="projects-desc"
-          >
-            <p>CUSTOM AUTOMATED PIPELINES DESIGNED TO ACCELERATE DESIGN CREATION AND ASSET DELIVERY FOR TEAMS.</p>
-          </motion.div>
+
         </div>
 
         <div className="single-project-wrapper">

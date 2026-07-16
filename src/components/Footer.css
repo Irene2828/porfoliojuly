@@ -12,7 +12,7 @@
 .cta-section h2 {
   font-size: clamp(2rem, 7vw, 5.6rem); /* Scaled down 30% from text-huge */
   line-height: 1.1;
-  background-image: url('../assets/gold_silver_white.png');
+  background-image: url('../assets/silver_white_liquid.png');
   background-size: cover;
   background-position: center;
   background-attachment: fixed;
