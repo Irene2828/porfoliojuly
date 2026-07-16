@@ -4,7 +4,7 @@
   left: 50%;
   transform: translateX(-50%);
   width: 100%;
-  max-width: 1560px; /* 30% wider than 1200px */
+  max-width: 1200px; /* Boutique width */
   display: flex;
   justify-content: space-between;
   align-items: center;

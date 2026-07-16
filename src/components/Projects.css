@@ -36,19 +36,19 @@
   transition: transform 0.5s cubic-bezier(0.2, 0.8, 0.2, 1);
 }
 
-/* Premium Layout: Staggered and subtly tilted */
+/* Premium Layout: Straight and Deeply Staggered */
 .project-item:nth-child(1) {
-  transform: translateY(3rem) rotate(-4deg);
+  margin-top: 0;
   z-index: 1;
 }
 
 .project-item:nth-child(2) {
-  transform: translateY(-2rem) scale(1.08);
+  margin-top: 8rem;
   z-index: 3;
 }
 
 .project-item:nth-child(3) {
-  transform: translateY(3rem) rotate(4deg);
+  margin-top: 0;
   z-index: 2;
 }
 
@@ -56,9 +56,9 @@
 .project-item:hover {
   z-index: 10;
 }
-.project-item:nth-child(1):hover { transform: translateY(1rem) rotate(-2deg) scale(1.05) !important; }
-.project-item:nth-child(2):hover { transform: translateY(-3rem) scale(1.12) !important; }
-.project-item:nth-child(3):hover { transform: translateY(1rem) rotate(2deg) scale(1.05) !important; }
+.project-item:nth-child(1):hover { transform: translateY(-1rem) scale(1.05) !important; }
+.project-item:nth-child(2):hover { transform: translateY(-1rem) scale(1.05) !important; }
+.project-item:nth-child(3):hover { transform: translateY(-1rem) scale(1.05) !important; }
 
 /* iPhone 14 Pro Max Silver Bezel */
 .iphone-bezel {
