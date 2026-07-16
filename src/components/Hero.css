@@ -12,6 +12,8 @@
 .hero-container {
   position: relative;
   z-index: 1;
+  width: 100%;
+  max-width: 1200px; /* added to constrain the width for the wide image */
 }
 
 .hero-text {
@@ -29,24 +31,29 @@
 }
 
 .top-text {
-  margin-bottom: -10vw; /* Overlap with image */
+  margin-bottom: -6vw; /* Adjusted overlap for wide image */
 }
 
 .bottom-text {
-  margin-top: -8vw; /* Overlap with image */
+  margin-top: -6vw; /* Adjusted overlap for wide image */
 }
 
 .hero-image-wrapper {
   position: relative;
-  width: 50vw;
-  max-width: 600px;
+  width: 80vw; /* Made much wider to fit headlines */
+  max-width: 1000px;
+  aspect-ratio: 16 / 9; /* Force wide rectangular aspect ratio */
   margin: 0 auto;
   z-index: 1;
+  overflow: hidden;
+  border-radius: 4px;
 }
 
 .hero-image {
   width: 100%;
-  height: auto;
+  height: 100%;
+  object-fit: cover; /* Ensures the image fills the 16:9 wrapper without distorting */
+  object-position: center 30%; /* Shift slightly up */
   filter: grayscale(100%);
   transition: filter 0.5s ease;
 }

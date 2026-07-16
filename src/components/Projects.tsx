@@ -1,5 +1,8 @@
 import { motion } from 'framer-motion';
 import './Projects.css';
+import proj1 from '../assets/work1.png';
+import proj2 from '../assets/work2.png';
+import proj3 from '../assets/work3.png';
 
 export default function Projects() {
   const arriveIn = {
@@ -21,8 +24,8 @@ export default function Projects() {
             viewport={{ once: true, margin: "-100px" }}
             variants={arriveIn}
           >
-            <span className="section-number">07</span>
-            <h2 className="text-sans text-large">OTHER<br/>PROJECTS</h2>
+            <span className="section-number">02</span>
+            <h2 className="text-sans text-large">SELECTED<br/>WORKS</h2>
           </motion.div>
           <motion.div
             initial="hidden"
@@ -31,7 +34,7 @@ export default function Projects() {
             variants={arriveIn}
             className="projects-desc"
           >
-            <p>A SAMPLE OF POSTERS AND CARDS CONCEPTUALIZED, DESIGNED, AND CREATED BY ME</p>
+            <p>A SELECTION OF RECENT PROJECTS SHOWCASING UI/UX DESIGN AND DEVELOPMENT.</p>
           </motion.div>
         </div>
 
@@ -40,10 +43,17 @@ export default function Projects() {
             initial="hidden"
             whileInView="visible"
             viewport={{ once: true, margin: "-100px" }}
-            variants={arriveIn}
-            className="project-item project-left"
+            variants={{
+              hidden: { y: 50, opacity: 0 },
+              visible: { y: 0, opacity: 1, transition: { duration: 0.8, ease: "easeOut", delay: 0.1 } }
+            }}
+            className="project-item"
           >
-            <img src="/project1.png" alt="Project 1" />
+            <motion.div className="iphone-bezel" drag whileDrag={{ scale: 1.1, zIndex: 50 }}>
+              <div className="iphone-screen">
+                <img src={proj1} alt="Project 1" />
+              </div>
+            </motion.div>
           </motion.div>
           
           <motion.div 
@@ -51,16 +61,33 @@ export default function Projects() {
             whileInView="visible"
             viewport={{ once: true, margin: "-100px" }}
             variants={{
-              hidden: { y: 150, opacity: 0 },
-              visible: { 
-                y: 0, 
-                opacity: 1, 
-                transition: { duration: 1, ease: "easeOut", delay: 0.2 }
-              }
+              hidden: { y: 100, opacity: 0 },
+              visible: { y: 0, opacity: 1, transition: { duration: 0.8, ease: "easeOut", delay: 0.3 } }
             }}
-            className="project-item project-right"
+            className="project-item"
           >
-            <img src="/project2.png" alt="Project 2" />
+            <motion.div className="iphone-bezel" drag whileDrag={{ scale: 1.1, zIndex: 50 }}>
+              <div className="iphone-screen">
+                <img src={proj2} alt="Project 2" />
+              </div>
+            </motion.div>
+          </motion.div>
+
+          <motion.div 
+            initial="hidden"
+            whileInView="visible"
+            viewport={{ once: true, margin: "-100px" }}
+            variants={{
+              hidden: { y: 80, opacity: 0 },
+              visible: { y: 0, opacity: 1, transition: { duration: 0.8, ease: "easeOut", delay: 0.5 } }
+            }}
+            className="project-item"
+          >
+            <motion.div className="iphone-bezel" drag whileDrag={{ scale: 1.1, zIndex: 50 }}>
+              <div className="iphone-screen">
+                <img src={proj3} alt="Project 3" />
+              </div>
+            </motion.div>
           </motion.div>
         </div>
       </div>

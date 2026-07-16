@@ -1,5 +1,6 @@
 import { motion } from 'framer-motion';
 import './Hero.css';
+import heroImage from '../assets/hero_new.png';
 
 export default function Hero() {
   return (
@@ -20,7 +21,7 @@ export default function Hero() {
           transition={{ duration: 1, delay: 0.3, ease: "easeOut" }}
           className="hero-image-wrapper"
         >
-          <img src="/hero.png" alt="Tristan Clousso" className="hero-image" />
+          <img src={heroImage} alt="Tristan Clousso" className="hero-image" />
         </motion.div>
 
         <motion.div
