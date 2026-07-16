@@ -25,7 +25,7 @@ export default function Projects() {
             variants={arriveIn}
           >
             <span className="section-number">02</span>
-            <h2 className="text-sans text-large">SELECTED<br/>WORKS</h2>
+            <h2 className="text-sans text-large">WORKS</h2>
           </motion.div>
           <motion.div
             initial="hidden"
