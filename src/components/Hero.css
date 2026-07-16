@@ -19,15 +19,13 @@
 .hero-text {
   position: relative;
   z-index: 2;
-  mix-blend-mode: difference;
-  color: #fff; /* Mix blend will make it black on white bg, white on dark bg */
-}
-
-/* Fallback for mix-blend-mode */
-@supports not (mix-blend-mode: difference) {
-  .hero-text {
-    color: var(--color-text);
-  }
+  background-image: url('../assets/work1.png');
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  color: transparent;
 }
 
 .top-text {
