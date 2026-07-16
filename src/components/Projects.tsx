@@ -44,8 +44,8 @@ export default function Projects() {
             whileInView="visible"
             viewport={{ once: true, margin: "-100px" }}
             variants={{
-              hidden: { y: 50, opacity: 0 },
-              visible: { y: 0, opacity: 1, transition: { duration: 0.8, ease: "easeOut", delay: 0.1 } }
+              hidden: { opacity: 0 },
+              visible: { opacity: 1, transition: { duration: 0.8, ease: "easeOut", delay: 0.1 } }
             } as any}
             className="project-item"
           >
@@ -61,8 +61,8 @@ export default function Projects() {
             whileInView="visible"
             viewport={{ once: true, margin: "-100px" }}
             variants={{
-              hidden: { y: 100, opacity: 0 },
-              visible: { y: 0, opacity: 1, transition: { duration: 0.8, ease: "easeOut", delay: 0.3 } }
+              hidden: { opacity: 0 },
+              visible: { opacity: 1, transition: { duration: 0.8, ease: "easeOut", delay: 0.3 } }
             } as any}
             className="project-item"
           >
@@ -78,8 +78,8 @@ export default function Projects() {
             whileInView="visible"
             viewport={{ once: true, margin: "-100px" }}
             variants={{
-              hidden: { y: 80, opacity: 0 },
-              visible: { y: 0, opacity: 1, transition: { duration: 0.8, ease: "easeOut", delay: 0.5 } }
+              hidden: { opacity: 0 },
+              visible: { opacity: 1, transition: { duration: 0.8, ease: "easeOut", delay: 0.5 } }
             } as any}
             className="project-item"
           >
