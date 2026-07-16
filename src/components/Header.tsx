@@ -31,7 +31,7 @@ export default function Header() {
       animate="visible"
     >
       <motion.div className="header-logo" variants={itemVariants}>
-        TC.
+        IS.
       </motion.div>
       <nav className="header-nav">
         <motion.a href="#work" variants={itemVariants} className="nav-link">Work</motion.a>

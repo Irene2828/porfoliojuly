@@ -19,7 +19,7 @@ export default function Footer() {
         </motion.div>
         
         <div className="footer-bottom">
-          <p>&copy; {new Date().getFullYear()} Tristan Clousso. All Rights Reserved.</p>
+          <p>&copy; {new Date().getFullYear()} Iryna Sheremeta. All Rights Reserved.</p>
           <div className="social-links">
             <a href="#">Instagram</a>
             <a href="#">Behance</a>

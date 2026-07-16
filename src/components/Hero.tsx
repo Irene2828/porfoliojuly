@@ -12,7 +12,7 @@ export default function Hero() {
           transition={{ duration: 0.8, ease: "easeOut" }}
           className="hero-text top-text"
         >
-          <h1 className="title-serif text-huge">Tristan Clousso</h1>
+          <h1 className="title-serif text-huge">Iryna Sheremeta</h1>
         </motion.div>
         
         <motion.div
@@ -21,7 +21,7 @@ export default function Hero() {
           transition={{ duration: 1, delay: 0.3, ease: "easeOut" }}
           className="hero-image-wrapper"
         >
-          <img src={heroImage} alt="Tristan Clousso" className="hero-image" />
+          <img src={heroImage} alt="Iryna Sheremeta" className="hero-image" />
         </motion.div>
 
         <motion.div
