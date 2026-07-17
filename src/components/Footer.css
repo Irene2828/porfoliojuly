@@ -10,7 +10,7 @@
 }
 
 .cta-section h2 {
-  font-size: clamp(2rem, 7vw, 5.6rem); /* Scaled down 30% from text-huge */
+  font-size: clamp(1.5rem, 5.25vw, 4.2rem); /* Scaled up 50% from previous size */
   line-height: 1.1;
   background-image: url('../assets/silver_white_liquid.png');
   background-size: cover;
@@ -23,22 +23,23 @@
 
 .cta-button {
   display: inline-block;
-  margin-top: 3rem;
+  margin-top: 2.7rem;
   padding: 0.8rem 2.4rem; /* Scaled down 20% */
   border: 1px solid var(--color-bg);
-  border-radius: 50px;
+  border-radius: 0;
   font-family: var(--font-sans);
   font-size: 0.96rem; /* Scaled down 20% from 1.2rem */
+  font-weight: 400; /* Less bold */
   text-transform: uppercase;
   letter-spacing: 0.1em;
-  background-color: var(--color-bg);
-  color: var(--color-text);
+  background-color: transparent; /* Outlined by default */
+  color: var(--color-bg);
   transition: all 0.3s ease;
 }
 
 .cta-button:hover {
-  background-color: transparent;
-  color: var(--color-bg);
+  background-color: var(--color-bg); /* White/Bg color on hover */
+  color: var(--color-text); /* Black/Text color on hover */
   border-color: var(--color-bg);
 }
 

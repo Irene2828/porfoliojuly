@@ -1,0 +1,22 @@
+.face-divider-section {
+  background-color: #ffffff;
+  width: 100%;
+  padding: 4rem 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.face-divider-container {
+  width: 90%;
+  max-width: 700px;
+  height: 70vh;
+  overflow: hidden;
+}
+
+.face-banner-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center 35%;
+}

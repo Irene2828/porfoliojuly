@@ -12,9 +12,9 @@ export default function Footer() {
           transition={{ duration: 0.8 }}
           className="cta-section"
         >
-          <h2 className="title-serif text-huge">From messy idea -<br/>to clean digital solution</h2>
+          <h2 className="title-serif text-huge">Strategic. Creative. AI augmented</h2>
           <a href="mailto:hello@example.com" className="cta-button">
-            Let's Build Together
+            Let's Work on your next build
           </a>
         </motion.div>
         

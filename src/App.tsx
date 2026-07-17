@@ -4,6 +4,7 @@ import Header from './components/Header';
 import Hero from './components/Hero'
 import Services from './components/Services'
 import Projects from './components/Projects'
+import FaceDivider from './components/FaceDivider'
 import Footer from './components/Footer'
 import './index.css'
 
@@ -57,6 +58,7 @@ function App() {
       <Header />
       <Hero />
       <Projects />
+      <FaceDivider />
       <Services />
       <Footer />
     </>

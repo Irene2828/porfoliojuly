@@ -2,6 +2,15 @@ import { motion } from 'framer-motion';
 import './Services.css';
 
 export default function Services() {
+  const containerVariants = {
+    hidden: {},
+    visible: {
+      transition: {
+        staggerChildren: 0.3
+      }
+    }
+  };
+
   const arriveIn: any = {
     hidden: { y: 50, opacity: 0 },
     visible: { 
@@ -14,13 +23,16 @@ export default function Services() {
   return (
     <section className="section services-section" id="expertise">
       <div className="container">
-        <div className="services-layout">
+        <motion.div 
+          className="services-layout"
+          initial="hidden"
+          whileInView="visible"
+          viewport={{ once: true, margin: "-100px" }}
+          variants={containerVariants}
+        >
           {/* Left Column: Staggered bulleted lists */}
           <div className="services-content-left">
             <motion.div 
-              initial="hidden"
-              whileInView="visible"
-              viewport={{ once: true, margin: "-100px" }}
               variants={arriveIn}
               className="service-category"
             >
@@ -34,9 +46,6 @@ export default function Services() {
             </motion.div>
 
             <motion.div 
-              initial="hidden"
-              whileInView="visible"
-              viewport={{ once: true, margin: "-100px" }}
               variants={arriveIn}
               className="service-category"
             >
@@ -50,15 +59,12 @@ export default function Services() {
 
           {/* Right Column: Visual image */}
           <motion.div 
-            initial="hidden"
-            whileInView="visible"
-            viewport={{ once: true, margin: "-100px" }}
             variants={arriveIn}
             className="services-image-col"
           >
             <img src="/skills.png" alt="Using drawing tablet" />
           </motion.div>
-        </div>
+        </motion.div>
       </div>
     </section>
   );
