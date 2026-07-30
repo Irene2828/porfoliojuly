@@ -1,5 +1,5 @@
 import { useRef, useMemo } from 'react';
-import { motion, useScroll, useTransform, MotionValue } from 'framer-motion';
+import { motion } from 'framer-motion';
 import './FaceDivider.css';
 import faceImage from '../assets/22.webp';
 
