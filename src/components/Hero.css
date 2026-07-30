@@ -6,93 +6,85 @@
   text-align: center;
   position: relative;
   overflow: hidden;
-  padding: 6rem 0 2rem 0;
+  height: 100vh;
   margin-top: 0;
   background: #ffffff;
+  padding: 0;
 }
 
 .hero-container {
   position: relative;
   z-index: 1;
   width: 100%;
-  max-width: 1200px; /* added to constrain the width for the wide image */
-}
-
-.hero-row-1 {
+  max-width: 1200px;
+  padding: 8rem 2rem 4rem 2rem;
+  height: 100%;
   display: flex;
+  flex-direction: column;
   justify-content: center;
-  align-items: flex-start;
-  gap: 6vw;
-  margin-bottom: -13vw; /* Pull top row down over the image */
-  margin-left: -15%; /* Group offset to the left */
 }
 
 .hero-text {
   position: relative;
   z-index: 2;
-  background-image: linear-gradient(to bottom, #000000 40%, #aaaaaa 100%);
-  background-size: cover;
-  background-position: center;
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  color: transparent;
+  color: #1a1a1a;
 }
 
 .stair-1 {
-  /* Simple left-aligned anchor in flex row */
+  margin-left: -55%;
+  margin-bottom: 4vh; 
 }
 
 .stair-2 {
-  margin-top: 5vw; /* Stagger it lower than stair-1 on the same row */
+  margin-left: -35%;
+  margin-bottom: 4vh;
+  margin-top: 0;
 }
 
-.stair-3 {
-  margin-left: 20%;
-  margin-top: -18vw; /* Pull care higher over the image bottom */
+.hero-subtitle {
+  margin-left: 0%;
+  margin-top: 1vh;
+  font-family: var(--font-sans);
+  font-size: 0.9rem;
+  font-weight: 500;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  color: #8a8a8a;
+  position: relative;
+  z-index: 2;
 }
 
 .hero-image-wrapper {
-  position: relative;
-  width: 96vw; /* Increased by 20% */
-  max-width: 960px; /* Increased by 20% */
-  aspect-ratio: 16 / 9; /* Force wide rectangular aspect ratio */
-  margin-left: auto;
-  margin-right: -25vw;
+  position: absolute;
+  top: 30%;
+  right: 5vw;
+  transform: translateY(-50%);
+  width: 24vw;
+  aspect-ratio: 3 / 4;
   z-index: 1;
   overflow: hidden;
-  border-radius: 4px;
+  pointer-events: none;
+  border-radius: 6px;
+}
+
+.hero-text h1 {
+  font-size: clamp(2.5rem, 8.5vw, 6.8rem);
+  margin: 0;
 }
 
 .hero-image {
   width: 100%;
   height: 100%;
-  object-fit: cover; /* Ensures the image fills the 16:9 wrapper without distorting */
-  object-position: center 30%; /* Shift slightly up */
+  object-fit: cover;
+  object-position: center 20%; /* Shift slightly up to center face */
   filter: grayscale(100%);
   transition: filter 0.5s ease;
-  -webkit-mask-image: radial-gradient(ellipse at center, black 50%, transparent 100%);
-  mask-image: radial-gradient(ellipse at center, black 50%, transparent 100%);
+  -webkit-mask-image: radial-gradient(circle at 50% 50%, black 65%, transparent 100%);
+  mask-image: radial-gradient(circle at 50% 50%, black 65%, transparent 100%);
 }
 
 .hero-image:hover {
   filter: grayscale(0%);
 }
 
-.hero-subtitle {
-  margin-top: 0.5rem;
-  margin-bottom: 1.5rem;
-  font-family: var(--font-sans);
-  font-size: 1.2rem;
-  font-weight: 300;
-  color: #aaa;
-  z-index: 5;
-}
-
-.hero-divider-stroke {
-  width: 100vw;
-  height: 1px;
-  background-color: #000000;
-  margin-top: 1.5rem;
-  margin-bottom: 1rem;
-  z-index: 4;
-}
+/* Removed subtitle and stroke divider rules */

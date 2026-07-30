@@ -30,9 +30,7 @@ export default function Header() {
       initial="hidden"
       animate="visible"
     >
-      <motion.div className="header-logo" variants={itemVariants}>
-        Iryna Sheremeta
-      </motion.div>
+
       <nav className="header-nav">
         <motion.a href="#work" variants={itemVariants} className="nav-link">Work</motion.a>
         <motion.a href="#expertise" variants={itemVariants} className="nav-link">Expertise</motion.a>

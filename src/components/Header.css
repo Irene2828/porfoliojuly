@@ -6,7 +6,7 @@
   width: 100%;
   max-width: 1200px; /* Boutique width */
   display: flex;
-  justify-content: space-between;
+  justify-content: flex-end;
   align-items: center;
   padding: 2.5rem 2rem;
   z-index: 100;
@@ -21,14 +21,45 @@
   font-family: var(--font-serif);
   font-size: 1.5rem;
   font-weight: 600;
-  color: #333333;
+  color: #8a8a8a;
   letter-spacing: -0.02em;
   cursor: pointer;
+  display: flex;
+  align-items: center;
+  gap: 0.8rem;
+  line-height: 1;
+}
+
+.logo-name {
+  /* removed translateY */
+}
+
+.header-divider {
+  width: 1px;
+  height: 1.2rem;
+  background-color: #dddddd;
+}
+
+.header-tagline {
+  font-family: var(--font-sans);
+  font-size: 0.8rem;
+  font-weight: 400;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  color: #8a8a8a;
+  white-space: nowrap;
+}
+
+@media (max-width: 768px) {
+  .header-divider, .header-tagline {
+    display: none;
+  }
 }
 
 .header-nav {
   display: flex;
   gap: 3rem;
+  line-height: 1;
 }
 
 .nav-link {
@@ -41,6 +72,7 @@
   position: relative;
   overflow: hidden;
   padding: 0.2rem 0;
+  line-height: 1;
 }
 
 .nav-link::after {

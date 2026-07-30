@@ -4,40 +4,37 @@ import './FaceDivider.css';
 import faceImage from '../assets/22.webp';
 
 function MosaicBlock({ 
-  scrollYProgress, 
-  start, 
-  end 
+  delay 
 }: { 
-  scrollYProgress: MotionValue<number>; 
-  start: number; 
-  end: number; 
+  delay: number; 
 }) {
-  const scale = useTransform(scrollYProgress, [start, end], [1, 0.001]); // 0.001 to avoid rendering issues at 0
   return (
     <motion.div 
       style={{ 
         backgroundColor: '#ffffff',
-        scale,
         transformOrigin: 'center'
       }} 
+      initial={{ scale: 1 }}
+      whileInView={{ scale: 0 }}
+      viewport={{ amount: 0.1 }}
+      transition={{
+        duration: 4, // 30% faster speed (from 6 to 4)
+        delay,
+        ease: "easeInOut"
+      }}
     />
   );
 }
 
 export default function FaceDivider() {
   const containerRef = useRef<HTMLElement>(null);
-  const { scrollYProgress } = useScroll({
-    target: containerRef,
-    // Trigger when the section is more in view
-    offset: ["start 65%", "start 25%"]
-  });
+  const imageRef = useRef<HTMLDivElement>(null);
 
-  // Generate 100 random timings for the blocks
+  // Generate 100 random timings for looping delays
   const blocks = useMemo(() => {
     return Array.from({ length: 100 }, (_, i) => {
-      const start = Math.random() * 0.4;
-      const end = start + 0.2;
-      return { id: i, start, end };
+      const delay = Math.random() * 4;
+      return { id: i, delay };
     });
   }, []);
 
@@ -46,7 +43,7 @@ export default function FaceDivider() {
       <div className="face-divider-container">
         <h2 className="title-serif face-headline face-headline-1">Strategic.</h2>
         <h2 className="title-serif face-headline face-headline-2">Creative.</h2>
-        <div className="face-image-crop-wrapper">
+        <div className="face-image-crop-wrapper" ref={imageRef}>
           <img 
             src={faceImage} 
             alt="Central face detail" 
@@ -65,25 +62,23 @@ export default function FaceDivider() {
             {blocks.map(b => (
               <MosaicBlock 
                 key={b.id} 
-                scrollYProgress={scrollYProgress} 
-                start={b.start} 
-                end={b.end} 
+                delay={b.delay} 
               />
             ))}
           </div>
         </div>
       </div>
 
-      {/* Result-Driven sliding from the left edge premiumly */}
-      <motion.div 
-        className="result-driven-container"
-        initial={{ x: "-100vw", opacity: 0 }}
-        whileInView={{ x: 0, opacity: 1 }}
-        viewport={{ once: true, margin: "-50px" }}
-        transition={{ duration: 1.2, ease: [0.16, 1, 0.3, 1] }}
+      <motion.h2 
+        className="title-serif face-headline" 
+        style={{ position: 'relative', marginTop: '-1rem' }}
+        initial={{ opacity: 0, y: 30 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        viewport={{ once: true, amount: 0.2 }}
+        transition={{ duration: 1 }}
       >
-        <h3 className="result-driven-text">Result-Driven</h3>
-      </motion.div>
+        Result-Driven.
+      </motion.h2>
 
       <a href="mailto:hello@example.com" className="cta-button cta-button-dark">
         Let's Work on your next build
