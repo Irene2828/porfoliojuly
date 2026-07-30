@@ -5,8 +5,10 @@
   text-align: center;
   position: relative;
   overflow: hidden;
-  padding: 2rem 0 1rem 0;
-  margin-top: 1rem; /* Further reduced buffer for absolute header */
+  padding: 6rem 0 2rem 0;
+  margin-top: 0;
+  background-color: #111;
+  min-height: 100vh;
 }
 
 .hero-container {
@@ -22,7 +24,6 @@
   background-image: url('../assets/silver_white_liquid.png');
   background-size: cover;
   background-position: center;
-  background-attachment: fixed;
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   color: transparent;
@@ -39,7 +40,7 @@
 .hero-image-wrapper {
   position: relative;
   width: 80vw; /* Made much wider to fit headlines */
-  max-width: 1000px;
+  max-width: 800px;
   aspect-ratio: 16 / 9; /* Force wide rectangular aspect ratio */
   margin: 0 auto;
   z-index: 1;
@@ -65,5 +66,5 @@
   font-family: var(--font-sans);
   font-size: 1.2rem;
   font-weight: 300;
-  color: #555;
+  color: #aaa;
 }
