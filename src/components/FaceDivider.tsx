@@ -28,14 +28,13 @@ export default function FaceDivider() {
   const containerRef = useRef<HTMLElement>(null);
   const { scrollYProgress } = useScroll({
     target: containerRef,
-    // Trigger the scroll timeline over a shorter distance
-    offset: ["start 85%", "start 30%"]
+    // Trigger when the section is more in view
+    offset: ["start 65%", "start 25%"]
   });
 
   // Generate 100 random timings for the blocks
   const blocks = useMemo(() => {
     return Array.from({ length: 100 }, (_, i) => {
-      // Condense the animation into a faster window
       const start = Math.random() * 0.4;
       const end = start + 0.2;
       return { id: i, start, end };
@@ -74,6 +73,18 @@ export default function FaceDivider() {
           </div>
         </div>
       </div>
+
+      {/* Result-Driven sliding from the left edge premiumly */}
+      <motion.div 
+        className="result-driven-container"
+        initial={{ x: "-100vw", opacity: 0 }}
+        whileInView={{ x: 0, opacity: 1 }}
+        viewport={{ once: true, margin: "-50px" }}
+        transition={{ duration: 1.2, ease: [0.16, 1, 0.3, 1] }}
+      >
+        <h3 className="result-driven-text">Result-Driven</h3>
+      </motion.div>
+
       <a href="mailto:hello@example.com" className="cta-button cta-button-dark">
         Let's Work on your next build
       </a>

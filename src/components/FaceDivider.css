@@ -7,6 +7,7 @@
   justify-content: center;
   align-items: center;
   gap: 3.5rem;
+  overflow: hidden; /* Prevent horizontal scroll during slide-in animations */
 }
 
 .face-divider-container {
@@ -79,4 +80,21 @@
   background-color: #000000 !important;
   color: #ffffff !important;
   border-color: #000000 !important;
+}
+
+.result-driven-container {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  margin-top: 1rem;
+  margin-bottom: -1rem; /* Adjust space to CTA */
+}
+
+.result-driven-text {
+  font-family: var(--font-serif);
+  font-size: clamp(2rem, 6vw, 4.5rem);
+  font-weight: 700;
+  text-transform: uppercase;
+  color: #000000;
+  white-space: nowrap;
 }
