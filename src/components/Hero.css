@@ -7,8 +7,8 @@
   overflow: hidden;
   padding: 6rem 0 2rem 0;
   margin-top: 0;
-  background-color: #111;
-  min-height: 100vh;
+  background: #ffffff;
+  border-bottom: 1px solid #000000;
 }
 
 .hero-container {
@@ -21,28 +21,30 @@
 .hero-text {
   position: relative;
   z-index: 2;
-  background-image: url('../assets/silver_white_liquid.png');
+  background-image: linear-gradient(to bottom, #000000 40%, #aaaaaa 100%);
   background-size: cover;
   background-position: center;
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   color: transparent;
+  margin-left: -20%;
 }
 
 .top-text {
-  margin-bottom: -6vw; /* Adjusted overlap for wide image */
+  margin-bottom: -10vw; /* Bring top text further down */
 }
 
 .bottom-text {
-  margin-top: -6vw; /* Adjusted overlap for wide image */
+  margin-top: -14vw; /* Lift bottom text further up */
 }
 
 .hero-image-wrapper {
   position: relative;
-  width: 80vw; /* Made much wider to fit headlines */
-  max-width: 800px;
+  width: 96vw; /* Increased by 20% */
+  max-width: 960px; /* Increased by 20% */
   aspect-ratio: 16 / 9; /* Force wide rectangular aspect ratio */
-  margin: 0 auto;
+  margin-left: auto;
+  margin-right: -25vw;
   z-index: 1;
   overflow: hidden;
   border-radius: 4px;
@@ -55,6 +57,8 @@
   object-position: center 30%; /* Shift slightly up */
   filter: grayscale(100%);
   transition: filter 0.5s ease;
+  -webkit-mask-image: radial-gradient(ellipse at center, black 50%, transparent 100%);
+  mask-image: radial-gradient(ellipse at center, black 50%, transparent 100%);
 }
 
 .hero-image:hover {

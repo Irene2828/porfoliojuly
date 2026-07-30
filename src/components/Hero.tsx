@@ -1,6 +1,6 @@
 import { motion } from 'framer-motion';
 import './Hero.css';
-import heroImage from '../assets/hero_new.png';
+import heroImage from '../assets/999.webp';
 
 export default function Hero() {
   return (
