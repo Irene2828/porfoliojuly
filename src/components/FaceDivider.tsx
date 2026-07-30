@@ -18,7 +18,7 @@ function MosaicBlock({
       whileInView={{ scale: 0 }}
       viewport={{ amount: 0.1 }}
       transition={{
-        duration: 2.4, // 40% faster speed (from 4 to 2.4)
+        duration: 1.44, // 40% faster speed again
         delay,
         ease: "easeInOut"
       }}
