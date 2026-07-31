@@ -18,7 +18,7 @@ function MosaicBlock({
       whileInView={{ scale: 0 }}
       viewport={{ amount: 0.1 }}
       transition={{
-        duration: 1.44, // 40% faster speed again
+        duration: 0.8, // 50% faster speed
         delay,
         ease: "easeInOut"
       }}
@@ -33,7 +33,7 @@ export default function FaceDivider() {
   // Generate 100 random timings for looping delays
   const blocks = useMemo(() => {
     return Array.from({ length: 100 }, (_, i) => {
-      const delay = Math.random() * 4;
+      const delay = Math.random() * 1.2;
       return { id: i, delay };
     });
   }, []);
