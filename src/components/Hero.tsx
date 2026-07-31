@@ -1,4 +1,4 @@
-import { useRef, useMemo } from 'react';
+import { useMemo } from 'react';
 import { motion } from 'framer-motion';
 import './Hero.css';
 import heroImage from '../assets/999.webp';
