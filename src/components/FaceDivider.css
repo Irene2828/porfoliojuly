@@ -101,3 +101,29 @@
   color: #000000;
   white-space: nowrap;
 }
+
+@media (max-width: 768px) {
+  .face-image-crop-wrapper {
+    height: 45vh;
+  }
+  .face-banner-image {
+    width: 200% !important;
+    height: 200% !important;
+    max-width: none !important;
+    object-fit: cover;
+    object-position: 0% 0%;
+    transform: none !important;
+  }
+  .cta-button {
+    padding: 0.8rem 1.2rem !important;
+    font-size: 0.85rem !important;
+    letter-spacing: 0.05em !important;
+    display: block !important;
+    width: 90% !important;
+    max-width: 280px !important;
+    text-align: center !important;
+    margin-left: auto !important;
+    margin-right: auto !important;
+    box-sizing: border-box !important;
+  }
+}

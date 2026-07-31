@@ -56,7 +56,7 @@
 
 .hero-image-wrapper {
   position: absolute;
-  top: 30%;
+  top: 20%;
   right: 5vw;
   transform: translateY(-50%);
   width: 24vw;
@@ -85,6 +85,64 @@
 
 .hero-image:hover {
   filter: grayscale(0%);
+}
+
+.hero-bullets {
+  list-style: none;
+  font-family: var(--font-sans);
+  margin-top: 2rem;
+  margin-left: 0%;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 0.8rem;
+  z-index: 2;
+  position: relative;
+}
+
+.hero-bullets li {
+  font-size: 1.1rem;
+  color: #333;
+  text-align: left;
+}
+
+.hero-mosaic-grid {
+  display: none;
+}
+
+@media (max-width: 768px) {
+  .hero-container {
+    justify-content: flex-start;
+    align-items: flex-start;
+    padding-top: 6rem;
+  }
+  .hero-text {
+    text-align: left;
+  }
+  .stair-1, .stair-2 {
+    margin-left: 0;
+  }
+  .hero-bullets {
+    margin-top: 1.5rem;
+  }
+  .hero-image-wrapper {
+    width: 72vw;
+    top: auto;
+    bottom: 0;
+    right: auto;
+    left: 50%;
+    transform: translateX(-50%);
+  }
+  .hero-mosaic-grid {
+    position: absolute;
+    inset: 0;
+    z-index: 10;
+    display: grid;
+    grid-template-columns: repeat(10, 1fr);
+    grid-template-rows: repeat(10, 1fr);
+    pointer-events: none;
+  }
 }
 
 /* Removed subtitle and stroke divider rules */

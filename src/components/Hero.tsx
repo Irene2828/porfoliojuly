@@ -1,8 +1,16 @@
+import { useRef, useMemo } from 'react';
 import { motion } from 'framer-motion';
 import './Hero.css';
 import heroImage from '../assets/999.webp';
 
 export default function Hero() {
+  const heroBlocks = useMemo(() => {
+    return Array.from({ length: 100 }, (_, i) => {
+      const delay = Math.random() * 1.2;
+      return { id: i, delay };
+    });
+  }, []);
+
   return (
     <section className="hero-section">
       <div className="container hero-container">
@@ -32,6 +40,19 @@ export default function Hero() {
         >
           Product Designer and Builder
         </motion.div>
+
+        <ul className="hero-bullets">
+          {['Logo Design', 'Brand Identity', 'Poster Design', 'Environmental Design'].map((bullet, idx) => (
+            <motion.li
+              key={bullet}
+              initial={{ y: 30, opacity: 0 }}
+              animate={{ y: 0, opacity: 1 }}
+              transition={{ duration: 0.8, delay: 0.6 + idx * 0.15, ease: "easeOut" }}
+            >
+              &ndash; {bullet}
+            </motion.li>
+          ))}
+        </ul>
         
         <motion.div
           initial={{ scale: 0.95, opacity: 0 }}
@@ -40,6 +61,26 @@ export default function Hero() {
           className="hero-image-wrapper"
         >
           <img src={heroImage} alt="Iryna Sheremeta" className="hero-image" />
+          
+          {/* Mosaic Grid Overlay on Mobile */}
+          <div className="hero-mosaic-grid">
+            {heroBlocks.map(b => (
+              <motion.div 
+                key={b.id}
+                style={{ 
+                  backgroundColor: '#ffffff',
+                  transformOrigin: 'center'
+                }} 
+                initial={{ scale: 1 }}
+                animate={{ scale: 0 }}
+                transition={{
+                  duration: 0.8,
+                  delay: 0.8 + b.delay,
+                  ease: "easeInOut"
+                }}
+              />
+            ))}
+          </div>
         </motion.div>
       </div>
     </section>
