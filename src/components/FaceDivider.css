@@ -112,9 +112,9 @@
     height: 100% !important;
     max-width: 100% !important;
     object-fit: cover !important;
-    object-position: center 25% !important;
+    object-position: left top !important;
     transform: scale(2.2) !important;
-    transform-origin: top center !important;
+    transform-origin: top left !important;
   }
   .cta-button {
     padding: 0.8rem 1.2rem !important;
