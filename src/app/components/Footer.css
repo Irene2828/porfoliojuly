@@ -1,0 +1,77 @@
+.footer {
+  background-color: #2a2b2d;
+  color: var(--color-bg);
+  padding: 4rem 0 2rem;
+  text-align: center;
+}
+
+.cta-section {
+  margin-bottom: 9rem;
+}
+
+.cta-section h2 {
+  font-size: clamp(1.5rem, 5.25vw, 4.2rem); /* Scaled up 50% from previous size */
+  line-height: 1.1;
+  background-image: url('../assets/silver_white_liquid.png');
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  color: transparent;
+}
+
+.cta-button {
+  display: inline-block;
+  margin-top: 3.1rem;
+  padding: 0.8rem 2.4rem; /* Scaled down 20% */
+  border: 1px solid var(--color-bg);
+  border-radius: 0;
+  font-family: var(--font-sans);
+  font-size: 0.96rem; /* Scaled down 20% from 1.2rem */
+  font-weight: 400; /* Less bold */
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  background-color: transparent; /* Outlined by default */
+  color: var(--color-bg);
+  transition: all 0.3s ease;
+}
+
+.cta-button:hover {
+  background-color: var(--color-bg); /* White/Bg color on hover */
+  color: var(--color-text); /* Black/Text color on hover */
+  border-color: var(--color-bg);
+}
+
+.footer-bottom {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-family: var(--font-sans);
+  font-size: 0.9rem;
+  color: rgba(255, 255, 255, 0.6); /* off-white copyright text */
+  border-top: 1px solid rgba(255, 255, 255, 0.25); /* off-white divider line */
+  padding-top: 2rem;
+}
+
+.social-links {
+  display: flex;
+  gap: 1.5rem;
+}
+
+.social-links a {
+  color: rgba(255, 255, 255, 0.6); /* off-white link color */
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+.social-links a:hover {
+  color: #ffffff;
+}
+
+@media (max-width: 768px) {
+  .footer-bottom {
+    flex-direction: column;
+    gap: 1.5rem;
+  }
+}
