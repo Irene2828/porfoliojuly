@@ -1,6 +1,6 @@
 .projects-section {
   background-color: #ffffff;
-  padding: 3rem 0;
+  padding: 0;
 }
 
 .hairline-divider {
@@ -9,8 +9,8 @@
 
 .project-section-block {
   width: 100%;
-  background: #ffffff; /* swapped to white background */
-  padding: 2.25rem 0 4.5rem 0; /* cut top padding by 50% */
+  background: #ffffff;
+  padding: 2rem 0;
   margin-bottom: 0;
   box-sizing: border-box;
   position: relative;
@@ -23,24 +23,16 @@
 
 .project-row {
   width: 100%;
-  max-width: 1200px;
+  max-width: 1296px;
   margin: 0 auto;
   padding: 0 var(--space-md);
   box-sizing: border-box;
-  color: #444444; /* dark text for cold grey bg contrast */
+  color: #446275;
 }
 
 .project-header {
   margin-bottom: 2.5rem;
   text-align: left;
-}
-
-.project-number {
-  font-family: var(--font-sans);
-  font-size: 0.9rem;
-  color: #555555;
-  display: block;
-  margin-bottom: 0.3rem;
 }
 
 .project-title {
@@ -55,16 +47,17 @@
 .project-subtitle {
   font-family: var(--font-sans);
   font-size: clamp(0.76rem, 1.2vw, 0.88rem);
-  color: #1a1a1a; /* dark text */
+  color: #3f87ac;
   line-height: 1.5;
   margin: 0;
   font-style: normal; /* non-italic text */
-  background: #efe5f7; /* warm light lilac purple fill */
-  border: 1px solid rgba(140, 99, 173, 0.5); /* 50% opacity matching border */
+  background: transparent;
+  border: none;
   border-radius: 0; /* no radius */
-  padding: 0.4rem 1.2rem;
+  padding: 0;
   display: inline-block;
   box-shadow: none;
+  position: relative;
 }
 
 .project-body-grid {
@@ -110,7 +103,7 @@
   top: 0.65rem;
   width: 5rem;
   height: 0;
-  border-bottom: 1px dashed #888888; /* thin elegant dashed stroke */
+  border-bottom: 1px dashed #7fb8dd;
   user-select: none;
   opacity: 0.7;
 }
@@ -122,8 +115,8 @@
   top: -3.5px;
   width: 6px;
   height: 6px;
-  border-left: 1px solid #888888; /* thin pointed line */
-  border-top: 1px solid #888888;
+  border-left: 1px solid #7fb8dd;
+  border-top: 1px solid #7fb8dd;
   transform: rotate(-45deg);
 }
 
@@ -133,7 +126,7 @@
   box-shadow: none;
   box-sizing: border-box;
   line-height: 1.6;
-  color: #555555;
+  color: #54728a;
   font-family: var(--font-sans);
   font-size: 0.95rem;
 }
@@ -190,8 +183,9 @@
 }
 
 .project-annotations-row {
-  margin-top: 1.75rem;
-  padding-top: 1.25rem;
+  margin-top: 2rem;
+  padding-top: 1.75rem;
+  padding-bottom: 2rem;
   box-sizing: border-box;
 }
 
@@ -210,7 +204,7 @@
   font-family: var(--font-sans);
   font-size: 0.76rem;
   line-height: 1.6;
-  color: #555555;
+  color: #3f87ac;
   display: flex;
   flex-direction: column;
   align-items: flex-start;
@@ -233,7 +227,7 @@
 
 .project-chip {
   display: inline-block;
-  background: #1a1a1a; /* solid off-black fill */
+  background: #3f87ac;
   color: #ffffff; /* white text */
   border: none;
   font-size: 0.62rem;
@@ -245,6 +239,24 @@
   margin-right: 0.5rem;
   border-radius: 20px; /* rounded */
   vertical-align: middle;
+}
+
+.annotation-stat {
+  font-size: clamp(1.73rem, 3.46vw, 2.76rem);
+  font-weight: 400; /* same weight as section headers */
+  color: #3f87ac;
+  line-height: 1.1;
+  letter-spacing: -0.01em;
+  margin-top: 3.25rem;
+  text-align: center;
+  width: 100%;
+  opacity: 0.9;
+}
+
+.websites-section,
+.workflow-section,
+.mobile-apps-section {
+  background: radial-gradient(circle at 50% 42%, #ffffff 0%, #f6fbfe 42%, #e9f6fd 100%);
 }
 
 @media (max-width: 900px) {
@@ -271,29 +283,32 @@
 
 .gold-divider {
   width: 100%;
-  height: 12rem; /* 30% smaller than 18rem */
+  height: 15rem;
   background: #ffffff;
   display: flex;
   align-items: center;
   justify-content: center;
 }
 
-.gold-divider::after {
-  content: '';
-  display: none; /* Hide dashed divider line */
+.gold-divider .section-divider-wrap {
+  padding: 0;
+  width: 100%;
+  background: transparent;
 }
 
 /* Websites Section Shadow - Premium lift effect */
 .websites-section {
   position: relative;
   z-index: 12;
-  background: linear-gradient(to bottom, #ffffff 0%, #e2e6ea 18%, #e2e6ea 82%, #ffffff 100%);
+  background:
+    linear-gradient(to bottom, #ffffff 0%, #ffffff 12%, #f6fbfe 24%, #f6fbfe 76%, #ffffff 88%, #ffffff 100%);
+  padding-bottom: 0;
   box-shadow: none;
 }
 
 /* Workflow Automation Section Styling */
 .workflow-section {
-  background: linear-gradient(to bottom, #ffffff 0%, #e2e6ea 18%, #e2e6ea 82%, #ffffff 100%);
+  background: linear-gradient(to bottom, #ffffff 0%, #ffffff 12%, #e4f2fc 24%, #e4f2fc 76%, #ffffff 88%, #ffffff 100%);
 }
 .workflow-section::before,
 .websites-section::before,
@@ -302,7 +317,7 @@
   position: absolute;
   inset: 0;
   pointer-events: none;
-  background-image: radial-gradient(rgba(124, 136, 147, 0.45) 1.2px, transparent 1.2px);
+  background-image: radial-gradient(rgba(123, 184, 224, 0.42) 1.2px, transparent 1.2px);
   background-size: 8px 8px;
   -webkit-mask-image: linear-gradient(to bottom, rgba(0,0,0,1) 0%, rgba(0,0,0,0) 16%, rgba(0,0,0,0) 84%, rgba(0,0,0,1) 100%);
   mask-image: linear-gradient(to bottom, rgba(0,0,0,1) 0%, rgba(0,0,0,0) 16%, rgba(0,0,0,0) 84%, rgba(0,0,0,1) 100%);
@@ -317,5 +332,8 @@
 
 /* Mobile Apps Section Styling */
 .mobile-apps-section {
-  background: linear-gradient(to bottom, #ffffff 0%, #e2e6ea 18%, #e2e6ea 82%, #ffffff 100%);
+  background: linear-gradient(to bottom, #ffffff 0%, #ffffff 12%, #e4f2fc 24%, #e4f2fc 76%, #ffffff 88%, #ffffff 100%);
+}
+.mobile-apps-section .project-visual {
+  max-width: 30%; /* 50% smaller than previous 60% */
 }

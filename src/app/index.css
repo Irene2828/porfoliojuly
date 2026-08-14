@@ -6,7 +6,11 @@
   
   --color-bg: #fdfdfd;
   --color-text: #0a0a0a;
-  --color-accent: #e5e5e5;
+  --color-accent: #dff1ff;
+  --color-accent-strong: #a7d8f7;
+  --color-accent-border: #b9e1fb;
+  --color-accent-soft: #eef8ff;
+  --color-accent-deep: #6cb8e8;
   
   --space-sm: 1rem;
   --space-md: 2rem;
@@ -68,7 +72,7 @@ h1, h2, h3, h4, h5, h6 {
 /* Layout */
 .container {
   width: 100%;
-  max-width: 1200px;
+  max-width: 1296px;
   margin: 0 auto;
   padding: 0 var(--space-md);
 }
@@ -109,29 +113,30 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 .btn-primary {
-  background: #efe5f7;
+  background: linear-gradient(180deg, #f4fbff 0%, #e4f4ff 100%);
   color: #1a1a1a;
-  border: 1px solid #8c63ad;
-  box-shadow: 6px 6px 0px rgba(140, 99, 173, 0.5);
+  border: 1px solid var(--color-accent-border);
+  box-shadow: 6px 6px 0px #cfe8f7;
   position: relative;
 }
 
 .btn-primary:hover {
-  background: #e3d3f2;
-  border-color: #7b529c;
+  background: linear-gradient(180deg, #eef8ff 0%, #d9effd 100%);
+  border-color: var(--color-accent-deep);
   transform: translate(2px, 2px);
-  box-shadow: 4px 4px 0px rgba(140, 99, 173, 0.5);
+  box-shadow: 4px 4px 0px #c5e0ef;
 }
 
 .btn-primary:active {
   transform: translate(5px, 5px);
-  box-shadow: 1px 1px 0px rgba(140, 99, 173, 0.5);
+  box-shadow: 1px 1px 0px #c5e0ef;
 }
 
 .btn-secondary {
   background: transparent;
-  color: #8c63ad;
+  color: #888888;
   border: 1px solid transparent;
+  font-weight: 300;
 }
 
 .btn-secondary:hover {

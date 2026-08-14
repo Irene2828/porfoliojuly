@@ -1,18 +1,13 @@
-import { useMemo } from 'react';
+'use client';
+
 import { motion } from 'framer-motion';
 import './Hero.css';
 import heroImage from '../assets/999.webp';
 
 export default function Hero() {
-  const heroBlocks = useMemo(() => {
-    return Array.from({ length: 100 }, (_, i) => {
-      const delay = Math.random() * 1.2;
-      return { id: i, delay };
-    });
-  }, []);
-
   return (
     <section className="hero-section">
+      <div className="hero-corner-scanner" aria-hidden="true"></div>
       <div className="container hero-container">
         <div className="hero-content">
           <div className="hero-name-group">
@@ -41,14 +36,14 @@ export default function Hero() {
             transition={{ duration: 0.4, delay: 0.2, ease: "easeOut" }}
             className="hero-intro-text"
           >
-            I turn vague problems into working tools — from first prototype to something real people use.
+            From unclear problems to clear digital solutions:
           </motion.p>
 
           <ul className="hero-bullets">
             {[
               'Workflow tools and internal products',
-              'Prototyping with AI-assisted development',
-              'UX and product design, start to shipped'
+              'Rapid prototyping and AI-assisted development',
+              'End-to-end UX and product design'
             ].map((bullet, idx) => (
               <motion.li
                 key={bullet}
@@ -78,31 +73,53 @@ export default function Hero() {
           initial={{ scale: 0.95, opacity: 0 }}
           animate={{ scale: 1, opacity: 1 }}
           transition={{ duration: 1.2, delay: 0.4, ease: "easeOut" }}
-          className="hero-image-wrapper"
+          className="hero-image-wrapper cv-scanner"
+          tabIndex={0}
         >
           <div className="hero-image-container">
             <img src={heroImage.src} alt="Iryna Sheremeta" className="hero-image" />
             <div className="hero-dot-overlay"></div>
-          </div>
-          
-          {/* Mosaic Grid Overlay on Mobile */}
-          <div className="hero-mosaic-grid">
-            {heroBlocks.map(b => (
-              <motion.div 
-                key={b.id}
-                style={{ 
-                  backgroundColor: '#ffffff',
-                  transformOrigin: 'center'
-                }} 
-                initial={{ scale: 1 }}
-                animate={{ scale: 0 }}
-                transition={{
-                  duration: 0.8,
-                  delay: 0.8 + b.delay,
-                  ease: "easeInOut"
-                }}
-              />
-            ))}
+
+            {/* CV Scanning Overlay */}
+            <div className="cv-overlay">
+              <div className="cv-scanline"></div>
+              <div className="cv-corner cv-tl"></div>
+              <div className="cv-corner cv-tr"></div>
+              <div className="cv-corner cv-bl"></div>
+              <div className="cv-corner cv-br"></div>
+              <div className="cv-crosshair"></div>
+            </div>
+
+            {/* Annotation Pointers */}
+            <div
+              className="cv-annotation cv-ann-1"
+            >
+              <div className="cv-pointer-line"></div>
+              <div className="cv-label">
+                <span className="cv-label-dot"></span>
+                DESIGN SENSIBILITY
+              </div>
+            </div>
+
+            <div
+              className="cv-annotation cv-ann-2"
+            >
+              <div className="cv-pointer-line"></div>
+              <div className="cv-label">
+                <span className="cv-label-dot"></span>
+                SYSTEMS THINKING
+              </div>
+            </div>
+
+            <div
+              className="cv-annotation cv-ann-3"
+            >
+              <div className="cv-pointer-line"></div>
+              <div className="cv-label">
+                <span className="cv-label-dot"></span>
+                TECHNICAL FLUENCY
+              </div>
+            </div>
           </div>
         </motion.div>
       </div>
