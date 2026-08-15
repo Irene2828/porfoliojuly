@@ -113,23 +113,23 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 .btn-primary {
-  background: linear-gradient(180deg, #f4fbff 0%, #e4f4ff 100%);
-  color: #1a1a1a;
-  border: 1px solid var(--color-accent-border);
-  box-shadow: 6px 6px 0px #cfe8f7;
+  background: #2f3336;
+  color: #ffffff;
+  border: 1px solid #2f3336;
+  box-shadow: 6px 6px 0px #a8d8f2;
+  padding-top: calc(1.1rem - 1px);
+  padding-bottom: calc(1.1rem - 1px);
   position: relative;
 }
 
 .btn-primary:hover {
-  background: linear-gradient(180deg, #eef8ff 0%, #d9effd 100%);
-  border-color: var(--color-accent-deep);
-  transform: translate(2px, 2px);
-  box-shadow: 4px 4px 0px #c5e0ef;
+  background: #3b4044;
+  border-color: #3b4044;
 }
 
 .btn-primary:active {
-  transform: translate(5px, 5px);
-  box-shadow: 1px 1px 0px #c5e0ef;
+  background: #34393d;
+  border-color: #34393d;
 }
 
 .btn-secondary {

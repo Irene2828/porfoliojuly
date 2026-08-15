@@ -39,6 +39,7 @@
   font-size: clamp(2rem, 4vw, 3.2rem);
   font-weight: 400;
   color: #1a1a1a; /* off-black */
+  -webkit-text-stroke: 0.35px #000000;
   margin-bottom: 0.8rem;
   line-height: 1.1;
   letter-spacing: -0.01em;
@@ -209,6 +210,7 @@
   flex-direction: column;
   align-items: flex-start;
   gap: 0.5rem;
+  min-height: 9.5rem;
 }
 
 .annotation-col strong {
@@ -229,7 +231,7 @@
   display: inline-block;
   background: #3f87ac;
   color: #ffffff; /* white text */
-  border: none;
+  border: 1px solid #7fb8dd;
   font-size: 0.62rem;
   font-family: var(--font-sans);
   font-weight: 600;
@@ -242,12 +244,13 @@
 }
 
 .annotation-stat {
-  font-size: clamp(1.73rem, 3.46vw, 2.76rem);
-  font-weight: 400; /* same weight as section headers */
+  font-family: var(--font-sans);
+  font-size: clamp(2.08rem, 4.15vw, 3.31rem);
+  font-weight: 500;
   color: #3f87ac;
   line-height: 1.1;
-  letter-spacing: -0.01em;
-  margin-top: 3.25rem;
+  letter-spacing: 0;
+  margin-top: auto;
   text-align: center;
   width: 100%;
   opacity: 0.9;

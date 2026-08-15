@@ -29,7 +29,7 @@
   -webkit-text-stroke: 0.4px #1a1a1a;
   margin: 0;
   max-width: 980px;
-  background: linear-gradient(90deg, rgba(171, 214, 243, 0) 0%, rgba(171, 214, 243, 0.42) 14%, rgba(171, 214, 243, 0.5) 50%, rgba(171, 214, 243, 0.28) 82%, rgba(171, 214, 243, 0) 100%);
+  background: linear-gradient(90deg, rgba(217, 238, 252, 0) 0%, rgba(232, 245, 255, 0.82) 14%, rgba(217, 238, 252, 0.95) 50%, rgba(247, 252, 255, 0.62) 82%, rgba(217, 238, 252, 0) 100%);
   box-decoration-break: clone;
   -webkit-box-decoration-break: clone;
   display: inline;

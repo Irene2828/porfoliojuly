@@ -179,7 +179,7 @@ export default function Projects({ initialProjects }: ProjectsProps) {
                         className="annotation-col"
                       >
                         <span className="project-chip">{item.chip}</span> {item.text}
-                        <div className="annotation-stat title-serif">{item.stat}</div>
+                        <div className="annotation-stat">{item.stat}</div>
                       </motion.div>
                     ))}
                   </div>

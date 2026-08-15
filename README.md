@@ -1,32 +1,58 @@
-# React + TypeScript + Vite
+# Agentic Portfolio Tool
 
-This template provides a minimal setup to get React working in Vite with HMR and some Oxlint rules.
+Next.js portfolio site with a protected admin workspace for project uploads,
+AI-assisted case-study writing, and publish workflow.
 
-Currently, two official plugins are available:
+## Local Development
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
-
-## React Compiler
-
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
-
-## Expanding the Oxlint configuration
-
-If you are developing a production application, we recommend enabling type-aware lint rules by installing `oxlint-tsgolint` and editing `.oxlintrc.json`:
-
-```json
-{
-  "$schema": "./node_modules/oxlint/configuration_schema.json",
-  "plugins": ["react", "typescript", "oxc"],
-  "options": {
-    "typeAware": true
-  },
-  "rules": {
-    "react/rules-of-hooks": "error",
-    "react/only-export-components": ["warn", { "allowConstantExport": true }]
-  }
-}
+```bash
+npm install
+npm run dev
 ```
 
-See the [Oxlint rules documentation](https://oxc.rs/docs/guide/usage/linter/rules) for the full list of rules and categories.
+The app runs at `http://localhost:3000` by default.
+
+## Required Environment Variables
+
+```bash
+DATABASE_URL=
+NEXTAUTH_SECRET=
+NEXTAUTH_URL=
+GITHUB_CLIENT_ID=
+GITHUB_CLIENT_SECRET=
+AUTHORIZED_GITHUB_ID=
+BLOB_READ_WRITE_TOKEN=
+GEMINI_API_KEY=
+GEMINI_MODEL=gemini-2.5-flash
+```
+
+`AUTHORIZED_GITHUB_ID` should be the only GitHub username allowed into `/admin`.
+
+## Admin Routes
+
+- `/admin` lists projects, supports publish/unpublish/archive/reorder.
+- `/admin/projects/new` creates a new draft.
+- `/admin/projects/[id]` edits project copy and uploads screens.
+- `/admin/upload` is a standalone Vercel Blob screen uploader.
+
+## API Routes
+
+- `POST /api/admin/upload` uploads one or more images to Vercel Blob.
+- `POST /api/admin/analyze-project` generates structured project copy with Gemini.
+- `POST /api/admin/generate-annotations` generates screen annotations with Gemini.
+
+All admin API routes require an authenticated admin session.
+
+## Validation
+
+Uploads allow `jpg`, `png`, `webp`, and `gif` files up to `10 MB` each.
+Gemini responses are validated with Zod before returning to the UI.
+
+## Production Checks
+
+```bash
+npm run build
+```
+
+DB-backed pages use dynamic rendering so Vercel does not need to query Neon while
+pre-rendering the public home page or admin pages.

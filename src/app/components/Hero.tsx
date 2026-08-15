@@ -7,7 +7,6 @@ import heroImage from '../assets/999.webp';
 export default function Hero() {
   return (
     <section className="hero-section">
-      <div className="hero-corner-scanner" aria-hidden="true"></div>
       <div className="container hero-container">
         <div className="hero-content">
           <div className="hero-name-group">
@@ -64,7 +63,7 @@ export default function Hero() {
           >
             <a href="#contact" className="btn btn-primary">LET'S WORK ON YOUR NEXT BUILD</a>
             <a href="#work" className="btn btn-secondary">
-              VIEW SELECTED WORK <span className="arrow">↓</span>
+              SEE WORK EXAMPLES <span className="arrow">↓</span>
             </a>
           </motion.div>
         </div>

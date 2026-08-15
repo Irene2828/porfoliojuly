@@ -11,6 +11,8 @@ import { db } from '@/db';
 import { projects, screens, annotations } from '@/db/schema';
 import { eq, asc } from 'drizzle-orm';
 
+export const dynamic = 'force-dynamic';
+
 export default async function HomePage() {
   // Fetch published projects with nested screens and annotations
   const publishedProjects = await db.query.projects.findMany({
