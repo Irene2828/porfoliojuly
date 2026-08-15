@@ -9,6 +9,21 @@
   padding: 8rem 0 4rem 0;
 }
 
+.hero-section::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: min(28vw, 360px);
+  height: min(38vh, 360px);
+  pointer-events: none;
+  background-image: radial-gradient(rgba(63, 135, 172, 0.34) 1px, transparent 1px);
+  background-size: 8px 8px;
+  clip-path: polygon(0 0, 100% 0, 0 100%);
+  opacity: 0.55;
+  z-index: 0;
+}
+
 .hero-container {
   display: flex;
   flex-direction: row;
@@ -47,7 +62,7 @@
   color: #000000;
   text-transform: uppercase;
   letter-spacing: 0.1em;
-  font-weight: 400;
+  font-weight: 300;
   -webkit-font-smoothing: antialiased;
 }
 
@@ -140,14 +155,14 @@
   background-size: 8px 8px;
   -webkit-mask-image: linear-gradient(135deg, rgba(0,0,0,1) 0%, rgba(0,0,0,0.05) 85%);
   mask-image: linear-gradient(135deg, rgba(0,0,0,1) 0%, rgba(0,0,0,0.05) 85%);
-  opacity: 0;
+  opacity: 1;
   z-index: 5;
   transition: opacity 0.45s ease;
 }
 
 .cv-scanner:hover .hero-dot-overlay,
 .cv-scanner:focus-visible .hero-dot-overlay {
-  opacity: 1;
+  opacity: 0.78;
 }
 
 .hero-image {
@@ -212,6 +227,13 @@
   inset: 0;
   pointer-events: none;
   z-index: 5;
+  opacity: 0;
+  transition: opacity 0.35s ease;
+}
+
+.cv-scanner:hover .cv-overlay,
+.cv-scanner:focus-visible .cv-overlay {
+  opacity: 1;
 }
 
 /* Animated scan line sweeping down */
