@@ -9,19 +9,19 @@ export default function Header() {
     visible: {
       opacity: 1,
       transition: {
-        staggerChildren: 0.15,
-        delayChildren: 0.8, // Wait for the initial elegant reveal
+        staggerChildren: 0,
+        delayChildren: 0,
       }
     }
   };
 
   const itemVariants: any = {
-    hidden: { y: -20, opacity: 0, filter: 'blur(10px)' },
+    hidden: { y: -6, opacity: 0, filter: 'blur(4px)' },
     visible: { 
       y: 0, 
       opacity: 1, 
       filter: 'blur(0px)',
-      transition: { duration: 1, ease: [0.2, 0.8, 0.2, 1] } 
+      transition: { duration: 0.42, ease: [0.2, 0.8, 0.2, 1] } 
     }
   };
 

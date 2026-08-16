@@ -1,6 +1,7 @@
 'use client';
 
 import { useMemo, useRef, useState } from 'react';
+import { useRouter } from 'next/navigation';
 
 import {
   ALLOWED_IMAGE_TYPES,
@@ -32,6 +33,7 @@ type ScreenUploaderProps = {
 };
 
 export default function ScreenUploader({ projectId, onUploaded }: ScreenUploaderProps) {
+  const router = useRouter();
   const [queuedFiles, setQueuedFiles] = useState<QueuedFile[]>([]);
   const [uploadedScreens, setUploadedScreens] = useState<UploadedScreen[]>([]);
   const [error, setError] = useState<string | null>(null);
@@ -105,17 +107,19 @@ export default function ScreenUploader({ projectId, onUploaded }: ScreenUploader
         body: formData,
       });
 
-      const payload = await response.json();
+      const responseText = await response.text();
+      const payload = responseText ? JSON.parse(responseText) : null;
       if (!response.ok) {
-        throw new Error(payload.error || 'Upload failed.');
+        throw new Error(payload?.error || responseText || 'Upload failed.');
       }
 
-      setUploadedScreens(payload.screens);
-      onUploaded?.(payload.screens);
+      setUploadedScreens(payload.screens || []);
+      onUploaded?.(payload.screens || []);
       queuedFiles.forEach((item) => URL.revokeObjectURL(item.previewUrl));
       setQueuedFiles([]);
+      router.refresh();
     } catch (err) {
-      setError(err instanceof Error ? err.message : 'Upload failed.');
+      setError(err instanceof SyntaxError ? 'Upload returned an invalid response. Check your auth/session and Blob env.' : err instanceof Error ? err.message : 'Upload failed.');
     } finally {
       setIsUploading(false);
     }

@@ -4,7 +4,7 @@
     radial-gradient(circle at 15% 0%, rgba(168, 216, 242, 0.35), transparent 28rem),
     #f8fbfd;
   color: #1a1a1a;
-  padding: 4rem 1.5rem;
+  padding: 3rem 1.5rem;
 }
 
 .admin-page {
@@ -173,6 +173,29 @@
 .admin-panel h2 {
   font-family: var(--font-serif);
   font-size: 1.8rem;
+}
+
+.admin-edit-details {
+  background: rgba(255, 255, 255, 0.7);
+  border: 1px solid rgba(63, 135, 172, 0.16);
+  margin-top: 2rem;
+  padding: 1rem;
+}
+
+.admin-edit-details summary {
+  color: #3f87ac;
+  cursor: pointer;
+  font-family: var(--font-sans);
+  font-size: 0.74rem;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+}
+
+.admin-edit-details .admin-form {
+  border: 0;
+  margin-top: 1rem;
+  padding: 0;
 }
 
 .admin-screen-grid {

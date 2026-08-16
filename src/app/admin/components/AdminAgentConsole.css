@@ -1,0 +1,102 @@
+.admin-agent-console {
+  min-height: calc(100vh - 8rem);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  margin: 0 auto;
+  max-width: 880px;
+}
+
+.agent-chat-box {
+  background: transparent;
+  border: 0;
+  box-shadow: none;
+  display: grid;
+  gap: 1rem;
+  padding: 0;
+}
+
+.agent-file-drop {
+  align-items: center;
+  border: 1.5px dashed rgba(63, 135, 172, 0.45);
+  color: #3f87ac;
+  cursor: pointer;
+  display: flex;
+  font-family: var(--font-sans);
+  font-size: 0.78rem;
+  font-weight: 800;
+  justify-content: center;
+  letter-spacing: 0.12em;
+  min-height: 96px;
+  padding: 1rem;
+  text-transform: uppercase;
+}
+
+.agent-file-drop input {
+  display: none;
+}
+
+.agent-chat-box textarea,
+.agent-chat-box select {
+  background: #ffffff;
+  border: 1px solid rgba(63, 135, 172, 0.2);
+  color: #1a1a1a;
+  font-family: var(--font-sans);
+  font-size: 1rem;
+  line-height: 1.55;
+  padding: 1rem;
+}
+
+.agent-run-row {
+  display: grid;
+  gap: 1rem;
+  grid-template-columns: 1fr auto;
+}
+
+.agent-run-row button {
+  background: #2f3336;
+  border: 1px solid #2f3336;
+  color: #ffffff;
+  cursor: pointer;
+  font-family: var(--font-sans);
+  font-size: 0.8rem;
+  font-weight: 800;
+  letter-spacing: 0.12em;
+  padding: 0 1.4rem;
+  text-transform: uppercase;
+}
+
+.agent-run-row button:hover:not(:disabled) {
+  background: #3b4044;
+  border-color: #3b4044;
+}
+
+.agent-run-row button:disabled {
+  cursor: not-allowed;
+  opacity: 0.5;
+}
+
+.agent-console-error,
+.agent-console-success {
+  font-family: var(--font-sans);
+  font-weight: 700;
+  margin: 1.5rem 0 0;
+}
+
+.agent-console-error {
+  color: #b42318;
+}
+
+.agent-console-success {
+  color: #1f7a43;
+}
+
+@media (max-width: 720px) {
+  .agent-run-row {
+    grid-template-columns: 1fr;
+  }
+
+  .agent-run-row button {
+    min-height: 54px;
+  }
+}

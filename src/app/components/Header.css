@@ -1,4 +1,7 @@
 .premium-header {
+  --hero-visual-width: min(32vw, 380px);
+  --hero-stage-width: min(100vw, 1296px);
+  --hero-swap-distance: calc(var(--hero-stage-width) - var(--hero-visual-width));
   position: absolute;
   top: 0;
   left: 50%;
@@ -60,6 +63,18 @@
   display: flex;
   gap: 3rem;
   line-height: 1;
+  animation: headerNavSwap 5.25s cubic-bezier(0.16, 1, 0.3, 1) both;
+}
+
+@keyframes headerNavSwap {
+  0%,
+  32% {
+    transform: translateX(0);
+  }
+
+  100% {
+    transform: translateX(calc(-1 * var(--hero-swap-distance)));
+  }
 }
 
 .nav-link {
@@ -68,7 +83,7 @@
   font-weight: 500;
   text-transform: uppercase;
   letter-spacing: 0.1em;
-  color: #3f87ac;
+  color: #0a0a0a;
   text-decoration: none;
   position: relative;
   overflow: hidden;
@@ -83,7 +98,7 @@
   left: 0;
   width: 100%;
   height: 1px;
-  background-color: #3f87ac;
+  background-color: #0a0a0a;
   transform: translateX(-101%);
   transition: transform 0.4s cubic-bezier(0.2, 0.8, 0.2, 1);
 }

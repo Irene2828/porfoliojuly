@@ -9,11 +9,12 @@ export default function Hero() {
     <section className="hero-section">
       <div className="container hero-container">
         <div className="hero-content">
+          <div className="hero-copy-motion">
           <div className="hero-name-group">
             <motion.div
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
-              transition={{ duration: 0.4, ease: "easeOut" }}
+              transition={{ duration: 0.45, ease: "easeOut" }}
               className="hero-text"
             >
               <h1 className="title-serif text-huge">Iryna</h1>
@@ -22,7 +23,7 @@ export default function Hero() {
             <motion.div
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
-              transition={{ duration: 0.4, delay: 0.1, ease: "easeOut" }}
+              transition={{ duration: 0.45, delay: 0.06, ease: "easeOut" }}
               className="hero-text"
             >
               <h1 className="title-serif text-huge">Sheremeta</h1>
@@ -32,7 +33,7 @@ export default function Hero() {
           <motion.p
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
-            transition={{ duration: 0.4, delay: 0.2, ease: "easeOut" }}
+            transition={{ duration: 0.45, delay: 0.12, ease: "easeOut" }}
             className="hero-intro-text"
           >
             From unclear problems to clear digital solutions:
@@ -48,7 +49,7 @@ export default function Hero() {
                 key={bullet}
                 initial={{ y: 20, opacity: 0 }}
                 animate={{ y: 0, opacity: 1 }}
-                transition={{ duration: 0.8, delay: 0.5 + idx * 0.1, ease: "easeOut" }}
+                transition={{ duration: 0.6, delay: 0.28 + idx * 0.08, ease: "easeOut" }}
               >
                 &ndash; {bullet}
               </motion.li>
@@ -58,7 +59,7 @@ export default function Hero() {
           <motion.div
             initial={{ y: 20, opacity: 0 }}
             animate={{ y: 0, opacity: 1 }}
-            transition={{ duration: 1, delay: 0.8, ease: [0.16, 1, 0.3, 1] }}
+            transition={{ duration: 0.65, delay: 0.55, ease: [0.16, 1, 0.3, 1] }}
             className="hero-ctas"
           >
             <a href="#contact" className="btn btn-primary">LET'S WORK ON YOUR NEXT BUILD</a>
@@ -66,12 +67,10 @@ export default function Hero() {
               SEE WORK EXAMPLES <span className="arrow">↓</span>
             </a>
           </motion.div>
+          </div>
         </div>
 
-        <motion.div
-          initial={{ scale: 0.95, opacity: 0 }}
-          animate={{ scale: 1, opacity: 1 }}
-          transition={{ duration: 1.2, delay: 0.4, ease: "easeOut" }}
+        <div
           className="hero-image-wrapper cv-scanner"
           tabIndex={0}
         >
@@ -120,7 +119,7 @@ export default function Hero() {
               </div>
             </div>
           </div>
-        </motion.div>
+        </div>
       </div>
     </section>
   );

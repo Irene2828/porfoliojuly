@@ -1,0 +1,155 @@
+.agent-generator {
+  background: linear-gradient(135deg, rgba(232, 245, 255, 0.92), rgba(255, 255, 255, 0.92));
+  border: 1px solid rgba(63, 135, 172, 0.24);
+  display: grid;
+  gap: 1rem;
+  margin-top: 2rem;
+  padding: 1.2rem;
+}
+
+.agent-preview {
+  background: #ffffff;
+  border: 1px solid rgba(63, 135, 172, 0.16);
+  margin-top: 1rem;
+  overflow: hidden;
+}
+
+.agent-preview-bar {
+  align-items: center;
+  border-bottom: 1px solid rgba(63, 135, 172, 0.16);
+  display: flex;
+  justify-content: space-between;
+  padding: 1rem;
+}
+
+.agent-preview .projects-section {
+  background: #ffffff;
+}
+
+.agent-preview .project-section-block {
+  padding-left: 1rem;
+  padding-right: 1rem;
+}
+
+.agent-preview .hairline-divider,
+.agent-preview .gold-divider {
+  display: none;
+}
+
+.agent-edit-details {
+  border-top: 1px solid rgba(63, 135, 172, 0.16);
+  padding: 1rem;
+}
+
+.agent-edit-details summary {
+  color: #3f87ac;
+  cursor: pointer;
+  font-family: var(--font-sans);
+  font-size: 0.74rem;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+}
+
+.agent-edit-details label {
+  margin-top: 1rem;
+}
+
+.agent-edit-details input {
+  background: #ffffff;
+  border: 1px solid rgba(63, 135, 172, 0.24);
+  color: #1a1a1a;
+  font: inherit;
+  font-size: 0.95rem;
+  letter-spacing: 0;
+  padding: 0.8rem;
+  text-transform: none;
+}
+
+.agent-generator h2 {
+  font-family: var(--font-serif);
+  font-size: clamp(1.6rem, 3vw, 2.2rem);
+  margin: 0 0 0.5rem;
+}
+
+.agent-generator p {
+  color: #4f5961;
+  margin: 0;
+}
+
+.agent-eyebrow {
+  color: #3f87ac !important;
+  font-family: var(--font-sans);
+  font-size: 0.7rem;
+  font-weight: 700;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+}
+
+.agent-generator label {
+  color: #3f87ac;
+  display: grid;
+  font-family: var(--font-sans);
+  font-size: 0.74rem;
+  font-weight: 700;
+  gap: 0.45rem;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+}
+
+.agent-generator textarea,
+.agent-generator select {
+  background: #ffffff;
+  border: 1px solid rgba(63, 135, 172, 0.24);
+  color: #1a1a1a;
+  font: inherit;
+  font-size: 0.95rem;
+  letter-spacing: 0;
+  padding: 0.8rem;
+  text-transform: none;
+}
+
+.agent-checkbox {
+  align-items: center;
+  display: flex !important;
+  flex-direction: row;
+  gap: 0.6rem !important;
+}
+
+.agent-checkbox input {
+  accent-color: #3f87ac;
+}
+
+.agent-generator button {
+  background: #2f3336;
+  border: 1px solid #2f3336;
+  color: #ffffff;
+  cursor: pointer;
+  font-family: var(--font-sans);
+  font-size: 0.72rem;
+  font-weight: 700;
+  justify-self: flex-start;
+  letter-spacing: 0.08em;
+  padding: 0.85rem 1rem;
+  text-transform: uppercase;
+}
+
+.agent-generator button:hover:not(:disabled) {
+  background: #3b4044;
+  border-color: #3b4044;
+}
+
+.agent-generator button:disabled {
+  cursor: not-allowed;
+  opacity: 0.5;
+}
+
+.agent-error {
+  color: #b42318 !important;
+  font-weight: 700;
+}
+
+.agent-success {
+  color: #1f7a43 !important;
+  font-weight: 700;
+}
