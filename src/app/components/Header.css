@@ -1,13 +1,15 @@
 .premium-header {
-  --hero-visual-width: min(32vw, 380px);
-  --hero-stage-width: min(100vw, 1296px);
+  --hero-visual-width: min(30vw, 380px);
+  --hero-stage-width: min(calc(100vw - 4rem), 1166px);
   --hero-swap-distance: calc(var(--hero-stage-width) - var(--hero-visual-width));
+  --hero-image-swap-distance: calc(var(--hero-swap-distance) * 0.9);
+  --hero-nav-frame-offset: clamp(0rem, calc((100vw - 70rem) * 0.15), 3rem);
   position: absolute;
   top: 0;
   left: 50%;
   transform: translateX(-50%);
   width: 100%;
-  max-width: 1296px; /* Boutique width */
+  max-width: var(--hero-stage-width); /* Boutique width */
   display: flex;
   justify-content: flex-end;
   align-items: center;
@@ -73,7 +75,7 @@
   }
 
   100% {
-    transform: translateX(calc(-1 * var(--hero-swap-distance)));
+    transform: translateX(calc(-1 * var(--hero-image-swap-distance) - var(--hero-nav-frame-offset)));
   }
 }
 

@@ -4,8 +4,14 @@ const GEMINI_API_BASE = 'https://generativelanguage.googleapis.com/v1beta';
 
 type JsonSchema = Record<string, unknown>;
 
+type GeminiImageInput = {
+  uri: string;
+  mimeType?: string;
+};
+
 type GenerateJsonOptions<T> = {
   prompt: string;
+  images?: GeminiImageInput[];
   responseSchema: JsonSchema;
   validator: z.ZodType<T>;
   model?: string;
@@ -15,6 +21,7 @@ export class GeminiConfigError extends Error {}
 
 export async function generateGeminiJson<T>({
   prompt,
+  images = [],
   responseSchema,
   validator,
   model = process.env.GEMINI_MODEL || 'gemini-3.6-flash',
@@ -25,6 +32,17 @@ export async function generateGeminiJson<T>({
     throw new GeminiConfigError('GEMINI_API_KEY is not configured.');
   }
 
+  const input = images.length
+    ? [
+        { type: 'text', text: prompt },
+        ...images.map((image) => ({
+          type: 'image',
+          uri: image.uri,
+          mime_type: image.mimeType || inferImageMimeType(image.uri),
+        })),
+      ]
+    : prompt;
+
   const response = await fetch(`${GEMINI_API_BASE}/interactions`, {
     method: 'POST',
     headers: {
@@ -33,7 +51,7 @@ export async function generateGeminiJson<T>({
     },
     body: JSON.stringify({
       model,
-      input: prompt,
+      input,
       generation_config: {
         temperature: 0.4,
       },
@@ -63,6 +81,17 @@ export async function generateGeminiJson<T>({
   }
 
   return validator.parse(JSON.parse(text));
+}
+
+export function inferImageMimeType(url: string) {
+  const cleanUrl = url.split('?')[0]?.toLowerCase() || '';
+
+  if (cleanUrl.endsWith('.png')) return 'image/png';
+  if (cleanUrl.endsWith('.jpg') || cleanUrl.endsWith('.jpeg')) return 'image/jpeg';
+  if (cleanUrl.endsWith('.webp')) return 'image/webp';
+  if (cleanUrl.endsWith('.gif')) return 'image/gif';
+
+  return 'image/png';
 }
 
 export const projectAnalysisValidator = z.object({

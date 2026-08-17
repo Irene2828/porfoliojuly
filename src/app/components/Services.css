@@ -63,6 +63,7 @@
 
 .service-title {
   font-size: 2rem;
+  font-weight: 500;
   margin-bottom: 2rem;
   position: relative;
   display: inline-block;

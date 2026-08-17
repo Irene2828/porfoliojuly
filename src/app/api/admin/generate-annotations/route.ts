@@ -42,11 +42,11 @@ export async function POST(request: Request) {
     const result = await generateGeminiJson({
       validator: annotationGenerationValidator,
       responseSchema: annotationGenerationResponseSchema,
+      images: [{ uri: screenUrl }],
       prompt: `
 Generate ${count} portfolio annotations for this project screen.
 
 Project: ${projectTitle}
-Screen URL: ${screenUrl}
 Context:
 ${context}
 

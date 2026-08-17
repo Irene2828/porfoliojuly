@@ -96,6 +96,7 @@ export async function POST(request: Request) {
     const generated = await generateGeminiJson({
       validator: agentProjectGenerationValidator,
       responseSchema: agentProjectGenerationResponseSchema,
+      images: [{ uri: blob.url, mimeType: file.type }],
       prompt: `
 You are the agent inside Iryna Sheremeta's portfolio admin.
 
@@ -113,7 +114,6 @@ Guardrails:
 Selected section to replace:
 Current title: ${project.title}
 Current subline: ${project.caseStudyIntro || 'None'}
-New visual URL: ${blob.url}
 Visual filename: ${file.name}
 
 User prompt:

@@ -63,6 +63,7 @@ export async function POST(request: Request, { params }: { params: Promise<{ id:
     const generated = await generateGeminiJson({
       validator: agentProjectGenerationValidator,
       responseSchema: agentProjectGenerationResponseSchema,
+      images: [{ uri: targetScreen.originalUrl }],
       prompt: `
 You are an autonomous portfolio editor for Iryna Sheremeta's case-study site.
 
@@ -80,7 +81,6 @@ Your job:
 Existing project:
 Title: ${project.title}
 Subline: ${project.caseStudyIntro || 'None yet'}
-Screen URL: ${targetScreen.originalUrl}
 Screen alt text: ${targetScreen.altText || 'None'}
 
 User instruction:

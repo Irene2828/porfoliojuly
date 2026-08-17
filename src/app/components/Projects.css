@@ -37,7 +37,7 @@
 
 .project-title {
   font-size: clamp(2rem, 4vw, 3.2rem);
-  font-weight: 400;
+  font-weight: 500;
   color: #1a1a1a; /* off-black */
   -webkit-text-stroke: 0.35px #000000;
   margin-bottom: 0.8rem;
@@ -47,7 +47,7 @@
 
 .project-subtitle {
   font-family: var(--font-sans);
-  font-size: clamp(0.76rem, 1.2vw, 0.88rem);
+  font-size: clamp(0.885rem, 1.2vw, 1.005rem);
   color: #3f87ac;
   line-height: 1.5;
   margin: 0;
@@ -203,7 +203,7 @@
   box-shadow: none;
   box-sizing: border-box;
   font-family: var(--font-sans);
-  font-size: 0.76rem;
+  font-size: 0.885rem;
   line-height: 1.6;
   color: #3f87ac;
   display: flex;

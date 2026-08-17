@@ -42,6 +42,7 @@ export async function POST(request: Request) {
     const analysis = await generateGeminiJson({
       validator: projectAnalysisValidator,
       responseSchema: projectAnalysisResponseSchema,
+      images: screenshots.map((uri) => ({ uri })),
       prompt: `
 You are helping write concise portfolio case-study content for a designer/product builder.
 
@@ -51,7 +52,7 @@ Brief:
 ${brief}
 
 Screenshot URLs:
-${screenshots.length ? screenshots.join('\n') : 'No screenshots provided.'}
+${screenshots.length ? `${screenshots.length} screenshot image(s) attached.` : 'No screenshots provided.'}
 
 Write in a crisp, grounded, non-hype voice. Avoid generic phrases.
       `.trim(),
