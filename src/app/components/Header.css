@@ -3,6 +3,9 @@
   --hero-stage-width: min(calc(100vw - 4rem), 1166px);
   --hero-swap-distance: calc(var(--hero-stage-width) - var(--hero-visual-width));
   --hero-image-swap-distance: calc(var(--hero-swap-distance) * 0.9);
+  --hero-intro-delay: 0.9s;
+  --hero-motion-duration: 1.92s;
+  --hero-scan-delay: calc(var(--hero-intro-delay) + var(--hero-motion-duration) - 1s);
   --hero-nav-frame-offset: clamp(0rem, calc((100vw - 70rem) * 0.15), 3rem);
   position: absolute;
   top: 0;
@@ -65,17 +68,24 @@
   display: flex;
   gap: 3rem;
   line-height: 1;
-  animation: headerNavSwap 5.25s cubic-bezier(0.16, 1, 0.3, 1) both;
+  opacity: 0;
+  animation: headerNavSwap 3.47s cubic-bezier(0.16, 1, 0.3, 1) both;
+  animation-delay: var(--hero-scan-delay);
 }
 
 @keyframes headerNavSwap {
-  0%,
-  32% {
-    transform: translateX(calc(-1 * var(--hero-image-swap-distance)));
+  0% {
+    opacity: 0;
+    transform: translateX(calc(var(--hero-image-swap-distance) * 1.55));
+  }
+
+  8% {
+    opacity: 1;
   }
 
   100% {
-    transform: translateX(0);
+    opacity: 1;
+    transform: translateX(calc(var(--hero-image-swap-distance) * 1.02));
   }
 }
 
@@ -118,13 +128,14 @@
     z-index: 250;
     isolation: isolate;
     background: rgba(255, 255, 255, 0.98);
-    border-bottom: 1px solid rgba(10, 10, 10, 0.06);
+    border-bottom: 0;
   }
   .header-nav {
     width: 100%;
     justify-content: center;
     gap: clamp(0.9rem, 4vw, 1.5rem);
     flex-wrap: nowrap;
+    opacity: 1;
     animation: none;
     transform: none;
   }

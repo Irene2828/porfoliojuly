@@ -119,6 +119,7 @@ export default function Hero() {
               </div>
             </div>
           </div>
+          <span className="hero-hover-surface" aria-hidden="true"></span>
         </div>
       </div>
     </section>

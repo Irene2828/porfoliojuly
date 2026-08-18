@@ -1,7 +1,7 @@
 .footer {
-  background: linear-gradient(90deg, rgba(217, 238, 252, 0.34) 0%, rgba(232, 245, 255, 0.82) 16%, rgba(217, 238, 252, 0.95) 50%, rgba(247, 252, 255, 0.72) 84%, rgba(217, 238, 252, 0.34) 100%);
-  color: #17354a;
-  padding: 4rem 0 2rem;
+  background: linear-gradient(180deg, #34383b 0%, #282c2f 100%);
+  color: rgba(255, 255, 255, 0.9);
+  padding: 1.5rem 0 2rem;
   text-align: center;
 }
 
@@ -49,9 +49,9 @@
   align-items: center;
   font-family: var(--font-sans);
   font-size: 0.9rem;
-  color: rgba(23, 53, 74, 0.72);
-  border-top: 1px solid rgba(23, 53, 74, 0.16);
-  padding-top: 2rem;
+  color: rgba(255, 255, 255, 0.72);
+  border-top: 0;
+  padding-top: 0;
 }
 
 .social-links {
@@ -60,13 +60,13 @@
 }
 
 .social-links a {
-  color: rgba(23, 53, 74, 0.72);
+  color: rgba(255, 255, 255, 0.72);
   text-decoration: none;
   transition: color 0.3s ease;
 }
 
 .social-links a:hover {
-  color: #17354a;
+  color: #ffffff;
 }
 
 @media (max-width: 768px) {
