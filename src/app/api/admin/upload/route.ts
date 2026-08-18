@@ -1,6 +1,7 @@
 import { put } from '@vercel/blob';
 import { getServerSession } from 'next-auth';
 import { NextResponse } from 'next/server';
+import { desc, eq } from 'drizzle-orm';
 
 import { db } from '@/db';
 import { screens } from '@/db/schema';
@@ -56,6 +57,16 @@ export async function POST(request: Request) {
     }
 
     const uploadedScreens: UploadedScreen[] = [];
+    let nextDisplayOrder: number | null = null;
+
+    if (typeof projectId === 'string' && projectId.length > 0) {
+      const latestScreen = await db.query.screens.findFirst({
+        where: eq(screens.projectId, projectId),
+        orderBy: [desc(screens.displayOrder)],
+      });
+
+      nextDisplayOrder = (latestScreen?.displayOrder ?? -1) + 1;
+    }
 
     for (const [index, file] of files.entries()) {
       const safeName = sanitizeFilename(file.name) || `screen-${index + 1}`;
@@ -77,7 +88,7 @@ export async function POST(request: Request) {
           projectId,
           originalUrl: blob.url,
           altText: file.name.replace(/\.[^.]+$/, ''),
-          displayOrder: Date.now() + index,
+          displayOrder: (nextDisplayOrder ?? 0) + index,
         }).returning();
 
         uploaded.id = screen.id;
@@ -88,8 +99,16 @@ export async function POST(request: Request) {
 
     return NextResponse.json({ screens: uploadedScreens });
   } catch (error) {
+    const cause = error instanceof Error && 'cause' in error && error.cause instanceof Error ? error.cause : undefined;
+    console.error('Admin upload failed:', error);
+    if (cause) {
+      console.error('Admin upload failed cause:', cause);
+    }
+
     return NextResponse.json(
-      { error: error instanceof Error ? error.message : 'Upload failed.' },
+      {
+        error: cause?.message || (error instanceof Error ? error.message : 'Upload failed.'),
+      },
       { status: 500 },
     );
   }

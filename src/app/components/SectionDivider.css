@@ -12,7 +12,7 @@
 
 .page-section-divider-work {
   height: auto;
-  padding-top: 0.625rem;
+  padding-top: 4rem;
   padding-bottom: 5rem;
 }
 
@@ -33,7 +33,7 @@
   align-items: center;
   justify-content: center;
   gap: 1rem;
-  padding: 2rem 0;
+  padding: 0;
   background: #ffffff;
 }
 
@@ -54,6 +54,10 @@
 }
 
 @media (max-width: 768px) {
+  .page-section-divider-work {
+    padding-top: 2.5rem;
+  }
+
   .section-divider-wrap {
     padding: 1.5rem 0;
   }

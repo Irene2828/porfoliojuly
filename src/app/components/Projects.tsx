@@ -63,21 +63,21 @@ export default function Projects({ initialProjects }: ProjectsProps) {
         const annotationsList = mainScreen?.annotations || [];
 
         // Build bottom annotations list dynamically based on project content
-        const bottomAnnotations: { chip: string; text: string; stat: string }[] = [];
+        const bottomAnnotations: { chip: string; text: string; stat: string; statLabel: string }[] = [];
         if (project.problem) {
-          bottomAnnotations.push({ chip: 'Problem', text: project.problem, stat: '85%' });
+          bottomAnnotations.push({ chip: 'Problem', text: project.problem, stat: '85%', statLabel: 'success rate' });
         }
         if (project.buildApproach) {
-          bottomAnnotations.push({ chip: 'Built with', text: project.buildApproach, stat: '22 less' });
+          bottomAnnotations.push({ chip: 'Built with', text: project.buildApproach, stat: '22 less', statLabel: 'reports filed' });
         }
         if (project.impact) {
-          bottomAnnotations.push({ chip: 'Impact', text: project.impact, stat: '1 in 4 users' });
+          bottomAnnotations.push({ chip: 'Impact', text: project.impact, stat: '1 in 4 users', statLabel: 'completed' });
         }
         if (project.bullet1 && project.slug === 'websites') {
-          bottomAnnotations.push({ chip: 'Tech Stack', text: project.bullet1, stat: '85%' });
+          bottomAnnotations.push({ chip: 'Tech Stack', text: project.bullet1, stat: '85%', statLabel: 'success rate' });
         }
         if (project.bullet2 && project.slug === 'websites') {
-          bottomAnnotations.push({ chip: 'Status', text: project.bullet2, stat: '22 less' });
+          bottomAnnotations.push({ chip: 'Status', text: project.bullet2, stat: '22 less', statLabel: 'reports filed' });
         }
 
         return (
@@ -180,6 +180,7 @@ export default function Projects({ initialProjects }: ProjectsProps) {
                       >
                         <span className="project-chip">{item.chip}</span> {item.text}
                         <div className="annotation-stat">{item.stat}</div>
+                        <div className="annotation-stat-label">{item.statLabel}</div>
                       </motion.div>
                     ))}
                   </div>
@@ -190,7 +191,7 @@ export default function Projects({ initialProjects }: ProjectsProps) {
             {/* Render transitional gold divider for all but the last project */}
             {index < initialProjects.length - 1 && (
               <div className="gold-divider">
-                <SectionDivider />
+                <SectionDivider label={`Case ${index + 2}`} />
               </div>
             )}
           </div>

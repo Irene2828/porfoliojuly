@@ -1,9 +1,21 @@
 'use client';
 
+import { useEffect, useState } from 'react';
 import { motion } from 'framer-motion';
 import './Header.css';
 
 export default function Header() {
+  const [isMobile, setIsMobile] = useState(false);
+
+  useEffect(() => {
+    const mediaQuery = window.matchMedia('(max-width: 768px)');
+    const updateIsMobile = () => setIsMobile(mediaQuery.matches);
+
+    updateIsMobile();
+    mediaQuery.addEventListener('change', updateIsMobile);
+    return () => mediaQuery.removeEventListener('change', updateIsMobile);
+  }, []);
+
   const containerVariants: any = {
     hidden: { opacity: 0 },
     visible: {
@@ -15,15 +27,22 @@ export default function Header() {
     }
   };
 
-  const itemVariants: any = {
-    hidden: { y: -6, opacity: 0, filter: 'blur(4px)' },
-    visible: { 
-      y: 0, 
-      opacity: 1, 
-      filter: 'blur(0px)',
-      transition: { duration: 0.42, ease: [0.2, 0.8, 0.2, 1] } 
-    }
-  };
+  const itemVariants: any = isMobile
+    ? {
+        hidden: { opacity: 0 },
+        visible: {
+          opacity: 1,
+          transition: { duration: 0.28, ease: 'easeOut' },
+        },
+      }
+    : {
+        hidden: { y: -6, opacity: 0 },
+        visible: {
+          y: 0,
+          opacity: 1,
+          transition: { duration: 0.42, ease: [0.2, 0.8, 0.2, 1] },
+        },
+      };
 
   return (
     <motion.header 

@@ -36,7 +36,7 @@ export default function Hero() {
             transition={{ duration: 0.45, delay: 0.12, ease: "easeOut" }}
             className="hero-intro-text"
           >
-            From unclear problems to clear digital solutions:
+            I turn unclear problems into clear digital solutions:
           </motion.p>
 
           <ul className="hero-bullets">

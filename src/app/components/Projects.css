@@ -185,8 +185,8 @@
 
 .project-annotations-row {
   margin-top: 2rem;
-  padding-top: 1.75rem;
-  padding-bottom: 2rem;
+  padding-top: 3.94rem;
+  padding-bottom: 0.5rem;
   box-sizing: border-box;
 }
 
@@ -199,7 +199,7 @@
 
 .annotation-col {
   background: transparent;
-  padding: 0;
+  padding: 0.35rem 0 0.1rem;
   box-shadow: none;
   box-sizing: border-box;
   font-family: var(--font-sans);
@@ -209,7 +209,7 @@
   display: flex;
   flex-direction: column;
   align-items: flex-start;
-  gap: 0.5rem;
+  gap: 0.35rem;
   min-height: 9.5rem;
 }
 
@@ -247,19 +247,37 @@
   font-family: var(--font-sans);
   font-size: clamp(2.08rem, 4.15vw, 3.31rem);
   font-weight: 500;
-  color: #3f87ac;
+  color: #1a1a1a;
   line-height: 1.1;
   letter-spacing: 0;
-  margin-top: auto;
   text-align: center;
   width: 100%;
   opacity: 0.9;
+  margin-top: 0.95rem;
+}
+
+.annotation-stat-label {
+  font-family: var(--font-sans);
+  font-size: 0.72rem;
+  font-weight: 600;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: #1a1a1a;
+  opacity: 0.72;
+  margin-top: 0;
+  line-height: 1;
+  text-align: center;
+  width: 100%;
 }
 
 .websites-section,
 .workflow-section,
 .mobile-apps-section {
   background: radial-gradient(circle at 50% 42%, #ffffff 0%, #f6fbfe 42%, #e9f6fd 100%);
+}
+
+.websites-section .project-annotations-row {
+  padding-bottom: 2rem;
 }
 
 @media (max-width: 900px) {

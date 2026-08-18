@@ -2,7 +2,7 @@ import { put } from '@vercel/blob';
 import { getServerSession } from 'next-auth';
 import { revalidatePath } from 'next/cache';
 import { NextResponse } from 'next/server';
-import { asc, eq } from 'drizzle-orm';
+import { asc, desc, eq } from 'drizzle-orm';
 
 import { db } from '@/db';
 import { annotations, projects, screens } from '@/db/schema';
@@ -80,6 +80,12 @@ export async function POST(request: Request) {
       return NextResponse.json({ error: 'Project not found.' }, { status: 404 });
     }
 
+    const latestScreen = await db.query.screens.findFirst({
+      where: eq(screens.projectId, projectId),
+      orderBy: [desc(screens.displayOrder)],
+    });
+    const nextDisplayOrder = (latestScreen?.displayOrder ?? -1) + 1;
+
     const safeName = sanitizeFilename(file.name) || 'project-visual';
     const blob = await put(`portfolio/screens/${Date.now()}-${safeName}`, file, {
       access: 'public',
@@ -90,7 +96,7 @@ export async function POST(request: Request) {
       projectId,
       originalUrl: blob.url,
       altText: file.name.replace(/\.[^.]+$/, ''),
-      displayOrder: Date.now(),
+      displayOrder: nextDisplayOrder,
     }).returning();
 
     const generated = await generateGeminiJson({
@@ -159,12 +165,20 @@ ${prompt}
       generated,
     });
   } catch (error) {
+    const cause = error instanceof Error && 'cause' in error && error.cause instanceof Error ? error.cause : undefined;
+    console.error('Admin agent-run failed:', error);
+    if (cause) {
+      console.error('Admin agent-run failed cause:', cause);
+    }
+
     if (error instanceof GeminiConfigError) {
       return NextResponse.json({ error: error.message }, { status: 503 });
     }
 
     return NextResponse.json(
-      { error: error instanceof Error ? error.message : 'Agent run failed.' },
+      {
+        error: cause?.message || (error instanceof Error ? error.message : 'Agent run failed.'),
+      },
       { status: 500 },
     );
   }
