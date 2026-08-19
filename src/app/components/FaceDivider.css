@@ -21,12 +21,14 @@
 }
 
 .face-closure {
-  font-family: var(--font-serif);
+  font-family: var(--font-sans) !important;
   font-size: clamp(1.6rem, 3.2vw, 2.56rem);
-  font-weight: 500;
+  font-weight: 300;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  -webkit-font-smoothing: antialiased;
   line-height: 1.15;
   color: #1a1a1a;
-  -webkit-text-stroke: 0.4px #1a1a1a;
   margin: 0;
   max-width: 980px;
   background: linear-gradient(90deg, rgba(217, 238, 252, 0) 0%, rgba(232, 245, 255, 0.82) 14%, rgba(217, 238, 252, 0.95) 50%, rgba(247, 252, 255, 0.62) 82%, rgba(217, 238, 252, 0) 100%);
