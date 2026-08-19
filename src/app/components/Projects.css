@@ -38,10 +38,10 @@
 .project-title {
   font-family: var(--font-sans) !important;
   font-size: clamp(2rem, 4vw, 3.2rem);
-  font-weight: 300;
+  font-weight: 400;
   color: #1a1a1a; /* off-black */
-  text-transform: uppercase;
-  letter-spacing: 0.1em;
+  text-transform: none;
+  letter-spacing: 0.05em;
   -webkit-font-smoothing: antialiased;
   margin-bottom: 0.8rem;
   line-height: 1.1;
