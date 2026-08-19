@@ -24,7 +24,7 @@ export async function generateGeminiJson<T>({
   images = [],
   responseSchema,
   validator,
-  model = process.env.GEMINI_MODEL || 'gemini-2.5-flash',
+  model = process.env.GEMINI_MODEL || 'gemini-3.5-flash',
 }: GenerateJsonOptions<T>) {
   const apiKey = process.env.GEMINI_API_KEY;
 

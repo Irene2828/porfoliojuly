@@ -28,6 +28,15 @@ export default function Hero() {
             >
               <h1 className="title-serif text-huge">Sheremeta</h1>
             </motion.div>
+
+            <motion.p
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 1 }}
+              transition={{ duration: 0.45, delay: 0.09, ease: "easeOut" }}
+              className="hero-name-eyebrow"
+            >
+              Product builder / designer
+            </motion.p>
           </div>
 
           <motion.p
