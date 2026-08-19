@@ -113,9 +113,9 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 .btn-primary {
-  background: #2f3336;
+  background: #3f87ac;
   color: #ffffff;
-  border: 1px solid #2f3336;
+  border: 1px solid #3f87ac;
   box-shadow: 6px 6px 0px #a8d8f2;
   padding-top: calc(1.1rem - 1px);
   padding-bottom: calc(1.1rem - 1px);
@@ -123,13 +123,13 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 .btn-primary:hover {
-  background: #3b4044;
-  border-color: #3b4044;
+  background: #326f8f;
+  border-color: #326f8f;
 }
 
 .btn-primary:active {
-  background: #34393d;
-  border-color: #34393d;
+  background: #2c617d;
+  border-color: #2c617d;
 }
 
 .btn-secondary {

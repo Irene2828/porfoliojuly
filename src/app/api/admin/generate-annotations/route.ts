@@ -26,7 +26,7 @@ export async function POST(request: Request) {
     return NextResponse.json({ error: 'Unauthorized' }, { status: 401 });
   }
 
-  const rateLimit = checkRateLimit(`annotations:${session.user.email || 'admin'}`);
+  const rateLimit = checkRateLimit(`annotations:${session.user.email || 'admin'}`, 8, 60_000);
   if (!rateLimit.allowed) {
     return NextResponse.json({ error: 'Too many annotation requests. Try again shortly.' }, { status: 429 });
   }

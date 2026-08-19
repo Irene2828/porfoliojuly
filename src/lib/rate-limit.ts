@@ -5,7 +5,7 @@ type RateLimitEntry = {
 
 const buckets = new Map<string, RateLimitEntry>();
 
-export function checkRateLimit(key: string, limit = 12, windowMs = 60_000) {
+export function checkRateLimit(key: string, limit = 8, windowMs = 60_000) {
   const now = Date.now();
   const current = buckets.get(key);
 
