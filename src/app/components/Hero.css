@@ -116,11 +116,11 @@
   margin: 0;
   background: none;
   -webkit-background-clip: initial;
-  -webkit-text-fill-color: #000000;
-  color: #000000;
+  -webkit-text-fill-color: #3f87ac;
+  color: #3f87ac;
   text-transform: uppercase;
   letter-spacing: 0.1em;
-  font-weight: 300;
+  font-weight: 400;
   -webkit-font-smoothing: antialiased;
 }
 
