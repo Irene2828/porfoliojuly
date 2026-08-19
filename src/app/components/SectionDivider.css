@@ -11,9 +11,7 @@
 }
 
 .page-section-divider-work {
-  height: auto;
-  padding-top: 4rem;
-  padding-bottom: 5rem;
+  height: 15rem;
 }
 
 .page-section-divider-connect {
@@ -56,9 +54,6 @@
 }
 
 @media (max-width: 768px) {
-  .page-section-divider-work {
-    padding-top: 2.5rem;
-  }
 
   .section-divider-wrap {
     padding: 1.5rem 0;
