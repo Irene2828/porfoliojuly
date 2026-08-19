@@ -382,7 +382,7 @@
     display: flex;
     flex-direction: column;
     align-items: center;
-    margin-top: 2.25rem; /* moved 50% lower */
+    margin-top: 1.1rem; /* cut by 50% */
     margin-bottom: 1rem; /* cut in half to pull CTAs closer */
   }
   .hero-bullets li {
