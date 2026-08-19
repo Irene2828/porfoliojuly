@@ -117,8 +117,18 @@ export default function Projects({ initialProjects }: ProjectsProps) {
                         )}
                       </div>
                     </div>
+                    {(project.slug === 'workflow-automation' || project.slug === 'websites') && (
+                      <div className="project-visual-caption">
+                        <a 
+                          href={project.slug === 'workflow-automation' ? 'https://poster-generator-gold.vercel.app/' : 'https://buyuukrainian.vercel.app/'}
+                          target="_blank"
+                          rel="noopener noreferrer"
+                        >
+                          {project.slug === 'workflow-automation' ? 'https://poster-generator-gold.vercel.app/' : 'https://buyuukrainian.vercel.app/'}
+                        </a>
+                      </div>
+                    )}
                   </div>
-
                   <div className="project-sidebar-details">
                     {annotationsList.length > 0 ? (
                       annotationsList.map((ann) => (
