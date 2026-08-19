@@ -46,11 +46,13 @@
 
 .section-divider-label {
   font-family: var(--font-sans);
-  font-size: 0.7rem;
-  font-weight: 600;
-  letter-spacing: 0.2em;
+  font-size: 0.56rem;
+  font-weight: 400;
+  letter-spacing: 0.14em;
   text-transform: uppercase;
-  color: rgba(23, 53, 74, 0.82);
+  color: #1a1a1a;
+  opacity: 0.72;
+  -webkit-font-smoothing: antialiased;
 }
 
 @media (max-width: 768px) {
