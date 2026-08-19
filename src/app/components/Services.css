@@ -64,9 +64,10 @@
 .service-title {
   font-family: var(--font-sans) !important;
   font-size: 2rem;
-  font-weight: 300;
-  text-transform: uppercase;
-  letter-spacing: 0.1em;
+  font-weight: 400;
+  color: #1a1a1a;
+  text-transform: none;
+  letter-spacing: 0.05em;
   -webkit-font-smoothing: antialiased;
   margin-bottom: 2rem;
   position: relative;

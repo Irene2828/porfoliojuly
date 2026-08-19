@@ -23,9 +23,9 @@
 .face-closure {
   font-family: var(--font-sans) !important;
   font-size: clamp(1.6rem, 3.2vw, 2.56rem);
-  font-weight: 300;
-  text-transform: uppercase;
-  letter-spacing: 0.1em;
+  font-weight: 400;
+  text-transform: none;
+  letter-spacing: 0.05em;
   -webkit-font-smoothing: antialiased;
   line-height: 1.15;
   color: #1a1a1a;
