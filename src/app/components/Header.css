@@ -145,5 +145,6 @@
     white-space: nowrap;
     position: relative;
     z-index: 1;
+    color: #55606a;
   }
 }

@@ -321,44 +321,34 @@
 
 @media (max-width: 900px) {
   .hero-section {
-    padding-top: 5rem;
-    padding-bottom: 3rem;
+    padding-top: 6rem;
     padding-inline: 0.75rem;
-    min-height: 100svh;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    box-sizing: border-box;
+    min-height: auto;
   }
   .hero-container {
-    position: relative;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
+    display: grid;
+    grid-template-columns: clamp(100px, 32vw, 140px) 1.15fr;
+    grid-row-gap: 1rem;
+    grid-column-gap: 0.75rem;
+    align-items: start;
+    justify-content: center;
     width: 100%;
-    max-width: 100%;
+    max-width: 440px; /* centers the split layout as a consolidated frame */
+    margin-inline: auto;
     box-sizing: border-box;
     transform: none;
   }
   .hero-content {
-    width: 100%;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    padding-left: 0;
+    display: contents; /* allows direct grid alignment of child elements */
   }
   .hero-copy-motion {
-    width: 100%;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    animation: none !important;
-    transform: none !important;
+    display: contents;
   }
   .hero-name-group {
-    align-self: flex-start;
-    width: calc(100% - 130px); /* leave space for absolutely positioned image */
-    margin: 0 0 1.25rem 0 !important;
+    grid-column: 2;
+    grid-row: 1;
+    width: 100%;
+    margin: 0 !important;
     align-items: flex-start;
     display: flex;
     flex-direction: column;
@@ -368,29 +358,41 @@
     text-align: left;
     margin-left: 0.1rem;
     font-size: 0.8rem !important;
+    color: #55606a !important;
+    opacity: 1 !important;
   }
   .hero-intro-text {
-    align-self: flex-start;
-    width: calc(100% - 130px); /* leave space for absolutely positioned image */
+    grid-column: 2;
+    grid-row: 2;
     display: block;
-    margin: 0 0 2rem 0 !important;
+    max-width: 100%;
+    margin: 0 !important;
     text-align: left;
   }
   .hero-bullets {
-    width: 100%;
-    align-items: center;
-    margin-bottom: 2rem;
+    grid-column: 1 / span 2;
+    grid-row: 3;
+    width: max-content;
+    max-width: 100%;
+    margin-inline: auto;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    margin-top: 2.25rem; /* moved 50% lower */
+    margin-bottom: 1rem; /* cut in half to pull CTAs closer */
   }
   .hero-bullets li {
     width: 100%;
-    justify-content: center;
-    text-align: center;
+    justify-content: flex-start;
+    text-align: left;
     overflow-wrap: anywhere;
   }
   .hero-ctas {
+    grid-column: 1 / span 2;
+    grid-row: 4;
     width: 100%;
     justify-content: center;
-    margin-top: 1.25rem;
+    margin-top: 0.6rem; /* moved 50% closer */
   }
   .hero-ctas .btn {
     max-width: 100%;
@@ -398,15 +400,13 @@
     text-align: center;
   }
   .hero-image-wrapper {
-    position: absolute;
-    top: 1rem;
-    right: 0;
-    width: clamp(100px, 30vw, 120px) !important;
-    height: auto;
+    grid-column: 1;
+    grid-row: 1 / span 2; /* spans alongside name and intro text */
+    width: 100% !important;
+    max-width: 100% !important;
     flex: none;
-    margin: 0 !important;
+    margin: 1.5rem 0 0 0 !important; /* sit a bit lower than the name/intro text */
     transform: none !important;
-    z-index: 10;
     animation: heroImageSwapMobile 0.96s cubic-bezier(0.45, 0, 0.2, 1) both;
   }
   .cv-scanner .hero-image-container,
