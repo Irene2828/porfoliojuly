@@ -294,12 +294,19 @@
   transition: opacity 0.5s ease, filter 0.5s ease;
   -webkit-mask-image: radial-gradient(circle at 50% 50%, black 65%, transparent 100%);
   mask-image: radial-gradient(circle at 50% 50%, black 65%, transparent 100%);
+  animation: imageDimIntro 0.5s ease 4.2s 1 forwards;
+}
+
+@keyframes imageDimIntro {
+  to {
+    opacity: 0.6; /* 40% less opacity once scan completes */
+  }
 }
 
 .hero-image-wrapper:hover .hero-image,
 .hero-image-wrapper:focus-within .hero-image,
 .hero-image-wrapper:focus-visible .hero-image {
-  opacity: 0.72; /* Dim image by 20% on hover */
+  opacity: 1 !important; /* 100% on hover */
 }
 
 .hero-image-caption {
@@ -462,11 +469,7 @@
   animation: scanDown 2.38s cubic-bezier(0.25, 0.1, 0.25, 1) var(--hero-scan-delay) 1 forwards;
 }
 
-.hero-image-wrapper:hover .cv-scanline,
-.hero-image-wrapper:focus-within .cv-scanline,
-.hero-image-wrapper:focus-visible .cv-scanline {
-  animation: scanDownHover 2.38s cubic-bezier(0.25, 0.1, 0.25, 1) 1 forwards;
-}
+/* No hover animation on scanline to prevent re-scanning */
 
 @keyframes scanDown {
   0% { top: 0%; opacity: 1; }
