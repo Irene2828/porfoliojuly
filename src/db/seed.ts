@@ -41,8 +41,8 @@ async function seed() {
       }
     }
 
-    const automationUrl = await uploadAsset('777.png');
-    const websiteUrl = await uploadAsset('555.png');
+    const automationUrl = await uploadAsset('poster.png');
+    const websiteUrl = await uploadAsset('ukraine.png');
     const mobileUrl = await uploadAsset('work3.png');
 
     console.log('Inserting Project 1 (Workflow Automation)...');
