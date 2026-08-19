@@ -353,6 +353,8 @@
     display: flex;
     flex-direction: column;
     animation: heroCopySwapMobile 0.96s cubic-bezier(0.45, 0, 0.2, 1) both;
+    z-index: 10 !important; /* sit on top of image layer */
+    position: relative;
   }
   .hero-name-eyebrow {
     text-align: left;
@@ -368,6 +370,8 @@
     max-width: 100%;
     margin: 0.5rem 0 0 0 !important; /* pushed lower */
     text-align: left;
+    z-index: 10 !important; /* sit on top of image layer */
+    position: relative;
   }
   .hero-bullets {
     grid-column: 1 / span 2;
@@ -402,12 +406,14 @@
   .hero-image-wrapper {
     grid-column: 1;
     grid-row: 1 / span 2; /* spans alongside name and intro text */
-    width: 100% !important;
-    max-width: 100% !important;
+    width: 115% !important; /* increased by 15% to overflow */
+    max-width: 115% !important;
     flex: none;
     margin: -1.25rem 0 0 0 !important; /* moved 30% higher up */
     transform: none !important;
     animation: heroImageSwapMobile 0.96s cubic-bezier(0.45, 0, 0.2, 1) both;
+    z-index: 1;
+    position: relative;
   }
   .cv-scanner .hero-image-container,
   .cv-overlay {
