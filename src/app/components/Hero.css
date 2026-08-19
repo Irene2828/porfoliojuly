@@ -388,6 +388,7 @@
   .hero-ctas .btn {
     max-width: 100%;
     white-space: normal;
+    text-align: center;
   }
   .hero-image-wrapper {
     grid-column: 1;
