@@ -361,27 +361,28 @@
     grid-row: 2;
     display: block;
     max-width: 100%;
-    margin: 0;
-    text-align: left;
+    margin-left: auto;
+    margin-right: auto;
+    text-align: center;
   }
   .hero-bullets {
     grid-column: 1 / span 2;
     grid-row: 3;
     width: 100%;
-    align-items: flex-start;
+    align-items: center;
     margin-bottom: 0.5rem;
   }
   .hero-bullets li {
     width: 100%;
-    justify-content: flex-start;
-    text-align: left;
+    justify-content: center;
+    text-align: center;
     overflow-wrap: anywhere;
   }
   .hero-ctas {
     grid-column: 1 / span 2;
     grid-row: 4;
     width: 100%;
-    justify-content: flex-start;
+    justify-content: center;
     margin-top: 0.5rem;
   }
   .hero-ctas .btn {
