@@ -7,17 +7,21 @@
 }
 
 .page-section-divider-large {
-  height: 15rem;
+  height: auto;
+  padding-top: 7.5rem;
+  padding-bottom: 3.75rem; /* Cut by 50% */
 }
 
 .page-section-divider-work {
-  height: 15rem;
+  height: auto;
+  padding-top: 7.5rem;
+  padding-bottom: 3.75rem; /* Cut by 50% */
 }
 
 .page-section-divider-connect {
   height: auto;
   padding-top: 2.5rem;
-  padding-bottom: 1.25rem;
+  padding-bottom: 0.625rem; /* Cut by 50% */
 }
 
 .page-section-divider .section-divider-wrap {
