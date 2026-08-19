@@ -331,27 +331,32 @@
     box-sizing: border-box;
   }
   .hero-container {
-    display: grid;
-    grid-template-columns: 1.15fr clamp(100px, 32vw, 150px);
-    grid-row-gap: 1rem;
-    grid-column-gap: 0.75rem;
-    align-items: start;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
     width: 100%;
     max-width: 100%;
     box-sizing: border-box;
     transform: none;
   }
   .hero-content {
-    display: contents; /* allows direct grid alignment of child elements */
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding-left: 0;
   }
   .hero-copy-motion {
-    display: contents;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
   }
   .hero-name-group {
-    grid-column: 1;
-    grid-row: 1;
-    width: 100%;
-    margin: 0 !important;
+    align-self: flex-start;
+    width: calc(100% - 130px); /* leave space for absolutely positioned image */
+    margin: 0 0 1.25rem 0 !important;
     align-items: flex-start;
     display: flex;
     flex-direction: column;
@@ -363,19 +368,15 @@
     font-size: 0.8rem !important;
   }
   .hero-intro-text {
-    grid-column: 1;
-    grid-row: 2;
+    align-self: flex-start;
+    width: calc(100% - 130px); /* leave space for absolutely positioned image */
     display: block;
-    max-width: 100%;
-    margin: 0 !important;
+    margin: 0 0 2rem 0 !important;
     text-align: left;
   }
   .hero-bullets {
-    grid-column: 1 / span 2;
-    grid-row: 3;
     width: 100%;
     align-items: center;
-    margin-top: 1rem;
     margin-bottom: 2rem;
   }
   .hero-bullets li {
@@ -385,8 +386,6 @@
     overflow-wrap: anywhere;
   }
   .hero-ctas {
-    grid-column: 1 / span 2;
-    grid-row: 4;
     width: 100%;
     justify-content: center;
     margin-top: 1.25rem;
@@ -397,13 +396,15 @@
     text-align: center;
   }
   .hero-image-wrapper {
-    grid-column: 2;
-    grid-row: 1 / span 2; /* spans alongside name and intro text */
-    width: 100% !important;
-    max-width: 100% !important;
+    position: absolute;
+    top: 1rem;
+    right: 0;
+    width: clamp(100px, 30vw, 120px) !important;
+    height: auto;
     flex: none;
-    margin: 1.5rem 0 0 0 !important; /* sit a bit lower than the name/intro text */
+    margin: 0 !important;
     transform: none !important;
+    z-index: 10;
     animation: heroImageSwapMobile 0.96s cubic-bezier(0.45, 0, 0.2, 1) both;
   }
   .cv-scanner .hero-image-container,
