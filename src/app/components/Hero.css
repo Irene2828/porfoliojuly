@@ -306,7 +306,7 @@
 .hero-image-wrapper:hover .hero-image,
 .hero-image-wrapper:focus-within .hero-image,
 .hero-image-wrapper:focus-visible .hero-image {
-  opacity: 1 !important; /* 100% on hover */
+  opacity: 0.9 !important; /* 90% on hover */
 }
 
 .hero-image-caption {
