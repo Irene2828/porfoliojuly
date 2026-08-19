@@ -441,6 +441,9 @@
   .hero-name-group .hero-text h1 {
     font-size: 2.09rem !important; /* 5% smaller text */
   }
+  .hero-name-eyebrow {
+    font-size: 0.76rem !important; /* 5% smaller eyebrow */
+  }
 }
 
 @keyframes heroImageSwapMobile {
