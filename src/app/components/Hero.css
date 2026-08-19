@@ -367,11 +367,12 @@
     grid-column: 1 / span 2;
     grid-row: 2;
     display: block;
-    max-width: 100%;
+    max-width: 290px !important; /* constrains it to exactly 2 lines */
     margin: 1.5rem auto 0 auto !important; /* centered and pushed lower */
     text-align: center;
     z-index: 10 !important;
     position: relative;
+    line-height: 1.4;
   }
   .hero-bullets {
     grid-column: 1 / span 2;
@@ -431,6 +432,13 @@
     overflow-wrap: break-word;
     word-break: normal;
     text-align: left;
+  }
+}
+
+/* Small mobile devices (iPhone 8 or similar) */
+@media (max-width: 380px) {
+  .hero-name-group .hero-text h1 {
+    font-size: 2.09rem !important; /* 5% smaller text */
   }
 }
 
