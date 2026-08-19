@@ -373,6 +373,7 @@
     z-index: 10 !important;
     position: relative;
     line-height: 1.4;
+    font-size: 0.885rem !important;
   }
   .hero-bullets {
     grid-column: 1 / span 2;
