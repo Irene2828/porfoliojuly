@@ -326,40 +326,45 @@
     min-height: auto;
   }
   .hero-container {
-    display: grid;
-    grid-template-columns: clamp(100px, 30vw, 130px) 1fr;
-    grid-row-gap: 1.75rem;
-    grid-column-gap: 1.25rem;
+    flex-direction: column-reverse;
     align-items: center;
+    justify-content: center;
+    gap: 2.5rem;
     width: 100%;
     max-width: 100%;
     box-sizing: border-box;
     transform: none;
+    display: flex;
   }
   .hero-content {
-    display: contents; /* allows direct child grouping under grid parent */
+    max-width: 100%;
+    width: 100%;
+    align-items: center;
+    text-align: center;
+    padding-left: 0;
   }
   .hero-copy-motion {
-    display: contents; /* allows name group and other blocks to separate in grid */
-  }
-  .hero-name-group {
-    grid-column: 2;
-    grid-row: 1;
+    padding-top: 0;
+    animation-duration: 0.96s;
+    animation-name: heroCopySwapMobile;
     display: flex;
     flex-direction: column;
-    align-items: flex-start;
-    justify-content: center;
-    margin: 0 !important;
-    animation: heroCopySwapMobile 0.96s cubic-bezier(0.45, 0, 0.2, 1) both;
+    align-items: center;
+  }
+  .hero-name-group {
+    width: 100%;
+    margin-top: 0;
+    margin-bottom: 1.25rem;
+    align-items: center;
+    display: flex;
+    flex-direction: column;
   }
   .hero-name-eyebrow {
-    text-align: left;
-    margin-left: 0.1rem;
+    text-align: center;
+    margin-left: 0;
     font-size: 0.8rem !important;
   }
   .hero-intro-text {
-    grid-column: 1 / span 2;
-    grid-row: 2;
     display: block;
     max-width: 100%;
     margin-left: auto;
@@ -367,11 +372,9 @@
     text-align: center;
   }
   .hero-bullets {
-    grid-column: 1 / span 2;
-    grid-row: 3;
     width: 100%;
     align-items: center;
-    margin-bottom: 0.5rem;
+    margin-bottom: 2rem;
   }
   .hero-bullets li {
     width: 100%;
@@ -380,11 +383,9 @@
     overflow-wrap: anywhere;
   }
   .hero-ctas {
-    grid-column: 1 / span 2;
-    grid-row: 4;
     width: 100%;
     justify-content: center;
-    margin-top: 0.5rem;
+    margin-top: 1.25rem;
   }
   .hero-ctas .btn {
     max-width: 100%;
@@ -392,14 +393,11 @@
     text-align: center;
   }
   .hero-image-wrapper {
-    grid-column: 1;
-    grid-row: 1;
-    width: 100% !important;
-    max-width: 100% !important;
+    width: min(82vw, 384px); /* Increased by 20% (320px * 1.2) */
+    max-width: min(82vw, 384px);
     flex: none;
-    margin: 0 !important;
-    transform: none !important;
-    animation: heroImageSwapMobile 0.96s cubic-bezier(0.45, 0, 0.2, 1) both;
+    animation-duration: 0.96s;
+    animation-name: heroImageSwapMobile;
   }
   .cv-scanner .hero-image-container,
   .cv-overlay {
@@ -412,11 +410,11 @@
   .hero-name-group .hero-text h1 {
     width: 100%;
     max-width: 100%;
-    font-size: clamp(1.2rem, 5.8vw, 1.85rem);
-    letter-spacing: 0.05em;
+    font-size: 2.2rem !important; /* 10% larger than 2rem section headers */
+    letter-spacing: 0.08em;
     overflow-wrap: break-word;
     word-break: normal;
-    text-align: left;
+    text-align: center;
   }
 }
 
