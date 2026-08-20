@@ -1,9 +1,8 @@
 .hero-section {
   --hero-visual-width: min(30vw, 380px);
-  --hero-stage-width: min(calc(100vw - 4rem), 1166px);
-  --hero-swap-distance: calc(var(--hero-stage-width) - var(--hero-visual-width));
-  --hero-column-swap-distance: calc(var(--hero-swap-distance) * 0.8);
-  --hero-image-swap-distance: calc(var(--hero-swap-distance) * 0.9);
+  --hero-stage-width: min(calc(100vw - 4rem), 1296px);
+  --hero-column-swap-distance: calc(var(--hero-stage-width) - 100%);
+  --hero-image-swap-distance: calc(var(--hero-stage-width) - 100%);
   --hero-corner-size: min(28vw, 360px);
   --hero-intro-delay: 0.9s;
   --hero-motion-duration: 1.92s;
@@ -65,7 +64,6 @@
 .hero-content {
   flex: 1;
   max-width: min(52vw, 620px);
-  padding-left: clamp(4.75rem, 9vw, 8rem);
   text-align: left;
   display: flex;
   flex-direction: column;
