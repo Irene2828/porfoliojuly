@@ -41,7 +41,7 @@ async function seed() {
       }
     }
 
-    const automationUrl = await uploadAsset('poster3.png');
+    const automationUrl = await uploadAsset('poster4.png');
     const websiteUrl = await uploadAsset('screen 2.png');
     const mobileUrl = await uploadAsset('work3.png');
 
