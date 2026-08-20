@@ -1,8 +1,7 @@
 .premium-header {
   --hero-visual-width: min(30vw, 380px);
-  --hero-stage-width: min(calc(100vw - 4rem), 1166px);
-  --hero-swap-distance: calc(var(--hero-stage-width) - var(--hero-visual-width));
-  --hero-image-swap-distance: calc(var(--hero-swap-distance) * 0.9);
+  --hero-inner-width: min(calc(100vw - 4rem), 1232px); /* 1296px - 4rem padding */
+  --hero-image-swap-distance: calc(var(--hero-inner-width) - var(--hero-visual-width));
   --hero-intro-delay: 0.9s;
   --hero-motion-duration: 1.92s;
   --hero-scan-delay: calc(var(--hero-intro-delay) + var(--hero-motion-duration) - 1s);
@@ -12,7 +11,7 @@
   left: 50%;
   transform: translateX(-50%);
   width: 100%;
-  max-width: var(--hero-stage-width); /* Boutique width */
+  max-width: 1296px; /* Matches global container */
   display: flex;
   justify-content: flex-start;
   align-items: center;
@@ -86,7 +85,7 @@
 
   100% {
     opacity: 1;
-    transform: translateX(calc(var(--hero-image-swap-distance) * 1.02));
+    transform: translateX(var(--hero-image-swap-distance));
   }
 }
 
