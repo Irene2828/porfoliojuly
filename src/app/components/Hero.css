@@ -676,12 +676,15 @@
   opacity: 0;
   z-index: 1;
   pointer-events: none;
-  /* Fades in right as the hero content finishes its move to the left */
-  animation: heroBgFadeIn 1.4s ease calc(var(--hero-intro-delay) + var(--hero-motion-duration) - 0.4s) forwards;
+  /* Fades in right as the hero content finishes its move to the left (2.42s) */
+  animation: heroBgFadeIn 1.4s ease 2.42s both;
 }
 
 @keyframes heroBgFadeIn {
-  to {
-    opacity: 0.6;
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 0.4; /* Set to 40% opacity as requested */
   }
 }
