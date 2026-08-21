@@ -22,21 +22,7 @@
 }
 
 .hero-section::before {
-  display: none;
-  content: "";
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background: url('/assets/highlight_blue_sketch_bg.jpg?v=2') no-repeat center left;
-  background-size: cover;
-  opacity: 0;
-  z-index: 1;
-  pointer-events: none;
-  display: block;
-  /* Fades in right as the hero content finishes its move to the left */
-  animation: heroBgFadeIn 1.4s ease 2.42s both;
+  display: none !important;
 }
 
 @keyframes heroBgFadeIn {
