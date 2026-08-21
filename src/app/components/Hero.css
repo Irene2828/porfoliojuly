@@ -1,6 +1,6 @@
 .hero-section {
   --hero-visual-width: min(30vw, 380px);
-  --hero-inner-width: min(calc(100vw - 4rem), 1232px); /* 1296px - 4rem padding */
+  --hero-inner-width: min(calc(100vw - 4rem), 1066px); /* 1130px - 4rem padding */
   --hero-column-swap-distance: calc(var(--hero-inner-width) - 100%);
   --hero-image-swap-distance: calc(var(--hero-inner-width) - 100%);
   --hero-corner-size: min(28vw, 360px);
@@ -66,6 +66,7 @@
   justify-content: space-between;
   gap: clamp(2.25rem, 5vw, 4rem);
   width: 100%;
+  max-width: 1130px;
   transform: translateY(5vh);
   position: relative;
   z-index: 2;
