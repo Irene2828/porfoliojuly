@@ -16,8 +16,7 @@
   position: relative;
   overflow: hidden;
   min-height: 100svh;
-  background: #ffffff url('/assets/berries_botanical_bg.jpg') no-repeat center center;
-  background-size: cover;
+  background: #ffffff;
   padding: 6.5rem 0 4rem 0;
   scroll-margin-top: 0;
 }
@@ -662,5 +661,27 @@
   }
   .cv-overlay {
     display: none;
+  }
+}
+
+.hero-section::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: url('/assets/berries_botanical_teal_blobs_bg.jpg') no-repeat center left;
+  background-size: cover;
+  opacity: 0;
+  z-index: 1;
+  pointer-events: none;
+  /* Fades in right as the hero content finishes its move to the left */
+  animation: heroBgFadeIn 1.4s ease calc(var(--hero-intro-delay) + var(--hero-motion-duration) - 0.4s) forwards;
+}
+
+@keyframes heroBgFadeIn {
+  to {
+    opacity: 0.6;
   }
 }
