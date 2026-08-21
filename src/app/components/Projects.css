@@ -264,9 +264,9 @@
 }
 
 .annotation-stat {
-  font-family: var(--font-serif);
+  font-family: var(--font-sans);
   font-size: clamp(1.8rem, 3.8vw, 3.2rem);
-  font-weight: 400;
+  font-weight: 600;
   color: #1a1a1a;
   line-height: 1.1;
   letter-spacing: 0.02em;

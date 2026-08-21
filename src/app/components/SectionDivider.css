@@ -34,18 +34,18 @@
 .section-divider-line {
   width: 72px;
   height: 1.5px;
-  background: linear-gradient(90deg, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 0.88) 50%, rgba(0, 0, 0, 0) 100%);
+  background: linear-gradient(90deg, rgba(63, 135, 172, 0) 0%, rgba(63, 135, 172, 0.88) 50%, rgba(63, 135, 172, 0) 100%);
   box-shadow: none;
 }
 
 .section-divider-label {
   font-family: var(--font-sans);
   font-size: 0.72rem;
-  font-weight: 400;
+  font-weight: 600;
   letter-spacing: 0.14em;
   text-transform: uppercase;
-  color: #1a1a1a;
-  opacity: 0.72;
+  color: #3f87ac;
+  opacity: 0.95;
   -webkit-font-smoothing: antialiased;
 }
 
