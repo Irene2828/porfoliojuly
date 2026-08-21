@@ -267,7 +267,6 @@
   font-family: var(--font-serif);
   font-size: clamp(1.8rem, 3.8vw, 3.2rem);
   font-weight: 400;
-  font-style: italic;
   color: #1a1a1a;
   line-height: 1.1;
   letter-spacing: 0.02em;
