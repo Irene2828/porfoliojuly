@@ -16,10 +16,48 @@
   position: relative;
   overflow: hidden;
   min-height: 100svh;
-  background: #ffffff url('/assets/subtle_floral_bg.jpg') no-repeat center center;
-  background-size: cover;
+  background: #ffffff;
   padding: 6.5rem 0 4rem 0;
   scroll-margin-top: 0;
+}
+
+.hero-bg-floral {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  background: url('/assets/subtle_floral_bg.jpg') no-repeat center center;
+  background-size: cover;
+  opacity: 0.18;
+  filter: grayscale(100%) contrast(1.2);
+  mix-blend-mode: multiply;
+  pointer-events: none;
+  z-index: 0;
+}
+
+.hero-teal-patch {
+  position: absolute;
+  border-radius: 50%;
+  pointer-events: none;
+  z-index: 0;
+  filter: blur(120px);
+  opacity: 0.45;
+}
+
+.hero-teal-patch.patch-1 {
+  width: 500px;
+  height: 500px;
+  background: radial-gradient(circle, #3f87ac 0%, transparent 70%);
+  top: -150px;
+  left: -100px;
+}
+
+.hero-teal-patch.patch-2 {
+  width: 600px;
+  height: 600px;
+  background: radial-gradient(circle, #a8d8f2 0%, transparent 70%);
+  bottom: -200px;
+  right: -100px;
 }
 
 .hero-section::before {
