@@ -7,7 +7,6 @@ import heroImage from '../assets/999.webp';
 export default function Hero() {
   return (
     <section className="hero-section">
-      <div className="hero-background-art" />
       <div className="container hero-container">
         <div className="hero-content">
           <div className="hero-copy-motion">
