@@ -264,12 +264,13 @@
 }
 
 .annotation-stat {
-  font-family: var(--font-sans);
-  font-size: clamp(1.66rem, 3.32vw, 2.65rem);
-  font-weight: 700;
+  font-family: var(--font-serif);
+  font-size: clamp(1.8rem, 3.8vw, 3.2rem);
+  font-weight: 400;
+  font-style: italic;
   color: #1a1a1a;
   line-height: 1.1;
-  letter-spacing: 0.05em;
+  letter-spacing: 0.02em;
   -webkit-font-smoothing: antialiased;
   text-align: center;
   width: 100%;
