@@ -42,11 +42,7 @@ export default async function HomePage() {
         <SectionDivider label="Capabilities" />
       </div>
       <Services />
-      <div className="page-section-divider page-section-divider-connect">
-        <SectionDivider label="Let's Connect" />
-      </div>
       <FaceDivider />
-      <Footer />
     </ClientWrapper>
   );
 }

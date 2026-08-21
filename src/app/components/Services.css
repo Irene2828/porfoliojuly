@@ -1,6 +1,6 @@
 .services-section {
-  background-color: var(--color-bg);
-  padding: 3rem 0 8rem 0;
+  background-color: #3f87ac;
+  padding: 3.25rem 0 6.5rem;
 }
 
 .services-layout {
@@ -93,4 +93,16 @@
   font-size: 1.1rem;
   margin-bottom: 0.8rem;
   color: #333;
+}
+
+.services-section .service-title {
+  color: #ffffff !important;
+}
+
+.services-section .service-title::after {
+  background-color: rgba(255, 255, 255, 0.4) !important;
+}
+
+.services-section .service-items li {
+  color: rgba(255, 255, 255, 0.95) !important;
 }

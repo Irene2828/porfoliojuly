@@ -1,8 +1,8 @@
 .hero-section {
-  --hero-visual-width: min(30vw, 380px);
+  --hero-visual-width: min(24vw, 304px);
   --hero-inner-width: min(calc(100vw - 4rem), 1232px); /* 1296px - 4rem padding */
   --hero-column-swap-distance: calc(var(--hero-inner-width) - 100%);
-  --hero-image-swap-distance: calc(var(--hero-inner-width) - 100%);
+  --hero-image-swap-distance: calc(var(--hero-inner-width) - 100% - 5vw);
   --hero-corner-size: min(28vw, 360px);
   --hero-intro-delay: 0.9s;
   --hero-motion-duration: 1.92s;
@@ -53,7 +53,7 @@
   justify-content: space-between;
   gap: clamp(2.25rem, 5vw, 4rem);
   width: 100%;
-  transform: translateY(5vh);
+  transform: translateY(0);
   position: relative;
   z-index: 2;
 }
@@ -70,7 +70,7 @@
 
 .hero-copy-motion {
   width: 100%;
-  padding-top: 15%;
+  padding-top: 10%;
   animation: heroCopySwap var(--hero-motion-duration) cubic-bezier(0.45, 0, 0.2, 1) both;
   animation-delay: var(--hero-intro-delay);
 }
@@ -663,3 +663,9 @@
 }
 
 
+
+.hero-teal-connector {
+  width: 100%;
+  height: 38rem;
+  background-color: #3f87ac;
+}

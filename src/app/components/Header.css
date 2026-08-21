@@ -15,7 +15,7 @@
   display: flex;
   justify-content: flex-start;
   align-items: center;
-  padding: 2.5rem 2rem;
+  padding: 1.25rem 2rem;
   z-index: 100;
   pointer-events: none; /* Let clicks pass through if empty space */
 }
@@ -67,7 +67,7 @@
   display: flex;
   gap: 3rem;
   line-height: 1;
-  margin-left: 2%; /* shifted 2% to the right */
+  margin-left: -1%; /* shifted 3% to the left */
   opacity: 0;
   animation: headerNavSwap 3.47s cubic-bezier(0.16, 1, 0.3, 1) both;
   animation-delay: var(--hero-scan-delay);

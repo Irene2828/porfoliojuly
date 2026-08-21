@@ -39,12 +39,26 @@
   font-family: var(--font-sans) !important;
   font-size: clamp(2rem, 4vw, 3.2rem);
   font-weight: 400;
-  color: #1a1a1a; /* off-black */
+  color: #ffffff !important; /* white text for contrast */
   text-transform: none;
   letter-spacing: 0.05em;
   -webkit-font-smoothing: antialiased;
   margin-bottom: 0.8rem;
   line-height: 1.1;
+  position: relative;
+  display: inline-block;
+  z-index: 1;
+  padding: 0.2rem 1.2rem; /* padding around text inside the block */
+}
+
+.project-title::before {
+  content: "";
+  position: absolute;
+  inset: 0; /* cover the entire block */
+  background-color: #3f87ac;
+  z-index: -1;
+  transform: skewX(15deg); /* inclined to the left */
+  opacity: 1; /* solid brand teal */
 }
 
 .project-subtitle {
@@ -58,7 +72,7 @@
   border: none;
   border-radius: 0; /* no radius */
   padding: 0;
-  display: inline-block;
+  display: block;
   box-shadow: none;
   position: relative;
 }
@@ -204,8 +218,8 @@
 }
 
 .project-annotations-row {
-  margin-top: 1rem;
-  padding-top: 1.97rem;
+  margin-top: 0.5rem;
+  padding-top: 1rem;
   padding-bottom: 0.5rem;
   box-sizing: border-box;
 }
@@ -274,7 +288,7 @@
   text-align: center;
   width: 100%;
   opacity: 0.9;
-  padding-top: 12.5%;
+  padding-top: 6.25%;
 }
 
 .annotation-stat-label {
@@ -326,11 +340,12 @@
 
 .gold-divider {
   width: 100%;
-  height: 15rem;
+  height: 15.75rem;
   background: #ffffff;
   display: flex;
   align-items: center;
   justify-content: center;
+  box-sizing: border-box;
 }
 
 .gold-divider .section-divider-wrap {

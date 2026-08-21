@@ -51,7 +51,6 @@ export default function Header() {
       initial="hidden"
       animate="visible"
     >
-
       <nav className="header-nav">
         <motion.a href="#work" variants={itemVariants} className="nav-link">Work</motion.a>
         <motion.a href="#expertise" variants={itemVariants} className="nav-link">Expertise</motion.a>
