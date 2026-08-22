@@ -58,8 +58,8 @@
   right: calc(100% - 2.2rem); /* end just before text starts */
   top: 0;
   bottom: 0;
-  background-image: radial-gradient(#ffffff 3px, transparent 3.2px); /* white dots */
-  background-size: 10px 10px;
+  background-image: radial-gradient(#ffffff 1.2px, transparent 1.3px); /* matched to 1.2px section background dots */
+  background-size: 8px 8px; /* matched to 8px section grid */
   background-repeat: repeat;
   z-index: 2;
   opacity: 0.9;
