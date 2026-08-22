@@ -98,7 +98,9 @@ export default function Projects({ initialProjects }: ProjectsProps) {
                   className="project-header"
                 >
                   <div className="project-title-wrapper">
-                    <h2 className="project-title title-serif">{project.title}</h2>
+                    <h2 className="project-title title-serif">
+                      <span className="project-title-text">{project.title}</span>
+                    </h2>
                     <div className="project-title-line" />
                   </div>
                   {project.caseStudyIntro && (
