@@ -723,3 +723,42 @@
   transform: translateX(50%) translateY(8px) !important;
   transition: opacity 0.18s ease, transform 0.18s ease;
 }
+
+/* Tech Pixel Decor in Top-Left (guiding eye to header area) */
+.hero-pixel-decor {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 240px;
+  height: 320px;
+  pointer-events: none;
+  z-index: 1; /* behind name copy but visible on background */
+  opacity: 0.8;
+}
+
+@keyframes pixelFloat1 {
+  0%, 100% { transform: translateY(0px); opacity: 0.35; }
+  50% { transform: translateY(-8px); opacity: 0.6; }
+}
+
+@keyframes pixelFloat2 {
+  0%, 100% { transform: translateY(0px); opacity: 0.55; }
+  50% { transform: translateY(-5px); opacity: 0.25; }
+}
+
+@keyframes pixelFloat3 {
+  0%, 100% { transform: translateY(0px); opacity: 0.25; }
+  50% { transform: translateY(-10px); opacity: 0.5; }
+}
+
+.pixel-pulse-1 {
+  animation: pixelFloat1 5s ease-in-out infinite;
+}
+
+.pixel-pulse-2 {
+  animation: pixelFloat2 7s ease-in-out infinite;
+}
+
+.pixel-pulse-3 {
+  animation: pixelFloat3 6s ease-in-out infinite;
+}
