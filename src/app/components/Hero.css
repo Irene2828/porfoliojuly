@@ -686,38 +686,38 @@
   background-color: #3f87ac;
 }
 
-/* Tagline overlay at the bottom-right of the hero photo */
+/* Tagline overlay sitting to the right of the photo, no frame, same style as before under name */
 .hero-image-tagline {
   position: absolute;
   bottom: 1.25rem;
-  right: 1.25rem;
+  right: -2rem; /* position outside the image */
+  transform: translateX(100%);
   z-index: 8;
   font-family: var(--font-sans);
-  font-size: 0.65rem;
-  font-weight: 600;
+  font-size: clamp(0.78rem, 1.1vw, 0.92rem);
+  font-weight: 400;
   text-transform: uppercase;
-  letter-spacing: 0.12em;
-  color: rgba(63, 135, 172, 0.95); /* brand teal */
-  background: rgba(255, 255, 255, 0.94); /* soft white badge */
-  padding: 0.35rem 0.75rem;
-  border-radius: 4px;
-  border: 1px solid rgba(63, 135, 172, 0.25);
+  letter-spacing: 0.18em;
+  color: #55606a; /* original tagline grey color */
+  background: transparent;
+  padding: 0;
+  border: none;
   pointer-events: none;
   opacity: 0;
-  transform: translateY(8px);
-  animation: taglineIntro var(--hero-caption-duration) ease var(--hero-caption-delay) forwards;
+  /* Shows exactly when scan ends: scan-delay + 2.38s scan duration */
+  animation: taglineIntro 1s ease calc(var(--hero-scan-delay) + 2.38s) forwards;
   transition: opacity 0.25s ease, transform 0.25s ease;
 }
 
 @keyframes taglineIntro {
-  0% { opacity: 0; transform: translateY(8px); }
-  100% { opacity: 1; transform: translateY(0); }
+  0% { opacity: 0; transform: translateX(100%) translateY(8px); }
+  100% { opacity: 1; transform: translateX(100%) translateY(0); }
 }
 
 /* When wrapper is hovered, hide the tagline so scanner and annotations show */
 .hero-image-wrapper:hover .hero-image-tagline,
 .hero-image-wrapper:focus-within .hero-image-tagline {
   opacity: 0 !important;
-  transform: translateY(8px) !important;
+  transform: translateX(100%) translateY(8px) !important;
   transition: opacity 0.18s ease, transform 0.18s ease;
 }
