@@ -10,7 +10,7 @@
 .project-section-block {
   width: 100%;
   background: #ffffff;
-  padding: 4rem 0 2rem;
+  padding: 2rem 0 2rem;
   margin-bottom: 0;
   box-sizing: border-box;
   position: relative;
@@ -48,7 +48,7 @@
   position: relative;
   display: inline-block;
   z-index: 1;
-  padding: 0.22rem 1.08rem 0.18rem; /* 10% smaller padding */
+  padding: 0.11rem 1.08rem 0.18rem; /* 50% less top padding */
 }
 
 .project-title::before {
