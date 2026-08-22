@@ -38,24 +38,11 @@
   background: transparent;
 }
 
-.section-divider-line {
-  width: 1.5px;
-  height: 1.5rem;
+.section-divider-horizontal-line {
+  width: 4rem; /* short horizontal line */
+  height: 1px; /* thin */
   background: #000000; /* black */
-  transform: rotate(20deg);
-  box-shadow: none;
-  margin: 0 0.75rem;
-}
-
-.section-divider-label {
-  font-family: var(--font-sans);
-  font-size: 0.72rem;
-  font-weight: 600;
-  letter-spacing: 0.14em;
-  text-transform: uppercase;
-  color: #000000; /* black */
-  opacity: 0.95;
-  -webkit-font-smoothing: antialiased;
+  opacity: 0.25; /* subtle */
 }
 
 @media (max-width: 768px) {
