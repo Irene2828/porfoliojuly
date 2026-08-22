@@ -54,7 +54,7 @@
 
 .project-title {
   font-family: var(--font-sans) !important;
-  font-size: clamp(1.8rem, 3.6vw, 2.88rem);
+  font-size: clamp(1.98rem, 3.96vw, 3.17rem); /* increased by 10% */
   font-weight: 400;
   color: #ffffff !important; /* white text for contrast */
   text-transform: none;
@@ -64,14 +64,14 @@
   position: relative;
   display: inline-block;
   z-index: 1;
-  padding: 0.11rem 1.08rem 0.18rem 2.8rem; /* added padding-left for dots */
+  padding: 0.12rem 1.2rem 0.2rem 3.1rem; /* increased by 10% */
 }
 
 .project-title::after {
   content: "";
   position: absolute;
   left: -100vw; /* bleed all the way to the screen left edge */
-  right: calc(100% - 2.2rem); /* end just before text starts */
+  right: calc(100% - 2.4rem); /* end just before text starts, scaled by 10% */
   top: 0;
   bottom: 0;
   background-image: radial-gradient(#ffffff 1.2px, transparent 1.3px); /* matched to 1.2px section background dots */
