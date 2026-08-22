@@ -64,10 +64,11 @@
   position: relative;
   display: inline-block;
   z-index: 1;
-  padding: 0.12rem 1.2rem 0.2rem 3.1rem; /* increased by 10% */
+  padding: 0.12rem 3rem 0.2rem 3.1rem; /* increased right padding to 3rem */
   width: 38rem; /* uniform size for all tags to align them to Workflow Automation */
   max-width: 100%;
   white-space: nowrap !important; /* absolutely guarantees single-row rendering */
+  text-align: right; /* align text to the right side of the tag */
 }
 
 .project-title::after {
