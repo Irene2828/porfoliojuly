@@ -28,15 +28,6 @@ export default function Hero() {
             >
               <h1 className="title-serif text-huge">Sheremeta</h1>
             </motion.div>
-
-            <motion.p
-              initial={{ opacity: 0 }}
-              animate={{ opacity: 1 }}
-              transition={{ duration: 0.45, delay: 0.09, ease: "easeOut" }}
-              className="hero-name-eyebrow"
-            >
-              Product builder / designer
-            </motion.p>
           </div>
 
           <motion.p
@@ -86,6 +77,9 @@ export default function Hero() {
           <div className="hero-image-container">
             <img src={heroImage.src} alt="Iryna Sheremeta" className="hero-image" />
             <div className="hero-dot-overlay"></div>
+            <div className="hero-image-tagline">
+              Product builder / designer
+            </div>
 
             {/* CV Scanning Overlay */}
             <div className="cv-overlay">
