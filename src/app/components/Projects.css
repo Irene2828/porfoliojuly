@@ -281,9 +281,9 @@
 
 .project-chip {
   display: inline-block;
-  background: rgba(0, 0, 0, 0.8); /* 80% opacity black */
+  background: rgba(0, 0, 0, 0.6); /* 60% opacity black */
   color: #ffffff; /* white text */
-  border: 1px solid rgba(0, 0, 0, 0.8);
+  border: 1px solid rgba(0, 0, 0, 0.6);
   font-size: 0.62rem;
   font-family: var(--font-sans);
   font-weight: 600;
