@@ -49,6 +49,7 @@
   display: inline-block;
   z-index: 1;
   padding: 0.11rem 1.08rem 0.18rem; /* 50% less top padding */
+  transform: translateX(-20%);
 }
 
 .project-title::before {
