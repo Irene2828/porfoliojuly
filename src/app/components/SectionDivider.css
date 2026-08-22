@@ -16,7 +16,7 @@
 }
 
 .page-section-divider-work {
-  height: 7.875rem;
+  height: 15.75rem;
   align-items: center;
   padding-top: 0;
 }
@@ -95,32 +95,9 @@
   -webkit-font-smoothing: antialiased;
 }
 
-/* dot patterns on left and right of text inside tag */
+/* dot patterns removed */
 .section-divider-tag-dots {
-  display: block;
-  width: 6rem;
-  position: relative;
-  align-self: stretch;
-}
-
-.section-divider-tag-dots::before {
-  content: '';
-  position: absolute;
-  inset: 0;
-  background-image: radial-gradient(#ffffff 1.2px, transparent 1.3px);
-  background-size: 8px 8px;
-  background-repeat: repeat;
-  opacity: 0.9;
-}
-
-.section-divider-tag-dots-left::before {
-  -webkit-mask-image: linear-gradient(to right, rgba(0,0,0,0) 0%, rgba(0,0,0,1) 100%);
-  mask-image: linear-gradient(to right, rgba(0,0,0,0) 0%, rgba(0,0,0,1) 100%);
-}
-
-.section-divider-tag-dots-right::before {
-  -webkit-mask-image: linear-gradient(to left, rgba(0,0,0,0) 0%, rgba(0,0,0,1) 100%);
-  mask-image: linear-gradient(to left, rgba(0,0,0,0) 0%, rgba(0,0,0,1) 100%);
+  display: none;
 }
 
 @media (max-width: 768px) {

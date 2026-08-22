@@ -111,8 +111,8 @@
   margin: 0;
   background: none;
   -webkit-background-clip: initial;
-  -webkit-text-fill-color: #4d565f; /* charcoal grey, 10% darker */
-  color: #4d565f;
+  -webkit-text-fill-color: #1a1f24; /* almost black */
+  color: #1a1f24;
   text-transform: uppercase;
   letter-spacing: 0.1em;
   font-weight: 300;
