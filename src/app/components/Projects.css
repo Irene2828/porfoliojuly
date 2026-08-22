@@ -45,8 +45,8 @@
 }
 
 .project-title-line {
-  height: 1px; /* twice thinner (was 2px) */
-  background-color: rgba(63, 135, 172, 0.9); /* brand teal at 90% opacity */
+  height: 0.5px; /* physically and visually much thinner */
+  background-color: rgba(63, 135, 172, 0.45); /* brand teal at 45% opacity */
   flex: 1;
   margin-right: -100vw; /* extend past layout container margin to screen edge */
   padding-right: 100vw;
