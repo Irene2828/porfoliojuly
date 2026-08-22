@@ -68,7 +68,7 @@
   justify-content: center;
   z-index: 1;
   padding: 0.1rem 0 0.16rem 0;
-  width: 75vw; /* 3/4 of screen width */
+  width: 52.5vw; /* 30% narrower than original 75vw */
   max-width: 100%;
   white-space: nowrap !important;
   text-align: center;
