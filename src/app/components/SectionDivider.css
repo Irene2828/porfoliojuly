@@ -65,11 +65,9 @@
   transform: translateX(-50%);
 }
 
-/* thin teal lines on each side */
+/* thin teal lines on each side — hidden, keep only tag */
 .section-divider-side-line {
-  flex: 1;
-  height: 0.5px;
-  background: rgba(63, 135, 172, 0.45);
+  display: none;
 }
 
 /* the teal tag block */

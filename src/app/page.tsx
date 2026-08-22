@@ -38,9 +38,6 @@ export default async function HomePage() {
         <SectionDivider label={publishedProjects[0]?.title ?? 'Selected Work'} />
       </div>
       <Projects initialProjects={publishedProjects as any} />
-      <div className="page-section-divider page-section-divider-large">
-        <SectionDivider label="Capabilities" />
-      </div>
       <Services />
       <FaceDivider />
     </ClientWrapper>
