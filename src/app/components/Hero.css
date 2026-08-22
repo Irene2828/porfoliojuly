@@ -17,7 +17,7 @@
   overflow: hidden;
   min-height: 100svh;
   background: #ffffff;
-  padding: 6.5rem 0 4rem 0;
+  padding: 9rem 0 4rem 0; /* increased top padding to push content lower */
   scroll-margin-top: 0;
 }
 
