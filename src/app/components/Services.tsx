@@ -24,6 +24,43 @@ export default function Services() {
 
   return (
     <section className="section services-section" id="expertise">
+      {/* Tech Pixel Decor in Bottom-Right */}
+      <div className="services-pixel-decor">
+        <svg width="240" height="320" viewBox="0 0 240 320" fill="none" xmlns="http://www.w3.org/2000/svg">
+          {/* Column 1 */}
+          <rect x="20" y="240" width="6" height="6" fill="#ffffff" opacity="0.4" className="pixel-pulse-1" />
+          <rect x="20" y="170" width="4" height="4" fill="#ffffff" opacity="0.6" className="pixel-pulse-2" />
+          <rect x="20" y="100" width="8" height="8" fill="#ffffff" opacity="0.3" className="pixel-pulse-3" />
+          
+          {/* Column 2 */}
+          <rect x="60" y="260" width="8" height="8" fill="#ffffff" opacity="0.35" className="pixel-pulse-2" />
+          <rect x="60" y="205" width="5" height="5" fill="#ffffff" opacity="0.5" className="pixel-pulse-1" />
+          <rect x="60" y="140" width="7" height="7" fill="#ffffff" opacity="0.4" className="pixel-pulse-3" />
+          <rect x="60" y="60" width="4" height="4" fill="#ffffff" opacity="0.6" className="pixel-pulse-2" />
+
+          {/* Column 3 */}
+          <rect x="100" y="230" width="5" height="5" fill="#ffffff" opacity="0.45" className="pixel-pulse-3" />
+          <rect x="100" y="175" width="8" height="8" fill="#ffffff" opacity="0.3" className="pixel-pulse-1" />
+          <rect x="100" y="85" width="6" height="6" fill="#ffffff" opacity="0.5" className="pixel-pulse-2" />
+          <rect x="100" y="20" width="4" height="4" fill="#ffffff" opacity="0.4" className="pixel-pulse-3" />
+
+          {/* Column 4 */}
+          <rect x="140" y="250" width="4" height="4" fill="#ffffff" opacity="0.6" className="pixel-pulse-2" />
+          <rect x="140" y="190" width="7" height="7" fill="#ffffff" opacity="0.35" className="pixel-pulse-3" />
+          <rect x="140" y="125" width="5" height="5" fill="#ffffff" opacity="0.5" className="pixel-pulse-1" />
+          <rect x="140" y="50" width="8" height="8" fill="#ffffff" opacity="0.25" className="pixel-pulse-2" />
+
+          {/* Column 5 */}
+          <rect x="180" y="210" width="6" height="6" fill="#ffffff" opacity="0.4" className="pixel-pulse-1" />
+          <rect x="180" y="150" width="4" height="4" fill="#ffffff" opacity="0.55" className="pixel-pulse-3" />
+          <rect x="180" y="80" width="7" height="7" fill="#ffffff" opacity="0.3" className="pixel-pulse-2" />
+
+          {/* Column 6 */}
+          <rect x="220" y="235" width="5" height="5" fill="#ffffff" opacity="0.5" className="pixel-pulse-3" />
+          <rect x="220" y="165" width="8" height="8" fill="#ffffff" opacity="0.25" className="pixel-pulse-2" />
+          <rect x="220" y="105" width="4" height="4" fill="#ffffff" opacity="0.6" className="pixel-pulse-1" />
+        </svg>
+      </div>
       <div className="container">
         <motion.div 
           className="services-layout"

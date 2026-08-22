@@ -1,6 +1,19 @@
 .services-section {
   background-color: rgba(63, 135, 172, 0.9); /* brand teal at 90% opacity */
   padding: 6.5rem 0 3.25rem;
+  position: relative;
+  overflow: hidden;
+}
+
+.services-pixel-decor {
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  width: 240px;
+  height: 320px;
+  pointer-events: none;
+  z-index: 1;
+  opacity: 0.85;
 }
 
 .services-layout {
