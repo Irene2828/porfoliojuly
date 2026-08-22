@@ -313,132 +313,145 @@
 }
 
 @media (max-width: 900px) {
+  /* ── Single-column mobile hero layout ── */
   .hero-section {
-    padding-top: 6rem;
-    padding-inline: 0.75rem;
+    padding-top: 5.5rem;
+    padding-bottom: 3rem;
+    padding-inline: 1.5rem;
     min-height: auto;
   }
+
+  /* Stack everything vertically, centered */
   .hero-container {
-    display: grid;
-    grid-template-columns: clamp(100px, 32vw, 140px) 1.15fr;
-    grid-row-gap: 1rem;
-    grid-column-gap: 0.75rem;
-    align-items: start;
-    justify-content: center;
-    width: 100%;
-    max-width: 440px; /* centers the split layout as a consolidated frame */
-    margin-inline: auto;
-    box-sizing: border-box;
-    transform: none;
-  }
-  .hero-content {
-    display: contents; /* allows direct grid alignment of child elements */
-  }
-  .hero-copy-motion {
-    display: contents;
-  }
-  .hero-name-group {
-    grid-column: 2;
-    grid-row: 1;
-    width: 100%;
-    margin: 1.25rem 0 0 0 !important; /* pushed 20% lower */
-    align-items: flex-start;
-    display: flex;
-    flex-direction: column;
-    animation: heroCopySwapMobile 0.96s cubic-bezier(0.45, 0, 0.2, 1) both;
-    z-index: 10 !important; /* sit on top of image layer */
-    position: relative;
-  }
-  .hero-name-eyebrow {
-    text-align: left;
-    margin-left: 0.1rem;
-    font-size: 0.8rem !important;
-    color: #55606a !important;
-    opacity: 1 !important;
-  }
-  .hero-intro-text {
-    grid-column: 1 / span 2;
-    grid-row: 2;
-    display: block;
-    max-width: 290px !important; /* constrains it to exactly 2 lines */
-    margin: 1.5rem auto 0 auto !important; /* centered and pushed lower */
-    text-align: center;
-    z-index: 10 !important;
-    position: relative;
-    line-height: 1.4;
-    font-size: calc(0.885rem + 2px) !important;
-  }
-  .hero-bullets {
-    grid-column: 1 / span 2;
-    grid-row: 3;
-    width: max-content;
-    max-width: 100%;
-    margin-inline: auto;
     display: flex;
     flex-direction: column;
     align-items: center;
-    margin-top: 1.1rem; /* cut by 50% */
-    margin-bottom: 1rem; /* cut in half to pull CTAs closer */
+    justify-content: flex-start;
+    gap: 0;
+    width: 100%;
+    max-width: 480px;
+    margin-inline: auto;
+    transform: none;
   }
+
+  .hero-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+  }
+
+  .hero-copy-motion {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+  }
+
+  /* Image: full-width portrait, on top */
+  .hero-image-wrapper {
+    width: 72% !important;
+    max-width: 280px !important;
+    flex: none;
+    margin: 0 auto 2rem auto !important;
+    transform: none !important;
+    order: -1;
+  }
+
+  .cv-scanner .hero-image-container,
+  .cv-overlay {
+    width: 100%;
+    max-width: 100%;
+  }
+
+  .hero-dot-overlay {
+    display: none;
+  }
+
+  /* Name group: centered below image */
+  .hero-name-group {
+    width: 100%;
+    margin: 0 0 1.5rem 0 !important;
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .hero-name-group .hero-text h1 {
+    width: 100%;
+    max-width: 100%;
+    font-size: clamp(2rem, 8vw, 2.8rem) !important;
+    letter-spacing: 0.08em;
+    overflow-wrap: break-word;
+    word-break: normal;
+    text-align: center;
+  }
+
+  .hero-name-eyebrow {
+    text-align: center;
+    margin-left: 0;
+    font-size: 0.78rem !important;
+    color: #8a9099 !important;
+    opacity: 0.65 !important;
+  }
+
+  /* Intro text */
+  .hero-intro-text {
+    display: block;
+    max-width: 340px !important;
+    margin: 0 auto 1.25rem auto !important;
+    text-align: center;
+    line-height: 1.5;
+    font-size: 0.92rem !important;
+  }
+
+  /* Bullets: centered */
+  .hero-bullets {
+    width: 100%;
+    max-width: 340px;
+    margin: 0 auto 1.5rem auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.6rem;
+  }
+
   .hero-bullets li {
     width: 100%;
     justify-content: center;
     text-align: center;
     overflow-wrap: anywhere;
   }
+
+  /* CTAs: stacked, full-width */
   .hero-ctas {
-    grid-column: 1 / span 2;
-    grid-row: 4;
     width: 100%;
-    justify-content: center;
-    margin-top: 0.6rem; /* moved 50% closer */
+    max-width: 340px;
+    flex-direction: column;
+    align-items: stretch;
+    gap: 0.75rem;
+    margin: 0 auto;
   }
+
   .hero-ctas .btn {
-    max-width: 100%;
+    width: 100%;
     white-space: normal;
     text-align: center;
-  }
-  .hero-image-wrapper {
-    grid-column: 1;
-    grid-row: 1; /* only spans row 1 now */
-    width: 115% !important; /* increased by 15% to overflow */
-    max-width: 115% !important;
-    flex: none;
-    margin: -1.25rem 0 0 0 !important; /* moved 30% higher up */
-    transform: none !important;
-    animation: heroImageSwapMobile 0.96s cubic-bezier(0.45, 0, 0.2, 1) both;
-    z-index: 1;
-    position: relative;
-  }
-  .cv-scanner .hero-image-container,
-  .cv-overlay {
-    width: 100%;
-    max-width: 100%;
-  }
-  .hero-dot-overlay {
-    display: none;
-  }
-  .hero-name-group .hero-text h1 {
-    width: 100%;
-    max-width: 100%;
-    font-size: 2.2rem !important; /* 10% larger than 2rem section headers */
-    letter-spacing: 0.08em;
-    overflow-wrap: break-word;
-    word-break: normal;
-    text-align: left;
+    justify-content: center;
   }
 }
 
-/* Small mobile devices (iPhone 8 or similar) */
+/* Small mobile devices */
 @media (max-width: 380px) {
+  .hero-section {
+    padding-inline: 1rem;
+  }
   .hero-name-group .hero-text h1 {
-    font-size: 2.09rem !important; /* 5% smaller text */
+    font-size: 1.8rem !important;
   }
-  .hero-name-eyebrow {
-    font-size: 0.76rem !important; /* 5% smaller eyebrow */
-  }
-  .hero-ctas {
-    margin-top: 0.3rem !important; /* lifted 50% higher */
+  .hero-image-wrapper {
+    width: 80% !important;
   }
 }
 
