@@ -8,8 +8,9 @@
 }
 
 .page-section-divider-large {
+  height: 9.84rem;
   align-items: flex-end;
-  padding-bottom: calc(15.75rem * 0.25); /* label at 75% from top */
+  padding-bottom: 3.94rem; /* keep same space below, cut space above by 50% */
 }
 
 .page-section-divider-work {
