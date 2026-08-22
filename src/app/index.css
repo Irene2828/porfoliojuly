@@ -113,10 +113,10 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 .btn-primary {
-  background: #63c0e7; /* light sky blue */
+  background: #2c6f99; /* hero highlight sky blue */
   color: #ffffff;
-  border: 1px solid #63c0e7;
-  box-shadow: 6px 6px 0px #a8d8f2; /* soft pale blue shadow */
+  border: 1px solid #2c6f99;
+  box-shadow: 6px 6px 0px #a8d8f2;
   padding-top: calc(1.1rem - 1px);
   padding-bottom: calc(1.1rem - 1px);
   position: relative;
@@ -124,14 +124,14 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 .btn-primary:hover {
-  background: #3f87ac; /* brand teal on hover */
-  border-color: #3f87ac;
+  background: #1a4f6e;
+  border-color: #1a4f6e;
   box-shadow: 6px 6px 0px #63c0e7;
 }
 
 .btn-primary:active {
-  background: #2c617d;
-  border-color: #2c617d;
+  background: #133a52;
+  border-color: #133a52;
 }
 
 .btn-secondary {
