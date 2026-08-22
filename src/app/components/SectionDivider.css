@@ -41,7 +41,7 @@
 .section-divider-line {
   width: 1.5px;
   height: 1.5rem;
-  background: #3f87ac;
+  background: #000000; /* black */
   transform: rotate(20deg);
   box-shadow: none;
   margin: 0 0.75rem;
@@ -53,7 +53,7 @@
   font-weight: 600;
   letter-spacing: 0.14em;
   text-transform: uppercase;
-  color: #3f87ac;
+  color: #000000; /* black */
   opacity: 0.95;
   -webkit-font-smoothing: antialiased;
 }
