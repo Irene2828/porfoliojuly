@@ -37,7 +37,7 @@
 
 .project-title {
   font-family: var(--font-sans) !important;
-  font-size: clamp(2rem, 4vw, 3.2rem);
+  font-size: clamp(1.8rem, 3.6vw, 2.88rem);
   font-weight: 400;
   color: #ffffff !important; /* white text for contrast */
   text-transform: none;
@@ -48,7 +48,7 @@
   position: relative;
   display: inline-block;
   z-index: 1;
-  padding: 0.24rem 1.2rem 0.2rem; /* 20% more top padding */
+  padding: 0.22rem 1.08rem 0.18rem; /* 10% smaller padding */
 }
 
 .project-title::before {
