@@ -78,7 +78,8 @@ export default function Hero() {
             <img src={heroImage.src} alt="Iryna Sheremeta" className="hero-image" />
             <div className="hero-dot-overlay"></div>
             <div className="hero-image-tagline">
-              Product builder / designer
+              Product Builder <br />
+              / Designer
             </div>
 
             {/* CV Scanning Overlay */}
