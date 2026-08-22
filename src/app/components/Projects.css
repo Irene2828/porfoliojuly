@@ -65,8 +65,13 @@
   display: inline-block;
   z-index: 1;
   padding: 0.12rem 1.2rem 0.2rem 3.1rem; /* increased by 10% */
-  width: 34rem; /* uniform size for all tags */
+  width: auto; /* default to auto */
   max-width: 100%;
+}
+
+.workflow-section .project-title,
+.mobile-apps-section .project-title {
+  width: 28rem; /* match width of these two tags */
 }
 
 .project-title::after {
