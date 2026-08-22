@@ -97,11 +97,6 @@ export default function Projects({ initialProjects }: ProjectsProps) {
                   viewport={{ once: true, amount: 0.2 }}
                   className="project-header"
                 >
-                  <div className="project-title-wrapper">
-                    <h2 className="project-title title-serif">
-                      <span className="project-title-text">{project.title}</span>
-                    </h2>
-                  </div>
                   {project.caseStudyIntro && (
                     <p className="project-subtitle">
                       &mdash; {project.caseStudyIntro}
@@ -202,10 +197,10 @@ export default function Projects({ initialProjects }: ProjectsProps) {
               </div>
             </motion.div>
 
-            {/* Render transitional gold divider for all but the last project */}
+            {/* Render transitional divider with next project title for all but the last project */}
             {index < initialProjects.length - 1 && (
               <div className="gold-divider">
-                <SectionDivider label={`Case ${index + 2}`} />
+                <SectionDivider label={initialProjects[index + 1].title} />
               </div>
             )}
           </div>

@@ -35,7 +35,7 @@ export default async function HomePage() {
       <Header />
       <Hero />
       <div className="page-section-divider page-section-divider-work">
-        <SectionDivider label="Selected Work" />
+        <SectionDivider label={publishedProjects[0]?.title ?? 'Selected Work'} />
       </div>
       <Projects initialProjects={publishedProjects as any} />
       <div className="page-section-divider page-section-divider-large">

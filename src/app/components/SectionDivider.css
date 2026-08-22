@@ -12,7 +12,7 @@
 .page-section-divider-large {
   height: 9.84rem;
   align-items: flex-end;
-  padding-bottom: 3.94rem; /* keep same space below, cut space above by 50% */
+  padding-bottom: 3.94rem;
 }
 
 .page-section-divider-work {
@@ -42,23 +42,93 @@
   width: 100%;
 }
 
+/* Plain line (no label) */
 .section-divider-horizontal-line {
-  display: block; /* show divider line */
-  width: 100vw; /* edge-to-edge screen wide */
-  height: 0.5px; /* thin divider */
-  background: rgba(63, 135, 172, 0.45); /* brand teal */
+  display: block;
+  width: 100vw;
+  height: 0.5px;
+  background: rgba(63, 135, 172, 0.45);
   position: absolute;
   left: 50%;
   transform: translateX(-50%);
   z-index: 1;
 }
 
+/* ── Tag-on-divider layout ── */
+.section-divider-tag-row {
+  display: flex;
+  align-items: center;
+  width: 100vw;
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+/* thin teal lines on each side */
+.section-divider-side-line {
+  flex: 1;
+  height: 0.5px;
+  background: rgba(63, 135, 172, 0.45);
+}
+
+/* the teal tag block */
+.section-divider-tag {
+  display: inline-flex;
+  align-items: center;
+  position: relative;
+  background: rgba(63, 135, 172, 0.9);
+  padding: 0.1rem 0 0.16rem 0;
+  flex-shrink: 0;
+  overflow: visible;
+}
+
+.section-divider-tag-text {
+  font-family: var(--font-sans);
+  font-size: clamp(1.6rem, 3.2vw, 2.56rem);
+  font-weight: 400;
+  color: #ffffff;
+  letter-spacing: 0.05em;
+  white-space: nowrap;
+  padding: 0 2rem;
+  position: relative;
+  z-index: 2;
+  -webkit-font-smoothing: antialiased;
+}
+
+/* dot patterns on left and right of text inside tag */
+.section-divider-tag-dots {
+  display: block;
+  width: 6rem;
+  position: relative;
+  align-self: stretch;
+}
+
+.section-divider-tag-dots::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background-image: radial-gradient(#ffffff 1.2px, transparent 1.3px);
+  background-size: 8px 8px;
+  background-repeat: repeat;
+  opacity: 0.9;
+}
+
+.section-divider-tag-dots-left::before {
+  -webkit-mask-image: linear-gradient(to right, rgba(0,0,0,0) 0%, rgba(0,0,0,1) 100%);
+  mask-image: linear-gradient(to right, rgba(0,0,0,0) 0%, rgba(0,0,0,1) 100%);
+}
+
+.section-divider-tag-dots-right::before {
+  -webkit-mask-image: linear-gradient(to left, rgba(0,0,0,0) 0%, rgba(0,0,0,1) 100%);
+  mask-image: linear-gradient(to left, rgba(0,0,0,0) 0%, rgba(0,0,0,1) 100%);
+}
+
 @media (max-width: 768px) {
-
-  .section-divider-wrap {
+  .section-divider-tag-text {
+    font-size: clamp(1.2rem, 4vw, 1.6rem);
+    padding: 0 1rem;
   }
-
-  .section-divider-line {
-    width: 44px;
+  .section-divider-tag-dots {
+    width: 3rem;
   }
 }
