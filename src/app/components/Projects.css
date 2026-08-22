@@ -281,9 +281,9 @@
 
 .project-chip {
   display: inline-block;
-  background: #3f87ac;
+  background: #000000; /* black background */
   color: #ffffff; /* white text */
-  border: 1px solid #7fb8dd;
+  border: 1px solid #000000; /* black border */
   font-size: 0.62rem;
   font-family: var(--font-sans);
   font-weight: 600;
@@ -299,7 +299,7 @@
   font-family: var(--font-sans);
   font-size: clamp(1.8rem, 3.8vw, 3.2rem);
   font-weight: 500;
-  color: #3f87ac;
+  color: #000000; /* black */
   line-height: 1.1;
   letter-spacing: 0.02em;
   -webkit-font-smoothing: antialiased;
