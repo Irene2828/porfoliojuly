@@ -75,9 +75,10 @@
 .section-divider-tag {
   display: inline-flex;
   align-items: center;
+  justify-content: center;
   position: relative;
   background: rgba(63, 135, 172, 0.9);
-  padding: 0.1rem 0 0.16rem 0;
+  padding: 0.55rem 0; /* equal top/bottom for vertical centering */
   flex-shrink: 0;
   overflow: visible;
 }
