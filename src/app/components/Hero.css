@@ -717,15 +717,27 @@
 }
 
 /* Tech Pixel Decor in Top-Left (guiding eye to header area) */
-.hero-pixel-decor {
+.hero-pixel-curtain {
   position: absolute;
   top: 0;
   left: 0;
-  width: 320px;
+  width: 100%;
   height: 220px;
   pointer-events: none;
   z-index: 1; /* behind name copy but visible on background */
-  opacity: 0.8;
+}
+
+.curtain-col {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  width: 10px;
+}
+
+.curtain-pixel {
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
 }
 
 @keyframes pixelFloat1 {
