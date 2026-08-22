@@ -113,9 +113,9 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 .btn-primary {
-  background: #242024; /* brand charcoal grey */
+  background: #55606a; /* brand mid charcoal grey */
   color: #ffffff;
-  border: 1px solid #242024;
+  border: 1px solid #55606a;
   box-shadow: 6px 6px 0px #e2e6ea; /* soft grey shadow */
   padding-top: calc(1.1rem - 1px);
   padding-bottom: calc(1.1rem - 1px);
