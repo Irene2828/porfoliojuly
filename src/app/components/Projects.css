@@ -35,6 +35,23 @@
   text-align: left;
 }
 
+.project-title-wrapper {
+  display: flex;
+  align-items: center;
+  width: 100%;
+  position: relative;
+  margin-bottom: 0.8rem;
+  overflow: visible;
+}
+
+.project-title-line {
+  height: 2px;
+  background-color: rgba(0, 0, 0, 0.25); /* same thickness and opacity as previous divider line */
+  flex: 1;
+  margin-right: -100vw; /* extend past layout container margin to screen edge */
+  padding-right: 100vw;
+}
+
 .project-title {
   font-family: var(--font-sans) !important;
   font-size: clamp(1.8rem, 3.6vw, 2.88rem);
@@ -43,7 +60,6 @@
   text-transform: none;
   letter-spacing: 0.05em;
   -webkit-font-smoothing: antialiased;
-  margin-bottom: 0.8rem;
   line-height: 1.1;
   position: relative;
   display: inline-block;

@@ -97,7 +97,10 @@ export default function Projects({ initialProjects }: ProjectsProps) {
                   viewport={{ once: true, amount: 0.2 }}
                   className="project-header"
                 >
-                  <h2 className="project-title title-serif">{project.title}</h2>
+                  <div className="project-title-wrapper">
+                    <h2 className="project-title title-serif">{project.title}</h2>
+                    <div className="project-title-line" />
+                  </div>
                   {project.caseStudyIntro && (
                     <p className="project-subtitle">
                       &mdash; {project.caseStudyIntro}

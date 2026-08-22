@@ -39,6 +39,7 @@
 }
 
 .section-divider-horizontal-line {
+  display: none; /* hide divider line completely */
   width: 16rem; /* 4 times wider (was 4rem) */
   height: 2px; /* twice thicker (was 1px) */
   background: #000000; /* black */
