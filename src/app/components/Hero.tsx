@@ -9,39 +9,50 @@ export default function Hero() {
     <section className="hero-section">
       {/* Tech Pixel Decor in Top-Left */}
       <div className="hero-pixel-decor">
-        <svg width="240" height="320" viewBox="0 0 240 320" fill="none" xmlns="http://www.w3.org/2000/svg">
-          {/* Column 1 */}
-          <rect x="20" y="40" width="6" height="6" fill="#3f87ac" opacity="0.4" className="pixel-pulse-1" />
-          <rect x="20" y="110" width="4" height="4" fill="#a8d8f2" opacity="0.6" className="pixel-pulse-2" />
-          <rect x="20" y="180" width="8" height="8" fill="#63c0e7" opacity="0.3" className="pixel-pulse-3" />
+        <svg width="320" height="220" viewBox="0 0 320 220" fill="none" xmlns="http://www.w3.org/2000/svg">
+          {/* Column 1 (Deepest - Left) */}
+          <rect x="20" y="20" width="6" height="6" fill="#3f87ac" opacity="0.4" className="pixel-pulse-1" />
+          <rect x="20" y="60" width="4" height="4" fill="#a8d8f2" opacity="0.6" className="pixel-pulse-2" />
+          <rect x="20" y="100" width="8" height="8" fill="#63c0e7" opacity="0.3" className="pixel-pulse-3" />
+          <rect x="20" y="140" width="5" height="5" fill="#3f87ac" opacity="0.5" className="pixel-pulse-1" />
+          <rect x="20" y="180" width="7" height="7" fill="#2494c8" opacity="0.35" className="pixel-pulse-2" />
           
           {/* Column 2 */}
-          <rect x="60" y="20" width="8" height="8" fill="#2494c8" opacity="0.35" className="pixel-pulse-2" />
-          <rect x="60" y="75" width="5" height="5" fill="#3f87ac" opacity="0.5" className="pixel-pulse-1" />
-          <rect x="60" y="140" width="7" height="7" fill="#a8d8f2" opacity="0.4" className="pixel-pulse-3" />
-          <rect x="60" y="220" width="4" height="4" fill="#3f87ac" opacity="0.6" className="pixel-pulse-2" />
+          <rect x="60" y="15" width="8" height="8" fill="#2494c8" opacity="0.35" className="pixel-pulse-2" />
+          <rect x="60" y="55" width="5" height="5" fill="#3f87ac" opacity="0.5" className="pixel-pulse-1" />
+          <rect x="60" y="95" width="7" height="7" fill="#a8d8f2" opacity="0.4" className="pixel-pulse-3" />
+          <rect x="60" y="135" width="4" height="4" fill="#3f87ac" opacity="0.6" className="pixel-pulse-2" />
+          <rect x="60" y="165" width="6" height="6" fill="#63c0e7" opacity="0.3" className="pixel-pulse-1" />
 
           {/* Column 3 */}
-          <rect x="100" y="50" width="5" height="5" fill="#63c0e7" opacity="0.45" className="pixel-pulse-3" />
-          <rect x="100" y="105" width="8" height="8" fill="#3f87ac" opacity="0.3" className="pixel-pulse-1" />
-          <rect x="100" y="195" width="6" height="6" fill="#a8d8f2" opacity="0.5" className="pixel-pulse-2" />
-          <rect x="100" y="260" width="4" height="4" fill="#2494c8" opacity="0.4" className="pixel-pulse-3" />
+          <rect x="100" y="30" width="5" height="5" fill="#63c0e7" opacity="0.45" className="pixel-pulse-3" />
+          <rect x="100" y="70" width="8" height="8" fill="#3f87ac" opacity="0.3" className="pixel-pulse-1" />
+          <rect x="100" y="110" width="6" height="6" fill="#a8d8f2" opacity="0.5" className="pixel-pulse-2" />
+          <rect x="100" y="145" width="4" height="4" fill="#2494c8" opacity="0.4" className="pixel-pulse-3" />
 
           {/* Column 4 */}
-          <rect x="140" y="30" width="4" height="4" fill="#a8d8f2" opacity="0.6" className="pixel-pulse-2" />
-          <rect x="140" y="90" width="7" height="7" fill="#63c0e7" opacity="0.35" className="pixel-pulse-3" />
-          <rect x="140" y="155" width="5" height="5" fill="#3f87ac" opacity="0.5" className="pixel-pulse-1" />
-          <rect x="140" y="230" width="8" height="8" fill="#2494c8" opacity="0.25" className="pixel-pulse-2" />
+          <rect x="140" y="15" width="4" height="4" fill="#a8d8f2" opacity="0.6" className="pixel-pulse-2" />
+          <rect x="140" y="50" width="7" height="7" fill="#63c0e7" opacity="0.35" className="pixel-pulse-3" />
+          <rect x="140" y="85" width="5" height="5" fill="#3f87ac" opacity="0.5" className="pixel-pulse-1" />
+          <rect x="140" y="120" width="8" height="8" fill="#2494c8" opacity="0.25" className="pixel-pulse-2" />
 
           {/* Column 5 */}
-          <rect x="180" y="70" width="6" height="6" fill="#3f87ac" opacity="0.4" className="pixel-pulse-1" />
-          <rect x="180" y="130" width="4" height="4" fill="#a8d8f2" opacity="0.55" className="pixel-pulse-3" />
-          <rect x="180" y="200" width="7" height="7" fill="#63c0e7" opacity="0.3" className="pixel-pulse-2" />
+          <rect x="180" y="25" width="6" height="6" fill="#3f87ac" opacity="0.4" className="pixel-pulse-1" />
+          <rect x="180" y="65" width="4" height="4" fill="#a8d8f2" opacity="0.55" className="pixel-pulse-3" />
+          <rect x="180" y="100" width="7" height="7" fill="#63c0e7" opacity="0.3" className="pixel-pulse-2" />
 
           {/* Column 6 */}
-          <rect x="220" y="45" width="5" height="5" fill="#2494c8" opacity="0.5" className="pixel-pulse-3" />
-          <rect x="220" y="115" width="8" height="8" fill="#3f87ac" opacity="0.25" className="pixel-pulse-2" />
-          <rect x="220" y="175" width="4" height="4" fill="#a8d8f2" opacity="0.6" className="pixel-pulse-1" />
+          <rect x="220" y="15" width="5" height="5" fill="#2494c8" opacity="0.5" className="pixel-pulse-3" />
+          <rect x="220" y="45" width="8" height="8" fill="#3f87ac" opacity="0.25" className="pixel-pulse-2" />
+          <rect x="220" y="80" width="4" height="4" fill="#a8d8f2" opacity="0.6" className="pixel-pulse-1" />
+
+          {/* Column 7 */}
+          <rect x="260" y="20" width="6" height="6" fill="#63c0e7" opacity="0.4" className="pixel-pulse-2" />
+          <rect x="260" y="55" width="5" height="5" fill="#a8d8f2" opacity="0.5" className="pixel-pulse-3" />
+
+          {/* Column 8 (Shallowest - Right) */}
+          <rect x="300" y="15" width="4" height="4" fill="#3f87ac" opacity="0.5" className="pixel-pulse-1" />
+          <rect x="300" y="35" width="6" height="6" fill="#2494c8" opacity="0.3" className="pixel-pulse-2" />
         </svg>
       </div>
 
