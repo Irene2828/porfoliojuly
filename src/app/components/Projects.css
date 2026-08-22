@@ -65,13 +65,9 @@
   display: inline-block;
   z-index: 1;
   padding: 0.12rem 1.2rem 0.2rem 3.1rem; /* increased by 10% */
-  width: auto; /* default to auto */
+  width: 38rem; /* uniform size for all tags to align them to Workflow Automation */
   max-width: 100%;
-}
-
-.workflow-section .project-title,
-.mobile-apps-section .project-title {
-  width: 37rem; /* wider to prevent text wrapping on Workflow Automation */
+  white-space: nowrap !important; /* absolutely guarantees single-row rendering */
 }
 
 .project-title::after {
