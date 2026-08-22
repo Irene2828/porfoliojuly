@@ -39,7 +39,7 @@
   font-family: var(--font-sans) !important;
   font-size: clamp(1.8rem, 3.6vw, 2.88rem);
   font-weight: 400;
-  color: #44355b !important; /* deep dark lilac purple for contrast */
+  color: #ffffff !important; /* white text for contrast */
   text-transform: none;
   letter-spacing: 0.05em;
   -webkit-font-smoothing: antialiased;
@@ -49,17 +49,18 @@
   display: inline-block;
   z-index: 1;
   padding: 0.11rem 1.08rem 0.18rem; /* 50% less top padding */
-  transform: translateX(-20%);
 }
 
 .project-title::before {
   content: "";
   position: absolute;
-  inset: 0; /* cover the entire block */
-  background-color: #e2d5f3; /* light lilac purple */
+  top: 0;
+  bottom: 0;
+  left: -100vw; /* extend all the way to screen left edge */
+  right: 0; /* ends at text edge */
+  background-color: rgba(52, 56, 59, 0.8); /* same grey as footer, 20% less opacity */
   z-index: -1;
-  transform: skewX(15deg); /* inclined to the left */
-  opacity: 1; /* solid brand teal */
+  opacity: 1;
 }
 
 .project-subtitle {
