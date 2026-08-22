@@ -32,16 +32,16 @@
 
 .project-header {
   margin-bottom: 2.5rem;
-  text-align: right;
+  text-align: center;
 }
 
 .project-title-wrapper {
   display: flex;
   align-items: center;
-  justify-content: flex-end; /* push tag to the right */
+  justify-content: center; /* center the tag */
   width: 100%;
   position: relative;
-  margin-bottom: 1.6rem; /* doubled spacing over subtitles */
+  margin-bottom: 1.6rem;
   overflow: visible;
 }
 
@@ -55,53 +55,76 @@
 
 .project-title {
   font-family: var(--font-sans) !important;
-  font-size: clamp(1.78rem, 3.56vw, 2.85rem); /* reduced by 10% */
+  font-size: clamp(1.78rem, 3.56vw, 2.85rem);
   font-weight: 400;
-  color: #ffffff !important; /* white text for contrast */
+  color: #ffffff !important;
   text-transform: none;
   letter-spacing: 0.05em;
   -webkit-font-smoothing: antialiased;
   line-height: 1.1;
   position: relative;
-  display: inline-block;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
   z-index: 1;
-  padding: 0.1rem 3.1rem 0.16rem 3rem; /* left: text side, right: dots side */
-  width: 43rem; /* uniform size for all tags */
+  padding: 0.1rem 0 0.16rem 0;
+  width: 75vw; /* 3/4 of screen width */
   max-width: 100%;
   white-space: nowrap !important;
-  text-align: left; /* text on the left side of the tag */
+  text-align: center;
 }
 
 .project-title-text {
   position: relative;
   display: inline-block;
+  flex-shrink: 0;
+  padding: 0 2rem; /* breathing room on both sides of text */
+  z-index: 2;
 }
 
-.project-title-text::after {
+/* dots to the LEFT of text */
+.project-title-text::before {
   content: "";
   position: absolute;
-  right: -100vw; /* bleed all the way to the screen right edge */
-  left: 100%; /* start exactly where the text ends */
-  margin-left: 1rem; /* gap between text and dots */
-  top: -0.1rem; /* offset parent padding to span full tag height */
+  right: 100%;
+  left: -100vw;
+  top: -0.1rem;
   bottom: -0.16rem;
   background-image: radial-gradient(#ffffff 1.2px, transparent 1.3px);
   background-size: 8px 8px;
   background-repeat: repeat;
   z-index: 2;
   opacity: 0.9;
-  -webkit-mask-image: linear-gradient(to left, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 1) 100%);
-  mask-image: linear-gradient(to left, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 1) 100%); /* fade right (invisible) to left (solid) */
+  -webkit-mask-image: linear-gradient(to right, rgba(0,0,0,0) 0%, rgba(0,0,0,1) 100%);
+  mask-image: linear-gradient(to right, rgba(0,0,0,0) 0%, rgba(0,0,0,1) 100%);
 }
 
+/* dots to the RIGHT of text */
+.project-title-text::after {
+  content: "";
+  position: absolute;
+  left: 100%;
+  right: -100vw;
+  top: -0.1rem;
+  bottom: -0.16rem;
+  background-image: radial-gradient(#ffffff 1.2px, transparent 1.3px);
+  background-size: 8px 8px;
+  background-repeat: repeat;
+  z-index: 2;
+  opacity: 0.9;
+  -webkit-mask-image: linear-gradient(to left, rgba(0,0,0,0) 0%, rgba(0,0,0,1) 100%);
+  mask-image: linear-gradient(to left, rgba(0,0,0,0) 0%, rgba(0,0,0,1) 100%);
+}
+
+/* teal background spanning full tag width */
 .project-title::before {
   content: "";
   position: absolute;
   top: 0;
   bottom: 0;
-  right: -100vw; /* extend all the way to screen right edge */
-  left: 0; /* starts at text left edge */
-  background-color: rgba(63, 135, 172, 0.9); /* brand teal at 90% opacity */
+  left: 0;
+  right: 0;
+  background-color: rgba(63, 135, 172, 0.9);
   z-index: -1;
   opacity: 1;
 }
