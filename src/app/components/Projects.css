@@ -54,7 +54,7 @@
 
 .project-title {
   font-family: var(--font-sans) !important;
-  font-size: clamp(1.98rem, 3.96vw, 3.17rem); /* increased by 10% */
+  font-size: clamp(1.78rem, 3.56vw, 2.85rem); /* reduced by 10% */
   font-weight: 400;
   color: #ffffff !important; /* white text for contrast */
   text-transform: none;
@@ -64,7 +64,7 @@
   position: relative;
   display: inline-block;
   z-index: 1;
-  padding: 0.12rem 3rem 0.2rem 3.1rem; /* increased right padding to 3rem */
+  padding: 0.1rem 3rem 0.16rem 3.1rem; /* reduced vertical padding by 20% */
   width: 43rem; /* uniform size for all tags to align them to Workflow Automation and provide padding safety */
   max-width: 100%;
   white-space: nowrap !important; /* absolutely guarantees single-row rendering */
@@ -82,8 +82,8 @@
   left: -100vw; /* bleed all the way to the screen left edge */
   right: 100%; /* end exactly where the text starts */
   margin-right: 1rem; /* gap between dots and text */
-  top: -0.12rem; /* offset parent padding to span full tag height */
-  bottom: -0.2rem;
+  top: -0.1rem; /* offset parent padding to span full tag height */
+  bottom: -0.16rem;
   background-image: radial-gradient(#ffffff 1.2px, transparent 1.3px); /* matched to 1.2px section background dots */
   background-size: 8px 8px; /* matched to 8px section grid */
   background-repeat: repeat;
