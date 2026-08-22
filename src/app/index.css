@@ -113,10 +113,10 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 .btn-primary {
-  background: #E30220; /* brand red */
+  background: #3f87ac; /* brand teal blue */
   color: #ffffff;
-  border: 1px solid #E30220;
-  box-shadow: 6px 6px 0px #DDDDDD; /* light gray shadow */
+  border: 1px solid #3f87ac;
+  box-shadow: 6px 6px 0px #a8d8f2; /* soft light blue shadow */
   padding-top: calc(1.1rem - 1px);
   padding-bottom: calc(1.1rem - 1px);
   position: relative;
