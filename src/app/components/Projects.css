@@ -309,7 +309,7 @@
 .websites-section,
 .workflow-section,
 .mobile-apps-section {
-  background: radial-gradient(circle at 50% 42%, #ffffff 0%, #f6fbfe 42%, #e9f6fd 100%);
+  background: #ffffff;
 }
 
 .websites-section .project-annotations-row {
@@ -359,15 +359,14 @@
 .websites-section {
   position: relative;
   z-index: 12;
-  background:
-    linear-gradient(to bottom, #ffffff 0%, #ffffff 12%, #f6fbfe 24%, #f6fbfe 76%, #ffffff 88%, #ffffff 100%);
+  background: #ffffff;
   padding-bottom: 0;
   box-shadow: none;
 }
 
 /* Workflow Automation Section Styling */
 .workflow-section {
-  background: linear-gradient(to bottom, #ffffff 0%, #ffffff 12%, #f6fbfe 24%, #f6fbfe 76%, #ffffff 88%, #ffffff 100%);
+  background: #ffffff;
 }
 .workflow-section::before,
 .websites-section::before,
@@ -391,7 +390,7 @@
 
 /* Mobile Apps Section Styling */
 .mobile-apps-section {
-  background: linear-gradient(to bottom, #ffffff 0%, #ffffff 12%, #f6fbfe 24%, #f6fbfe 76%, #ffffff 88%, #ffffff 100%);
+  background: #ffffff;
 }
 .mobile-apps-section .project-visual {
   max-width: 30%; /* 50% smaller than previous 60% */
