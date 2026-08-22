@@ -269,11 +269,8 @@
   0% {
     opacity: 0;
   }
-  1%, 90% {
+  1%, 100% {
     opacity: 0.85;
-  }
-  100% {
-    opacity: 0; /* fade out when scan ends */
   }
 }
 
@@ -511,8 +508,7 @@
 
 @keyframes scannerIntroShow {
   0% { opacity: 1; }
-  90% { opacity: 1; }
-  100% { opacity: 0; } /* fade out after initial scan completes */
+  100% { opacity: 1; }
 }
 
 /* Corner bracket markers */
@@ -621,16 +617,12 @@
 
 @keyframes captionIntroRight {
   0% { opacity: 0; transform: translateX(18px); }
-  10% { opacity: 1; transform: translateX(0); }
-  90% { opacity: 1; transform: translateX(0); }
-  100% { opacity: 0; transform: translateX(18px); } /* hide after scan completes */
+  100% { opacity: 1; transform: translateX(0); }
 }
 
 @keyframes captionIntroLeft {
   0% { opacity: 0; transform: translateX(-18px); }
-  10% { opacity: 1; transform: translateX(0); }
-  90% { opacity: 1; transform: translateX(0); }
-  100% { opacity: 0; transform: translateX(-18px); } /* hide after scan completes */
+  100% { opacity: 1; transform: translateX(0); }
 }
 
 /* Connector line from image to label */
