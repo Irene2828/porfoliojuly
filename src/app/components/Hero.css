@@ -1,6 +1,6 @@
 .hero-section {
   --hero-visual-width: min(24vw, 304px);
-  --hero-inner-width: min(calc(100vw - 4rem), 1232px); /* 1296px - 4rem padding */
+  --hero-inner-width: min(calc(100vw - 4rem), 1102px); /* 1166px - 4rem padding */
   --hero-column-swap-distance: calc(var(--hero-inner-width) - 100%);
   --hero-image-swap-distance: calc(var(--hero-inner-width) - 100% - 5vw);
   --hero-corner-size: min(28vw, 360px);

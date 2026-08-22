@@ -1,6 +1,6 @@
 .premium-header {
   --hero-visual-width: min(30vw, 380px);
-  --hero-inner-width: min(calc(100vw - 4rem), 1232px); /* 1296px - 4rem padding */
+  --hero-inner-width: min(calc(100vw - 4rem), 1102px); /* 1166px - 4rem padding */
   --hero-image-swap-distance: calc(var(--hero-inner-width) - var(--hero-visual-width));
   --hero-intro-delay: 0.9s;
   --hero-motion-duration: 1.92s;
@@ -11,7 +11,7 @@
   left: 50%;
   transform: translateX(-50%);
   width: 100%;
-  max-width: 1296px; /* Matches global container */
+  max-width: 1166px; /* Matches global container */
   display: flex;
   justify-content: flex-start;
   align-items: center;
