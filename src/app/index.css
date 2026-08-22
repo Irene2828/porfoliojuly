@@ -113,10 +113,10 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 .btn-primary {
-  background: #78b139; /* brand lime green */
+  background: #5ebd1d; /* brand lime green */
   color: #ffffff;
-  border: 1px solid #78b139;
-  box-shadow: 6px 6px 0px #c6e5a1; /* soft lime green shadow */
+  border: 1px solid #5ebd1d;
+  box-shadow: 6px 6px 0px #d0fa8c; /* soft lime green shadow */
   padding-top: calc(1.1rem - 1px);
   padding-bottom: calc(1.1rem - 1px);
   position: relative;
