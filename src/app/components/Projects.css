@@ -39,7 +39,7 @@
   font-family: var(--font-sans) !important;
   font-size: clamp(1.8rem, 3.6vw, 2.88rem);
   font-weight: 400;
-  color: #ffffff !important; /* white text for contrast */
+  color: #44355b !important; /* deep dark lilac purple for contrast */
   text-transform: none;
   letter-spacing: 0.05em;
   -webkit-font-smoothing: antialiased;
@@ -56,7 +56,7 @@
   content: "";
   position: absolute;
   inset: 0; /* cover the entire block */
-  background-color: #3f87ac;
+  background-color: #e2d5f3; /* light lilac purple */
   z-index: -1;
   transform: skewX(15deg); /* inclined to the left */
   opacity: 1; /* solid brand teal */
