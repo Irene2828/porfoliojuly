@@ -59,6 +59,7 @@
 .section-divider-tag-row {
   display: flex;
   align-items: center;
+  justify-content: center;
   width: 100vw;
   position: absolute;
   left: 50%;
@@ -89,6 +90,7 @@
   letter-spacing: 0.05em;
   white-space: nowrap;
   padding: 0 2rem;
+  text-align: center;
   position: relative;
   z-index: 2;
   -webkit-font-smoothing: antialiased;
