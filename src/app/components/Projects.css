@@ -54,13 +54,12 @@
 .project-title::after {
   content: "";
   position: absolute;
-  left: 1rem;
-  top: 50%;
-  transform: translateY(-50%);
-  width: 1.2rem;
-  height: 0.8rem;
-  background-image: radial-gradient(#3f87ac 1.2px, transparent 1.2px);
-  background-size: 4px 4px;
+  left: -100vw; /* bleed all the way to the screen left edge */
+  right: calc(100% - 2.2rem); /* end just before text starts */
+  top: 0;
+  bottom: 0;
+  background-image: radial-gradient(#3f87ac 3px, transparent 3.2px); /* 3x larger dots */
+  background-size: 10px 10px; /* proportioned grid spacing */
   background-repeat: repeat;
   z-index: 2;
   opacity: 0.9;
