@@ -97,7 +97,7 @@
 
 .project-body-grid {
   display: grid;
-  grid-template-columns: 2.4fr 1fr; /* increased visual column by 20% */
+  grid-template-columns: 2.88fr 1fr; /* increased visual column by 20% again */
   gap: 4rem;
   align-items: center;
   margin-bottom: 2rem;
