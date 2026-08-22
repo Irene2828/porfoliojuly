@@ -40,7 +40,7 @@
   align-items: center;
   width: 100%;
   position: relative;
-  margin-bottom: 0.8rem;
+  margin-bottom: 1.6rem; /* doubled spacing over subtitles */
   overflow: visible;
 }
 
