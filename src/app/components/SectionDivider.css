@@ -5,6 +5,8 @@
   align-items: center;
   justify-content: center;
   box-sizing: border-box;
+  position: relative;
+  overflow: visible;
 }
 
 .page-section-divider-large {
@@ -36,14 +38,19 @@
   gap: 1rem;
   padding: 0;
   background: transparent;
+  position: relative;
+  width: 100%;
 }
 
 .section-divider-horizontal-line {
-  display: none; /* hide divider line completely */
-  width: 16rem; /* 4 times wider (was 4rem) */
-  height: 2px; /* twice thicker (was 1px) */
-  background: #000000; /* black */
-  opacity: 0.25; /* subtle */
+  display: block; /* show divider line */
+  width: 100vw; /* edge-to-edge screen wide */
+  height: 0.5px; /* thin divider */
+  background: rgba(63, 135, 172, 0.45); /* brand teal */
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 1;
 }
 
 @media (max-width: 768px) {
