@@ -65,6 +65,8 @@
   display: inline-block;
   z-index: 1;
   padding: 0.12rem 1.2rem 0.2rem 3.1rem; /* increased by 10% */
+  width: 34rem; /* uniform size for all tags */
+  max-width: 100%;
 }
 
 .project-title::after {
