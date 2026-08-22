@@ -722,7 +722,7 @@
   top: 0;
   left: 0;
   width: 100%;
-  height: 220px;
+  height: 110px;
   pointer-events: none;
   z-index: 1; /* behind name copy but visible on background */
 }
