@@ -46,7 +46,7 @@
 
 .project-title-line {
   height: 2px;
-  background-color: rgba(0, 0, 0, 0.25); /* same thickness and opacity as previous divider line */
+  background-color: rgba(63, 135, 172, 0.9); /* brand teal at 90% opacity */
   flex: 1;
   margin-right: -100vw; /* extend past layout container margin to screen edge */
   padding-right: 100vw;
@@ -90,7 +90,7 @@
   bottom: 0;
   left: -100vw; /* extend all the way to screen left edge */
   right: 0; /* ends at text edge */
-  background-color: rgba(0, 0, 0, 0.8); /* black with 20% opacity reduction */
+  background-color: rgba(63, 135, 172, 0.9); /* brand teal at 90% opacity */
   z-index: -1;
   opacity: 1;
 }
@@ -297,9 +297,9 @@
 
 .project-chip {
   display: inline-block;
-  background: rgba(0, 0, 0, 0.6); /* 60% opacity black */
+  background: rgba(63, 135, 172, 0.9); /* brand teal at 90% opacity */
   color: #ffffff; /* white text */
-  border: 1px solid rgba(0, 0, 0, 0.6);
+  border: 1px solid rgba(63, 135, 172, 0.9);
   font-size: 0.62rem;
   font-family: var(--font-sans);
   font-weight: 600;
@@ -315,7 +315,7 @@
   font-family: var(--font-sans);
   font-size: clamp(1.8rem, 3.8vw, 3.2rem);
   font-weight: 500;
-  color: rgba(0, 0, 0, 0.8); /* 80% opacity black */
+  color: rgba(63, 135, 172, 0.9); /* brand teal at 90% opacity */
   line-height: 1.1;
   letter-spacing: 0.02em;
   -webkit-font-smoothing: antialiased;
