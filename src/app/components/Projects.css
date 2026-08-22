@@ -58,11 +58,13 @@
   right: calc(100% - 2.2rem); /* end just before text starts */
   top: 0;
   bottom: 0;
-  background-image: radial-gradient(#3f87ac 3px, transparent 3.2px); /* 3x larger dots */
-  background-size: 10px 10px; /* proportioned grid spacing */
+  background-image: radial-gradient(#ffffff 3px, transparent 3.2px); /* white dots */
+  background-size: 10px 10px;
   background-repeat: repeat;
   z-index: 2;
   opacity: 0.9;
+  -webkit-mask-image: linear-gradient(to right, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 1) 100%);
+  mask-image: linear-gradient(to right, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 1) 100%); /* fade left (smallest/invisible) to right (biggest/solid) */
 }
 
 .project-title::before {
@@ -72,7 +74,7 @@
   bottom: 0;
   left: -100vw; /* extend all the way to screen left edge */
   right: 0; /* ends at text edge */
-  background-color: rgba(52, 56, 59, 0.8); /* same grey as footer, 20% less opacity */
+  background-color: rgba(0, 0, 0, 0.8); /* black with 20% opacity reduction */
   z-index: -1;
   opacity: 1;
 }
