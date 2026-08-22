@@ -101,7 +101,6 @@ export default function Projects({ initialProjects }: ProjectsProps) {
                     <h2 className="project-title title-serif">
                       <span className="project-title-text">{project.title}</span>
                     </h2>
-                    <div className="project-title-line" />
                   </div>
                   {project.caseStudyIntro && (
                     <p className="project-subtitle">
