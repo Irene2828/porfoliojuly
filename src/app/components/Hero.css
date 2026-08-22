@@ -510,7 +510,8 @@
 
 @keyframes scannerIntroShow {
   0% { opacity: 1; }
-  100% { opacity: 1; }
+  90% { opacity: 1; }
+  100% { opacity: 0; } /* fade out after initial scan completes */
 }
 
 /* Corner bracket markers */
@@ -606,14 +607,29 @@
   transition-duration: 0.18s;
 }
 
+.hero-image-wrapper:hover .cv-overlay,
+.hero-image-wrapper:focus-within .cv-overlay,
+.hero-image-wrapper:focus-visible .cv-overlay {
+  opacity: 1 !important;
+  transition: opacity 0.18s ease;
+}
+
+.hero-image-wrapper:hover .cv-scanline {
+  animation: scanDownHover 1.5s cubic-bezier(0.25, 0.1, 0.25, 1) forwards;
+}
+
 @keyframes captionIntroRight {
   0% { opacity: 0; transform: translateX(18px); }
-  100% { opacity: 1; transform: translateX(0); }
+  10% { opacity: 1; transform: translateX(0); }
+  90% { opacity: 1; transform: translateX(0); }
+  100% { opacity: 0; transform: translateX(18px); } /* hide after scan completes */
 }
 
 @keyframes captionIntroLeft {
   0% { opacity: 0; transform: translateX(-18px); }
-  100% { opacity: 1; transform: translateX(0); }
+  10% { opacity: 1; transform: translateX(0); }
+  90% { opacity: 1; transform: translateX(0); }
+  100% { opacity: 0; transform: translateX(-18px); } /* hide after scan completes */
 }
 
 /* Connector line from image to label */
