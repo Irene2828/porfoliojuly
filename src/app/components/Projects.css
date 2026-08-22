@@ -80,7 +80,7 @@
 
 .project-body-grid {
   display: grid;
-  grid-template-columns: 2fr 1fr;
+  grid-template-columns: 2.4fr 1fr; /* increased visual column by 20% */
   gap: 4rem;
   align-items: center;
   margin-bottom: 2rem;
@@ -394,5 +394,5 @@
   background: #ffffff;
 }
 .mobile-apps-section .project-visual {
-  max-width: 30%; /* 50% smaller than previous 60% */
+  max-width: 36%; /* increased by 20% (was 30%) */
 }
