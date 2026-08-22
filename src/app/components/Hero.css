@@ -721,8 +721,8 @@
   position: absolute;
   top: 0;
   left: 0;
-  width: 40%;
-  height: 110px;
+  width: 110px;
+  height: 75%;
   pointer-events: none;
   z-index: 1; /* behind name copy but visible on background */
 }

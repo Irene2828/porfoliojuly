@@ -42,7 +42,7 @@ export default function Hero() {
                 key={pIdx}
                 className={`curtain-pixel pixel-pulse-${col.pulses[pIdx]}`}
                 style={{
-                  top: `${depth * 0.5}px`,
+                  top: `${depth * 0.4}%`,
                   width: `${col.sizes[pIdx]}px`,
                   height: `${col.sizes[pIdx]}px`,
                   backgroundColor: col.colors[pIdx],
