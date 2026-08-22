@@ -113,10 +113,10 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 .btn-primary {
-  background: #4d565f; /* charcoal grey, 10% darker */
+  background: #63c0e7; /* light sky blue */
   color: #ffffff;
-  border: 1px solid #4d565f;
-  box-shadow: 6px 6px 0px #c2c8cc; /* darker grey shadow */
+  border: 1px solid #63c0e7;
+  box-shadow: 6px 6px 0px #a8d8f2; /* soft pale blue shadow */
   padding-top: calc(1.1rem - 1px);
   padding-bottom: calc(1.1rem - 1px);
   position: relative;
@@ -124,14 +124,14 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 .btn-primary:hover {
-  background: #1c1f22; /* near-black on hover */
-  border-color: #1c1f22;
-  box-shadow: 6px 6px 0px #9aa0a6;
+  background: #3f87ac; /* brand teal on hover */
+  border-color: #3f87ac;
+  box-shadow: 6px 6px 0px #63c0e7;
 }
 
 .btn-primary:active {
-  background: #0f1012;
-  border-color: #0f1012;
+  background: #2c617d;
+  border-color: #2c617d;
 }
 
 .btn-secondary {
