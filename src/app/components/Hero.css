@@ -690,8 +690,8 @@
 .hero-image-tagline {
   position: absolute;
   bottom: 1.25rem;
-  right: -2rem; /* position outside the image */
-  transform: translateX(100%);
+  right: -1rem; /* position outside the image, adjusted left */
+  transform: translateX(50%);
   z-index: 8;
   font-family: var(--font-sans);
   font-size: clamp(0.78rem, 1.1vw, 0.92rem);
@@ -710,14 +710,14 @@
 }
 
 @keyframes taglineIntro {
-  0% { opacity: 0; transform: translateX(100%) translateY(8px); }
-  100% { opacity: 1; transform: translateX(100%) translateY(0); }
+  0% { opacity: 0; transform: translateX(50%) translateY(8px); }
+  100% { opacity: 1; transform: translateX(50%) translateY(0); }
 }
 
 /* When wrapper is hovered, hide the tagline so scanner and annotations show */
 .hero-image-wrapper:hover .hero-image-tagline,
 .hero-image-wrapper:focus-within .hero-image-tagline {
   opacity: 0 !important;
-  transform: translateX(100%) translateY(8px) !important;
+  transform: translateX(50%) translateY(8px) !important;
   transition: opacity 0.18s ease, transform 0.18s ease;
 }
