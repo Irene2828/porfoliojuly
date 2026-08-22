@@ -46,7 +46,7 @@
 
 .project-title-line {
   height: 1px; /* twice thinner (was 2px) */
-  background-color: rgba(94, 189, 29, 0.9); /* brand lime green at 90% opacity */
+  background-color: rgba(224, 165, 177, 0.9); /* brand rose at 90% opacity */
   flex: 1;
   margin-right: -100vw; /* extend past layout container margin to screen edge */
   padding-right: 100vw;
@@ -94,7 +94,7 @@
   bottom: 0;
   left: -100vw; /* extend all the way to screen left edge */
   right: 0; /* ends at text edge */
-  background-color: rgba(94, 189, 29, 0.9); /* brand lime green at 90% opacity */
+  background-color: rgba(224, 165, 177, 0.9); /* brand rose at 90% opacity */
   z-index: -1;
   opacity: 1;
 }
@@ -102,7 +102,7 @@
 .project-subtitle {
   font-family: var(--font-sans);
   font-size: clamp(0.885rem, 1.2vw, 1.005rem);
-  color: #4b9916; /* slightly darker vibrant green for high readability on white */
+  color: #b76e79; /* deep rose for high contrast readability on white */
   line-height: 1.5;
   margin: 0;
   font-style: normal; /* non-italic text */
@@ -301,9 +301,9 @@
 
 .project-chip {
   display: inline-block;
-  background: rgba(94, 189, 29, 0.9); /* brand lime green at 90% opacity */
+  background: rgba(224, 165, 177, 0.9); /* brand rose at 90% opacity */
   color: #ffffff; /* white text */
-  border: 1px solid rgba(94, 189, 29, 0.9);
+  border: 1px solid rgba(224, 165, 177, 0.9);
   font-size: 0.62rem;
   font-family: var(--font-sans);
   font-weight: 600;
@@ -319,7 +319,7 @@
   font-family: var(--font-sans);
   font-size: clamp(1.8rem, 3.8vw, 3.2rem);
   font-weight: 500;
-  color: rgba(94, 189, 29, 0.9); /* brand lime green at 90% opacity */
+  color: rgba(224, 165, 177, 0.9); /* brand rose at 90% opacity */
   line-height: 1.1;
   letter-spacing: 0.02em;
   -webkit-font-smoothing: antialiased;
