@@ -417,6 +417,13 @@
   box-sizing: border-box;
 }
 
+@media (max-width: 900px) {
+  .gold-divider {
+    height: 9.84rem; /* 50% shorter on mobile */
+    padding-bottom: 0.75rem;
+  }
+}
+
 .gold-divider .section-divider-wrap {
   padding: 0;
   width: 100%;

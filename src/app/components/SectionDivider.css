@@ -104,9 +104,27 @@
   display: none;
 }
 
+@media (max-width: 900px) {
+  /* Cut all divider gap heights by 50% on mobile */
+  .page-section-divider {
+    height: 7.875rem;
+  }
+  .page-section-divider-work {
+    height: 7.875rem;
+    padding-bottom: 0.75rem;
+  }
+  .page-section-divider-large {
+    height: 4.92rem;
+    padding-bottom: 1.5rem;
+  }
+  .section-divider-tag-text {
+    font-size: clamp(1.1rem, 4.5vw, 1.6rem);
+  }
+}
+
 @media (max-width: 768px) {
   .section-divider-tag-text {
-    font-size: clamp(1.2rem, 4vw, 1.6rem);
+    font-size: clamp(1.1rem, 4vw, 1.6rem);
     padding: 0 1rem;
   }
   .section-divider-tag-dots {
