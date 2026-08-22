@@ -67,7 +67,7 @@
   display: flex;
   gap: 3rem;
   line-height: 1;
-  margin-left: -1%; /* shifted 3% to the left */
+  margin-left: 0%; /* shifted 1% to the right (was -1%) */
   opacity: 0;
   animation: headerNavSwap 3.47s cubic-bezier(0.16, 1, 0.3, 1) both;
   animation-delay: var(--hero-scan-delay);
