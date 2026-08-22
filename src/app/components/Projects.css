@@ -325,13 +325,13 @@
   font-family: var(--font-sans);
   font-size: clamp(1.8rem, 3.8vw, 3.2rem);
   font-weight: 500;
-  color: rgba(63, 135, 172, 0.9); /* brand teal at 90% opacity */
+  color: #1a1a1a; /* same color as label */
   line-height: 1.1;
   letter-spacing: 0.02em;
   -webkit-font-smoothing: antialiased;
   text-align: center;
   width: 100%;
-  opacity: 0.9;
+  opacity: 0.72; /* same opacity as label */
   padding-top: 6.25%;
 }
 
