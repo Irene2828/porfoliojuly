@@ -37,48 +37,6 @@ export default function Hero() {
               Product builder / designer
             </motion.p>
 
-          </div>
- 
-           <motion.p
-             initial={{ opacity: 0 }}
-             animate={{ opacity: 1 }}
-             transition={{ duration: 0.45, delay: 0.12, ease: "easeOut" }}
-             className="hero-intro-text"
-           >
-             I turn unclear problems into clear digital solutions:
-           </motion.p>
-
-          <ul className="hero-bullets">
-            {[
-              'Workflow tools and internal products',
-              'Rapid prototyping and AI-assisted development',
-              'End-to-end UX and product design'
-            ].map((bullet, idx) => (
-              <motion.li
-                key={bullet}
-                initial={{ y: 20, opacity: 0 }}
-                animate={{ y: 0, opacity: 1 }}
-                transition={{ duration: 0.6, delay: 0.28 + idx * 0.08, ease: "easeOut" }}
-              >
-                &ndash; {bullet}
-              </motion.li>
-            ))}
-          </ul>
-
-          <motion.div
-            initial={{ y: 20, opacity: 0 }}
-            animate={{ y: 0, opacity: 1 }}
-            transition={{ duration: 0.65, delay: 0.55, ease: [0.16, 1, 0.3, 1] }}
-            className="hero-ctas"
-          >
-            <a href="#contact" className="btn btn-primary">LET'S WORK ON YOUR NEXT BUILD</a>
-            <a href="#work" className="btn btn-secondary">
-              SEE WORK EXAMPLES <span className="arrow">↓</span>
-            </a>
-          </motion.div>
-          </div>
-        </div>
-
         <div
           className="hero-image-wrapper cv-scanner"
           tabIndex={0}
@@ -129,6 +87,48 @@ export default function Hero() {
             </div>
           </div>
           <span className="hero-hover-surface" aria-hidden="true"></span>
+        </div>
+
+          </div>
+ 
+           <motion.p
+             initial={{ opacity: 0 }}
+             animate={{ opacity: 1 }}
+             transition={{ duration: 0.45, delay: 0.12, ease: "easeOut" }}
+             className="hero-intro-text"
+           >
+             I turn unclear problems into clear digital solutions:
+           </motion.p>
+
+          <ul className="hero-bullets">
+            {[
+              'Workflow tools and internal products',
+              'Rapid prototyping and AI-assisted development',
+              'End-to-end UX and product design'
+            ].map((bullet, idx) => (
+              <motion.li
+                key={bullet}
+                initial={{ y: 20, opacity: 0 }}
+                animate={{ y: 0, opacity: 1 }}
+                transition={{ duration: 0.6, delay: 0.28 + idx * 0.08, ease: "easeOut" }}
+              >
+                &ndash; {bullet}
+              </motion.li>
+            ))}
+          </ul>
+
+          <motion.div
+            initial={{ y: 20, opacity: 0 }}
+            animate={{ y: 0, opacity: 1 }}
+            transition={{ duration: 0.65, delay: 0.55, ease: [0.16, 1, 0.3, 1] }}
+            className="hero-ctas"
+          >
+            <a href="#contact" className="btn btn-primary">LET'S WORK ON YOUR NEXT BUILD</a>
+            <a href="#work" className="btn btn-secondary">
+              SEE WORK EXAMPLES <span className="arrow">↓</span>
+            </a>
+          </motion.div>
+          </div>
         </div>
       </div>
     </section>
