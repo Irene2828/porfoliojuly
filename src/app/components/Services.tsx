@@ -40,10 +40,10 @@ export default function Services() {
             >
               <h3 className="title-serif service-title">Graphic Design</h3>
               <ul className="service-items">
-                <li>&ndash; Logo Design</li>
-                <li>&ndash; Brand Identity</li>
-                <li>&ndash; Poster Design</li>
-                <li>&ndash; Environmental Design</li>
+                <li><span className="service-bullet">&ndash;</span> Logo Design</li>
+                <li><span className="service-bullet">&ndash;</span> Brand Identity</li>
+                <li><span className="service-bullet">&ndash;</span> Poster Design</li>
+                <li><span className="service-bullet">&ndash;</span> Environmental Design</li>
               </ul>
             </motion.div>
 
@@ -53,8 +53,8 @@ export default function Services() {
             >
               <h3 className="title-serif service-title">Illustration</h3>
               <ul className="service-items">
-                <li>&ndash; Digital Illustration</li>
-                <li>&ndash; Street Art and Murals</li>
+                <li><span className="service-bullet">&ndash;</span> Digital Illustration</li>
+                <li><span className="service-bullet">&ndash;</span> Street Art and Murals</li>
               </ul>
             </motion.div>
           </div>

@@ -56,6 +56,12 @@ export default function Header() {
         <motion.a href="#expertise" variants={itemVariants} className="nav-link">Expertise</motion.a>
         <motion.a href="#contact" variants={itemVariants} className="nav-link">Contact</motion.a>
       </nav>
+      <motion.div 
+        className="header-tagline-right"
+        variants={itemVariants}
+      >
+        <span className="tagline-name">Iryna Sheremeta</span> &mdash; <span className="tagline-title">Product builder / designer</span>
+      </motion.div>
     </motion.header>
   );
 }

@@ -1,5 +1,5 @@
 .services-section {
-  background-color: rgba(63, 135, 172, 0.9); /* brand teal at 90% opacity */
+  background-color: #121212; /* same off black as right section */
   padding: 6.5rem 0 3.25rem;
   position: relative;
   overflow: hidden;
@@ -118,4 +118,10 @@
 
 .services-section .service-items li {
   color: rgba(255, 255, 255, 0.95) !important;
+}
+
+.service-bullet {
+  color: #e5c17d; /* same gold as button shadow */
+  margin-right: 0.5rem;
+  font-weight: bold;
 }

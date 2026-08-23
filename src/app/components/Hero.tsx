@@ -2,11 +2,12 @@
 
 import { motion } from 'framer-motion';
 import './Hero.css';
-import heroImage from '../assets/999.webp';
+import heroImage from '../assets/test.webp';
 
 export default function Hero() {
   return (
-    <section className="hero-section">
+    <section className="section hero-section" id="home">
+      <div className="hero-top-hairline"></div>
       <div className="container hero-container">
         <div className="hero-content">
           <div className="hero-copy-motion">
@@ -14,56 +15,17 @@ export default function Hero() {
               <motion.div
                 initial={{ opacity: 0 }}
                 animate={{ opacity: 1 }}
-                transition={{ duration: 0.45, ease: "easeOut" }}
+                transition={{ duration: 0.6, ease: "easeOut" }}
                 className="hero-text"
               >
-                <h1 className="title-serif text-huge">Iryna</h1>
+                <h1 className="title-serif hero-statement">
+                  From <span className="highlight-gold">unclear</span><br />
+                  problems<br />
+                  <span className="highlight-gold">to clear</span><br />
+                  digital solutions:
+                </h1>
               </motion.div>
-              <motion.div
-                initial={{ opacity: 0 }}
-                animate={{ opacity: 1 }}
-                transition={{ duration: 0.45, delay: 0.06, ease: "easeOut" }}
-                className="hero-text"
-              >
-                <h1 className="title-serif text-huge">Sheremeta</h1>
-              </motion.div>
-              
-              <motion.p
-                initial={{ opacity: 0 }}
-                animate={{ opacity: 1 }}
-                transition={{ duration: 0.45, delay: 0.09, ease: "easeOut" }}
-                className="hero-name-eyebrow"
-              >
-                Product builder / designer
-              </motion.p>
             </div>
-
-            <motion.p
-              initial={{ opacity: 0 }}
-              animate={{ opacity: 1 }}
-              transition={{ duration: 0.45, delay: 0.12, ease: "easeOut" }}
-              className="hero-intro-text"
-            >
-              I turn unclear problems into clear digital solutions:
-            </motion.p>
-
-            <ul className="hero-bullets">
-              {[
-                'Workflow tools and internal products',
-                'Rapid prototyping and AI-assisted development',
-                'End-to-end UX and product design'
-              ].map((bullet, idx) => (
-                <motion.li
-                  key={bullet}
-                  initial={{ y: 20, opacity: 0 }}
-                  animate={{ y: 0, opacity: 1 }}
-                  transition={{ duration: 0.6, delay: 0.28 + idx * 0.08, ease: "easeOut" }}
-                >
-                  &ndash; {bullet}
-                </motion.li>
-              ))}
-            </ul>
-
             <motion.div
               initial={{ y: 20, opacity: 0 }}
               animate={{ y: 0, opacity: 1 }}
@@ -128,6 +90,12 @@ export default function Hero() {
             </div>
           </div>
           <span className="hero-hover-surface" aria-hidden="true"></span>
+          
+          <ul className="hero-bullets-right">
+            <li><span className="bullet-gold">&mdash;</span> Workflow tools and internal products</li>
+            <li><span className="bullet-gold">&mdash;</span> Rapid prototyping and AI-assisted development</li>
+            <li><span className="bullet-gold">&mdash;</span> End-to-end UX and product design</li>
+          </ul>
         </div>
       </div>
     </section>

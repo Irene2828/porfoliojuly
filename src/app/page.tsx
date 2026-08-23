@@ -38,8 +38,15 @@ export default async function HomePage() {
         <SectionDivider label={publishedProjects[0]?.title ?? 'Selected Work'} />
       </div>
       <Projects initialProjects={publishedProjects as any} />
+      <div className="gold-divider lift-why-work">
+        <SectionDivider label="Why Work With Me" />
+      </div>
       <Services />
+      <div className="gold-divider lift-lets-connect">
+        <SectionDivider label="Let's Connect" />
+      </div>
       <FaceDivider />
+      <Footer />
     </ClientWrapper>
   );
 }

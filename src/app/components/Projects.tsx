@@ -107,14 +107,19 @@ export default function Projects({ initialProjects }: ProjectsProps) {
                 <div className="project-body-grid">
                   <div className="project-visual">
                     <div className="visual-frame">
-                      <div className={project.slug === 'mobile-apps' ? 'iphone-screen' : 'browser-mockup'}>
-                        {mainScreen && (
-                          <img 
-                            src={mainScreen.originalUrl} 
-                            alt={mainScreen.altText || project.title} 
-                          />
-                        )}
-                      </div>
+                      {project.slug === 'mobile-apps' ? (
+                        <div className="iphone-screen">
+                          {mainScreen && (
+                            <img src={mainScreen.originalUrl} alt={mainScreen.altText || project.title} />
+                          )}
+                        </div>
+                      ) : (
+                        <div className="flat-screen">
+                          {mainScreen && (
+                            <img src={mainScreen.originalUrl} alt={mainScreen.altText || project.title} />
+                          )}
+                        </div>
+                      )}
                     </div>
                     {(project.slug === 'workflow-automation' || project.slug === 'websites') && (
                       <div className="project-visual-caption">

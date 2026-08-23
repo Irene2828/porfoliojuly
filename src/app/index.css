@@ -72,9 +72,10 @@ h1, h2, h3, h4, h5, h6 {
 /* Layout */
 .container {
   width: 100%;
-  max-width: 1166px; /* 10% smaller than 1296px */
+  max-width: 1166px; /* boutique width */
   margin: 0 auto;
   padding: 0 var(--space-md);
+  box-sizing: border-box;
 }
 
 .section {
@@ -119,10 +120,10 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 .btn-primary {
-  background: #2c6f99; /* hero highlight sky blue */
+  background: #121212; /* same off black matte */
   color: #ffffff;
-  border: 1px solid #2c6f99;
-  box-shadow: 6px 6px 0px #a8d8f2;
+  border: 1px solid #121212;
+  box-shadow: 6px 6px 0px #e5c17d; /* flat gold shadow, same offset style */
   padding-top: calc(1.1rem - 1px);
   padding-bottom: calc(1.1rem - 1px);
   position: relative;
@@ -130,25 +131,29 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 .btn-primary:hover {
-  background: #1a4f6e;
-  border-color: #1a4f6e;
-  box-shadow: 6px 6px 0px #63c0e7;
+  background: #1a1a1a;
+  border-color: #1a1a1a;
+  box-shadow: 6px 6px 0px #c5a059; /* flat hover gold shadow */
 }
 
 .btn-primary:active {
-  background: #133a52;
-  border-color: #133a52;
+  background: #000000;
+  border-color: #000000;
 }
 
 .btn-secondary {
-  background: transparent;
-  color: #0a0a0a;
-  border: 1px solid transparent;
-  font-weight: 300;
+  background: #ffffff;
+  color: #121212;
+  border: 1px solid transparent; /* removed border stroke */
+  font-weight: 500;
+  box-shadow: none !important;
+  transition: all 0.22s ease;
 }
 
 .btn-secondary:hover {
-  background: rgba(0, 0, 0, 0.02);
+  background: #121212;
+  color: #ffffff;
+  border-color: transparent;
 }
 
 .btn-secondary .arrow {
