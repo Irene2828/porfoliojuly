@@ -36,16 +36,16 @@ export default function Hero() {
             >
               Product builder / designer
             </motion.p>
-          </div>
 
-          <motion.p
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
-            transition={{ duration: 0.45, delay: 0.12, ease: "easeOut" }}
-            className="hero-intro-text"
-          >
-            I turn unclear problems into clear digital solutions:
-          </motion.p>
+            <motion.p
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 1 }}
+              transition={{ duration: 0.45, delay: 0.12, ease: "easeOut" }}
+              className="hero-intro-text"
+            >
+              I turn unclear problems into clear digital solutions:
+            </motion.p>
+          </div>
 
           <ul className="hero-bullets">
             {[
