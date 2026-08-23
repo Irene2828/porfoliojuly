@@ -315,7 +315,7 @@
 @media (max-width: 900px) {
   /* ── Mobile: centered single-column, name over photo ── */
   .hero-section {
-    padding-top: 4rem;
+    padding-top: 8rem !important; /* Push name group below the header bar on mobile */
     padding-bottom: 3rem;
     padding-inline: 0;
     min-height: auto;
