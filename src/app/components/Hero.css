@@ -326,11 +326,12 @@
   }
 
   .hero-container {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: flex-start;
-    gap: 0;
+    display: grid !important;
+    grid-template-columns: 1fr !important;
+    grid-template-rows: auto auto auto auto auto !important;
+    align-items: center !important;
+    justify-content: center !important;
+    gap: 0 !important;
     width: 100% !important;
     max-width: 100% !important;
     margin: 0 auto !important;
@@ -340,29 +341,16 @@
   }
 
   .hero-content {
-    display: flex;
-    flex-direction: column;
-    align-items: center !important;
-    justify-content: center !important;
-    width: 100% !important;
-    max-width: 100% !important;
-    text-align: center !important;
-    box-sizing: border-box;
+    display: contents !important;
   }
 
   .hero-copy-motion {
-    display: flex;
-    flex-direction: column;
-    align-items: center !important;
-    justify-content: center !important;
-    width: 100% !important;
-    padding-top: 0 !important;
-    animation: none !important;
-    box-sizing: border-box;
+    display: contents !important;
   }
 
   /* Image: centered visual */
   .hero-image-wrapper {
+    grid-row: 2 !important; /* positioned after name group */
     width: 280px !important;
     max-width: 80vw !important;
     height: auto;
@@ -370,7 +358,6 @@
     flex: none;
     margin: 0 auto 2rem auto !important; /* normal bottom margin now */
     transform: none !important;
-    order: 2 !important; /* positioned after name group */
     position: relative;
     display: flex;
     justify-content: center;
@@ -393,6 +380,7 @@
 
   /* Name group: positioned above visual */
   .hero-name-group {
+    grid-row: 1 !important; /* positioned first */
     width: 100% !important;
     margin-top: 0 !important; /* reset negative pull-up */
     margin-bottom: 2rem !important;
@@ -403,7 +391,6 @@
     text-align: center !important;
     position: relative;
     z-index: 10;
-    order: 1 !important; /* positioned first */
   }
 
   .hero-name-group .hero-text {
@@ -439,6 +426,7 @@
 
   /* Intro text */
   .hero-intro-text {
+    grid-row: 3 !important; /* positioned after visual */
     display: block;
     max-width: 320px !important;
     margin: 0 auto 1.5rem auto !important;
@@ -446,11 +434,11 @@
     line-height: 1.5;
     font-size: 0.92rem !important;
     box-sizing: border-box;
-    order: 3 !important; /* positioned after visual */
   }
 
   /* Bullets */
   .hero-bullets {
+    grid-row: 4 !important; /* positioned after intro text */
     width: 100% !important;
     max-width: 320px !important;
     margin: 0 auto 2rem auto !important;
@@ -460,7 +448,6 @@
     flex-direction: column;
     align-items: center !important;
     gap: 0.8rem;
-    order: 4 !important; /* positioned after intro text */
   }
 
   .hero-bullets li {
@@ -473,13 +460,13 @@
 
   /* CTAs: full-width stacked */
   .hero-ctas {
+    grid-row: 5 !important; /* positioned at the end */
     width: 100% !important;
     max-width: 320px !important;
     flex-direction: column !important;
     align-items: stretch !important;
     gap: 0.75rem;
     margin: 0 auto !important;
-    order: 5 !important; /* positioned at the end */
   }
 
   .hero-ctas .btn {
