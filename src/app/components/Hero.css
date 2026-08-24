@@ -198,14 +198,14 @@
   list-style: none;
   display: flex;
   flex-direction: column;
-  gap: 1.2rem;
+  gap: 1.6rem; /* increased vertical spacing between bullets */
   z-index: 8;
   color: rgba(255, 255, 255, 0.85); /* white text for dark background */
   font-family: var(--font-sans);
   font-size: 0.74rem; /* boutique smaller size */
   text-transform: uppercase;
   letter-spacing: 0.08em;
-  line-height: 1.45;
+  line-height: 1.75; /* increased line-height inside bullets */
   opacity: 0;
   animation: taglineIntro 1.2s ease calc(var(--hero-scan-delay) + 2.38s) forwards;
   pointer-events: none;
@@ -213,7 +213,7 @@
 
 .hero-bullets-right li {
   position: relative;
-  line-height: 1.45;
+  line-height: 1.75; /* increased line-height inside bullets */
 }
 
 .hero-bullet-arrow {
