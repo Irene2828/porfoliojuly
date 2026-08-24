@@ -257,7 +257,7 @@
 .hero-ctas {
   display: flex;
   flex-direction: column; /* stacked vertically */
-  align-items: flex-start; /* left-aligned */
+  align-items: flex-end; /* right-aligned */
   gap: 1.25rem;
   margin-top: 2.53rem; /* compensated to keep CTAs locked in place */
 }
