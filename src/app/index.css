@@ -120,25 +120,27 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 .btn-primary {
-  background: #f2ddb0; /* lighter gold */
+  background: transparent; /* no fill */
   color: #121212;
-  border: 1px solid rgba(18, 18, 18, 0.3); /* 70% lighter black stroke */
+  border: 1px solid #121212; /* thin black border */
   box-shadow: none;
   padding-top: calc(1.1rem - 1px);
   padding-bottom: calc(1.1rem - 1px);
   position: relative;
-  transition: background 0.22s ease, border-color 0.22s ease, box-shadow 0.22s ease;
+  transition: background 0.22s ease, border-color 0.22s ease, color 0.22s ease;
 }
 
 .btn-primary:hover {
-  background: #c5a059;
-  border-color: #c5a059;
+  background: #121212;
+  color: #ffffff;
+  border-color: #121212;
   box-shadow: none;
 }
 
 .btn-primary:active {
-  background: #000000;
-  border-color: #000000;
+  background: #2a2a2a;
+  border-color: #2a2a2a;
+  color: #ffffff;
 }
 
 .btn-secondary {
