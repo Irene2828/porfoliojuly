@@ -120,9 +120,9 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 .btn-primary {
-  background: transparent; /* no fill */
-  color: #121212;
-  border: 1px solid #121212; /* thin black border */
+  background: #121212; /* off black fill */
+  color: #ffffff;
+  border: 1px solid #121212;
   box-shadow: none;
   padding-top: calc(1.1rem - 1px);
   padding-bottom: calc(1.1rem - 1px);
@@ -131,22 +131,22 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 .btn-primary:hover {
-  background: #121212;
+  background: #2a2a2a;
   color: #ffffff;
-  border-color: #121212;
+  border-color: #2a2a2a;
   box-shadow: none;
 }
 
 .btn-primary:active {
-  background: #2a2a2a;
-  border-color: #2a2a2a;
+  background: #121212;
+  border-color: #121212;
   color: #ffffff;
 }
 
 .btn-secondary {
-  background: #ffffff;
+  background: transparent; /* transparent fill */
   color: #121212;
-  border: 1px solid transparent; /* removed border stroke */
+  border: 1px solid #121212; /* thin black stroke */
   font-weight: 500;
   box-shadow: none !important;
   transition: all 0.22s ease;
@@ -155,7 +155,7 @@ h1, h2, h3, h4, h5, h6 {
 .btn-secondary:hover {
   background: #121212;
   color: #ffffff;
-  border-color: transparent;
+  border-color: #121212;
 }
 
 .btn-secondary .arrow {
