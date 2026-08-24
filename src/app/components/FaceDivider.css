@@ -58,7 +58,7 @@
 .face-headline {
   font-family: var(--font-serif);
   font-size: clamp(2.5rem, 6vw, 4.5rem);
-  font-weight: 700;
+  font-weight: 600;
   text-transform: uppercase;
   background-image: linear-gradient(180deg, #1a1a1a 0%, #4a4a4a 100%);
   -webkit-background-clip: text;

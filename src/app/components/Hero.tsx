@@ -19,24 +19,23 @@ export default function Hero() {
                 className="hero-text"
               >
                 <h1 className="title-serif hero-statement">
-                  From <span className="highlight-gold">unclear</span><br />
-                  problems<br />
-                  <span className="highlight-gold">to clear</span><br />
-                  <span className="text-nowrap">digital solutions:</span>
+                  <span className="highlight-gold highlight-gold-bridge">From unclear</span><br />
+                  <em>problems</em> -<br />
+                  <span className="highlight-gold">to clear digital <em>solutions</em></span>
                 </h1>
               </motion.div>
-              <motion.div
-                initial={{ y: 20, opacity: 0 }}
-                animate={{ y: 0, opacity: 1 }}
-                transition={{ duration: 0.65, delay: 0.55, ease: [0.16, 1, 0.3, 1] }}
-                className="hero-ctas"
-              >
-                <a href="#contact" className="btn btn-primary">LET'S WORK ON YOUR NEXT BUILD</a>
-                <a href="#work" className="btn btn-secondary">
-                  SEE WORK EXAMPLES <span className="arrow">↓</span>
-                </a>
-              </motion.div>
             </div>
+            <motion.div
+              initial={{ y: 20, opacity: 0 }}
+              animate={{ y: 0, opacity: 1 }}
+              transition={{ duration: 0.65, delay: 0.55, ease: [0.16, 1, 0.3, 1] }}
+              className="hero-ctas hero-ctas-outside"
+            >
+              <a href="#contact" className="btn btn-primary btn-primary-outline">LET'S WORK ON YOUR NEXT BUILD</a>
+              <a href="#work" className="btn btn-secondary btn-secondary-stacked">
+                SEE WORK EXAMPLES <span className="arrow">↓</span>
+              </a>
+            </motion.div>
           </div>
         </div>
 
@@ -94,7 +93,7 @@ export default function Hero() {
 
           <div className="hero-image-tagline-stacked">
             <div className="tagline-name">Iryna Sheremeta</div>
-            <div className="tagline-title">Product builder / designer</div>
+            <div className="tagline-title">Product Builder & Designer</div>
           </div>
         </div>
       </div>

@@ -1,7 +1,9 @@
-@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;0,700;1,300;1,400&family=Lora:ital,wght@0,400;0,500;0,600;0,700;1,400&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&family=Baskervville:ital@0;1&family=Libre+Bodoni:ital,wght@0,400;0,500;0,600;1,400&family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;0,700;1,300;1,400&family=Lora:ital,wght@0,400;0,500;0,600;0,700;1,400&display=swap');
 
 :root {
   --font-serif: 'Cormorant Garamond', serif;
+  --font-baskerville: 'Baskervville', serif;
+  --font-bodoni: 'Libre Bodoni', serif;
   --font-lora: 'Lora', serif;
   --font-sans: 'Inter', sans-serif;
   
@@ -111,7 +113,7 @@ h1, h2, h3, h4, h5, h6 {
   font-weight: 700;
   letter-spacing: 0.08em;
   padding: 0 1.8rem; /* removed vertical padding */
-  height: 3.1rem; /* forced identical height */
+  height: 3.1625rem; /* +1px at current root size */
   border-radius: 2px;
   text-transform: uppercase;
   transition: all 0.2s ease;
@@ -122,18 +124,19 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 .btn-primary {
-  background: #323941; /* softened off-black fill to match headline */
+  background: #2a2a2a;
   color: #ffffff;
-  border: 1px solid #323941;
+  border: 1px solid #2a2a2a;
   box-shadow: none;
   position: relative;
+  font-weight: 600;
   transition: background 0.22s ease, border-color 0.22s ease, color 0.22s ease;
 }
 
 .btn-primary:hover {
-  background: #2a2a2a;
+  background: #323941;
   color: #ffffff;
-  border-color: #2a2a2a;
+  border-color: #323941;
   box-shadow: none;
 }
 

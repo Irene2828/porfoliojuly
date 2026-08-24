@@ -52,6 +52,16 @@ export default function Header() {
       animate="visible"
     >
       <nav className="header-nav">
+        <motion.button
+          type="button"
+          variants={itemVariants}
+          className="header-menu-button"
+          aria-label="Open menu"
+        >
+          <span className="header-menu-line"></span>
+          <span className="header-menu-line"></span>
+          <span className="header-menu-line"></span>
+        </motion.button>
         <motion.a href="#work" variants={itemVariants} className="nav-link">Workflow tools<br />& internal products</motion.a>
         <motion.a href="#expertise" variants={itemVariants} className="nav-link">Rapid prototyping<br />& AI-assisted development</motion.a>
         <motion.a href="#contact" variants={itemVariants} className="nav-link">End-to-end UX<br />& product design</motion.a>
