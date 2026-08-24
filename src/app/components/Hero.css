@@ -145,7 +145,7 @@
 }
 
 .hero-name-group .hero-text h1 {
-  font-family: var(--font-sans) !important; /* sans-serif to match capabilities section titles */
+  font-family: var(--font-lora) !important; /* Lora serif font */
   font-size: clamp(2rem, 4vw, 3.4rem); /* Enlarged letters */
   line-height: 1.18;
   margin: 0;
