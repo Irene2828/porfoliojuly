@@ -121,7 +121,7 @@
   display: flex;
   flex-direction: column;
   align-items: flex-start;
-  margin-top: -8.75rem; /* lifted 10% higher */
+  margin-top: -7.5rem; /* moved 10% lower */
   margin-bottom: 2rem;
   max-width: 600px; /* Adjusted wider to match 10% container increase */
 }
@@ -259,7 +259,7 @@
   flex-direction: column; /* stacked vertically */
   align-items: flex-start; /* left-aligned */
   gap: 1.25rem;
-  margin-top: 5.03rem; /* compensated to keep CTAs locked in place */
+  margin-top: 3.78rem; /* compensated to keep CTAs locked in place */
 }
 
 .hero-image-wrapper {
