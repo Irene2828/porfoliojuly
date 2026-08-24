@@ -124,10 +124,10 @@
   margin-top: -8.75rem; /* lifted 10% higher */
   margin-bottom: 2rem;
   max-width: 650px; /* Increased to fit text on same lines */
-  width: calc(100% + 5.5rem); /* stretches full width plus overlap */
+  width: calc(100% + 10rem); /* stretches full width plus larger overlap */
   background: #f2ddb0; /* beige/gold tone background card */
   padding: 2.2rem 3.5rem; /* generous side/top/bottom padding */
-  margin-right: -5.5rem; /* pulls to the right to overlap black side by ~5% */
+  margin-right: -10rem; /* pulls further to the right to overlap the black section */
   position: relative;
   z-index: 10; /* render over the black panel */
   box-shadow: 10px 10px 30px rgba(0, 0, 0, 0.03);
