@@ -94,7 +94,7 @@
   position: relative;
   overflow: hidden;
   padding: 0.2rem 0;
-  line-height: 1;
+  line-height: 1.35; /* set for clean 2-line spacing */
 }
 
 .nav-link::after {
