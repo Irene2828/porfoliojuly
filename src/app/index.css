@@ -150,6 +150,8 @@ h1, h2, h3, h4, h5, h6 {
   font-weight: 500;
   box-shadow: none !important;
   transition: all 0.22s ease;
+  padding-top: calc(1.1rem - 1px); /* match primary height exactly */
+  padding-bottom: calc(1.1rem - 1px);
 }
 
 .btn-secondary:hover {

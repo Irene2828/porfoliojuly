@@ -15,7 +15,7 @@
   display: flex;
   justify-content: space-between; /* space-between to push links left and tagline right */
   align-items: center;
-  padding: 1.875rem 2rem;
+  padding: 1.5rem 2rem; /* moved header higher */
   z-index: 100;
   pointer-events: none; /* Let clicks pass through if empty space */
 }
@@ -87,7 +87,7 @@
 .nav-link {
   font-family: var(--font-sans);
   font-size: 0.9rem;
-  font-weight: 500;
+  font-weight: 700; /* equally bolded now */
   letter-spacing: 0.1em;
   color: #55606a;
   text-decoration: none;
