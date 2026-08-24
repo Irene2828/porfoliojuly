@@ -52,9 +52,9 @@ export default function Header() {
       animate="visible"
     >
       <nav className="header-nav">
-        <motion.a href="#work" variants={itemVariants} className="nav-link">Work</motion.a>
-        <motion.a href="#expertise" variants={itemVariants} className="nav-link">Expertise</motion.a>
-        <motion.a href="#contact" variants={itemVariants} className="nav-link">Contact</motion.a>
+        <motion.a href="#work" variants={itemVariants} className="nav-link">Workflow tools and internal products</motion.a>
+        <motion.a href="#expertise" variants={itemVariants} className="nav-link">Rapid prototyping and AI-assisted development</motion.a>
+        <motion.a href="#contact" variants={itemVariants} className="nav-link">End-to-end UX and product design</motion.a>
       </nav>
     </motion.header>
   );
