@@ -145,8 +145,8 @@
   -webkit-text-fill-color: #1a1f24; /* almost black */
   color: #1a1f24;
   text-transform: uppercase; /* uppercase statement */
-  letter-spacing: -0.01em;
-  font-weight: 300;
+  letter-spacing: 0.02em; /* slightly wider spacing to make thin weight readable */
+  font-weight: 200; /* even thinner visual appearance */
   -webkit-font-smoothing: antialiased;
   -webkit-text-stroke: 0px transparent !important;
   text-stroke: 0px transparent !important;
