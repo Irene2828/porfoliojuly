@@ -91,7 +91,7 @@
   font-size: 0.75rem; /* smallest accessibility friendly size */
   font-weight: 400; /* regular for better readability */
   letter-spacing: 0.08em;
-  color: #121212; /* off-black for high contrast readability */
+  color: #444c54; /* readable slate grey */
   text-decoration: none;
   position: relative;
   overflow: hidden;
