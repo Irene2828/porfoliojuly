@@ -153,7 +153,7 @@
   -webkit-background-clip: initial;
   -webkit-text-fill-color: #1a1f24; /* almost black */
   color: #1a1f24;
-  text-transform: none; /* sentence case */
+  text-transform: uppercase; /* uppercase statement */
   letter-spacing: -0.02em; /* tight premium letter-spacing */
   font-weight: 400; /* regular weight */
   -webkit-font-smoothing: antialiased;
