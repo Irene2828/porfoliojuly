@@ -145,7 +145,7 @@ h1, h2, h3, h4, h5, h6 {
 .btn-secondary {
   background: transparent; /* transparent fill */
   color: #121212;
-  border: 1px solid #121212; /* thin black stroke */
+  border: 0.5px solid rgba(18, 18, 18, 0.65); /* ultra-thin border stroke */
   font-weight: 500;
   box-shadow: none !important;
   transition: all 0.22s ease;
