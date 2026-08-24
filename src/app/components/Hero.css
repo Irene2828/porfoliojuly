@@ -271,7 +271,7 @@
   }
 
   100% {
-    transform: translate(calc(var(--hero-image-swap-distance) * 1.1), -10%) scale(1);
+    transform: translate(var(--hero-image-swap-distance), -10%) scale(1);
   }
 }
 
