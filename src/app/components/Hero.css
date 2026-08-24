@@ -124,10 +124,10 @@
   margin-top: -8.75rem; /* lifted 10% higher */
   margin-bottom: 2rem;
   max-width: none !important; /* removed restriction so it can overlap black panel */
-  width: calc(100% + 18rem); /* stretches past the center split line */
+  width: calc(100% + 9rem); /* stretches past the center split line */
   background: #f2ddb0; /* beige/gold tone background card */
   padding: 2.2rem 3.5rem; /* generous side/top/bottom padding */
-  margin-right: -18rem; /* pulls further to the right to overlap the black section */
+  margin-right: -9rem; /* pulls further to the right to overlap the black section */
   position: relative;
   z-index: 10; /* render over the black panel */
   box-shadow: 10px 10px 30px rgba(0, 0, 0, 0.03);
