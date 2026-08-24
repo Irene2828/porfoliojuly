@@ -271,7 +271,7 @@
   justify-content: flex-end; /* aligned by right */
   align-items: center;
   gap: 1.25rem;
-  margin-top: 5.03rem; /* compensated to keep CTAs locked in place */
+  margin-top: 1.5rem; /* cut spacing by 100% of extra margin */
 }
 
 .hero-image-wrapper {

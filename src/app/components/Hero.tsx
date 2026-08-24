@@ -25,18 +25,18 @@ export default function Hero() {
                   <span className="text-nowrap">digital solutions:</span>
                 </h1>
               </motion.div>
+              <motion.div
+                initial={{ y: 20, opacity: 0 }}
+                animate={{ y: 0, opacity: 1 }}
+                transition={{ duration: 0.65, delay: 0.55, ease: [0.16, 1, 0.3, 1] }}
+                className="hero-ctas"
+              >
+                <a href="#contact" className="btn btn-primary">LET'S WORK ON YOUR NEXT BUILD</a>
+                <a href="#work" className="btn btn-secondary">
+                  SEE WORK EXAMPLES <span className="arrow">↓</span>
+                </a>
+              </motion.div>
             </div>
-            <motion.div
-              initial={{ y: 20, opacity: 0 }}
-              animate={{ y: 0, opacity: 1 }}
-              transition={{ duration: 0.65, delay: 0.55, ease: [0.16, 1, 0.3, 1] }}
-              className="hero-ctas"
-            >
-              <a href="#contact" className="btn btn-primary">LET'S WORK ON YOUR NEXT BUILD</a>
-              <a href="#work" className="btn btn-secondary">
-                SEE WORK EXAMPLES <span className="arrow">↓</span>
-              </a>
-            </motion.div>
           </div>
         </div>
 
