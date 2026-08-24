@@ -119,7 +119,7 @@
   display: flex;
   flex-direction: column;
   align-items: flex-start;
-  margin-top: -6.5rem;
+  margin-top: -6.24rem; /* moved 20% lower on desktop */
   margin-bottom: 2rem;
   max-width: 600px; /* Adjusted wider to match 10% container increase */
 }
@@ -144,7 +144,6 @@
   -webkit-background-clip: initial;
   -webkit-text-fill-color: #1a1f24; /* almost black */
   color: #1a1f24;
-  text-transform: uppercase; /* uppercase statement */
   letter-spacing: -0.01em;
   font-weight: 400;
   -webkit-font-smoothing: antialiased;
@@ -189,7 +188,7 @@
 .hero-bullets-right {
   position: absolute;
   top: 10%; /* align relative to image height */
-  left: calc(100% + 2.5rem); /* place 2.5rem to the right of the image */
+  right: calc(100% + 2.5rem); /* place to the left of the image */
   width: 180px;
   list-style: none;
   display: flex;
@@ -227,10 +226,10 @@
 
 .hero-ctas {
   display: flex;
-  flex-direction: column;
-  align-items: flex-start;
+  flex-direction: row; /* side by side */
+  align-items: center;
   gap: 1.25rem;
-  margin-top: 2.1rem; /* 40% larger space over CTAs on desktop */
+  margin-top: 3.53rem; /* 40% lower */
 }
 
 .hero-image-wrapper {
@@ -269,7 +268,7 @@
   }
 
   100% {
-    transform: translate(calc(var(--hero-image-swap-distance) * 0.75), -10%) scale(1);
+    transform: translate(calc(var(--hero-image-swap-distance) * 1.1), -10%) scale(1);
   }
 }
 
@@ -380,6 +379,9 @@
   }
 
   .hero-tagline-right {
+    display: none !important;
+  }
+  .hero-image-tagline-stacked {
     display: none !important;
   }
   .hero-section::after {
@@ -630,8 +632,8 @@
 
 @keyframes scannerIntroShow {
   0% { opacity: 0; }
-  10% { opacity: 1; }
-  90% { opacity: 1; }
+  5% { opacity: 1; }
+  85% { opacity: 1; }
   100% { opacity: 0; }
 }
 
@@ -741,15 +743,15 @@
 
 @keyframes captionIntroRight {
   0% { opacity: 0; transform: translateX(18px); }
-  10% { opacity: 1; transform: translateX(0); }
-  90% { opacity: 1; transform: translateX(0); }
+  5% { opacity: 1; transform: translateX(0); }
+  85% { opacity: 1; transform: translateX(0); }
   100% { opacity: 0; transform: translateX(18px); }
 }
 
 @keyframes captionIntroLeft {
   0% { opacity: 0; transform: translateX(-18px); }
-  10% { opacity: 1; transform: translateX(0); }
-  90% { opacity: 1; transform: translateX(0); }
+  5% { opacity: 1; transform: translateX(0); }
+  85% { opacity: 1; transform: translateX(0); }
   100% { opacity: 0; transform: translateX(-18px); }
 }
 
@@ -840,9 +842,38 @@
   color: #e5c17d; /* same gold as button shadow */
 }
 
+.hero-image-tagline-stacked {
+  position: absolute;
+  bottom: -4.8rem; /* positioned under the image wrapper */
+  left: 0; /* aligned to the left edge of the image wrapper */
+  text-align: left;
+  z-index: 8;
+  font-family: var(--font-sans);
+  font-size: clamp(0.62rem, 0.88vw, 0.74rem); /* 20% smaller text size */
+  text-transform: uppercase;
+  letter-spacing: 0.12em;
+  line-height: 1.5;
+  border: none;
+  pointer-events: none;
+  opacity: 0;
+  /* Shows exactly when scan ends: scan-delay + 2.38s scan duration */
+  animation: taglineIntro 1s ease calc(var(--hero-scan-delay) + 2.38s) forwards;
+  transition: opacity 0.25s ease, transform 0.25s ease;
+}
+
+.hero-image-tagline-stacked .tagline-name {
+  color: rgba(255, 255, 255, 0.9);
+  font-weight: 600;
+}
+
+.hero-image-tagline-stacked .tagline-title {
+  color: #e5c17d; /* match button shadow */
+  font-weight: 500;
+}
+
 @keyframes taglineIntro {
-  0% { opacity: 0; transform: translateX(-5%) translateY(8px); }
-  100% { opacity: 1; transform: translateX(-5%) translateY(0); }
+  0% { opacity: 0; transform: translateY(8px); }
+  100% { opacity: 1; transform: translateY(0); }
 }
 
 /* When wrapper is hovered, hide the tagline so scanner and annotations show */
@@ -850,6 +881,13 @@
 .hero-image-wrapper:focus-within .hero-image-tagline {
   opacity: 0 !important;
   transform: translateX(-5%) translateY(8px) !important;
+  transition: opacity 0.18s ease, transform 0.18s ease;
+}
+
+.hero-image-wrapper:hover .hero-image-tagline-stacked,
+.hero-image-wrapper:focus-within .hero-image-tagline-stacked {
+  opacity: 0 !important;
+  transform: translateY(8px) !important;
   transition: opacity 0.18s ease, transform 0.18s ease;
 }
 

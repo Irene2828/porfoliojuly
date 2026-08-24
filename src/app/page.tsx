@@ -4,7 +4,6 @@ import Projects from './components/Projects';
 import Services from './components/Services';
 import SectionDivider from './components/SectionDivider';
 import FaceDivider from './components/FaceDivider';
-import Footer from './components/Footer';
 import ClientWrapper from './components/ClientWrapper';
 
 import { db } from '@/db';
@@ -46,7 +45,6 @@ export default async function HomePage() {
         <SectionDivider label="Let's Connect" />
       </div>
       <FaceDivider />
-      <Footer />
     </ClientWrapper>
   );
 }

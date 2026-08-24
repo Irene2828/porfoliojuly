@@ -96,6 +96,11 @@ export default function Hero() {
             <li><span className="bullet-gold">&mdash;</span> Rapid prototyping and AI-assisted development</li>
             <li><span className="bullet-gold">&mdash;</span> End-to-end UX and product design</li>
           </ul>
+
+          <div className="hero-image-tagline-stacked">
+            <div className="tagline-name">Iryna Sheremeta</div>
+            <div className="tagline-title">Product builder / designer</div>
+          </div>
         </div>
       </div>
     </section>
