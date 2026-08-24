@@ -124,6 +124,12 @@
   margin-top: -8.75rem; /* lifted 10% higher */
   margin-bottom: 2rem;
   max-width: 600px; /* Adjusted wider to match 10% container increase */
+  background: #f2ddb0; /* beige/gold tone background card */
+  padding: 2.2rem 3.5rem; /* generous side/top/bottom padding */
+  margin-right: -4rem; /* pulls to the right to slightly overlap the black side */
+  position: relative;
+  z-index: 10; /* render over the black panel */
+  box-shadow: 10px 10px 30px rgba(0, 0, 0, 0.03);
 }
 
 .hero-name-eyebrow {
@@ -261,12 +267,6 @@
   align-items: center;
   gap: 1.25rem;
   margin-top: 5.03rem; /* compensated to keep CTAs locked in place */
-  background: #f2ddb0; /* beige/gold tone */
-  padding: 2rem 3rem; /* generous side/top/bottom padding */
-  margin-right: -4rem; /* pulls to the right to slightly overlap the black side */
-  position: relative;
-  z-index: 10; /* render over the black panel */
-  box-shadow: 10px 10px 30px rgba(0, 0, 0, 0.05);
 }
 
 .hero-image-wrapper {
