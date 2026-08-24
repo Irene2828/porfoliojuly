@@ -151,8 +151,8 @@
   margin: 0;
   background: none;
   -webkit-background-clip: initial;
-  -webkit-text-fill-color: #1a1f24; /* almost black */
-  color: #1a1f24;
+  -webkit-text-fill-color: #323941; /* softened to visually thin the Lora strokes */
+  color: #323941;
   text-transform: uppercase; /* uppercase statement */
   letter-spacing: -0.02em; /* tight premium letter-spacing */
   font-weight: 400; /* regular weight */
