@@ -494,8 +494,8 @@
 @media (max-width: 900px) {
   /* ── Mobile: centered single-column, name over photo ── */
   .hero-section {
-    padding-top: 8.5rem !important;
-    padding-bottom: 3rem;
+    padding-top: 6.25rem !important;
+    padding-bottom: 4rem;
     padding-inline: 0;
     min-height: auto;
     width: 100%;
@@ -518,41 +518,49 @@
     display: none !important;
   }
   .hero-top-hairline {
-    top: 3.2rem !important; /* adjust stroke line closer to links on mobile */
+    top: 4.75rem !important; /* keep the stroke tucked under the header */
   }
 
   .hero-container {
     display: grid !important;
     grid-template-columns: 1fr !important;
-    grid-template-rows: auto auto auto auto auto !important;
+    grid-template-rows: auto auto auto auto !important;
     align-items: center !important;
     justify-content: center !important;
-    gap: 1.1rem !important;
+    justify-items: center !important;
+    gap: 1.25rem !important;
     width: 100% !important;
     max-width: 100% !important;
     margin: 0 auto !important;
     transform: none !important;
     padding-inline: 1rem !important;
-    padding-top: 0.5rem !important;
+    padding-top: 0 !important;
     box-sizing: border-box;
   }
 
   .hero-content {
-    display: contents !important;
+    width: 100% !important;
+    max-width: 100% !important;
+    display: flex !important;
+    flex-direction: column !important;
+    align-items: center !important;
   }
 
   .hero-copy-motion {
-    display: contents !important;
+    width: 100% !important;
+    display: flex !important;
+    flex-direction: column !important;
+    align-items: center !important;
   }
 
   /* Image: centered visual */
   .hero-image-wrapper {
     grid-row: 2 !important; /* positioned after name group */
-    width: min(100%, 24rem) !important;
+    width: min(100%, 22rem) !important;
     max-width: 100% !important;
     height: auto !important;
     flex: none;
-    margin: 0 auto 1.35rem auto !important;
+    margin: 0 auto 1.1rem auto !important;
     transform: none !important;
     position: relative;
     display: flex;
@@ -562,7 +570,7 @@
   }
 
   .cv-scanner .hero-image-container {
-    width: min(84vw, 22rem) !important;
+    width: min(88vw, 21rem) !important;
     max-width: 100% !important;
     height: auto !important;
     aspect-ratio: 3 / 4 !important; /* keep aspect ratio on photo container */
@@ -580,9 +588,9 @@
   /* Name group: positioned above visual */
   .hero-name-group {
     grid-row: 1 !important; /* positioned first */
-    width: min(100%, 34rem) !important;
+    width: min(100%, 21rem) !important;
     margin-top: 0 !important; /* reset negative pull-up */
-    margin-bottom: 0.75rem !important;
+    margin-bottom: 0.5rem !important;
     align-items: center !important;
     justify-content: center !important;
     display: flex;
@@ -590,6 +598,8 @@
     text-align: center !important;
     position: relative;
     z-index: 10;
+    padding: 1.15rem 1rem !important;
+    box-sizing: border-box;
   }
 
   .hero-name-group .hero-text {
@@ -602,7 +612,7 @@
   .hero-name-group .hero-text h1 {
     width: 100%;
     max-width: 100%;
-    font-size: clamp(1.75rem, 8vw, 2.4rem) !important;
+    font-size: clamp(1.55rem, 7.2vw, 2.05rem) !important;
     letter-spacing: -0.02em;
     overflow-wrap: break-word;
     word-break: normal;
@@ -618,7 +628,7 @@
 
   .hero-name-eyebrow {
     text-align: center !important;
-    margin: 0.35rem auto 0 auto !important;
+    margin: 0.3rem auto 0 auto !important;
     font-size: 0.78rem !important;
     color: #4d565f !important;
     opacity: 0.95 !important;
@@ -642,7 +652,7 @@
     grid-row: 4 !important; /* positioned after visual */
     width: 100% !important;
     max-width: 22rem !important;
-    margin: 1.2rem auto 0.8rem auto !important;
+    margin: 1rem auto 0.7rem auto !important;
     padding: 0 !important;
     box-sizing: border-box;
     display: flex !important; /* show it on mobile */
@@ -671,13 +681,13 @@
 
   /* CTAs: full-width stacked */
   .hero-ctas {
-    grid-row: 5 !important; /* positioned at the end */
-    width: min(100%, 22rem) !important;
-    max-width: 22rem !important;
+    grid-row: 3 !important;
+    width: min(100%, 21rem) !important;
+    max-width: 21rem !important;
     flex-direction: column !important;
     align-items: stretch !important;
-    gap: 0.75rem;
-    margin: 0.35rem auto 0 !important;
+    gap: 0.65rem;
+    margin: 0.85rem auto 0 !important;
   }
 
   .hero-ctas .btn {
