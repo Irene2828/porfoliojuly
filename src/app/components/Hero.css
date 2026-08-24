@@ -161,7 +161,6 @@
   box-decoration-break: clone;
   -webkit-box-decoration-break: clone;
   display: inline;
-  font-weight: 700; /* bolded */
 }
 
 .hero-intro-text {
