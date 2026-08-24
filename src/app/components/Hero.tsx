@@ -92,9 +92,9 @@ export default function Hero() {
           <span className="hero-hover-surface" aria-hidden="true"></span>
           
           <ul className="hero-bullets-right">
-            <li><span className="bullet-gold">&mdash;</span> Workflow tools and internal products</li>
-            <li><span className="bullet-gold">&mdash;</span> Rapid prototyping and AI-assisted development</li>
-            <li><span className="bullet-gold">&mdash;</span> End-to-end UX and product design</li>
+            <li><span className="hero-bullet-arrow"></span>Workflow tools and internal products</li>
+            <li><span className="hero-bullet-arrow"></span>Rapid prototyping and AI-assisted development</li>
+            <li><span className="hero-bullet-arrow"></span>End-to-end UX and product design</li>
           </ul>
 
           <div className="hero-image-tagline-stacked">
