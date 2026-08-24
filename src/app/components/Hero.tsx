@@ -22,7 +22,7 @@ export default function Hero() {
                   From <span className="highlight-gold">unclear</span><br />
                   problems<br />
                   <span className="highlight-gold">to clear</span><br />
-                  digital solutions:
+                  <span className="text-nowrap">digital solutions:</span>
                 </h1>
               </motion.div>
             </div>

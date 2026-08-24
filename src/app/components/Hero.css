@@ -123,7 +123,7 @@
   align-items: flex-start;
   margin-top: -8.75rem; /* lifted 10% higher */
   margin-bottom: 2rem;
-  max-width: 600px; /* Adjusted wider to match 10% container increase */
+  max-width: 650px; /* Increased to fit text on same lines */
   width: calc(100% + 5.5rem); /* stretches full width plus overlap */
   background: #f2ddb0; /* beige/gold tone background card */
   padding: 2.2rem 3.5rem; /* generous side/top/bottom padding */
@@ -168,6 +168,10 @@
   box-decoration-break: clone;
   -webkit-box-decoration-break: clone;
   display: inline;
+}
+
+.text-nowrap {
+  white-space: nowrap;
 }
 
 .hero-intro-text {
