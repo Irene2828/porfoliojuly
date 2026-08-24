@@ -19,9 +19,8 @@ export default function Hero() {
                 className="hero-text"
               >
                 <h1 className="title-serif hero-statement">
-                  <span className="highlight-gold highlight-gold-bridge">From unclear</span><br />
-                  <em>problems</em> -<br />
-                  <span className="highlight-gold">to clear digital <em>solutions</em></span>
+                  <span className="highlight-gold highlight-gold-bridge">From unclear</span> <em>problems</em><br />
+                  - <span className="highlight-gold">to clear</span> digital <em>solutions</em>
                 </h1>
               </motion.div>
             </div>
@@ -92,8 +91,8 @@ export default function Hero() {
           
 
           <div className="hero-image-tagline-stacked">
-            <div className="tagline-name">Iryna Sheremeta</div>
-            <div className="tagline-title">Product Builder & Designer</div>
+            <div className="tagline-name">IRYNA SHEREMETA</div>
+            <div className="tagline-title">0-1 Product builder / Designer</div>
           </div>
         </div>
       </div>

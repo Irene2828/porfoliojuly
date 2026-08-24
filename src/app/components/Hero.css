@@ -17,14 +17,14 @@
   overflow: hidden;
   min-height: 98svh;
   background: #ffffff; /* starts completely white */
-  padding: 11rem 0 3.8rem 0; /* increased height and padding by 8% */
+  padding: 15rem 0 3.8rem 0; /* create more empty space below the header */
   scroll-margin-top: 0;
 }
 
 .hero-section::after {
   content: '';
   position: absolute;
-  top: 4.75rem; /* extends black block to touch header line */
+  top: 4.75rem; /* sit the stroke directly under the header row */
   bottom: 5%; /* cut 5% on bottom */
   right: 0;
   width: 60%; /* wider black section on the left side */
@@ -60,7 +60,7 @@
   opacity: 0;
   animation: heroBgFadeIn var(--hero-motion-duration) cubic-bezier(0.45, 0, 0.2, 1) both;
   animation-delay: var(--hero-intro-delay);
-  top: 4.75rem; /* placed as header stroke */
+  top: 4.75rem; /* aligned with the stroke position */
 }
 
 @keyframes heroCornerSwap {
@@ -121,13 +121,13 @@
   display: flex;
   flex-direction: column;
   align-items: flex-start;
-  margin-top: -5.44rem; /* lowered 25% from previous position */
+  margin-top: -5.6rem; /* move the beige frame 25% higher */
   margin-bottom: 2rem;
   max-width: none !important; /* removed restriction so it can overlap black panel */
-  width: calc(100% + 7.2rem); /* cut extra frame width by 20% */
+  width: calc((100% + 7.2rem) * 0.972); /* extend frame width by 1% more */
   background: #f2ddb0; /* beige/gold tone background card */
-  border: 1px solid rgba(210, 189, 140, 0.38); /* subtle beige border */
-  padding: 2.2rem 0.875rem 2.2rem 3.5rem; /* right padding cut in half again */
+  border: 1px dashed rgba(30, 30, 30, 0.35); /* light off-black dashed stroke */
+  padding: 2.2rem 3.5rem; /* equal left/right spacing inside the beige frame */
   margin-right: -6.12rem; /* pulls about 15% closer to the black section */
   margin-left: 0.95rem; /* aligns left edge closer to header nav */
   transform: translateX(1.25rem); /* move frame closer to the black image */
@@ -276,9 +276,11 @@
 
 .hero-ctas-outside {
   display: flex !important;
-  margin-top: 1.75rem;
-  margin-left: 5rem;
-  align-items: flex-start;
+  width: calc(100% + 7.2rem); /* match the beige frame width */
+  margin-top: 0.15rem; /* move CTAs 25% higher to stay closer to the frame */
+  margin-left: 0.95rem;
+  transform: translate(2rem, -2.4rem); /* stronger upward nudge while keeping the right edge aligned */
+  align-items: flex-end;
   justify-content: flex-start;
   flex-direction: column !important;
   gap: 0.75rem;
@@ -290,7 +292,7 @@
   color: #121212;
   border: 1px solid #121212;
   box-shadow: none;
-  align-self: flex-start;
+  align-self: flex-end;
 }
 
 .hero-ctas-outside .btn-primary-outline:hover {
@@ -303,11 +305,11 @@
   display: block;
   background: transparent;
   border: 0 !important;
-  color: #121212;
+  color: #f5efe5;
   padding: 0 0 0 1.3rem;
   height: auto;
   box-shadow: none !important;
-  align-self: flex-start;
+  align-self: flex-end;
   justify-content: flex-start;
   width: fit-content;
   font-weight: 400;
@@ -326,7 +328,7 @@
 .hero-ctas-outside .btn-secondary-stacked:hover {
   background: transparent;
   border: 0 !important;
-  color: #121212;
+  color: #ffffff;
 }
 
 .hero-ctas-outside .btn-secondary-stacked .arrow {
@@ -492,7 +494,7 @@
 @media (max-width: 900px) {
   /* ── Mobile: centered single-column, name over photo ── */
   .hero-section {
-    padding-top: 11rem !important; /* Push name group further below the header bar on mobile to prevent overlap */
+    padding-top: 8.5rem !important;
     padding-bottom: 3rem;
     padding-inline: 0;
     min-height: auto;
@@ -525,12 +527,13 @@
     grid-template-rows: auto auto auto auto auto !important;
     align-items: center !important;
     justify-content: center !important;
-    gap: 0 !important;
+    gap: 1.1rem !important;
     width: 100% !important;
     max-width: 100% !important;
     margin: 0 auto !important;
     transform: none !important;
-    padding-inline: 1.5rem !important;
+    padding-inline: 1rem !important;
+    padding-top: 0.5rem !important;
     box-sizing: border-box;
   }
 
@@ -545,11 +548,11 @@
   /* Image: centered visual */
   .hero-image-wrapper {
     grid-row: 2 !important; /* positioned after name group */
-    width: auto !important;
+    width: min(100%, 24rem) !important;
     max-width: 100% !important;
     height: auto !important;
     flex: none;
-    margin: 0 auto 2rem auto !important;
+    margin: 0 auto 1.35rem auto !important;
     transform: none !important;
     position: relative;
     display: flex;
@@ -559,8 +562,8 @@
   }
 
   .cv-scanner .hero-image-container {
-    width: 280px !important;
-    max-width: 80vw !important;
+    width: min(84vw, 22rem) !important;
+    max-width: 100% !important;
     height: auto !important;
     aspect-ratio: 3 / 4 !important; /* keep aspect ratio on photo container */
   }
@@ -577,9 +580,9 @@
   /* Name group: positioned above visual */
   .hero-name-group {
     grid-row: 1 !important; /* positioned first */
-    width: 100% !important;
+    width: min(100%, 34rem) !important;
     margin-top: 0 !important; /* reset negative pull-up */
-    margin-bottom: 2rem !important;
+    margin-bottom: 0.75rem !important;
     align-items: center !important;
     justify-content: center !important;
     display: flex;
@@ -599,13 +602,13 @@
   .hero-name-group .hero-text h1 {
     width: 100%;
     max-width: 100%;
-    font-size: clamp(1.4rem, 6vw, 1.8rem) !important;
-    letter-spacing: -0.01em;
+    font-size: clamp(1.75rem, 8vw, 2.4rem) !important;
+    letter-spacing: -0.02em;
     overflow-wrap: break-word;
     word-break: normal;
     text-align: center !important;
     margin: 0 !important;
-    line-height: 1.1;
+    line-height: 1.06;
     -webkit-text-fill-color: #1a1f24 !important; /* force solid near-black */
     color: #1a1f24 !important;
     opacity: 1 !important;
@@ -615,7 +618,7 @@
 
   .hero-name-eyebrow {
     text-align: center !important;
-    margin: 0.5rem auto 0 auto !important;
+    margin: 0.35rem auto 0 auto !important;
     font-size: 0.78rem !important;
     color: #4d565f !important;
     opacity: 0.95 !important;
@@ -626,8 +629,8 @@
   .hero-intro-text {
     grid-row: 3 !important; /* positioned after visual */
     display: block;
-    max-width: 320px !important;
-    margin: 0 auto 1.5rem auto !important;
+    max-width: 22rem !important;
+    margin: 0 auto 1rem auto !important;
     text-align: center !important;
     line-height: 1.5;
     font-size: 0.92rem !important;
@@ -638,8 +641,8 @@
   .hero-bullets-right {
     grid-row: 4 !important; /* positioned after visual */
     width: 100% !important;
-    max-width: 320px !important;
-    margin: 2rem auto 1rem auto !important; /* increased space below image, cut space above CTAs by 50% */
+    max-width: 22rem !important;
+    margin: 1.2rem auto 0.8rem auto !important;
     padding: 0 !important;
     box-sizing: border-box;
     display: flex !important; /* show it on mobile */
@@ -669,12 +672,12 @@
   /* CTAs: full-width stacked */
   .hero-ctas {
     grid-row: 5 !important; /* positioned at the end */
-    width: 100% !important;
-    max-width: 320px !important;
+    width: min(100%, 22rem) !important;
+    max-width: 22rem !important;
     flex-direction: column !important;
     align-items: stretch !important;
     gap: 0.75rem;
-    margin: 0 auto !important;
+    margin: 0.35rem auto 0 !important;
   }
 
   .hero-ctas .btn {
