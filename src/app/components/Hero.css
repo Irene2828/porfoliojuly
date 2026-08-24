@@ -144,9 +144,12 @@
   -webkit-background-clip: initial;
   -webkit-text-fill-color: #1a1f24; /* almost black */
   color: #1a1f24;
+  text-transform: uppercase; /* uppercase statement */
   letter-spacing: -0.01em;
   font-weight: 400;
   -webkit-font-smoothing: antialiased;
+  -webkit-text-stroke: 0px transparent !important;
+  text-stroke: 0px transparent !important;
 }
 
 .highlight-gold {
@@ -481,6 +484,8 @@
     -webkit-text-fill-color: #1a1f24 !important; /* force solid near-black */
     color: #1a1f24 !important;
     opacity: 1 !important;
+    -webkit-text-stroke: 0px transparent !important;
+    text-stroke: 0px transparent !important;
   }
 
   .hero-name-eyebrow {
@@ -844,9 +849,9 @@
 
 .hero-image-tagline-stacked {
   position: absolute;
-  bottom: -4.8rem; /* positioned under the image wrapper */
-  left: 0; /* aligned to the left edge of the image wrapper */
-  text-align: left;
+  bottom: -2.4rem; /* 50% closer to the image container */
+  right: 0; /* aligned to the right edge of the image wrapper */
+  text-align: right; /* aligned by right */
   z-index: 8;
   font-family: var(--font-sans);
   font-size: clamp(0.62rem, 0.88vw, 0.74rem); /* 20% smaller text size */
