@@ -24,7 +24,7 @@ export default function FaceDivider() {
         viewport={{ once: true, amount: 0.35 }}
         transition={{ staggerChildren: 0.14 }}
       >
-        <motion.h2 variants={arriveIn} className="face-closure">Have a messy problem?</motion.h2>
+        <motion.h2 variants={arriveIn} className="face-closure">Have a <span className="highlight-gold-bridge-footer">messy problem?</span></motion.h2>
         <motion.div variants={arriveIn} className="face-support">
           <p className="face-preheadline">I&apos;ll approach it as a designer, strategist and product builder.</p>
         </motion.div>

@@ -3,7 +3,7 @@
   background:
     radial-gradient(circle at 15% 0%, rgba(168, 216, 242, 0.35), transparent 28rem),
     #f8fbfd;
-  color: #1a1a1a;
+  color: #1A1A1A;
   padding: 3rem 1.5rem;
 }
 
@@ -157,7 +157,7 @@
 .admin-form textarea {
   background: #ffffff;
   border: 1px solid rgba(63, 135, 172, 0.24);
-  color: #1a1a1a;
+  color: #1A1A1A;
   font: inherit;
   font-size: 0.95rem;
   letter-spacing: 0;

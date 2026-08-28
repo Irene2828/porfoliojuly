@@ -33,17 +33,13 @@ export default async function HomePage() {
     <ClientWrapper>
       <Header />
       <Hero />
-      <div className="page-section-divider page-section-divider-work">
-        <SectionDivider label={publishedProjects[0]?.title ?? 'Selected Work'} />
-      </div>
+      <SectionDivider theme="light" />
+
+
       <Projects initialProjects={publishedProjects as any} />
-      <div className="gold-divider lift-why-work">
-        <SectionDivider label="Why Work With Me" />
-      </div>
+
       <Services />
-      <div className="gold-divider lift-lets-connect">
-        <SectionDivider label="Let's Connect" />
-      </div>
+      <SectionDivider theme="light" label="Let's Connect" />
       <FaceDivider />
     </ClientWrapper>
   );

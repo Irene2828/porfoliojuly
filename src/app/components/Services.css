@@ -1,8 +1,16 @@
 .services-section {
-  background-color: #121212; /* same off black as right section */
-  padding: 6.5rem 0 3.25rem;
+  background: linear-gradient(to right, #EBE1CD 0%, #EBE1CD 66.666%, #1A1A1A 66.666%, #1A1A1A 100%); /* split: 2/3 gold-beige, 1/3 black */
+  padding: 6.5rem 0 0 0; /* padding-bottom set to 0 to cut off section exactly at image bottom edge */
+  margin-top: 12rem; /* match spacing between projects */
   position: relative;
   overflow: hidden;
+  border-bottom: 0.5px solid rgba(85, 96, 106, 0.2); /* same style as hero stroke bottom */
+}
+
+@media (max-width: 900px) {
+  .services-section {
+    background: #EBE1CD; /* fall back to solid gold-beige on single-column mobile view */
+  }
 }
 
 .services-pixel-decor {
@@ -39,7 +47,7 @@
 
 @media (min-width: 769px) {
   .services-content-left {
-    width: 50%;
+    width: 60%; /* takes up the left beige side */
     flex-direction: row;
     justify-content: space-between;
     gap: 2rem;
@@ -52,6 +60,7 @@
   .services-content-left .service-category:nth-child(2) {
     align-self: flex-start;
     margin-top: 4rem; /* Diagonally offset list to bottom right of left side */
+    transform: translateX(-30%); /* shift 30% to the left side */
   }
 }
 
@@ -61,7 +70,8 @@
 
 @media (min-width: 769px) {
   .services-image-col {
-    width: 48%;
+    width: 33.333%; /* sits inside the 1/3 black background column */
+    transform: translateX(-30%); /* shift 30% to the left side */
   }
 }
 
@@ -69,16 +79,16 @@
   width: 100%;
   height: 400px;
   object-fit: cover;
-  border-radius: 4px;
+  border-radius: 0; /* clean sharp edges */
   filter: grayscale(100%);
-  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.05);
+  display: block; /* prevents inline white-space offsets at bottom */
 }
 
 .service-title {
   font-family: var(--font-sans) !important;
   font-size: 2rem;
   font-weight: 400;
-  color: #1a1a1a;
+  color: #1A1A1A !important; /* black copy */
   text-transform: none;
   letter-spacing: 0.05em;
   -webkit-font-smoothing: antialiased;
@@ -94,7 +104,7 @@
   left: 0;
   width: 100%;
   height: 1px;
-  background-color: var(--color-text);
+  background-color: #1A1A1A !important; /* solid black line */
 }
 
 .service-items {
@@ -105,19 +115,19 @@
 .service-items li {
   font-size: 1.1rem;
   margin-bottom: 0.8rem;
-  color: #333;
+  color: #1A1A1A !important; /* black copy */
 }
 
 .services-section .service-title {
-  color: #ffffff !important;
+  color: #1A1A1A !important; /* black copy */
 }
 
 .services-section .service-title::after {
-  background-color: rgba(255, 255, 255, 0.4) !important;
+  background-color: #1A1A1A !important; /* solid black line */
 }
 
 .services-section .service-items li {
-  color: rgba(255, 255, 255, 0.95) !important;
+  color: #1A1A1A !important; /* black copy */
 }
 
 .service-bullet {

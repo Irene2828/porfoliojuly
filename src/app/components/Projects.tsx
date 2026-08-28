@@ -64,150 +64,171 @@ export default function Projects({ initialProjects }: ProjectsProps) {
 
         // Build bottom annotations list dynamically based on project content
         const bottomAnnotations: { chip: string; text: string; stat: string; statLabel: string }[] = [];
+        
+        const getShortenedText = (chip: string) => {
+          if (chip === 'Problem') {
+            if (project.slug === 'websites') return 'Outdated visual brand';
+            if (project.slug === 'workflow-automation') return 'Manual asset creation';
+            return 'Scattered volunteer data';
+          }
+          if (chip === 'Built with') {
+            if (project.slug === 'websites') return 'Drizzle, Next.js stack';
+            if (project.slug === 'workflow-automation') return 'Locked template editor';
+            return 'Native iOS client';
+          }
+          if (chip === 'Impact') {
+            if (project.slug === 'websites') return 'Speed improved 85%';
+            if (project.slug === 'workflow-automation') return 'Self-serve brand builder';
+            return 'Instant map signups';
+          }
+          if (chip === 'Tech Stack') return 'Next.js & Drizzle';
+          if (chip === 'Status') return 'Shipped to production';
+          return '';
+        };
+
         if (project.problem) {
-          bottomAnnotations.push({ chip: 'Problem', text: project.problem, stat: '85%', statLabel: 'success rate' });
+          bottomAnnotations.push({ chip: 'Problem', text: getShortenedText('Problem'), stat: '85%', statLabel: 'success rate' });
         }
         if (project.buildApproach) {
-          bottomAnnotations.push({ chip: 'Built with', text: project.buildApproach, stat: '22 less', statLabel: 'reports filed' });
+          bottomAnnotations.push({ chip: 'Built with', text: getShortenedText('Built with'), stat: '22 less', statLabel: 'reports filed' });
         }
         if (project.impact) {
-          bottomAnnotations.push({ chip: 'Impact', text: project.impact, stat: '1 in 4 users', statLabel: 'completed' });
+          bottomAnnotations.push({ chip: 'Impact', text: getShortenedText('Impact'), stat: '1 in 4 users', statLabel: 'completed' });
         }
         if (project.bullet1 && project.slug === 'websites') {
-          bottomAnnotations.push({ chip: 'Tech Stack', text: project.bullet1, stat: '85%', statLabel: 'success rate' });
+          bottomAnnotations.push({ chip: 'Tech Stack', text: getShortenedText('Tech Stack'), stat: '85%', statLabel: 'success rate' });
         }
         if (project.bullet2 && project.slug === 'websites') {
-          bottomAnnotations.push({ chip: 'Status', text: project.bullet2, stat: '22 less', statLabel: 'reports filed' });
+          bottomAnnotations.push({ chip: 'Status', text: getShortenedText('Status'), stat: '22 less', statLabel: 'reports filed' });
         }
 
         return (
-          <div key={project.id}>
-            <motion.div 
-              initial={{ y: 120, opacity: 0.95 }}
-              whileInView={{ y: 0, opacity: 1 }}
-              viewport={{ once: true, amount: 0.05 }}
-              transition={{ duration: 1.0, ease: [0.16, 1, 0.3, 1] }}
-              className={`project-section-block ${sectionClass}`}
+          <div key={project.id} className="project-wrapper">
+            <div 
+              className="page-section-divider page-section-divider-work cinematic-section" 
+              style={{ 
+                marginTop: index === 0 ? 0 : '12rem', 
+                marginBottom: '4rem',
+              }}
             >
-              <div className="container project-row">
+              <SectionDivider 
+                label={project.title} 
+                liveLink={project.slug === 'websites' ? 'https://buyuukrainian.vercel.app/' : (index === 0 ? 'https://poster-generator-gold.vercel.app/' : undefined)}
+                subline={project.slug === 'websites' ? 'Started as “help Ukrainian-owned businesses get found in Canada” — no brief, just a volunteer ask' : (project.caseStudyIntro ?? undefined)}
+                annotations={bottomAnnotations}
+              >
                 <motion.div 
-                  variants={textVariant}
-                  initial="hidden"
-                  whileInView="visible"
-                  viewport={{ once: true, amount: 0.2 }}
-                  className="project-header"
+                  initial={{ y: 120, opacity: 0.95 }}
+                  whileInView={{ y: 0, opacity: 1 }}
+                  viewport={{ once: true, amount: 0.05 }}
+                  transition={{ duration: 1.0, ease: [0.16, 1, 0.3, 1] }}
+                  className={`project-section-block ${sectionClass}`}
+                  style={{ width: '100%', margin: '3rem 0 1.5rem 0' }}
                 >
-                  {project.caseStudyIntro && (
-                    <p className="project-subtitle">
-                      &mdash; {project.caseStudyIntro}
-                    </p>
-                  )}
-                </motion.div>
-
-                <div className="project-body-grid">
-                  <div className="project-visual">
-                    <div className="visual-frame">
-                      {project.slug === 'mobile-apps' ? (
-                        <div className="iphone-screen">
-                          {mainScreen && (
-                            <img src={mainScreen.originalUrl} alt={mainScreen.altText || project.title} />
-                          )}
-                        </div>
-                      ) : (
-                        <div className="flat-screen">
-                          {mainScreen && (
-                            <img src={mainScreen.originalUrl} alt={mainScreen.altText || project.title} />
-                          )}
-                        </div>
-                      )}
-                    </div>
-                    {(project.slug === 'workflow-automation' || project.slug === 'websites') && (
-                      <div className="project-visual-caption">
-                        <a 
-                          href={project.slug === 'workflow-automation' ? 'https://poster-generator-gold.vercel.app/' : 'https://buyuukrainian.vercel.app/'}
-                          target="_blank"
-                          rel="noopener noreferrer"
-                        >
-                          {project.slug === 'workflow-automation' ? 'https://poster-generator-gold.vercel.app/' : 'https://buyuukrainian.vercel.app/'}
-                        </a>
-                      </div>
-                    )}
-                  </div>
-                  <div className="project-sidebar-details">
-                    {annotationsList.length > 0 ? (
-                      annotationsList.map((ann) => (
-                        <motion.div 
-                          key={ann.id}
-                          variants={textVariant}
-                          initial="hidden"
-                          whileInView="visible"
-                          viewport={{ once: true, amount: 0.2 }}
-                          className="sidebar-col"
-                        >
-                          <div className="sidebar-bullet-content">
-                            <span className="project-arrow"></span>
-                            {project.slug === 'workflow-automation' ? (
-                              <div>
-                                <div className="annotation-title">
-                                  {ann.markerNumber} &mdash; {ann.title}
+                  <div className="container project-row">
+                    <div className="project-body-grid">
+                      {/* Left Column: First caption */}
+                      <div className="project-sidebar-details project-sidebar-left">
+                        {annotationsList.slice(0, 1).map((ann) => (
+                          <motion.div 
+                            key={ann.id}
+                            variants={textVariant}
+                            initial="hidden"
+                            whileInView="visible"
+                            viewport={{ once: true, amount: 0.2 }}
+                            className="sidebar-col"
+                          >
+                            <div className="sidebar-bullet-content">
+                              <span className="project-arrow"></span>
+                              {project.slug === 'workflow-automation' ? (
+                                <div>
+                                  <div className="annotation-title">
+                                    {ann.markerNumber} &mdash; {ann.title}
+                                  </div>
+                                  <div className="annotation-desc">{ann.explanation}</div>
                                 </div>
-                                <div className="annotation-desc">{ann.explanation}</div>
-                              </div>
-                            ) : (
-                              <div>
-                                <strong>{ann.title}</strong> &mdash; {ann.explanation}
-                              </div>
-                            )}
-                          </div>
-                        </motion.div>
-                      ))
-                    ) : (
-                      // Fallback for Mobile Apps style with a single sidebar bullet description
-                      project.bullet1 && project.slug === 'mobile-apps' && (
-                        <motion.div 
-                          variants={textVariant}
-                          initial="hidden"
-                          whileInView="visible"
-                          viewport={{ once: true, amount: 0.2 }}
-                          className="sidebar-col"
-                        >
-                          <div className="sidebar-bullet-content">
-                            <span className="project-arrow"></span>
-                            <div>&mdash; {project.bullet1}</div>
-                          </div>
-                        </motion.div>
-                      )
-                    )}
-                  </div>
-                </div>
+                              ) : (
+                                <div>
+                                  <strong>{ann.title}</strong> &mdash; {ann.explanation}
+                                </div>
+                              )}
+                            </div>
+                          </motion.div>
+                        ))}
+                      </div>
 
-                {bottomAnnotations.length > 0 && (
-                  <div className="project-annotations-row three-cols">
-                    {bottomAnnotations.map((item, idx) => (
-                      <motion.div 
-                        key={idx}
-                        variants={textVariant}
-                        initial="hidden"
-                        whileInView="visible"
-                        viewport={{ once: true, amount: 0.2 }}
-                        className="annotation-col"
-                      >
-                        <span className="project-chip">{item.chip}</span> {item.text}
-                        <div className="annotation-stat">{item.stat}</div>
-                        <div className="annotation-stat-label">{item.statLabel}</div>
-                      </motion.div>
-                    ))}
-                  </div>
-                )}
-              </div>
-            </motion.div>
+                      {/* Center Column: Visual */}
+                      <div className="project-visual">
+                        <div className="visual-frame">
+                          {project.slug === 'mobile-apps' ? (
+                            <div className="iphone-screen">
+                              {mainScreen && (
+                                <img src={mainScreen.originalUrl} alt={mainScreen.altText || project.title} />
+                              )}
+                            </div>
+                          ) : (
+                            <div className="flat-screen">
+                              {mainScreen && (
+                                <img src={mainScreen.originalUrl} alt={mainScreen.altText || project.title} />
+                              )}
+                            </div>
+                          )}
+                        </div>
+                      </div>
 
-            {/* Render transitional divider with next project title for all but the last project */}
-            {index < initialProjects.length - 1 && (
-              <div className="gold-divider">
-                <SectionDivider label={initialProjects[index + 1].title} />
-              </div>
-            )}
+                      {/* Right Column: 2nd and 3rd captions (or mobile-apps single caption) */}
+                      <div className="project-sidebar-details project-sidebar-right">
+                        {annotationsList.length >= 2 ? (
+                          annotationsList.slice(1, 3).map((ann) => (
+                            <motion.div 
+                              key={ann.id}
+                              variants={textVariant}
+                              initial="hidden"
+                              whileInView="visible"
+                              viewport={{ once: true, amount: 0.2 }}
+                              className="sidebar-col"
+                            >
+                              <div className="sidebar-bullet-content">
+                                <span className="project-arrow"></span>
+                                {project.slug === 'workflow-automation' ? (
+                                  <div>
+                                    <div className="annotation-title">
+                                      {ann.markerNumber} &mdash; {ann.title}
+                                    </div>
+                                    <div className="annotation-desc">{ann.explanation}</div>
+                                  </div>
+                                ) : (
+                                  <div>
+                                    <strong>{ann.title}</strong> &mdash; {ann.explanation}
+                                  </div>
+                                )}
+                              </div>
+                            </motion.div>
+                          ))
+                        ) : (
+                          // Fallback for Mobile Apps style with a single sidebar bullet description
+                          project.bullet1 && project.slug === 'mobile-apps' && (
+                            <motion.div 
+                              variants={textVariant}
+                              initial="hidden"
+                              whileInView="visible"
+                              viewport={{ once: true, amount: 0.2 }}
+                              className="sidebar-col"
+                            >
+                              <div className="sidebar-bullet-content">
+                                <span className="project-arrow"></span>
+                                <div>&mdash; {project.bullet1}</div>
+                              </div>
+                            </motion.div>
+                          )
+                        )}
+                      </div>
+                    </div>
+                  </div>
+                </motion.div>
+              </SectionDivider>
+            </div>
+
           </div>
         );
       })}

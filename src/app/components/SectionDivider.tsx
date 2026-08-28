@@ -5,9 +5,33 @@ import './SectionDivider.css';
 
 type SectionDividerProps = {
   label?: string;
+  theme?: 'light' | 'dark';
+  liveLink?: string;
+  subline?: string;
+  annotations?: { chip: string; text: string; stat: string; statLabel: string }[];
+  children?: React.ReactNode;
 };
 
-export default function SectionDivider({ label }: SectionDividerProps) {
+export default function SectionDivider({ label, theme = 'dark', liveLink, subline, annotations, children }: SectionDividerProps) {
+  if (theme === 'light') {
+    return (
+      <motion.div
+        className="section-divider-wrap section-divider-light"
+        aria-hidden="true"
+        initial={{ opacity: 0, y: 15 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        viewport={{ once: true, amount: 0.5 }}
+        transition={{ duration: 0.7, ease: [0.16, 1, 0.3, 1] }}
+      >
+        <span className="section-divider-light-line" />
+        <span className="section-divider-light-decor">✦</span>
+        <span className="section-divider-light-text">{label || 'Recent Projects'}</span>
+        <span className="section-divider-light-decor">✦</span>
+        <div className="section-divider-light-line" />
+      </motion.div>
+    );
+  }
+
   if (!label) {
     // Plain line-only divider (no tag)
     return (
@@ -28,7 +52,6 @@ export default function SectionDivider({ label }: SectionDividerProps) {
   return (
     <motion.div
       className="section-divider-wrap section-divider-with-tag"
-      aria-hidden="true"
       initial={{ y: 18, opacity: 0 }}
       whileInView={{ y: 0, opacity: 1 }}
       viewport={{ once: true, amount: 0.5 }}
@@ -38,11 +61,47 @@ export default function SectionDivider({ label }: SectionDividerProps) {
         <div className="section-divider-side-line" />
         <div className="section-divider-tag">
           <span className="section-divider-tag-dots section-divider-tag-dots-left" />
-          <span className="section-divider-tag-text">{label}</span>
+          <div className="section-divider-title-group">
+            <div className="section-divider-heading-row">
+              <span className="section-divider-tag-text">· {label} ·</span>
+            </div>
+            {subline && <span className="section-divider-subline">&mdash; {subline}</span>}
+          </div>
           <span className="section-divider-tag-dots section-divider-tag-dots-right" />
         </div>
         <div className="section-divider-side-line" />
       </div>
+
+      {children}
+
+      {annotations && annotations.length > 0 && (
+        <div className="section-divider-stats-row">
+          {annotations.map((item, idx) => (
+            <div key={idx} className="section-divider-stat-item">
+              <div className="annotation-stat">{item.stat}</div>
+              <div className="annotation-stat-label">{item.statLabel}</div>
+              <div className="annotation-chip-row">
+                <span className="project-chip">{item.chip}</span> {item.text}
+              </div>
+            </div>
+          ))}
+        </div>
+      )}
+
+      {liveLink && (
+        liveLink === '?' ? (
+          <span className="section-divider-live-link section-divider-question-mark">?</span>
+        ) : (
+          <a 
+            href={liveLink} 
+            target="_blank"
+            rel="noopener noreferrer" 
+            className="section-divider-live-link"
+          >
+            LIVE LINK ↗
+          </a>
+        )
+      )}
     </motion.div>
   );
 }
