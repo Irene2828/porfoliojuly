@@ -41,8 +41,8 @@
 /* TOP STRIPE: heading + subline — black with white text */
 .page-section-divider.cinematic-section .section-divider-tag-row {
   background: #121212;
-  padding-top: 1.5rem;
-  padding-bottom: 1.25rem;
+  padding-top: 2.25rem !important;
+  padding-bottom: 2.25rem !important;
 }
 
 .page-section-divider.cinematic-section .section-divider-tag-text {
@@ -63,20 +63,24 @@
   width: 100vw !important;
   margin-left: calc(-50vw + 50%) !important;
   margin-right: calc(-50vw + 50%) !important;
+  margin-top: 0 !important;
+  margin-bottom: 0 !important;
   padding: 2.5rem 0 !important;
 }
 
 /* BOTTOM STRIPE: stats — black with white text */
 .page-section-divider.cinematic-section .section-divider-stats-row {
   background: #121212;
-  padding-top: 1.25rem;
-  padding-bottom: 1.25rem;
+  padding-top: 2.25rem !important;
+  padding-bottom: 2.25rem !important;
   width: 100vw;
-  margin-left: calc(-50vw + 50%);
-  margin-right: calc(-50vw + 50%);
+  margin-left: calc(-50vw + 50%) !important;
+  margin-right: calc(-50vw + 50%) !important;
+  margin-top: 0 !important;
+  margin-bottom: 0 !important;
   max-width: none;
-  padding-left: max(var(--space-md), calc((100vw - 1140px) / 2));
-  padding-right: max(var(--space-md), calc((100vw - 1140px) / 2));
+  padding-left: max(var(--space-md), calc((100vw - 1140px) / 2)) !important;
+  padding-right: max(var(--space-md), calc((100vw - 1140px) / 2)) !important;
   box-sizing: border-box;
 }
 
