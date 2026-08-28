@@ -105,7 +105,7 @@ export default function Projects({ initialProjects }: ProjectsProps) {
         return (
           <div key={project.id} className="project-wrapper">
             <div 
-              className="page-section-divider page-section-divider-work cinematic-section" 
+              className={`page-section-divider page-section-divider-work cinematic-section ${project.slug === 'websites' ? 'cinematic-section-silver' : ''}`} 
               style={{ 
                 marginTop: index === 0 ? 0 : '12rem', 
                 marginBottom: '4rem',
@@ -117,14 +117,17 @@ export default function Projects({ initialProjects }: ProjectsProps) {
                 subline={project.slug === 'websites' ? 'Started as “help Ukrainian-owned businesses get found in Canada” — no brief, just a volunteer ask' : (project.caseStudyIntro ?? undefined)}
                 annotations={bottomAnnotations}
               >
-                <motion.div 
-                  initial={{ y: 120, opacity: 0.95 }}
-                  whileInView={{ y: 0, opacity: 1 }}
-                  viewport={{ once: true, amount: 0.05 }}
-                  transition={{ duration: 1.0, ease: [0.16, 1, 0.3, 1] }}
+                <div 
                   className={`project-section-block ${sectionClass}`}
                   style={{ width: '100%', margin: '3rem 0 1.5rem 0' }}
                 >
+                  <motion.div
+                    initial={{ y: 120, opacity: 0.95 }}
+                    whileInView={{ y: 0, opacity: 1 }}
+                    viewport={{ once: true, amount: 0.05 }}
+                    transition={{ duration: 1.0, ease: [0.16, 1, 0.3, 1] }}
+                    style={{ width: '100%' }}
+                  >
                   <div className="container project-row">
                     <div className="project-body-grid">
                       {/* Left Column: First caption */}
@@ -226,6 +229,7 @@ export default function Projects({ initialProjects }: ProjectsProps) {
                     </div>
                   </div>
                 </motion.div>
+              </div>
               </SectionDivider>
             </div>
 

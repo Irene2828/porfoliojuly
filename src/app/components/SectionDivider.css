@@ -95,6 +95,49 @@
   border-color: #ffffff !important;
 }
 
+/* ── Silver Grey Overrides for Websites Section ── */
+.page-section-divider.cinematic-section.cinematic-section-silver {
+  background: #eaeaea !important; /* Elegant silver grey */
+}
+
+.page-section-divider.cinematic-section.cinematic-section-silver .section-divider-tag-row {
+  background: #eaeaea;
+}
+
+.page-section-divider.cinematic-section.cinematic-section-silver .section-divider-tag-text {
+  color: #121212 !important; /* Dark text for contrast */
+}
+
+.page-section-divider.cinematic-section.cinematic-section-silver .section-divider-subline {
+  color: rgba(18, 18, 18, 0.7) !important;
+}
+
+.page-section-divider.cinematic-section.cinematic-section-silver .section-divider-live-link {
+  color: rgba(18, 18, 18, 0.8) !important;
+}
+
+.page-section-divider.cinematic-section.cinematic-section-silver .section-divider-stats-row {
+  background: #eaeaea;
+}
+
+.page-section-divider.cinematic-section.cinematic-section-silver .section-divider-stats-row .annotation-stat {
+  color: #121212 !important;
+}
+
+.page-section-divider.cinematic-section.cinematic-section-silver .section-divider-stats-row .annotation-stat-label {
+  color: rgba(18, 18, 18, 0.6) !important;
+}
+
+.page-section-divider.cinematic-section.cinematic-section-silver .section-divider-stats-row .annotation-chip-row {
+  color: rgba(18, 18, 18, 0.8) !important;
+}
+
+.page-section-divider.cinematic-section.cinematic-section-silver .section-divider-stats-row .project-chip {
+  background: #121212 !important;
+  color: #ffffff !important;
+  border-color: #121212 !important;
+}
+
 .page-section-divider::before,
 .gold-divider::before {
   content: "";
