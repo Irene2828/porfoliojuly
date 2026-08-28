@@ -27,6 +27,9 @@
   background: #121212 !important; /* black base for the outer container */
   border-top: none !important;
   border-bottom: none !important;
+  padding-top: 0 !important;
+  padding-bottom: 0 !important;
+  min-height: 0 !important;
 }
 
 /* Hide the dot overlays on cinematic sections */
@@ -38,8 +41,8 @@
 /* TOP STRIPE: heading + subline — black with white text */
 .page-section-divider.cinematic-section .section-divider-tag-row {
   background: #121212;
-  padding-top: 3rem;
-  padding-bottom: 2.5rem;
+  padding-top: 1.5rem;
+  padding-bottom: 1.25rem;
 }
 
 .page-section-divider.cinematic-section .section-divider-tag-text {
@@ -66,8 +69,8 @@
 /* BOTTOM STRIPE: stats — black with white text */
 .page-section-divider.cinematic-section .section-divider-stats-row {
   background: #121212;
-  padding-top: 2.5rem;
-  padding-bottom: 2.5rem;
+  padding-top: 1.25rem;
+  padding-bottom: 1.25rem;
   width: 100vw;
   margin-left: calc(-50vw + 50%);
   margin-right: calc(-50vw + 50%);
@@ -97,11 +100,11 @@
 
 /* ── Silver Grey Overrides for Websites Section ── */
 .page-section-divider.cinematic-section.cinematic-section-silver {
-  background: #eaeaea !important; /* Elegant silver grey */
+  background: #f4f4f6 !important; /* Extremely light, premium cool silver grey */
 }
 
 .page-section-divider.cinematic-section.cinematic-section-silver .section-divider-tag-row {
-  background: #eaeaea;
+  background: #f4f4f6;
 }
 
 .page-section-divider.cinematic-section.cinematic-section-silver .section-divider-tag-text {
@@ -117,7 +120,7 @@
 }
 
 .page-section-divider.cinematic-section.cinematic-section-silver .section-divider-stats-row {
-  background: #eaeaea;
+  background: #f4f4f6;
 }
 
 .page-section-divider.cinematic-section.cinematic-section-silver .section-divider-stats-row .annotation-stat {
