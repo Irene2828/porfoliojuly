@@ -104,10 +104,17 @@ export default function Projects({ initialProjects }: ProjectsProps) {
 
         return (
           <div key={project.id} className="project-wrapper">
+            {index > 0 && (
+              <SectionDivider 
+                theme="light" 
+                align="right" 
+                label={index === 1 ? "Web Experiences" : "Mobile Innovation"} 
+              />
+            )}
             <div 
-              className={`page-section-divider page-section-divider-work cinematic-section ${project.slug === 'websites' ? 'cinematic-section-silver' : ''}`} 
+              className="page-section-divider page-section-divider-work cinematic-section" 
               style={{ 
-                marginTop: index === 0 ? 0 : '12rem', 
+                marginTop: index === 0 ? 0 : '0rem', 
                 marginBottom: '4rem',
               }}
             >

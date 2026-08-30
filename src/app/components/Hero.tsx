@@ -8,6 +8,12 @@ export default function Hero() {
   return (
     <section className="section hero-section" id="home">
       <div className="container hero-container">
+        {/* Mobile Name & Title above everything */}
+        <div className="hero-mobile-intro">
+          <h2 className="hero-mobile-name">IRYNA SHEREMETA</h2>
+          <p className="hero-mobile-role">Product builder / Designer</p>
+        </div>
+
         <div className="hero-content">
           <div className="hero-copy-motion">
             <div className="hero-name-group">
@@ -47,12 +53,6 @@ export default function Hero() {
           className="hero-image-wrapper cv-scanner"
           tabIndex={0}
         >
-          {/* Mobile Name & Title above photo */}
-          <div className="hero-mobile-intro">
-            <h2 className="hero-mobile-name">IRYNA SHEREMETA</h2>
-            <p className="hero-mobile-role">Product builder / Designer</p>
-          </div>
-
           <div className="hero-image-container">
             <div className="hero-image-offset-frame"></div>
             <div className="hero-image-brackets"></div>

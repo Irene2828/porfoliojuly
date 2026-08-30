@@ -38,8 +38,9 @@ export default async function HomePage() {
 
       <Projects initialProjects={publishedProjects as any} />
 
+      <SectionDivider theme="light" label="Capabilities" align="right" />
       <Services />
-      <SectionDivider theme="light" label="Let's Connect" />
+      <SectionDivider theme="light" label="Let's Connect" align="center" />
       <FaceDivider />
     </ClientWrapper>
   );

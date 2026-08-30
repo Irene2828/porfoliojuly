@@ -68,9 +68,9 @@
   padding: 2.5rem 0 !important;
 }
 
-/* BOTTOM STRIPE: stats — black with white text */
+/* BOTTOM STRIPE: stats — silver with black text */
 .page-section-divider.cinematic-section .section-divider-stats-row {
-  background: #121212;
+  background: #f4f4f6; /* silver grey */
   padding-top: 2.25rem !important;
   padding-bottom: 2.25rem !important;
   width: 100vw;
@@ -82,64 +82,22 @@
   padding-left: max(var(--space-md), calc((100vw - 1140px) / 2)) !important;
   padding-right: max(var(--space-md), calc((100vw - 1140px) / 2)) !important;
   box-sizing: border-box;
+  border-bottom: 1px solid rgba(18, 18, 18, 0.15); /* subtle dark hairline */
 }
 
 .page-section-divider.cinematic-section .section-divider-stats-row .annotation-stat {
-  color: #ffffff !important;
+  color: #121212 !important;
 }
 
 .page-section-divider.cinematic-section .section-divider-stats-row .annotation-stat-label {
-  color: rgba(255, 255, 255, 0.55) !important;
-}
-
-.page-section-divider.cinematic-section .section-divider-stats-row .annotation-chip-row {
-  color: rgba(255, 255, 255, 0.8) !important;
-}
-
-.page-section-divider.cinematic-section .section-divider-stats-row .project-chip {
-  background: #ffffff !important;
-  color: #121212 !important;
-  border-color: #ffffff !important;
-}
-
-/* ── Silver Grey Overrides for Websites Section ── */
-.page-section-divider.cinematic-section.cinematic-section-silver {
-  background: #f4f4f6 !important; /* Extremely light, premium cool silver grey */
-}
-
-.page-section-divider.cinematic-section.cinematic-section-silver .section-divider-tag-row {
-  background: #f4f4f6;
-}
-
-.page-section-divider.cinematic-section.cinematic-section-silver .section-divider-tag-text {
-  color: #121212 !important; /* Dark text for contrast */
-}
-
-.page-section-divider.cinematic-section.cinematic-section-silver .section-divider-subline {
-  color: rgba(18, 18, 18, 0.7) !important;
-}
-
-.page-section-divider.cinematic-section.cinematic-section-silver .section-divider-live-link {
-  color: rgba(18, 18, 18, 0.8) !important;
-}
-
-.page-section-divider.cinematic-section.cinematic-section-silver .section-divider-stats-row {
-  background: #f4f4f6;
-}
-
-.page-section-divider.cinematic-section.cinematic-section-silver .section-divider-stats-row .annotation-stat {
-  color: #121212 !important;
-}
-
-.page-section-divider.cinematic-section.cinematic-section-silver .section-divider-stats-row .annotation-stat-label {
   color: rgba(18, 18, 18, 0.6) !important;
 }
 
-.page-section-divider.cinematic-section.cinematic-section-silver .section-divider-stats-row .annotation-chip-row {
+.page-section-divider.cinematic-section .section-divider-stats-row .annotation-chip-row {
   color: rgba(18, 18, 18, 0.8) !important;
 }
 
-.page-section-divider.cinematic-section.cinematic-section-silver .section-divider-stats-row .project-chip {
+.page-section-divider.cinematic-section .section-divider-stats-row .project-chip {
   background: #121212 !important;
   color: #ffffff !important;
   border-color: #121212 !important;
@@ -185,21 +143,37 @@
   margin-top: 0; /* remove margin as the light connector fills the gap */
 }
 
-/* Light transitional divider */
 .section-divider-light {
-  width: 60% !important; /* 40% shorter than full width */
-  max-width: 770px !important;
-  margin: 4.5rem auto 4.5rem; /* center divider exactly in the middle of the white space */
+  width: 100% !important;
+  max-width: 1315px !important; /* hero container width */
+  margin: 6.3rem auto 6.3rem; /* center divider exactly in the middle of the white space, increased by 40% */
+  padding: 0 1rem; /* safe padding for mobile */
+  box-sizing: border-box;
   display: flex;
+  flex-direction: row !important; /* Force row layout */
   align-items: center;
   justify-content: center;
   gap: 1.25rem;
 }
 
 .section-divider-light-line {
-  flex: 1;
   height: 1px; /* 1px for a more prominent line */
   background-color: rgba(18, 18, 18, 0.25); /* dark elegant line */
+}
+
+.section-divider-light.align-center .left-line,
+.section-divider-light.align-center .right-line {
+  flex: 1;
+}
+
+.section-divider-light.align-right {
+  justify-content: flex-end;
+}
+.section-divider-light.align-right .left-line {
+  display: none;
+}
+.section-divider-light.align-right .right-line {
+  display: none;
 }
 
 .section-divider-light-decor {
@@ -212,14 +186,23 @@
   justify-content: center;
 }
 
+.section-divider-decor-mobile {
+  display: none; /* hidden on desktop */
+}
+
 .section-divider-light-text {
   font-family: var(--font-sans);
-  font-size: 0.74rem;
+  font-size: clamp(1.2rem, 3vw, 2.22rem); /* responsive 3x size */
   font-weight: 500;
   text-transform: uppercase;
-  letter-spacing: 0.14em;
-  color: #8a9099; /* small muted text */
+  letter-spacing: 0.05em; /* slightly tighter since it's much larger */
+  color: #1A1A1A; /* make it bolder since it's 3x size */
   white-space: nowrap;
+}
+
+/* Make centered labels (like Let's Connect) 20% smaller */
+.section-divider-light.align-center .section-divider-light-text {
+  font-size: clamp(0.96rem, 2.4vw, 1.776rem);
 }
 
 .page-section-divider .section-divider-wrap,
@@ -341,14 +324,38 @@
 
 @media (max-width: 900px) {
   .section-divider-light {
-    margin: 3.5rem auto 1.25rem !important; /* bottom spacing cut by 50% */
-    width: 60% !important; /* 40% shorter */
+    margin: 4.9rem auto 1.75rem !important; /* bottom spacing cut by 50%, increased by 40% */
+    width: 100% !important; /* ensure it stays full width for right alignment */
+    justify-content: center !important; /* force center alignment for mobile banner */
   }
 
-  /* Cut all divider gap heights by 50% on mobile */
+  .section-divider-light .left-line,
+  .section-divider-light .right-line {
+    display: none !important; /* remove lines for mobile banner look if requested, or keep them? "light horizontal banner" implies the divider itself */
+    /* I'll keep the lines for now, but ensure center alignment */
+  }
+  
+  .section-divider-light.align-right .left-line {
+    display: flex !important;
+    flex: 1 !important;
+  }
+  .section-divider-light.align-right .right-line {
+    display: flex !important;
+    flex: 1 !important;
+  }
+
+  .section-divider-decor-desktop {
+    display: none !important;
+  }
+  .section-divider-decor-mobile {
+    display: inline-flex !important;
+  }
+
+  /* Fix overlapping by using min-height instead of fixed height on mobile */
   .page-section-divider,
   .gold-divider {
-    height: 7.875rem !important;
+    min-height: 7.875rem !important;
+    height: auto !important;
     padding-top: 1rem !important;
     align-items: flex-start !important;
   }
@@ -507,6 +514,47 @@
     display: inline-block !important;
   }
   .section-divider-heading-row {
+    display: flex !important;
+    flex-direction: column !important;
+    align-items: center !important;
+  }
+}
+
+@media (max-width: 900px) {
+  .section-divider-stats-row {
+    margin: 0 auto !important;
+    padding: 0 1.25rem !important;
+  }
+
+  .section-divider-stats-row.metrics-count-3 {
+    display: flex !important;
+    flex-direction: column !important;
+    gap: 0 !important;
+  }
+
+  .section-divider-stats-row.metrics-count-3 .section-divider-stat-item {
+    width: 100% !important;
+    border-bottom: 1px solid rgba(18, 18, 18, 0.15) !important;
+    padding: 1.25rem 0 !important;
+    text-align: center !important;
+    display: flex !important;
+    flex-direction: column !important;
+    align-items: center !important;
+  }
+
+  .section-divider-stats-row.metrics-count-3 .section-divider-stat-item:last-child {
+    border-bottom: none !important;
+  }
+
+  .section-divider-stats-row.metrics-count-2 {
+    display: grid !important;
+    grid-template-columns: 1fr 1fr !important;
+    gap: 1rem !important;
+    text-align: center !important;
+  }
+
+  .section-divider-stats-row.metrics-count-2 .section-divider-stat-item {
+    padding: 1.25rem 0 !important;
     display: flex !important;
     flex-direction: column !important;
     align-items: center !important;

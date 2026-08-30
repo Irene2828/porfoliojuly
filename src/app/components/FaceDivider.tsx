@@ -31,6 +31,9 @@ export default function FaceDivider() {
         <motion.a variants={arriveIn} href="mailto:hello@example.com" className="btn btn-primary face-cta">
           Start a conversation
         </motion.a>
+        <motion.div variants={arriveIn} className="face-footer-copyright">
+          &copy; {new Date().getFullYear()} IRYNA SHEREMETA — BASED IN MONTREAL • REMOTE
+        </motion.div>
       </motion.div>
     </section>
   );

@@ -8,26 +8,30 @@ type SectionDividerProps = {
   theme?: 'light' | 'dark';
   liveLink?: string;
   subline?: string;
+  align?: 'center' | 'right';
   annotations?: { chip: string; text: string; stat: string; statLabel: string }[];
   children?: React.ReactNode;
 };
 
-export default function SectionDivider({ label, theme = 'dark', liveLink, subline, annotations, children }: SectionDividerProps) {
+export default function SectionDivider({ label, theme = 'dark', liveLink, subline, align = 'right', annotations, children }: SectionDividerProps) {
   if (theme === 'light') {
+    const isCenter = align === 'center';
     return (
       <motion.div
-        className="section-divider-wrap section-divider-light"
+        className={`section-divider-wrap section-divider-light ${isCenter ? 'align-center' : 'align-right'}`}
         aria-hidden="true"
         initial={{ opacity: 0, y: 15 }}
         whileInView={{ opacity: 1, y: 0 }}
         viewport={{ once: true, amount: 0.5 }}
         transition={{ duration: 0.7, ease: [0.16, 1, 0.3, 1] }}
       >
-        <span className="section-divider-light-line" />
-        <span className="section-divider-light-decor">✦</span>
+        <span className="section-divider-light-line left-line" />
+        <span className="section-divider-light-decor section-divider-decor-desktop">/</span>
+        <span className="section-divider-light-decor section-divider-decor-mobile">+</span>
         <span className="section-divider-light-text">{label || 'Recent Projects'}</span>
-        <span className="section-divider-light-decor">✦</span>
-        <div className="section-divider-light-line" />
+        <span className="section-divider-light-decor section-divider-decor-desktop">/</span>
+        <span className="section-divider-light-decor section-divider-decor-mobile">+</span>
+        <div className="section-divider-light-line right-line" />
       </motion.div>
     );
   }
@@ -74,7 +78,7 @@ export default function SectionDivider({ label, theme = 'dark', liveLink, sublin
       {children}
 
       {annotations && annotations.length > 0 && (
-        <div className="section-divider-stats-row">
+        <div className={`section-divider-stats-row metrics-count-${annotations.length}`}>
           {annotations.map((item, idx) => (
             <motion.div 
               key={idx} 

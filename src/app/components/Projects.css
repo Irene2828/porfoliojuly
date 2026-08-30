@@ -543,10 +543,22 @@
 
 @media (max-width: 900px) {
   .project-body-grid {
-    grid-template-columns: 1fr;
+    display: flex;
+    flex-direction: column;
     gap: 2.5rem;
   }
   
+  .project-visual {
+    order: -1; /* Stack mockup on top of features */
+    width: 100%;
+  }
+
+  .project-sidebar-details {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+  }
+
   .project-visuals-row {
     grid-template-columns: 1fr;
     gap: 1.5rem;
