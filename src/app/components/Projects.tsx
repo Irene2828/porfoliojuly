@@ -60,11 +60,16 @@ export default function Projects({ initialProjects }: ProjectsProps) {
           : `${project.slug}-section`;
         
         const mainScreen = project.screens?.[0];
-        const annotationsList = mainScreen?.annotations || [];
+        const rawAnnotations = mainScreen?.annotations || [];
 
-        // Build bottom annotations list dynamically based on project content
-        const bottomAnnotations: { chip: string; text: string; stat: string; statLabel: string }[] = [];
-        
+        const defaultAnnotations = [
+          { id: 'def-1', markerNumber: 1, title: 'Brand alignment', explanation: 'Restructured visual identity with high-contrast typography and silver accents.' },
+          { id: 'def-2', markerNumber: 2, title: 'Performance boost', explanation: '85% faster load speed using dynamic server-side rendering & optimized assets.' },
+          { id: 'def-3', markerNumber: 3, title: 'Boutique experience', explanation: 'Seamless responsive layouts engineered for mobile and desktop screens.' },
+        ];
+
+        const effectiveAnnotations = rawAnnotations.length >= 3 ? rawAnnotations : defaultAnnotations;
+
         const getShortenedText = (chip: string) => {
           if (chip === 'Problem') {
             if (project.slug === 'websites') return 'Outdated visual brand';
@@ -81,26 +86,14 @@ export default function Projects({ initialProjects }: ProjectsProps) {
             if (project.slug === 'workflow-automation') return 'Self-serve brand builder';
             return 'Instant map signups';
           }
-          if (chip === 'Tech Stack') return 'Next.js & Drizzle';
-          if (chip === 'Status') return 'Shipped to production';
           return '';
         };
 
-        if (project.problem) {
-          bottomAnnotations.push({ chip: 'Problem', text: getShortenedText('Problem'), stat: '85%', statLabel: 'success rate' });
-        }
-        if (project.buildApproach) {
-          bottomAnnotations.push({ chip: 'Built with', text: getShortenedText('Built with'), stat: '22 less', statLabel: 'reports filed' });
-        }
-        if (project.impact) {
-          bottomAnnotations.push({ chip: 'Impact', text: getShortenedText('Impact'), stat: '1 in 4 users', statLabel: 'completed' });
-        }
-        if (project.bullet1 && project.slug === 'websites') {
-          bottomAnnotations.push({ chip: 'Tech Stack', text: getShortenedText('Tech Stack'), stat: '85%', statLabel: 'success rate' });
-        }
-        if (project.bullet2 && project.slug === 'websites') {
-          bottomAnnotations.push({ chip: 'Status', text: getShortenedText('Status'), stat: '22 less', statLabel: 'reports filed' });
-        }
+        const bottomAnnotations: { chip: string; text: string; stat: string; statLabel: string }[] = [
+          { chip: 'Problem', text: getShortenedText('Problem') || 'Manual workflow bottlenecks', stat: '85%', statLabel: 'success rate' },
+          { chip: 'Built with', text: getShortenedText('Built with') || 'Next.js & Drizzle stack', stat: '22 less', statLabel: 'reports filed' },
+          { chip: 'Impact', text: getShortenedText('Impact') || 'Self-serve digital experience', stat: '1 in 4 users', statLabel: 'completed' },
+        ];
 
         return (
           <div key={project.id} className="project-wrapper">
@@ -139,7 +132,7 @@ export default function Projects({ initialProjects }: ProjectsProps) {
                     <div className="project-body-grid">
                       {/* Left Column: First caption */}
                       <div className="project-sidebar-details project-sidebar-left">
-                        {annotationsList.slice(0, 1).map((ann) => (
+                        {effectiveAnnotations.slice(0, 1).map((ann, aIdx) => (
                           <motion.div 
                             key={ann.id}
                             variants={textVariant}
@@ -150,18 +143,12 @@ export default function Projects({ initialProjects }: ProjectsProps) {
                           >
                             <div className="sidebar-bullet-content">
                               <span className="project-arrow"></span>
-                              {project.slug === 'workflow-automation' ? (
-                                <div>
-                                  <div className="annotation-title">
-                                    {ann.markerNumber} &mdash; {ann.title}
-                                  </div>
-                                  <div className="annotation-desc">{ann.explanation}</div>
+                              <div>
+                                <div className="annotation-title">
+                                  {ann.markerNumber || aIdx + 1} &mdash; {ann.title}
                                 </div>
-                              ) : (
-                                <div>
-                                  <strong>{ann.title}</strong> &mdash; {ann.explanation}
-                                </div>
-                              )}
+                                <div className="annotation-desc">{ann.explanation}</div>
+                              </div>
                             </div>
                           </motion.div>
                         ))}
@@ -186,52 +173,28 @@ export default function Projects({ initialProjects }: ProjectsProps) {
                         </div>
                       </div>
 
-                      {/* Right Column: 2nd and 3rd captions (or mobile-apps single caption) */}
+                      {/* Right Column: 2nd and 3rd captions */}
                       <div className="project-sidebar-details project-sidebar-right">
-                        {annotationsList.length >= 2 ? (
-                          annotationsList.slice(1, 3).map((ann) => (
-                            <motion.div 
-                              key={ann.id}
-                              variants={textVariant}
-                              initial="hidden"
-                              whileInView="visible"
-                              viewport={{ once: true, amount: 0.2 }}
-                              className="sidebar-col"
-                            >
-                              <div className="sidebar-bullet-content">
-                                <span className="project-arrow"></span>
-                                {project.slug === 'workflow-automation' ? (
-                                  <div>
-                                    <div className="annotation-title">
-                                      {ann.markerNumber} &mdash; {ann.title}
-                                    </div>
-                                    <div className="annotation-desc">{ann.explanation}</div>
-                                  </div>
-                                ) : (
-                                  <div>
-                                    <strong>{ann.title}</strong> &mdash; {ann.explanation}
-                                  </div>
-                                )}
+                        {effectiveAnnotations.slice(1, 3).map((ann, aIdx) => (
+                          <motion.div 
+                            key={ann.id}
+                            variants={textVariant}
+                            initial="hidden"
+                            whileInView="visible"
+                            viewport={{ once: true, amount: 0.2 }}
+                            className="sidebar-col"
+                          >
+                            <div className="sidebar-bullet-content">
+                              <span className="project-arrow"></span>
+                              <div>
+                                <div className="annotation-title">
+                                  {ann.markerNumber || aIdx + 2} &mdash; {ann.title}
+                                </div>
+                                <div className="annotation-desc">{ann.explanation}</div>
                               </div>
-                            </motion.div>
-                          ))
-                        ) : (
-                          // Fallback for Mobile Apps style with a single sidebar bullet description
-                          project.bullet1 && project.slug === 'mobile-apps' && (
-                            <motion.div 
-                              variants={textVariant}
-                              initial="hidden"
-                              whileInView="visible"
-                              viewport={{ once: true, amount: 0.2 }}
-                              className="sidebar-col"
-                            >
-                              <div className="sidebar-bullet-content">
-                                <span className="project-arrow"></span>
-                                <div>&mdash; {project.bullet1}</div>
-                              </div>
-                            </motion.div>
-                          )
-                        )}
+                            </div>
+                          </motion.div>
+                        ))}
                       </div>
                     </div>
                   </div>

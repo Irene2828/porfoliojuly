@@ -88,6 +88,12 @@ h1, h2, h3, h4, h5, h6 {
   box-sizing: border-box;
 }
 
+@media (min-width: 1670px) {
+  .container {
+    max-width: 1254px; /* 10% wider frame for large screens */
+  }
+}
+
 .section {
   padding: var(--space-xl) 0;
 }

@@ -21,6 +21,7 @@
   pointer-events: none; /* Let clicks pass through if empty space */
 }
 
+
 .header-mobile {
   display: none;
 }
@@ -339,4 +340,24 @@
 @keyframes headerReveal {
   0% { opacity: 0; }
   100% { opacity: 1; }
+}
+
+@media (min-width: 1670px) {
+  .premium-header {
+    --hero-inner-width: min(calc(100vw - 4rem), 1347px);
+    max-width: 1411px; /* 10% wider on 1670px screens */
+  }
+
+  .header-nav-desktop .nav-link {
+    font-size: calc((0.75rem + 2px) * 1.10) !important; /* +10% total link font size */
+  }
+
+  .social-link-icon {
+    font-size: 0.83rem !important;
+  }
+
+  .social-link-icon svg {
+    width: 21px !important; /* +10% total icon size */
+    height: 21px !important;
+  }
 }

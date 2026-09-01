@@ -94,6 +94,38 @@
   max-width: 1283px !important; /* keep wider layout for hero */
 }
 
+@media (min-width: 1670px) {
+  .hero-section {
+    --hero-visual-width: min(24vw, 319px);
+    --hero-inner-width: min(calc(100vw - 4rem), 1347px);
+  }
+  .hero-container {
+    max-width: 1411px !important; /* 10% wider on 1670px screens */
+  }
+  .hero-content {
+    max-width: 630px;
+  }
+  .hero-name-group .hero-text h1 {
+    font-size: clamp(3.01rem, 6.02vw, 5.12rem);
+  }
+  .hero-frame-bullets li {
+    font-size: clamp(0.82rem, 1.15vw, 0.925rem);
+  }
+  .hero-ctas .btn {
+    font-size: 0.86rem;
+    padding: 0.88rem 1.55rem;
+  }
+  .hero-image-wrapper {
+    height: 457px;
+  }
+  .hero-image-tagline-stacked {
+    font-size: clamp(0.65rem, 0.92vw, 0.78rem);
+  }
+  .cv-annotation .cv-label {
+    font-size: 0.735rem;
+  }
+}
+
 .hero-content {
   flex: 1;
   max-width: 600px;
@@ -472,6 +504,7 @@
   flex: 0 0 var(--hero-visual-width);
   max-width: var(--hero-visual-width);
   height: 435px; /* match the tall height of the beige frame exactly on desktop */
+  margin-top: 1.375rem; /* lower down image by 5% relative to left textual side */
   z-index: 1;
   overflow: visible;
   position: relative;
@@ -1187,7 +1220,7 @@
 
 .hero-image-tagline-stacked {
   position: absolute;
-  bottom: -3.5rem; /* Pushed further from the image */
+  bottom: -4.875rem; /* Kept at 10% lower position while image is 5% lower */
   right: 0; /* aligned to the right edge of the image wrapper */
   text-align: right; /* aligned by right */
   z-index: 8;

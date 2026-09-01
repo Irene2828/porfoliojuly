@@ -88,12 +88,28 @@
   box-shadow: 4px 4px 0 0 #e5e5e7 !important; /* permanent solid right-bottom silver shadow */
 }
 
-.face-footer-copyright {
-  font-family: var(--font-sans);
-  font-size: 0.75rem;
-  font-weight: 500;
-  letter-spacing: 0.08em;
-  color: #8a8a8a;
-  margin-top: 4rem;
-  text-transform: uppercase;
+.back-to-top-btn {
+  position: absolute;
+  bottom: 2rem;
+  right: 2.5rem;
+  width: 2.6rem;
+  height: 2.6rem;
+  border-radius: 50%;
+  border: 1px solid rgba(18, 18, 18, 0.25);
+  background: #ffffff;
+  color: #121212;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  z-index: 50;
+  transition: all 0.25s ease;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.04);
+}
+
+.back-to-top-btn:hover {
+  background: #121212;
+  color: #ffffff;
+  border-color: #121212;
+  transform: translateY(-3px);
 }

@@ -163,7 +163,7 @@
 
 .section-divider-light.align-center .left-line,
 .section-divider-light.align-center .right-line {
-  flex: 1;
+  display: none;
 }
 
 .section-divider-light.align-right {
@@ -302,6 +302,15 @@
   box-sizing: border-box;
   text-align: right;
   top: 3.5rem; /* aligns top edge with top edge of headings */
+}
+
+@media (min-width: 1670px) {
+  .section-divider-live-link {
+    max-width: 1411px;
+  }
+  .section-divider-stats-row {
+    max-width: 1254px;
+  }
 }
 
 .section-divider-live-link.mobile-only-placeholder {
