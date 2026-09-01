@@ -40,7 +40,6 @@ export default async function HomePage() {
 
       <SectionDivider theme="light" label="SKILLS" align="right" />
       <Services />
-      <SectionDivider theme="light" label="Let's Connect" align="center" />
       <FaceDivider />
     </ClientWrapper>
   );
