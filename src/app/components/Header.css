@@ -15,7 +15,7 @@
   display: flex;
   justify-content: space-between; /* justify items between left links and right socials */
   align-items: center;
-  height: 4.75rem; /* fixed height to match white header area */
+  height: 3.5rem; /* 25% smaller than 4.75rem */
   padding: 0 var(--space-md); /* aligned padding with content width margins */
   z-index: 100;
   pointer-events: none; /* Let clicks pass through if empty space */
@@ -360,4 +360,24 @@
     width: 21px !important; /* +10% total icon size */
     height: 21px !important;
   }
+}
+
+.header-socials {
+  display: flex;
+  align-items: center;
+  gap: 1.2rem;
+  pointer-events: auto;
+}
+
+.header-socials .social-link-icon {
+  color: #008b8b !important;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  transition: opacity 0.2s ease, transform 0.2s ease;
+}
+
+.header-socials .social-link-icon:hover {
+  opacity: 0.7;
+  transform: translateY(-1px);
 }

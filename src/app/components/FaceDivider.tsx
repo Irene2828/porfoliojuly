@@ -1,6 +1,6 @@
 'use client';
 
-import { useRef } from 'react';
+import { useRef, useState } from 'react';
 import { motion } from 'framer-motion';
 import './FaceDivider.css';
 
@@ -15,6 +15,15 @@ export default function FaceDivider() {
     }
   };
 
+  const [copied, setCopied] = useState(false);
+
+  const handleCopyEmail = (e: React.MouseEvent) => {
+    e.preventDefault();
+    navigator.clipboard.writeText('hello@example.com');
+    setCopied(true);
+    setTimeout(() => setCopied(false), 2000);
+  };
+
   return (
     <section className="face-divider-section" ref={containerRef}>
       <motion.div
@@ -25,13 +34,38 @@ export default function FaceDivider() {
         transition={{ staggerChildren: 0.14 }}
       >
         <motion.div variants={arriveIn} className="face-top-divider-line" />
-        <motion.h2 variants={arriveIn} className="face-closure">Have a <span className="highlight-gold-bridge-footer">messy problem?</span></motion.h2>
-        <motion.div variants={arriveIn} className="face-support">
-          <p className="face-preheadline">I&apos;ll approach it as a designer, strategist and product builder.</p>
+        <motion.h2 variants={arriveIn} className="face-closure">
+          Your business problem needs a thoughtful digital solution.
+        </motion.h2>
+        <motion.div variants={arriveIn} className="face-support" style={{ margin: '1rem 0 1.75rem 0' }}>
+          <p className="face-preheadline" style={{ fontSize: 'clamp(0.95rem, 1.6vw, 1.15rem)', color: '#2a3036', maxWidth: '720px', lineHeight: 1.5, textAlign: 'center' }}>
+            I'd love to build one for you.
+          </p>
         </motion.div>
-        <motion.a variants={arriveIn} href="mailto:hello@example.com" className="btn btn-primary face-cta">
-          Start a conversation
-        </motion.a>
+        
+        <motion.div variants={arriveIn} style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', gap: '1rem', margin: '0.5rem 0 1.5rem 0' }}>
+          <a href="mailto:hello@example.com" className="btn btn-primary face-cta">
+            Send your problem my way
+          </a>
+          <button 
+            onClick={handleCopyEmail}
+            style={{
+              background: 'transparent',
+              border: 'none',
+              color: '#1a1a1a',
+              fontFamily: 'monospace',
+              fontSize: '0.85rem',
+              fontWeight: 300,
+              letterSpacing: '0.12em',
+              textTransform: 'uppercase',
+              cursor: 'pointer',
+              textDecoration: 'none',
+              padding: '0.5rem'
+            }}
+          >
+            {copied ? 'Email Copied!' : 'Copy email'}
+          </button>
+        </motion.div>
         <a 
           href="#home" 
           className="back-to-top-btn" 

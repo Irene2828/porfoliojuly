@@ -38,23 +38,30 @@
   display: none !important;
 }
 
-/* TOP STRIPE: heading + subline — black with white text */
+/* TOP STRIPE: heading + subline — black background with off-white text */
 .page-section-divider.cinematic-section .section-divider-tag-row {
-  background: #121212;
+  background: #121212 !important;
+  width: 100vw !important;
+  max-width: 100vw !important;
+  margin-left: calc(-50vw + 50%) !important;
+  margin-right: calc(-50vw + 50%) !important;
   padding-top: 2.25rem !important;
   padding-bottom: 2.25rem !important;
 }
 
 .page-section-divider.cinematic-section .section-divider-tag-text {
-  color: #ffffff !important;
+  color: rgba(255, 255, 255, 0.95) !important;
+  font-weight: 600 !important;
 }
 
 .page-section-divider.cinematic-section .section-divider-subline {
-  color: rgba(255, 255, 255, 0.65) !important;
+  color: rgba(255, 255, 255, 0.95) !important;
+  -webkit-text-stroke: 0.3px rgba(255, 255, 255, 0.4) !important;
+  text-stroke: 0.3px rgba(255, 255, 255, 0.4) !important;
 }
 
 .page-section-divider.cinematic-section .section-divider-live-link {
-  color: rgba(255, 255, 255, 0.7) !important;
+  color: rgba(255, 255, 255, 0.95) !important;
 }
 
 /* MIDDLE STRIPE: visual + captions — white */
@@ -66,11 +73,14 @@
   margin-top: 0 !important;
   margin-bottom: 0 !important;
   padding: 2.5rem 0 !important;
+  border-top: none !important; /* removed black stroke */
+  border-bottom: none !important;
 }
 
 /* BOTTOM STRIPE: stats — silver with black text */
 .page-section-divider.cinematic-section .section-divider-stats-row {
   background: #f4f4f6; /* silver grey */
+  border-top: 4px solid #008b8b !important; /* thick ocean teal divider line above grey stats */
   padding-top: 2.25rem !important;
   padding-bottom: 2.25rem !important;
   width: 100vw;
@@ -98,9 +108,9 @@
 }
 
 .page-section-divider.cinematic-section .section-divider-stats-row .project-chip {
-  background: #121212 !important;
+  background: #008b8b !important;
   color: #ffffff !important;
-  border-color: #121212 !important;
+  border-color: #008b8b !important;
 }
 
 .page-section-divider::before,
@@ -146,7 +156,7 @@
 .section-divider-light {
   width: 100% !important;
   max-width: 1315px !important; /* hero container width */
-  margin: 6.3rem auto 6.3rem; /* center divider exactly in the middle of the white space, increased by 40% */
+  margin: 6.3rem auto 3.15rem; /* bottom margin cut by 50% */
   padding: 0 1rem; /* safe padding for mobile */
   box-sizing: border-box;
   display: flex;
@@ -177,8 +187,9 @@
 }
 
 .section-divider-light-decor {
-  font-size: 1.15rem;
-  color: #1A1A1A;
+  font-family: var(--font-serif) !important;
+  font-size: clamp(1.8rem, 3.2vw, 2.4rem);
+  color: #008b8b !important;
   opacity: 0.85;
   line-height: 1;
   display: inline-flex;
@@ -191,18 +202,21 @@
 }
 
 .section-divider-light-text {
-  font-family: var(--font-sans);
-  font-size: clamp(1.2rem, 3vw, 2.22rem); /* responsive 3x size */
-  font-weight: 500;
-  text-transform: uppercase;
-  letter-spacing: 0.05em; /* slightly tighter since it's much larger */
-  color: #1A1A1A; /* make it bolder since it's 3x size */
+  font-family: var(--font-serif) !important;
+  font-size: clamp(2.1rem, 3.675vw, 2.8875rem);
+  font-weight: 600 !important;
+  color: #008b8b !important;
+  -webkit-text-stroke: 0.6px rgba(0, 139, 139, 0.65) !important;
+  text-stroke: 0.6px rgba(0, 139, 139, 0.65) !important;
+  paint-order: stroke fill !important;
+  text-transform: none;
+  letter-spacing: 0.02em;
   white-space: nowrap;
 }
 
-/* Make centered labels (like Let's Connect) 20% smaller */
+/* Make centered labels proportional */
 .section-divider-light.align-center .section-divider-light-text {
-  font-size: clamp(0.96rem, 2.4vw, 1.776rem);
+  font-size: clamp(1.8rem, 3.2vw, 2.4rem);
 }
 
 .page-section-divider .section-divider-wrap,
@@ -268,14 +282,14 @@
 .section-divider-tag-text {
   font-family: var(--font-sans);
   font-size: clamp(1rem, 1.8vw, 1.4rem); /* larger prominent headline text */
-  font-weight: 600; /* one touch bolder */
+  font-weight: 300 !important; /* thinner elegant weight */
   text-transform: uppercase;
   letter-spacing: 0.16em;
-  color: #121212 !important; /* teal ocean color */
-  white-space: nowrap;
+  color: #008b8b !important; /* ocean teal brand color */
+  white-space: normal; /* allow wrapping to 2 lines */
   padding: 0;
   text-align: center;
-  line-height: 1;
+  line-height: 1.25;
   display: block;
   position: relative;
   z-index: 2;
@@ -404,17 +418,21 @@
 }
 
 .section-divider-subline {
-  font-family: var(--font-sans);
-  font-size: calc(clamp(0.85rem, 1.25vw, 0.95rem) + 2px); /* 2px larger subline */
-  font-weight: 500; /* reverted back to original weight */
+  font-family: var(--font-serif);
+  font-style: normal; /* non italic */
+  font-size: clamp(1.045rem, 1.43vw, 1.21rem); /* 10% larger font size */
+  font-weight: 400;
   text-transform: none !important;
-  letter-spacing: 0.02em;
+  letter-spacing: 0.01em;
   color: #1A1A1A; /* off-black color */
-  opacity: 0.65;
+  opacity: 0.85;
+  -webkit-text-stroke: 0.45px rgba(26, 26, 26, 0.7);
+  text-stroke: 0.45px rgba(26, 26, 26, 0.7);
+  paint-order: stroke fill;
   text-align: center;
-  max-width: 580px;
-  line-height: 1.4;
-  white-space: normal; /* wrap text naturally inside the block */
+  max-width: 680px;
+  line-height: 1.55;
+  white-space: normal;
   -webkit-font-smoothing: antialiased;
 }
 

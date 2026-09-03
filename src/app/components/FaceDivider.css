@@ -29,14 +29,17 @@
 }
 
 .face-closure {
-  font-family: var(--font-sans) !important;
+  font-family: var(--font-serif) !important;
   font-size: clamp(1.6rem, 3.2vw, 2.56rem);
-  font-weight: 400;
+  font-weight: 600;
   text-transform: none;
-  letter-spacing: 0.05em;
+  letter-spacing: -0.03em;
   -webkit-font-smoothing: antialiased;
   line-height: 1.15;
-  color: #1A1A1A;
+  color: #008b8b !important;
+  -webkit-text-fill-color: #008b8b !important;
+  -webkit-text-stroke: 0px !important;
+  text-stroke: 0px !important;
   margin: 0;
   max-width: 980px;
   display: inline;
@@ -86,14 +89,23 @@
 }
 
 .face-cta {
+  background: #008b8b !important;
+  border-color: #008b8b !important;
+  color: #ffffff !important;
   margin-top: 0.75rem;
-  transition: transform 0.2s ease, box-shadow 0.2s ease !important;
+  transition: background 0.22s ease, border-color 0.22s ease, transform 0.2s ease, box-shadow 0.2s ease !important;
   /* 10% size increase */
   height: 3.48rem !important;
   padding: 0 2rem !important;
   font-size: 0.81rem !important;
-  transform: translate(-4px, -4px); /* permanent translate */
-  box-shadow: 4px 4px 0 0 #e5e5e7 !important; /* permanent solid right-bottom silver shadow */
+  transform: none !important;
+  box-shadow: none !important;
+}
+
+.face-cta:hover {
+  background: #121212 !important;
+  border-color: #121212 !important;
+  color: #ffffff !important;
 }
 
 .back-to-top-btn {
