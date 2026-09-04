@@ -3,8 +3,8 @@
 import { motion } from 'framer-motion';
 import { useState } from 'react';
 
-const SILVER_BG = 'linear-gradient(120deg, rgb(235, 235, 237) 0%, rgb(255, 255, 255) 55%, rgb(235, 235, 237) 100%)';
-const TEAL_BG = 'rgba(0, 139, 139, 0.88)';
+const SILVER_BG = '#f7f7f8';
+const TEAL_BG = '#C2E0DE';
 
 export default function ServicesV2() {
   const [hoveredIdx, setHoveredIdx] = useState<number | null>(null);
@@ -90,7 +90,9 @@ export default function ServicesV2() {
         >
           {cards.map((card, i) => {
             const isHovered = hoveredIdx === i;
-            const isSilver = i !== 1;
+            const isMiddle = i === 1;
+            // Both backgrounds are now light, so we use the dark text theme ('isSilver = true' logic) for all cards
+            const isSilver = true; 
             return (
               <motion.div
                 key={card.title}
@@ -102,8 +104,8 @@ export default function ServicesV2() {
                 onMouseLeave={() => setHoveredIdx(null)}
                 style={{
                   position: 'relative',
-                  background: isSilver ? SILVER_BG : 'rgba(20, 130, 129, 0.88)',
-                  border: isSilver ? '1px dashed #4a4a4a' : '1px solid rgba(20, 130, 129, 0.60)',
+                  background: isMiddle ? TEAL_BG : SILVER_BG,
+                  border: isMiddle ? '1px dashed #148281' : '1px dashed #4a4a4a',
                   borderRadius: '4px',
                   padding: '1.75rem 2rem 1.25rem 2rem',
                   display: 'flex',
@@ -142,7 +144,7 @@ export default function ServicesV2() {
                     textAlign: 'center',
                     marginBottom: '1.25rem', 
                     lineHeight: 1.2,
-                    letterSpacing: '-0.01em',
+                    letterSpacing: '0.02em',
                     transition: 'all 0.3s ease'
                   }}>
                     {card.title}

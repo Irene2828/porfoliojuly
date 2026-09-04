@@ -71,8 +71,8 @@ export default function ProjectsV2({ initialProjects = [] }: ProjectsV2Props) {
           style={{ width: '100%', margin: 0 }}
         >
           <motion.div
-            initial={isModal ? { y: 120, opacity: 0.95 } : false}
-            whileInView={isModal ? { y: 0, opacity: 1 } : false}
+            initial={isModal ? { y: 120, opacity: 0.95 } : undefined}
+            whileInView={isModal ? { y: 0, opacity: 1 } : undefined}
             viewport={{ once: true, amount: 0.05 }}
             transition={{ duration: 1.0, ease: [0.16, 1, 0.3, 1] }}
             style={{ width: '100%' }}
