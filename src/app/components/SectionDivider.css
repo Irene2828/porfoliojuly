@@ -168,7 +168,7 @@
 
 .section-divider-light-line {
   height: 1px; /* 1px for a more prominent line */
-  background-color: rgba(18, 18, 18, 0.25); /* dark elegant line */
+  background-color: rgba(0, 139, 139, 0.4); /* brand teal line */
 }
 
 .section-divider-light.align-center .left-line,
@@ -187,9 +187,10 @@
 }
 
 .section-divider-light-decor {
-  font-family: var(--font-serif) !important;
-  font-size: clamp(1.8rem, 3.2vw, 2.4rem);
+  font-family: 'Times New Roman', Times, Georgia, serif !important;
+  font-size: clamp(24px, 4vw, 38px) !important;
   color: #008b8b !important;
+  font-weight: 400 !important;
   opacity: 0.85;
   line-height: 1;
   display: inline-flex;
@@ -201,22 +202,19 @@
   display: none; /* hidden on desktop */
 }
 
-.section-divider-light-text {
-  font-family: var(--font-serif) !important;
-  font-size: clamp(2.1rem, 3.675vw, 2.8875rem);
-  font-weight: 600 !important;
-  color: #008b8b !important;
-  -webkit-text-stroke: 0.6px rgba(0, 139, 139, 0.65) !important;
-  text-stroke: 0.6px rgba(0, 139, 139, 0.65) !important;
-  paint-order: stroke fill !important;
-  text-transform: none;
-  letter-spacing: 0.02em;
-  white-space: nowrap;
-}
-
-/* Make centered labels proportional */
+.section-divider-light-text,
+.section-divider-tag-text,
 .section-divider-light.align-center .section-divider-light-text {
-  font-size: clamp(1.8rem, 3.2vw, 2.4rem);
+  font-family: 'Times New Roman', Times, Georgia, serif !important;
+  font-size: clamp(24px, 4vw, 38px) !important;
+  font-weight: 400 !important;
+  color: #008b8b !important;
+  line-height: 1.2 !important;
+  letter-spacing: -0.01em !important;
+  -webkit-text-stroke: 0 !important;
+  text-stroke: 0 !important;
+  text-transform: none;
+  white-space: nowrap;
 }
 
 .page-section-divider .section-divider-wrap,
@@ -280,12 +278,15 @@
 }
 
 .section-divider-tag-text {
-  font-family: var(--font-sans);
-  font-size: clamp(1rem, 1.8vw, 1.4rem); /* larger prominent headline text */
-  font-weight: 300 !important; /* thinner elegant weight */
-  text-transform: uppercase;
-  letter-spacing: 0.16em;
-  color: #008b8b !important; /* ocean teal brand color */
+  font-family: 'Times New Roman', Times, Georgia, serif !important;
+  font-size: clamp(26px, 3.2vw, 28px) !important;
+  font-weight: 400 !important;
+  color: #008b8b !important;
+  line-height: 1.2 !important;
+  letter-spacing: -0.01em !important;
+  -webkit-text-stroke: 0 !important;
+  text-stroke: 0 !important;
+  text-transform: none;
   white-space: normal; /* allow wrapping to 2 lines */
   padding: 0;
   text-align: center;

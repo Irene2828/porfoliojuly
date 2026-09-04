@@ -4,6 +4,8 @@ import { useRef, useState } from 'react';
 import { motion } from 'framer-motion';
 import './FaceDivider.css';
 
+import profilePic from '@/app/assets/profile.png';
+
 export default function FaceDivider() {
   const containerRef = useRef<HTMLElement>(null);
   const arriveIn: any = {
@@ -33,11 +35,21 @@ export default function FaceDivider() {
         viewport={{ once: true, amount: 0.35 }}
         transition={{ staggerChildren: 0.14 }}
       >
-        <motion.div variants={arriveIn} className="face-top-divider-line" />
-        <motion.h2 variants={arriveIn} className="face-closure">
+        <motion.div variants={arriveIn} style={{ marginBottom: '1.25rem' }}>
+          <div style={{ width: '40px', height: '3px', backgroundColor: '#008b8b', margin: '0 auto' }}></div>
+        </motion.div>
+        <motion.h2 variants={arriveIn} className="face-closure" style={{
+          fontFamily: "'Times New Roman', Times, Georgia, serif",
+          fontSize: 'clamp(26px, 3.2vw, 28px)',
+          fontWeight: 400,
+          color: '#008b8b',
+          lineHeight: 1.2,
+          letterSpacing: '-0.01em',
+          textAlign: 'center'
+        }}>
           Your business problem needs a thoughtful digital solution.
         </motion.h2>
-        <motion.div variants={arriveIn} className="face-support" style={{ margin: '1rem 0 1.75rem 0' }}>
+        <motion.div variants={arriveIn} className="face-support" style={{ margin: '1rem 0 0.25rem 0' }}>
           <p className="face-preheadline" style={{ fontSize: 'clamp(0.95rem, 1.6vw, 1.15rem)', color: '#2a3036', maxWidth: '720px', lineHeight: 1.5, textAlign: 'center' }}>
             I'd love to build one for you.
           </p>
@@ -48,20 +60,24 @@ export default function FaceDivider() {
             Send your problem my way
           </a>
           <button 
+            className="face-copy-email"
             onClick={handleCopyEmail}
             style={{
               background: 'transparent',
               border: 'none',
-              color: '#1a1a1a',
-              fontFamily: 'monospace',
-              fontSize: '0.85rem',
-              fontWeight: 300,
-              letterSpacing: '0.12em',
+              color: '#aaaaaa',
+              fontFamily: "'JetBrains Mono', Menlo, monospace",
+              fontSize: '10px',
+              fontWeight: 400,
+              letterSpacing: '0.18em',
               textTransform: 'uppercase',
               cursor: 'pointer',
               textDecoration: 'none',
-              padding: '0.5rem'
+              padding: '0.5rem',
+              transition: 'transform 0.22s ease'
             }}
+            onMouseEnter={(e) => e.currentTarget.style.transform = 'scale(1.05)'}
+            onMouseLeave={(e) => e.currentTarget.style.transform = 'scale(1)'}
           >
             {copied ? 'Email Copied!' : 'Copy email'}
           </button>

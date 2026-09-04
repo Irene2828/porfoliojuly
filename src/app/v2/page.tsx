@@ -37,7 +37,7 @@ export default async function V2Page() {
         <ServicesV2 />
 
         {/* Projects Section */}
-        <SectionDivider theme="light" label="Selected Work & Prototypes" align="center" />
+        <SectionDivider theme="light" label="Recent Projects / Work Examples" align="center" />
         <ProjectsV2 initialProjects={publishedProjects as any} />
 
         {/* Skills Section */}

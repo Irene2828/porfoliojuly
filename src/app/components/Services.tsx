@@ -38,12 +38,12 @@ export default function Services() {
               variants={arriveIn}
               className="service-category"
             >
-              <h3 className="title-serif service-title">Graphic Design</h3>
+              <h3 className="title-serif service-title">Web Development</h3>
               <ul className="service-items">
-                <li><span className="service-bullet">&ndash;</span> Logo Design</li>
-                <li><span className="service-bullet">&ndash;</span> Brand Identity</li>
-                <li><span className="service-bullet">&ndash;</span> Poster Design</li>
-                <li><span className="service-bullet">&ndash;</span> Environmental Design</li>
+                <li><span className="service-bullet">&ndash;</span> Next.js &amp; React Applications</li>
+                <li><span className="service-bullet">&ndash;</span> High-Converting Landing Pages</li>
+                <li><span className="service-bullet">&ndash;</span> Responsive UI / UX Systems</li>
+                <li><span className="service-bullet">&ndash;</span> Performance &amp; SEO Optimization</li>
               </ul>
             </motion.div>
 
@@ -51,20 +51,30 @@ export default function Services() {
               variants={arriveIn}
               className="service-category"
             >
-              <h3 className="title-serif service-title">Illustration</h3>
+              <h3 className="title-serif service-title">AI &amp; Automations</h3>
               <ul className="service-items">
-                <li><span className="service-bullet">&ndash;</span> Digital Illustration</li>
-                <li><span className="service-bullet">&ndash;</span> Street Art and Murals</li>
+                <li><span className="service-bullet">&ndash;</span> Custom AI Agent Integration</li>
+                <li><span className="service-bullet">&ndash;</span> Automated Lead Qualification</li>
+                <li><span className="service-bullet">&ndash;</span> LLM Pipelines &amp; Webhooks</li>
+                <li><span className="service-bullet">&ndash;</span> Self-Serve Web Tools</li>
               </ul>
             </motion.div>
           </div>
 
-          {/* Right Column: Visual image */}
+          {/* Right Column: Visual placeholder */}
           <motion.div 
             variants={arriveIn}
             className="services-image-col"
           >
-            <img src="/skills.png" alt="Using drawing tablet" />
+            <div 
+              style={{
+                width: '100%',
+                height: '400px',
+                background: 'white',
+                border: '1px solid rgba(0, 139, 139, 0.4)',
+                borderRadius: '4px'
+              }}
+            />
           </motion.div>
         </motion.div>
       </div>

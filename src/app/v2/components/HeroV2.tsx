@@ -18,11 +18,21 @@ export default function HeroV2() {
 
   return (
     <section className="section hero-section" id="home">
-      <div className="container hero-container">
+      <div className="container hero-container" style={{ position: 'relative' }}>
         {/* Mobile Name & Title above everything */}
         <div className="hero-mobile-intro">
           <h2 className="hero-mobile-name">IRYNA SHEREMETA</h2>
           <p className="hero-mobile-role">Web Strategist & AI Integration Partner</p>
+        </div>
+
+        {/* Geometric support layer (z-index 1, under content z-10) */}
+        <div style={{ position: 'absolute', inset: 0, zIndex: 1, pointerEvents: 'none' }}>
+          <div style={{ position: 'absolute', width: '160px', height: '100px', border: '1px dashed rgba(34, 34, 34, 0.35)', top: '8%', left: '52%' }} />
+          <div style={{ position: 'absolute', width: '90px', height: '90px', border: '1px solid rgba(26, 138, 136, 0.5)', top: '4%', left: '65%' }} />
+          <div style={{ position: 'absolute', width: '40px', height: '40px', border: '1px solid rgba(17, 17, 17, 0.3)', top: '12%', left: '58%' }} />
+          <div style={{ position: 'absolute', width: '220px', height: '140px', border: '1px dashed rgba(34, 34, 34, 0.18)', top: '6%', left: '55%' }} />
+          <div style={{ position: 'absolute', width: '120px', height: '120px', border: '1px solid rgba(26, 138, 136, 0.25)', top: '35%', left: '48%' }} />
+          <div style={{ position: 'absolute', width: '180px', height: '80px', border: '1px dashed rgba(34, 34, 34, 0.22)', top: '20%', left: '78%' }} />
         </div>
 
         <div className="hero-content">
@@ -35,14 +45,14 @@ export default function HeroV2() {
                 transition={{ duration: 0.6, ease: "easeOut" }}
                 className="hero-text"
               >
-                <h1 className="title-serif hero-statement">
+                <h1 className="title-serif hero-statement" style={{ fontSize: 'clamp(42px, 5.1vw, 45.5px)' }}>
                   High-Converting Websites<br />
                   &amp; Intelligent AI Workflows
                 </h1>
                 <ul className="hero-frame-bullets">
-                  <li>&mdash; Modern digital positioning that dominates competitive markets</li>
-                  <li>&mdash; SEO &amp; Generative AI Search Engine Optimization</li>
-                  <li>&mdash; Automated lead capture, qualification &amp; client onboarding</li>
+                  <li>&mdash; Directing AI agents to build production-grade web tools &amp; automations</li>
+                  <li>&mdash; High-converting showcase sites &amp; custom web applications</li>
+                  <li>&mdash; Streamlined operations, automated lead capture &amp; AI workflows</li>
                 </ul>
               </motion.div>
               <motion.div
@@ -114,6 +124,15 @@ export default function HeroV2() {
         </div>
       </div>
       <div className="hero-bottom-hairline-line"></div>
+      
+      {/* Sticky Bottom-Left "Request a Callback" Floating Button */}
+      <a 
+        href="mailto:hello@example.com?subject=Request%20a%20Callback" 
+        className="sticky-callback-btn"
+      >
+        <span className="callback-dot"></span>
+        REQUEST A CALLBACK
+      </a>
     </section>
   );
 }

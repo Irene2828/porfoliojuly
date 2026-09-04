@@ -1,6 +1,6 @@
 'use client';
 
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import '@/app/components/Projects.css';
 import SectionDivider from '@/app/components/SectionDivider';
@@ -20,6 +20,17 @@ interface ProjectsV2Props {
 
 export default function ProjectsV2({ initialProjects = [] }: ProjectsV2Props) {
   const [selectedProjectId, setSelectedProjectId] = useState<string | null>(null);
+
+  useEffect(() => {
+    if (selectedProjectId) {
+      document.body.style.overflow = 'hidden';
+    } else {
+      document.body.style.overflow = '';
+    }
+    return () => {
+      document.body.style.overflow = '';
+    };
+  }, [selectedProjectId]);
 
   const baseProject = {
     title: 'Workflow Automation',
@@ -44,7 +55,6 @@ export default function ProjectsV2({ initialProjects = [] }: ProjectsV2Props) {
     { id: 'v2-3', ...baseProject },
     { id: 'v2-4', ...baseProject }
   ];
-
 
   const renderProjectContent = (project: any, isModal = false) => (
     <div 
@@ -167,7 +177,7 @@ export default function ProjectsV2({ initialProjects = [] }: ProjectsV2Props) {
           >
             <div className="project-modal-content" onClick={(e) => e.stopPropagation()}>
               <button className="modal-close-btn" onClick={() => setSelectedProjectId(null)}>
-                &times; Close
+                CLOSE ✕
               </button>
               {renderProjectContent(selectedProject, true)}
             </div>

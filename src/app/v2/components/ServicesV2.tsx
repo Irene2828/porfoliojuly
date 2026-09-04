@@ -11,7 +11,7 @@ export default function ServicesV2() {
 
   const cards = [
     {
-      step: 'SOLUTION 01',
+      icon: <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><circle cx="12" cy="12" r="10"></circle><line x1="2" y1="12" x2="22" y2="12"></line><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"></path></svg>,
       title: 'Custom Websites',
       bullets: [
         <span>Generates <strong>qualified leads</strong> for your business</span>,
@@ -20,7 +20,7 @@ export default function ServicesV2() {
       ]
     },
     {
-      step: 'SOLUTION 02',
+      icon: <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z"></path><polyline points="3.27 6.96 12 12.01 20.73 6.96"></polyline><line x1="12" y1="22.08" x2="12" y2="12"></line></svg>,
       title: 'AI-automations & workflows',
       bullets: [
         <span>Finding <strong>bottlenecks</strong> &amp; manual repetitive tasks</span>,
@@ -29,7 +29,7 @@ export default function ServicesV2() {
       ]
     },
     {
-      step: 'SOLUTION 03',
+      icon: <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><rect x="4" y="4" width="16" height="16" rx="2" ry="2"></rect><rect x="9" y="9" width="6" height="6"></rect><line x1="9" y1="1" x2="9" y2="4"></line><line x1="15" y1="1" x2="15" y2="4"></line><line x1="9" y1="20" x2="9" y2="23"></line><line x1="15" y1="20" x2="15" y2="23"></line><line x1="20" y1="9" x2="23" y2="9"></line><line x1="20" y1="14" x2="23" y2="14"></line><line x1="1" y1="9" x2="4" y2="9"></line><line x1="1" y1="14" x2="4" y2="14"></line></svg>,
       title: 'Agentic tools',
       bullets: [
         <span>Custom <strong>web or mobile apps</strong> powered by AI</span>,
@@ -54,33 +54,30 @@ export default function ServicesV2() {
         <div style={{ 
           width: '60px', 
           height: '1px', 
-          backgroundColor: '#008b8b', 
+          backgroundColor: '#148281', 
           margin: '0 auto 2.5rem auto', 
           opacity: 0.8 
         }} />
 
         {/* Intro Section Heading */}
         <div style={{ marginBottom: '2.8rem', textAlign: 'center' }}>
-          <h2 className="title-serif" style={{ 
-            fontSize: 'clamp(2.1rem, 3.675vw, 2.8875rem)', 
-            color: '#008b8b', 
-            fontWeight: 600,
-            WebkitTextStroke: '0.6px rgba(0, 139, 139, 0.65)',
-            textStroke: '0.6px rgba(0, 139, 139, 0.65)',
-            paintOrder: 'stroke fill'
+          <h2 style={{ 
+            fontFamily: "'Times New Roman', Times, Georgia, serif",
+            fontSize: 'clamp(24px, 4vw, 38px)', 
+            color: '#148281', 
+            fontWeight: 400,
+            lineHeight: 1.25,
+            letterSpacing: '-0.01em',
+            textAlign: 'center',
+            width: '100%',
+            whiteSpace: 'nowrap',
+            wordBreak: 'normal',
+            overflowWrap: 'normal',
+            margin: '0 auto'
           }}>
-            How I Can Help Your Business Move Faster
+            <span style={{ display: 'block' }}>{'How\u00A0I\u00A0Can\u00A0Help\u00A0Your\u00A0Business'}</span>
+            <span style={{ display: 'block' }}>{'as\u00A0a\u00A0Digital\u00A0Product\u00A0Builder'}</span>
           </h2>
-          <p style={{
-            fontSize: '1.05rem',
-            color: '#1a1a1a',
-            marginTop: '0.8rem',
-            lineHeight: 1.5,
-            fontWeight: 400
-          }}>
-            I bring the technical skills, creativity and strategic thinking<br />
-            to build this solution for you.
-          </p>
         </div>
 
         {/* Single Row of 3 Cards */}
@@ -93,10 +90,10 @@ export default function ServicesV2() {
         >
           {cards.map((card, i) => {
             const isHovered = hoveredIdx === i;
-            const isSilver = i === 1 ? isHovered : !isHovered;
+            const isSilver = i !== 1;
             return (
               <motion.div
-                key={card.step}
+                key={card.title}
                 initial={{ opacity: 0, y: 25 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
@@ -105,8 +102,8 @@ export default function ServicesV2() {
                 onMouseLeave={() => setHoveredIdx(null)}
                 style={{
                   position: 'relative',
-                  background: isSilver ? SILVER_BG : 'rgba(0, 139, 139, 0.60)',
-                  border: isSilver ? '1px dashed #4a4a4a' : '1px solid rgba(0, 115, 115, 0.60)',
+                  background: isSilver ? SILVER_BG : 'rgba(20, 130, 129, 0.88)',
+                  border: isSilver ? '1px dashed #4a4a4a' : '1px solid rgba(20, 130, 129, 0.60)',
                   borderRadius: '4px',
                   padding: '1.75rem 2rem 1.25rem 2rem',
                   display: 'flex',
@@ -121,45 +118,39 @@ export default function ServicesV2() {
                 <div>
                   <div style={{ position: 'absolute', top: '0.875rem', left: '-1rem', zIndex: 10 }}>
                     <span style={{ 
-                      fontFamily: 'monospace', 
-                      fontSize: '0.75rem', 
-                      color: isSilver ? 'rgba(26, 26, 26, 0.9)' : 'rgba(0, 139, 139, 0.9)', 
-                      backgroundColor: '#ffffff',
-                      border: isSilver ? '1px dashed rgba(26, 26, 26, 0.3)' : '1px dashed rgba(0,139,139,0.4)',
-                      fontWeight: 700, 
-                      letterSpacing: '0.08em', 
-                      padding: '0.4rem 0.8rem', 
-                      borderRadius: '2px', 
-                      display: 'inline-block',
-                      textTransform: 'uppercase',
+                      color: isSilver ? '#000000' : '#ffffff', 
+                      backgroundColor: isSilver ? '#ffffff' : '#148281',
+                      border: isSilver ? '1px solid rgba(26, 26, 26, 0.4)' : '1px solid rgba(255, 255, 255, 0.4)',
+                      padding: '0.65rem', 
+                      borderRadius: '50%', 
+                      display: 'flex',
+                      alignItems: 'center',
+                      justifyContent: 'center',
+                      boxShadow: '0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06)',
                       transition: 'all 0.3s ease'
                     }}>
-                      {card.step}
+                      {card.icon}
                     </span>
                   </div>
-                  <h3 className="title-serif" style={{ 
+                  <h3 style={{ 
+                    fontFamily: "'Times New Roman', Times, Georgia, serif",
                     marginTop: '1.875rem',
-                    fontSize: '1.6rem', 
-                    color: isSilver ? '#008b8b' : '#ffffff',
-                    fontWeight: 600,
+                    fontSize: '1.5rem', 
+                    color: isSilver ? '#148281' : '#ffffff',
+                    WebkitTextStroke: isSilver ? '0.4px #148281' : '0.4px #ffffff',
+                    fontWeight: 400,
                     textAlign: 'center',
-                    WebkitTextStroke: isSilver ? '0.45px rgba(0, 139, 139, 0.7)' : '0.45px rgba(255, 255, 255, 0.7)',
-                    textStroke: isSilver ? '0.45px rgba(0, 139, 139, 0.7)' : '0.45px rgba(255, 255, 255, 0.7)',
-                    paintOrder: 'stroke fill',
                     marginBottom: '1.25rem', 
-                    lineHeight: 1.3,
+                    lineHeight: 1.2,
+                    letterSpacing: '-0.01em',
                     transition: 'all 0.3s ease'
                   }}>
                     {card.title}
                   </h3>
                   <ul style={{ listStyle: 'none', padding: 0, margin: 0, display: 'flex', flexDirection: 'column', gap: '1.1rem' }}>
                     {card.bullets.slice(0, 3).map((b, idx) => (
-                      <motion.li 
+                      <li 
                         key={idx} 
-                        initial={{ opacity: 0, y: 10 }}
-                        whileInView={{ opacity: 1, y: 0 }}
-                        viewport={{ once: true }}
-                        transition={{ duration: 0.4, delay: (i * 0.15) + (idx * 0.12) }}
                         style={{ 
                           fontSize: '0.92rem', 
                           color: isSilver ? '#2a3036' : 'rgba(255, 255, 255, 0.98)',
@@ -172,13 +163,13 @@ export default function ServicesV2() {
                         }}
                       >
                         <span style={{ 
-                          color: isSilver ? '#008b8b' : 'rgba(255, 255, 255, 0.85)', 
+                          color: isSilver ? '#148281' : 'rgba(255, 255, 255, 0.85)', 
                           fontWeight: 'bold',
                           fontSize: '1.1rem',
                           lineHeight: '1',
                           transition: 'color 0.3s ease'
                         }}>·</span> {b}
-                      </motion.li>
+                      </li>
                     ))}
                   </ul>
                 </div>
@@ -189,11 +180,12 @@ export default function ServicesV2() {
                   textAlign: 'center'
                 }}>
                   <span style={{ 
-                    fontFamily: 'monospace', 
-                    fontSize: '0.72rem', 
+                    fontFamily: "'JetBrains Mono', Menlo, monospace", 
+                    fontSize: '10px', 
                     fontWeight: 400, 
                     letterSpacing: '0.18em', 
-                    color: isSilver ? '#008b8b' : '#ffffff',
+                    textTransform: 'uppercase',
+                    color: isSilver ? '#111111' : '#ffffff',
                     display: 'inline-flex',
                     alignItems: 'center',
                     gap: '0.4rem',
