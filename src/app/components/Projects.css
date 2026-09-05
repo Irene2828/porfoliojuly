@@ -635,8 +635,8 @@
 .preview-item-container:hover .preview-card-wrapper {
   transform: none !important;
   box-shadow: none !important;
-  border-color: #008b8b !important;
-  border-width: 1px !important;
+  border-color: #00d5d5 !important;
+  border-width: 1.5px !important;
 }
 
 .preview-card-scaler {
@@ -682,7 +682,7 @@
 }
 
 .preview-item-container:hover .preview-card-caption {
-  color: #008b8b !important;
+  color: #00d5d5 !important;
   text-decoration: none;
 }
 

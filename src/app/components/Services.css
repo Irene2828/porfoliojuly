@@ -1,5 +1,5 @@
 .services-section {
-  background: linear-gradient(to right, rgb(235, 235, 237) 0%, rgb(255, 255, 255) 35%, rgb(235, 235, 237) 66.666%, rgba(0, 139, 139, 0.88) 66.666%, rgba(0, 139, 139, 0.88) 100%);
+  background: linear-gradient(to right, #f7f7f8 0%, #f7f7f8 66.666%, rgba(0, 139, 139, 0.3) 66.666%, rgba(0, 139, 139, 0.3) 100%);
   padding: 6.5rem 0 0 0;
   margin-top: 0;
   position: relative;

@@ -143,7 +143,7 @@ export default function ProjectsV2({ initialProjects = [] }: ProjectsV2Props) {
   const selectedProject = v2Projects.find(p => p.id === selectedProjectId);
 
   return (
-    <section className="projects-section" id="work">
+    <section className="projects-section" id="cases">
       <div className="hairline-divider"></div>
       
       <div className="projects-gallery-grid">

@@ -1,8 +1,11 @@
 'use client';
 
+import { useState } from 'react';
 import './Header.css';
 
 export default function Header() {
+  const [isMenuOpen, setIsMenuOpen] = useState(false);
+
   return (
     <header className="premium-header">
       {/* Left: Quick contact icons */}
@@ -27,30 +30,57 @@ export default function Header() {
         </a>
       </div>
 
-      {/* Center: Navigation links on desktop */}
+      {/* Center: Navigation links & Hamburger menu next to it */}
       <nav className="header-nav header-nav-desktop">
-        <a href="#work" className="nav-link">WORK</a>
         <a href="#expertise" className="nav-link">EXPERTISE</a>
-        <a href="#contact" className="nav-link">CONTACT</a>
+        <a href="#cases" className="nav-link">CASES</a>
+        <a href="#about" className="nav-link">ABOUT ME</a>
+        <button 
+          className={`hamburger-btn ${isMenuOpen ? 'open' : ''}`}
+          onClick={() => setIsMenuOpen(!isMenuOpen)}
+          aria-label="Toggle menu"
+        >
+          <span className="hamburger-bar"></span>
+          <span className="hamburger-bar"></span>
+          <span className="hamburger-bar"></span>
+        </button>
       </nav>
 
-      {/* Left: Mobile hamburger menu icon (hidden on desktop) */}
+      {/* Mobile hamburger menu icon */}
       <div className="header-hamburger-mobile">
-        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.2" strokeLinecap="round" strokeLinejoin="round">
-          <line x1="3" y1="12" x2="21" y2="12"></line>
-          <line x1="3" y1="6" x2="21" y2="6"></line>
-          <line x1="3" y1="18" x2="21" y2="18"></line>
-        </svg>
+        <button 
+          className={`hamburger-btn ${isMenuOpen ? 'open' : ''}`}
+          onClick={() => setIsMenuOpen(!isMenuOpen)}
+          aria-label="Toggle mobile menu"
+        >
+          <span className="hamburger-bar"></span>
+          <span className="hamburger-bar"></span>
+          <span className="hamburger-bar"></span>
+        </button>
       </div>
 
-      {/* Right: Core links on mobile with pipes */}
+      {/* Mobile navigation links */}
       <nav className="header-nav-mobile">
-        <a href="#work" className="nav-link nav-link-mobile">WORK</a>
-        <span className="nav-pipe">|</span>
         <a href="#expertise" className="nav-link nav-link-mobile">EXPERTISE</a>
         <span className="nav-pipe">|</span>
-        <a href="#contact" className="nav-link nav-link-mobile">CONTACT</a>
+        <a href="#cases" className="nav-link nav-link-mobile">CASES</a>
+        <span className="nav-pipe">|</span>
+        <a href="#about" className="nav-link nav-link-mobile">ABOUT ME</a>
       </nav>
+
+      {/* Drawer Overlay Menu */}
+      {isMenuOpen && (
+        <div className="header-drawer-overlay" onClick={() => setIsMenuOpen(false)}>
+          <div className="header-drawer-content" onClick={(e) => e.stopPropagation()}>
+            <button className="drawer-close-btn" onClick={() => setIsMenuOpen(false)} aria-label="Close menu">&times;</button>
+            <div className="drawer-nav-links">
+              <a href="#expertise" onClick={() => setIsMenuOpen(false)} className="drawer-link">EXPERTISE</a>
+              <a href="#cases" onClick={() => setIsMenuOpen(false)} className="drawer-link">CASES</a>
+              <a href="#about" onClick={() => setIsMenuOpen(false)} className="drawer-link">ABOUT ME</a>
+            </div>
+          </div>
+        </div>
+      )}
 
       <div className="header-bottom-hairline"></div>
     </header>

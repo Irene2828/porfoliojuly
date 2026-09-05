@@ -27,7 +27,7 @@ export default function FaceDivider() {
   };
 
   return (
-    <section className="face-divider-section" ref={containerRef}>
+    <section className="face-divider-section" id="about" ref={containerRef}>
       <motion.div
         className="face-divider-container"
         initial="hidden"
@@ -47,17 +47,21 @@ export default function FaceDivider() {
           letterSpacing: '-0.01em',
           textAlign: 'center'
         }}>
-          Your business problem needs a thoughtful digital solution.
+          Got a problem I could solve for you?
         </motion.h2>
         <motion.div variants={arriveIn} className="face-support" style={{ margin: '1rem 0 0.25rem 0' }}>
           <p className="face-preheadline" style={{ fontSize: 'clamp(0.95rem, 1.6vw, 1.15rem)', color: '#2a3036', maxWidth: '720px', lineHeight: 1.5, textAlign: 'center' }}>
-            I'd love to build one for you.
+            Let's talk.
           </p>
         </motion.div>
         
         <motion.div variants={arriveIn} style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', gap: '1rem', margin: '0.5rem 0 1.5rem 0' }}>
-          <a href="mailto:hello@example.com" className="btn btn-primary face-cta">
-            Send your problem my way
+          <a href="mailto:hello@example.com" className="btn btn-primary face-cta" style={{ display: 'inline-flex', alignItems: 'center', gap: '0.45rem' }}>
+            <span>Send your problem my way</span>
+            <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round" style={{ transform: 'translateY(-0.5px)' }}>
+              <line x1="7" y1="17" x2="17" y2="7"></line>
+              <polyline points="7 7 17 7 17 17"></polyline>
+            </svg>
           </a>
           <button 
             className="face-copy-email"

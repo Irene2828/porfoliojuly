@@ -823,67 +823,69 @@
   /* Name group (Beige Frame): centered vertical rectangle on mobile */
   .hero-name-group {
     display: flex !important;
+    flex-direction: column !important;
     width: 100% !important;
     max-width: 100% !important;
-    margin: -2.5rem auto 0 auto !important; /* gentle overlap over bottom of photo */
-    padding: 2.75rem 1.4rem 2.75rem 1.4rem !important; /* ample padding */
-    background: #e5e5e7 !important; /* warm silver card background matching section dividers */
-    border: 1px dashed #121212 !important; /* dashed green frame */
+    margin: 0 auto !important;
+    padding: 2.25rem 1.5rem 2.25rem 1.5rem !important;
+    background: #f7f7f8 !important;
+    border: 1px dashed #121212 !important;
     box-shadow: none !important;
     transform: none !important;
-    transform-style: preserve-3d !important; /* establishes 3D context on mobile */
     align-items: stretch !important;
     z-index: 5 !important;
     box-sizing: border-box !important;
     overflow: visible !important;
   }
 
-  .highlight-gold-bridge {
-    margin-left: -0.35rem !important;
-    padding-left: 0.35rem !important;
-    padding-right: 0.35rem !important;
-  }
-
   .hero-name-group .hero-text {
-    width: 100%;
-    display: flex;
-    flex-direction: column;
+    width: 100% !important;
+    display: flex !important;
+    flex-direction: column !important;
     justify-content: flex-start !important;
     align-items: flex-start !important;
+    text-align: left !important;
   }
 
   .hero-name-group .hero-text h1 {
-    width: 100%;
-    max-width: 100%;
-    font-size: clamp(1.74rem, 8.16vw, 2.34rem) !important;
-    letter-spacing: -0.02em;
-    overflow-wrap: break-word;
-    word-break: normal;
-    text-align: center !important;
-    margin: 0 auto 1.25rem auto !important;
-    line-height: 0.92;
-    -webkit-text-fill-color: #ffffff !important;
-    color: #ffffff !important;
+    width: 100% !important;
+    max-width: 100% !important;
+    font-family: var(--font-serif), 'Cormorant Garamond', serif !important;
+    font-size: clamp(2rem, 8.5vw, 2.6rem) !important;
+    letter-spacing: -0.01em !important;
+    text-align: left !important;
+    margin: 0 0 1.25rem 0 !important;
+    line-height: 1.15 !important;
+    -webkit-text-fill-color: #008b8b !important;
+    color: #008b8b !important;
+    font-weight: 500 !important;
     opacity: 1 !important;
-    -webkit-text-stroke: 0px transparent !important;
-    text-stroke: 0px transparent !important;
+  }
+
+  .hero-frame-paragraph {
+    font-size: 0.95rem !important;
+    line-height: 1.6 !important;
+    color: #333333 !important;
+    text-align: left !important;
+    margin-top: 0 !important;
+    margin-bottom: 1.75rem !important;
   }
 
   .hero-frame-bullets {
-    margin: 1.5rem 0 1.75rem 0 !important;
+    margin: 1rem 0 1.5rem 0 !important;
     padding: 0 !important;
     display: flex !important;
     flex-direction: column !important;
-    align-items: center !important;
-    text-align: center !important;
+    align-items: flex-start !important;
+    text-align: left !important;
     gap: 0.6rem !important;
   }
 
   .hero-frame-bullets li {
     font-size: 0.84rem !important;
     line-height: 1.45 !important;
-    color: #cccccc !important;
-    text-align: center !important;
+    color: #444444 !important;
+    text-align: left !important;
   }
 
   /* Bullets right on mobile hidden */
@@ -893,15 +895,13 @@
 
   /* CTAs: prominent & visible */
   .hero-ctas {
-    order: 3 !important;
     width: 100% !important;
     max-width: 100% !important;
     display: flex !important;
     flex-direction: column !important;
-    align-items: stretch !important;
-    gap: 0.75rem !important;
+    align-items: center !important;
+    gap: 1rem !important;
     margin: 0 !important;
-    padding-bottom: 0.25rem !important;
   }
 
   .hero-ctas .btn {
@@ -1269,7 +1269,7 @@
 }
 
 .hero-image-tagline-stacked .tagline-name {
-  color: #008b8b;
+  color: #006e6e;
   font-weight: 600;
   margin-bottom: 0.15rem; /* 10% vertical spacing gap */
 }

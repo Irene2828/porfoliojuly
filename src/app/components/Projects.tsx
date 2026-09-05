@@ -50,7 +50,7 @@ interface ProjectsProps {
 
 export default function Projects({ initialProjects }: ProjectsProps) {
   return (
-    <section className="projects-section" id="work">
+    <section className="projects-section" id="cases">
       {/* Hairline Divider separating Hero and Section 1 */}
       <div className="hairline-divider"></div>
 
