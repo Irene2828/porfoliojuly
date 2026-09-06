@@ -3,6 +3,8 @@ import HeroV2 from './components/HeroV2';
 import ProjectsV2 from './components/ProjectsV2';
 import ServicesV2 from './components/ServicesV2';
 import Services from '../components/Services';
+import ProcessSection from './components/ProcessSection';
+import EditorialStatement from './components/EditorialStatement';
 import SectionDivider from '../components/SectionDivider';
 import FaceDivider from '../components/FaceDivider';
 import ClientWrapper from '../components/ClientWrapper';
@@ -40,10 +42,17 @@ export default async function V2Page() {
         <SectionDivider theme="light" label="Recent Projects / Work Examples" align="center" />
         <ProjectsV2 initialProjects={publishedProjects as any} />
 
-        {/* Skills Section */}
-        <SectionDivider theme="light" label="Skills" align="center" />
+        {/* Expectations Section */}
+        <SectionDivider theme="light" label="EXPECTATIONS" align="right" />
         <Services />
 
+        {/* Process Section */}
+        <ProcessSection />
+
+        {/* Editorial Statement */}
+        <EditorialStatement />
+
+        {/* Closing CTA */}
         <FaceDivider />
       </div>
     </ClientWrapper>

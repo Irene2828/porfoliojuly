@@ -19,14 +19,8 @@ export default function HeroV2() {
   return (
     <section className="section hero-section" id="home">
       <div className="container hero-container" style={{ position: 'relative' }}>
-        {/* Mobile Name & Title above everything */}
-        <div className="hero-mobile-intro">
-          <h2 className="hero-mobile-name">IRYNA SHEREMETA</h2>
-          <p className="hero-mobile-role">Web &amp; AI Product Builder</p>
-        </div>
-
         {/* Geometric support layer (z-index 1, under content z-10) */}
-        <div style={{ position: 'absolute', inset: 0, zIndex: 1, pointerEvents: 'none', opacity: 0.7 }}>
+        <div className="hero-decor-layer" style={{ position: 'absolute', inset: 0, zIndex: 1, pointerEvents: 'none', opacity: 0.7 }}>
           {/* Top-left decor squares next to headline frame */}
           <div style={{ position: 'absolute', width: '140px', height: '90px', border: '1px dashed rgba(34, 34, 34, 0.2)', top: '-3%', left: '-1%' }} />
           <div style={{ position: 'absolute', width: '65px', height: '65px', border: '1px solid rgba(26, 138, 136, 0.32)', top: '-5%', left: '14%' }} />
@@ -46,10 +40,10 @@ export default function HeroV2() {
           <div className="hero-copy-motion">
             <div className="hero-name-group" style={{ position: 'relative' }}>
               {/* Decor squares poking out top-left of headline frame (30% reduced opacity) */}
-              <div style={{ position: 'absolute', width: '160px', height: '100px', border: '1.5px dashed rgba(34, 34, 34, 0.42)', top: '-55px', left: '-40px', zIndex: 25, transform: 'translateZ(2px)', opacity: 0.7, pointerEvents: 'none' }} />
-              <div style={{ position: 'absolute', width: '85px', height: '85px', border: '2px solid rgba(26, 138, 136, 0.63)', top: '-68px', left: '15px', zIndex: 25, transform: 'translateZ(2px)', opacity: 0.7, pointerEvents: 'none' }} />
-              <div style={{ position: 'absolute', width: '60px', height: '60px', border: '1.5px dashed rgba(26, 138, 136, 0.49)', top: '-28px', left: '-55px', zIndex: 25, transform: 'translateZ(2px)', opacity: 0.7, pointerEvents: 'none' }} />
-              <div style={{ position: 'absolute', width: '110px', height: '110px', border: '1.5px solid rgba(34, 34, 34, 0.31)', top: '-48px', left: '-75px', zIndex: 25, transform: 'translateZ(2px)', opacity: 0.7, pointerEvents: 'none' }} />
+              <div className="hero-decor-square" style={{ position: 'absolute', width: '160px', height: '100px', border: '1.5px dashed rgba(34, 34, 34, 0.42)', top: '-55px', left: '-40px', zIndex: 25, transform: 'translateZ(2px)', opacity: 0.7, pointerEvents: 'none' }} />
+              <div className="hero-decor-square" style={{ position: 'absolute', width: '85px', height: '85px', border: '2px solid rgba(26, 138, 136, 0.63)', top: '-68px', left: '15px', zIndex: 25, transform: 'translateZ(2px)', opacity: 0.7, pointerEvents: 'none' }} />
+              <div className="hero-decor-square" style={{ position: 'absolute', width: '60px', height: '60px', border: '1.5px dashed rgba(26, 138, 136, 0.49)', top: '-28px', left: '-55px', zIndex: 25, transform: 'translateZ(2px)', opacity: 0.7, pointerEvents: 'none' }} />
+              <div className="hero-decor-square" style={{ position: 'absolute', width: '160px', height: '110px', border: '1.5px solid rgba(34, 34, 34, 0.31)', top: '-48px', left: '-75px', zIndex: 25, transform: 'translateZ(2px)', opacity: 0.7, pointerEvents: 'none' }} />
 
               <div className="hero-connector-line"></div>
               <motion.div
@@ -58,13 +52,12 @@ export default function HeroV2() {
                 transition={{ duration: 0.6, ease: "easeOut" }}
                 className="hero-text"
               >
-                <h1 className="title-serif hero-statement" style={{ fontSize: 'clamp(46px, 5.6vw, 50px)', color: '#000000', fontWeight: 600, marginTop: '1.2rem' }}>
+                <h1 className="title-serif hero-statement" style={{ fontSize: 'clamp(46px, 5.6vw, 50px)', color: '#000000', fontWeight: 600, marginTop: '1.2rem', textTransform: 'none' }}>
                   High-Converting Websites<br />
                   &amp; Intelligent AI Workflows
                 </h1>
                 <p className="hero-frame-paragraph" style={{ marginTop: '1.73rem', fontSize: '1.1rem', lineHeight: '1.85', color: '#444444', maxWidth: '594px' }}>
-                  You're the expert in your field &mdash; not in websites or AI products.<br />
-                  I build both, combining design, tech &amp; AI expertise to solve your unique business problem.
+                  I design and build custom websites and AI tools &mdash; from figuring out what your business actually needs to shipping the thing that solves it.
                 </p>
               </motion.div>
               <motion.div
@@ -92,6 +85,12 @@ export default function HeroV2() {
           className="hero-image-wrapper cv-scanner"
           tabIndex={0}
         >
+          {/* Mobile Name & Title directly on top of image, centered */}
+          <div className="hero-mobile-intro">
+            <h2 className="hero-mobile-name">IRYNA SHEREMETA</h2>
+            <p className="hero-mobile-role">WEB &amp; AI PRODUCT BUILDER</p>
+          </div>
+
           <div className="hero-image-container">
             <div className="hero-image-offset-frame"></div>
             <div className="hero-image-brackets"></div>
@@ -137,7 +136,7 @@ export default function HeroV2() {
 
           <div className="hero-image-tagline-stacked">
             <div className="tagline-name">IRYNA SHEREMETA</div>
-            <div className="tagline-title">Web &amp; AI Product Builder</div>
+            <div className="tagline-title">WEB &amp; AI PRODUCT BUILDER</div>
           </div>
         </div>
       </div>

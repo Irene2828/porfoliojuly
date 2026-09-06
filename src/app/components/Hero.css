@@ -671,6 +671,7 @@
 
 @media (max-width: 900px) {
   /* ── Mobile: centered single-column, floating converging animation ── */
+  .v2-theme .hero-section,
   .hero-section {
     padding-top: 4.85rem !important;
     padding-bottom: 5rem !important;
@@ -682,51 +683,63 @@
     flex-direction: column !important;
     justify-content: flex-start !important;
     align-items: center !important;
-    background-color: #121212 !important; /* full-width dark section */
+    background-color: #faf9f6 !important; /* light beige background for hero section */
     background-image: none !important;
     overflow: visible !important;
     position: relative !important;
     z-index: 10 !important;
   }
 
-  /* Mobile Name & Role intro above photo */
+  /* Hide ONLY headline decor squares on mobile (keep decor frame behind portrait photo) */
+  .v2-theme .hero-decor-square,
+  .hero-decor-square,
+  .v2-theme .hero-name-group > div[style*="position: absolute"] {
+    display: none !important;
+  }
+
+  /* Display Name & Title centered directly on top of image container on mobile */
+  .v2-theme .hero-mobile-intro,
   .hero-mobile-intro {
     display: flex !important;
     flex-direction: column !important;
     align-items: center !important;
+    justify-content: center !important;
     text-align: center !important;
-    margin-bottom: 1.25rem !important;
     width: 100% !important;
-    opacity: 0;
-    animation: mobileIntroFade 1s cubic-bezier(0.16, 1, 0.3, 1) 0.15s both !important;
+    margin-bottom: 0.85rem !important;
   }
 
+  .v2-theme .hero-mobile-name,
   .hero-mobile-name {
-    font-family: var(--font-sans) !important;
-    font-size: 1.15rem !important;
-    font-weight: 600 !important;
+    font-family: var(--font-sans), Inter, sans-serif !important;
+    font-size: 1rem !important;
+    font-weight: 800 !important;
     letter-spacing: 0.14em !important;
-    color: #ffffff !important;
-    margin: 0 0 0.25rem 0 !important;
+    color: #008b8b !important;
     text-transform: uppercase !important;
-  }
-
-  .hero-mobile-role {
-    font-family: var(--font-sans) !important;
-    font-size: 0.8rem !important;
-    font-weight: 500 !important;
-    letter-spacing: 0.08em !important;
-    color: #8a8a8a !important; 
     margin: 0 !important;
-    text-transform: uppercase !important;
+    padding: 0 !important;
   }
 
+  .v2-theme .hero-mobile-role,
+  .hero-mobile-role {
+    font-family: var(--font-sans), Inter, sans-serif !important;
+    font-size: 0.76rem !important;
+    font-weight: 600 !important;
+    letter-spacing: 0.1em !important;
+    color: #121212 !important;
+    text-transform: uppercase !important;
+    margin-top: 0.25rem !important;
+    margin-bottom: 0 !important;
+  }
+
+  .v2-theme .hero-image-tagline-stacked,
+  .hero-image-tagline-stacked,
+  .v2-theme .hero-tagline-right,
   .hero-tagline-right {
     display: none !important;
   }
-  .hero-image-tagline-stacked {
-    display: none !important;
-  }
+
   .hero-bullet-arrow {
     display: none !important;
   }
@@ -737,37 +750,40 @@
     top: 4.5rem !important;
   }
 
+  .v2-theme .hero-container,
   .hero-container {
     display: flex !important;
     flex-direction: column !important;
     align-items: center !important;
     justify-content: flex-start !important;
-    gap: 0 !important;
+    gap: 1.5rem !important;
     width: 100% !important;
     max-width: 100% !important;
     margin: 0 auto !important;
     transform: none !important;
     padding-inline: 1rem !important;
-    padding-top: 0 !important;
-    padding-bottom: 0 !important;
+    padding-top: 1rem !important;
+    padding-bottom: 2rem !important;
     box-sizing: border-box !important;
     overflow: visible !important;
   }
 
-  /* Photo floats in from top-left under header towards center */
+  /* Photo sits ON TOP of headline frame on mobile, centered */
   .hero-image-wrapper {
+    order: 1 !important;
     width: min(90vw, 22.5rem) !important;
     max-width: 100% !important;
     height: auto !important;
     flex: none;
-    margin: 2rem auto 0 !important; /* Add margin-top since it's below text now */
+    margin: 0 auto !important;
     position: relative;
     display: flex;
     flex-direction: column !important;
     align-items: center !important;
+    align-self: center !important;
     box-shadow: none !important;
-    opacity: 0;
-    animation: mobilePhotoFloat 1.35s cubic-bezier(0.16, 1, 0.3, 1) 0.25s both !important;
+    opacity: 1 !important;
+    animation: none !important;
   }
 
   .cv-scanner .hero-image-container {
@@ -775,7 +791,7 @@
     max-width: 100% !important;
     height: auto !important;
     aspect-ratio: 3.2 / 4 !important; /* vertical rectangular portrait ratio */
-    overflow: hidden !important;
+    overflow: visible !important;
     border-radius: 2px;
     position: relative;
   }
@@ -797,7 +813,7 @@
     display: none;
   }
 
-  /* Beige Frame floats in from bottom-right towards center */
+  /* Hero content card sits BELOW photo on mobile, centered */
   .hero-content {
     order: 2 !important;
     width: min(90vw, 22.5rem) !important;
@@ -806,10 +822,11 @@
     display: flex !important;
     flex-direction: column !important;
     align-items: center !important;
+    align-self: center !important;
     transform: none !important;
     overflow: visible !important;
-    opacity: 0;
-    animation: mobileFrameFloat 1.35s cubic-bezier(0.16, 1, 0.3, 1) 0.4s both !important;
+    opacity: 1 !important;
+    animation: none !important;
   }
 
   .hero-copy-motion {
@@ -818,9 +835,30 @@
     flex-direction: column !important;
     align-items: center !important;
     overflow: visible !important;
+    animation: none !important;
+    transform: none !important;
+  }
+
+  /* Hide connector line and desktop offset pseudo-elements that cause horizontal push on mobile */
+  .v2-theme .hero-connector-line,
+  .hero-connector-line {
+    display: none !important;
+  }
+
+  .v2-theme .hero-name-group::before,
+  .v2-theme .hero-name-group::after,
+  .hero-name-group::before,
+  .hero-name-group::after {
+    display: none !important;
+  }
+
+  .v2-theme .hero-image-offset-frame,
+  .hero-image-offset-frame {
+    display: none !important;
   }
 
   /* Name group (Beige Frame): centered vertical rectangle on mobile */
+  .v2-theme .hero-name-group,
   .hero-name-group {
     display: flex !important;
     flex-direction: column !important;
@@ -842,9 +880,9 @@
     width: 100% !important;
     display: flex !important;
     flex-direction: column !important;
-    justify-content: flex-start !important;
-    align-items: flex-start !important;
-    text-align: left !important;
+    justify-content: center !important;
+    align-items: center !important;
+    text-align: center !important;
   }
 
   .hero-name-group .hero-text h1 {
@@ -853,7 +891,7 @@
     font-family: var(--font-serif), 'Cormorant Garamond', serif !important;
     font-size: clamp(2rem, 8.5vw, 2.6rem) !important;
     letter-spacing: -0.01em !important;
-    text-align: left !important;
+    text-align: center !important;
     margin: 0 0 1.25rem 0 !important;
     line-height: 1.15 !important;
     -webkit-text-fill-color: #008b8b !important;
@@ -866,7 +904,7 @@
     font-size: 0.95rem !important;
     line-height: 1.6 !important;
     color: #333333 !important;
-    text-align: left !important;
+    text-align: center !important;
     margin-top: 0 !important;
     margin-bottom: 1.75rem !important;
   }

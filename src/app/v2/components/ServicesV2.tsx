@@ -85,6 +85,17 @@ export default function ServicesV2() {
               {'as\u00A0a\u00A0Digital\u00A0Product\u00A0Builder'}
             </span>
           </h2>
+          <p style={{
+            fontFamily: "var(--font-sans), Inter, sans-serif",
+            fontSize: '1.05rem',
+            lineHeight: 1.6,
+            color: '#444444',
+            maxWidth: '680px',
+            margin: '1.25rem auto 0 auto',
+            textAlign: 'center'
+          }}>
+            Know &shy;exactly what you need? Pick a lane below. Not sure yet? I'll help you figure out the right problem to solve before we build anything.
+          </p>
         </div>
 
         {/* Single Row of 3 Cards on Desktop, Vertical Stack on Mobile */}

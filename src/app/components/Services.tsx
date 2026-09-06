@@ -8,22 +8,37 @@ export default function Services() {
     hidden: {},
     visible: {
       transition: {
-        staggerChildren: 0.3
+        staggerChildren: 0.2
       }
     }
   };
 
   const arriveIn: any = {
-    hidden: { y: 50, opacity: 0 },
+    hidden: { y: 30, opacity: 0 },
     visible: { 
       y: 0, 
       opacity: 1, 
-      transition: { duration: 0.8, ease: "easeOut" }
+      transition: { duration: 0.7, ease: "easeOut" }
     }
   };
 
+  const benefits = [
+    {
+      title: 'UX/UI Tested with Real Users',
+      desc: 'Interfaces designed for intuitive interaction and clear hierarchy. Every flow is tested to remove friction and maximize conversion.'
+    },
+    {
+      title: 'AI Where It Earns Its Place',
+      desc: 'No AI for the sake of hype. Intelligent workflows and automation are integrated only where they deliver measurable time savings and business ROI.'
+    },
+    {
+      title: 'Modern Stack That Stays Current',
+      desc: 'Built with modern web frameworks and current Generative AI tools so your site and internal products perform fast and never feel dated.'
+    }
+  ];
+
   return (
-    <section className="section services-section" id="expertise">
+    <section className="section services-section" id="expectations">
       <div className="container">
         <motion.div 
           className="services-layout"
@@ -32,50 +47,52 @@ export default function Services() {
           viewport={{ once: true, amount: 0.12 }}
           variants={containerVariants}
         >
-          {/* Left Column: Staggered bulleted lists */}
-          <div className="services-content-left">
-            <motion.div
-              variants={arriveIn}
-              className="service-category"
-            >
-              <h3 className="title-serif service-title">Web Development</h3>
-              <ul className="service-items">
-                <li><span className="service-bullet">&ndash;</span> Next.js &amp; React Applications</li>
-                <li><span className="service-bullet">&ndash;</span> High-Converting Landing Pages</li>
-                <li><span className="service-bullet">&ndash;</span> Responsive UI / UX Systems</li>
-                <li><span className="service-bullet">&ndash;</span> Performance &amp; SEO Optimization</li>
-              </ul>
+          {/* Left Column: Benefit Statements */}
+          <div className="services-content-left" style={{ width: '100%', maxWidth: '820px' }}>
+            <motion.div variants={arriveIn}>
+              <h2 className="title-serif service-title" style={{ fontSize: 'clamp(24px, 3.8vw, 36px)', marginBottom: '2.5rem' }}>
+                What You Can Expect From Me
+              </h2>
             </motion.div>
 
-            <motion.div
-              variants={arriveIn}
-              className="service-category"
-            >
-              <h3 className="title-serif service-title">AI &amp; Automations</h3>
-              <ul className="service-items">
-                <li><span className="service-bullet">&ndash;</span> Custom AI Agent Integration</li>
-                <li><span className="service-bullet">&ndash;</span> Automated Lead Qualification</li>
-                <li><span className="service-bullet">&ndash;</span> LLM Pipelines &amp; Webhooks</li>
-                <li><span className="service-bullet">&ndash;</span> Self-Serve Web Tools</li>
-              </ul>
-            </motion.div>
+            <div style={{ display: 'flex', flexDirection: 'column', gap: '2.25rem' }}>
+              {benefits.map((benefit, i) => (
+                <motion.div key={i} variants={arriveIn} style={{ display: 'flex', gap: '1.25rem', alignItems: 'flex-start' }}>
+                  <span style={{ 
+                    fontFamily: "'JetBrains Mono', monospace", 
+                    color: '#008b8b', 
+                    fontSize: '1.1rem', 
+                    fontWeight: 700, 
+                    lineHeight: '1.4',
+                    minWidth: '28px'
+                  }}>
+                    0{i + 1}
+                  </span>
+                  <div>
+                    <h3 style={{ 
+                      fontFamily: "var(--font-sans), Inter, sans-serif", 
+                      fontSize: '1.25rem', 
+                      fontWeight: 600, 
+                      color: '#121212', 
+                      margin: '0 0 0.5rem 0' 
+                    }}>
+                      {benefit.title}
+                    </h3>
+                    <p style={{ 
+                      fontSize: '1.02rem', 
+                      lineHeight: 1.65, 
+                      color: '#444444', 
+                      margin: 0,
+                      maxWidth: '640px'
+                    }}>
+                      {benefit.desc}
+                    </p>
+                  </div>
+                </motion.div>
+              ))}
+            </div>
           </div>
 
-          {/* Right Column: Visual placeholder */}
-          <motion.div 
-            variants={arriveIn}
-            className="services-image-col"
-          >
-            <div 
-              style={{
-                width: '100%',
-                height: '400px',
-                background: 'white',
-                border: '1px solid rgba(0, 139, 139, 0.4)',
-                borderRadius: '4px'
-              }}
-            />
-          </motion.div>
         </motion.div>
       </div>
     </section>

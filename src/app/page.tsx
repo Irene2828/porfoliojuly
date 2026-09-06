@@ -1,7 +1,9 @@
 import Header from './components/Header';
-import Hero from './components/Hero';
+import HeroV2 from './v2/components/HeroV2';
 import Projects from './components/Projects';
 import Services from './components/Services';
+import ProcessSection from './v2/components/ProcessSection';
+import EditorialStatement from './v2/components/EditorialStatement';
 import SectionDivider from './components/SectionDivider';
 import FaceDivider from './components/FaceDivider';
 import ClientWrapper from './components/ClientWrapper';
@@ -32,14 +34,17 @@ export default async function HomePage() {
   return (
     <ClientWrapper>
       <Header />
-      <Hero />
+      <HeroV2 />
       <SectionDivider theme="light" />
 
 
       <Projects initialProjects={publishedProjects as any} />
 
-      <SectionDivider theme="light" label="SKILLS" align="right" />
+      <SectionDivider theme="light" label="EXPECTATIONS" align="right" />
       <Services />
+
+      <ProcessSection />
+      <EditorialStatement />
       <FaceDivider />
     </ClientWrapper>
   );
