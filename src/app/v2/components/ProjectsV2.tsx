@@ -151,6 +151,13 @@ export default function ProjectsV2({ initialProjects = [] }: ProjectsV2Props) {
           <div 
             key={project.id} 
             className="preview-item-container"
+            onMouseEnter={() => setSelectedProjectId(project.id)}
+            onMouseLeave={() => {
+              // Smooth collapse when leaving preview card area if modal is not locked
+              if (selectedProjectId === project.id) {
+                setSelectedProjectId(null);
+              }
+            }}
             onClick={() => setSelectedProjectId(project.id)}
           >
             <div className="preview-card-wrapper">
@@ -159,7 +166,7 @@ export default function ProjectsV2({ initialProjects = [] }: ProjectsV2Props) {
               </div>
             </div>
             <div className="preview-card-caption">
-              Expand project ↗
+              Hover / Click to expand ↗
             </div>
           </div>
         ))}
@@ -169,18 +176,26 @@ export default function ProjectsV2({ initialProjects = [] }: ProjectsV2Props) {
         {selectedProjectId && selectedProject && (
           <motion.div 
             className="project-modal-overlay"
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
-            exit={{ opacity: 0 }}
-            transition={{ duration: 0.3 }}
+            initial={{ opacity: 0, backdropFilter: 'blur(0px)' }}
+            animate={{ opacity: 1, backdropFilter: 'blur(8px)' }}
+            exit={{ opacity: 0, backdropFilter: 'blur(0px)' }}
+            transition={{ duration: 0.35, ease: [0.16, 1, 0.3, 1] }}
+            onMouseLeave={() => setSelectedProjectId(null)}
             onClick={() => setSelectedProjectId(null)}
           >
-            <div className="project-modal-content" onClick={(e) => e.stopPropagation()}>
+            <motion.div 
+              className="project-modal-content" 
+              initial={{ scale: 0.88, opacity: 0, y: 20 }}
+              animate={{ scale: 1, opacity: 1, y: 0 }}
+              exit={{ scale: 0.88, opacity: 0, y: 20 }}
+              transition={{ duration: 0.4, ease: [0.16, 1, 0.3, 1] }}
+              onClick={(e) => e.stopPropagation()}
+            >
               <button className="modal-close-btn" onClick={() => setSelectedProjectId(null)}>
                 CLOSE ✕
               </button>
               {renderProjectContent(selectedProject, true)}
-            </div>
+            </motion.div>
           </motion.div>
         )}
       </AnimatePresence>
