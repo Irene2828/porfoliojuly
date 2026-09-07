@@ -1,14 +1,10 @@
 'use client';
 
 import { motion } from 'framer-motion';
-import { useState } from 'react';
 
-const SILVER_BG = '#ffffff';
-const SKY_BLUE_BG = '#9ec7f2';
+const SKY_BLUE_BG = '#d0e8fc';
 
 export default function ServicesV2() {
-  const [hoveredIdx, setHoveredIdx] = useState<number | null>(null);
-
   const cards = [
     {
       icon: <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><circle cx="12" cy="12" r="10"></circle><line x1="2" y1="12" x2="22" y2="12"></line><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"></path></svg>,
@@ -21,7 +17,7 @@ export default function ServicesV2() {
     },
     {
       icon: <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z"></path><polyline points="3.27 6.96 12 12.01 20.73 6.96"></polyline><line x1="12" y1="22.08" x2="12" y2="12"></line></svg>,
-      title: 'AI Automations & Workflows',
+      title: 'AI Workflows',
       bullets: [
         <span>Identify <strong>bottlenecks &amp; manual repetitive tasks</strong></span>,
         <span>Build <strong>custom AI workflow</strong> solutions</span>,
@@ -44,9 +40,8 @@ export default function ServicesV2() {
       id="expertise" 
       style={{ 
         backgroundColor: '#ffffff',
-        borderBottom: '1px solid #008b8b',
-        padding: '6rem 0',
-        margin: '4rem 0 3rem 0'
+        padding: '6rem 0 0 0',
+        margin: '4rem 0 0 0'
       }}
     >
       <div className="container">
@@ -60,7 +55,7 @@ export default function ServicesV2() {
         }} />
 
         {/* Intro Section Heading */}
-        <div style={{ marginBottom: '2.8rem', textAlign: 'center' }}>
+        <div style={{ marginBottom: '1.4rem', textAlign: 'center' }}>
           <h2 style={{ 
             fontFamily: "'Times New Roman', Times, Georgia, serif",
             fontSize: 'clamp(24px, 4vw, 38px)', 
@@ -85,138 +80,75 @@ export default function ServicesV2() {
               {'as\u00A0a\u00A0Digital\u00A0Product\u00A0Builder'}
             </span>
           </h2>
-          <p style={{
-            fontFamily: "var(--font-sans), Inter, sans-serif",
-            fontSize: '1.05rem',
-            lineHeight: 1.6,
-            color: '#444444',
-            maxWidth: '680px',
-            margin: '1.25rem auto 0 auto',
-            textAlign: 'center'
-          }}>
-            Know &shy;exactly what you need? Pick a lane below. Not sure yet? I'll help you figure out the right problem to solve before we build anything.
-          </p>
         </div>
 
-        {/* Single Row of 3 Cards on Desktop, Vertical Stack on Mobile */}
-        <div 
-          className="services-v2-grid"
-          style={{ 
-            display: 'grid', 
-            gap: '2.625rem' 
-          }}
-        >
-          {cards.map((card, i) => {
-            const isHovered = hoveredIdx === i;
-            const isMiddle = i === 1;
-            // Both backgrounds are now light, so we use the dark text theme ('isSilver = true' logic) for all cards
-            const isSilver = true; 
-            return (
-              <motion.div
-                key={card.title}
-                initial={{ opacity: 0, y: 25 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                transition={{ duration: 0.5, delay: i * 0.15 }}
-                onMouseEnter={() => setHoveredIdx(i)}
-                onMouseLeave={() => setHoveredIdx(null)}
-                style={{
-                  position: 'relative',
-                  background: isMiddle ? SKY_BLUE_BG : SILVER_BG,
-                  border: isMiddle ? '1px dashed #b8dbe8' : '1px dashed #d0d0d0',
-                  borderRadius: '4px',
-                  padding: '1.75rem 2rem 1.25rem 2rem',
-                  display: 'flex',
-                  flexDirection: 'column',
-                  justifyContent: 'space-between',
-                  minHeight: '340px',
-                  transform: isHovered ? 'translateY(-4px)' : 'translateY(0)',
-                  transition: 'all 0.35s cubic-bezier(0.16, 1, 0.3, 1)',
-                  cursor: 'pointer'
-                }}
-              >
-                <div>
-                  <div style={{ position: 'absolute', top: '0.875rem', left: '-1rem', zIndex: 10 }}>
-                    <span style={{ 
-                      color: isSilver ? '#000000' : '#ffffff', 
-                      backgroundColor: isSilver ? '#ffffff' : '#4a90e2',
-                      border: isSilver ? '1px solid rgba(26, 26, 26, 0.4)' : '1px solid rgba(255, 255, 255, 0.4)',
-                      padding: '0.65rem', 
-                      borderRadius: '50%', 
-                      display: 'flex',
-                      alignItems: 'center',
-                      justifyContent: 'center',
-                      boxShadow: '0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06)',
-                      transition: 'all 0.3s ease'
+        {/* Service Content Frame */}
+        <div style={{ 
+          width: '100vw',
+          marginLeft: 'calc(-50vw + 50%)',
+          marginRight: 'calc(-50vw + 50%)',
+          marginBottom: '3.5rem',
+          background: '#d0e8fc',
+          padding: '5rem 1.5rem',
+          position: 'relative'
+        }}>
+          <div className="container" style={{ position: 'relative', zIndex: 2 }}>
+            <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(260px, 1fr))', gap: '3.5rem', width: '100%' }}>
+              {cards.map((card, i) => (
+                <motion.div 
+                  key={card.title}
+                  initial={{ opacity: 0, y: 20 }} 
+                  whileInView={{ opacity: 1, y: 0 }} 
+                  viewport={{ once: true }}
+                  transition={{ delay: i * 0.15 }}
+                  style={{
+                    display: 'flex',
+                    flexDirection: 'column',
+                    justifyContent: 'space-between'
+                  }}
+                >
+                  <div>
+                    <h3 style={{ 
+                      fontFamily: "'Times New Roman', Times, Georgia, serif", 
+                      fontSize: 'clamp(1.35rem, 2.16vw, 1.71rem)', 
+                      fontWeight: 400, 
+                      color: '#121212', 
+                      margin: '0 0 1rem 0',
+                      letterSpacing: '-0.01em',
+                      textAlign: 'center'
                     }}>
-                      {card.icon}
+                      {card.title}
+                    </h3>
+                    <div style={{ width: '100%', height: '1px', backgroundColor: '#121212', opacity: 0.25, marginBottom: '3rem' }} />
+                    <ul style={{ listStyle: 'none', padding: 0, margin: 0, display: 'flex', flexDirection: 'column', gap: '1rem' }}>
+                      {card.bullets.map((b, idx) => (
+                        <li key={idx} style={{ fontSize: '0.95rem', color: '#2a3036', display: 'flex', alignItems: 'flex-start', gap: '0.6rem', lineHeight: 1.5 }}>
+                          <span style={{ color: '#121212', fontWeight: 'bold', fontSize: '1.1rem', lineHeight: '1' }}>·</span> {b}
+                        </li>
+                      ))}
+                    </ul>
+                  </div>
+
+                  <div style={{ marginTop: '2rem', textAlign: 'center' }}>
+                    <span style={{ 
+                      fontFamily: "'JetBrains Mono', Menlo, monospace", 
+                      fontSize: '12px', 
+                      fontWeight: 600, 
+                      letterSpacing: '0.22em', 
+                      textTransform: 'uppercase',
+                      color: '#121212',
+                      display: 'inline-flex',
+                      alignItems: 'center',
+                      gap: '0.45rem',
+                      cursor: 'pointer'
+                    }}>
+                      SEE EXAMPLE <span style={{ fontSize: '1rem' }}>↓</span>
                     </span>
                   </div>
-                  <h3 style={{ 
-                    fontFamily: "'Times New Roman', Times, Georgia, serif",
-                    marginTop: '1.875rem',
-                    fontSize: '1.5rem', 
-                    color: isSilver ? '#4a90e2' : '#ffffff',
-                    WebkitTextStroke: isSilver ? '0.4px #4a90e2' : '0.4px #ffffff',
-                    fontWeight: 400,
-                    textAlign: 'center',
-                    marginBottom: '1.25rem', 
-                    lineHeight: 1.2,
-                    letterSpacing: '0.02em',
-                    transition: 'all 0.3s ease'
-                  }}>
-                    {card.title}
-                  </h3>
-                  <ul style={{ listStyle: 'none', padding: 0, margin: 0, display: 'flex', flexDirection: 'column', gap: '1.1rem' }}>
-                    {card.bullets.slice(0, 3).map((b, idx) => (
-                      <li 
-                        key={idx} 
-                        style={{ 
-                          fontSize: '0.92rem', 
-                          color: isSilver ? '#2a3036' : 'rgba(255, 255, 255, 0.98)',
-                          fontWeight: isSilver ? 500 : 400,
-                          display: 'flex', 
-                          alignItems: 'flex-start', 
-                          gap: '0.6rem', 
-                          lineHeight: 1.5,
-                          transition: 'color 0.3s ease'
-                        }}
-                      >
-                        <span style={{ 
-                          color: isSilver ? '#4a90e2' : 'rgba(255, 255, 255, 0.85)', 
-                          fontWeight: 'bold',
-                          fontSize: '1.1rem',
-                          lineHeight: '1',
-                          transition: 'color 0.3s ease'
-                        }}>·</span> {b}
-                      </li>
-                    ))}
-                  </ul>
-                </div>
-
-                {/* Centered 'SEE EXAMPLE' at card bottom */}
-                <div style={{ 
-                  marginTop: '1.25rem', 
-                  textAlign: 'center'
-                }}>
-                  <span style={{ 
-                    fontFamily: "'JetBrains Mono', Menlo, monospace", 
-                    fontSize: '10px', 
-                    fontWeight: 400, 
-                    letterSpacing: '0.18em', 
-                    textTransform: 'uppercase',
-                    color: isSilver ? '#111111' : '#ffffff',
-                    display: 'inline-flex',
-                    alignItems: 'center',
-                    gap: '0.4rem',
-                    transition: 'color 0.3s ease'
-                  }}>
-                    SEE EXAMPLE <span style={{ fontSize: '0.85rem' }}>↓</span>
-                  </span>
-                </div>
-              </motion.div>
-            );
-          })}
+                </motion.div>
+              ))}
+            </div>
+          </div>
         </div>
       </div>
     </section>

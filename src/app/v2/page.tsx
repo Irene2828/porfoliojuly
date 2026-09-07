@@ -2,7 +2,7 @@ import Header from '../components/Header';
 import HeroV2 from './components/HeroV2';
 import ProjectsV2 from './components/ProjectsV2';
 import ServicesV2 from './components/ServicesV2';
-import Services from '../components/Services';
+
 import ProcessSection from './components/ProcessSection';
 import EditorialStatement from './components/EditorialStatement';
 import SectionDivider from '../components/SectionDivider';
@@ -39,12 +39,18 @@ export default async function V2Page() {
         <ServicesV2 />
 
         {/* Projects Section */}
-        <SectionDivider theme="light" label="Recent Projects / Work Examples" align="center" />
-        <ProjectsV2 initialProjects={publishedProjects as any} />
+        <div style={{ 
+          width: '60px', 
+          height: '1px', 
+          backgroundColor: '#0b0c10', 
+          margin: '8rem auto 2.5rem auto', 
+          opacity: 0.6 
+        }} />
+        <SectionDivider theme="light" label="Recent Projects" align="center" />
+        <div style={{ marginBottom: '8rem' }}>
+          <ProjectsV2 initialProjects={publishedProjects as any} />
+        </div>
 
-        {/* Expectations Section */}
-        <SectionDivider theme="light" label="Expectations" align="center" />
-        <Services />
 
         {/* Process Section */}
         <ProcessSection />

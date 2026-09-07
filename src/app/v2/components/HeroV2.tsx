@@ -18,6 +18,22 @@ export default function HeroV2() {
 
   return (
     <section className="section hero-section" id="home">
+      {/* Right Side Background (60% width) with clean sharp vertical border line */}
+      <div 
+        style={{
+          position: 'absolute',
+          top: '-3.5rem',
+          bottom: 0,
+          right: 0,
+          width: '60%',
+          background: '#d0e8fc',
+          borderLeft: '1px solid rgba(0, 0, 0, 0.12)',
+          zIndex: 1,
+          pointerEvents: 'none',
+          animation: 'heroBgFadeIn 1.92s cubic-bezier(0.45, 0, 0.2, 1) both',
+          animationDelay: '0.9s'
+        }}
+      />
       <div className="container hero-container" style={{ position: 'relative' }}>
         {/* Geometric support layer (z-index 1, under content z-10) */}
         <div className="hero-decor-layer" style={{ position: 'absolute', inset: 0, zIndex: 1, pointerEvents: 'none', opacity: 0.7 }}>
@@ -86,12 +102,12 @@ export default function HeroV2() {
           tabIndex={0}
         >
           {/* Mobile Name & Title directly on top of image, centered */}
-          <div className="hero-mobile-intro">
+          <div className="hero-mobile-intro" style={{ position: 'relative', zIndex: 2 }}>
             <h2 className="hero-mobile-name">IRYNA SHEREMETA</h2>
             <p className="hero-mobile-role">WEB &amp; AI PRODUCT BUILDER</p>
           </div>
 
-          <div className="hero-image-container">
+          <div className="hero-image-container" style={{ position: 'relative', zIndex: 2 }}>
             <div className="hero-image-offset-frame"></div>
             <div className="hero-image-brackets"></div>
             <img src={heroImage.src} alt="Iryna Sheremeta" className="hero-image" />

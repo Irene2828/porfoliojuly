@@ -11,21 +11,22 @@ export default function FaceDivider() {
       id="about" 
       ref={containerRef}
       style={{
-        backgroundColor: '#fafafa',
-        borderTop: '1px solid #eaeaea',
-        padding: '1.5rem 2rem',
+        backgroundColor: '#a7c7e7', // 10% deeper tone than #b8d9f7 button blue
+        borderTop: '1px solid rgba(0, 0, 0, 0.08)',
+        padding: '1.75rem 3rem',
         width: '100%',
         display: 'flex',
-        justifyContent: 'center',
-        alignItems: 'center'
+        justifyContent: 'flex-end',
+        alignItems: 'center',
+        boxSizing: 'border-box'
       }}
     >
       <div style={{
         fontFamily: "var(--font-sans), Inter, sans-serif",
         fontSize: '0.82rem',
-        color: '#888888',
+        color: '#2a3036',
         letterSpacing: '0.02em',
-        textAlign: 'center'
+        textAlign: 'right'
       }}>
         &copy; {new Date().getFullYear()} Iryna Sheremeta &middot; Web &amp; AI Product Builder
       </div>

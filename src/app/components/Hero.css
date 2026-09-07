@@ -25,18 +25,7 @@
 }
 
 .hero-section::after {
-  content: '';
-  position: absolute;
-  top: -3.5rem; /* extend upward to reach top of page under header */
-  bottom: 0; /* span full height of the box */
-  right: 0;
-  width: 60%;
-  background-color: rgba(158, 199, 242, 0.25);
-  z-index: 0;
-  opacity: 0;
-  pointer-events: none;
-  animation: heroBgFadeIn var(--hero-motion-duration) cubic-bezier(0.45, 0, 0.2, 1) both;
-  animation-delay: var(--hero-intro-delay);
+  display: none !important;
 }
 
 .hero-section::before {
@@ -715,7 +704,7 @@
     font-size: 1rem !important;
     font-weight: 800 !important;
     letter-spacing: 0.14em !important;
-    color: #008b8b !important;
+    color: #5a9ad4 !important;
     text-transform: uppercase !important;
     margin: 0 !important;
     padding: 0 !important;
@@ -894,8 +883,8 @@
     text-align: center !important;
     margin: 0 0 1.25rem 0 !important;
     line-height: 1.15 !important;
-    -webkit-text-fill-color: #008b8b !important;
-    color: #008b8b !important;
+    -webkit-text-fill-color: #5a9ad4 !important;
+    color: #5a9ad4 !important;
     font-weight: 500 !important;
     opacity: 1 !important;
   }

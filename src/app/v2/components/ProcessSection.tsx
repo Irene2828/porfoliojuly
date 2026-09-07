@@ -53,18 +53,52 @@ export default function ProcessSection() {
     <section 
       id="process" 
       style={{ 
-        backgroundColor: '#ffffff',
+        backgroundColor: '#d0e8fc', // Sky blue background matching hero right side
         padding: '5.5rem 0',
-        margin: '3rem 0 2rem 0'
+        margin: '3rem 0 2rem 0',
+        width: '100vw',
+        marginLeft: 'calc(-50vw + 50%)',
+        marginRight: 'calc(-50vw + 50%)',
+        position: 'relative',
+        overflow: 'hidden'
       }}
     >
-      <div className="container">
+
+
+      {/* Geometric Decorative Background Layer (on top of glass overlay for crisp visibility) */}
+      <div 
+        style={{
+          position: 'absolute',
+          inset: 0,
+          pointerEvents: 'none',
+          opacity: 0.65,
+          zIndex: 2
+        }}
+      >
+        <div style={{ position: 'absolute', width: '180px', height: '180px', border: '1.5px dashed rgba(34, 34, 34, 0.25)', top: '10%', left: '4%' }} />
+        <div style={{ position: 'absolute', width: '90px', height: '90px', border: '1.5px solid rgba(34, 34, 34, 0.35)', top: '18%', left: '12%' }} />
+        <div style={{ position: 'absolute', width: '240px', height: '130px', border: '1.5px dashed rgba(34, 34, 34, 0.25)', top: '-5%', right: '8%' }} />
+        <div style={{ position: 'absolute', width: '110px', height: '110px', border: '1.5px solid rgba(34, 34, 34, 0.35)', bottom: '12%', right: '6%' }} />
+        <div style={{ position: 'absolute', width: '70px', height: '70px', border: '1.5px dashed rgba(34, 34, 34, 0.25)', bottom: '15%', left: '15%' }} />
+        <div style={{ position: 'absolute', width: '140px', height: '90px', border: '1.5px solid rgba(34, 34, 34, 0.3)', bottom: '5%', right: '22%' }} />
+      </div>
+
+      <div className="container" style={{ position: 'relative', zIndex: 3 }}>
+        {/* Short decor line above section heading */}
+        <div style={{ 
+          width: '60px', 
+          height: '1px', 
+          backgroundColor: '#4a90e2', 
+          margin: '0 auto 2.5rem auto', 
+          opacity: 0.8 
+        }} />
+
         {/* Intro Section Heading */}
         <div style={{ marginBottom: '3rem', textAlign: 'center' }}>
           <h2 style={{ 
             fontFamily: "'Times New Roman', Times, Georgia, serif",
             fontSize: 'clamp(24px, 4vw, 38px)', 
-            color: '#5a9ad4', 
+            color: '#4a90e2', 
             fontWeight: 500,
             lineHeight: 1.25,
             letterSpacing: '-0.01em',
@@ -76,9 +110,10 @@ export default function ProcessSection() {
           </h2>
           <p style={{
             fontFamily: "var(--font-sans), Inter, sans-serif",
-            fontSize: '1.05rem',
+            fontSize: '1.175rem',
+            fontWeight: 500,
             lineHeight: 1.6,
-            color: '#444444',
+            color: '#2a3036',
             maxWidth: '640px',
             margin: '0 auto',
             textAlign: 'center'
@@ -87,16 +122,21 @@ export default function ProcessSection() {
           </p>
         </div>
 
-        {/* Vertical Creative Process Flow (Frameless, clean layout with curved dashed SVG connector) */}
-        <div style={{ maxWidth: '680px', margin: '0 auto', position: 'relative', padding: '1rem 0' }}>
+        {/* Vertical Creative Process Flow */}
+        <div style={{ 
+          maxWidth: '740px', 
+          margin: '0 auto', 
+          position: 'relative', 
+          padding: '1.5rem 3rem'
+        }}>
           {/* SVG Curved Dashed Connecting Path running vertically */}
           <svg 
             style={{ 
               position: 'absolute', 
-              top: '40px', 
-              left: '23px', 
+              top: '48px', 
+              left: '71px', 
               width: '40px', 
-              height: 'calc(100% - 100px)', 
+              height: 'calc(100% - 96px)', 
               pointerEvents: 'none', 
               zIndex: 1 
             }}
@@ -106,10 +146,10 @@ export default function ProcessSection() {
             <path 
               d="M 20,0 C 40,100 0,200 20,400" 
               fill="none" 
-              stroke="#5a9ad4" 
+              stroke="#a7c7e7" 
               strokeWidth="2" 
               strokeDasharray="6 6" 
-              opacity="0.6"
+              opacity="0.8"
             />
           </svg>
 
@@ -135,11 +175,11 @@ export default function ProcessSection() {
                   height: '48px',
                   borderRadius: '50%',
                   backgroundColor: '#ffffff',
-                  border: '1.5px solid #5a9ad4',
+                  border: '1.5px solid #4a90e2',
                   display: 'flex',
                   alignItems: 'center',
                   justifyContent: 'center',
-                  boxShadow: '0 4px 12px rgba(90, 154, 212, 0.18)',
+                  boxShadow: '0 4px 14px rgba(0, 0, 0, 0.08)',
                   zIndex: 3
                 }}>
                   {step.icon}
@@ -147,20 +187,11 @@ export default function ProcessSection() {
 
                 {/* Step Details */}
                 <div style={{ flex: 1, paddingTop: '0.2rem' }}>
-                  <div style={{ display: 'flex', alignItems: 'center', gap: '0.75rem', marginBottom: '0.4rem' }}>
-                    <span style={{ 
-                      fontFamily: "'JetBrains Mono', monospace", 
-                      fontSize: '0.8rem', 
-                      fontWeight: 700, 
-                      color: '#5a9ad4',
-                      letterSpacing: '0.08em'
-                    }}>
-                      STEP {step.num}
-                    </span>
+                  <div style={{ display: 'flex', alignItems: 'center', marginBottom: '0.4rem' }}>
                     <h3 style={{ 
                       fontFamily: "'Times New Roman', Times, Georgia, serif",
-                      fontSize: '1.5rem', 
-                      color: '#0b0c10',
+                      fontSize: '1.55rem', 
+                      color: '#2a3036',
                       fontWeight: 500,
                       margin: 0,
                       lineHeight: 1.2
@@ -173,7 +204,8 @@ export default function ProcessSection() {
                     fontFamily: "var(--font-sans), Inter, sans-serif",
                     fontSize: '1rem',
                     lineHeight: 1.65,
-                    color: '#444444',
+                    color: '#2a3036',
+                    fontWeight: 400,
                     margin: 0,
                     maxWidth: '560px'
                   }}>

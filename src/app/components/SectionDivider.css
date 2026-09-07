@@ -156,7 +156,7 @@
 .section-divider-light {
   width: 100% !important;
   max-width: 1315px !important; /* hero container width */
-  margin: 6.3rem auto 3.15rem; /* bottom margin cut by 50% */
+  margin: 0 auto 3.15rem; /* Removed huge top margin */
   padding: 0 1rem; /* safe padding for mobile */
   box-sizing: border-box;
   display: flex;
@@ -348,7 +348,7 @@
 
 @media (max-width: 900px) {
   .section-divider-light {
-    margin: 4.9rem auto 1.75rem !important; /* bottom spacing cut by 50%, increased by 40% */
+    margin: 0 auto 1.75rem !important; /* Removed huge top margin */
     width: 100% !important; /* ensure it stays full width for right alignment */
     justify-content: center !important; /* force center alignment for mobile banner */
   }

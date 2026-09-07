@@ -16,8 +16,8 @@ export default function EditorialStatement() {
   return (
     <section 
       style={{
-        backgroundColor: '#7cb5eb', // Sky blue background matching hero right side
-        padding: '6.5rem 1.5rem 3rem 1.5rem',
+        backgroundColor: '#ffffff', // White background
+        padding: '3.25rem 1.5rem 3.5rem 1.5rem',
         width: '100%',
         display: 'flex',
         justifyContent: 'center',
@@ -26,25 +26,31 @@ export default function EditorialStatement() {
         overflow: 'hidden'
       }}
     >
-      {/* Hero-inspired Geometric Decorative Background Layer */}
-      <div 
-        style={{
-          position: 'absolute',
-          inset: 0,
-          pointerEvents: 'none',
-          opacity: 0.28,
-          zIndex: 1
-        }}
-      >
-        {/* Subtle geometric grid & floating wireframe squares (tones of white & grey) */}
-        <div style={{ position: 'absolute', width: '180px', height: '180px', border: '1px dashed #ffffff', top: '10%', left: '4%' }} />
-        <div style={{ position: 'absolute', width: '90px', height: '90px', border: '1px solid #ffffff', top: '18%', left: '12%' }} />
-        <div style={{ position: 'absolute', width: '240px', height: '130px', border: '1px dashed rgba(255, 255, 255, 0.6)', top: '-5%', right: '8%' }} />
-        <div style={{ position: 'absolute', width: '110px', height: '110px', border: '1.5px solid #ffffff', bottom: '12%', right: '6%' }} />
-        <div style={{ position: 'absolute', width: '70px', height: '70px', border: '1px dashed #ffffff', bottom: '15%', left: '15%' }} />
-        <div style={{ position: 'absolute', width: '140px', height: '90px', border: '1px solid rgba(255, 255, 255, 0.5)', bottom: '5%', right: '22%' }} />
-      </div>
-
+      <style>{`
+        .prefooter-btn-primary {
+          font-family: var(--font-sans), Inter, sans-serif !important;
+          font-size: 0.81rem !important;
+          font-weight: 700 !important;
+          text-transform: uppercase !important;
+          letter-spacing: 0.08em !important;
+          justify-content: center;
+          height: 3.48rem !important;
+          padding: 0 2rem !important;
+          background: #b8d9f7 !important;
+          color: #0b0c10 !important;
+          -webkit-text-fill-color: #0b0c10 !important;
+          border: 1px solid #b8d9f7 !important;
+          box-shadow: none !important;
+          transition: background 0.22s ease, border-color 0.22s ease, transform 0.2s ease, box-shadow 0.2s ease !important;
+          -webkit-text-stroke: 0 !important;
+        }
+        .prefooter-btn-primary:hover {
+          background: #a3cdf4 !important;
+          border-color: #a3cdf4 !important;
+          color: #0b0c10 !important;
+          -webkit-text-fill-color: #0b0c10 !important;
+        }
+      `}</style>
       <motion.div
         initial={{ opacity: 0, y: 20 }}
         whileInView={{ opacity: 1, y: 0 }}
@@ -62,46 +68,37 @@ export default function EditorialStatement() {
           zIndex: 2
         }}
       >
-        {/* Statement Headline (30% smaller font size) */}
+        {/* Short decor line above section heading */}
+        <div style={{ 
+          width: '60px', 
+          height: '1px', 
+          backgroundColor: '#0b0c10', 
+          margin: '0 auto 2rem auto', 
+          opacity: 0.6 
+        }} />
+
+        {/* Statement Headline */}
         <h2 style={{
-          fontFamily: "var(--font-serif), 'Times New Roman', Times, Georgia, serif",
-          fontSize: 'clamp(1.22rem, 2.8vw, 1.9rem)',
-          lineHeight: 1.5,
-          color: '#ffffff',
-          fontWeight: 600,
-          letterSpacing: '0em',
-          margin: 0
+          fontFamily: "var(--font-sans), Inter, sans-serif",
+          fontSize: '1.175rem',
+          lineHeight: 1.6,
+          color: '#2a3036',
+          maxWidth: '640px',
+          margin: '0 auto',
+          textAlign: 'center',
+          fontWeight: 500
         }}>
-          The tools exist <em>now</em> to solve what used to seem too hard, too slow, or too expensive. The only real advantage left is who moves first &mdash; I'd like that to be <em>you</em>.
+          The tools exist <em>now</em> to solve what used to seem too hard, too slow, or too expensive.<br />
+          The only real advantage left is who moves first &mdash;<br />
+          I'd like that to be <em>you</em>.
         </h2>
 
         {/* Action CTAs with double spacing (margin-top: 3.5rem) */}
-        <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', gap: '0.85rem', marginTop: '3.5rem' }}>
+        <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', gap: '1rem', marginTop: '3.5rem', justifyContent: 'center' }}>
           <a 
             href="mailto:hello@example.com" 
-            style={{
-              display: 'inline-flex',
-              alignItems: 'center',
-              gap: '0.5rem',
-              backgroundColor: '#ffffff',
-              color: '#0b0c10',
-              padding: '0.9rem 2rem',
-              borderRadius: '0px', // Sharp corners
-              fontWeight: 500,
-              fontSize: '0.9rem',
-              letterSpacing: '0.05em',
-              textTransform: 'uppercase',
-              textDecoration: 'none',
-              boxShadow: 'none',
-              transform: 'scale(1)',
-              transition: 'transform 0.22s cubic-bezier(0.16, 1, 0.3, 1), background-color 0.2s ease'
-            }}
-            onMouseEnter={(e) => {
-              e.currentTarget.style.transform = 'scale(1.03)';
-            }}
-            onMouseLeave={(e) => {
-              e.currentTarget.style.transform = 'scale(1)';
-            }}
+            className="btn prefooter-btn-primary"
+            style={{ display: 'inline-flex', alignItems: 'center', gap: '0.45rem' }}
           >
             <span>Send your problem my way</span>
             <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round" style={{ transform: 'translateY(-0.5px)' }}>
@@ -115,20 +112,20 @@ export default function EditorialStatement() {
             style={{
               background: 'transparent',
               border: 'none',
-              color: '#ffffff',
+              color: '#555555',
               fontFamily: "'JetBrains Mono', Menlo, monospace",
               fontSize: '11px',
-              fontWeight: 600,
-              letterSpacing: '0.18em',
+              fontWeight: 300,
+              letterSpacing: '0.08em',
               textTransform: 'uppercase',
               cursor: 'pointer',
               textDecoration: 'none',
               padding: '0.5rem',
-              opacity: 0.9,
+              opacity: 0.75,
               display: 'inline-flex',
               alignItems: 'center',
               gap: '0.45rem',
-              transition: 'transform 0.22s ease, opacity 0.22s ease'
+              transition: 'opacity 0.22s ease'
             }}
             onMouseEnter={(e) => {
               e.currentTarget.style.transform = 'scale(1.05)';

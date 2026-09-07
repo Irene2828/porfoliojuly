@@ -144,20 +144,11 @@ export default function ProjectsV2({ initialProjects = [] }: ProjectsV2Props) {
 
   return (
     <section className="projects-section" id="cases">
-      <div className="hairline-divider"></div>
-      
       <div className="projects-gallery-grid">
         {v2Projects.map((project) => (
           <div 
             key={project.id} 
             className="preview-item-container"
-            onMouseEnter={() => setSelectedProjectId(project.id)}
-            onMouseLeave={() => {
-              // Smooth collapse when leaving preview card area if modal is not locked
-              if (selectedProjectId === project.id) {
-                setSelectedProjectId(null);
-              }
-            }}
             onClick={() => setSelectedProjectId(project.id)}
           >
             <div className="preview-card-wrapper">
@@ -166,7 +157,7 @@ export default function ProjectsV2({ initialProjects = [] }: ProjectsV2Props) {
               </div>
             </div>
             <div className="preview-card-caption">
-              Hover / Click to expand ↗
+              Click to expand ↗
             </div>
           </div>
         ))}
@@ -180,7 +171,6 @@ export default function ProjectsV2({ initialProjects = [] }: ProjectsV2Props) {
             animate={{ opacity: 1, backdropFilter: 'blur(8px)' }}
             exit={{ opacity: 0, backdropFilter: 'blur(0px)' }}
             transition={{ duration: 0.35, ease: [0.16, 1, 0.3, 1] }}
-            onMouseLeave={() => setSelectedProjectId(null)}
             onClick={() => setSelectedProjectId(null)}
           >
             <motion.div 
