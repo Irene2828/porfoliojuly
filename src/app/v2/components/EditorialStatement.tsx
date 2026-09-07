@@ -68,7 +68,7 @@ export default function EditorialStatement() {
           fontSize: 'clamp(1.22rem, 2.8vw, 1.9rem)',
           lineHeight: 1.5,
           color: '#ffffff',
-          fontWeight: 500,
+          fontWeight: 600,
           letterSpacing: '0em',
           margin: 0
         }}>
