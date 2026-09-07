@@ -220,8 +220,8 @@ h1, h2, h3, h4, h5, h6 {
     #ffffff 66.666%, 
     #ffffff 100%
   ) !important;
-  border-top: 1px solid rgba(235, 235, 237, 0.65) !important;
-  border-bottom: 1px solid rgba(235, 235, 237, 0.65) !important;
+  border-top: 1px solid #5a9ad4 !important;
+  border-bottom: 1px solid #5a9ad4 !important;
 }
 
 /* Version 2 Impact Row Background -> Ocean Teal with Crisp White Text & White Thick Line Above Stats */

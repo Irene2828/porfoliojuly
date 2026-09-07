@@ -110,17 +110,12 @@ export default function Services() {
             </div>
           </div>
 
-          {/* Right Column: Text directly on right side */}
+          {/* Right Column: Empty space for clean split */}
           <motion.div 
             variants={arriveIn}
             className="services-image-col"
-            style={{ display: 'flex', flexDirection: 'column', justifyContent: 'center', alignItems: 'center', minHeight: '280px', textAlign: 'center' }}
-          >
-            <div style={{ fontFamily: "'Times New Roman', serif", fontSize: '2.5rem', color: '#5a9ad4', marginBottom: '1rem' }}>&sect;</div>
-            <p style={{ fontFamily: "var(--font-sans)", fontSize: '0.92rem', fontWeight: 600, letterSpacing: '0.06em', textTransform: 'uppercase', color: '#121212', margin: 0 }}>
-              DESIGN &middot; TECH &middot; AI EXPERTISE
-            </p>
-          </motion.div>
+            style={{ display: 'flex', flexDirection: 'column', justifyContent: 'center', alignItems: 'center', minHeight: '280px' }}
+          />
         </motion.div>
       </div>
     </section>
