@@ -191,7 +191,7 @@
   box-shadow: none;
 }
 
-/* 50% width/height offset sharp teal ocean shadow on bottom-right */
+/* 50% width/height offset sharp sky blue shadow on bottom-right */
 .hero-name-group::before {
   content: '';
   position: absolute;
@@ -199,13 +199,13 @@
   right: -10px;
   width: 50%;
   height: 50%;
-  background-color: #008b8b !important; /* brand ocean teal */
+  background-color: #b8d9f7 !important; /* hero right side sky blue */
   z-index: -1;
   transform: translateZ(-1px); /* forces the shadow layer behind the parent's beige background */
   pointer-events: none;
 }
 
-/* 50% width/height offset sharp teal ocean shadow on top-left */
+/* 50% width/height offset sharp sky blue shadow on top-left */
 .hero-name-group::after {
   content: '';
   position: absolute;
@@ -213,7 +213,7 @@
   left: -10px;
   width: 50%;
   height: 50%;
-  background-color: #008b8b !important; /* brand ocean teal */
+  background-color: #b8d9f7 !important; /* hero right side sky blue */
   z-index: -1;
   transform: translateZ(-1px); /* forces the shadow layer behind the parent's beige background */
   pointer-events: none;

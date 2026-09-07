@@ -192,13 +192,13 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 .v2-theme .v2-impact-bg {
-  background: #008b8b !important;
-  color: #ffffff !important;
+  background: #b8d9f7 !important;
+  color: #0b0c10 !important;
 }
 
 .v2-theme .v2-impact-bg-soft {
-  background: rgba(0, 139, 139, 0.12) !important;
-  border: 1px dashed #008b8b !important;
+  background: rgba(184, 217, 247, 0.25) !important;
+  border: 1px dashed #b8d9f7 !important;
 }
 
 /* Version 2 Hero Section Split */
@@ -337,10 +337,10 @@ h1, h2, h3, h4, h5, h6 {
   letter-spacing: 0.08em !important;
   height: 3.3rem !important;
   padding: 0 1.9rem !important;
-  background: #008b8b !important;
-  color: #ffffff !important;
-  -webkit-text-fill-color: #ffffff !important;
-  border: 1px solid #008b8b !important;
+  background: #b8d9f7 !important;
+  color: #0b0c10 !important;
+  -webkit-text-fill-color: #0b0c10 !important;
+  border: 1px solid #b8d9f7 !important;
   box-shadow: none !important;
   transform: scale(1) !important;
   transition: transform 0.22s cubic-bezier(0.16, 1, 0.3, 1) !important;
@@ -351,10 +351,10 @@ h1, h2, h3, h4, h5, h6 {
 
 .v2-theme .hero-ctas-outside .btn-primary-outline:hover,
 .v2-theme .face-cta:hover {
-  background: #008b8b !important;
-  border-color: #008b8b !important;
-  color: #ffffff !important;
-  -webkit-text-fill-color: #ffffff !important;
+  background: #a3cdf4 !important;
+  border-color: #a3cdf4 !important;
+  color: #0b0c10 !important;
+  -webkit-text-fill-color: #0b0c10 !important;
   transform: scale(1.03) !important;
 }
 

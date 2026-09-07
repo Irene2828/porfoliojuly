@@ -23,16 +23,16 @@ export default function HeroV2() {
         <div className="hero-decor-layer" style={{ position: 'absolute', inset: 0, zIndex: 1, pointerEvents: 'none', opacity: 0.7 }}>
           {/* Top-left decor squares next to headline frame */}
           <div style={{ position: 'absolute', width: '140px', height: '90px', border: '1px dashed rgba(34, 34, 34, 0.2)', top: '-3%', left: '-1%' }} />
-          <div style={{ position: 'absolute', width: '65px', height: '65px', border: '1px solid rgba(167, 199, 231, 0.65)', top: '-5%', left: '14%' }} />
+          <div style={{ position: 'absolute', width: '65px', height: '65px', border: '1.5px solid #e8f4f8', top: '-5%', left: '14%' }} />
           <div style={{ position: 'absolute', width: '110px', height: '110px', border: '1px solid rgba(17, 17, 17, 0.15)', top: '10%', left: '22%' }} />
-          <div style={{ position: 'absolute', width: '45px', height: '45px', border: '1px dashed rgba(167, 199, 231, 0.55)', top: '22%', left: '-2%' }} />
+          <div style={{ position: 'absolute', width: '45px', height: '45px', border: '1.5px dashed #e8f4f8', top: '22%', left: '-2%' }} />
 
           {/* Right & center decor squares (balanced lower position) */}
           <div style={{ position: 'absolute', width: '160px', height: '100px', border: '1.5px dashed rgba(34, 34, 34, 0.38)', top: '45px', left: '52%' }} />
-          <div style={{ position: 'absolute', width: '90px', height: '90px', border: '2px solid rgba(167, 199, 231, 0.85)', top: '25px', left: '65%' }} />
+          <div style={{ position: 'absolute', width: '90px', height: '90px', border: '2px solid #e8f4f8', top: '25px', left: '65%' }} />
           <div style={{ position: 'absolute', width: '40px', height: '40px', border: '1.5px solid rgba(17, 17, 17, 0.35)', top: '70px', left: '58%' }} />
           <div style={{ position: 'absolute', width: '220px', height: '140px', border: '1.5px dashed rgba(34, 34, 34, 0.25)', top: '35px', left: '55%' }} />
-          <div style={{ position: 'absolute', width: '120px', height: '120px', border: '1.5px solid rgba(167, 199, 231, 0.75)', top: '180px', left: '48%' }} />
+          <div style={{ position: 'absolute', width: '120px', height: '120px', border: '2px solid #e8f4f8', top: '180px', left: '48%' }} />
           <div style={{ position: 'absolute', width: '180px', height: '80px', border: '1.5px dashed rgba(34, 34, 34, 0.32)', top: '110px', left: '78%' }} />
         </div>
 
@@ -41,8 +41,8 @@ export default function HeroV2() {
             <div className="hero-name-group" style={{ position: 'relative' }}>
               {/* Decor squares poking out top-left of headline frame (30% reduced opacity) */}
               <div className="hero-decor-square" style={{ position: 'absolute', width: '160px', height: '100px', border: '1.5px dashed rgba(34, 34, 34, 0.42)', top: '-55px', left: '-40px', zIndex: 25, transform: 'translateZ(2px)', opacity: 0.7, pointerEvents: 'none' }} />
-              <div className="hero-decor-square" style={{ position: 'absolute', width: '85px', height: '85px', border: '2px solid rgba(167, 199, 231, 0.85)', top: '-68px', left: '15px', zIndex: 25, transform: 'translateZ(2px)', opacity: 0.7, pointerEvents: 'none' }} />
-              <div className="hero-decor-square" style={{ position: 'absolute', width: '60px', height: '60px', border: '1.5px dashed rgba(167, 199, 231, 0.75)', top: '-28px', left: '-55px', zIndex: 25, transform: 'translateZ(2px)', opacity: 0.7, pointerEvents: 'none' }} />
+              <div className="hero-decor-square" style={{ position: 'absolute', width: '85px', height: '85px', border: '2px solid #e8f4f8', top: '-68px', left: '15px', zIndex: 25, transform: 'translateZ(2px)', opacity: 0.9, pointerEvents: 'none' }} />
+              <div className="hero-decor-square" style={{ position: 'absolute', width: '60px', height: '60px', border: '1.5px dashed #e8f4f8', top: '-28px', left: '-55px', zIndex: 25, transform: 'translateZ(2px)', opacity: 0.9, pointerEvents: 'none' }} />
               <div className="hero-decor-square" style={{ position: 'absolute', width: '160px', height: '110px', border: '1.5px solid rgba(34, 34, 34, 0.31)', top: '-48px', left: '-75px', zIndex: 25, transform: 'translateZ(2px)', opacity: 0.7, pointerEvents: 'none' }} />
 
               <div className="hero-connector-line"></div>
