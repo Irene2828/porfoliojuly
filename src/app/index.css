@@ -420,8 +420,8 @@ h1, h2, h3, h4, h5, h6 {
   background: rgba(255, 255, 255, 0.94);
   backdrop-filter: blur(12px);
   -webkit-backdrop-filter: blur(12px);
-  border: 1px solid rgba(0, 139, 139, 0.35);
-  color: #008b8b;
+  border: 1px solid rgba(90, 154, 212, 0.4);
+  color: #5a9ad4;
   font-family: 'JetBrains Mono', Menlo, monospace;
   font-size: 10px;
   font-weight: 600;
@@ -439,7 +439,7 @@ h1, h2, h3, h4, h5, h6 {
   width: 6px;
   height: 6px;
   border-radius: 50%;
-  background-color: #008b8b;
+  background-color: #5a9ad4;
   box-shadow: none;
   animation: liveDotPulse 2s infinite ease-in-out;
   transition: opacity 0.2s ease, transform 0.2s ease;
@@ -447,7 +447,7 @@ h1, h2, h3, h4, h5, h6 {
 
 .sticky-callback-btn .callback-phone-icon {
   margin-left: 0.15rem;
-  color: #008b8b;
+  color: #5a9ad4;
   transition: transform 0.25s ease, color 0.25s ease;
 }
 
@@ -458,20 +458,20 @@ h1, h2, h3, h4, h5, h6 {
 
 .sticky-callback-btn:hover {
   background: #ffffff;
-  color: #006666;
-  border-color: #008b8b;
-  box-shadow: 0 4px 16px rgba(0, 139, 139, 0.2);
+  color: #4a8ac4;
+  border-color: #5a9ad4;
+  box-shadow: 0 4px 16px rgba(90, 154, 212, 0.25);
   transform: none !important;
 }
 
 .sticky-callback-btn:hover .callback-dot {
-  background-color: #006666;
+  background-color: #4a8ac4;
   animation: none;
   opacity: 1;
 }
 
 .sticky-callback-btn:hover .callback-phone-icon {
-  color: #006666;
+  color: #4a8ac4;
   transform: scale(1.12);
 }
 

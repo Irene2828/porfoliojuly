@@ -43,7 +43,7 @@ export default async function V2Page() {
         <ProjectsV2 initialProjects={publishedProjects as any} />
 
         {/* Expectations Section */}
-        <SectionDivider theme="light" label="EXPECTATIONS" align="right" />
+        <SectionDivider theme="light" label="Expectations" align="center" />
         <Services />
 
         {/* Process Section */}
