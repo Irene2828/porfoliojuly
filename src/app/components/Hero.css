@@ -25,7 +25,18 @@
 }
 
 .hero-section::after {
-  display: none !important;
+  content: '';
+  position: absolute;
+  top: -3.5rem; /* extend upward to reach top of page under header */
+  bottom: 0; /* span full height of the box */
+  right: 0;
+  width: 60%;
+  background-color: rgba(124, 181, 235, 0.25);
+  z-index: 0;
+  opacity: 0;
+  pointer-events: none;
+  animation: heroBgFadeIn var(--hero-motion-duration) cubic-bezier(0.45, 0, 0.2, 1) both;
+  animation-delay: var(--hero-intro-delay);
 }
 
 .hero-section::before {

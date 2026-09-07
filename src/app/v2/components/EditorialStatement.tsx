@@ -16,7 +16,7 @@ export default function EditorialStatement() {
   return (
     <section 
       style={{
-        backgroundColor: '#0b0c10', // Deep black background
+        backgroundColor: '#7cb5eb', // Sky blue background matching hero right side
         padding: '6.5rem 1.5rem 3rem 1.5rem',
         width: '100%',
         display: 'flex',
@@ -65,10 +65,10 @@ export default function EditorialStatement() {
         {/* Statement Headline (30% smaller font size) */}
         <h2 style={{
           fontFamily: "var(--font-serif), 'Times New Roman', Times, Georgia, serif",
-          fontSize: 'clamp(1.22rem, 2.8vw, 1.9rem)', // 30% reduction from 1.75rem-2.75rem
+          fontSize: 'clamp(1.22rem, 2.8vw, 1.9rem)',
           lineHeight: 1.5,
-          color: '#ffffff',
-          fontWeight: 300,
+          color: '#0b0c10',
+          fontWeight: 400,
           letterSpacing: '0em',
           margin: 0
         }}>
@@ -116,10 +116,10 @@ export default function EditorialStatement() {
             style={{
               background: 'transparent',
               border: 'none',
-              color: '#ffffff',
+              color: '#0b0c10',
               fontFamily: "'JetBrains Mono', Menlo, monospace",
               fontSize: '11px',
-              fontWeight: 500,
+              fontWeight: 600,
               letterSpacing: '0.18em',
               textTransform: 'uppercase',
               cursor: 'pointer',

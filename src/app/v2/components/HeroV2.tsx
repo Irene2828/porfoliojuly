@@ -52,7 +52,7 @@ export default function HeroV2() {
                 transition={{ duration: 0.6, ease: "easeOut" }}
                 className="hero-text"
               >
-                <h1 className="title-serif hero-statement" style={{ fontSize: 'clamp(46px, 5.6vw, 50px)', color: '#000000', fontWeight: 600, marginTop: '1.2rem', textTransform: 'none' }}>
+                <h1 className="title-serif hero-statement" style={{ fontSize: 'clamp(46px, 5.6vw, 50px)', color: '#7cb5eb', fontWeight: 600, marginTop: '1.2rem', textTransform: 'none' }}>
                   High-Converting Websites<br />
                   &amp; Intelligent AI Workflows
                 </h1>

@@ -64,7 +64,7 @@ export default function ServicesV2() {
           <h2 style={{ 
             fontFamily: "'Times New Roman', Times, Georgia, serif",
             fontSize: 'clamp(24px, 4vw, 38px)', 
-            color: '#0b0c10', 
+            color: '#7cb5eb', 
             fontWeight: 400,
             lineHeight: 1.25,
             letterSpacing: '-0.01em',
