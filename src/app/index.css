@@ -203,12 +203,12 @@ h1, h2, h3, h4, h5, h6 {
 
 /* Version 2 Hero Section Split */
 .v2-theme .hero-section {
-  background: linear-gradient(to right, #ffffff 0%, #ffffff 42%, #b8d9f7 42%, #b8d9f7 100%) !important;
+  background: linear-gradient(to right, #ffffff 0%, #ffffff 42%, #7cb5eb 42%, #7cb5eb 100%) !important;
 }
 
 @media (max-width: 900px) {
   .v2-theme .hero-section {
-    background: linear-gradient(to bottom, #b8d9f7 0px, #b8d9f7 380px, #ffffff 380px, #ffffff 100%) !important;
+    background: linear-gradient(to bottom, #7cb5eb 0px, #7cb5eb 380px, #ffffff 380px, #ffffff 100%) !important;
   }
 }
 
