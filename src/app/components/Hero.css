@@ -1308,6 +1308,7 @@
 
 .hero-image-tagline-stacked .tagline-name {
   color: #121212;
+  font-size: clamp(0.68rem, 0.97vw, 0.81rem);
   font-weight: 600;
   margin-bottom: 0.15rem; /* 10% vertical spacing gap */
 }

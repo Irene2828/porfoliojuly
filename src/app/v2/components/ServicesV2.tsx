@@ -4,7 +4,7 @@ import { motion } from 'framer-motion';
 import { useState } from 'react';
 
 const SILVER_BG = '#ffffff';
-const SKY_BLUE_BG = '#e8f4f8';
+const SKY_BLUE_BG = '#9ec7f2';
 
 export default function ServicesV2() {
   const [hoveredIdx, setHoveredIdx] = useState<number | null>(null);

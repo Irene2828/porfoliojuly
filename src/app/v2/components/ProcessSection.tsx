@@ -87,96 +87,83 @@ export default function ProcessSection() {
           </p>
         </div>
 
-        {/* 3 Numbered Cards in a row with sequence styling */}
-        <div 
-          className="services-v2-grid"
-          style={{ 
-            display: 'grid', 
-            gap: '2.625rem',
-            position: 'relative'
-          }}
-        >
-          {steps.map((step, i) => {
-            const isHovered = hoveredIdx === i;
-            const isMiddle = i === 1;
-            return (
+        {/* Vertical Creative Process Flow (Frameless, clean layout with curved dashed SVG connector) */}
+        <div style={{ maxWidth: '680px', margin: '0 auto', position: 'relative', padding: '1rem 0' }}>
+          {/* SVG Curved Dashed Connecting Path running vertically */}
+          <svg 
+            style={{ 
+              position: 'absolute', 
+              top: '40px', 
+              left: '23px', 
+              width: '40px', 
+              height: 'calc(100% - 100px)', 
+              pointerEvents: 'none', 
+              zIndex: 1 
+            }}
+            viewBox="0 0 40 400"
+            preserveAspectRatio="none"
+          >
+            <path 
+              d="M 20,0 C 40,100 0,200 20,400" 
+              fill="none" 
+              stroke="#5a9ad4" 
+              strokeWidth="2" 
+              strokeDasharray="6 6" 
+              opacity="0.6"
+            />
+          </svg>
+
+          <div style={{ display: 'flex', flexDirection: 'column', gap: '3.5rem', position: 'relative', zIndex: 2 }}>
+            {steps.map((step, i) => (
               <motion.div
                 key={step.num}
-                initial={{ opacity: 0, y: 25 }}
-                whileInView={{ opacity: 1, y: 0 }}
+                initial={{ opacity: 0, x: -20 }}
+                whileInView={{ opacity: 1, x: 0 }}
                 viewport={{ once: true }}
-                transition={{ duration: 0.5, delay: i * 0.15 }}
-                onMouseEnter={() => setHoveredIdx(i)}
-                onMouseLeave={() => setHoveredIdx(null)}
+                transition={{ duration: 0.6, delay: i * 0.18 }}
                 style={{
-                  position: 'relative',
-                  background: '#ffffff',
-                  border: '1px dashed #4a4a4a',
-                  borderRadius: '4px',
-                  padding: '2rem 2rem 1.75rem 2rem',
                   display: 'flex',
-                  flexDirection: 'column',
-                  justifyContent: 'space-between',
-                  minHeight: '260px',
-                  transform: isHovered ? 'translateY(-4px)' : 'translateY(0)',
-                  transition: 'all 0.35s cubic-bezier(0.16, 1, 0.3, 1)',
-                  cursor: 'pointer',
-                  overflow: 'visible' // ensures icon badges hanging over the edge are never hidden
+                  alignItems: 'flex-start',
+                  gap: '1.75rem',
+                  position: 'relative'
                 }}
               >
-                {/* Large prominent background numeral for visual sequence differentiation */}
+                {/* Step Icon & Number Badge */}
                 <div style={{
-                  position: 'absolute',
-                  right: '0.75rem',
-                  bottom: '-0.25rem',
-                  fontFamily: "'JetBrains Mono', monospace",
-                  fontSize: '5.25rem',
-                  fontWeight: 800,
-                  lineHeight: 1,
-                  color: '#4a90e2',
-                  opacity: 0.2,
-                  userSelect: 'none',
-                  pointerEvents: 'none',
-                  letterSpacing: '-0.05em',
-                  zIndex: 1
+                  flexShrink: 0,
+                  width: '48px',
+                  height: '48px',
+                  borderRadius: '50%',
+                  backgroundColor: '#ffffff',
+                  border: '1.5px solid #5a9ad4',
+                  display: 'flex',
+                  alignItems: 'center',
+                  justifyContent: 'center',
+                  boxShadow: '0 4px 12px rgba(90, 154, 212, 0.18)',
+                  zIndex: 3
                 }}>
-                  {step.num}
+                  {step.icon}
                 </div>
 
-                <div>
-                  {/* Circle Icon Badge hanging on top layer over card boundary */}
-                  <div style={{ 
-                    position: 'absolute', 
-                    top: '-0.875rem', 
-                    left: '1.25rem', 
-                    zIndex: 20 
-                  }}>
+                {/* Step Details */}
+                <div style={{ flex: 1, paddingTop: '0.2rem' }}>
+                  <div style={{ display: 'flex', alignItems: 'center', gap: '0.75rem', marginBottom: '0.4rem' }}>
                     <span style={{ 
-                      color: '#000000', 
-                      backgroundColor: '#ffffff',
-                      border: '1.5px solid #4a90e2',
-                      padding: '0.6rem', 
-                      borderRadius: '50%', 
-                      display: 'flex',
-                      alignItems: 'center',
-                      justifyContent: 'center',
-                      boxShadow: '0 4px 10px rgba(0, 0, 0, 0.12)',
-                      transition: 'all 0.3s ease'
+                      fontFamily: "'JetBrains Mono', monospace", 
+                      fontSize: '0.8rem', 
+                      fontWeight: 700, 
+                      color: '#5a9ad4',
+                      letterSpacing: '0.08em'
                     }}>
-                      {step.icon}
+                      STEP {step.num}
                     </span>
-                  </div>
-
-                  {/* Header Row */}
-                  <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', marginTop: '1rem', marginBottom: '0.75rem' }}>
                     <h3 style={{ 
                       fontFamily: "'Times New Roman', Times, Georgia, serif",
-                      fontSize: '1.45rem', 
+                      fontSize: '1.5rem', 
                       color: '#0b0c10',
-                      fontWeight: 400,
+                      fontWeight: 500,
                       margin: 0,
-                      lineHeight: 1.2,
-                      WebkitTextStroke: '0.4px #0b0c10'
+                      lineHeight: 1.2
                     }}>
                       {step.title}
                     </h3>
@@ -184,63 +171,18 @@ export default function ProcessSection() {
 
                   <p style={{
                     fontFamily: "var(--font-sans), Inter, sans-serif",
-                    fontSize: '0.95rem',
-                    lineHeight: 1.6,
-                    color: '#2a3036',
+                    fontSize: '1rem',
+                    lineHeight: 1.65,
+                    color: '#444444',
                     margin: 0,
-                    position: 'relative',
-                    zIndex: 2
+                    maxWidth: '560px'
                   }}>
                     {step.desc}
                   </p>
                 </div>
-
-                {/* Arrow connector indicator to next step (for items 01 and 02) */}
-                {i < 2 && (
-                  <div className="step-arrow-indicator" style={{
-                    display: 'flex',
-                    alignItems: 'center',
-                    gap: '0.4rem',
-                    fontFamily: "'JetBrains Mono', monospace",
-                    fontSize: '0.75rem',
-                    fontWeight: 600,
-                    color: '#4a90e2',
-                    marginTop: '1.25rem',
-                    opacity: 0.85,
-                    position: 'relative',
-                    zIndex: 2
-                  }}>
-                    <span>NEXT STEP</span>
-                    <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
-                      <line x1="5" y1="12" x2="19" y2="12"></line>
-                      <polyline points="12 5 19 12 12 19"></polyline>
-                    </svg>
-                  </div>
-                )}
-                {i === 2 && (
-                  <div style={{
-                    display: 'flex',
-                    alignItems: 'center',
-                    gap: '0.4rem',
-                    fontFamily: "'JetBrains Mono', monospace",
-                    fontSize: '0.75rem',
-                    fontWeight: 600,
-                    color: '#4a90e2',
-                    marginTop: '1.25rem',
-                    opacity: 0.85,
-                    position: 'relative',
-                    zIndex: 2
-                  }}>
-                    <span>LAUNCH</span>
-                    <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
-                      <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"></path>
-                      <polyline points="22 4 12 14.01 9 11.01"></polyline>
-                    </svg>
-                  </div>
-                )}
               </motion.div>
-            );
-          })}
+            ))}
+          </div>
         </div>
       </div>
     </section>
