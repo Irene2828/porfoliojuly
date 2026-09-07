@@ -31,7 +31,7 @@
   bottom: 0; /* span full height of the box */
   right: 0;
   width: 60%;
-  background-color: rgba(124, 181, 235, 0.25);
+  background-color: rgba(158, 199, 242, 0.25);
   z-index: 0;
   opacity: 0;
   pointer-events: none;
