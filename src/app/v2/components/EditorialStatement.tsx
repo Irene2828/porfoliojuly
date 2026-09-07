@@ -67,7 +67,7 @@ export default function EditorialStatement() {
           fontFamily: "var(--font-serif), 'Times New Roman', Times, Georgia, serif",
           fontSize: 'clamp(1.22rem, 2.8vw, 1.9rem)',
           lineHeight: 1.5,
-          color: '#0b0c10',
+          color: '#ffffff',
           fontWeight: 400,
           letterSpacing: '0em',
           margin: 0
@@ -87,21 +87,20 @@ export default function EditorialStatement() {
               color: '#0b0c10',
               padding: '0.9rem 2rem',
               borderRadius: '0px', // Sharp corners
-              fontWeight: 700,
+              fontWeight: 500,
               fontSize: '0.9rem',
               letterSpacing: '0.05em',
               textTransform: 'uppercase',
               textDecoration: 'none',
-              boxShadow: '0 2px 6px rgba(0, 0, 0, 0.08)',
-              transition: 'transform 0.2s ease, background-color 0.2s ease, box-shadow 0.2s ease'
+              boxShadow: 'none',
+              transform: 'scale(1)',
+              transition: 'transform 0.22s cubic-bezier(0.16, 1, 0.3, 1), background-color 0.2s ease'
             }}
             onMouseEnter={(e) => {
-              e.currentTarget.style.transform = 'translateY(-2px)';
-              e.currentTarget.style.boxShadow = '0 4px 10px rgba(0, 0, 0, 0.12)';
+              e.currentTarget.style.transform = 'scale(1.03)';
             }}
             onMouseLeave={(e) => {
-              e.currentTarget.style.transform = 'translateY(0)';
-              e.currentTarget.style.boxShadow = '0 2px 6px rgba(0, 0, 0, 0.08)';
+              e.currentTarget.style.transform = 'scale(1)';
             }}
           >
             <span>Send your problem my way</span>
@@ -116,7 +115,7 @@ export default function EditorialStatement() {
             style={{
               background: 'transparent',
               border: 'none',
-              color: '#0b0c10',
+              color: '#ffffff',
               fontFamily: "'JetBrains Mono', Menlo, monospace",
               fontSize: '11px',
               fontWeight: 600,

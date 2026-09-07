@@ -110,34 +110,16 @@ export default function Services() {
             </div>
           </div>
 
-          {/* Right Column: White Card Frame Overlapping Black Background */}
+          {/* Right Column: Text directly on right side */}
           <motion.div 
             variants={arriveIn}
             className="services-image-col"
-            style={{ display: 'flex', justifyContent: 'center', alignItems: 'center' }}
+            style={{ display: 'flex', flexDirection: 'column', justifyContent: 'center', alignItems: 'center', minHeight: '280px', textAlign: 'center' }}
           >
-            <div 
-              style={{
-                width: '100%',
-                maxWidth: '320px',
-                minHeight: '380px',
-                background: '#ffffff',
-                border: '1px solid rgba(0, 0, 0, 0.08)',
-                borderRadius: '4px',
-                boxShadow: '0 8px 30px rgba(0, 0, 0, 0.12)',
-                display: 'flex',
-                flexDirection: 'column',
-                justifyContent: 'center',
-                alignItems: 'center',
-                padding: '2.5rem 2rem',
-                textAlign: 'center'
-              }}
-            >
-              <div style={{ fontFamily: "'Times New Roman', serif", fontSize: '2.5rem', color: '#4a90e2', marginBottom: '1rem' }}>&sect;</div>
-              <p style={{ fontFamily: "var(--font-sans)", fontSize: '0.92rem', fontWeight: 600, letterSpacing: '0.06em', textTransform: 'uppercase', color: '#121212', margin: 0 }}>
-                DESIGN &middot; TECH &middot; AI EXPERTISE
-              </p>
-            </div>
+            <div style={{ fontFamily: "'Times New Roman', serif", fontSize: '2.5rem', color: '#5a9ad4', marginBottom: '1rem' }}>&sect;</div>
+            <p style={{ fontFamily: "var(--font-sans)", fontSize: '0.92rem', fontWeight: 600, letterSpacing: '0.06em', textTransform: 'uppercase', color: '#121212', margin: 0 }}>
+              DESIGN &middot; TECH &middot; AI EXPERTISE
+            </p>
           </motion.div>
         </motion.div>
       </div>

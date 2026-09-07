@@ -212,13 +212,13 @@ h1, h2, h3, h4, h5, h6 {
   }
 }
 
-/* Version 2 Skills Section Split: Left 66.666% Light Sky Blue (#e8f4f8), Right 33.333% Black (#0b0c10) */
+/* Version 2 Skills Section Split: Left 66.666% Light Sky Blue (#e8f4f8), Right 33.333% White (#ffffff) */
 .v2-theme .services-section {
   background: linear-gradient(to right, 
     #e8f4f8 0%, 
     #e8f4f8 66.666%, 
-    #0b0c10 66.666%, 
-    #0b0c10 100%
+    #ffffff 66.666%, 
+    #ffffff 100%
   ) !important;
   border-top: 1px solid rgba(235, 235, 237, 0.65) !important;
   border-bottom: 1px solid rgba(235, 235, 237, 0.65) !important;
