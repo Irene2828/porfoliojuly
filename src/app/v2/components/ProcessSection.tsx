@@ -4,7 +4,7 @@ import { motion } from 'framer-motion';
 import { useState } from 'react';
 
 const SILVER_BG = '#f7f7f8';
-const TEAL_BG = 'rgba(0, 139, 139, 0.3)';
+const SKY_BLUE_ACCENT_BG = 'rgba(167, 199, 231, 0.3)';
 
 export default function ProcessSection() {
   const [hoveredIdx, setHoveredIdx] = useState<number | null>(null);
@@ -13,10 +13,9 @@ export default function ProcessSection() {
     {
       num: '01',
       title: 'First Draft',
-      desc: 'A fast, working build — not polished, but real enough to react to and easy to build on.',
-      // Sketch / Wireframe icon
+      desc: 'A fast, working build — not polished, but real enough to react to and easy to build on.', // Sketch / Wireframe icon
       icon: (
-        <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#148281" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+        <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#4a90e2" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
           <path d="M17 3a2.828 2.828 0 1 1 4 4L7.5 20.5 2 22l1.5-5.5L17 3z"></path>
           <path d="M15 5l4 4"></path>
         </svg>
@@ -28,7 +27,7 @@ export default function ProcessSection() {
       desc: 'We test it where it matters — internally if it\'s a team tool, with real users if it\'s client-facing — and refine based on what we find.',
       // Loop / Magnifying glass icon
       icon: (
-        <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#148281" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+        <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#4a90e2" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
           <circle cx="11" cy="11" r="8"></circle>
           <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
         </svg>
@@ -40,7 +39,7 @@ export default function ProcessSection() {
       desc: 'Where it lives and how it\'s maintained depends on the project. We figure that out together, based on what actually fits.',
       // Rocket icon
       icon: (
-        <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#148281" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+        <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#4a90e2" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
           <path d="M4.5 16.5c-1.5 1.26-2 5-2 5s3.74-.5 5-2c.71-.71.19-1.81-.47-2.47l-.06-.06c-.66-.66-1.76-1.18-2.47-.47z"></path>
           <path d="M12 15l-3-3m0 0l3-3m-3 3h12M15 4.5a14.5 14.5 0 0 1 5 5 14.5 14.5 0 0 1-5 5M12 21l-3-3"></path>
           <path d="M4.5 16.5L9 12M15 4.5L12 9"></path>
@@ -65,7 +64,7 @@ export default function ProcessSection() {
           <h2 style={{ 
             fontFamily: "'Times New Roman', Times, Georgia, serif",
             fontSize: 'clamp(24px, 4vw, 38px)', 
-            color: '#148281', 
+            color: '#0b0c10', 
             fontWeight: 400,
             lineHeight: 1.25,
             letterSpacing: '-0.01em',
@@ -134,8 +133,8 @@ export default function ProcessSection() {
                   fontSize: '5.25rem',
                   fontWeight: 800,
                   lineHeight: 1,
-                  color: '#148281',
-                  opacity: 0.14,
+                  color: '#4a90e2',
+                  opacity: 0.2,
                   userSelect: 'none',
                   pointerEvents: 'none',
                   letterSpacing: '-0.05em',
@@ -155,7 +154,7 @@ export default function ProcessSection() {
                     <span style={{ 
                       color: '#000000', 
                       backgroundColor: '#ffffff',
-                      border: '1.5px solid #148281',
+                      border: '1.5px solid #4a90e2',
                       padding: '0.6rem', 
                       borderRadius: '50%', 
                       display: 'flex',
@@ -173,11 +172,11 @@ export default function ProcessSection() {
                     <h3 style={{ 
                       fontFamily: "'Times New Roman', Times, Georgia, serif",
                       fontSize: '1.45rem', 
-                      color: '#148281',
+                      color: '#0b0c10',
                       fontWeight: 400,
                       margin: 0,
                       lineHeight: 1.2,
-                      WebkitTextStroke: '0.4px #148281'
+                      WebkitTextStroke: '0.4px #0b0c10'
                     }}>
                       {step.title}
                     </h3>
@@ -205,7 +204,7 @@ export default function ProcessSection() {
                     fontFamily: "'JetBrains Mono', monospace",
                     fontSize: '0.75rem',
                     fontWeight: 600,
-                    color: '#148281',
+                    color: '#4a90e2',
                     marginTop: '1.25rem',
                     opacity: 0.85,
                     position: 'relative',
@@ -226,7 +225,7 @@ export default function ProcessSection() {
                     fontFamily: "'JetBrains Mono', monospace",
                     fontSize: '0.75rem',
                     fontWeight: 600,
-                    color: '#148281',
+                    color: '#4a90e2',
                     marginTop: '1.25rem',
                     opacity: 0.85,
                     position: 'relative',

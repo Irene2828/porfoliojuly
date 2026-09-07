@@ -16,7 +16,7 @@ export default function EditorialStatement() {
   return (
     <section 
       style={{
-        backgroundColor: '#1b8a82', // Richer deep teal background
+        backgroundColor: '#0b0c10', // Deep black background
         padding: '6.5rem 1.5rem 3rem 1.5rem',
         width: '100%',
         display: 'flex',
@@ -36,7 +36,7 @@ export default function EditorialStatement() {
           zIndex: 1
         }}
       >
-        {/* Subtle geometric grid & floating wireframe squares (tones of white & deep teal) */}
+        {/* Subtle geometric grid & floating wireframe squares (tones of white & grey) */}
         <div style={{ position: 'absolute', width: '180px', height: '180px', border: '1px dashed #ffffff', top: '10%', left: '4%' }} />
         <div style={{ position: 'absolute', width: '90px', height: '90px', border: '1px solid #ffffff', top: '18%', left: '12%' }} />
         <div style={{ position: 'absolute', width: '240px', height: '130px', border: '1px dashed rgba(255, 255, 255, 0.6)', top: '-5%', right: '8%' }} />
@@ -68,9 +68,8 @@ export default function EditorialStatement() {
           fontSize: 'clamp(1.22rem, 2.8vw, 1.9rem)', // 30% reduction from 1.75rem-2.75rem
           lineHeight: 1.5,
           color: '#ffffff',
-          fontWeight: 400,
-          letterSpacing: '-0.01em',
-          WebkitTextStroke: '0.3px #ffffff',
+          fontWeight: 300,
+          letterSpacing: '0em',
           margin: 0
         }}>
           The tools exist <em>now</em> to solve what used to seem too hard, too slow, or too expensive. The only real advantage left is who moves first &mdash; I'd like that to be <em>you</em>.
@@ -85,7 +84,7 @@ export default function EditorialStatement() {
               alignItems: 'center',
               gap: '0.5rem',
               backgroundColor: '#ffffff',
-              color: '#187a73', // 10% darker teal text on white button
+              color: '#0b0c10',
               padding: '0.9rem 2rem',
               borderRadius: '0px', // Sharp corners
               fontWeight: 700,
@@ -93,16 +92,16 @@ export default function EditorialStatement() {
               letterSpacing: '0.05em',
               textTransform: 'uppercase',
               textDecoration: 'none',
-              boxShadow: '0 4px 14px rgba(0, 0, 0, 0.15)',
+              boxShadow: '0 2px 6px rgba(0, 0, 0, 0.08)',
               transition: 'transform 0.2s ease, background-color 0.2s ease, box-shadow 0.2s ease'
             }}
             onMouseEnter={(e) => {
               e.currentTarget.style.transform = 'translateY(-2px)';
-              e.currentTarget.style.boxShadow = '0 6px 20px rgba(0, 0, 0, 0.2)';
+              e.currentTarget.style.boxShadow = '0 4px 10px rgba(0, 0, 0, 0.12)';
             }}
             onMouseLeave={(e) => {
               e.currentTarget.style.transform = 'translateY(0)';
-              e.currentTarget.style.boxShadow = '0 4px 14px rgba(0, 0, 0, 0.15)';
+              e.currentTarget.style.boxShadow = '0 2px 6px rgba(0, 0, 0, 0.08)';
             }}
           >
             <span>Send your problem my way</span>

@@ -47,52 +47,98 @@ export default function Services() {
           viewport={{ once: true, amount: 0.12 }}
           variants={containerVariants}
         >
-          {/* Left Column: Benefit Statements */}
-          <div className="services-content-left" style={{ width: '100%', maxWidth: '820px' }}>
-            <motion.div variants={arriveIn}>
-              <h2 className="title-serif service-title" style={{ fontSize: 'clamp(24px, 3.8vw, 36px)', marginBottom: '2.5rem' }}>
-                What You Can Expect From Me
-              </h2>
-            </motion.div>
+          {/* Left Side: 2 Columns of Services/Capabilities (Matching Reference Layout) */}
+          <div className="services-content-left" style={{ width: '100%', maxWidth: '840px' }}>
+            <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(280px, 1fr))', gap: '3.5rem', width: '100%' }}>
+              {/* Column 1: Web Development */}
+              <motion.div variants={arriveIn}>
+                <h3 style={{ 
+                  fontFamily: "'Times New Roman', Times, Georgia, serif", 
+                  fontSize: 'clamp(1.6rem, 2.8vw, 2.2rem)', 
+                  fontWeight: 400, 
+                  color: '#4a90e2', 
+                  margin: '0 0 0.5rem 0',
+                  letterSpacing: '-0.01em'
+                }}>
+                  Web Development
+                </h3>
+                <div style={{ width: '100%', height: '1px', backgroundColor: '#4a90e2', opacity: 0.4, marginBottom: '1.75rem' }} />
+                <ul style={{ listStyle: 'none', padding: 0, margin: 0, display: 'flex', flexDirection: 'column', gap: '1rem' }}>
+                  <li style={{ fontSize: '1rem', color: '#333333', display: 'flex', alignItems: 'center', gap: '0.65rem' }}>
+                    <span style={{ color: '#4a90e2', fontWeight: 600 }}>&ndash;</span> Next.js &amp; React Applications
+                  </li>
+                  <li style={{ fontSize: '1rem', color: '#333333', display: 'flex', alignItems: 'center', gap: '0.65rem' }}>
+                    <span style={{ color: '#4a90e2', fontWeight: 600 }}>&ndash;</span> High-Converting Landing Pages
+                  </li>
+                  <li style={{ fontSize: '1rem', color: '#333333', display: 'flex', alignItems: 'center', gap: '0.65rem' }}>
+                    <span style={{ color: '#4a90e2', fontWeight: 600 }}>&ndash;</span> Responsive UI / UX Systems
+                  </li>
+                  <li style={{ fontSize: '1rem', color: '#333333', display: 'flex', alignItems: 'center', gap: '0.65rem' }}>
+                    <span style={{ color: '#4a90e2', fontWeight: 600 }}>&ndash;</span> Performance &amp; SEO Optimization
+                  </li>
+                </ul>
+              </motion.div>
 
-            <div style={{ display: 'flex', flexDirection: 'column', gap: '2.25rem' }}>
-              {benefits.map((benefit, i) => (
-                <motion.div key={i} variants={arriveIn} style={{ display: 'flex', gap: '1.25rem', alignItems: 'flex-start' }}>
-                  <span style={{ 
-                    fontFamily: "'JetBrains Mono', monospace", 
-                    color: '#008b8b', 
-                    fontSize: '1.1rem', 
-                    fontWeight: 700, 
-                    lineHeight: '1.4',
-                    minWidth: '28px'
-                  }}>
-                    0{i + 1}
-                  </span>
-                  <div>
-                    <h3 style={{ 
-                      fontFamily: "var(--font-sans), Inter, sans-serif", 
-                      fontSize: '1.25rem', 
-                      fontWeight: 600, 
-                      color: '#121212', 
-                      margin: '0 0 0.5rem 0' 
-                    }}>
-                      {benefit.title}
-                    </h3>
-                    <p style={{ 
-                      fontSize: '1.02rem', 
-                      lineHeight: 1.65, 
-                      color: '#444444', 
-                      margin: 0,
-                      maxWidth: '640px'
-                    }}>
-                      {benefit.desc}
-                    </p>
-                  </div>
-                </motion.div>
-              ))}
+              {/* Column 2: AI & Automations */}
+              <motion.div variants={arriveIn}>
+                <h3 style={{ 
+                  fontFamily: "'Times New Roman', Times, Georgia, serif", 
+                  fontSize: 'clamp(1.6rem, 2.8vw, 2.2rem)', 
+                  fontWeight: 400, 
+                  color: '#4a90e2', 
+                  margin: '0 0 0.5rem 0',
+                  letterSpacing: '-0.01em'
+                }}>
+                  AI &amp; Automations
+                </h3>
+                <div style={{ width: '100%', height: '1px', backgroundColor: '#4a90e2', opacity: 0.4, marginBottom: '1.75rem' }} />
+                <ul style={{ listStyle: 'none', padding: 0, margin: 0, display: 'flex', flexDirection: 'column', gap: '1rem' }}>
+                  <li style={{ fontSize: '1rem', color: '#333333', display: 'flex', alignItems: 'center', gap: '0.65rem' }}>
+                    <span style={{ color: '#4a90e2', fontWeight: 600 }}>&ndash;</span> Custom AI Agent Integration
+                  </li>
+                  <li style={{ fontSize: '1rem', color: '#333333', display: 'flex', alignItems: 'center', gap: '0.65rem' }}>
+                    <span style={{ color: '#4a90e2', fontWeight: 600 }}>&ndash;</span> Automated Lead Qualification
+                  </li>
+                  <li style={{ fontSize: '1rem', color: '#333333', display: 'flex', alignItems: 'center', gap: '0.65rem' }}>
+                    <span style={{ color: '#4a90e2', fontWeight: 600 }}>&ndash;</span> LLM Pipelines &amp; Webhooks
+                  </li>
+                  <li style={{ fontSize: '1rem', color: '#333333', display: 'flex', alignItems: 'center', gap: '0.65rem' }}>
+                    <span style={{ color: '#4a90e2', fontWeight: 600 }}>&ndash;</span> Self-Serve Web Tools
+                  </li>
+                </ul>
+              </motion.div>
             </div>
           </div>
 
+          {/* Right Column: White Card Frame Overlapping Black Background */}
+          <motion.div 
+            variants={arriveIn}
+            className="services-image-col"
+            style={{ display: 'flex', justifyContent: 'center', alignItems: 'center' }}
+          >
+            <div 
+              style={{
+                width: '100%',
+                maxWidth: '320px',
+                minHeight: '380px',
+                background: '#ffffff',
+                border: '1px solid rgba(0, 0, 0, 0.08)',
+                borderRadius: '4px',
+                boxShadow: '0 8px 30px rgba(0, 0, 0, 0.12)',
+                display: 'flex',
+                flexDirection: 'column',
+                justifyContent: 'center',
+                alignItems: 'center',
+                padding: '2.5rem 2rem',
+                textAlign: 'center'
+              }}
+            >
+              <div style={{ fontFamily: "'Times New Roman', serif", fontSize: '2.5rem', color: '#4a90e2', marginBottom: '1rem' }}>&sect;</div>
+              <p style={{ fontFamily: "var(--font-sans)", fontSize: '0.92rem', fontWeight: 600, letterSpacing: '0.06em', textTransform: 'uppercase', color: '#121212', margin: 0 }}>
+                DESIGN &middot; TECH &middot; AI EXPERTISE
+              </p>
+            </div>
+          </motion.div>
         </motion.div>
       </div>
     </section>

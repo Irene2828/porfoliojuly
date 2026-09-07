@@ -3,8 +3,8 @@
 import { motion } from 'framer-motion';
 import { useState } from 'react';
 
-const SILVER_BG = '#f7f7f8';
-const TEAL_BG = 'rgba(0, 139, 139, 0.3)';
+const SILVER_BG = '#ffffff';
+const SKY_BLUE_BG = '#e8f4f8';
 
 export default function ServicesV2() {
   const [hoveredIdx, setHoveredIdx] = useState<number | null>(null);
@@ -54,9 +54,9 @@ export default function ServicesV2() {
         <div style={{ 
           width: '60px', 
           height: '1px', 
-          backgroundColor: '#148281', 
+          backgroundColor: '#0b0c10', 
           margin: '0 auto 2.5rem auto', 
-          opacity: 0.8 
+          opacity: 0.6 
         }} />
 
         {/* Intro Section Heading */}
@@ -64,7 +64,7 @@ export default function ServicesV2() {
           <h2 style={{ 
             fontFamily: "'Times New Roman', Times, Georgia, serif",
             fontSize: 'clamp(24px, 4vw, 38px)', 
-            color: '#148281', 
+            color: '#0b0c10', 
             fontWeight: 400,
             lineHeight: 1.25,
             letterSpacing: '-0.01em',
@@ -122,8 +122,8 @@ export default function ServicesV2() {
                 onMouseLeave={() => setHoveredIdx(null)}
                 style={{
                   position: 'relative',
-                  background: isMiddle ? TEAL_BG : SILVER_BG,
-                  border: isMiddle ? '1px dashed #148281' : '1px dashed #4a4a4a',
+                  background: isMiddle ? SKY_BLUE_BG : SILVER_BG,
+                  border: isMiddle ? '1px dashed #b8dbe8' : '1px dashed #d0d0d0',
                   borderRadius: '4px',
                   padding: '1.75rem 2rem 1.25rem 2rem',
                   display: 'flex',
@@ -139,7 +139,7 @@ export default function ServicesV2() {
                   <div style={{ position: 'absolute', top: '0.875rem', left: '-1rem', zIndex: 10 }}>
                     <span style={{ 
                       color: isSilver ? '#000000' : '#ffffff', 
-                      backgroundColor: isSilver ? '#ffffff' : '#148281',
+                      backgroundColor: isSilver ? '#ffffff' : '#4a90e2',
                       border: isSilver ? '1px solid rgba(26, 26, 26, 0.4)' : '1px solid rgba(255, 255, 255, 0.4)',
                       padding: '0.65rem', 
                       borderRadius: '50%', 
@@ -156,8 +156,8 @@ export default function ServicesV2() {
                     fontFamily: "'Times New Roman', Times, Georgia, serif",
                     marginTop: '1.875rem',
                     fontSize: '1.5rem', 
-                    color: isSilver ? '#148281' : '#ffffff',
-                    WebkitTextStroke: isSilver ? '0.4px #148281' : '0.4px #ffffff',
+                    color: isSilver ? '#4a90e2' : '#ffffff',
+                    WebkitTextStroke: isSilver ? '0.4px #4a90e2' : '0.4px #ffffff',
                     fontWeight: 400,
                     textAlign: 'center',
                     marginBottom: '1.25rem', 
@@ -183,7 +183,7 @@ export default function ServicesV2() {
                         }}
                       >
                         <span style={{ 
-                          color: isSilver ? '#148281' : 'rgba(255, 255, 255, 0.85)', 
+                          color: isSilver ? '#4a90e2' : 'rgba(255, 255, 255, 0.85)', 
                           fontWeight: 'bold',
                           fontSize: '1.1rem',
                           lineHeight: '1',
