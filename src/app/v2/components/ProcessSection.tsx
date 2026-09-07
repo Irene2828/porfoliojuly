@@ -65,7 +65,7 @@ export default function ProcessSection() {
             fontFamily: "'Times New Roman', Times, Georgia, serif",
             fontSize: 'clamp(24px, 4vw, 38px)', 
             color: '#5a9ad4', 
-            fontWeight: 400,
+            fontWeight: 600,
             lineHeight: 1.25,
             letterSpacing: '-0.01em',
             textAlign: 'center',
