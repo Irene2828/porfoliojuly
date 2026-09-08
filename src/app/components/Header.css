@@ -6,7 +6,7 @@
   --hero-motion-duration: 1.92s;
   --hero-scan-delay: calc(var(--hero-intro-delay) + var(--hero-motion-duration) - 1s);
   --hero-nav-frame-offset: clamp(0rem, calc((100vw - 70rem) * 0.15), 3rem);
-  position: fixed;
+  position: absolute;
   top: 0;
   left: 0;
   right: 0;
