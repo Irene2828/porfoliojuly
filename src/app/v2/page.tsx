@@ -37,15 +37,15 @@ export default async function V2Page() {
         <Header />
         <HeroV2 />
 
-        {/* Edge-to-Edge Black Divider above Services (33px height) */}
+        {/* Edge-to-Edge Black Divider above Services (11px height) */}
         <div
           style={{
             width: '100vw',
             marginLeft: 'calc(-50vw + 50%)',
             marginRight: 'calc(-50vw + 50%)',
-            height: '33px',
+            height: '11px',
             backgroundColor: '#121212',
-            margin: '4rem 0 0 0',
+            margin: '2rem 0 0 0',
             position: 'relative',
             zIndex: 10
           }}
