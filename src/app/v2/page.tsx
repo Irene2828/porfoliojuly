@@ -45,7 +45,7 @@ export default async function V2Page() {
             marginRight: 'calc(-50vw + 50%)',
             height: '11px',
             backgroundColor: '#121212',
-            margin: '2rem 0 0 0',
+            margin: '6rem 0 0 0',
             position: 'relative',
             zIndex: 10
           }}
