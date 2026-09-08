@@ -38,15 +38,35 @@ export default async function V2Page() {
         <HeroV2 />
         <ServicesV2 />
 
-        {/* Projects Section */}
-        <div style={{ 
-          width: '60px', 
-          height: '1px', 
-          backgroundColor: '#0b0c10', 
-          margin: '8rem auto 2.5rem auto', 
-          opacity: 0.6 
-        }} />
-        <SectionDivider theme="light" label="Recent Projects" align="center" />
+        {/* Projects Section Header Banner (100px edge-to-edge black divider) */}
+        <div 
+          style={{ 
+            width: '100vw',
+            marginLeft: 'calc(-50vw + 50%)',
+            marginRight: 'calc(-50vw + 50%)',
+            height: '100px',
+            backgroundColor: '#121212',
+            display: 'flex',
+            alignItems: 'center',
+            justifyContent: 'center',
+            margin: '6rem 0 4rem 0',
+            position: 'relative',
+            zIndex: 10
+          }}
+        >
+          <h2 style={{
+            fontFamily: "'Times New Roman', Times, Georgia, serif",
+            fontSize: 'clamp(26px, 4vw, 36px)',
+            color: '#ffffff',
+            fontWeight: 500,
+            fontStyle: 'italic',
+            letterSpacing: '-0.01em',
+            margin: 0,
+            textAlign: 'center'
+          }}>
+            / Recent Projects /
+          </h2>
+        </div>
         <div style={{ marginBottom: '8rem' }}>
           <ProjectsV2 initialProjects={publishedProjects as any} />
         </div>
