@@ -52,15 +52,6 @@ export default async function V2Page() {
         />
         <ServicesV2 />
 
-        {/* Short decor line above Projects */}
-        <div style={{ 
-          width: '60px', 
-          height: '1px', 
-          backgroundColor: '#0b0c10', 
-          margin: '6rem auto 2.5rem auto', 
-          opacity: 0.6 
-        }} />
-
         {/* Edge-to-Edge Black Divider above Projects (5px height) */}
         <div
           style={{
@@ -69,11 +60,20 @@ export default async function V2Page() {
             marginRight: 'calc(-50vw + 50%)',
             height: '5px',
             backgroundColor: '#121212',
-            margin: '0 0 2rem 0',
+            margin: '6rem 0 2.5rem 0',
             position: 'relative',
             zIndex: 10
           }}
         />
+
+        {/* Short decor line directly above Recent Projects heading */}
+        <div style={{ 
+          width: '60px', 
+          height: '1px', 
+          backgroundColor: '#0b0c10', 
+          margin: '0 auto 2.5rem auto', 
+          opacity: 0.6 
+        }} />
 
         {/* Recent Projects Section Header */}
         <SectionDivider theme="light" label="Recent Projects" align="center" />
