@@ -54,7 +54,7 @@ export default function ProcessSection() {
       id="process" 
       style={{ 
         backgroundColor: '#d0e8fc', // Sky blue background matching hero right side
-        padding: '0 0 5.5rem 0',
+        padding: '0 0 2.75rem 0',
         margin: '3rem 0 2rem 0',
         width: '100vw',
         marginLeft: 'calc(-50vw + 50%)',
