@@ -81,7 +81,7 @@ export default function HeroV2() {
                 transition={{ duration: 0.65, delay: hasAnimated ? 0 : 0.55, ease: [0.16, 1, 0.3, 1] }}
                 className="hero-ctas hero-ctas-outside"
               >
-                <a href="#contact" className="btn btn-primary btn-primary-outline" style={{ display: 'inline-flex', alignItems: 'center', gap: '0.45rem' }}>
+                <a href="#contact" className="btn btn-primary btn-primary-outline" style={{ display: 'inline-flex', alignItems: 'center', gap: '0.45rem', border: '0.5px solid rgba(75, 133, 187, 0.45)' }}>
                   <span>BOOK MY SERVICES</span>
                   <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round" style={{ transform: 'translateY(-0.5px)' }}>
                     <line x1="7" y1="17" x2="17" y2="7"></line>

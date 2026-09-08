@@ -446,7 +446,7 @@
   padding: 0 1.8rem !important;
   background: #d0e8fc !important;
   color: #121212 !important;
-  border: 1px solid rgba(75, 133, 187, 0.35) !important;
+  border: 0.5px solid rgba(75, 133, 187, 0.45) !important;
   box-shadow: none !important;
   transform: none !important;
   align-self: auto;
