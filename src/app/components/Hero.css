@@ -444,9 +444,9 @@
   justify-content: center;
   height: 3.13rem !important;
   padding: 0 1.8rem !important;
-  background: #008b8b !important;
-  color: #ffffff !important;
-  border: 1px solid #008b8b !important;
+  background: #d0e8fc !important;
+  color: #121212 !important;
+  border: 1px solid rgba(75, 133, 187, 0.35) !important;
   box-shadow: none !important;
   transform: none !important;
   align-self: auto;
@@ -456,8 +456,8 @@
 }
 
 .hero-ctas-outside .btn-primary-outline:hover {
-  background: #121212 !important;
-  border-color: #121212 !important;
+  background: #4b85bb !important;
+  border-color: #4b85bb !important;
   color: #ffffff !important;
 }
 
