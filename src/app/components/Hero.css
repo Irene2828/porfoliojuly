@@ -202,7 +202,7 @@
   left: -10px;
   width: 50%;
   height: 50%;
-  background-color: #121212 !important; /* crisp black shadow offset */
+  background-color: #4b85bb !important; /* hero headline brand blue shadow offset */
   z-index: -1;
   transform: translateZ(-1px); /* forces the shadow layer behind the parent's beige background */
   pointer-events: none;
@@ -446,7 +446,7 @@
   padding: 0 1.8rem !important;
   background: #d0e8fc !important;
   color: #121212 !important;
-  border: 1px solid rgba(75, 133, 187, 0.175) !important;
+  border: 0.5px solid rgba(75, 133, 187, 0.08) !important;
   box-shadow: none !important;
   transform: none !important;
   align-self: auto;
