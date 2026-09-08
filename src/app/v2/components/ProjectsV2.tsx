@@ -182,7 +182,7 @@ export default function ProjectsV2({ initialProjects = [] }: ProjectsV2Props) {
               onClick={(e) => e.stopPropagation()}
             >
               <button className="modal-close-btn" onClick={() => setSelectedProjectId(null)}>
-                CLOSE ✕
+                ✕
               </button>
               {renderProjectContent(selectedProject, true)}
             </motion.div>

@@ -29,9 +29,7 @@ export default function HeroV2() {
           background: '#d0e8fc',
           borderLeft: '1px solid rgba(0, 0, 0, 0.12)',
           zIndex: 1,
-          pointerEvents: 'none',
-          animation: 'heroBgFadeIn 1.92s cubic-bezier(0.45, 0, 0.2, 1) both',
-          animationDelay: '0.9s'
+          pointerEvents: 'none'
         }}
       />
       <div className="container hero-container" style={{ position: 'relative' }}>
@@ -67,13 +65,14 @@ export default function HeroV2() {
                 animate={{ opacity: 1 }}
                 transition={{ duration: 0.6, ease: "easeOut" }}
                 className="hero-text"
+                style={{ transform: 'translateY(-0.4rem)' }}
               >
-                <h1 className="title-serif hero-statement" style={{ fontSize: 'clamp(46px, 5.6vw, 50px)', color: '#5a9ad4', fontWeight: 600, marginTop: '1.2rem', textTransform: 'none' }}>
-                  High-Converting Websites<br />
-                  &amp; Intelligent AI Workflows
+                <h1 className="title-serif hero-statement" style={{ fontSize: 'clamp(51px, 6.2vw, 55px)', color: '#4b85bb', fontWeight: 600, fontStyle: 'italic', marginTop: '0.6rem', textTransform: 'none', letterSpacing: '-0.025em' }}>
+                  Looking for a <span className="premium-hover"><span className="word-custom">custom</span> website</span><br />
+                  or an <span className="premium-hover"><span className="word-internal">internal</span> AI tool</span>?
                 </h1>
-                <p className="hero-frame-paragraph" style={{ marginTop: '1.73rem', fontSize: '1.1rem', lineHeight: '1.85', color: '#444444', maxWidth: '594px' }}>
-                  I design and build custom websites and AI tools &mdash; from figuring out what your business actually needs to shipping the thing that solves it.
+                <p className="hero-frame-paragraph" style={{ marginTop: '1.54rem', fontSize: '1.05rem', lineHeight: '1.75', color: '#444444', maxWidth: '680px' }}>
+                  <strong>I design and build custom digital products end-to-end</strong> &mdash; <em>from figuring out what kind of solution your business needs to shipping the product that solves its problem.</em>
                 </p>
               </motion.div>
               <motion.div
@@ -89,8 +88,8 @@ export default function HeroV2() {
                     <polyline points="7 7 17 7 17 17"></polyline>
                   </svg>
                 </a>
-                <a href="#work" className="btn btn-secondary btn-secondary-stacked" style={{ opacity: 0.85 }}>
-                  EXPLORE SOLUTIONS <span className="arrow">↓</span>
+                <a href="#process" className="btn btn-secondary btn-secondary-stacked" style={{ opacity: 0.85 }}>
+                  SEE HOW I DO IT <span className="arrow">↓</span>
                 </a>
               </motion.div>
             </div>

@@ -57,9 +57,6 @@ export default async function V2Page() {
 
         {/* Editorial Statement */}
         <EditorialStatement />
-
-        {/* Closing CTA */}
-        <FaceDivider />
       </div>
     </ClientWrapper>
   );

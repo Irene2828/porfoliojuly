@@ -17,7 +17,7 @@ export default function EditorialStatement() {
     <section 
       style={{
         backgroundColor: '#ffffff', // White background
-        padding: '3.25rem 1.5rem 3.5rem 1.5rem',
+        padding: '3.25rem 1.5rem 1.75rem 1.5rem',
         width: '100%',
         display: 'flex',
         justifyContent: 'center',
@@ -39,14 +39,14 @@ export default function EditorialStatement() {
           background: #b8d9f7 !important;
           color: #0b0c10 !important;
           -webkit-text-fill-color: #0b0c10 !important;
-          border: 1px solid #b8d9f7 !important;
+          border: 1.5px dashed rgba(18, 18, 18, 0.45) !important;
           box-shadow: none !important;
           transition: background 0.22s ease, border-color 0.22s ease, transform 0.2s ease, box-shadow 0.2s ease !important;
           -webkit-text-stroke: 0 !important;
         }
         .prefooter-btn-primary:hover {
           background: #a3cdf4 !important;
-          border-color: #a3cdf4 !important;
+          border-color: rgba(18, 18, 18, 0.75) !important;
           color: #0b0c10 !important;
           -webkit-text-fill-color: #0b0c10 !important;
         }
@@ -88,16 +88,14 @@ export default function EditorialStatement() {
           textAlign: 'center',
           fontWeight: 500
         }}>
-          The tools exist <em>now</em> to solve what used to seem too hard, too slow, or too expensive.<br />
-          The only real advantage left is who moves first &mdash;<br />
-          I'd like that to be <em>you</em>.
+          The tools exist <em>now</em> to solve what used to seem too hard, too slow, or too expensive.
         </h2>
 
-        {/* Action CTAs with double spacing (margin-top: 3.5rem) */}
-        <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', gap: '1rem', marginTop: '3.5rem', justifyContent: 'center' }}>
+        {/* Action CTAs with reduced spacing (marginTop: 1.75rem) */}
+        <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', gap: '1rem', marginTop: '1.75rem', justifyContent: 'center' }}>
           <a 
             href="mailto:hello@example.com" 
-            className="btn prefooter-btn-primary"
+            className="btn face-cta"
             style={{ display: 'inline-flex', alignItems: 'center', gap: '0.45rem' }}
           >
             <span>Send your problem my way</span>

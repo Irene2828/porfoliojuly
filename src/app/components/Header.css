@@ -6,19 +6,24 @@
   --hero-motion-duration: 1.92s;
   --hero-scan-delay: calc(var(--hero-intro-delay) + var(--hero-motion-duration) - 1s);
   --hero-nav-frame-offset: clamp(0rem, calc((100vw - 70rem) * 0.15), 3rem);
-  position: absolute;
+  position: fixed;
   top: 0;
-  left: 50%;
-  transform: translateX(-50%);
-  width: 100%;
-  max-width: 1283px;
+  left: 0;
+  right: 0;
+  width: 100vw;
+  background-color: #000000 !important; /* solid black background */
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
   display: flex;
   justify-content: space-between;
   align-items: center;
   height: 3.5rem;
-  padding: 0 var(--space-md);
-  z-index: 100;
-  pointer-events: none;
+  padding: 0 max(1.5rem, calc((100vw - 1283px) / 2 + 1.5rem));
+  box-sizing: border-box;
+  z-index: 1000;
+  pointer-events: auto;
+  opacity: 0;
+  animation: headerReveal 1s ease calc(var(--hero-scan-delay) + 1.38s) forwards;
 }
 
 /* Left side on Desktop: Social Icons */
@@ -36,7 +41,7 @@
   font-size: 0.75rem;
   font-weight: 500;
   letter-spacing: 0.08em;
-  color: #5a9ad4 !important;
+  color: #ffffff !important;
   text-decoration: none;
   display: inline-flex;
   align-items: center;
@@ -70,19 +75,38 @@
   font-weight: 500 !important;
   text-transform: uppercase !important;
   letter-spacing: 0.22em !important;
-  color: #111111 !important;
+  color: rgba(255, 255, 255, 0.9) !important;
   text-decoration: none;
   position: relative;
-  overflow: hidden;
+  overflow: visible !important;
   padding: 0.2rem 0.15rem 0.2rem 0.75rem;
   line-height: 1.3;
   transition: color 0.2s ease;
   pointer-events: auto;
 }
 
+.nav-link::after,
+.header-nav-desktop .nav-link::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0.75rem;
+  right: 0.15rem;
+  height: 1px;
+  background-color: rgba(255, 255, 255, 0.85);
+  transform: scaleX(0);
+  transform-origin: bottom left;
+  transition: transform 0.25s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
 .nav-link:hover,
 .header-nav-desktop .nav-link:hover {
-  color: #008b8b !important;
+  color: #ffffff !important;
+}
+
+.nav-link:hover::after,
+.header-nav-desktop .nav-link:hover::after {
+  transform: scaleX(1);
 }
 
 .hamburger-btn {
@@ -101,12 +125,12 @@
 .hamburger-bar {
   width: 20px;
   height: 1.5px;
-  background-color: #111111;
+  background-color: #ffffff;
   transition: transform 0.25s ease, opacity 0.25s ease;
 }
 
 .hamburger-btn:hover .hamburger-bar {
-  background-color: #008b8b;
+  background-color: #5a9ad4;
 }
 
 .hamburger-btn.open .hamburger-bar:nth-child(1) {
@@ -119,6 +143,60 @@
 
 .hamburger-btn.open .hamburger-bar:nth-child(3) {
   transform: translateY(-5.5px) rotate(-45deg);
+}
+
+/* Header Callback Button (Desktop Right Side) */
+.header-callback-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.55rem;
+  background: rgba(255, 255, 255, 0.1);
+  border: 1px solid rgba(255, 255, 255, 0.35);
+  color: #ffffff !important;
+  font-family: 'JetBrains Mono', Menlo, monospace !important;
+  font-size: 10px !important;
+  font-weight: 600 !important;
+  letter-spacing: 0.16em !important;
+  text-transform: uppercase !important;
+  padding: 0.5rem 1rem;
+  border-radius: 40px;
+  text-decoration: none !important;
+  transition: background-color 0.25s ease, border-color 0.25s ease, color 0.25s ease, transform 0.2s ease;
+  pointer-events: auto;
+  margin-left: 0.5rem;
+}
+
+.header-callback-btn .callback-dot {
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background-color: #5a9ad4;
+  box-shadow: none;
+  animation: liveDotPulse 2s infinite ease-in-out;
+  transition: opacity 0.2s ease, transform 0.2s ease, background-color 0.2s ease;
+}
+
+.header-callback-btn .callback-phone-icon {
+  margin-left: 0.1rem;
+  color: #ffffff;
+  transition: transform 0.25s ease, color 0.25s ease;
+}
+
+.header-callback-btn:hover {
+  background: #ffffff !important;
+  color: #121212 !important;
+  border-color: #ffffff !important;
+}
+
+.header-callback-btn:hover .callback-dot {
+  background-color: #121212;
+  animation: none;
+  opacity: 1;
+}
+
+.header-callback-btn:hover .callback-phone-icon {
+  color: #121212;
+  transform: scale(1.1);
 }
 
 /* Hide mobile header elements on Desktop */
@@ -265,12 +343,12 @@
     font-weight: 600 !important;
     text-transform: uppercase !important;
     letter-spacing: 0.18em !important;
-    color: #111111 !important;
+    color: rgba(255, 255, 255, 0.9) !important;
     text-decoration: none;
     padding: 0.2rem 0;
   }
 
   .mobile-featured-link:hover {
-    color: #008b8b !important;
+    color: #5a9ad4 !important;
   }
 }

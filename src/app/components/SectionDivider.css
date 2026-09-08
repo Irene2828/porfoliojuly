@@ -297,6 +297,26 @@
   -webkit-font-smoothing: antialiased;
 }
 
+/* 15% larger title & subline with text stroke & 50% reduced bottom padding in zoomed-in modal view */
+.page-section-divider.modal-view .section-divider-tag-row {
+  padding-bottom: 0.75rem !important; /* 50% cut in spacing between subline and visual */
+}
+
+.page-section-divider.modal-view .section-divider-tag-text {
+  font-size: clamp(30px, 3.7vw, 32px) !important;
+  letter-spacing: 0.04em !important; /* better letter spacing */
+  -webkit-text-stroke: 0.4px #121212 !important;
+  text-stroke: 0.4px #121212 !important;
+}
+
+.page-section-divider.modal-view .section-divider-subline {
+  font-size: clamp(1.2rem, 1.65vw, 1.4rem) !important;
+  font-weight: 500 !important; /* one touch bolder */
+  margin-bottom: 0.5rem !important;
+  -webkit-text-stroke: 0.35px rgba(18, 18, 18, 0.8) !important;
+  text-stroke: 0.35px rgba(18, 18, 18, 0.8) !important;
+}
+
 .section-divider-live-link {
   font-family: var(--font-sans);
   font-size: clamp(0.7rem, 0.9vw, 0.8rem);

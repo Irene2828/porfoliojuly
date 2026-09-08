@@ -180,7 +180,7 @@
   box-shadow: none;
 }
 
-/* 50% width/height offset sharp sky blue shadow on bottom-right */
+/* 50% width/height offset sharp shadow on bottom-right */
 .hero-name-group::before {
   content: '';
   position: absolute;
@@ -188,13 +188,13 @@
   right: -10px;
   width: 50%;
   height: 50%;
-  background-color: #b8d9f7 !important; /* hero right side sky blue */
+  background-color: #121212 !important; /* crisp black shadow offset */
   z-index: -1;
   transform: translateZ(-1px); /* forces the shadow layer behind the parent's beige background */
   pointer-events: none;
 }
 
-/* 50% width/height offset sharp sky blue shadow on top-left */
+/* 50% width/height offset sharp shadow on top-left */
 .hero-name-group::after {
   content: '';
   position: absolute;
@@ -202,7 +202,7 @@
   left: -10px;
   width: 50%;
   height: 50%;
-  background-color: #b8d9f7 !important; /* hero right side sky blue */
+  background-color: #121212 !important; /* crisp black shadow offset */
   z-index: -1;
   transform: translateZ(-1px); /* forces the shadow layer behind the parent's beige background */
   pointer-events: none;
@@ -299,8 +299,8 @@
   margin: 0;
   background: none;
   -webkit-background-clip: initial;
-  -webkit-text-fill-color: #5a9ad4 !important;
-  color: #5a9ad4 !important;
+  -webkit-text-fill-color: #4b85bb !important;
+  color: #4b85bb !important;
   text-transform: none;
   letter-spacing: -0.01em !important;
   font-weight: 400 !important;
@@ -437,13 +437,13 @@
 
 .hero-ctas-outside .btn-primary-outline {
   font-family: var(--font-sans), Inter, sans-serif !important;
-  font-size: 0.81rem !important;
+  font-size: 0.73rem !important;
   font-weight: 700 !important;
   text-transform: uppercase !important;
   letter-spacing: 0.08em !important;
   justify-content: center;
-  height: 3.48rem !important;
-  padding: 0 2rem !important;
+  height: 3.13rem !important;
+  padding: 0 1.8rem !important;
   background: #008b8b !important;
   color: #ffffff !important;
   border: 1px solid #008b8b !important;
@@ -464,14 +464,14 @@
 .hero-ctas-outside .btn-secondary-stacked {
   display: inline-flex;
   font-family: 'JetBrains Mono', Menlo, monospace !important;
-  font-size: 12px !important;
+  font-size: 10.8px !important;
   font-weight: 400 !important;
   text-transform: uppercase !important;
   letter-spacing: 0.18em !important;
   background: transparent !important;
   border: 0 !important;
   color: #cccccc !important;
-  padding: 0.5rem !important;
+  padding: 0.45rem !important;
   height: auto !important;
   box-shadow: none !important;
   align-self: auto;
@@ -1303,7 +1303,7 @@
 }
 
 .hero-image-tagline-stacked .tagline-title {
-  color: #121212;
+  color: #4b85bb;
   font-weight: 500;
 }
 

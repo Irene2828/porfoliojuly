@@ -15,7 +15,7 @@ export default function ProcessSection() {
       title: 'First Draft',
       desc: 'A fast, working build — not polished, but real enough to react to and easy to build on.', // Sketch / Wireframe icon
       icon: (
-        <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#4a90e2" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+        <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#5a9ad4" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
           <path d="M17 3a2.828 2.828 0 1 1 4 4L7.5 20.5 2 22l1.5-5.5L17 3z"></path>
           <path d="M15 5l4 4"></path>
         </svg>
@@ -27,7 +27,7 @@ export default function ProcessSection() {
       desc: 'We test it where it matters — internally if it\'s a team tool, with real users if it\'s client-facing — and refine based on what we find.',
       // Loop / Magnifying glass icon
       icon: (
-        <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#4a90e2" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+        <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#5a9ad4" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
           <circle cx="11" cy="11" r="8"></circle>
           <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
         </svg>
@@ -39,7 +39,7 @@ export default function ProcessSection() {
       desc: 'Where it lives and how it\'s maintained depends on the project. We figure that out together, based on what actually fits.',
       // Rocket icon
       icon: (
-        <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#4a90e2" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+        <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#5a9ad4" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
           <path d="M4.5 16.5c-1.5 1.26-2 5-2 5s3.74-.5 5-2c.71-.71.19-1.81-.47-2.47l-.06-.06c-.66-.66-1.76-1.18-2.47-.47z"></path>
           <path d="M12 15l-3-3m0 0l3-3m-3 3h12M15 4.5a14.5 14.5 0 0 1 5 5 14.5 14.5 0 0 1-5 5M12 21l-3-3"></path>
           <path d="M4.5 16.5L9 12M15 4.5L12 9"></path>
@@ -54,51 +54,45 @@ export default function ProcessSection() {
       id="process" 
       style={{ 
         backgroundColor: '#d0e8fc', // Sky blue background matching hero right side
-        padding: '5.5rem 0',
+        padding: '0 0 5.5rem 0',
         margin: '3rem 0 2rem 0',
         width: '100vw',
         marginLeft: 'calc(-50vw + 50%)',
         marginRight: 'calc(-50vw + 50%)',
         position: 'relative',
-        overflow: 'hidden'
+        overflow: 'hidden',
+        borderBottom: '1px solid #121212'
       }}
     >
-
-
-      {/* Geometric Decorative Background Layer (on top of glass overlay for crisp visibility) */}
+      {/* Top 1/3 Black Background Overlay & Centered Intro */}
       <div 
         style={{
-          position: 'absolute',
-          inset: 0,
-          pointerEvents: 'none',
-          opacity: 0.65,
-          zIndex: 2
+          width: '100%',
+          backgroundColor: '#121212',
+          zIndex: 1,
+          display: 'flex',
+          flexDirection: 'column',
+          alignItems: 'center',
+          justifyContent: 'center',
+          padding: '4rem 1.5rem',
+          position: 'relative'
         }}
       >
-        <div style={{ position: 'absolute', width: '180px', height: '180px', border: '1.5px dashed rgba(34, 34, 34, 0.25)', top: '10%', left: '4%' }} />
-        <div style={{ position: 'absolute', width: '90px', height: '90px', border: '1.5px solid rgba(34, 34, 34, 0.35)', top: '18%', left: '12%' }} />
-        <div style={{ position: 'absolute', width: '240px', height: '130px', border: '1.5px dashed rgba(34, 34, 34, 0.25)', top: '-5%', right: '8%' }} />
-        <div style={{ position: 'absolute', width: '110px', height: '110px', border: '1.5px solid rgba(34, 34, 34, 0.35)', bottom: '12%', right: '6%' }} />
-        <div style={{ position: 'absolute', width: '70px', height: '70px', border: '1.5px dashed rgba(34, 34, 34, 0.25)', bottom: '15%', left: '15%' }} />
-        <div style={{ position: 'absolute', width: '140px', height: '90px', border: '1.5px solid rgba(34, 34, 34, 0.3)', bottom: '5%', right: '22%' }} />
-      </div>
-
-      <div className="container" style={{ position: 'relative', zIndex: 3 }}>
         {/* Short decor line above section heading */}
         <div style={{ 
           width: '60px', 
           height: '1px', 
-          backgroundColor: '#4a90e2', 
-          margin: '0 auto 2.5rem auto', 
+          backgroundColor: '#4b85bb', 
+          margin: '0 auto 1.5rem auto', 
           opacity: 0.8 
         }} />
 
         {/* Intro Section Heading */}
-        <div style={{ marginBottom: '3rem', textAlign: 'center' }}>
+        <div style={{ textAlign: 'center' }}>
           <h2 style={{ 
             fontFamily: "'Times New Roman', Times, Georgia, serif",
             fontSize: 'clamp(24px, 4vw, 38px)', 
-            color: '#4a90e2', 
+            color: '#ffffff', 
             fontWeight: 500,
             lineHeight: 1.25,
             letterSpacing: '-0.01em',
@@ -111,9 +105,9 @@ export default function ProcessSection() {
           <p style={{
             fontFamily: "var(--font-sans), Inter, sans-serif",
             fontSize: '1.175rem',
-            fontWeight: 500,
+            fontWeight: 400,
             lineHeight: 1.6,
-            color: '#2a3036',
+            color: '#d0d7de',
             maxWidth: '640px',
             margin: '0 auto',
             textAlign: 'center'
@@ -121,6 +115,25 @@ export default function ProcessSection() {
             Every project follows a simple 3-step sequence from concept to launch:
           </p>
         </div>
+      </div>
+
+      {/* Geometric Decorative Background Layer */}
+      <div 
+        style={{
+          position: 'absolute',
+          inset: 0,
+          pointerEvents: 'none',
+          opacity: 0.65,
+          zIndex: 2
+        }}
+      >
+        <div style={{ position: 'absolute', width: '180px', height: '180px', border: '1.5px dashed rgba(255, 255, 255, 0.15)', top: '5%', left: '4%' }} />
+        <div style={{ position: 'absolute', width: '90px', height: '90px', border: '1.5px solid rgba(255, 255, 255, 0.2)', top: '12%', left: '12%' }} />
+        <div style={{ position: 'absolute', width: '240px', height: '130px', border: '1.5px dashed rgba(255, 255, 255, 0.15)', top: '-5%', right: '8%' }} />
+        <div style={{ position: 'absolute', width: '70px', height: '70px', border: '1.5px dashed rgba(34, 34, 34, 0.25)', bottom: '15%', left: '15%' }} />
+      </div>
+
+      <div className="container" style={{ position: 'relative', zIndex: 3, paddingTop: '3.5rem' }}>
 
         {/* Vertical Creative Process Flow */}
         <div style={{ 
@@ -192,7 +205,7 @@ export default function ProcessSection() {
                       fontFamily: "'Times New Roman', Times, Georgia, serif",
                       fontSize: '1.55rem', 
                       color: '#2a3036',
-                      fontWeight: 500,
+                      fontWeight: 600,
                       margin: 0,
                       lineHeight: 1.2
                     }}>
@@ -205,7 +218,7 @@ export default function ProcessSection() {
                     fontSize: '1rem',
                     lineHeight: 1.65,
                     color: '#2a3036',
-                    fontWeight: 400,
+                    fontWeight: 300,
                     margin: 0,
                     maxWidth: '560px'
                   }}>
