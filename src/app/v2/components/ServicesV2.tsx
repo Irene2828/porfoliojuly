@@ -83,13 +83,16 @@ export default function ServicesV2() {
         </div>
 
         {/* Three Separate Service Cards Grid */}
-        <div style={{ 
-          display: 'grid', 
-          gridTemplateColumns: 'repeat(auto-fit, minmax(280px, 1fr))', 
-          gap: '2rem', 
-          width: '100%',
-          marginBottom: '3.5rem'
-        }}>
+        <div 
+          className="mobile-horizontal-scroll"
+          style={{ 
+            display: 'grid', 
+            gridTemplateColumns: 'repeat(auto-fit, minmax(280px, 1fr))', 
+            gap: '2rem', 
+            width: '100%',
+            marginBottom: '3.5rem'
+          }}
+        >
           {cards.map((card, i) => (
             <motion.div 
               key={card.title}

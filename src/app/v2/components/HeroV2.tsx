@@ -18,23 +18,11 @@ export default function HeroV2() {
 
   return (
     <section className="section hero-section" id="home">
-      {/* Right Side Background (60% width) with clean sharp vertical border line */}
-      <div 
-        style={{
-          position: 'absolute',
-          top: '-3.5rem',
-          bottom: 0,
-          right: 0,
-          width: '60%',
-          background: '#d0e8fc',
-          borderLeft: '1px solid rgba(0, 0, 0, 0.12)',
-          zIndex: 1,
-          pointerEvents: 'none'
-        }}
-      />
+      {/* Background Split */}
+      <div className="hero-bg-split" />
       <div className="container hero-container" style={{ position: 'relative' }}>
         {/* Geometric support layer (z-index 1, under content z-10) */}
-        <div className="hero-decor-layer" style={{ position: 'absolute', inset: 0, zIndex: 1, pointerEvents: 'none', opacity: 0.7 }}>
+        <div className="hero-decor-layer hide-on-mobile" style={{ position: 'absolute', inset: 0, zIndex: 1, pointerEvents: 'none', opacity: 0.7 }}>
           {/* Top-left decor squares next to headline frame */}
           <div style={{ position: 'absolute', width: '140px', height: '90px', border: '1px dashed rgba(34, 34, 34, 0.2)', top: '-3%', left: '-1%' }} />
           <div style={{ position: 'absolute', width: '65px', height: '65px', border: '1.5px solid #e8f4f8', top: '-5%', left: '14%' }} />
@@ -67,12 +55,12 @@ export default function HeroV2() {
                 className="hero-text"
                 style={{ transform: 'translateY(-0.4rem)' }}
               >
-                <h1 className="title-serif hero-statement" style={{ fontSize: 'clamp(51px, 6.2vw, 55px)', color: '#4b85bb', fontWeight: 600, fontStyle: 'normal', marginTop: '0.6rem', textTransform: 'none', letterSpacing: '-0.025em' }}>
+                <h1 className="title-serif hero-statement" style={{ fontSize: 'clamp(48px, 5.9vw, 52px)', color: '#4b85bb', fontWeight: 500, fontStyle: 'normal', marginTop: '0.6rem', textTransform: 'none', letterSpacing: '-0.04em' }}>
                   Looking for a <span className="premium-hover"><span className="word-custom" style={{ fontStyle: 'italic' }}>custom</span> website</span><br />
                   or an <span className="premium-hover"><span className="word-internal" style={{ fontStyle: 'italic' }}>internal</span> AI tool</span>?
                 </h1>
                 <p className="hero-frame-paragraph" style={{ marginTop: '1.54rem', fontSize: '1.05rem', lineHeight: '1.75', color: '#444444', maxWidth: '680px' }}>
-                  <strong>I design and build custom digital products end-to-end</strong> &mdash; <em>from figuring out what kind of solution your business needs to shipping the product that solves its problem.</em>
+                  <strong>I design and build custom digital products end-to-end</strong> &mdash; from figuring out what kind of solution your business needs to shipping the product that solves its problem.
                 </p>
               </motion.div>
               <motion.div
@@ -157,17 +145,6 @@ export default function HeroV2() {
       </div>
       <div className="hero-bottom-hairline-line"></div>
       
-      {/* Sticky Bottom-Left "Request a Callback" Floating Button */}
-      <a 
-        href="mailto:hello@example.com?subject=Request%20a%20Callback" 
-        className="sticky-callback-btn"
-      >
-        <span className="callback-dot"></span>
-        <span>REQUEST A CALLBACK</span>
-        <svg className="callback-phone-icon" width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round">
-          <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path>
-        </svg>
-      </a>
     </section>
   );
 }

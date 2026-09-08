@@ -82,7 +82,7 @@ export default function EditorialStatement() {
           fontFamily: "var(--font-sans), Inter, sans-serif",
           fontSize: '1.175rem',
           lineHeight: 1.6,
-          color: '#2a3036',
+          color: 'rgba(42, 48, 54, 0.8)',
           maxWidth: '640px',
           margin: '0 auto',
           textAlign: 'center',

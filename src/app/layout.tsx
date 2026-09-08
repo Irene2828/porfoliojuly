@@ -18,11 +18,15 @@ export const viewport = {
   maximumScale: 5,
 };
 
+import { VercelToolbar } from '@vercel/toolbar/next';
+
 export default function RootLayout({
   children,
 }: {
   children: React.ReactNode;
 }) {
+  const shouldInjectToolbar = process.env.NODE_ENV === 'development' || process.env.VERCEL_ENV === 'preview';
+
   return (
     <html lang="en">
       <head>
@@ -32,7 +36,10 @@ export default function RootLayout({
           rel="stylesheet"
         />
       </head>
-      <body>{children}</body>
+      <body>
+        {children}
+        {shouldInjectToolbar && <VercelToolbar />}
+      </body>
     </html>
   );
 }

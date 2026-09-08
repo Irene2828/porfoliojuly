@@ -326,11 +326,23 @@ h1, h2, h3, h4, h5, h6 {
   border-color: #363636 !important;
 }
 
-/* V2 Specific Hero H1 Override -> Increased by 10% */
+/* V2 Specific Hero H1 Override */
 @media (min-width: 901px) {
   .v2-theme .hero-statement,
   .v2-theme .hero-name-group .hero-text h1 {
-    font-size: clamp(51px, 6.2vw, 55px) !important;
+    font-size: clamp(48px, 5.9vw, 52px) !important;
+    font-weight: 500 !important;
+    letter-spacing: -0.04em !important;
+  }
+}
+
+@media (max-width: 900px) {
+  .v2-theme .hero-statement,
+  .v2-theme .hero-name-group .hero-text h1 {
+    font-size: clamp(41px, 5.9vw, 45px) !important;
+    font-weight: 600 !important;
+    letter-spacing: -0.035em !important;
+    line-height: 1.1 !important;
   }
 }
 
@@ -571,5 +583,42 @@ h1, h2, h3, h4, h5, h6 {
 
 .v2-theme .premium-hover:hover .word-internal {
   animation: internalPulse 0.65s ease-in-out 1 forwards;
+}
+
+.process-divider {
+  height: 2.5px !important;
+}
+
+/* Mobile Horizontal Scroll Utility */
+@media (max-width: 900px) {
+  .mobile-horizontal-scroll {
+    display: flex !important;
+    flex-wrap: nowrap !important;
+    overflow-x: auto !important;
+    scroll-snap-type: x mandatory !important;
+    -webkit-overflow-scrolling: touch;
+    scroll-padding-left: 1rem;
+    padding-bottom: 1.5rem !important;
+    margin-left: -1rem !important;
+    margin-right: -1rem !important;
+    padding-left: 1rem !important;
+    padding-right: 1rem !important;
+    scrollbar-width: none;
+    grid-template-columns: none !important;
+    gap: 1.25rem !important;
+  }
+  .mobile-horizontal-scroll::-webkit-scrollbar {
+    display: none;
+  }
+  
+  .mobile-horizontal-scroll > * {
+    flex: 0 0 82vw !important;
+    scroll-snap-align: center !important;
+    min-width: 82vw !important;
+  }
+
+  .hide-on-mobile {
+    display: none !important;
+  }
 }
 

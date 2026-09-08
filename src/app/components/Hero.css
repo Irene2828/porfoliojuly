@@ -32,6 +32,18 @@
   display: none !important;
 }
 
+.hero-bg-split {
+  position: absolute;
+  top: -3.5rem;
+  bottom: 0;
+  right: 0;
+  width: 60%;
+  background: #d0e8fc;
+  border-left: 1px solid rgba(0, 0, 0, 0.12);
+  z-index: 1;
+  pointer-events: none;
+}
+
 @keyframes heroBgFadeIn {
   0% {
     opacity: 0;
@@ -662,7 +674,7 @@
   /* ── Mobile: centered single-column, floating converging animation ── */
   .v2-theme .hero-section,
   .hero-section {
-    padding-top: 4.85rem !important;
+    padding-top: 2.4rem !important;
     padding-bottom: 5rem !important;
     padding-inline: 0 !important;
     min-height: auto !important;
@@ -672,11 +684,22 @@
     flex-direction: column !important;
     justify-content: flex-start !important;
     align-items: center !important;
-    background-color: #faf9f6 !important; /* light beige background for hero section */
+    background-color: #ffffff !important; /* white background for hero section */
     background-image: none !important;
     overflow: visible !important;
     position: relative !important;
     z-index: 10 !important;
+  }
+
+  .hero-bg-split {
+    top: 0 !important;
+    bottom: 50% !important;
+    height: 50% !important;
+    left: 0 !important;
+    right: 0 !important;
+    width: 100% !important;
+    border-left: none !important;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.12) !important;
   }
 
   /* Hide ONLY headline decor squares on mobile (keep decor frame behind portrait photo) */

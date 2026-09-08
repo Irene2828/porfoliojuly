@@ -65,9 +65,10 @@ export default function ProcessSection() {
     >
       {/* Top Edge-to-Edge 5px Black Divider Bar */}
       <div 
+        className="process-divider"
         style={{
           width: '100%',
-          height: '5px',
+          height: '5px', /* default desktop height, overridden by class on mobile */
           backgroundColor: '#121212',
           position: 'relative',
           zIndex: 10
@@ -76,6 +77,7 @@ export default function ProcessSection() {
 
       {/* Geometric Decorative Background Layer */}
       <div 
+        className="hide-on-mobile"
         style={{
           position: 'absolute',
           inset: 0,
@@ -96,12 +98,12 @@ export default function ProcessSection() {
           width: '60px', 
           height: '1px', 
           backgroundColor: '#4b85bb', 
-          margin: '0 auto 2.5rem auto', 
+          margin: '0 0 2.5rem 0', 
           opacity: 0.8 
         }} />
 
         {/* Intro Section Heading (On Blue Background) */}
-        <div style={{ marginBottom: '3rem', textAlign: 'center' }}>
+        <div style={{ marginBottom: '3rem', textAlign: 'left' }}>
           <h2 style={{ 
             fontFamily: "'Times New Roman', Times, Georgia, serif",
             fontSize: 'clamp(24px, 4vw, 38px)', 
@@ -109,9 +111,9 @@ export default function ProcessSection() {
             fontWeight: 500,
             lineHeight: 1.25,
             letterSpacing: '-0.01em',
-            textAlign: 'center',
+            textAlign: 'left',
             width: '100%',
-            margin: '0 auto 0.75rem auto'
+            margin: '0 0 0.75rem 0'
           }}>
             How the Process Looks
           </h2>
@@ -122,8 +124,8 @@ export default function ProcessSection() {
             lineHeight: 1.6,
             color: '#2a3036',
             maxWidth: '640px',
-            margin: '0 auto',
-            textAlign: 'center'
+            margin: '0',
+            textAlign: 'left'
           }}>
             Every project follows a simple 3-step sequence from concept to launch:
           </p>
@@ -227,12 +229,13 @@ export default function ProcessSection() {
 
       {/* Bottom Edge-to-Edge 5px Black Divider Bar (Flush at bottom) */}
       <div 
+        className="process-divider"
         style={{
           position: 'absolute',
           bottom: 0,
           left: 0,
           width: '100%',
-          height: '5px',
+          height: '5px', /* default desktop height, overridden by class on mobile */
           backgroundColor: '#121212',
           zIndex: 10
         }}
