@@ -67,9 +67,9 @@ export default function HeroV2() {
                 className="hero-text"
                 style={{ transform: 'translateY(-0.4rem)' }}
               >
-                <h1 className="title-serif hero-statement" style={{ fontSize: 'clamp(51px, 6.2vw, 55px)', color: '#4b85bb', fontWeight: 600, fontStyle: 'italic', marginTop: '0.6rem', textTransform: 'none', letterSpacing: '-0.025em' }}>
-                  Looking for a <span className="premium-hover"><span className="word-custom">custom</span> website</span><br />
-                  or an <span className="premium-hover"><span className="word-internal">internal</span> AI tool</span>?
+                <h1 className="title-serif hero-statement" style={{ fontSize: 'clamp(51px, 6.2vw, 55px)', color: '#4b85bb', fontWeight: 600, fontStyle: 'normal', marginTop: '0.6rem', textTransform: 'none', letterSpacing: '-0.025em' }}>
+                  Looking for a <span className="premium-hover"><span className="word-custom" style={{ fontStyle: 'italic' }}>custom</span> website</span><br />
+                  or an <span className="premium-hover"><span className="word-internal" style={{ fontStyle: 'italic' }}>internal</span> AI tool</span>?
                 </h1>
                 <p className="hero-frame-paragraph" style={{ marginTop: '1.54rem', fontSize: '1.05rem', lineHeight: '1.75', color: '#444444', maxWidth: '680px' }}>
                   <strong>I design and build custom digital products end-to-end</strong> &mdash; <em>from figuring out what kind of solution your business needs to shipping the product that solves its problem.</em>
@@ -81,7 +81,7 @@ export default function HeroV2() {
                 transition={{ duration: 0.65, delay: hasAnimated ? 0 : 0.55, ease: [0.16, 1, 0.3, 1] }}
                 className="hero-ctas hero-ctas-outside"
               >
-                <a href="#contact" className="btn btn-primary btn-primary-outline" style={{ display: 'inline-flex', alignItems: 'center', gap: '0.45rem', border: '0.5px solid rgba(75, 133, 187, 0.45)' }}>
+                <a href="#contact" className="btn btn-primary btn-primary-outline" style={{ display: 'inline-flex', alignItems: 'center', gap: '0.45rem' }}>
                   <span>BOOK MY SERVICES</span>
                   <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round" style={{ transform: 'translateY(-0.5px)' }}>
                     <line x1="7" y1="17" x2="17" y2="7"></line>
