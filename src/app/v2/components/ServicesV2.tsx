@@ -40,19 +40,26 @@ export default function ServicesV2() {
       id="expertise" 
       style={{ 
         backgroundColor: '#ffffff',
-        padding: '6rem 0 0 0',
-        margin: '4rem 0 0 0'
+        padding: '0 0 0 0',
+        margin: '1rem 0 0 0'
       }}
     >
       <div className="container">
-        {/* Short decor line between Hero and Services */}
-        <div style={{ 
-          width: '60px', 
-          height: '1px', 
-          backgroundColor: '#0b0c10', 
-          margin: '0 auto 2.5rem auto', 
-          opacity: 0.6 
-        }} />
+      {/* Edge-to-edge divider 88px tall */}
+      <div 
+        style={{ 
+          width: '100vw', 
+          marginLeft: 'calc(-50vw + 50%)', 
+          marginRight: 'calc(-50vw + 50%)', 
+          height: '88px', 
+          display: 'flex', 
+          alignItems: 'center', 
+          justifyContent: 'center',
+          position: 'relative'
+        }}
+      >
+        <div style={{ width: '100%', height: '1px', backgroundColor: 'rgba(0, 0, 0, 0.12)' }} />
+      </div>
 
         {/* Intro Section Heading */}
         <div style={{ marginBottom: '1.4rem', textAlign: 'center' }}>
