@@ -37,41 +37,14 @@ export default async function V2Page() {
         <Header />
         <HeroV2 />
 
-        {/* Edge-to-Edge Divider 1 above Services (5px height, pale blue 30% opacity) */}
-        <div
-          style={{
-            width: '100vw',
-            marginLeft: 'calc(-50vw + 50%)',
-            marginRight: 'calc(-50vw + 50%)',
-            height: '5px',
-            backgroundColor: 'rgba(75, 133, 187, 0.3)',
-            margin: '6rem 0 0 0',
-            position: 'relative',
-            zIndex: 10
-          }}
-        />
         <ServicesV2 />
-
-        {/* Edge-to-Edge Divider 2 above Projects (5px height, pale blue 30% opacity) */}
-        <div
-          style={{
-            width: '100vw',
-            marginLeft: 'calc(-50vw + 50%)',
-            marginRight: 'calc(-50vw + 50%)',
-            height: '5px',
-            backgroundColor: 'rgba(75, 133, 187, 0.3)',
-            margin: '6rem 0 2.5rem 0',
-            position: 'relative',
-            zIndex: 10
-          }}
-        />
 
         {/* Short decor line directly above Recent Projects heading */}
         <div style={{ 
           width: '60px', 
           height: '1px', 
           backgroundColor: '#0b0c10', 
-          margin: '0 auto 2.5rem auto', 
+          margin: '6rem auto 2.5rem auto', 
           opacity: 0.6 
         }} />
 
