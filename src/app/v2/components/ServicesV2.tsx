@@ -41,10 +41,10 @@ export default function ServicesV2() {
       style={{ 
         backgroundColor: '#ffffff',
         padding: '0 0 0 0',
-        margin: '1rem 0 0 0'
+        margin: '0',
+        position: 'relative'
       }}
     >
-      <div className="container">
       {/* Edge-to-edge divider 88px tall */}
       <div 
         style={{ 
@@ -60,6 +60,8 @@ export default function ServicesV2() {
       >
         <div style={{ width: '100%', height: '1px', backgroundColor: 'rgba(0, 0, 0, 0.12)' }} />
       </div>
+
+      <div className="container">
 
         {/* Intro Section Heading */}
         <div style={{ marginBottom: '1.4rem', textAlign: 'center' }}>
