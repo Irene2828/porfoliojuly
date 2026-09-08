@@ -64,35 +64,49 @@ export default function ProcessSection() {
         borderBottom: '1px solid #121212'
       }}
     >
-      {/* Top 1/3 Black Background Overlay & Centered Intro */}
+      {/* Top Edge-to-Edge 5px Black Divider Bar */}
       <div 
         style={{
           width: '100%',
+          height: '5px',
           backgroundColor: '#121212',
-          zIndex: 1,
-          display: 'flex',
-          flexDirection: 'column',
-          alignItems: 'center',
-          justifyContent: 'center',
-          padding: '4rem 1.5rem',
-          position: 'relative'
+          position: 'relative',
+          zIndex: 10
+        }}
+      />
+
+      {/* Geometric Decorative Background Layer */}
+      <div 
+        style={{
+          position: 'absolute',
+          inset: 0,
+          pointerEvents: 'none',
+          opacity: 0.65,
+          zIndex: 2
         }}
       >
+        <div style={{ position: 'absolute', width: '180px', height: '180px', border: '1.5px dashed rgba(34, 34, 34, 0.25)', top: '10%', left: '4%' }} />
+        <div style={{ position: 'absolute', width: '90px', height: '90px', border: '1.5px solid rgba(34, 34, 34, 0.35)', top: '18%', left: '12%' }} />
+        <div style={{ position: 'absolute', width: '240px', height: '130px', border: '1.5px dashed rgba(34, 34, 34, 0.25)', top: '-5%', right: '8%' }} />
+        <div style={{ position: 'absolute', width: '70px', height: '70px', border: '1.5px dashed rgba(34, 34, 34, 0.25)', bottom: '15%', left: '15%' }} />
+      </div>
+
+      <div className="container" style={{ position: 'relative', zIndex: 3, paddingTop: '3.5rem' }}>
         {/* Short decor line above section heading */}
         <div style={{ 
           width: '60px', 
           height: '1px', 
           backgroundColor: '#4b85bb', 
-          margin: '0 auto 1.5rem auto', 
+          margin: '0 auto 2.5rem auto', 
           opacity: 0.8 
         }} />
 
-        {/* Intro Section Heading */}
-        <div style={{ textAlign: 'center' }}>
+        {/* Intro Section Heading (On Blue Background) */}
+        <div style={{ marginBottom: '3rem', textAlign: 'center' }}>
           <h2 style={{ 
             fontFamily: "'Times New Roman', Times, Georgia, serif",
             fontSize: 'clamp(24px, 4vw, 38px)', 
-            color: '#ffffff', 
+            color: '#4b85bb', 
             fontWeight: 500,
             lineHeight: 1.25,
             letterSpacing: '-0.01em',
@@ -105,9 +119,9 @@ export default function ProcessSection() {
           <p style={{
             fontFamily: "var(--font-sans), Inter, sans-serif",
             fontSize: '1.175rem',
-            fontWeight: 400,
+            fontWeight: 500,
             lineHeight: 1.6,
-            color: '#d0d7de',
+            color: '#2a3036',
             maxWidth: '640px',
             margin: '0 auto',
             textAlign: 'center'
@@ -115,25 +129,6 @@ export default function ProcessSection() {
             Every project follows a simple 3-step sequence from concept to launch:
           </p>
         </div>
-      </div>
-
-      {/* Geometric Decorative Background Layer */}
-      <div 
-        style={{
-          position: 'absolute',
-          inset: 0,
-          pointerEvents: 'none',
-          opacity: 0.65,
-          zIndex: 2
-        }}
-      >
-        <div style={{ position: 'absolute', width: '180px', height: '180px', border: '1.5px dashed rgba(255, 255, 255, 0.15)', top: '5%', left: '4%' }} />
-        <div style={{ position: 'absolute', width: '90px', height: '90px', border: '1.5px solid rgba(255, 255, 255, 0.2)', top: '12%', left: '12%' }} />
-        <div style={{ position: 'absolute', width: '240px', height: '130px', border: '1.5px dashed rgba(255, 255, 255, 0.15)', top: '-5%', right: '8%' }} />
-        <div style={{ position: 'absolute', width: '70px', height: '70px', border: '1.5px dashed rgba(34, 34, 34, 0.25)', bottom: '15%', left: '15%' }} />
-      </div>
-
-      <div className="container" style={{ position: 'relative', zIndex: 3, paddingTop: '3.5rem' }}>
 
         {/* Vertical Creative Process Flow */}
         <div style={{ 
