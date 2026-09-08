@@ -44,7 +44,7 @@ export default async function V2Page() {
           width: '60px', 
           height: '1px', 
           backgroundColor: '#0b0c10', 
-          margin: '6rem auto 2.5rem auto', 
+          margin: '12rem auto 2.5rem auto', 
           opacity: 0.6 
         }} />
 

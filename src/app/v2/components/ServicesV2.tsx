@@ -40,8 +40,8 @@ export default function ServicesV2() {
       id="expertise" 
       style={{ 
         backgroundColor: '#ffffff',
-        padding: '2rem 0 0 0',
-        margin: '1rem 0 0 0'
+        padding: '4rem 0 0 0',
+        margin: '8rem 0 0 0'
       }}
     >
       <div className="container">

@@ -54,14 +54,13 @@ export default function ProcessSection() {
       id="process" 
       style={{ 
         backgroundColor: '#d0e8fc', // Sky blue background matching hero right side
-        padding: '0 0 2.75rem 0',
+        padding: 0,
         margin: '3rem 0 2rem 0',
         width: '100vw',
         marginLeft: 'calc(-50vw + 50%)',
         marginRight: 'calc(-50vw + 50%)',
         position: 'relative',
-        overflow: 'hidden',
-        borderBottom: '1px solid #121212'
+        overflow: 'hidden'
       }}
     >
       {/* Top Edge-to-Edge 5px Black Divider Bar */}
@@ -225,8 +224,19 @@ export default function ProcessSection() {
           </div>
         </div>
       </div>
+
+      {/* Bottom Edge-to-Edge 5px Black Divider Bar (Flush at bottom) */}
+      <div 
+        style={{
+          position: 'absolute',
+          bottom: 0,
+          left: 0,
+          width: '100%',
+          height: '5px',
+          backgroundColor: '#121212',
+          zIndex: 10
+        }}
+      />
     </section>
   );
 }
-
-
