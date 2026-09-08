@@ -89,7 +89,7 @@ export default function HeroV2() {
                   </svg>
                 </a>
                 <a href="#process" className="btn btn-secondary btn-secondary-stacked" style={{ opacity: 0.85 }}>
-                  SEE HOW I DO IT <span className="arrow">↓</span>
+                  SEE WORK EXAMPLES <span className="arrow">↓</span>
                 </a>
               </motion.div>
             </div>

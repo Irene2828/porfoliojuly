@@ -347,7 +347,7 @@ h1, h2, h3, h4, h5, h6 {
   background: #b8d9f7 !important;
   color: #0b0c10 !important;
   -webkit-text-fill-color: #0b0c10 !important;
-  border: 1.5px solid #4b85bb !important;
+  border: none !important;
   border-radius: 0px !important;
   box-shadow: none !important;
   transform: scale(1) !important;
@@ -360,7 +360,7 @@ h1, h2, h3, h4, h5, h6 {
 .v2-theme .hero-ctas-outside .btn-primary-outline:hover,
 .v2-theme .face-cta:hover {
   background: #b8d9f7 !important;
-  border-color: #4b85bb !important;
+  border: none !important;
   color: #0b0c10 !important;
   -webkit-text-fill-color: #0b0c10 !important;
   box-shadow: none !important;
@@ -370,7 +370,7 @@ h1, h2, h3, h4, h5, h6 {
 .v2-theme .hero-ctas-outside .btn-secondary-stacked {
   font-family: 'JetBrains Mono', Menlo, monospace !important;
   font-size: 12.47px !important; /* +5% larger */
-  font-weight: 400 !important;
+  font-weight: 600 !important; /* one touch bolder */
   text-transform: uppercase !important;
   letter-spacing: 0.08em !important;
   background: transparent !important;

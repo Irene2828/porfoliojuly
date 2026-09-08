@@ -50,7 +50,7 @@ export default async function V2Page() {
 
         {/* Recent Projects Section Header */}
         <SectionDivider theme="light" label="Recent Projects" align="center" />
-        <div style={{ marginBottom: '8rem' }}>
+        <div style={{ marginBottom: '16rem' }}>
           <ProjectsV2 initialProjects={publishedProjects as any} />
         </div>
 

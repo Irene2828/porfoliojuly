@@ -90,7 +90,7 @@ export default function ProcessSection() {
         <div style={{ position: 'absolute', width: '70px', height: '70px', border: '1.5px dashed rgba(34, 34, 34, 0.25)', bottom: '15%', left: '15%' }} />
       </div>
 
-      <div className="container" style={{ position: 'relative', zIndex: 3, paddingTop: '3.5rem' }}>
+      <div className="container" style={{ position: 'relative', zIndex: 3, paddingTop: '3.5rem', paddingBottom: '7rem' }}>
         {/* Short decor line above section heading */}
         <div style={{ 
           width: '60px', 
