@@ -8,27 +8,15 @@ export default function Header() {
 
   return (
     <header className="premium-header">
-      {/* Left side (Desktop): Social links (Email, Phone, LinkedIn) */}
-      <div className="header-socials header-socials-desktop">
-        <a href="mailto:hello@example.com" className="social-link-icon" title="Email" aria-label="Email">
-          <svg width="19" height="19" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.2" strokeLinecap="round" strokeLinejoin="round">
-            <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path>
-            <polyline points="22,6 12,13 2,6"></polyline>
-          </svg>
-        </a>
-        <a href="tel:+1234567890" className="social-link-icon" title="Phone" aria-label="Phone">
-          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.4" strokeLinecap="round" strokeLinejoin="round">
-            <rect x="5" y="2" width="14" height="20" rx="2" ry="2"></rect>
-            <line x1="12" y1="18" x2="12.01" y2="18"></line>
-          </svg>
-        </a>
-        <a href="https://linkedin.com" target="_blank" rel="noopener noreferrer" className="social-link-icon" title="LinkedIn" aria-label="LinkedIn">
-          <svg width="19" height="19" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.2" strokeLinecap="round" strokeLinejoin="round">
-            <path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"></path>
-            <rect x="2" y="9" width="4" height="12"></rect>
-            <circle cx="4" cy="4" r="2"></circle>
-          </svg>
-        </a>
+      {/* Left side (Desktop): Name & Title in one line */}
+      <div className="header-socials header-socials-desktop" style={{ flexDirection: 'row', alignItems: 'center', gap: '0.6rem', whiteSpace: 'nowrap' }}>
+        <span style={{ fontFamily: 'Inter, sans-serif', fontSize: '0.75rem', fontWeight: 600, letterSpacing: '0.14em', color: '#111111', textTransform: 'uppercase' }}>
+          IRYNA SHEREMETA
+        </span>
+        <span style={{ color: '#888888', fontWeight: 400, fontSize: '0.75rem' }}>/</span>
+        <span style={{ fontFamily: 'Inter, sans-serif', fontSize: '0.65rem', fontWeight: 600, letterSpacing: '0.14em', color: '#b0b4bc', textTransform: 'uppercase' }}>
+          WEB &amp; AI PRODUCT BUILDER
+        </span>
       </div>
 
       {/* Right side (Desktop): Nav links */}
@@ -46,12 +34,6 @@ export default function Header() {
             <polyline points="22,6 12,13 2,6"></polyline>
           </svg>
         </a>
-        <a href="tel:+1234567890" className="social-link-icon-mobile" title="Phone" aria-label="Phone">
-          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#ffffff" strokeWidth="1.4" strokeLinecap="round" strokeLinejoin="round">
-            <rect x="5" y="2" width="14" height="20" rx="2" ry="2"></rect>
-            <line x1="12" y1="18" x2="12.01" y2="18"></line>
-          </svg>
-        </a>
         <a href="https://linkedin.com" target="_blank" rel="noopener noreferrer" className="social-link-icon-mobile" title="LinkedIn" aria-label="LinkedIn">
           <svg width="19" height="19" viewBox="0 0 24 24" fill="none" stroke="#ffffff" strokeWidth="1.4" strokeLinecap="round" strokeLinejoin="round">
             <path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"></path>
@@ -63,15 +45,8 @@ export default function Header() {
 
       <div className="mobile-header-right">
         <a href="#cases" className="mobile-featured-link">CASES</a>
-        <button 
-          className={`hamburger-btn ${isMenuOpen ? 'open' : ''}`}
-          onClick={() => setIsMenuOpen(!isMenuOpen)}
-          aria-label="Toggle mobile menu"
-        >
-          <span className="hamburger-bar"></span>
-          <span className="hamburger-bar"></span>
-          <span className="hamburger-bar"></span>
-        </button>
+        <span style={{ color: '#888888', fontWeight: 400, fontSize: '0.75rem', margin: '0 0.1rem' }}>/</span>
+        <a href="#about" className="mobile-featured-link">ABOUT</a>
       </div>
 
       {/* Drawer Overlay Menu */}

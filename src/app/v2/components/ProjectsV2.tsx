@@ -21,6 +21,79 @@ interface ProjectsV2Props {
 export default function ProjectsV2({ initialProjects = [] }: ProjectsV2Props) {
   const [selectedProjectId, setSelectedProjectId] = useState<string | null>(null);
 
+  const initialProjectsData = [
+    {
+      id: 'v2-1',
+      title: 'Ukraine Case 1',
+      slug: 'ukraine-case-1',
+      subline: 'Custom platform for Ukraine relief efforts',
+      annotations: [
+        { markerNumber: 1, title: 'AI Qualification', text: 'Engages inbound lead inquiries & volunteer requests automatically.' },
+        { markerNumber: 2, title: 'Instant Canvas Sync', text: 'Generates personalized localized campaign graphics in seconds.' },
+        { markerNumber: 3, title: 'CRM Integration', text: 'Syncs data directly with Hubspot & internal tracking tools.' }
+      ],
+      stats: [
+        { chip: 'Problem', text: 'Manual campaign delays', stat: '4.8h', statLabel: 'old delay' },
+        { chip: 'Built with', text: 'Next.js, Canvas Engine & AI API', stat: '< 30s', statLabel: 'build time' },
+        { chip: 'Impact', text: 'Empowered volunteers across 25+ countries', stat: '+340%', statLabel: 'campaign reach' }
+      ],
+      image: initialProjects[0]?.screens?.[0]?.originalUrl || '/skills.png'
+    },
+    {
+      id: 'v2-2',
+      title: 'Ukraine Case 2',
+      slug: 'ukraine-case-2',
+      subline: 'Logistics and tracking platform for Ukraine',
+      annotations: [
+        { markerNumber: 1, title: 'Doc Parsing', text: 'Extracts key structured fields from PDFs and receipts instantly.' },
+        { markerNumber: 2, title: 'Smart Validation', text: 'Flags discrepancies and potential fraud markers in real time.' },
+        { markerNumber: 3, title: 'Instant Routing', text: 'Pushes verified cases to claims managers for one-click approval.' }
+      ],
+      stats: [
+        { chip: 'Problem', text: 'Slow manual claim reviews', stat: '48h', statLabel: 'old turnaround' },
+        { chip: 'Built with', text: 'Gemini Vision, Next.js & Postgres', stat: '2.5 min', statLabel: 'new processing' },
+        { chip: 'Impact', text: 'Automated 85% of standard intake processing', stat: '85%', statLabel: 'auto-processed' }
+      ],
+      image: initialProjects[1]?.screens?.[0]?.originalUrl || '/skills.png'
+    },
+    {
+      id: 'v2-3',
+      title: 'Terry Fox Tool',
+      slug: 'terry-fox-tool',
+      subline: 'Automated poster creation & global campaign workflow',
+      annotations: [
+        { markerNumber: 1, title: 'Sub-second Speed', text: 'Blazing fast global edge rendering with 99+ Performance score.' },
+        { markerNumber: 2, title: 'AI Recommender', text: 'Personalizes product bundles based on real-time user browsing.' },
+        { markerNumber: 3, title: 'Generative Search', text: 'Optimized for AI answer engines (Perplexity, ChatGPT, Gemini).' }
+      ],
+      stats: [
+        { chip: 'Problem', text: 'Low mobile conversion rates', stat: '1.4%', statLabel: 'old conversion' },
+        { chip: 'Built with', text: 'Next.js 14, Tailwind & Stripe API', stat: '99', statLabel: 'performance' },
+        { chip: 'Impact', text: 'Increased sales and organic AI engine leads', stat: '+42%', statLabel: 'revenue boost' }
+      ],
+      image: initialProjects[0]?.screens?.[0]?.originalUrl || '/skills.png'
+    },
+    {
+      id: 'v2-4',
+      title: 'Terry Fox App',
+      slug: 'terry-fox-app',
+      subline: 'Mobile application for volunteers and runners',
+      annotations: [
+        { markerNumber: 1, title: 'Sub-second Speed', text: 'Blazing fast global edge rendering with 99+ Performance score.' },
+        { markerNumber: 2, title: 'AI Recommender', text: 'Personalizes product bundles based on real-time user browsing.' },
+        { markerNumber: 3, title: 'Generative Search', text: 'Optimized for AI answer engines (Perplexity, ChatGPT, Gemini).' }
+      ],
+      stats: [
+        { chip: 'Problem', text: 'Low mobile conversion rates', stat: '1.4%', statLabel: 'old conversion' },
+        { chip: 'Built with', text: 'Next.js 14, Tailwind & Stripe API', stat: '99', statLabel: 'performance' },
+        { chip: 'Impact', text: 'Increased sales and organic AI engine leads', stat: '+42%', statLabel: 'revenue boost' }
+      ],
+      image: initialProjects[0]?.screens?.[0]?.originalUrl || '/skills.png'
+    }
+  ];
+
+  const [projectsList, setProjectsList] = useState(initialProjectsData);
+
   useEffect(() => {
     if (selectedProjectId) {
       document.body.style.overflow = 'hidden';
@@ -32,29 +105,14 @@ export default function ProjectsV2({ initialProjects = [] }: ProjectsV2Props) {
     };
   }, [selectedProjectId]);
 
-  const baseProject = {
-    title: 'Workflow Automation',
-    slug: 'workflow-automation',
-    subline: 'Terry Fox Foundation asked for something to make posters easier for volunteers worldwide',
-    annotations: [
-      { markerNumber: 1, title: 'AI Qualification', text: 'Engages inbound leads in real time, assessing fit and capturing project parameters automatically.' },
-      { markerNumber: 2, title: 'Instant Scheduling', text: 'Directly syncs qualified leads into calendar slots with zero back-and-forth emails.' },
-      { markerNumber: 3, title: 'CRM Integration', text: 'Pushes enriched lead profiles straight into hubspot/CRM for immediate team follow-up.' }
-    ],
-    stats: [
-      { chip: 'Problem', text: 'Lost leads due to delayed response times', stat: '4.8h', statLabel: 'old delay' },
-      { chip: 'Built with', text: 'AI Agents, Next.js & Webhooks', stat: '< 30s', statLabel: 'response time' },
-      { chip: 'Impact', text: 'Automated 70% of initial consultation setup', stat: '+340%', statLabel: 'lead conversion' }
-    ],
-    image: initialProjects[0]?.screens?.[0]?.originalUrl || '/skills.png'
+  const swapToTop = (clickedIndex: number) => {
+    setProjectsList((prev) => {
+      const next = [...prev];
+      const [clickedItem] = next.splice(clickedIndex, 1);
+      next.unshift(clickedItem);
+      return next;
+    });
   };
-
-  const v2Projects = [
-    { id: 'v2-1', ...baseProject },
-    { id: 'v2-2', ...baseProject },
-    { id: 'v2-3', ...baseProject },
-    { id: 'v2-4', ...baseProject }
-  ];
 
   const renderProjectContent = (project: any, isModal = false) => (
     <div 
@@ -140,27 +198,48 @@ export default function ProjectsV2({ initialProjects = [] }: ProjectsV2Props) {
     </div>
   );
 
-  const selectedProject = v2Projects.find(p => p.id === selectedProjectId);
+  const selectedProject = projectsList.find(p => p.id === selectedProjectId);
 
   return (
-    <section className="projects-section" id="cases">
-      <div className="projects-gallery-grid">
-        {v2Projects.map((project) => (
-          <div 
-            key={project.id} 
-            className="preview-item-container"
-            onClick={() => setSelectedProjectId(project.id)}
-          >
-            <div className="preview-card-wrapper">
-              <div className="preview-card-scaler">
-                {renderProjectContent(project, false)}
+    <section className="projects-section" id="cases" style={{ width: '100%', margin: '0 auto', padding: '0 1rem' }}>
+      
+      {/* 2x2 Grid */}
+      <div 
+        className="cases-row-two-grid"
+        style={{ 
+          display: 'grid', 
+          gridTemplateColumns: 'repeat(2, 1fr)', 
+          gap: '4.5rem', 
+          width: '85vw', 
+          maxWidth: '1400px', 
+          margin: '0 auto' 
+        }}
+      >
+        {projectsList.map((project, idx) => {
+          return (
+            <motion.div 
+              layout 
+              key={project.id}
+              transition={{ duration: 0.5, ease: [0.16, 1, 0.3, 1] }}
+              style={{ width: '100%' }}
+            >
+              <div 
+                className="preview-item-container"
+                onClick={() => setSelectedProjectId(project.id)}
+                style={{ cursor: 'pointer' }}
+              >
+                <div className="preview-card-wrapper">
+                  <div className="preview-card-scaler">
+                    {renderProjectContent(project, false)}
+                  </div>
+                </div>
+                <div className="preview-card-caption">
+                  Click to expand full case study ↗
+                </div>
               </div>
-            </div>
-            <div className="preview-card-caption">
-              Click to expand ↗
-            </div>
-          </div>
-        ))}
+            </motion.div>
+          );
+        })}
       </div>
 
       <AnimatePresence>

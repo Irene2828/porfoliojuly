@@ -639,6 +639,9 @@
     scroll-snap-align: center !important;
     min-width: 82vw !important;
   }
+  .cases-row-two-grid {
+    grid-template-columns: 1fr !important;
+  }
 }
 
 .preview-item-container {
@@ -651,8 +654,8 @@
 .preview-card-wrapper {
   position: relative;
   width: 100%;
-  aspect-ratio: 16 / 9;
-  border: 1px solid #d1d5db;
+  aspect-ratio: 16 / 11.8;
+  border: 1.5px solid transparent !important;
   border-radius: 0px;
   overflow: hidden;
   background: transparent;
@@ -662,8 +665,9 @@
 .preview-item-container:hover .preview-card-wrapper {
   transform: none !important;
   box-shadow: none !important;
-  border-color: #82b3e2 !important;
+  border-color: #5a9ad4 !important;
   border-width: 1.5px !important;
+  border-style: solid !important;
 }
 
 .preview-card-scaler {
@@ -679,12 +683,22 @@
 }
 
 /* Remove viewport-width breakouts inside the preview card so it fits nicely */
+.preview-view .project-body-grid,
+.preview-view .section-divider-stats-row {
+  width: 100% !important;
+  margin-left: 0 !important;
+  margin-right: 0 !important;
+  max-width: 100% !important;
+}
+
 .preview-view .project-body-grid {
-  width: 100%;
-  margin-left: 0;
-  margin-right: 0;
-  max-width: 100%;
   gap: 2rem; /* slightly tighter gap for the card view */
+}
+
+.preview-view .section-divider-stats-row {
+  padding-left: 2rem !important;
+  padding-right: 2rem !important;
+  box-sizing: border-box !important;
 }
 
 .preview-view .project-title-line {

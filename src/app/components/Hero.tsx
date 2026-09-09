@@ -26,7 +26,6 @@ export default function Hero() {
           <div style={{ position: 'absolute', width: '160px', height: '100px', border: '1.5px dashed rgba(34, 34, 34, 0.38)', top: '45px', left: '52%' }} />
           <div style={{ position: 'absolute', width: '90px', height: '90px', border: '2px solid rgba(26, 138, 136, 0.6)', top: '25px', left: '65%' }} />
           <div style={{ position: 'absolute', width: '40px', height: '40px', border: '1.5px solid rgba(17, 17, 17, 0.35)', top: '70px', left: '58%' }} />
-          <div style={{ position: 'absolute', width: '220px', height: '140px', border: '1.5px dashed rgba(34, 34, 34, 0.25)', top: '35px', left: '55%' }} />
           <div style={{ position: 'absolute', width: '120px', height: '120px', border: '1.5px solid rgba(26, 138, 136, 0.35)', top: '180px', left: '48%' }} />
           <div style={{ position: 'absolute', width: '180px', height: '80px', border: '1.5px dashed rgba(34, 34, 34, 0.32)', top: '110px', left: '78%' }} />
         </div>
@@ -62,6 +61,7 @@ export default function Hero() {
                 animate={{ y: 0, opacity: 1 }}
                 transition={{ duration: 0.65, delay: 0.55, ease: [0.16, 1, 0.3, 1] }}
                 className="hero-ctas hero-ctas-outside"
+                style={{ marginTop: '3.8rem' }}
               >
                 <a href="#contact" className="btn btn-primary btn-primary-outline">LET'S WORK ON YOUR NEXT BUILD</a>
                 <a href="#work" className="btn btn-secondary btn-secondary-stacked" style={{ opacity: 0.85 }}>

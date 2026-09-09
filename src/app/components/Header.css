@@ -6,20 +6,21 @@
   --hero-motion-duration: 1.92s;
   --hero-scan-delay: calc(var(--hero-intro-delay) + var(--hero-motion-duration) - 1s);
   --hero-nav-frame-offset: clamp(0rem, calc((100vw - 70rem) * 0.15), 3rem);
-  position: absolute;
+  position: fixed;
   top: 0;
   left: 0;
   right: 0;
   width: 100vw;
-  background-color: #000000 !important; /* solid black background */
-  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
-  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
+  background-color: rgba(255, 255, 255, 0.82) !important;
+  backdrop-filter: saturate(180%) blur(20px);
+  -webkit-backdrop-filter: saturate(180%) blur(20px);
   display: flex;
   justify-content: space-between;
   align-items: center;
   height: 3.5rem;
   padding: 0 max(1.5rem, calc((100vw - 1283px) / 2 + 1.5rem));
   box-sizing: border-box;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.08);
   z-index: 1000;
   pointer-events: auto;
   opacity: 0;
@@ -41,7 +42,7 @@
   font-size: 0.75rem;
   font-weight: 500;
   letter-spacing: 0.08em;
-  color: #ffffff !important;
+  color: #111111 !important;
   text-decoration: none;
   display: inline-flex;
   align-items: center;
@@ -71,11 +72,11 @@
 .nav-link,
 .header-nav-desktop .nav-link {
   font-family: Inter, Helvetica, Arial, sans-serif !important;
-  font-size: 11px !important;
+  font-size: 13px !important;
   font-weight: 500 !important;
   text-transform: uppercase !important;
   letter-spacing: 0.22em !important;
-  color: rgba(255, 255, 255, 0.9) !important;
+  color: #111111 !important;
   text-decoration: none;
   position: relative;
   overflow: visible !important;
@@ -93,7 +94,7 @@
   left: 0.75rem;
   right: 0.15rem;
   height: 1px;
-  background-color: rgba(255, 255, 255, 0.85);
+  background-color: #111111;
   transform: scaleX(0);
   transform-origin: bottom left;
   transition: transform 0.25s cubic-bezier(0.16, 1, 0.3, 1);
@@ -125,12 +126,12 @@
 .hamburger-bar {
   width: 20px;
   height: 1.5px;
-  background-color: #ffffff;
+  background-color: #111111;
   transition: transform 0.25s ease, opacity 0.25s ease;
 }
 
 .hamburger-btn:hover .hamburger-bar {
-  background-color: #5a9ad4;
+  background-color: #008b8b;
 }
 
 .hamburger-btn.open .hamburger-bar:nth-child(1) {
@@ -285,17 +286,7 @@
 }
 
 .header-bottom-hairline {
-  position: absolute;
-  left: calc(-50vw + 50%);
-  width: 100vw;
-  bottom: 0;
-  height: 1px;
-  background-color: transparent;
-  border-top: 1px solid rgba(235, 235, 237, 0.65);
-  z-index: 101;
-  pointer-events: none;
-  opacity: 0;
-  animation: headerReveal 1s ease calc(var(--hero-scan-delay) + 1.38s) forwards;
+  display: none;
 }
 
 @keyframes headerReveal {
@@ -304,7 +295,14 @@
 }
 
 /* MOBILE MEDIA QUERY ONLY */
-@media (max-width: 768px) {
+@media (max-width: 900px) {
+  .premium-header {
+    background-color: rgba(255, 255, 255, 0.85) !important;
+    backdrop-filter: saturate(180%) blur(20px) !important;
+    -webkit-backdrop-filter: saturate(180%) blur(20px) !important;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.08) !important;
+  }
+
   .header-nav-desktop,
   .header-socials-desktop {
     display: none !important;
@@ -321,9 +319,13 @@
     display: inline-flex;
     align-items: center;
     justify-content: center;
-    color: #5a9ad4 !important;
+    color: #111111 !important;
     text-decoration: none;
     transition: opacity 0.2s ease;
+  }
+
+  .social-link-icon-mobile svg {
+    stroke: #111111 !important;
   }
 
   .social-link-icon-mobile:hover {
@@ -339,16 +341,21 @@
 
   .mobile-featured-link {
     font-family: Inter, Helvetica, Arial, sans-serif !important;
-    font-size: 11px !important;
+    font-size: 12.1px !important;
     font-weight: 600 !important;
     text-transform: uppercase !important;
     letter-spacing: 0.18em !important;
-    color: rgba(255, 255, 255, 0.9) !important;
+    color: #111111 !important;
     text-decoration: none;
     padding: 0.2rem 0;
   }
 
   .mobile-featured-link:hover {
-    color: #5a9ad4 !important;
+    color: #008b8b !important;
+  }
+
+  .hamburger-bar {
+    background-color: #111111 !important;
   }
 }
+

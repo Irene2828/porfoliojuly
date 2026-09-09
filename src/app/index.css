@@ -203,12 +203,12 @@ h1, h2, h3, h4, h5, h6 {
 
 /* Version 2 Hero Section Split */
 .v2-theme .hero-section {
-  background: linear-gradient(to right, #ffffff 0%, #ffffff 42%, #9ec7f2 42%, #9ec7f2 100%) !important;
+  background: #ffffff !important;
 }
 
 @media (max-width: 900px) {
   .v2-theme .hero-section {
-    background: linear-gradient(to bottom, #9ec7f2 0px, #9ec7f2 380px, #ffffff 380px, #ffffff 100%) !important;
+    background: #ffffff !important;
   }
 }
 
@@ -330,7 +330,7 @@ h1, h2, h3, h4, h5, h6 {
 @media (min-width: 901px) {
   .v2-theme .hero-statement,
   .v2-theme .hero-name-group .hero-text h1 {
-    font-size: clamp(48px, 5.9vw, 52px) !important;
+    font-size: clamp(50px, 6.14vw, 55px) !important;
     font-weight: 500 !important;
     letter-spacing: -0.04em !important;
   }
@@ -339,7 +339,7 @@ h1, h2, h3, h4, h5, h6 {
 @media (max-width: 900px) {
   .v2-theme .hero-statement,
   .v2-theme .hero-name-group .hero-text h1 {
-    font-size: clamp(41px, 5.9vw, 45px) !important;
+    font-size: clamp(42px, 6.14vw, 47px) !important;
     font-weight: 600 !important;
     letter-spacing: -0.035em !important;
     line-height: 1.1 !important;
@@ -351,14 +351,14 @@ h1, h2, h3, h4, h5, h6 {
 .v2-theme .face-cta {
   font-family: var(--font-sans), Inter, sans-serif !important;
   font-size: 0.803rem !important; /* +5% larger */
-  font-weight: 700 !important;
+  font-weight: 600 !important; /* one touch less bold */
   text-transform: uppercase !important;
   letter-spacing: 0.08em !important;
   height: 3.43rem !important; /* +5% taller */
   padding: 0 1.98rem !important; /* +5% padding */
-  background: #b8d9f7 !important;
-  color: #0b0c10 !important;
-  -webkit-text-fill-color: #0b0c10 !important;
+  background: #18191e !important; /* matte black token (#18191e) */
+  color: #eaecf0 !important; /* soft matte off-white token (#eaecf0) */
+  -webkit-text-fill-color: #eaecf0 !important;
   border: none !important;
   border-radius: 0px !important;
   box-shadow: none !important;
@@ -369,12 +369,18 @@ h1, h2, h3, h4, h5, h6 {
   justify-content: center !important;
 }
 
+.v2-theme .face-cta {
+  font-size: 0.72rem !important; /* 10% smaller */
+  height: 3.08rem !important; /* 10% smaller */
+  padding: 0 1.78rem !important; /* 10% smaller */
+}
+
 .v2-theme .hero-ctas-outside .btn-primary-outline:hover,
 .v2-theme .face-cta:hover {
-  background: #b8d9f7 !important;
+  background: #242730 !important; /* slightly lighter matte black on hover */
   border: none !important;
-  color: #0b0c10 !important;
-  -webkit-text-fill-color: #0b0c10 !important;
+  color: #eaecf0 !important;
+  -webkit-text-fill-color: #eaecf0 !important;
   box-shadow: none !important;
   transform: scale(1.03) !important;
 }
@@ -382,12 +388,12 @@ h1, h2, h3, h4, h5, h6 {
 .v2-theme .hero-ctas-outside .btn-secondary-stacked {
   font-family: 'JetBrains Mono', Menlo, monospace !important;
   font-size: 12.47px !important; /* +5% larger */
-  font-weight: 600 !important; /* one touch bolder */
+  font-weight: 400 !important; /* regular/lighter font weight */
   text-transform: uppercase !important;
   letter-spacing: 0.08em !important;
   background: transparent !important;
-  color: #4b85bb !important;
-  -webkit-text-fill-color: #4b85bb !important;
+  color: #222222 !important;
+  -webkit-text-fill-color: #222222 !important;
   border: 0 !important;
   padding: 0.5rem !important;
   height: auto !important;
@@ -404,8 +410,8 @@ h1, h2, h3, h4, h5, h6 {
   bottom: 2px;
   left: 0;
   width: 0%;
-  height: 1px;
-  background-color: #4b85bb;
+  height: 1.5px;
+  background-color: #111111;
   transition: width 0.25s cubic-bezier(0.16, 1, 0.3, 1);
 }
 
@@ -416,8 +422,8 @@ h1, h2, h3, h4, h5, h6 {
 .v2-theme .hero-ctas-outside .btn-secondary-stacked:hover {
   background: transparent !important;
   border: 0 !important;
-  color: #3b70a3 !important;
-  -webkit-text-fill-color: #3b70a3 !important;
+  color: #000000 !important;
+  -webkit-text-fill-color: #000000 !important;
   transform: scale(1) !important;
 }
 
@@ -586,7 +592,8 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 .process-divider {
-  height: 2.5px !important;
+  height: 1px !important;
+  background-color: #e2e8f0 !important;
 }
 
 /* Mobile Horizontal Scroll Utility */
