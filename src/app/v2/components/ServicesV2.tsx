@@ -529,22 +529,22 @@ export default function ServicesV2() {
             position: 'relative', 
             padding: '1.5rem 0'
           }}>
-            {/* SVG Curved Dashed Connecting Path running vertically */}
+            {/* SVG Curved Dashed Connecting Path running centrally top to bottom through icons */}
             <svg 
               style={{ 
                 position: 'absolute', 
-                top: '48px', 
-                left: '24px', 
-                width: '40px', 
-                height: 'calc(100% - 96px)', 
+                top: 0, 
+                left: 0, 
+                width: '48px', 
+                height: '100%', 
                 pointerEvents: 'none', 
                 zIndex: 1 
               }}
-              viewBox="0 0 40 400"
+              viewBox="0 0 48 400"
               preserveAspectRatio="none"
             >
               <path 
-                d="M 20,0 C 40,100 0,200 20,400" 
+                d="M 24,0 C 44,100 4,200 24,400" 
                 fill="none" 
                 stroke="#5a9ad4" 
                 strokeWidth="2" 
