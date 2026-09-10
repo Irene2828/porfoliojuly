@@ -46,20 +46,8 @@ export default async function HomePage() {
           opacity: 0.6 
         }} />
 
-        {/* Cases Section Header with Dot Matrix Pattern Background */}
-        <section 
-          id="cases-section"
-          style={{
-            backgroundColor: '#ffffff',
-            backgroundImage: 'radial-gradient(circle, rgba(0, 0, 0, 0.065) 1.25px, transparent 1.25px)',
-            backgroundSize: '28px 28px',
-            width: '100vw',
-            marginLeft: 'calc(-50vw + 50%)',
-            marginRight: 'calc(-50vw + 50%)',
-            padding: '3rem 0 4rem 0',
-            marginBottom: '4rem'
-          }}
-        >
+        {/* Cases Section Header (Clean Background) */}
+        <section id="cases-section" style={{ padding: '3rem 0 0 0', backgroundColor: '#ffffff' }}>
           <div className="container" style={{ textAlign: 'center', marginBottom: '3.5rem' }}>
             <h2 style={{ 
               fontFamily: "'Times New Roman', Times, Georgia, serif",
@@ -87,8 +75,24 @@ export default async function HomePage() {
             </p>
           </div>
 
-          <div className="container" style={{ maxWidth: '1280px', margin: '0 auto', padding: '0 1.5rem' }}>
-            <ProjectsV2 initialProjects={publishedProjects as any} />
+          {/* Frame starting under subline with dot matrix pattern & subtle top/bottom borders */}
+          <div 
+            style={{
+              backgroundColor: '#ffffff',
+              backgroundImage: 'radial-gradient(circle, rgba(0, 0, 0, 0.065) 1.25px, transparent 1.25px)',
+              backgroundSize: '28px 28px',
+              borderTop: '1px solid #c0d8fc',
+              borderBottom: '1px solid #c0d8fc',
+              width: '100vw',
+              marginLeft: 'calc(-50vw + 50%)',
+              marginRight: 'calc(-50vw + 50%)',
+              padding: '4.5rem 0',
+              marginBottom: '4rem'
+            }}
+          >
+            <div className="container" style={{ maxWidth: '1280px', margin: '0 auto', padding: '0 1.5rem' }}>
+              <ProjectsV2 initialProjects={publishedProjects as any} />
+            </div>
           </div>
         </section>
 
