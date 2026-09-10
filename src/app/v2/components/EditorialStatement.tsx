@@ -78,18 +78,21 @@ export default function EditorialStatement() {
         }} />
 
         {/* Section Heading */}
-        <h2 style={{ 
-          fontFamily: "'Times New Roman', Times, Georgia, serif",
-          fontSize: 'clamp(19px, 3.2vw, 30px)', 
-          color: '#5a9ad4', 
-          fontWeight: 400,
-          fontStyle: 'normal',
-          lineHeight: 1.25,
-          letterSpacing: '-0.01em',
-          textAlign: 'center',
-          width: '100%',
-          margin: '0 auto 1.25rem auto'
-        }}>
+        <h2 
+          className="editorial-blue-heading"
+          style={{ 
+            fontFamily: "'Times New Roman', Times, Georgia, serif",
+            fontSize: 'clamp(23px, 4vw, 30px)', 
+            color: '#5a9ad4', 
+            fontWeight: 400,
+            fontStyle: 'normal',
+            lineHeight: 1.25,
+            letterSpacing: '-0.01em',
+            textAlign: 'center',
+            width: '100%',
+            margin: '0 auto 1.25rem auto'
+          }}
+        >
           Need a solution to grow your business?
         </h2>
 
