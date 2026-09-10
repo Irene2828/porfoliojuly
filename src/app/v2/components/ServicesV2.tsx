@@ -86,10 +86,11 @@ export default function ServicesV2() {
       desc: 'Where it lives and how it\'s maintained depends on the project. We figure that out together, based on what actually fits.',
       icon: (
         <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#5a9ad4" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-          <path d="M4.5 16.5c-1.5 1.26-2 5-2 5s3.74-.5 5-2c.71-.71.19-1.81-.47-2.47l-.06-.06c-.66-.66-1.76-1.18-2.47-.47z"></path>
-          <path d="M12 15l-3-3m0 0l3-3m-3 3h12M15 4.5a14.5 14.5 0 0 1 5 5 14.5 14.5 0 0 1-5 5M12 21l-3-3"></path>
-          <path d="M4.5 16.5L9 12M15 4.5L12 9"></path>
-          <path d="M14.5 3a10 10 0 0 1 6.5 6.5c0 0-3.5 1-6.5-2s-2-6.5-2-6.5z"></path>
+          <path d="M4.5 16.5c-1.5 1.26-2 5-2 5s3.74-.5 5-2c.71-.71.18-1.81-.47-2.47l-.06-.06c-.66-.66-1.76-1.18-2.47-.47z" />
+          <path d="M12 15l-3-3" />
+          <path d="M15 4.5A13.8 13.8 0 0 1 21 11c0 0-3.5 1.5-6.5-1.5S13 3 13 3a13.8 13.8 0 0 1 2 1.5z" />
+          <path d="M9 18l-1.5 2.5" />
+          <path d="M15 12l2.5 -1.5" />
         </svg>
       )
     }
@@ -529,27 +530,27 @@ export default function ServicesV2() {
             position: 'relative', 
             padding: '1.5rem 0'
           }}>
-            {/* SVG Curved Dashed Connecting Path running centrally top to bottom through icons */}
+            {/* SVG Curved Dashed Connecting Path running in a balanced snake S-curve centrally top to bottom through icons */}
             <svg 
               style={{ 
                 position: 'absolute', 
                 top: 0, 
-                left: 0, 
-                width: '48px', 
+                left: '-16px', 
+                width: '80px', 
                 height: '100%', 
                 pointerEvents: 'none', 
                 zIndex: 1 
               }}
-              viewBox="0 0 48 400"
+              viewBox="0 0 80 400"
               preserveAspectRatio="none"
             >
               <path 
-                d="M 24,0 C 44,100 4,200 24,400" 
+                d="M 40,0 C 65,100 15,300 40,400" 
                 fill="none" 
                 stroke="#5a9ad4" 
                 strokeWidth="2" 
                 strokeDasharray="6 6" 
-                opacity="0.6"
+                opacity="0.65"
               />
             </svg>
 

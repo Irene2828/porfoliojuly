@@ -292,34 +292,41 @@
   bottom: 0;
 }
 
-/* Corner brackets top-left and bottom-left of portrait */
+/* Corner brackets top-left and bottom-left of portrait (Mobile only) */
 .hero-image-brackets-left {
-  position: absolute;
-  top: -8px;
-  left: -8px;
-  bottom: -8px;
-  width: 12px;
-  border-left: 1.5px dashed rgba(235, 235, 237, 0.55);
-  pointer-events: none;
-  z-index: 10;
+  display: none;
 }
 
-.hero-image-brackets-left::before,
-.hero-image-brackets-left::after {
-  content: '';
-  position: absolute;
-  left: -1px; /* Align with left border */
-  width: 100%;
-  height: 1.5px;
-  background: rgba(235, 235, 237, 0.55);
-}
+@media (max-width: 900px) {
+  .hero-image-brackets-left {
+    display: block;
+    position: absolute;
+    top: -8px;
+    left: -8px;
+    bottom: -8px;
+    width: 12px;
+    border-left: 1.5px dashed rgba(235, 235, 237, 0.55);
+    pointer-events: none;
+    z-index: 10;
+  }
 
-.hero-image-brackets-left::before {
-  top: 0;
-}
+  .hero-image-brackets-left::before,
+  .hero-image-brackets-left::after {
+    content: '';
+    position: absolute;
+    left: -1px; /* Align with left border */
+    width: 100%;
+    height: 1.5px;
+    background: rgba(235, 235, 237, 0.55);
+  }
 
-.hero-image-brackets-left::after {
-  bottom: 0;
+  .hero-image-brackets-left::before {
+    top: 0;
+  }
+
+  .hero-image-brackets-left::after {
+    bottom: 0;
+  }
 }
 
 .hero-frame-bullets {
