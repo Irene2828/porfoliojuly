@@ -659,12 +659,12 @@
   border-radius: 0px;
   overflow: hidden;
   background: transparent;
-  transition: transform 0.3s ease, border-color 0.3s ease;
+  transition: transform 0.35s cubic-bezier(0.16, 1, 0.3, 1), border-color 0.35s ease, box-shadow 0.35s ease;
 }
 
 .preview-item-container:hover .preview-card-wrapper {
-  transform: none !important;
-  box-shadow: none !important;
+  transform: translateY(-6px) scale(1.025) !important; /* lifts card gracefully above container without side clipping */
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.12) !important;
   border-color: #5a9ad4 !important;
   border-width: 1.5px !important;
   border-style: solid !important;
@@ -676,22 +676,22 @@
   transform: scale(0.4);
   transform-origin: top left;
   pointer-events: none; /* Let clicks pass to wrapper */
-  transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+  transition: transform 0.35s cubic-bezier(0.16, 1, 0.3, 1);
 }
 
 .preview-item-container:hover .preview-card-scaler {
-  transform: scale(0.44) !important; /* 10% zoom on hover (0.4 * 1.10 = 0.44) */
+  transform: scale(0.408) !important; /* subtle internal zoom */
 }
 
 .row1-fullwidth-scaler {
   width: 142.857% !important;
   height: 142.857% !important;
   transform: scale(0.7) !important;
-  transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1) !important;
+  transition: transform 0.35s cubic-bezier(0.16, 1, 0.3, 1) !important;
 }
 
 .preview-item-container:hover .row1-fullwidth-scaler {
-  transform: scale(0.77) !important; /* 10% zoom on hover (0.7 * 1.10 = 0.77) */
+  transform: scale(0.714) !important;
 }
 
 .row1-fullwidth-wrapper {
@@ -708,7 +708,7 @@
     transform: scale(0.4) !important;
   }
   .preview-item-container:hover .row1-fullwidth-scaler {
-    transform: scale(0.44) !important;
+    transform: scale(0.408) !important;
   }
 }
 
