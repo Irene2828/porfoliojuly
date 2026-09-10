@@ -194,7 +194,7 @@ export default function ServicesV2() {
           marginBottom: '6rem'
         }}
       >
-        {/* Full Edge-to-Edge Right Side Fill for Solution 02 (White + Math Grid) */}
+        {/* Full Edge-to-Edge Right Side Fill for Solution 02 (White + Minimal Dot Matrix Grid) */}
         <div 
           style={{
             position: 'absolute',
@@ -203,11 +203,8 @@ export default function ServicesV2() {
             left: '50%',
             right: 0,
             backgroundColor: '#ffffff',
-            backgroundImage: `
-              linear-gradient(to right, rgba(0, 0, 0, 0.048) 1px, transparent 1px),
-              linear-gradient(to bottom, rgba(0, 0, 0, 0.048) 1px, transparent 1px)
-            `,
-            backgroundSize: '20px 20px',
+            backgroundImage: 'radial-gradient(circle, rgba(0, 0, 0, 0.065) 1.25px, transparent 1.25px)',
+            backgroundSize: '28px 28px',
             zIndex: 1,
             pointerEvents: 'none'
           }}
