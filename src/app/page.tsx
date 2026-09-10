@@ -37,7 +37,7 @@ export default async function HomePage() {
 
         <ServicesV2 />
 
-        {/* Cases Section Header (Clean Background with standard 5.1rem section top spacing) */}
+        {/* Cases Section Header */}
         <section id="cases-section" style={{ padding: '5.1rem 0 0 0', backgroundColor: '#ffffff' }}>
           <div className="container" style={{ textAlign: 'center', marginBottom: '3.5rem' }}>
             {/* Short decor line directly above Cases heading */}
@@ -67,7 +67,7 @@ export default async function HomePage() {
               fontWeight: 500,
               lineHeight: 1.6,
               color: '#2a3036',
-              maxWidth: '640px',
+              maxWidth: '850px',
               margin: '0 auto',
               textAlign: 'center'
             }}>
