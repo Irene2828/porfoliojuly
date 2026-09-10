@@ -133,7 +133,7 @@ export default function ProcessSection() {
                   transition={{ duration: 0.65, delay: i * 0.15, ease: [0.16, 1, 0.3, 1] }}
                   style={{
                     backgroundColor: isCenter ? '#ffffff' : '#18191e',
-                    border: isCenter ? '1px solid rgba(0, 0, 0, 0.08)' : '1px solid rgba(255, 255, 255, 0.08)',
+                    border: isCenter ? '1px solid #18191e' : '1px solid rgba(255, 255, 255, 0.08)',
                     borderRadius: '16px',
                     padding: '2.25rem 2rem',
                     display: 'flex',
@@ -165,7 +165,8 @@ export default function ProcessSection() {
                       fontSize: '1.14rem',
                       lineHeight: 1.55,
                       color: isCenter ? '#18191e' : '#ffffff',
-                      fontWeight: 400,
+                      WebkitTextStroke: isCenter ? '0.3px #18191e' : '0.2px #ffffff',
+                      fontWeight: 500,
                       fontStyle: 'italic',
                       margin: '0 0 1.25rem 0'
                     }}>
@@ -175,7 +176,7 @@ export default function ProcessSection() {
 
                   {/* Client Info */}
                   <div style={{ 
-                    borderTop: isCenter ? '1px solid rgba(0, 0, 0, 0.08)' : '1px solid rgba(255, 255, 255, 0.12)', 
+                    borderTop: isCenter ? '1px solid rgba(0, 0, 0, 0.15)' : '1px solid rgba(255, 255, 255, 0.12)', 
                     paddingTop: '1rem', 
                     display: 'flex',
                     flexDirection: 'column',
