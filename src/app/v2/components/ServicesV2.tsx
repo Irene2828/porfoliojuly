@@ -100,8 +100,8 @@ export default function ServicesV2() {
       id="expertise" 
       style={{ 
         backgroundColor: '#ffffff',
-        padding: '3rem 0 0 0',
-        margin: '3rem 0 0 0',
+        padding: '6rem 0 0 0',
+        margin: '6rem 0 0 0',
         position: 'relative',
         overflow: 'hidden'
       }}
@@ -431,7 +431,7 @@ export default function ServicesV2() {
       </div>
 
       {/* Section 2 Heading: How the Process Looks */}
-      <div className="container" style={{ textAlign: 'center', marginBottom: '3.5rem' }}>
+      <div className="container" style={{ textAlign: 'center', marginBottom: '3.5rem', paddingTop: '6rem' }}>
         {/* Short decor line above section heading */}
         <div style={{ 
           width: '60px', 
