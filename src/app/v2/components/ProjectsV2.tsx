@@ -229,8 +229,8 @@ export default function ProjectsV2({ initialProjects = [] }: ProjectsV2Props) {
               onClick={() => setSelectedProjectId(row1Project.id)}
               style={{ cursor: 'pointer' }}
             >
-              <div className="preview-card-wrapper">
-                <div className="preview-card-scaler">
+              <div className="preview-card-wrapper row1-fullwidth-wrapper">
+                <div className="preview-card-scaler row1-fullwidth-scaler">
                   {renderProjectContent(row1Project, false)}
                 </div>
               </div>
