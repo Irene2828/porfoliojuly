@@ -79,6 +79,7 @@ export default function Hero() {
           <div className="hero-image-container">
             <div className="hero-image-offset-frame"></div>
             <div className="hero-image-brackets"></div>
+            <div className="hero-image-brackets-left"></div>
             <img src={heroImage.src} alt="Iryna Sheremeta" className="hero-image" />
             <div className="hero-dot-overlay"></div>
 
