@@ -298,10 +298,10 @@
 }
 
 @media (max-width: 900px) {
-  /* Right decor line on mobile: 10% taller than image on top (~ -45px), 10% shorter at bottom (bottom: 10%) */
+  /* Right decor line on mobile: 5% taller than image on top (~ -22px), 5% shorter at bottom (bottom: 5%) */
   .hero-image-brackets {
-    top: -45px !important;
-    bottom: 10% !important;
+    top: -22px !important;
+    bottom: 5% !important;
   }
 
   /* Left decor line on mobile: 10% shorter than image on top (top: 10%), extends to bottom (bottom: -8px) */
