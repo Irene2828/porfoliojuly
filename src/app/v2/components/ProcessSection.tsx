@@ -66,7 +66,7 @@ export default function ProcessSection() {
       />
 
       {/* Centered Section Header */}
-      <div className="container" style={{ textAlign: 'center', marginBottom: '3.5rem' }}>
+      <div className="container" style={{ textAlign: 'center', marginBottom: '1.75rem' }}>
         {/* Section Heading */}
         <h2 style={{ 
           fontFamily: "'Times New Roman', Times, Georgia, serif",
@@ -102,7 +102,7 @@ export default function ProcessSection() {
           marginLeft: 'calc(-50vw + 50%)',
           marginRight: 'calc(-50vw + 50%)',
           position: 'relative',
-          padding: '1rem 0 0 0'
+          padding: '0'
         }}
       >
         <div 
@@ -166,6 +166,7 @@ export default function ProcessSection() {
                       lineHeight: 1.55,
                       color: isCenter ? '#18191e' : '#ffffff',
                       WebkitTextStroke: isCenter ? '0.3px #18191e' : '0.2px #ffffff',
+                      letterSpacing: '0.02em',
                       fontWeight: 500,
                       fontStyle: 'italic',
                       margin: '0 0 1.25rem 0'
