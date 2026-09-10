@@ -531,123 +531,22 @@ export default function ServicesV2() {
             padding: '1.5rem 0'
           }}>
             <div style={{ display: 'flex', flexDirection: 'column', position: 'relative', zIndex: 2 }}>
+              {/* Straight Vertical Silver/Blue Dashed Decor Line running top-to-bottom through icon centers */}
+              <div
+                style={{
+                  position: 'absolute',
+                  top: 0,
+                  bottom: 0,
+                  left: '24px',
+                  width: '1px',
+                  borderLeft: '1.5px dashed rgba(235, 235, 237, 0.55)',
+                  pointerEvents: 'none',
+                  zIndex: 1
+                }}
+              />
+
               {steps.map((step, i) => (
                 <div key={step.num} style={{ position: 'relative' }}>
-                  {/* Modularized Responsive SVG Bezier Connector Segment connecting this step to the next */}
-                  {i < steps.length - 1 && (
-                    <div
-                      style={{
-                        position: 'absolute',
-                        top: '24px', /* center of current 48px icon badge */
-                        bottom: '-24px', /* extends down to center of next 48px icon badge */
-                        left: 0,
-                        width: '48px',
-                        pointerEvents: 'none',
-                        zIndex: 1,
-                        overflow: 'visible'
-                      }}
-                    >
-                      <svg
-                        aria-hidden="true"
-                        focusable="false"
-                        style={{
-                          width: '100%',
-                          height: '100%',
-                          overflow: 'visible'
-                        }}
-                        viewBox="0 0 48 100"
-                        preserveAspectRatio="none"
-                      >
-                        <path
-                          /* i===0: arc left (-32), i===1: arc right (+32) returning to central center (24) */
-                          d={i === 0 
-                            ? "M 24,0 C -32,35 -32,65 24,100" 
-                            : "M 24,0 C 80,35 80,65 24,100"
-                          }
-                          fill="none"
-                          stroke="#5a9ad4"
-                          strokeWidth="1.5"
-                          strokeDasharray="4 6"
-                          strokeLinecap="round"
-                          vectorEffect="non-scaling-stroke"
-                          opacity="0.65"
-                        />
-                      </svg>
-                    </div>
-                  )}
-
-                  {/* Top extension curve from top of First Draft title down into Icon 1 center */}
-                  {i === 0 && (
-                    <div
-                      style={{
-                        position: 'absolute',
-                        top: 0,
-                        height: '24px',
-                        left: 0,
-                        width: '48px',
-                        pointerEvents: 'none',
-                        zIndex: 1
-                      }}
-                    >
-                      <svg
-                        aria-hidden="true"
-                        focusable="false"
-                        style={{ width: '100%', height: '100%' }}
-                        viewBox="0 0 48 24"
-                        preserveAspectRatio="none"
-                      >
-                        <line
-                          x1="24"
-                          y1="0"
-                          x2="24"
-                          y2="24"
-                          stroke="#5a9ad4"
-                          strokeWidth="1.5"
-                          strokeDasharray="4 6"
-                          strokeLinecap="round"
-                          vectorEffect="non-scaling-stroke"
-                          opacity="0.65"
-                        />
-                      </svg>
-                    </div>
-                  )}
-
-                  {/* Bottom extension curve from Icon 3 center down to bottom of Delivery text */}
-                  {i === steps.length - 1 && (
-                    <div
-                      style={{
-                        position: 'absolute',
-                        top: '24px',
-                        bottom: 0,
-                        left: 0,
-                        width: '48px',
-                        pointerEvents: 'none',
-                        zIndex: 1
-                      }}
-                    >
-                      <svg
-                        aria-hidden="true"
-                        focusable="false"
-                        style={{ width: '100%', height: '100%' }}
-                        viewBox="0 0 48 60"
-                        preserveAspectRatio="none"
-                      >
-                        <line
-                          x1="24"
-                          y1="0"
-                          x2="24"
-                          y2="60"
-                          stroke="#5a9ad4"
-                          strokeWidth="1.5"
-                          strokeDasharray="4 6"
-                          strokeLinecap="round"
-                          vectorEffect="non-scaling-stroke"
-                          opacity="0.65"
-                        />
-                      </svg>
-                    </div>
-                  )}
-
                   <motion.div
                     initial={{ opacity: 0, x: -20 }}
                     whileInView={{ opacity: 1, x: 0 }}
