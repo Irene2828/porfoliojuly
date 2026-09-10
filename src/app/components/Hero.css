@@ -48,6 +48,23 @@
   pointer-events: none;
 }
 
+/* Notebook math grid pattern on the left white area */
+.hero-bg-split::before {
+  content: '';
+  position: absolute;
+  top: -3.5rem;
+  bottom: 0;
+  right: 100%;
+  width: 100vw;
+  background-color: #f7f9fb;
+  background-image: 
+    linear-gradient(to right, rgba(0, 0, 0, 0.12) 1px, transparent 1px),
+    linear-gradient(to bottom, rgba(0, 0, 0, 0.12) 1px, transparent 1px);
+  background-size: 20px 20px;
+  pointer-events: none;
+  z-index: 0;
+}
+
 @keyframes heroBgFadeIn {
   0% {
     opacity: 0;
