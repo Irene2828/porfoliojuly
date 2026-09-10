@@ -168,18 +168,22 @@ export default function ServicesV2() {
           letterSpacing: '-0.01em',
           textAlign: 'center',
           width: '100%',
-          margin: '0 auto'
+          margin: '0 auto 0.75rem auto'
         }}>
-          <span style={{ display: 'block' }}>{'/ How\u00A0I\u00A0Can\u00A0Help\u00A0Your\u00A0Business /'}</span>
-          <span style={{ 
-            display: 'block',
-            fontFamily: "var(--font-serif), 'Times New Roman', Times, Georgia, serif",
-            fontStyle: 'italic',
-            fontWeight: 400
-          }}>
-            {'as\u00A0a\u00A0Digital\u00A0Product\u00A0Builder'}
-          </span>
+          / How I Can Help Your Business /
         </h2>
+        <p style={{
+          fontFamily: "var(--font-sans), Inter, sans-serif",
+          fontSize: '1.175rem',
+          fontWeight: 500,
+          lineHeight: 1.6,
+          color: '#2a3036',
+          maxWidth: '640px',
+          margin: '0 auto',
+          textAlign: 'center'
+        }}>
+          as a Digital Product Builder
+        </p>
       </div>
 
       {/* Blue Background Container for 2 Columns of Services */}
