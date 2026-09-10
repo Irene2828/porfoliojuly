@@ -82,22 +82,16 @@ export default function EditorialStatement() {
           fontFamily: "'Times New Roman', Times, Georgia, serif",
           fontSize: 'clamp(19px, 3.2vw, 30px)', 
           color: '#5a9ad4', 
-          fontWeight: 500,
+          fontWeight: 400,
+          fontStyle: 'italic',
           lineHeight: 1.25,
           letterSpacing: '-0.01em',
           textAlign: 'center',
           width: '100%',
           margin: '0 auto 1.25rem auto'
         }}>
-          <span style={{ display: 'block' }}>{'How\u00A0I\u00A0Can\u00A0Help\u00A0Your\u00A0Business'}</span>
-          <span style={{ 
-            display: 'block',
-            fontFamily: "var(--font-serif), 'Times New Roman', Times, Georgia, serif",
-            fontStyle: 'italic',
-            fontWeight: 400
-          }}>
-            {'as\u00A0a\u00A0Digital\u00A0Product\u00A0Builder'}
-          </span>
+          <span style={{ display: 'block', fontStyle: 'italic' }}>{'How\u00A0I\u00A0Can\u00A0Help\u00A0Your\u00A0Business'}</span>
+          <span style={{ display: 'block', fontStyle: 'italic' }}>{'as\u00A0a\u00A0Digital\u00A0Product\u00A0Builder'}</span>
         </h2>
 
         {/* Statement Subtitle */}
