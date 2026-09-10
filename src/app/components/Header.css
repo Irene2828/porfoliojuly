@@ -294,6 +294,17 @@
   100% { opacity: 1; }
 }
 
+@keyframes headerSlideDown {
+  0% {
+    opacity: 0;
+    transform: translateY(-100%);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
 /* MOBILE MEDIA QUERY ONLY */
 @media (max-width: 900px) {
   .premium-header {
@@ -302,6 +313,9 @@
     backdrop-filter: saturate(180%) blur(20px) !important;
     -webkit-backdrop-filter: saturate(180%) blur(20px) !important;
     border-bottom: 1px solid rgba(0, 0, 0, 0.08) !important;
+    opacity: 0;
+    transform: translateY(-100%);
+    animation: headerSlideDown 0.65s cubic-bezier(0.16, 1, 0.3, 1) forwards !important;
   }
 
   .header-nav-desktop,
