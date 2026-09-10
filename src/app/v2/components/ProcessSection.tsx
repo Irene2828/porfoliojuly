@@ -38,7 +38,7 @@ export default function ProcessSection() {
       id="process" 
       style={{ 
         backgroundColor: '#ffffff',
-        padding: '6rem 0 0 0',
+        padding: '3rem 0 0 0',
         position: 'relative'
       }}
     >
@@ -52,6 +52,15 @@ export default function ProcessSection() {
 
       {/* Centered Section Header (Outside the Black Frame) */}
       <div className="container" style={{ textAlign: 'center', marginBottom: '3.5rem' }}>
+        {/* Short decor line above section heading */}
+        <div style={{ 
+          width: '60px', 
+          height: '1px', 
+          backgroundColor: '#0b0c10', 
+          margin: '0 auto 2.5rem auto', 
+          opacity: 0.6 
+        }} />
+
         {/* Section Heading */}
         <h2 style={{ 
           fontFamily: "'Times New Roman', Times, Georgia, serif",
