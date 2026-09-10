@@ -90,7 +90,7 @@ export default function EditorialStatement() {
           width: '100%',
           margin: '0 auto 1.25rem auto'
         }}>
-          {'How\u00A0I\u00A0Can\u00A0Help\u00A0Your\u00A0Business'}
+          Need a solution to grow your business?
         </h2>
 
         {/* Statement Subtitle */}
@@ -104,7 +104,7 @@ export default function EditorialStatement() {
           textAlign: 'center',
           fontWeight: 500
         }}>
-          The tools exist <em>now</em> to solve what used to seem too hard, too slow, or too expensive.
+          I'd love to help you build one.
         </p>
 
         {/* Action CTAs with reduced spacing (marginTop: 1.75rem) */}
