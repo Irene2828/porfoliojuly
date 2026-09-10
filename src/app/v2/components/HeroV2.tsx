@@ -126,6 +126,11 @@ export default function HeroV2() {
             </div>
           </div>
           <span className="hero-hover-surface" aria-hidden="true"></span>
+          
+          <div className="hero-image-tagline-stacked">
+            <div className="tagline-name">IRYNA SHEREMETA</div>
+            <div className="tagline-title">WEB &amp; AI PRODUCT BUILDER</div>
+          </div>
         </div>
       </div>
       <div className="hero-bottom-hairline-line"></div>
