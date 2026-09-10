@@ -47,7 +47,7 @@
   z-index: 1;
   pointer-events: none;
   opacity: 0;
-  animation: heroBgFadeIn 0.8s ease calc(var(--hero-intro-delay) + var(--hero-motion-duration)) forwards;
+  animation: heroBgFadeIn 0.01s step-end calc(var(--hero-intro-delay) + var(--hero-motion-duration) - 0.1s) forwards;
 }
 
 /* Notebook math grid pattern on the left white area */
