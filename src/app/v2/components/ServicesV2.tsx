@@ -530,27 +530,32 @@ export default function ServicesV2() {
             position: 'relative', 
             padding: '1.5rem 0'
           }}>
-            {/* SVG Curved Dashed Connecting Path: passes straight through icon centers and curves gracefully between icons */}
+            {/* Mathematically Perfect Apple-Inspired Bezier Timeline Connector */}
             <svg 
+              aria-hidden="true"
+              focusable="false"
               style={{ 
                 position: 'absolute', 
                 top: 0, 
-                left: '-28px', 
-                width: '104px', 
+                left: 0, 
+                width: '48px', 
                 height: '100%', 
+                overflow: 'visible',
                 pointerEvents: 'none', 
                 zIndex: 1 
               }}
-              viewBox="0 0 104 400"
+              viewBox="0 0 48 400"
               preserveAspectRatio="none"
             >
               <path 
-                d="M 52,0 L 52,54 C 18,105 18,135 52,184 L 52,214 C 86,265 86,295 52,344 L 52,400" 
+                d="M 24,0 L 24,40 C -8,120 -8,120 24,200 C 56,280 56,280 24,360 L 24,400" 
                 fill="none" 
                 stroke="#5a9ad4" 
-                strokeWidth="2" 
-                strokeDasharray="6 6" 
-                opacity="0.75"
+                strokeWidth="1.5" 
+                strokeDasharray="4 6" 
+                strokeLinecap="round"
+                vectorEffect="non-scaling-stroke"
+                opacity="0.65"
               />
             </svg>
 
