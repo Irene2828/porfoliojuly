@@ -124,7 +124,6 @@ export default function ProcessSection() {
             }}
           >
             {testimonials.map((item, i) => {
-              const isCenter = i === 1; // Middle card
               return (
                 <motion.div
                   key={item.num}
@@ -133,15 +132,15 @@ export default function ProcessSection() {
                   viewport={{ once: true }}
                   transition={{ duration: 0.65, delay: i * 0.15, ease: [0.16, 1, 0.3, 1] }}
                   style={{
-                    backgroundColor: isCenter ? '#ffffff' : '#d0e8fc',
-                    border: isCenter ? '1px solid #18191e' : '1px solid rgba(44, 111, 176, 0.2)',
+                    backgroundColor: '#d0e8fc',
+                    border: '1px solid rgba(44, 111, 176, 0.2)',
                     borderRadius: '16px',
                     padding: '2.25rem 2rem',
                     display: 'flex',
                     flexDirection: 'column',
                     justifyContent: 'space-between',
                     position: 'relative',
-                    boxShadow: isCenter ? '0 10px 30px rgba(0, 0, 0, 0.06)' : '0 6px 20px rgba(44, 111, 176, 0.08)',
+                    boxShadow: '0 6px 20px rgba(44, 111, 176, 0.08)',
                     transition: 'box-shadow 0.3s ease, border-color 0.3s ease'
                   }}
                 >
@@ -152,7 +151,7 @@ export default function ProcessSection() {
                         fontFamily: "'Times New Roman', Times, Georgia, serif",
                         fontSize: '2.2rem',
                         lineHeight: '0.8',
-                        color: isCenter ? '#2c6fb0' : '#2c6fb0',
+                        color: '#2c6fb0',
                         opacity: 0.85,
                         fontWeight: 700
                       }}>
@@ -178,7 +177,7 @@ export default function ProcessSection() {
 
                   {/* Client Info */}
                   <div style={{ 
-                    borderTop: isCenter ? '1px solid rgba(0, 0, 0, 0.15)' : '1px solid rgba(44, 111, 176, 0.25)', 
+                    borderTop: '1px solid rgba(44, 111, 176, 0.25)', 
                     paddingTop: '1rem', 
                     display: 'flex',
                     flexDirection: 'column',
@@ -198,7 +197,7 @@ export default function ProcessSection() {
                     <div style={{ 
                       fontFamily: "'JetBrains Mono', Menlo, monospace",
                       fontSize: '0.72rem',
-                      color: isCenter ? '#55606a' : '#2c6fb0',
+                      color: '#2c6fb0',
                       marginTop: '0.2rem',
                       letterSpacing: '0.02em',
                       textAlign: 'right'
