@@ -37,7 +37,9 @@ export default function ProcessSection() {
     <section 
       id="process" 
       style={{ 
-        backgroundColor: 'transparent',
+        backgroundColor: '#ffffff',
+        backgroundImage: 'radial-gradient(circle, rgba(0, 0, 0, 0.065) 1.25px, transparent 1.25px)',
+        backgroundSize: '28px 28px',
         padding: 0,
         margin: '8rem 0 0 0',
         position: 'relative'
@@ -120,87 +122,90 @@ export default function ProcessSection() {
               alignItems: 'stretch'
             }}
           >
-            {testimonials.map((item, i) => (
-              <motion.div
-                key={item.num}
-                initial={{ opacity: 0, y: 25 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                transition={{ duration: 0.65, delay: i * 0.15, ease: [0.16, 1, 0.3, 1] }}
-                style={{
-                  backgroundColor: '#18191e', // Matte black matching hero right side
-                  border: '1px solid rgba(255, 255, 255, 0.08)',
-                  borderRadius: '16px',
-                  padding: '2.25rem 2rem',
-                  display: 'flex',
-                  flexDirection: 'column',
-                  justifyContent: 'space-between',
-                  position: 'relative',
-                  boxShadow: '0 6px 20px rgba(0, 0, 0, 0.15)',
-                  transition: 'box-shadow 0.3s ease, border-color 0.3s ease'
-                }}
-              >
-                <div>
-                  {/* Quote Icon */}
-                  <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'flex-start', marginBottom: '0.75rem' }}>
-                    <span style={{ 
-                      fontFamily: "'Times New Roman', Times, Georgia, serif",
-                      fontSize: '2.2rem',
-                      lineHeight: '0.8',
-                      color: '#5a9ad4',
-                      opacity: 0.7,
-                      fontWeight: 700
+            {testimonials.map((item, i) => {
+              const isCenter = i === 1; // Middle card
+              return (
+                <motion.div
+                  key={item.num}
+                  initial={{ opacity: 0, y: 25 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  viewport={{ once: true }}
+                  transition={{ duration: 0.65, delay: i * 0.15, ease: [0.16, 1, 0.3, 1] }}
+                  style={{
+                    backgroundColor: isCenter ? '#ffffff' : '#18191e',
+                    border: isCenter ? '1px solid rgba(0, 0, 0, 0.08)' : '1px solid rgba(255, 255, 255, 0.08)',
+                    borderRadius: '16px',
+                    padding: '2.25rem 2rem',
+                    display: 'flex',
+                    flexDirection: 'column',
+                    justifyContent: 'space-between',
+                    position: 'relative',
+                    boxShadow: isCenter ? '0 10px 30px rgba(0, 0, 0, 0.06)' : '0 6px 20px rgba(0, 0, 0, 0.15)',
+                    transition: 'box-shadow 0.3s ease, border-color 0.3s ease'
+                  }}
+                >
+                  <div>
+                    {/* Quote Icon */}
+                    <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'flex-start', marginBottom: '0.75rem' }}>
+                      <span style={{ 
+                        fontFamily: "'Times New Roman', Times, Georgia, serif",
+                        fontSize: '2.2rem',
+                        lineHeight: '0.8',
+                        color: isCenter ? '#2c6fb0' : '#5a9ad4',
+                        opacity: isCenter ? 0.85 : 0.7,
+                        fontWeight: 700
+                      }}>
+                        &ldquo;
+                      </span>
+                    </div>
+
+                    {/* Quote Text */}
+                    <p style={{
+                      fontFamily: "var(--font-serif), 'Times New Roman', Times, Georgia, serif",
+                      fontSize: '1.14rem',
+                      lineHeight: 1.55,
+                      color: isCenter ? '#18191e' : '#ffffff',
+                      fontWeight: 400,
+                      fontStyle: 'italic',
+                      margin: '0 0 1.25rem 0'
                     }}>
-                      &ldquo;
-                    </span>
+                      "{item.quote}"
+                    </p>
                   </div>
 
-                  {/* Quote Text */}
-                  <p style={{
-                    fontFamily: "var(--font-serif), 'Times New Roman', Times, Georgia, serif",
-                    fontSize: '1.14rem',
-                    lineHeight: 1.55,
-                    color: '#ffffff',
-                    fontWeight: 400,
-                    fontStyle: 'italic',
-                    margin: '0 0 1.25rem 0'
-                  }}>
-                    "{item.quote}"
-                  </p>
-                </div>
-
-                {/* Client Info */}
-                <div style={{ 
-                  borderTop: '1px solid rgba(255, 255, 255, 0.12)', 
-                  paddingTop: '1rem', 
-                  display: 'flex',
-                  flexDirection: 'column',
-                  alignItems: 'flex-end',
-                  textAlign: 'right' 
-                }}>
+                  {/* Client Info */}
                   <div style={{ 
-                    fontFamily: "var(--font-sans), Inter, sans-serif",
-                    fontSize: '0.95rem',
-                    fontWeight: 600,
-                    color: '#ffffff',
-                    lineHeight: 1.3,
-                    textAlign: 'right'
+                    borderTop: isCenter ? '1px solid rgba(0, 0, 0, 0.08)' : '1px solid rgba(255, 255, 255, 0.12)', 
+                    paddingTop: '1rem', 
+                    display: 'flex',
+                    flexDirection: 'column',
+                    alignItems: 'flex-end',
+                    textAlign: 'right' 
                   }}>
-                    {item.author}
+                    <div style={{ 
+                      fontFamily: "var(--font-sans), Inter, sans-serif",
+                      fontSize: '0.95rem',
+                      fontWeight: 600,
+                      color: isCenter ? '#18191e' : '#ffffff',
+                      lineHeight: 1.3,
+                      textAlign: 'right'
+                    }}>
+                      {item.author}
+                    </div>
+                    <div style={{ 
+                      fontFamily: "'JetBrains Mono', Menlo, monospace",
+                      fontSize: '0.72rem',
+                      color: isCenter ? '#55606a' : '#b0b4bc',
+                      marginTop: '0.2rem',
+                      letterSpacing: '0.02em',
+                      textAlign: 'right'
+                    }}>
+                      {item.role}
+                    </div>
                   </div>
-                  <div style={{ 
-                    fontFamily: "'JetBrains Mono', Menlo, monospace",
-                    fontSize: '0.72rem',
-                    color: '#b0b4bc',
-                    marginTop: '0.2rem',
-                    letterSpacing: '0.02em',
-                    textAlign: 'right'
-                  }}>
-                    {item.role}
-                  </div>
-                </div>
-              </motion.div>
-            ))}
+                </motion.div>
+              );
+            })}
           </div>
         </div>
       </div>
