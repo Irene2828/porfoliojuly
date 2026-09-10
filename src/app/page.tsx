@@ -59,7 +59,7 @@ export default async function HomePage() {
               textAlign: 'center',
               margin: '0 auto 0.75rem auto'
             }}>
-              / Featured Cases /
+              Featured Cases
             </h2>
             <p style={{
               fontFamily: "var(--font-sans), Inter, sans-serif",

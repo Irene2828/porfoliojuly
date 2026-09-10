@@ -90,7 +90,7 @@ export default function EditorialStatement() {
           width: '100%',
           margin: '0 auto 1.25rem auto'
         }}>
-          / Need a solution to grow your business? /
+          Need a solution to grow your business?
         </h2>
 
         {/* Statement Subtitle */}
