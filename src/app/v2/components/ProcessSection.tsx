@@ -79,7 +79,7 @@ export default function ProcessSection() {
           width: '100%',
           margin: '0 auto 0.75rem auto'
         }}>
-          Why Work With Me
+          / Why Work With Me /
         </h2>
         <p style={{
           fontFamily: "var(--font-sans), Inter, sans-serif",
@@ -89,7 +89,8 @@ export default function ProcessSection() {
           color: '#2a3036',
           maxWidth: '640px',
           margin: '0 auto',
-          textAlign: 'center'
+          textAlign: 'center',
+          opacity: 0
         }}>
           Here are some reviews on my work from the clients:
         </p>
