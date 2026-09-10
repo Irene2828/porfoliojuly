@@ -133,15 +133,15 @@ export default function ProcessSection() {
                     backgroundColor: '#ffffff',
                     backgroundImage: 'radial-gradient(circle, rgba(0, 0, 0, 0.065) 1.25px, transparent 1.25px)',
                     backgroundSize: '28px 28px',
-                    border: '1px solid rgba(0, 0, 0, 0.1)',
+                    border: '1px solid #c0d8fc',
                     borderRadius: '16px',
                     padding: '2.25rem 2rem',
                     display: 'flex',
                     flexDirection: 'column',
                     justifyContent: 'space-between',
                     position: 'relative',
-                    boxShadow: '0 10px 30px rgba(0, 0, 0, 0.05)',
-                    transition: 'box-shadow 0.3s ease, border-color 0.3s ease'
+                    boxShadow: 'none',
+                    transition: 'border-color 0.3s ease'
                   }}
                 >
                   <div>
@@ -177,7 +177,7 @@ export default function ProcessSection() {
 
                   {/* Client Info */}
                   <div style={{ 
-                    borderTop: '1px solid rgba(0, 0, 0, 0.12)', 
+                    borderTop: '1px solid #c0d8fc', 
                     paddingTop: '1rem', 
                     display: 'flex',
                     flexDirection: 'column',
