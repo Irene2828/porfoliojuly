@@ -134,6 +134,10 @@ export default function ServicesV2() {
           width: 100%;
         }
         @media (max-width: 860px) {
+          #expertise {
+            padding-top: 2.55rem !important;
+            margin-top: 2.55rem !important;
+          }
           .services-right-split-bg {
             display: none !important;
           }
