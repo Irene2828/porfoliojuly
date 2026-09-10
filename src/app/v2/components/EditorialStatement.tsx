@@ -90,8 +90,7 @@ export default function EditorialStatement() {
           width: '100%',
           margin: '0 auto 1.25rem auto'
         }}>
-          <span style={{ display: 'block', fontStyle: 'italic' }}>{'How\u00A0I\u00A0Can\u00A0Help\u00A0Your\u00A0Business'}</span>
-          <span style={{ display: 'block', fontStyle: 'italic' }}>{'as\u00A0a\u00A0Digital\u00A0Product\u00A0Builder'}</span>
+          {'How\u00A0I\u00A0Can\u00A0Help\u00A0Your\u00A0Business'}
         </h2>
 
         {/* Statement Subtitle */}
