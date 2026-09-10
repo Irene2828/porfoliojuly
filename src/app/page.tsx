@@ -37,8 +37,8 @@ export default async function HomePage() {
 
         <ServicesV2 />
 
-        {/* Cases Section Header (Clean Background) */}
-        <section id="cases-section" style={{ padding: '0', backgroundColor: '#ffffff' }}>
+        {/* Cases Section Header (Clean Background with standard 5.1rem section top spacing) */}
+        <section id="cases-section" style={{ padding: '5.1rem 0 0 0', backgroundColor: '#ffffff' }}>
           <div className="container" style={{ textAlign: 'center', marginBottom: '3.5rem' }}>
             {/* Short decor line directly above Cases heading */}
             <div style={{ 
