@@ -1407,8 +1407,8 @@
 
 .hero-image-tagline-stacked {
   position: absolute;
-  bottom: 0.65rem; /* placed inside the bottom-left area directly over the lower section of the portrait image */
-  left: 0.75rem; /* aligned inside the left edge of the photo frame */
+  bottom: -2.2rem; /* shifted 50% lower */
+  left: -20px; /* shifted 50% to the left */
   right: auto;
   text-align: left; /* aligned by left */
   z-index: 8;
@@ -1416,8 +1416,15 @@
   font-size: clamp(0.62rem, 0.88vw, 0.74rem); /* 20% smaller text size */
   text-transform: uppercase;
   letter-spacing: 0.12em;
-  line-height: 1.5;
-  border: none;
+  line-height: 1.4;
+  /* Apple Tahoe Frosted Glass background blur overlay */
+  background: rgba(18, 19, 24, 0.75) !important;
+  backdrop-filter: blur(16px) saturate(180%);
+  -webkit-backdrop-filter: blur(16px) saturate(180%);
+  padding: 0.6rem 0.9rem;
+  border-radius: 4px;
+  border: 1px solid rgba(255, 255, 255, 0.12) !important;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.25);
   pointer-events: none;
   opacity: 0;
   /* Shows exactly when scan ends: scan-delay + 2.38s scan duration */
@@ -1433,7 +1440,7 @@
 }
 
 .hero-image-tagline-stacked .tagline-title {
-  color: #cccccc;
+  color: rgba(235, 235, 237, 0.85);
   font-weight: 500;
 }
 
