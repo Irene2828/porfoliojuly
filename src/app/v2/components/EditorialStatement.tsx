@@ -83,7 +83,7 @@ export default function EditorialStatement() {
           fontSize: 'clamp(19px, 3.2vw, 30px)', 
           color: '#5a9ad4', 
           fontWeight: 400,
-          fontStyle: 'italic',
+          fontStyle: 'normal',
           lineHeight: 1.25,
           letterSpacing: '-0.01em',
           textAlign: 'center',
