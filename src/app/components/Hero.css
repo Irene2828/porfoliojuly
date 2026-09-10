@@ -936,7 +936,7 @@
     background: #d0e8fc !important;
     margin-left: calc(-50vw + 50%) !important;
     margin-right: calc(-50vw + 50%) !important;
-    margin-top: 0 !important;
+    margin-top: 1.5rem !important; /* spacing between blue frame and black frame on mobile */
     padding: 2.5rem 1.5rem 1.5rem 1.5rem !important;
   }
 
