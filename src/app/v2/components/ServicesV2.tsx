@@ -170,7 +170,7 @@ export default function ServicesV2() {
           width: '100%',
           margin: '0 auto'
         }}>
-          <span style={{ display: 'block' }}>{'How\u00A0I\u00A0Can\u00A0Help\u00A0Your\u00A0Business'}</span>
+          <span style={{ display: 'block' }}>{'/ How\u00A0I\u00A0Can\u00A0Help\u00A0Your\u00A0Business /'}</span>
           <span style={{ 
             display: 'block',
             fontFamily: "var(--font-serif), 'Times New Roman', Times, Georgia, serif",
@@ -453,7 +453,7 @@ export default function ServicesV2() {
           width: '100%',
           margin: '0 auto 0.75rem auto'
         }}>
-          How the Process Looks
+          / How the Process Looks /
         </h2>
         <p style={{
           fontFamily: "var(--font-sans), Inter, sans-serif",
