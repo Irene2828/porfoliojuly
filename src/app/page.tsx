@@ -75,14 +75,12 @@ export default async function HomePage() {
             </p>
           </div>
 
-          {/* Frame starting under subline with dot matrix pattern & subtle top/bottom borders */}
+          {/* Frame starting under subline with dot matrix pattern */}
           <div 
             style={{
               backgroundColor: '#ffffff',
               backgroundImage: 'radial-gradient(circle, rgba(0, 0, 0, 0.065) 1.25px, transparent 1.25px)',
               backgroundSize: '28px 28px',
-              borderTop: '1px solid #c0d8fc',
-              borderBottom: '1px solid #c0d8fc',
               width: '100vw',
               marginLeft: 'calc(-50vw + 50%)',
               marginRight: 'calc(-50vw + 50%)',
