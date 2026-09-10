@@ -339,7 +339,7 @@ h1, h2, h3, h4, h5, h6 {
 @media (max-width: 900px) {
   .v2-theme .hero-statement,
   .v2-theme .hero-name-group .hero-text h1 {
-    font-size: clamp(42px, 6.14vw, 47px) !important;
+    font-size: clamp(46px, 6.75vw, 52px) !important;
     font-weight: 600 !important;
     letter-spacing: -0.035em !important;
     line-height: 1.1 !important;

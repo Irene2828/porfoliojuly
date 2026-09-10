@@ -44,7 +44,7 @@ export default function HeroV2() {
                   Looking for a <span className="br-mobile"><br /></span><span className="premium-hover"><span className="word-custom" style={{ fontStyle: 'italic' }}>custom</span></span> <span className="premium-hover">website</span> <span className="br-desktop"><br /></span>or <span className="br-mobile"><br /></span>an <span className="premium-hover"><span className="word-internal" style={{ fontStyle: 'italic' }}>internal</span> AI tool</span>?
                 </h1>
                 <p className="hero-frame-paragraph" style={{ marginTop: '1.7rem', fontSize: '1.16rem', lineHeight: '1.75', color: '#444444', maxWidth: '673px' }}>
-                  <strong>I design and build custom digital products end-to-end</strong> for business <span className="br-desktop"><br /></span>and professionals &mdash; from figuring out what solution you need to shipping a working product.
+                  <strong>I design and build custom digital products end-to-end</strong> for business <span className="br-desktop"><br /></span>and professionals &mdash; from figuring out what solution you need to <span className="br-desktop"><br /></span>shipping a working product.
                 </p>
               </motion.div>
               <motion.div

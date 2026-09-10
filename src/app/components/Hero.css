@@ -907,7 +907,7 @@
   /* Hero content card sits BELOW photo on mobile, centered */
   .hero-content {
     order: 2 !important;
-    width: min(90vw, 22.5rem) !important;
+    width: min(92vw, 28rem) !important;
     max-width: 100% !important;
     margin: 0 auto !important;
     display: flex !important;
@@ -1005,12 +1005,15 @@
   }
 
   .hero-frame-paragraph {
-    font-size: 0.95rem !important;
-    line-height: 1.6 !important;
+    font-size: clamp(0.72rem, 3.2vw, 0.85rem) !important;
+    line-height: 1.55 !important;
     color: #333333 !important;
     text-align: center !important;
     margin-top: 0 !important;
     margin-bottom: 0 !important;
+    max-width: 98% !important;
+    margin-left: auto !important;
+    margin-right: auto !important;
   }
 
   .hero-frame-bullets {
