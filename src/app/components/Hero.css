@@ -478,7 +478,7 @@
 
 .hero-ctas-outside .btn-primary-outline {
   font-family: var(--font-sans), Inter, sans-serif !important;
-  font-size: 0.8rem !important;
+  font-size: 0.675rem !important; /* 2px smaller (10.8px) */
   font-weight: 600 !important;
   text-transform: uppercase !important;
   letter-spacing: 0.08em !important;
@@ -505,7 +505,7 @@
 .hero-ctas-outside .btn-secondary-stacked {
   display: inline-flex;
   font-family: 'JetBrains Mono', Menlo, monospace !important;
-  font-size: 11.9px !important;
+  font-size: 9.9px !important; /* 2px smaller */
   font-weight: 400 !important;
   text-transform: uppercase !important;
   letter-spacing: 0.18em !important;
