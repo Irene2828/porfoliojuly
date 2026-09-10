@@ -124,12 +124,9 @@ export default function HeroV2() {
             </div>
           </div>
           <span className="hero-hover-surface" aria-hidden="true"></span>
-
-
         </div>
       </div>
       <div className="hero-bottom-hairline-line"></div>
-      
     </section>
   );
 }
