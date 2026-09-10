@@ -100,8 +100,8 @@ export default function ServicesV2() {
       id="expertise" 
       style={{ 
         backgroundColor: '#ffffff',
-        padding: '4.2rem 0 0 0',
-        margin: '4.2rem 0 0 0',
+        padding: '5.1rem 0 0 0',
+        margin: '5.1rem 0 0 0',
         position: 'relative',
         overflow: 'hidden'
       }}
@@ -195,7 +195,7 @@ export default function ServicesV2() {
           marginRight: 'calc(-50vw + 50%)',
           position: 'relative',
           overflow: 'hidden',
-          marginBottom: '4.2rem'
+          marginBottom: '5.1rem'
         }}
       >
         {/* Full Edge-to-Edge Right Side Fill for Solution 02 (White + Minimal Dot Matrix Grid) */}
@@ -435,7 +435,7 @@ export default function ServicesV2() {
       </div>
 
       {/* Section 2 Heading: How the Process Looks */}
-      <div className="container" style={{ textAlign: 'center', marginBottom: '3.5rem', paddingTop: '4.2rem' }}>
+      <div className="container" style={{ textAlign: 'center', marginBottom: '3.5rem', paddingTop: '5.1rem' }}>
         {/* Short decor line above section heading */}
         <div style={{ 
           width: '60px', 
