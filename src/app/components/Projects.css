@@ -675,20 +675,15 @@
   border-style: solid !important;
 }
 
-/* 2. Inner Visual Parallax Depth Zoom */
-.preview-view .flat-screen img,
-.preview-view .laptop-screen img,
-.preview-view .project-visual img {
-  transition: transform 0.5s cubic-bezier(0.16, 1, 0.3, 1);
+/* 2. Inner Visual Floating Lift (Lifts the UI frame gracefully without top corner cropping) */
+.preview-view .project-visual {
+  transition: transform 0.5s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.5s cubic-bezier(0.16, 1, 0.3, 1);
+  transform-origin: center center;
 }
 
-.preview-item-container:hover .preview-view .flat-screen img,
-.preview-item-container:focus-within .preview-view .flat-screen img,
-.preview-item-container:hover .preview-view .laptop-screen img,
-.preview-item-container:focus-within .preview-view .laptop-screen img,
-.preview-item-container:hover .preview-view .project-visual img,
-.preview-item-container:focus-within .preview-view .project-visual img {
-  transform: scale(1.04);
+.preview-item-container:hover .preview-view .project-visual,
+.preview-item-container:focus-within .preview-view .project-visual {
+  transform: translateY(-6px) scale(1.03);
 }
 
 .preview-card-scaler {
@@ -723,9 +718,7 @@
 /* 4. Motion Sensitivity Accessibility (prefers-reduced-motion) */
 @media (prefers-reduced-motion: reduce) {
   .preview-card-wrapper,
-  .preview-view .flat-screen img,
-  .preview-view .laptop-screen img,
-  .preview-view .project-visual img {
+  .preview-view .project-visual {
     transition: border-color 0.3s ease, box-shadow 0.3s ease !important;
   }
 
@@ -734,12 +727,8 @@
     transform: none !important;
   }
 
-  .preview-item-container:hover .preview-view .flat-screen img,
-  .preview-item-container:focus-within .preview-view .flat-screen img,
-  .preview-item-container:hover .preview-view .laptop-screen img,
-  .preview-item-container:focus-within .preview-view .laptop-screen img,
-  .preview-item-container:hover .preview-view .project-visual img,
-  .preview-item-container:focus-within .preview-view .project-visual img {
+  .preview-item-container:hover .preview-view .project-visual,
+  .preview-item-container:focus-within .preview-view .project-visual {
     transform: none !important;
   }
 }
