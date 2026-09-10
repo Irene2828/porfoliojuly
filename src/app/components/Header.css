@@ -6,7 +6,7 @@
   --hero-motion-duration: 1.92s;
   --hero-scan-delay: calc(var(--hero-intro-delay) + var(--hero-motion-duration) - 1s);
   --hero-nav-frame-offset: clamp(0rem, calc((100vw - 70rem) * 0.15), 3rem);
-  position: fixed;
+  position: absolute;
   top: 0;
   left: 0;
   right: 0;
@@ -297,6 +297,7 @@
 /* MOBILE MEDIA QUERY ONLY */
 @media (max-width: 900px) {
   .premium-header {
+    position: fixed !important;
     background-color: rgba(255, 255, 255, 0.85) !important;
     backdrop-filter: saturate(180%) blur(20px) !important;
     -webkit-backdrop-filter: saturate(180%) blur(20px) !important;
