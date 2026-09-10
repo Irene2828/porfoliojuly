@@ -181,7 +181,7 @@ export default function ServicesV2() {
           width: '100%',
           margin: '0 auto 0.75rem auto'
         }}>
-          / How I Can Help Your Business /
+          How I Can Help Your Business
         </h2>
         <p style={{
           fontFamily: "var(--font-sans), Inter, sans-serif",
@@ -469,7 +469,7 @@ export default function ServicesV2() {
           width: '100%',
           margin: '0 auto 0.75rem auto'
         }}>
-          / How the Process Looks /
+          How the Process Looks
         </h2>
         <p style={{
           fontFamily: "var(--font-sans), Inter, sans-serif",

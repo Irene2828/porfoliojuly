@@ -73,7 +73,7 @@ export default function ProcessSection() {
           width: '100%',
           margin: '0 auto 0.75rem auto'
         }}>
-          / Why Work With Me /
+          Why Work With Me
         </h2>
         <p style={{
           fontFamily: "var(--font-sans), Inter, sans-serif",
