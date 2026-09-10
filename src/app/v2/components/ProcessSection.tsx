@@ -38,8 +38,6 @@ export default function ProcessSection() {
       id="process" 
       style={{ 
         backgroundColor: '#ffffff',
-        backgroundImage: 'radial-gradient(circle, rgba(0, 0, 0, 0.065) 1.25px, transparent 1.25px)',
-        backgroundSize: '28px 28px',
         padding: 0,
         margin: '8rem 0 0 0',
         position: 'relative'
@@ -132,15 +130,17 @@ export default function ProcessSection() {
                   viewport={{ once: true }}
                   transition={{ duration: 0.65, delay: i * 0.15, ease: [0.16, 1, 0.3, 1] }}
                   style={{
-                    backgroundColor: '#d0e8fc',
-                    border: '1px solid rgba(44, 111, 176, 0.2)',
+                    backgroundColor: '#ffffff',
+                    backgroundImage: 'radial-gradient(circle, rgba(0, 0, 0, 0.065) 1.25px, transparent 1.25px)',
+                    backgroundSize: '28px 28px',
+                    border: '1px solid rgba(0, 0, 0, 0.1)',
                     borderRadius: '16px',
                     padding: '2.25rem 2rem',
                     display: 'flex',
                     flexDirection: 'column',
                     justifyContent: 'space-between',
                     position: 'relative',
-                    boxShadow: '0 6px 20px rgba(44, 111, 176, 0.08)',
+                    boxShadow: '0 10px 30px rgba(0, 0, 0, 0.05)',
                     transition: 'box-shadow 0.3s ease, border-color 0.3s ease'
                   }}
                 >
@@ -177,7 +177,7 @@ export default function ProcessSection() {
 
                   {/* Client Info */}
                   <div style={{ 
-                    borderTop: '1px solid rgba(44, 111, 176, 0.25)', 
+                    borderTop: '1px solid rgba(0, 0, 0, 0.12)', 
                     paddingTop: '1rem', 
                     display: 'flex',
                     flexDirection: 'column',
@@ -197,7 +197,7 @@ export default function ProcessSection() {
                     <div style={{ 
                       fontFamily: "'JetBrains Mono', Menlo, monospace",
                       fontSize: '0.72rem',
-                      color: '#2c6fb0',
+                      color: '#55606a',
                       marginTop: '0.2rem',
                       letterSpacing: '0.02em',
                       textAlign: 'right'
