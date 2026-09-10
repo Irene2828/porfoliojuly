@@ -42,12 +42,12 @@ export default async function HomePage() {
           width: '60px', 
           height: '1px', 
           backgroundColor: '#0b0c10', 
-          margin: '10rem auto 2rem auto', 
+          margin: '7rem auto 2rem auto', 
           opacity: 0.6 
         }} />
 
         {/* Cases Section Header (Clean Background) */}
-        <section id="cases-section" style={{ padding: '3rem 0 0 0', backgroundColor: '#ffffff' }}>
+        <section id="cases-section" style={{ padding: '2rem 0 0 0', backgroundColor: '#ffffff' }}>
           <div className="container" style={{ textAlign: 'center', marginBottom: '3.5rem' }}>
             <h2 style={{ 
               fontFamily: "'Times New Roman', Times, Georgia, serif",
@@ -87,7 +87,7 @@ export default async function HomePage() {
               marginLeft: 'calc(-50vw + 50%)',
               marginRight: 'calc(-50vw + 50%)',
               padding: '4.5rem 0',
-              marginBottom: '4rem'
+              marginBottom: '2.8rem'
             }}
           >
             <div className="container" style={{ maxWidth: '1280px', margin: '0 auto', padding: '0 1.5rem' }}>
