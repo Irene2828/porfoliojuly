@@ -530,7 +530,7 @@ export default function ServicesV2() {
             position: 'relative', 
             padding: '1.5rem 0'
           }}>
-            {/* SVG Curved Dashed Connecting Path matching reference: curves left between 1 & 2, curves right between 2 & 3 */}
+            {/* SVG Curved Dashed Connecting Path: passes straight through icon centers and curves gracefully between icons */}
             <svg 
               style={{ 
                 position: 'absolute', 
@@ -545,7 +545,7 @@ export default function ServicesV2() {
               preserveAspectRatio="none"
             >
               <path 
-                d="M 52,0 L 52,40 C 20,110 20,130 52,200 C 84,270 84,290 52,360 L 52,400" 
+                d="M 52,0 L 52,54 C 18,105 18,135 52,184 L 52,214 C 86,265 86,295 52,344 L 52,400" 
                 fill="none" 
                 stroke="#5a9ad4" 
                 strokeWidth="2" 
