@@ -84,7 +84,7 @@ export default async function HomePage() {
               width: '100vw',
               marginLeft: 'calc(-50vw + 50%)',
               marginRight: 'calc(-50vw + 50%)',
-              padding: '4.5rem 0',
+              padding: '2.25rem 0',
               marginBottom: '3.3rem'
             }}
           >
