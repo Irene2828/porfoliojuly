@@ -199,47 +199,84 @@ export default function ProjectsV2({ initialProjects = [] }: ProjectsV2Props) {
   );
 
   const selectedProject = projectsList.find(p => p.id === selectedProjectId);
+  const row1Project = projectsList[0];
+  const row2Projects = projectsList.slice(1, 3);
 
   return (
     <section className="projects-section" id="cases" style={{ width: '100%', margin: '0 auto', padding: '0 1rem' }}>
       
-      {/* 2x2 Grid */}
+      {/* Container Wrapper */}
       <div 
-        className="cases-row-two-grid"
         style={{ 
-          display: 'grid', 
-          gridTemplateColumns: 'repeat(2, 1fr)', 
+          display: 'flex', 
+          flexDirection: 'column', 
           gap: '4.5rem', 
           width: '85vw', 
           maxWidth: '1400px', 
           margin: '0 auto' 
         }}
       >
-        {projectsList.map((project, idx) => {
-          return (
-            <motion.div 
-              layout 
-              key={project.id}
-              transition={{ duration: 0.5, ease: [0.16, 1, 0.3, 1] }}
-              style={{ width: '100%' }}
+        {/* Row 1: Single Full-Width Case */}
+        {row1Project && (
+          <motion.div 
+            layout 
+            key={row1Project.id}
+            transition={{ duration: 0.5, ease: [0.16, 1, 0.3, 1] }}
+            style={{ width: '100%' }}
+          >
+            <div 
+              className="preview-item-container"
+              onClick={() => setSelectedProjectId(row1Project.id)}
+              style={{ cursor: 'pointer' }}
             >
-              <div 
-                className="preview-item-container"
-                onClick={() => setSelectedProjectId(project.id)}
-                style={{ cursor: 'pointer' }}
-              >
-                <div className="preview-card-wrapper">
-                  <div className="preview-card-scaler">
-                    {renderProjectContent(project, false)}
-                  </div>
-                </div>
-                <div className="preview-card-caption">
-                  Click to expand full case study ↗
+              <div className="preview-card-wrapper">
+                <div className="preview-card-scaler">
+                  {renderProjectContent(row1Project, false)}
                 </div>
               </div>
-            </motion.div>
-          );
-        })}
+              <div className="preview-card-caption">
+                Click to expand full case study ↗
+              </div>
+            </div>
+          </motion.div>
+        )}
+
+        {/* Row 2: Two Cases Grid */}
+        <div 
+          className="cases-row-two-grid"
+          style={{ 
+            display: 'grid', 
+            gridTemplateColumns: 'repeat(2, 1fr)', 
+            gap: '4.5rem', 
+            width: '100%'
+          }}
+        >
+          {row2Projects.map((project) => {
+            return (
+              <motion.div 
+                layout 
+                key={project.id}
+                transition={{ duration: 0.5, ease: [0.16, 1, 0.3, 1] }}
+                style={{ width: '100%' }}
+              >
+                <div 
+                  className="preview-item-container"
+                  onClick={() => setSelectedProjectId(project.id)}
+                  style={{ cursor: 'pointer' }}
+                >
+                  <div className="preview-card-wrapper">
+                    <div className="preview-card-scaler">
+                      {renderProjectContent(project, false)}
+                    </div>
+                  </div>
+                  <div className="preview-card-caption">
+                    Click to expand full case study ↗
+                  </div>
+                </div>
+              </motion.div>
+            );
+          })}
+        </div>
       </div>
 
       <AnimatePresence>
