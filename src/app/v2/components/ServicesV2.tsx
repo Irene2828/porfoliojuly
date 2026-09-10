@@ -7,7 +7,7 @@ export default function ServicesV2() {
     {
       text: <span>Generate <strong>qualified leads</strong> for your business</span>,
       icon: (
-        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#2c6fb0" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="rgba(44, 111, 176, 0.6)" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
           <circle cx="12" cy="12" r="10"/><circle cx="12" cy="12" r="6"/><circle cx="12" cy="12" r="2"/>
         </svg>
       )
@@ -15,7 +15,7 @@ export default function ServicesV2() {
     {
       text: <span>Showcase your <strong>work &amp; services</strong> in a modern, premium way</span>,
       icon: (
-        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#2c6fb0" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="rgba(44, 111, 176, 0.6)" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
           <rect x="3" y="3" width="18" height="18" rx="2" ry="2"/><line x1="3" y1="9" x2="21" y2="9"/><line x1="9" y1="21" x2="9" y2="9"/>
         </svg>
       )
@@ -23,7 +23,7 @@ export default function ServicesV2() {
     {
       text: <span>Build <strong>trust &amp; authority</strong> with your audience</span>,
       icon: (
-        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#2c6fb0" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="rgba(44, 111, 176, 0.6)" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
           <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/>
         </svg>
       )
@@ -34,7 +34,7 @@ export default function ServicesV2() {
     {
       text: <span>Identify <strong>bottlenecks &amp; manual repetitive tasks</strong></span>,
       icon: (
-        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#2c6fb0" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="rgba(44, 111, 176, 0.6)" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
           <circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/>
         </svg>
       )
@@ -42,7 +42,7 @@ export default function ServicesV2() {
     {
       text: <span>Build &amp; integrate <strong>custom AI workflows &amp; agents</strong></span>,
       icon: (
-        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#2c6fb0" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="rgba(44, 111, 176, 0.6)" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
           <rect x="3" y="11" width="18" height="10" rx="2"/><circle cx="12" cy="5" r="2"/><path d="M12 7v4"/><line x1="8" y1="16" x2="8" y2="16"/><line x1="16" y1="16" x2="16" y2="16"/>
         </svg>
       )
@@ -50,7 +50,7 @@ export default function ServicesV2() {
     {
       text: <span>Deploy <strong>practical automation</strong> directly into daily operations</span>,
       icon: (
-        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#2c6fb0" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="rgba(44, 111, 176, 0.6)" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
           <polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"/>
         </svg>
       )
@@ -289,7 +289,7 @@ export default function ServicesV2() {
                         justifyContent: 'center',
                         boxShadow: '0 4px 12px rgba(0,0,0,0.06)',
                         flexShrink: 0,
-                        border: '1.5px solid #2c6fb0'
+                        border: '1.5px solid rgba(44, 111, 176, 0.6)'
                       }}>
                         {bullet.icon}
                       </div>
@@ -377,7 +377,7 @@ export default function ServicesV2() {
                         justifyContent: 'center',
                         boxShadow: '0 4px 12px rgba(0,0,0,0.06)',
                         flexShrink: 0,
-                        border: '1.5px solid #2c6fb0'
+                        border: '1.5px solid rgba(44, 111, 176, 0.6)'
                       }}>
                         {bullet.icon}
                       </div>
