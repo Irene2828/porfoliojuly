@@ -46,25 +46,51 @@ export default async function HomePage() {
           opacity: 0.6 
         }} />
 
-        {/* Cases Section Header */}
-        <div style={{ marginBottom: '3.5rem', textAlign: 'center' }}>
-          <h2 style={{ 
-            fontFamily: "'Times New Roman', Times, Georgia, serif",
-            fontSize: 'clamp(24px, 4vw, 38px)', 
-            color: '#5a9ad4', 
-            fontWeight: 500,
-            lineHeight: 1.25,
-            letterSpacing: '-0.01em',
-            textAlign: 'center',
-            margin: '0 auto'
-          }}>
-            / Featured Cases /
-          </h2>
-        </div>
+        {/* Cases Section Header with Dot Matrix Pattern Background */}
+        <section 
+          id="cases-section"
+          style={{
+            backgroundColor: '#ffffff',
+            backgroundImage: 'radial-gradient(circle, rgba(0, 0, 0, 0.065) 1.25px, transparent 1.25px)',
+            backgroundSize: '28px 28px',
+            width: '100vw',
+            marginLeft: 'calc(-50vw + 50%)',
+            marginRight: 'calc(-50vw + 50%)',
+            padding: '3rem 0 4rem 0',
+            marginBottom: '4rem'
+          }}
+        >
+          <div className="container" style={{ textAlign: 'center', marginBottom: '3.5rem' }}>
+            <h2 style={{ 
+              fontFamily: "'Times New Roman', Times, Georgia, serif",
+              fontSize: 'clamp(24px, 4vw, 38px)', 
+              color: '#5a9ad4', 
+              fontWeight: 500,
+              lineHeight: 1.25,
+              letterSpacing: '-0.01em',
+              textAlign: 'center',
+              margin: '0 auto 0.75rem auto'
+            }}>
+              / Featured Cases /
+            </h2>
+            <p style={{
+              fontFamily: "var(--font-sans), Inter, sans-serif",
+              fontSize: '1.175rem',
+              fontWeight: 500,
+              lineHeight: 1.6,
+              color: '#2a3036',
+              maxWidth: '640px',
+              margin: '0 auto',
+              textAlign: 'center'
+            }}>
+              Selected digital products, custom web tools, and AI solutions built end-to-end.
+            </p>
+          </div>
 
-        <div style={{ marginBottom: '2rem' }}>
-          <ProjectsV2 initialProjects={publishedProjects as any} />
-        </div>
+          <div className="container" style={{ maxWidth: '1280px', margin: '0 auto', padding: '0 1.5rem' }}>
+            <ProjectsV2 initialProjects={publishedProjects as any} />
+          </div>
+        </section>
 
         {/* Process Section */}
         <ProcessSection />
