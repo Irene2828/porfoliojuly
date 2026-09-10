@@ -40,7 +40,7 @@ export default function HeroV2() {
                 className="hero-text"
                 style={{ transform: 'translateY(-0.4rem)' }}
               >
-                <h1 className="title-serif hero-statement" style={{ fontSize: 'clamp(52.5px, 6.45vw, 57.75px)', color: '#4b85bb', fontWeight: 500, fontStyle: 'italic', marginTop: '0.6rem', textTransform: 'none', letterSpacing: '-0.04em' }}>
+                <h1 className="title-serif hero-statement" style={{ fontSize: 'clamp(52.5px, 6.45vw, 57.75px)', color: '#4b85bb', fontWeight: 500, fontStyle: 'normal', marginTop: '0.6rem', textTransform: 'none', letterSpacing: '-0.04em' }}>
                   Looking for a <span className="premium-hover"><span className="word-custom" style={{ fontStyle: 'italic' }}>custom</span></span> <span className="br-mobile"><br /></span><span className="premium-hover">website</span> <span className="br-desktop"><br /></span>or an <span className="br-mobile"><br /></span><span className="premium-hover"><span className="word-internal" style={{ fontStyle: 'italic' }}>internal</span> AI tool</span>?
                 </h1>
                 <p className="hero-frame-paragraph" style={{ marginTop: '1.7rem', fontSize: '1.16rem', lineHeight: '1.75', color: '#444444', maxWidth: '673px' }}>
