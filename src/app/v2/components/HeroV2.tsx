@@ -31,12 +31,6 @@ export default function HeroV2() {
 
         <div className="hero-content">
           <div className="hero-copy-motion">
-            <div className="hero-name-group" style={{ position: 'relative' }}>
-              {/* Decor squares poking out bottom-left of headline frame */}
-              <div className="hero-decor-square" style={{ position: 'absolute', width: '125px', height: '125px', border: '1.5px dashed rgba(34, 34, 34, 0.35)', bottom: '-55px', left: '-40px', zIndex: 25, transform: 'translateX(1%) translateZ(2px)', opacity: 0.5, pointerEvents: 'none' }} />
-              <div className="hero-decor-square" style={{ position: 'absolute', width: '65px', height: '65px', border: '1.5px dashed rgba(75, 133, 187, 0.45)', bottom: '-28px', left: '-55px', zIndex: 25, transform: 'translateX(1%) translateZ(2px)', opacity: 0.6, pointerEvents: 'none' }} />
-              <div className="hero-decor-square" style={{ position: 'absolute', width: '135px', height: '135px', border: '1.5px solid rgba(34, 34, 34, 0.25)', bottom: '-48px', left: '-75px', zIndex: 25, transform: 'translateX(1%) translateZ(2px)', opacity: 0.45, pointerEvents: 'none' }} />
-
               <div className="hero-connector-line"></div>
               <motion.div
                 initial={hasAnimated ? false : { opacity: 0 }}
@@ -87,6 +81,10 @@ export default function HeroV2() {
           <div className="hero-image-container" style={{ position: 'relative', zIndex: 2 }}>
             <div className="hero-image-offset-frame"></div>
             <div className="hero-image-brackets"></div>
+            {/* Decor squares poking out bottom-right under image */}
+            <div className="hero-decor-square" style={{ position: 'absolute', width: '125px', height: '125px', border: '1.5px dashed rgba(235, 235, 237, 0.4)', bottom: '-45px', right: '-35px', zIndex: 0, opacity: 0.7, pointerEvents: 'none' }} />
+            <div className="hero-decor-square" style={{ position: 'absolute', width: '65px', height: '65px', border: '1.5px dashed rgba(75, 133, 187, 0.55)', bottom: '-20px', right: '-50px', zIndex: 0, opacity: 0.8, pointerEvents: 'none' }} />
+            <div className="hero-decor-square" style={{ position: 'absolute', width: '135px', height: '135px', border: '1.5px solid rgba(235, 235, 237, 0.3)', bottom: '-35px', right: '-65px', zIndex: 0, opacity: 0.6, pointerEvents: 'none' }} />
             <img src={heroImage.src} alt="Iryna Sheremeta" className="hero-image" />
             <div className="hero-dot-overlay"></div>
 
