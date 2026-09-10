@@ -530,27 +530,27 @@ export default function ServicesV2() {
             position: 'relative', 
             padding: '1.5rem 0'
           }}>
-            {/* SVG Curved Dashed Connecting Path running in a balanced snake S-curve centrally top to bottom through icons */}
+            {/* SVG Curved Dashed Connecting Path matching reference: curves left between 1 & 2, curves right between 2 & 3 */}
             <svg 
               style={{ 
                 position: 'absolute', 
                 top: 0, 
-                left: '-16px', 
-                width: '80px', 
+                left: '-28px', 
+                width: '104px', 
                 height: '100%', 
                 pointerEvents: 'none', 
                 zIndex: 1 
               }}
-              viewBox="0 0 80 400"
+              viewBox="0 0 104 400"
               preserveAspectRatio="none"
             >
               <path 
-                d="M 40,0 C 65,100 15,300 40,400" 
+                d="M 52,0 L 52,40 C 20,110 20,130 52,200 C 84,270 84,290 52,360 L 52,400" 
                 fill="none" 
                 stroke="#5a9ad4" 
                 strokeWidth="2" 
                 strokeDasharray="6 6" 
-                opacity="0.65"
+                opacity="0.75"
               />
             </svg>
 
