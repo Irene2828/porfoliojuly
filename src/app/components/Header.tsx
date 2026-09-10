@@ -8,15 +8,21 @@ export default function Header() {
 
   return (
     <header className="premium-header">
-      {/* Left side (Desktop): Name & Title in one line */}
-      <div className="header-socials header-socials-desktop" style={{ flexDirection: 'row', alignItems: 'center', gap: '0.6rem', whiteSpace: 'nowrap' }}>
-        <span style={{ fontFamily: 'Inter, sans-serif', fontSize: '0.75rem', fontWeight: 600, letterSpacing: '0.14em', color: '#111111', textTransform: 'uppercase' }}>
-          IRYNA SHEREMETA
-        </span>
-        <span style={{ color: '#888888', fontWeight: 400, fontSize: '0.75rem' }}>/</span>
-        <span style={{ fontFamily: 'Inter, sans-serif', fontSize: '0.65rem', fontWeight: 600, letterSpacing: '0.14em', color: '#55606a', textTransform: 'uppercase' }}>
-          WEB &amp; AI PRODUCT BUILDER
-        </span>
+      {/* Left side (Desktop): Social Icons */}
+      <div className="header-socials header-socials-desktop">
+        <a href="mailto:hello@example.com" className="social-link-icon" title="Email" aria-label="Email">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.6" strokeLinecap="round" strokeLinejoin="round">
+            <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path>
+            <polyline points="22,6 12,13 2,6"></polyline>
+          </svg>
+        </a>
+        <a href="https://linkedin.com" target="_blank" rel="noopener noreferrer" className="social-link-icon" title="LinkedIn" aria-label="LinkedIn">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.6" strokeLinecap="round" strokeLinejoin="round">
+            <path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"></path>
+            <rect x="2" y="9" width="4" height="12"></rect>
+            <circle cx="4" cy="4" r="2"></circle>
+          </svg>
+        </a>
       </div>
 
       {/* Right side (Desktop): Nav links */}

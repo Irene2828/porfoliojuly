@@ -1408,8 +1408,9 @@
 .hero-image-tagline-stacked {
   position: absolute;
   bottom: -4.875rem; /* Kept at 10% lower position while image is 5% lower */
-  right: 0; /* aligned to the right edge of the image wrapper */
-  text-align: right; /* aligned by right */
+  left: 0; /* aligned to the left edge of the image wrapper */
+  right: auto;
+  text-align: left; /* aligned by left */
   z-index: 8;
   font-family: var(--font-sans);
   font-size: clamp(0.62rem, 0.88vw, 0.74rem); /* 20% smaller text size */
