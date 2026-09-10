@@ -134,15 +134,22 @@ export default function ServicesV2() {
           width: 100%;
         }
         @media (max-width: 860px) {
+          .services-right-split-bg {
+            display: none !important;
+          }
           .services-grid {
             grid-template-columns: 1fr !important;
           }
           .services-col-left {
+            background-color: #d0e8fc !important;
             border-right: none !important;
-            border-bottom: 1px solid rgba(0, 0, 0, 0.12) !important;
+            border-bottom: 1px solid #c0d8fc !important;
             padding: 3.5rem 2rem !important;
           }
           .services-col-right {
+            background-color: #ffffff !important;
+            background-image: radial-gradient(circle, rgba(0, 0, 0, 0.065) 1.25px, transparent 1.25px) !important;
+            background-size: 28px 28px !important;
             padding: 3.5rem 2rem !important;
           }
         }
@@ -200,6 +207,7 @@ export default function ServicesV2() {
       >
         {/* Full Edge-to-Edge Right Side Fill for Solution 02 (White + Minimal Dot Matrix Grid) */}
         <div 
+          className="services-right-split-bg"
           style={{
             position: 'absolute',
             top: 0,
