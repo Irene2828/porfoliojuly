@@ -37,12 +37,8 @@ export default function ProcessSection() {
     <section 
       id="process" 
       style={{ 
-        backgroundColor: '#18191e',
-        width: '100vw',
-        marginLeft: 'calc(-50vw + 50%)',
-        marginRight: 'calc(-50vw + 50%)',
-        padding: '4rem 0 4rem 0',
-        margin: '8rem 0 0 0',
+        backgroundColor: '#ffffff',
+        padding: '6rem 0 0 0',
         position: 'relative'
       }}
     >
@@ -54,20 +50,8 @@ export default function ProcessSection() {
         }
       `}</style>
 
-      {/* Top Edge-to-Edge 1px Divider Bar */}
-      <div 
-        style={{
-          width: '100vw',
-          marginLeft: 'calc(-50vw + 50%)',
-          marginRight: 'calc(-50vw + 50%)',
-          height: '1px',
-          backgroundColor: '#c0d8fc',
-          marginBottom: '3.5rem'
-        }}
-      />
-
-      {/* Centered Section Header */}
-      <div className="container" style={{ textAlign: 'center', marginBottom: '1.75rem' }}>
+      {/* Centered Section Header (Outside the Black Frame) */}
+      <div className="container" style={{ textAlign: 'center', marginBottom: '3.5rem' }}>
         {/* Section Heading */}
         <h2 style={{ 
           fontFamily: "'Times New Roman', Times, Georgia, serif",
@@ -91,20 +75,21 @@ export default function ProcessSection() {
           maxWidth: '640px',
           margin: '0 auto',
           textAlign: 'center',
-          opacity: 0
+          opacity: 1
         }}>
           Here are some reviews on my work from the clients:
         </p>
       </div>
 
-      {/* 3 Testimonials Cards Container */}
+      {/* Edge-to-Edge Matte Black Frame Container wrapping the 3 Cards */}
       <div 
         style={{
+          backgroundColor: '#18191e',
           width: '100vw',
           marginLeft: 'calc(-50vw + 50%)',
           marginRight: 'calc(-50vw + 50%)',
           position: 'relative',
-          padding: '0'
+          padding: '4.5rem 0'
         }}
       >
         <div 
@@ -214,18 +199,6 @@ export default function ProcessSection() {
           </div>
         </div>
       </div>
-
-      {/* Bottom Edge-to-Edge 1px Divider Bar */}
-      <div 
-        style={{
-          width: '100vw',
-          marginLeft: 'calc(-50vw + 50%)',
-          marginRight: 'calc(-50vw + 50%)',
-          height: '1px',
-          backgroundColor: '#c0d8fc',
-          marginTop: '4.5rem'
-        }}
-      />
     </section>
   );
 }
