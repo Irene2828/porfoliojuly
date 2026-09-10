@@ -318,7 +318,14 @@ export default function ServicesV2() {
                 display: 'flex',
                 flexDirection: 'column',
                 justifyContent: 'space-between',
-                color: '#18191e'
+                color: '#18191e',
+                backgroundColor: '#ffffff',
+                backgroundImage: `
+                  linear-gradient(to right, rgba(0, 0, 0, 0.048) 1px, transparent 1px),
+                  linear-gradient(to bottom, rgba(0, 0, 0, 0.048) 1px, transparent 1px)
+                `,
+                backgroundSize: '20px 20px',
+                position: 'relative'
               }}
             >
               <div>
