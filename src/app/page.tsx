@@ -37,18 +37,18 @@ export default async function HomePage() {
 
         <ServicesV2 />
 
-        {/* Short decor line directly above Cases heading */}
-        <div style={{ 
-          width: '60px', 
-          height: '1px', 
-          backgroundColor: '#0b0c10', 
-          margin: '8.2rem auto 2rem auto', 
-          opacity: 0.6 
-        }} />
-
         {/* Cases Section Header (Clean Background) */}
-        <section id="cases-section" style={{ padding: '2.45rem 0 0 0', backgroundColor: '#ffffff' }}>
+        <section id="cases-section" style={{ padding: '0', backgroundColor: '#ffffff' }}>
           <div className="container" style={{ textAlign: 'center', marginBottom: '3.5rem' }}>
+            {/* Short decor line directly above Cases heading */}
+            <div style={{ 
+              width: '60px', 
+              height: '1px', 
+              backgroundColor: '#0b0c10', 
+              margin: '0 auto 2.5rem auto', 
+              opacity: 0.6 
+            }} />
+
             <h2 style={{ 
               fontFamily: "'Times New Roman', Times, Georgia, serif",
               fontSize: 'clamp(24px, 4vw, 38px)', 
