@@ -531,8 +531,12 @@ export default function ServicesV2() {
             padding: '1.5rem 0'
           }}>
             <div style={{ display: 'flex', flexDirection: 'column', position: 'relative', zIndex: 2 }}>
-              {/* Straight Vertical Silver/Blue Dashed Decor Line running top-to-bottom through icon centers */}
-              <div
+              {/* Straight Vertical Silver/Blue Dashed Decor Line expanding progressively as section reveals */}
+              <motion.div
+                initial={{ scaleY: 0 }}
+                whileInView={{ scaleY: 1 }}
+                viewport={{ once: true }}
+                transition={{ duration: 1.4, delay: 0.1, ease: [0.16, 1, 0.3, 1] }}
                 style={{
                   position: 'absolute',
                   top: 0,
@@ -540,6 +544,7 @@ export default function ServicesV2() {
                   left: '24px',
                   width: '1px',
                   borderLeft: '1.5px dashed rgba(235, 235, 237, 0.55)',
+                  transformOrigin: 'top center',
                   pointerEvents: 'none',
                   zIndex: 1
                 }}
