@@ -14,7 +14,7 @@ export default function Header() {
           IRYNA SHEREMETA
         </span>
         <span style={{ color: '#888888', fontWeight: 400, fontSize: '0.75rem' }}>/</span>
-        <span style={{ fontFamily: 'Inter, sans-serif', fontSize: '0.65rem', fontWeight: 600, letterSpacing: '0.14em', color: '#b0b4bc', textTransform: 'uppercase' }}>
+        <span style={{ fontFamily: 'Inter, sans-serif', fontSize: '0.65rem', fontWeight: 600, letterSpacing: '0.14em', color: '#55606a', textTransform: 'uppercase' }}>
           WEB &amp; AI PRODUCT BUILDER
         </span>
       </div>

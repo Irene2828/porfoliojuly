@@ -76,7 +76,7 @@ export default function HeroV2() {
           {/* Mobile Name & Title directly on top of image, centered */}
           <div className="hero-mobile-intro" style={{ position: 'relative', zIndex: 2 }}>
             <h2 className="hero-mobile-name">IRYNA SHEREMETA</h2>
-            <p className="hero-mobile-role" style={{ color: '#b0b4bc' }}>WEB &amp; AI PRODUCT BUILDER</p>
+            <p className="hero-mobile-role" style={{ color: '#d1d5db' }}>WEB &amp; AI PRODUCT BUILDER</p>
           </div>
 
           <div className="hero-image-container" style={{ position: 'relative', zIndex: 2 }}>
