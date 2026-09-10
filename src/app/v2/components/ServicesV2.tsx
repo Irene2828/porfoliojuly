@@ -530,95 +530,183 @@ export default function ServicesV2() {
             position: 'relative', 
             padding: '1.5rem 0'
           }}>
-            {/* Mathematically Perfect Apple-Inspired Bezier Timeline Connector */}
-            <svg 
-              aria-hidden="true"
-              focusable="false"
-              style={{ 
-                position: 'absolute', 
-                top: 0, 
-                left: 0, 
-                width: '48px', 
-                height: '100%', 
-                overflow: 'visible',
-                pointerEvents: 'none', 
-                zIndex: 1 
-              }}
-              viewBox="0 0 48 400"
-              preserveAspectRatio="none"
-            >
-              <path 
-                d="M 24,0 L 24,40 C -8,120 -8,120 24,200 C 56,280 56,280 24,360 L 24,400" 
-                fill="none" 
-                stroke="#5a9ad4" 
-                strokeWidth="1.5" 
-                strokeDasharray="4 6" 
-                strokeLinecap="round"
-                vectorEffect="non-scaling-stroke"
-                opacity="0.65"
-              />
-            </svg>
-
-            <div style={{ display: 'flex', flexDirection: 'column', gap: '3.5rem', position: 'relative', zIndex: 2 }}>
+            <div style={{ display: 'flex', flexDirection: 'column', position: 'relative', zIndex: 2 }}>
               {steps.map((step, i) => (
-                <motion.div
-                  key={step.num}
-                  initial={{ opacity: 0, x: -20 }}
-                  whileInView={{ opacity: 1, x: 0 }}
-                  viewport={{ once: true }}
-                  transition={{ duration: 0.6, delay: i * 0.18 }}
-                  style={{
-                    display: 'flex',
-                    alignItems: 'flex-start',
-                    gap: '1.75rem',
-                    position: 'relative'
-                  }}
-                >
-                  {/* Step Icon & Number Badge */}
-                  <div style={{
-                    flexShrink: 0,
-                    width: '48px',
-                    height: '48px',
-                    borderRadius: '50%',
-                    backgroundColor: '#242730',
-                    border: '1.5px solid #5a9ad4',
-                    display: 'flex',
-                    alignItems: 'center',
-                    justifyContent: 'center',
-                    boxShadow: '0 4px 14px rgba(0, 0, 0, 0.25)',
-                    zIndex: 3
-                  }}>
-                    {step.icon}
-                  </div>
+                <div key={step.num} style={{ position: 'relative' }}>
+                  {/* Modularized Responsive SVG Bezier Connector Segment connecting this step to the next */}
+                  {i < steps.length - 1 && (
+                    <div
+                      style={{
+                        position: 'absolute',
+                        top: '24px', /* center of current 48px icon badge */
+                        bottom: '-24px', /* extends down to center of next 48px icon badge */
+                        left: 0,
+                        width: '48px',
+                        pointerEvents: 'none',
+                        zIndex: 1,
+                        overflow: 'visible'
+                      }}
+                    >
+                      <svg
+                        aria-hidden="true"
+                        focusable="false"
+                        style={{
+                          width: '100%',
+                          height: '100%',
+                          overflow: 'visible'
+                        }}
+                        viewBox="0 0 48 100"
+                        preserveAspectRatio="none"
+                      >
+                        <path
+                          /* i===0: arc left (-32), i===1: arc right (+32) returning to central center (24) */
+                          d={i === 0 
+                            ? "M 24,0 C -32,35 -32,65 24,100" 
+                            : "M 24,0 C 80,35 80,65 24,100"
+                          }
+                          fill="none"
+                          stroke="#5a9ad4"
+                          strokeWidth="1.5"
+                          strokeDasharray="4 6"
+                          strokeLinecap="round"
+                          vectorEffect="non-scaling-stroke"
+                          opacity="0.65"
+                        />
+                      </svg>
+                    </div>
+                  )}
 
-                  {/* Step Details */}
-                  <div style={{ flex: 1, paddingTop: '0.2rem' }}>
-                    <div style={{ display: 'flex', alignItems: 'center', marginBottom: '0.4rem' }}>
-                      <h3 style={{ 
-                        fontFamily: "'Times New Roman', Times, Georgia, serif",
-                        fontSize: '1.55rem', 
-                        color: '#eaecf0',
-                        fontWeight: 600,
-                        margin: 0,
-                        lineHeight: 1.2
-                      }}>
-                        {step.title}
-                      </h3>
+                  {/* Top extension tail line for first icon */}
+                  {i === 0 && (
+                    <div
+                      style={{
+                        position: 'absolute',
+                        bottom: 'calc(100% - 24px)',
+                        top: '-2.5rem',
+                        left: 0,
+                        width: '48px',
+                        pointerEvents: 'none',
+                        zIndex: 1
+                      }}
+                    >
+                      <svg
+                        aria-hidden="true"
+                        focusable="false"
+                        style={{ width: '100%', height: '100%' }}
+                        viewBox="0 0 48 40"
+                        preserveAspectRatio="none"
+                      >
+                        <line
+                          x1="24"
+                          y1="0"
+                          x2="24"
+                          y2="40"
+                          stroke="#5a9ad4"
+                          strokeWidth="1.5"
+                          strokeDasharray="4 6"
+                          strokeLinecap="round"
+                          vectorEffect="non-scaling-stroke"
+                          opacity="0.65"
+                        />
+                      </svg>
+                    </div>
+                  )}
+
+                  {/* Bottom extension tail line for last icon */}
+                  {i === steps.length - 1 && (
+                    <div
+                      style={{
+                        position: 'absolute',
+                        top: '24px',
+                        bottom: '-2.5rem',
+                        left: 0,
+                        width: '48px',
+                        pointerEvents: 'none',
+                        zIndex: 1
+                      }}
+                    >
+                      <svg
+                        aria-hidden="true"
+                        focusable="false"
+                        style={{ width: '100%', height: '100%' }}
+                        viewBox="0 0 48 40"
+                        preserveAspectRatio="none"
+                      >
+                        <line
+                          x1="24"
+                          y1="0"
+                          x2="24"
+                          y2="40"
+                          stroke="#5a9ad4"
+                          strokeWidth="1.5"
+                          strokeDasharray="4 6"
+                          strokeLinecap="round"
+                          vectorEffect="non-scaling-stroke"
+                          opacity="0.65"
+                        />
+                      </svg>
+                    </div>
+                  )}
+
+                  <motion.div
+                    initial={{ opacity: 0, x: -20 }}
+                    whileInView={{ opacity: 1, x: 0 }}
+                    viewport={{ once: true }}
+                    transition={{ duration: 0.6, delay: i * 0.18 }}
+                    style={{
+                      display: 'flex',
+                      alignItems: 'flex-start',
+                      gap: '1.75rem',
+                      position: 'relative',
+                      marginBottom: i < steps.length - 1 ? '3.5rem' : 0
+                    }}
+                  >
+                    {/* Step Icon & Number Badge */}
+                    <div style={{
+                      flexShrink: 0,
+                      width: '48px',
+                      height: '48px',
+                      borderRadius: '50%',
+                      backgroundColor: '#242730',
+                      border: '1.5px solid #5a9ad4',
+                      display: 'flex',
+                      alignItems: 'center',
+                      justifyContent: 'center',
+                      boxShadow: '0 4px 14px rgba(0, 0, 0, 0.25)',
+                      zIndex: 3
+                    }}>
+                      {step.icon}
                     </div>
 
-                    <p style={{
-                      fontFamily: "var(--font-sans), Inter, sans-serif",
-                      fontSize: '1rem',
-                      lineHeight: 1.65,
-                      color: '#d0d3d9',
-                      fontWeight: 300,
-                      margin: 0,
-                      maxWidth: '560px'
-                    }}>
-                      {step.desc}
-                    </p>
-                  </div>
-                </motion.div>
+                    {/* Step Details */}
+                    <div style={{ flex: 1, paddingTop: '0.2rem' }}>
+                      <div style={{ display: 'flex', alignItems: 'center', marginBottom: '0.4rem' }}>
+                        <h3 style={{ 
+                          fontFamily: "'Times New Roman', Times, Georgia, serif",
+                          fontSize: '1.55rem', 
+                          color: '#eaecf0',
+                          fontWeight: 600,
+                          margin: 0,
+                          lineHeight: 1.2
+                        }}>
+                          {step.title}
+                        </h3>
+                      </div>
+
+                      <p style={{
+                        fontFamily: "var(--font-sans), Inter, sans-serif",
+                        fontSize: '1rem',
+                        lineHeight: 1.65,
+                        color: '#d0d3d9',
+                        fontWeight: 300,
+                        margin: 0,
+                        maxWidth: '560px'
+                      }}>
+                        {step.desc}
+                      </p>
+                    </div>
+                  </motion.div>
+                </div>
               ))}
             </div>
           </div>
