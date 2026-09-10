@@ -62,7 +62,7 @@ export default async function HomePage() {
           </h2>
         </div>
 
-        <div style={{ marginBottom: '4rem' }}>
+        <div style={{ marginBottom: '2rem' }}>
           <ProjectsV2 initialProjects={publishedProjects as any} />
         </div>
 

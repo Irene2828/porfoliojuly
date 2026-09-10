@@ -38,7 +38,7 @@ export default function ProcessSection() {
       id="process" 
       style={{ 
         backgroundColor: '#ffffff',
-        padding: '3rem 0 0 0',
+        padding: '1.5rem 0 0 0',
         position: 'relative'
       }}
     >
