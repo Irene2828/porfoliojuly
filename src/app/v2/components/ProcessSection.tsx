@@ -60,7 +60,7 @@ export default function ProcessSection() {
           marginLeft: 'calc(-50vw + 50%)',
           marginRight: 'calc(-50vw + 50%)',
           height: '1px',
-          backgroundColor: '#18191e',
+          backgroundColor: '#c0d8fc',
           marginBottom: '3.5rem'
         }}
       />
@@ -133,15 +133,15 @@ export default function ProcessSection() {
                   viewport={{ once: true }}
                   transition={{ duration: 0.65, delay: i * 0.15, ease: [0.16, 1, 0.3, 1] }}
                   style={{
-                    backgroundColor: isCenter ? '#ffffff' : '#18191e',
-                    border: isCenter ? '1px solid #18191e' : '1px solid rgba(255, 255, 255, 0.08)',
+                    backgroundColor: isCenter ? '#ffffff' : '#d0e8fc',
+                    border: isCenter ? '1px solid #18191e' : '1px solid rgba(44, 111, 176, 0.2)',
                     borderRadius: '16px',
                     padding: '2.25rem 2rem',
                     display: 'flex',
                     flexDirection: 'column',
                     justifyContent: 'space-between',
                     position: 'relative',
-                    boxShadow: isCenter ? '0 10px 30px rgba(0, 0, 0, 0.06)' : '0 6px 20px rgba(0, 0, 0, 0.15)',
+                    boxShadow: isCenter ? '0 10px 30px rgba(0, 0, 0, 0.06)' : '0 6px 20px rgba(44, 111, 176, 0.08)',
                     transition: 'box-shadow 0.3s ease, border-color 0.3s ease'
                   }}
                 >
@@ -152,8 +152,8 @@ export default function ProcessSection() {
                         fontFamily: "'Times New Roman', Times, Georgia, serif",
                         fontSize: '2.2rem',
                         lineHeight: '0.8',
-                        color: isCenter ? '#2c6fb0' : '#5a9ad4',
-                        opacity: isCenter ? 0.85 : 0.7,
+                        color: isCenter ? '#2c6fb0' : '#2c6fb0',
+                        opacity: 0.85,
                         fontWeight: 700
                       }}>
                         &ldquo;
@@ -165,8 +165,8 @@ export default function ProcessSection() {
                       fontFamily: "var(--font-serif), 'Times New Roman', Times, Georgia, serif",
                       fontSize: '1.14rem',
                       lineHeight: 1.55,
-                      color: isCenter ? '#18191e' : '#ffffff',
-                      WebkitTextStroke: isCenter ? '0.3px #18191e' : '0.2px #ffffff',
+                      color: '#18191e',
+                      WebkitTextStroke: '0.3px #18191e',
                       letterSpacing: '0.02em',
                       fontWeight: 500,
                       fontStyle: 'italic',
@@ -178,7 +178,7 @@ export default function ProcessSection() {
 
                   {/* Client Info */}
                   <div style={{ 
-                    borderTop: isCenter ? '1px solid rgba(0, 0, 0, 0.15)' : '1px solid rgba(255, 255, 255, 0.12)', 
+                    borderTop: isCenter ? '1px solid rgba(0, 0, 0, 0.15)' : '1px solid rgba(44, 111, 176, 0.25)', 
                     paddingTop: '1rem', 
                     display: 'flex',
                     flexDirection: 'column',
@@ -189,7 +189,7 @@ export default function ProcessSection() {
                       fontFamily: "var(--font-sans), Inter, sans-serif",
                       fontSize: '0.95rem',
                       fontWeight: 600,
-                      color: isCenter ? '#18191e' : '#ffffff',
+                      color: '#18191e',
                       lineHeight: 1.3,
                       textAlign: 'right'
                     }}>
@@ -198,7 +198,7 @@ export default function ProcessSection() {
                     <div style={{ 
                       fontFamily: "'JetBrains Mono', Menlo, monospace",
                       fontSize: '0.72rem',
-                      color: isCenter ? '#55606a' : '#b0b4bc',
+                      color: isCenter ? '#55606a' : '#2c6fb0',
                       marginTop: '0.2rem',
                       letterSpacing: '0.02em',
                       textAlign: 'right'
@@ -220,7 +220,7 @@ export default function ProcessSection() {
           marginLeft: 'calc(-50vw + 50%)',
           marginRight: 'calc(-50vw + 50%)',
           height: '1px',
-          backgroundColor: '#18191e',
+          backgroundColor: '#c0d8fc',
           marginTop: '4.5rem'
         }}
       />
