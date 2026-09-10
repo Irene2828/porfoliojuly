@@ -31,6 +31,7 @@ export default function HeroV2() {
 
         <div className="hero-content">
           <div className="hero-copy-motion">
+            <div className="hero-name-group" style={{ position: 'relative' }}>
               <div className="hero-connector-line"></div>
               <motion.div
                 initial={hasAnimated ? false : { opacity: 0 }}
