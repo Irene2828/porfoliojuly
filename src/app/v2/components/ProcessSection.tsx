@@ -128,15 +128,15 @@ export default function ProcessSection() {
                 viewport={{ once: true }}
                 transition={{ duration: 0.65, delay: i * 0.15, ease: [0.16, 1, 0.3, 1] }}
                 style={{
-                  backgroundColor: item.bg,
-                  border: `1px solid ${item.borderColor}`,
+                  backgroundColor: '#18191e', // Matte black matching hero right side
+                  border: '1px solid rgba(255, 255, 255, 0.08)',
                   borderRadius: '16px',
                   padding: '2.25rem 2rem',
                   display: 'flex',
                   flexDirection: 'column',
                   justifyContent: 'space-between',
                   position: 'relative',
-                  boxShadow: item.bg === '#ffffff' ? '0 6px 16px rgba(0, 0, 0, 0.02)' : '0 6px 16px rgba(0, 0, 0, 0.03)',
+                  boxShadow: '0 6px 20px rgba(0, 0, 0, 0.15)',
                   transition: 'box-shadow 0.3s ease, border-color 0.3s ease'
                 }}
               >
@@ -147,8 +147,8 @@ export default function ProcessSection() {
                       fontFamily: "'Times New Roman', Times, Georgia, serif",
                       fontSize: '2.2rem',
                       lineHeight: '0.8',
-                      color: item.tagColor,
-                      opacity: 0.5,
+                      color: '#5a9ad4',
+                      opacity: 0.7,
                       fontWeight: 700
                     }}>
                       &ldquo;
@@ -160,7 +160,7 @@ export default function ProcessSection() {
                     fontFamily: "var(--font-serif), 'Times New Roman', Times, Georgia, serif",
                     fontSize: '1.14rem',
                     lineHeight: 1.55,
-                    color: '#18191e',
+                    color: '#ffffff',
                     fontWeight: 400,
                     fontStyle: 'italic',
                     margin: '0 0 1.25rem 0'
@@ -171,7 +171,7 @@ export default function ProcessSection() {
 
                 {/* Client Info */}
                 <div style={{ 
-                  borderTop: `1px solid ${item.bg === '#ffffff' ? 'rgba(0,0,0,0.08)' : 'rgba(0,0,0,0.12)'}`, 
+                  borderTop: '1px solid rgba(255, 255, 255, 0.12)', 
                   paddingTop: '1rem', 
                   display: 'flex',
                   flexDirection: 'column',
@@ -182,7 +182,7 @@ export default function ProcessSection() {
                     fontFamily: "var(--font-sans), Inter, sans-serif",
                     fontSize: '0.95rem',
                     fontWeight: 600,
-                    color: '#18191e',
+                    color: '#ffffff',
                     lineHeight: 1.3,
                     textAlign: 'right'
                   }}>
@@ -191,7 +191,7 @@ export default function ProcessSection() {
                   <div style={{ 
                     fontFamily: "'JetBrains Mono', Menlo, monospace",
                     fontSize: '0.72rem',
-                    color: item.bg === '#ffffff' ? '#55606a' : '#334155',
+                    color: '#b0b4bc',
                     marginTop: '0.2rem',
                     letterSpacing: '0.02em',
                     textAlign: 'right'
