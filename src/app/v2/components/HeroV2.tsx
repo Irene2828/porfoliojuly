@@ -82,6 +82,7 @@ export default function HeroV2() {
           <div className="hero-image-container" style={{ position: 'relative', zIndex: 2 }}>
             <div className="hero-image-offset-frame"></div>
             <div className="hero-image-brackets"></div>
+            <div className="hero-image-brackets-left"></div>
             {/* Decor squares poking out bottom-right under image */}
             <div className="hero-decor-square" style={{ position: 'absolute', width: '125px', height: '125px', border: '1.5px dashed rgba(235, 235, 237, 0.4)', bottom: '-45px', right: '-35px', zIndex: 0, opacity: 0.7, pointerEvents: 'none' }} />
             <div className="hero-decor-square" style={{ position: 'absolute', width: '65px', height: '65px', border: '1.5px dashed rgba(75, 133, 187, 0.55)', bottom: '-20px', right: '-50px', zIndex: 0, opacity: 0.8, pointerEvents: 'none' }} />
