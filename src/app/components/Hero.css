@@ -46,15 +46,13 @@
   border-left: 1px solid rgba(0, 0, 0, 0.08);
   z-index: 1;
   pointer-events: none;
-  opacity: 0;
-  animation: heroBgFadeIn 0.25s ease-out 1.8s forwards;
 }
 
 /* Notebook math grid pattern on the left white area */
 .hero-bg-split::before {
   content: '';
   position: absolute;
-  top: -3.5rem;
+  top: 0; /* starts right under header bottom edge */
   bottom: 0;
   right: 100%;
   width: 100vw;
