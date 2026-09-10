@@ -80,7 +80,7 @@ export default function EditorialStatement() {
         {/* Section Heading */}
         <h2 style={{ 
           fontFamily: "'Times New Roman', Times, Georgia, serif",
-          fontSize: 'clamp(24px, 4vw, 38px)', 
+          fontSize: 'clamp(19px, 3.2vw, 30px)', 
           color: '#5a9ad4', 
           fontWeight: 500,
           lineHeight: 1.25,
