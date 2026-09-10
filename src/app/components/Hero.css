@@ -1407,8 +1407,8 @@
 
 .hero-image-tagline-stacked {
   position: absolute;
-  bottom: -2.2rem; /* shifted 50% lower */
-  left: -20px; /* shifted 50% to the left */
+  bottom: -1.0rem; /* shifted 20% higher up */
+  left: -40px; /* shifted 20% further to the left */
   right: auto;
   text-align: left; /* aligned by left */
   z-index: 8;
