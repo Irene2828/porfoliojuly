@@ -37,8 +37,11 @@ export default function ProcessSection() {
     <section 
       id="process" 
       style={{ 
-        backgroundColor: '#ffffff',
-        padding: 0,
+        backgroundColor: '#18191e',
+        width: '100vw',
+        marginLeft: 'calc(-50vw + 50%)',
+        marginRight: 'calc(-50vw + 50%)',
+        padding: '4rem 0 4rem 0',
         margin: '8rem 0 0 0',
         position: 'relative'
       }}
