@@ -77,8 +77,31 @@ export default function EditorialStatement() {
           opacity: 0.6 
         }} />
 
-        {/* Statement Headline */}
-        <h2 style={{
+        {/* Section Heading */}
+        <h2 style={{ 
+          fontFamily: "'Times New Roman', Times, Georgia, serif",
+          fontSize: 'clamp(24px, 4vw, 38px)', 
+          color: '#5a9ad4', 
+          fontWeight: 500,
+          lineHeight: 1.25,
+          letterSpacing: '-0.01em',
+          textAlign: 'center',
+          width: '100%',
+          margin: '0 auto 1.25rem auto'
+        }}>
+          <span style={{ display: 'block' }}>{'How\u00A0I\u00A0Can\u00A0Help\u00A0Your\u00A0Business'}</span>
+          <span style={{ 
+            display: 'block',
+            fontFamily: "var(--font-serif), 'Times New Roman', Times, Georgia, serif",
+            fontStyle: 'italic',
+            fontWeight: 400
+          }}>
+            {'as\u00A0a\u00A0Digital\u00A0Product\u00A0Builder'}
+          </span>
+        </h2>
+
+        {/* Statement Subtitle */}
+        <p style={{
           fontFamily: "var(--font-sans), Inter, sans-serif",
           fontSize: '1.175rem',
           lineHeight: 1.6,
@@ -89,7 +112,7 @@ export default function EditorialStatement() {
           fontWeight: 500
         }}>
           The tools exist <em>now</em> to solve what used to seem too hard, too slow, or too expensive.
-        </h2>
+        </p>
 
         {/* Action CTAs with reduced spacing (marginTop: 1.75rem) */}
         <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', gap: '1rem', marginTop: '1.75rem', justifyContent: 'center' }}>
