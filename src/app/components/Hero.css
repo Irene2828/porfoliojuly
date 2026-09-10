@@ -1045,7 +1045,7 @@
     background-color: #ffffff !important;
     background-image: radial-gradient(circle, rgba(0, 0, 0, 0.065) 1.25px, transparent 1.25px) !important;
     background-size: 28px 28px !important;
-    border-top: 1px dashed rgba(18, 18, 18, 0.2) !important;
+    border-top: none !important;
     display: flex !important;
     flex-direction: column !important;
     align-items: center !important;
@@ -1066,7 +1066,13 @@
 
   .hero-ctas .btn-secondary-stacked {
     color: #1A1A1A !important;
-    border-color: rgba(30, 30, 30, 0.4) !important;
+    border: none !important;
+    border-bottom: none !important;
+    box-shadow: none !important;
+    text-decoration: none !important;
+    height: auto !important;
+    background: transparent !important;
+    padding: 0.5rem 0 !important;
   }
 }
 
