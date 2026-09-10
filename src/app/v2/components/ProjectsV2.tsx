@@ -226,7 +226,16 @@ export default function ProjectsV2({ initialProjects = [] }: ProjectsV2Props) {
           >
             <div 
               className="preview-item-container"
+              tabIndex={0}
+              role="button"
+              aria-label={`View ${row1Project.title} case study`}
               onClick={() => setSelectedProjectId(row1Project.id)}
+              onKeyDown={(e) => {
+                if (e.key === 'Enter' || e.key === ' ') {
+                  e.preventDefault();
+                  setSelectedProjectId(row1Project.id);
+                }
+              }}
               style={{ cursor: 'pointer' }}
             >
               <div className="preview-card-wrapper row1-fullwidth-wrapper">
@@ -261,7 +270,16 @@ export default function ProjectsV2({ initialProjects = [] }: ProjectsV2Props) {
               >
                 <div 
                   className="preview-item-container"
+                  tabIndex={0}
+                  role="button"
+                  aria-label={`View ${project.title} case study`}
                   onClick={() => setSelectedProjectId(project.id)}
+                  onKeyDown={(e) => {
+                    if (e.key === 'Enter' || e.key === ' ') {
+                      e.preventDefault();
+                      setSelectedProjectId(project.id);
+                    }
+                  }}
                   style={{ cursor: 'pointer' }}
                 >
                   <div className="preview-card-wrapper">

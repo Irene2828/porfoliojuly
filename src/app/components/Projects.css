@@ -649,6 +649,7 @@
   flex-direction: column;
   gap: 1.25rem;
   cursor: pointer;
+  outline: none;
 }
 
 .preview-card-wrapper {
@@ -659,15 +660,35 @@
   border-radius: 0px;
   overflow: hidden;
   background: transparent;
-  transition: transform 0.35s cubic-bezier(0.16, 1, 0.3, 1), border-color 0.35s ease, box-shadow 0.35s ease;
+  transform: scale(1) translateZ(0);
+  will-change: transform, box-shadow, border-color;
+  transition: transform 0.5s cubic-bezier(0.16, 1, 0.3, 1), border-color 0.5s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.5s cubic-bezier(0.16, 1, 0.3, 1);
 }
 
-.preview-item-container:hover .preview-card-wrapper {
-  transform: translateY(-6px) scale(1.025) !important; /* lifts card gracefully above container without side clipping */
-  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.12) !important;
+/* 1. Global Card Scale & Lift on hover & keyboard focus-within */
+.preview-item-container:hover .preview-card-wrapper,
+.preview-item-container:focus-within .preview-card-wrapper {
+  transform: scale(1.02) translateY(-4px) translateZ(0) !important;
+  box-shadow: 0 20px 48px rgba(0, 0, 0, 0.12) !important;
   border-color: #5a9ad4 !important;
   border-width: 1.5px !important;
   border-style: solid !important;
+}
+
+/* 2. Inner Visual Parallax Depth Zoom */
+.preview-view .flat-screen img,
+.preview-view .laptop-screen img,
+.preview-view .project-visual img {
+  transition: transform 0.5s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.preview-item-container:hover .preview-view .flat-screen img,
+.preview-item-container:focus-within .preview-view .flat-screen img,
+.preview-item-container:hover .preview-view .laptop-screen img,
+.preview-item-container:focus-within .preview-view .laptop-screen img,
+.preview-item-container:hover .preview-view .project-visual img,
+.preview-item-container:focus-within .preview-view .project-visual img {
+  transform: scale(1.04);
 }
 
 .preview-card-scaler {
@@ -676,26 +697,16 @@
   transform: scale(0.4);
   transform-origin: top left;
   pointer-events: none; /* Let clicks pass to wrapper */
-  transition: transform 0.35s cubic-bezier(0.16, 1, 0.3, 1);
 }
 
-.preview-item-container:hover .preview-card-scaler {
-  transform: scale(0.408) !important; /* subtle internal zoom */
+.row1-fullwidth-wrapper {
+  aspect-ratio: 16 / 9 !important;
 }
 
 .row1-fullwidth-scaler {
   width: 142.857% !important;
   height: 142.857% !important;
   transform: scale(0.7) !important;
-  transition: transform 0.35s cubic-bezier(0.16, 1, 0.3, 1) !important;
-}
-
-.preview-item-container:hover .row1-fullwidth-scaler {
-  transform: scale(0.714) !important;
-}
-
-.row1-fullwidth-wrapper {
-  aspect-ratio: 16 / 9 !important;
 }
 
 @media (max-width: 900px) {
@@ -707,8 +718,29 @@
     height: 250% !important;
     transform: scale(0.4) !important;
   }
-  .preview-item-container:hover .row1-fullwidth-scaler {
-    transform: scale(0.408) !important;
+}
+
+/* 4. Motion Sensitivity Accessibility (prefers-reduced-motion) */
+@media (prefers-reduced-motion: reduce) {
+  .preview-card-wrapper,
+  .preview-view .flat-screen img,
+  .preview-view .laptop-screen img,
+  .preview-view .project-visual img {
+    transition: border-color 0.3s ease, box-shadow 0.3s ease !important;
+  }
+
+  .preview-item-container:hover .preview-card-wrapper,
+  .preview-item-container:focus-within .preview-card-wrapper {
+    transform: none !important;
+  }
+
+  .preview-item-container:hover .preview-view .flat-screen img,
+  .preview-item-container:focus-within .preview-view .flat-screen img,
+  .preview-item-container:hover .preview-view .laptop-screen img,
+  .preview-item-container:focus-within .preview-view .laptop-screen img,
+  .preview-item-container:hover .preview-view .project-visual img,
+  .preview-item-container:focus-within .preview-view .project-visual img {
+    transform: none !important;
   }
 }
 
