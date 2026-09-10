@@ -47,7 +47,7 @@
   z-index: 1;
   pointer-events: none;
   opacity: 0;
-  animation: heroBgFadeIn 1s ease calc(var(--hero-scan-delay) + 1.38s) forwards;
+  animation: heroBgFadeIn 0.6s cubic-bezier(0.16, 1, 0.3, 1) calc(var(--hero-intro-delay) + var(--hero-motion-duration) - 0.2s) forwards;
 }
 
 /* Modern minimal dot matrix pattern for AI Product Builder aesthetic */
