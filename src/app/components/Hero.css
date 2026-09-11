@@ -183,6 +183,7 @@
   padding-top: 0;
   animation: heroCopySwap var(--hero-motion-duration) cubic-bezier(0.45, 0, 0.2, 1) both;
   animation-delay: var(--hero-intro-delay);
+  will-change: opacity, transform;
 }
 
 @keyframes heroCopySwap {
@@ -618,6 +619,7 @@
   cursor: pointer;
   animation: heroImageSwap var(--hero-motion-duration) cubic-bezier(0.45, 0, 0.2, 1) both;
   animation-delay: var(--hero-intro-delay);
+  will-change: opacity, transform;
   box-shadow: none;
 }
 
