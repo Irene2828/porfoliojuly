@@ -3,7 +3,7 @@
   --hero-inner-width: min(calc(100vw - 4rem), 1219px);
   --hero-image-swap-distance: calc(var(--hero-inner-width) - var(--hero-visual-width));
   --hero-intro-delay: 0s;
-  --hero-motion-duration: 1.62s;
+  --hero-motion-duration: 1.75s;
   --hero-scan-delay: calc(var(--hero-intro-delay) + var(--hero-motion-duration) - 1s);
   --hero-nav-frame-offset: clamp(0rem, calc((100vw - 70rem) * 0.15), 3rem);
   position: absolute;
