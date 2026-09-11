@@ -47,8 +47,8 @@
   z-index: 1;
   pointer-events: none;
   opacity: 0;
-  transform: translateY(100%);
-  animation: heroBgSlideUp 1.3s cubic-bezier(0.22, 1, 0.36, 1) calc(var(--hero-intro-delay) + var(--hero-motion-duration)) forwards;
+  clip-path: inset(100% 0 0 0);
+  animation: heroBgSlideUp 0.85s cubic-bezier(0.22, 1, 0.36, 1) calc(var(--hero-intro-delay) + var(--hero-motion-duration)) forwards;
 }
 
 /* Modern minimal dot matrix pattern for AI Product Builder aesthetic */
@@ -69,11 +69,11 @@
 @keyframes heroBgSlideUp {
   0% {
     opacity: 0;
-    transform: translateY(100%);
+    clip-path: inset(100% 0 0 0);
   }
   100% {
     opacity: 1;
-    transform: translateY(0);
+    clip-path: inset(0 0 0 0);
   }
 }
 
@@ -778,8 +778,8 @@
     border-bottom: none !important;
     z-index: 0 !important;
     opacity: 0 !important;
-    transform: translateY(100%) !important;
-    animation: heroBgSlideUp 0.95s cubic-bezier(0.22, 1, 0.36, 1) 0.1s forwards !important;
+    clip-path: inset(100% 0 0 0) !important;
+    animation: heroBgSlideUp 0.65s cubic-bezier(0.22, 1, 0.36, 1) 0.1s forwards !important;
   }
 
   /* Hide ONLY headline decor squares on mobile (keep decor frame behind portrait photo) */

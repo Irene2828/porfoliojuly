@@ -25,7 +25,7 @@
   pointer-events: auto;
   opacity: 0;
   transform: translateY(-100%);
-  animation: headerSlideDown 1.3s cubic-bezier(0.22, 1, 0.36, 1) calc(var(--hero-intro-delay) + var(--hero-motion-duration)) forwards;
+  animation: headerSlideDown 0.85s cubic-bezier(0.22, 1, 0.36, 1) calc(var(--hero-intro-delay) + var(--hero-motion-duration)) forwards;
 }
 
 /* Left side on Desktop: Social Icons */
@@ -316,7 +316,7 @@
     border-bottom: 1px solid rgba(0, 0, 0, 0.08) !important;
     opacity: 0;
     transform: translateY(-100%);
-    animation: headerSlideDown 0.95s cubic-bezier(0.22, 1, 0.36, 1) 0.1s forwards !important;
+    animation: headerSlideDown 0.65s cubic-bezier(0.22, 1, 0.36, 1) 0.1s forwards !important;
   }
 
   .header-nav-desktop,
