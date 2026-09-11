@@ -1,21 +1,9 @@
 'use client';
 
-import { motion } from 'framer-motion';
-import { useState, useEffect } from 'react';
 import '@/app/components/Hero.css';
 import heroImage from '@/app/assets/test.webp';
 
 export default function HeroV2() {
-  const [hasAnimated, setHasAnimated] = useState(true);
-
-  useEffect(() => {
-    const animatedBefore = sessionStorage.getItem('heroV2Animated');
-    if (!animatedBefore) {
-      setHasAnimated(false);
-      sessionStorage.setItem('heroV2Animated', 'true');
-    }
-  }, []);
-
   return (
     <section className="section hero-section" id="home">
       {/* Background Split */}
@@ -33,9 +21,7 @@ export default function HeroV2() {
           <div className="hero-copy-motion">
             <div className="hero-name-group" style={{ position: 'relative' }}>
               <div className="hero-connector-line"></div>
-              <motion.div
-                initial={false}
-                animate={{ opacity: 1 }}
+              <div
                 className="hero-text"
                 style={{ transform: 'translateY(-0.4rem)' }}
               >
@@ -45,10 +31,8 @@ export default function HeroV2() {
                 <p className="hero-frame-paragraph" style={{ marginTop: '1.7rem', fontSize: '1.16rem', lineHeight: '1.75', color: '#444444', maxWidth: '673px' }}>
                   <strong>I design and build custom digital products end-to-end</strong> for business <span className="br-desktop"><br /></span>and professionals &mdash; from figuring out what solution you need to <span className="br-desktop"><br /></span>shipping a working product.
                 </p>
-              </motion.div>
-              <motion.div
-                initial={false}
-                animate={{ y: 0, opacity: 1 }}
+              </div>
+              <div
                 className="hero-ctas hero-ctas-outside"
                 style={{ marginTop: '3.8rem' }}
               >
@@ -62,7 +46,7 @@ export default function HeroV2() {
                 <a href="#process" className="btn btn-secondary btn-secondary-stacked">
                   SEE WORK EXAMPLES <span className="arrow">↓</span>
                 </a>
-              </motion.div>
+              </div>
             </div>
           </div>
         </div>
