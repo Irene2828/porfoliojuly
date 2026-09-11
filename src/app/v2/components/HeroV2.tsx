@@ -34,9 +34,8 @@ export default function HeroV2() {
             <div className="hero-name-group" style={{ position: 'relative' }}>
               <div className="hero-connector-line"></div>
               <motion.div
-                initial={hasAnimated ? false : { opacity: 0 }}
+                initial={false}
                 animate={{ opacity: 1 }}
-                transition={{ duration: 0.6, ease: "easeOut" }}
                 className="hero-text"
                 style={{ transform: 'translateY(-0.4rem)' }}
               >
@@ -48,9 +47,8 @@ export default function HeroV2() {
                 </p>
               </motion.div>
               <motion.div
-                initial={hasAnimated ? false : { y: 20, opacity: 0 }}
+                initial={false}
                 animate={{ y: 0, opacity: 1 }}
-                transition={{ duration: 0.65, delay: hasAnimated ? 0 : 0.55, ease: [0.16, 1, 0.3, 1] }}
                 className="hero-ctas hero-ctas-outside"
                 style={{ marginTop: '3.8rem' }}
               >

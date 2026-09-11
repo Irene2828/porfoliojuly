@@ -4,7 +4,7 @@
   --hero-column-swap-distance: calc(var(--hero-inner-width) - 100%);
   --hero-image-swap-distance: calc(var(--hero-inner-width) - 100% - 5vw);
   --hero-corner-size: min(28vw, 360px);
-  --hero-intro-delay: 0.5s;
+  --hero-intro-delay: 0s;
   --hero-motion-duration: 1.42s;
   --hero-scan-delay: calc(var(--hero-intro-delay) + var(--hero-motion-duration) - 1s);
   --hero-caption-delay: calc(var(--hero-intro-delay) + var(--hero-motion-duration) - 1s);
