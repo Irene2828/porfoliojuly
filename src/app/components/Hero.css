@@ -108,7 +108,6 @@
 
 .hero-container {
   display: flex;
-  flex-direction: row-reverse;
   align-items: center; /* align center of beige frame and image */
   justify-content: space-between;
   gap: clamp(1.6875rem, 3.75vw, 3rem);
@@ -188,11 +187,10 @@
 
 @keyframes heroCopySwap {
   0% {
-    transform: translateX(0);
+    opacity: 0;
   }
-
   100% {
-    transform: translateX(calc(-1 * var(--hero-column-swap-distance) - 10%));
+    opacity: 1;
   }
 }
 
@@ -642,11 +640,10 @@
 
 @keyframes heroImageSwap {
   0% {
-    transform: translate(0, 0) scale(1);
+    opacity: 0;
   }
-
   100% {
-    transform: translate(calc(var(--hero-image-swap-distance) * 1.1 - 5vw), 0) scale(1); /* align in the center vertically, moved 5vw closer to left */
+    opacity: 1;
   }
 }
 
