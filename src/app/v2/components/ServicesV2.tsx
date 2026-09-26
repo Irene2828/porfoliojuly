@@ -7,7 +7,7 @@ export default function ServicesV2() {
     {
       text: <span>Generate <strong>qualified leads</strong> for your business</span>,
       icon: (
-        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="rgba(255, 255, 255, 0.8)" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#333842" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
           <circle cx="12" cy="12" r="10"/><circle cx="12" cy="12" r="6"/><circle cx="12" cy="12" r="2"/>
         </svg>
       )
@@ -15,7 +15,7 @@ export default function ServicesV2() {
     {
       text: <span>Showcase your <strong>work &amp; services</strong> in a modern, premium way</span>,
       icon: (
-        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="rgba(255, 255, 255, 0.8)" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#333842" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
           <rect x="3" y="3" width="18" height="18" rx="2" ry="2"/><line x1="3" y1="9" x2="21" y2="9"/><line x1="9" y1="21" x2="9" y2="9"/>
         </svg>
       )
@@ -23,7 +23,7 @@ export default function ServicesV2() {
     {
       text: <span>Build <strong>trust &amp; authority</strong> with your audience</span>,
       icon: (
-        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="rgba(255, 255, 255, 0.8)" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#333842" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
           <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/>
         </svg>
       )
@@ -34,7 +34,7 @@ export default function ServicesV2() {
     {
       text: <span>Identify <strong>bottlenecks &amp; manual repetitive tasks</strong></span>,
       icon: (
-        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#18191e" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="rgba(255, 255, 255, 0.85)" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
           <circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/>
         </svg>
       )
@@ -42,7 +42,7 @@ export default function ServicesV2() {
     {
       text: <span>Build &amp; integrate <strong>custom AI workflows &amp; agents</strong></span>,
       icon: (
-        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#18191e" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="rgba(255, 255, 255, 0.85)" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
           <rect x="3" y="11" width="18" height="10" rx="2"/><circle cx="12" cy="5" r="2"/><path d="M12 7v4"/><line x1="8" y1="16" x2="8" y2="16"/><line x1="16" y1="16" x2="16" y2="16"/>
         </svg>
       )
@@ -50,7 +50,7 @@ export default function ServicesV2() {
     {
       text: <span>Deploy <strong>practical automation</strong> directly into daily operations</span>,
       icon: (
-        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#18191e" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="rgba(255, 255, 255, 0.85)" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
           <polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"/>
         </svg>
       )
@@ -139,22 +139,23 @@ export default function ServicesV2() {
             padding-top: 2.55rem !important;
             margin-top: 2.55rem !important;
           }
-          .services-right-split-bg {
+          .services-left-split-bg {
             display: none !important;
           }
           .services-grid {
             grid-template-columns: 1fr !important;
           }
           .services-col-left {
-            background-color: #d0e8fc !important;
-            border-right: none !important;
-            border-bottom: 1px solid #c0d8fc !important;
-            padding: 3.5rem 2rem !important;
-          }
-          .services-col-right {
             background-color: #ffffff !important;
             background-image: radial-gradient(circle, rgba(0, 0, 0, 0.065) 1.25px, transparent 1.25px) !important;
             background-size: 28px 28px !important;
+            border-right: none !important;
+            border-bottom: 1px solid rgba(0, 0, 0, 0.08) !important;
+            padding: 3.5rem 2rem !important;
+          }
+          .services-col-right {
+            background-color: #333842 !important;
+            background-image: none !important;
             padding: 3.5rem 2rem !important;
           }
         }
@@ -220,15 +221,15 @@ export default function ServicesV2() {
           marginBottom: '5.1rem'
         }}
       >
-        {/* Full Edge-to-Edge Right Side Fill for Solution 02 (White + Minimal Dot Matrix Grid) */}
+        {/* Full Edge-to-Edge Left Side Fill for Solution 01 (White + Minimal Dot Matrix Grid) */}
         <div 
-          className="services-right-split-bg"
+          className="services-left-split-bg"
           style={{
             position: 'absolute',
             top: 0,
             bottom: 0,
-            left: '50%',
-            right: 0,
+            left: 0,
+            right: '50%',
             backgroundColor: '#ffffff',
             backgroundImage: 'radial-gradient(circle, rgba(0, 0, 0, 0.065) 1.25px, transparent 1.25px)',
             backgroundSize: '28px 28px',
@@ -242,7 +243,7 @@ export default function ServicesV2() {
           style={{
             width: '100%',
             height: '1px',
-            backgroundColor: 'rgba(255, 255, 255, 0.1)',
+            backgroundColor: 'rgba(0, 0, 0, 0.08)',
             position: 'relative',
             zIndex: 10
           }}
@@ -265,7 +266,7 @@ export default function ServicesV2() {
               minHeight: '460px'
             }}
           >
-            {/* Column 1: Custom Websites (Left Column - Dark Charcoal BG) */}
+            {/* Column 1: Custom Websites (Left Column - White BG with Dot Matrix) */}
             <div 
               className="services-col-left"
               style={{
@@ -273,10 +274,76 @@ export default function ServicesV2() {
                 display: 'flex',
                 flexDirection: 'column',
                 justifyContent: 'space-between',
+                color: '#18191e',
+                borderRight: '1px solid rgba(0, 0, 0, 0.08)',
+                position: 'relative',
+                zIndex: 2
+              }}
+            >
+              <div>
+                <div style={{ display: 'flex', alignItems: 'center', gap: '0.75rem', marginBottom: '1.25rem' }}>
+                  <span style={{ 
+                    fontFamily: "'JetBrains Mono', Menlo, monospace",
+                    fontSize: '11px',
+                    letterSpacing: '0.18em',
+                    textTransform: 'uppercase',
+                    color: '#333842',
+                    fontWeight: 600
+                  }}>
+                    // 01 &mdash; Solution
+                  </span>
+                </div>
+                <h3 style={{
+                  fontFamily: "var(--font-serif)",
+                  fontSize: 'clamp(1.48rem, 2.4vw, 2rem)',
+                  fontWeight: 400,
+                  color: '#333842',
+                  margin: '0 0 1.25rem 0',
+                  letterSpacing: '-0.02em',
+                  lineHeight: 1.15
+                }}>
+                  Custom Websites
+                </h3>
+                <div style={{ width: '48px', height: '1px', backgroundColor: '#333842', opacity: 0.25, marginBottom: '2.25rem' }} />
+                
+                <ul style={{ listStyle: 'none', padding: 0, margin: 0, display: 'flex', flexDirection: 'column', gap: '1.2rem' }}>
+                  {websitesBullets.map((bullet, idx) => (
+                    <li key={idx} style={{ fontSize: '1.02rem', color: '#2a3036', display: 'flex', alignItems: 'flex-start', gap: '1rem', lineHeight: 1.55 }}>
+                      <div style={{ 
+                        width: '44px', 
+                        height: '44px', 
+                        borderRadius: '50%', 
+                        backgroundColor: '#eaecf0',
+                        display: 'flex', 
+                        alignItems: 'center', 
+                        justifyContent: 'center',
+                        boxShadow: '0 4px 12px rgba(0,0,0,0.06)',
+                        flexShrink: 0,
+                        border: '1.5px solid rgba(24, 25, 30, 0.15)'
+                      }}>
+                        {bullet.icon}
+                      </div>
+                      <div style={{ paddingTop: '0.55rem' }}>
+                        {bullet.text}
+                      </div>
+                    </li>
+                  ))}
+                </ul>
+              </div>
+            </div>
+
+            {/* Column 2: Custom AI Tools (Right Column - Dark Charcoal BG) */}
+            <div 
+              className="services-col-right"
+              style={{
+                padding: '5rem 4rem 5rem 4rem',
+                display: 'flex',
+                flexDirection: 'column',
+                justifyContent: 'space-between',
                 color: '#ffffff',
-                borderRight: '1px solid rgba(255, 255, 255, 0.12)',
                 backgroundColor: '#333842',
-                borderRadius: '0'
+                position: 'relative',
+                zIndex: 2
               }}
             >
               <div>
@@ -289,7 +356,7 @@ export default function ServicesV2() {
                     color: '#eaecf0',
                     fontWeight: 600
                   }}>
-                    // 01 &mdash; Solution
+                    // 02 &mdash; Solution
                   </span>
                 </div>
                 <h3 style={{
@@ -301,12 +368,12 @@ export default function ServicesV2() {
                   letterSpacing: '-0.02em',
                   lineHeight: 1.15
                 }}>
-                  Custom Websites
+                  Custom AI Tools
                 </h3>
                 <div style={{ width: '48px', height: '1px', backgroundColor: '#ffffff', opacity: 0.25, marginBottom: '2.25rem' }} />
                 
                 <ul style={{ listStyle: 'none', padding: 0, margin: 0, display: 'flex', flexDirection: 'column', gap: '1.2rem' }}>
-                  {websitesBullets.map((bullet, idx) => (
+                  {aiToolsBullets.map((bullet, idx) => (
                     <li key={idx} style={{ fontSize: '1.02rem', color: '#e2e8f0', display: 'flex', alignItems: 'flex-start', gap: '1rem', lineHeight: 1.55 }}>
                       <div style={{ 
                         width: '44px', 
@@ -330,73 +397,6 @@ export default function ServicesV2() {
                 </ul>
               </div>
             </div>
-
-            {/* Column 2: Custom AI Tools (Right Column) */}
-            <div 
-              className="services-col-right"
-              style={{
-                padding: '5rem 4rem 5rem 4rem',
-                display: 'flex',
-                flexDirection: 'column',
-                justifyContent: 'space-between',
-                color: '#18191e',
-                position: 'relative',
-                zIndex: 2
-              }}
-            >
-              <div>
-                <div style={{ display: 'flex', alignItems: 'center', gap: '0.75rem', marginBottom: '1.25rem' }}>
-                  <span style={{ 
-                    fontFamily: "'JetBrains Mono', Menlo, monospace",
-                    fontSize: '11px',
-                    letterSpacing: '0.18em',
-                    textTransform: 'uppercase',
-                    color: '#18191e',
-                    fontWeight: 600
-                  }}>
-                    // 02 &mdash; Solution
-                  </span>
-                </div>
-                <h3 style={{
-                  fontFamily: "var(--font-serif)",
-                  fontSize: 'clamp(1.48rem, 2.4vw, 2rem)',
-                  fontWeight: 400,
-                  color: '#18191e',
-                  margin: '0 0 1.25rem 0',
-                  letterSpacing: '-0.02em',
-                  lineHeight: 1.15
-                }}>
-                  Custom AI Tools
-                </h3>
-                <div style={{ width: '48px', height: '1px', backgroundColor: '#18191e', opacity: 0.25, marginBottom: '2.25rem' }} />
-                
-                <ul style={{ listStyle: 'none', padding: 0, margin: 0, display: 'flex', flexDirection: 'column', gap: '1.2rem' }}>
-                  {aiToolsBullets.map((bullet, idx) => (
-                    <li key={idx} style={{ fontSize: '1.02rem', color: '#2a3036', display: 'flex', alignItems: 'flex-start', gap: '1rem', lineHeight: 1.55 }}>
-                      <div style={{ 
-                        width: '44px', 
-                        height: '44px', 
-                        borderRadius: '50%', 
-                        backgroundColor: '#e4f2fe',
-                        display: 'flex', 
-                        alignItems: 'center', 
-                        justifyContent: 'center',
-                        boxShadow: '0 4px 12px rgba(0,0,0,0.06)',
-                        flexShrink: 0,
-                        border: '1.5px solid rgba(24, 25, 30, 0.15)'
-                      }}>
-                        {bullet.icon}
-                      </div>
-                      <div style={{ paddingTop: '0.55rem' }}>
-                        {bullet.text}
-                      </div>
-                    </li>
-                  ))}
-                </ul>
-              </div>
-
-              {/* Link removed as requested */}
-            </div>
           </div>
         </div>
 
@@ -409,7 +409,7 @@ export default function ServicesV2() {
             left: 0,
             width: '100%',
             height: '1px',
-            backgroundColor: '#c0d8fc',
+            backgroundColor: 'rgba(0, 0, 0, 0.08)',
             zIndex: 10
           }}
         />
@@ -466,7 +466,7 @@ export default function ServicesV2() {
           width: '100vw',
           marginLeft: 'calc(-50vw + 50%)',
           marginRight: 'calc(-50vw + 50%)',
-          backgroundColor: '#18191e', // Matte black (#18191e)
+          backgroundColor: '#333842', // Charcoal grey matching hero
           borderTop: '1px solid rgba(240, 242, 245, 0.1)',
           borderBottom: '1px solid rgba(240, 242, 245, 0.1)',
           boxShadow: '0 20px 48px rgba(0, 0, 0, 0.08)',
