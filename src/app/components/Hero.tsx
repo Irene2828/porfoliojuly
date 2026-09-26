@@ -57,9 +57,9 @@ export default function Hero() {
                 </ul>
               </motion.div>
               <motion.div
-                initial={{ y: 20, opacity: 0 }}
+                initial={{ y: 15, opacity: 0 }}
                 animate={{ y: 0, opacity: 1 }}
-                transition={{ duration: 0.65, delay: 0.55, ease: [0.16, 1, 0.3, 1] }}
+                transition={{ duration: 0.5, delay: 0.25, ease: [0.16, 1, 0.3, 1] }}
                 className="hero-ctas hero-ctas-outside"
                 style={{ marginTop: '3.8rem' }}
               >

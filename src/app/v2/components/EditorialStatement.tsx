@@ -36,19 +36,20 @@ export default function EditorialStatement() {
           justify-content: center;
           height: 3.48rem !important;
           padding: 0 2rem !important;
-          background: #b8d9f7 !important;
-          color: #0b0c10 !important;
-          -webkit-text-fill-color: #0b0c10 !important;
-          border: 1.5px dashed rgba(18, 18, 18, 0.45) !important;
+          background: #333842 !important;
+          color: #ffffff !important;
+          -webkit-text-fill-color: #ffffff !important;
+          border: none !important;
+          border-radius: 56px !important;
           box-shadow: none !important;
           transition: background 0.22s ease, border-color 0.22s ease, transform 0.2s ease, box-shadow 0.2s ease !important;
           -webkit-text-stroke: 0 !important;
         }
         .prefooter-btn-primary:hover {
-          background: #a3cdf4 !important;
-          border-color: rgba(18, 18, 18, 0.75) !important;
-          color: #0b0c10 !important;
-          -webkit-text-fill-color: #0b0c10 !important;
+          background: #4a5161 !important;
+          border-color: #4a5161 !important;
+          color: #ffffff !important;
+          -webkit-text-fill-color: #ffffff !important;
         }
       `}</style>
       <motion.div
@@ -81,9 +82,9 @@ export default function EditorialStatement() {
         <h2 
           className="editorial-blue-heading"
           style={{ 
-            fontFamily: "'Times New Roman', Times, Georgia, serif",
+            fontFamily: "var(--font-serif)",
             fontSize: 'clamp(23px, 4vw, 30px)', 
-            color: '#5a9ad4', 
+            color: '#333842', 
             fontWeight: 400,
             fontStyle: 'normal',
             lineHeight: 1.25,

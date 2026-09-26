@@ -4,6 +4,8 @@ import { useState, useEffect } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import '@/app/components/Projects.css';
 import SectionDivider from '@/app/components/SectionDivider';
+import GuertinProject from './GuertinProject';
+import GenericWhiteCard from './GenericWhiteCard';
 
 const textVariant = {
   hidden: { y: 25, opacity: 0 },
@@ -211,46 +213,12 @@ export default function ProjectsV2({ initialProjects = [] }: ProjectsV2Props) {
           display: 'flex', 
           flexDirection: 'column', 
           gap: '4.5rem', 
-          width: '85vw', 
-          maxWidth: '1400px', 
+          width: '90vw', 
+          maxWidth: '1540px', 
           margin: '0 auto' 
         }}
       >
-        {/* Row 1: Single Full-Width Case */}
-        {row1Project && (
-          <motion.div 
-            layout 
-            key={row1Project.id}
-            transition={{ duration: 0.5, ease: [0.16, 1, 0.3, 1] }}
-            style={{ width: '100%' }}
-          >
-            <div 
-              className="preview-item-container"
-              tabIndex={0}
-              role="button"
-              aria-label={`View ${row1Project.title} case study`}
-              onClick={() => setSelectedProjectId(row1Project.id)}
-              onKeyDown={(e) => {
-                if (e.key === 'Enter' || e.key === ' ') {
-                  e.preventDefault();
-                  setSelectedProjectId(row1Project.id);
-                }
-              }}
-              style={{ cursor: 'pointer' }}
-            >
-              <div className="preview-card-wrapper row1-fullwidth-wrapper">
-                <div className="preview-card-scaler row1-fullwidth-scaler">
-                  {renderProjectContent(row1Project, false)}
-                </div>
-              </div>
-              <div className="preview-card-caption">
-                Click to expand full case study ↗
-              </div>
-            </div>
-          </motion.div>
-        )}
-
-        {/* Row 2: Two Cases Grid */}
+        {/* Row 1: 2 Cards (Case 1 White, Case 2 Navy) */}
         <div 
           className="cases-row-two-grid"
           style={{ 
@@ -260,7 +228,8 @@ export default function ProjectsV2({ initialProjects = [] }: ProjectsV2Props) {
             width: '100%'
           }}
         >
-          {row2Projects.map((project) => {
+          {projectsList.slice(0, 2).map((project) => {
+            const isNavyCard = project.id === 'v2-2';
             return (
               <motion.div 
                 layout 
@@ -284,7 +253,17 @@ export default function ProjectsV2({ initialProjects = [] }: ProjectsV2Props) {
                 >
                   <div className="preview-card-wrapper">
                     <div className="preview-card-scaler">
-                      {renderProjectContent(project, false)}
+                      {isNavyCard ? (
+                        <GuertinProject />
+                      ) : (
+                        <GenericWhiteCard 
+                          title={project.title}
+                          subline={project.subline}
+                          annotations={project.annotations}
+                          stats={project.stats}
+                          image={project.image}
+                        />
+                      )}
                     </div>
                   </div>
                   <div className="preview-card-caption">
@@ -295,6 +274,48 @@ export default function ProjectsV2({ initialProjects = [] }: ProjectsV2Props) {
             );
           })}
         </div>
+
+        {/* Row 2: 1 Centered Card (Case 3 White, same size as row 1 cards) */}
+        {projectsList[2] && (
+          <div style={{ display: 'flex', justifyContent: 'center', width: '100%' }}>
+            <motion.div 
+              layout 
+              key={projectsList[2].id}
+              transition={{ duration: 0.5, ease: [0.16, 1, 0.3, 1] }}
+              style={{ width: 'calc(50% - 2.25rem)' }}
+            >
+              <div 
+                className="preview-item-container"
+                tabIndex={0}
+                role="button"
+                aria-label={`View ${projectsList[2].title} case study`}
+                onClick={() => setSelectedProjectId(projectsList[2].id)}
+                onKeyDown={(e) => {
+                  if (e.key === 'Enter' || e.key === ' ') {
+                    e.preventDefault();
+                    setSelectedProjectId(projectsList[2].id);
+                  }
+                }}
+                style={{ cursor: 'pointer' }}
+              >
+                <div className="preview-card-wrapper">
+                  <div className="preview-card-scaler">
+                    <GenericWhiteCard 
+                      title={projectsList[2].title}
+                      subline={projectsList[2].subline}
+                      annotations={projectsList[2].annotations}
+                      stats={projectsList[2].stats}
+                      image={projectsList[2].image}
+                    />
+                  </div>
+                </div>
+                <div className="preview-card-caption">
+                  Click to expand full case study ↗
+                </div>
+              </div>
+            </motion.div>
+          </div>
+        )}
       </div>
 
       <AnimatePresence>

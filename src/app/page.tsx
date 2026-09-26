@@ -38,7 +38,7 @@ export default async function HomePage() {
         <ServicesV2 />
 
         {/* Cases Section Header */}
-        <section id="cases-section" style={{ padding: '10.2rem 0 0 0', backgroundColor: '#ffffff' }}>
+        <section id="cases-section" style={{ padding: '5.1rem 0 0 0', backgroundColor: '#ffffff' }}>
           <div className="container" style={{ textAlign: 'center', marginBottom: '3.5rem' }}>
             {/* Short decor line directly above Cases heading */}
             <div style={{ 
@@ -50,9 +50,9 @@ export default async function HomePage() {
             }} />
 
             <h2 style={{ 
-              fontFamily: "'Times New Roman', Times, Georgia, serif",
+              fontFamily: "var(--font-serif)",
               fontSize: 'clamp(24px, 4vw, 38px)', 
-              color: '#5a9ad4', 
+              color: '#333842', 
               fontWeight: 500,
               lineHeight: 1.25,
               letterSpacing: '-0.01em',
@@ -88,7 +88,7 @@ export default async function HomePage() {
               marginBottom: '3.3rem'
             }}
           >
-            <div className="container" style={{ maxWidth: '1280px', margin: '0 auto', padding: '0 1.5rem' }}>
+            <div className="container" style={{ maxWidth: '1550px', margin: '0 auto', padding: '0 1.5rem' }}>
               <ProjectsV2 initialProjects={publishedProjects as any} />
             </div>
           </div>

@@ -655,24 +655,23 @@
 .preview-card-wrapper {
   position: relative;
   width: 100%;
-  aspect-ratio: 16 / 11.8;
-  border: 1.5px solid transparent !important;
-  border-radius: 0px;
+  aspect-ratio: 16 / 11.2;
+  border-radius: 24px;
   overflow: hidden;
   background: transparent;
   transform: scale(1) translateZ(0);
   will-change: transform, box-shadow, border-color;
   transition: transform 0.5s cubic-bezier(0.16, 1, 0.3, 1), border-color 0.5s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.5s cubic-bezier(0.16, 1, 0.3, 1);
+  box-sizing: border-box;
 }
 
 /* 1. Global Card Scale & Lift on hover & keyboard focus-within */
 .preview-item-container:hover .preview-card-wrapper,
 .preview-item-container:focus-within .preview-card-wrapper {
   transform: scale(1.02) translateY(-4px) translateZ(0) !important;
-  box-shadow: 0 20px 48px rgba(0, 0, 0, 0.12) !important;
-  border-color: #5a9ad4 !important;
-  border-width: 1.5px !important;
-  border-style: solid !important;
+  box-shadow: 0 20px 48px rgba(0, 0, 0, 0.18) !important;
+  outline: 2px solid #5a9ad4 !important;
+  outline-offset: -2px !important;
 }
 
 /* 2. Inner Visual Floating Lift (Lifts the UI frame gracefully without top corner cropping) */
@@ -683,7 +682,7 @@
 
 .preview-item-container:hover .preview-view .project-visual,
 .preview-item-container:focus-within .preview-view .project-visual {
-  transform: translateY(-6px) scale(1.03);
+  transform: scale(1.01);
 }
 
 .preview-card-scaler {

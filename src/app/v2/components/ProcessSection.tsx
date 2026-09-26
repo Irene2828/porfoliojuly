@@ -1,58 +1,46 @@
 'use client';
 
-import { motion } from 'framer-motion';
+import { useState } from 'react';
+import { motion, AnimatePresence } from 'framer-motion';
 
 export default function ProcessSection() {
   const testimonials = [
     {
       num: '01',
-      bg: '#ffffff',
-      borderColor: 'rgba(0, 0, 0, 0.08)',
-      tagColor: '#5a9ad4',
       quote: "Iryna turned our complex manual operational workflow into an intuitive, automated internal AI tool. What used to take our team hours every day now runs seamlessly in minutes.",
       author: 'Elena Ross',
       role: 'Founder & CEO, Apex Operations'
     },
     {
       num: '02',
-      bg: '#d0e8fc', // Sky blue card (middle card)
-      borderColor: 'rgba(0, 0, 0, 0.08)',
-      tagColor: '#2c6fb0',
       quote: "Working with Iryna was completely frictionless. She captured our brand identity perfectly and delivered a high-converting, boutique website that elevated our market positioning immediately.",
       author: 'Marcus Vance',
       role: 'Managing Director, Vance Studio'
     },
     {
       num: '03',
-      bg: '#ffffff',
-      borderColor: 'rgba(0, 0, 0, 0.08)',
-      tagColor: '#5a9ad4',
       quote: "From initial concept to final deployment, Iryna took complete ownership of our product. Her ability to blend strategic UX design with robust tech execution is unmatched.",
       author: 'Sarah Jenkins',
       role: 'VP of Product, Nexus Tech'
     }
   ];
 
+  const [activeIndex, setActiveIndex] = useState(0);
+
   return (
     <section 
       id="process" 
-      style={{ 
-        backgroundColor: '#ffffff',
-        padding: '2.45rem 0 0 0',
-        position: 'relative'
-      }}
+      style={{ padding: '4rem 0 6rem 0', backgroundColor: '#ffffff' }}
     >
-      <style>{`
-        @media (max-width: 960px) {
-          .testimonials-grid {
-            grid-template-columns: 1fr !important;
-          }
-        }
-      `}</style>
-
-      {/* Centered Section Header (Outside the Black Frame) */}
-      <div className="container" style={{ textAlign: 'center', marginBottom: '3.5rem' }}>
-        {/* Short decor line above section heading */}
+      {/* Section Header above the split frame */}
+      <motion.div 
+        initial={{ opacity: 0, y: 30 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        viewport={{ once: true, amount: 0.2 }}
+        transition={{ duration: 0.8, ease: [0.16, 1, 0.3, 1] }}
+        className="container" 
+        style={{ textAlign: 'center', marginBottom: '3.5rem' }}
+      >
         <div style={{ 
           width: '60px', 
           height: '1px', 
@@ -61,16 +49,14 @@ export default function ProcessSection() {
           opacity: 0.6 
         }} />
 
-        {/* Section Heading */}
         <h2 style={{ 
-          fontFamily: "'Times New Roman', Times, Georgia, serif",
+          fontFamily: "var(--font-serif)",
           fontSize: 'clamp(24px, 4vw, 38px)', 
-          color: '#5a9ad4', 
+          color: '#333842', 
           fontWeight: 500,
           lineHeight: 1.25,
           letterSpacing: '-0.01em',
           textAlign: 'center',
-          width: '100%',
           margin: '0 auto 0.75rem auto'
         }}>
           Why Work With Me
@@ -81,133 +67,162 @@ export default function ProcessSection() {
           fontWeight: 500,
           lineHeight: 1.6,
           color: '#2a3036',
-          maxWidth: '640px',
+          maxWidth: '850px',
           margin: '0 auto',
-          textAlign: 'center',
-          opacity: 1
+          textAlign: 'center'
         }}>
           Here are some reviews on my work from the clients:
         </p>
-      </div>
+      </motion.div>
 
-      {/* Edge-to-Edge Matte Black Frame Container wrapping the 3 Cards */}
-      <div 
-        style={{
-          backgroundColor: '#18191e',
-          width: '100vw',
-          marginLeft: 'calc(-50vw + 50%)',
-          marginRight: 'calc(-50vw + 50%)',
-          position: 'relative',
-          padding: '4.5rem 0'
-        }}
+      <motion.div 
+        initial={{ opacity: 0, y: 35 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        viewport={{ once: true, amount: 0.15 }}
+        transition={{ duration: 0.9, ease: [0.16, 1, 0.3, 1] }}
+        className="testimonial-split-section"
       >
-        <div 
-          className="container" 
-          style={{ 
-            maxWidth: '1280px', 
-            margin: '0 auto', 
-            padding: '0 1.5rem' 
-          }}
-        >
-          <div 
-            className="testimonials-grid"
-            style={{
-              display: 'grid',
-              gridTemplateColumns: 'repeat(3, 1fr)',
-              gap: '2rem',
-              alignItems: 'stretch'
-            }}
-          >
-            {testimonials.map((item, i) => {
-              return (
-                <motion.div
-                  key={item.num}
-                  initial={{ opacity: 0, y: 25 }}
-                  whileInView={{ opacity: 1, y: 0 }}
-                  viewport={{ once: true }}
-                  transition={{ duration: 0.65, delay: i * 0.15, ease: [0.16, 1, 0.3, 1] }}
-                  style={{
-                    backgroundColor: '#ffffff',
-                    backgroundImage: 'radial-gradient(circle, rgba(0, 0, 0, 0.065) 1.25px, transparent 1.25px)',
-                    backgroundSize: '28px 28px',
-                    border: '1px solid #c0d8fc',
-                    borderRadius: '16px',
-                    padding: '2.25rem 2rem',
-                    display: 'flex',
-                    flexDirection: 'column',
-                    justifyContent: 'space-between',
-                    position: 'relative',
-                    boxShadow: 'none',
-                    transition: 'border-color 0.3s ease'
-                  }}
-                >
-                  <div>
-                    {/* Quote Icon */}
-                    <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'flex-start', marginBottom: '0.75rem' }}>
-                      <span style={{ 
-                        fontFamily: "'Times New Roman', Times, Georgia, serif",
-                        fontSize: '2.2rem',
-                        lineHeight: '0.8',
-                        color: '#2c6fb0',
-                        opacity: 0.85,
-                        fontWeight: 700
-                      }}>
-                        &ldquo;
-                      </span>
-                    </div>
+        <style>{`
+          .testimonial-split-section {
+            width: 100vw;
+            margin-left: calc(-50vw + 50%);
+            display: flex;
+            flex-direction: column;
+          }
+          .testimonial-col-left {
+            flex: 1;
+            background-color: #ffffff;
+            padding: 3rem 2rem;
+            display: flex;
+            flex-direction: column;
+            align-items: flex-start;
+            justify-content: center;
+          }
+          .testimonial-col-right {
+            flex: 1;
+            background-color: #333842;
+            padding: 3rem 2rem;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            position: relative;
+          }
+          @media (min-width: 900px) {
+            .testimonial-split-section {
+              flex-direction: row;
+            }
+            .testimonial-col-left {
+              padding: 3.5rem 4rem;
+            }
+            .testimonial-col-right {
+              padding: 3.5rem 4rem;
+            }
+          }
+        `}</style>
 
-                    {/* Quote Text */}
-                    <p style={{
-                      fontFamily: "var(--font-serif), 'Times New Roman', Times, Georgia, serif",
-                      fontSize: '1.14rem',
-                      lineHeight: 1.55,
-                      color: '#2c6fb0',
-                      WebkitTextStroke: '0.3px #2c6fb0',
-                      letterSpacing: '0.02em',
-                      fontWeight: 500,
-                      fontStyle: 'italic',
-                      margin: '0 0 1.25rem 0'
-                    }}>
-                      "{item.quote}"
-                    </p>
-                  </div>
+        {/* Left Column: Clean space for now */}
+        <div className="testimonial-col-left" />
 
-                  {/* Client Info */}
-                  <div style={{ 
-                    borderTop: '1px solid #c0d8fc', 
-                    paddingTop: '1rem', 
-                    display: 'flex',
-                    flexDirection: 'column',
-                    alignItems: 'flex-end',
-                    textAlign: 'right' 
-                  }}>
-                    <div style={{ 
-                      fontFamily: "var(--font-sans), Inter, sans-serif",
-                      fontSize: '0.95rem',
-                      fontWeight: 600,
-                      color: '#18191e',
-                      lineHeight: 1.3,
-                      textAlign: 'right'
-                    }}>
-                      {item.author}
-                    </div>
-                    <div style={{ 
-                      fontFamily: "'JetBrains Mono', Menlo, monospace",
-                      fontSize: '0.72rem',
-                      color: '#55606a',
-                      marginTop: '0.2rem',
-                      letterSpacing: '0.02em',
-                      textAlign: 'right'
-                    }}>
-                      {item.role}
-                    </div>
-                  </div>
-                </motion.div>
-              );
-            })}
-          </div>
+        {/* Right Column: Carousel */}
+        <div className="testimonial-col-right">
+        <div style={{ position: 'relative', width: '100%', maxWidth: '500px' }}>
+          <AnimatePresence mode="wait">
+            <motion.div
+              key={activeIndex}
+              initial={{ opacity: 0, x: 20 }}
+              animate={{ opacity: 1, x: 0 }}
+              exit={{ opacity: 0, x: -20 }}
+              transition={{ duration: 0.4, ease: [0.16, 1, 0.3, 1] }}
+              style={{
+                backgroundColor: '#ffffff',
+                borderRadius: '16px',
+                padding: '3rem 2.5rem',
+                boxShadow: '0 6px 16px -4px rgba(0,0,0,0.12)',
+                border: 'none',
+                display: 'flex',
+                flexDirection: 'column',
+                justifyContent: 'space-between',
+                minHeight: '320px'
+              }}
+            >
+              <div>
+                <div style={{ 
+                  fontFamily: "var(--font-serif)",
+                  fontSize: '2.5rem',
+                  lineHeight: '0.8',
+                  color: '#333842',
+                  fontWeight: 700,
+                  marginBottom: '1rem'
+                }}>
+                  &ldquo;
+                </div>
+                <p style={{
+                  fontFamily: "var(--font-sans), Inter, sans-serif",
+                  fontSize: '0.875rem',
+                  lineHeight: 1.65,
+                  color: '#18191e',
+                  fontWeight: 400,
+                  fontStyle: 'italic',
+                  margin: '0 0 2rem 0'
+                }}>
+                  "{testimonials[activeIndex].quote}"
+                </p>
+              </div>
+
+              <div style={{ 
+                borderTop: '1px solid rgba(24, 25, 30, 0.10)', 
+                paddingTop: '1.5rem', 
+                display: 'flex',
+                flexDirection: 'column',
+                alignItems: 'flex-end',
+                textAlign: 'right' 
+              }}>
+                <div style={{ 
+                  fontFamily: "var(--font-sans), Inter, sans-serif",
+                  fontSize: '1rem',
+                  fontWeight: 700,
+                  color: '#18191e',
+                  lineHeight: 1.3
+                }}>
+                  {testimonials[activeIndex].author}
+                </div>
+                <div style={{ 
+                  fontFamily: "'JetBrains Mono', Menlo, monospace",
+                  fontSize: '0.75rem',
+                  color: '#55606a',
+                  marginTop: '0.3rem',
+                  letterSpacing: '0.02em'
+                }}>
+                  {testimonials[activeIndex].role}
+                </div>
+              </div>
+            </motion.div>
+          </AnimatePresence>
+        </div>
+
+        {/* Pagination Dots */}
+        <div style={{ display: 'flex', gap: '10px', marginTop: '2.5rem' }}>
+          {testimonials.map((_, i) => (
+            <button
+              key={i}
+              onClick={() => setActiveIndex(i)}
+              style={{
+                width: i === activeIndex ? '24px' : '8px',
+                height: '8px',
+                borderRadius: '4px',
+                backgroundColor: i === activeIndex ? '#ffffff' : 'rgba(255,255,255,0.3)',
+                border: 'none',
+                cursor: 'pointer',
+                transition: 'all 0.3s ease',
+                padding: 0
+              }}
+              aria-label={`Go to testimonial ${i + 1}`}
+            />
+          ))}
         </div>
       </div>
-    </section>
-  );
+    </motion.div>
+  </section>
+);
 }

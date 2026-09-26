@@ -8,7 +8,17 @@ export default function Header() {
 
   return (
     <header className="premium-header">
-      {/* Left side (Desktop): Social Icons */}
+      {/* Left side (Desktop): Spacer for center alignment balance */}
+      <div className="header-spacer-desktop" aria-hidden="true" />
+
+      {/* Center (Desktop): Nav links */}
+      <nav className="header-nav header-nav-desktop">
+        <a href="#expertise" className="nav-link">EXPERTISE</a>
+        <a href="#cases" className="nav-link">CASES</a>
+        <a href="#about" className="nav-link">ABOUT</a>
+      </nav>
+
+      {/* Right side (Desktop): Social Icons */}
       <div className="header-socials header-socials-desktop">
         <a href="mailto:hello@example.com" className="social-link-icon" title="Email" aria-label="Email">
           <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.6" strokeLinecap="round" strokeLinejoin="round">
@@ -24,13 +34,6 @@ export default function Header() {
           </svg>
         </a>
       </div>
-
-      {/* Right side (Desktop): Nav links */}
-      <nav className="header-nav header-nav-desktop">
-        <a href="#expertise" className="nav-link">EXPERTISE</a>
-        <a href="#cases" className="nav-link">CASES</a>
-        <a href="#about" className="nav-link">ABOUT</a>
-      </nav>
 
       {/* Mobile Header Elements: Standard Social Icons on Left, CASES link + Hamburger on Right */}
       <div className="mobile-header-left">

@@ -7,7 +7,7 @@ export default function ServicesV2() {
     {
       text: <span>Generate <strong>qualified leads</strong> for your business</span>,
       icon: (
-        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="rgba(44, 111, 176, 0.6)" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="rgba(255, 255, 255, 0.8)" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
           <circle cx="12" cy="12" r="10"/><circle cx="12" cy="12" r="6"/><circle cx="12" cy="12" r="2"/>
         </svg>
       )
@@ -15,7 +15,7 @@ export default function ServicesV2() {
     {
       text: <span>Showcase your <strong>work &amp; services</strong> in a modern, premium way</span>,
       icon: (
-        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="rgba(44, 111, 176, 0.6)" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="rgba(255, 255, 255, 0.8)" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
           <rect x="3" y="3" width="18" height="18" rx="2" ry="2"/><line x1="3" y1="9" x2="21" y2="9"/><line x1="9" y1="21" x2="9" y2="9"/>
         </svg>
       )
@@ -23,7 +23,7 @@ export default function ServicesV2() {
     {
       text: <span>Build <strong>trust &amp; authority</strong> with your audience</span>,
       icon: (
-        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="rgba(44, 111, 176, 0.6)" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="rgba(255, 255, 255, 0.8)" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
           <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/>
         </svg>
       )
@@ -34,7 +34,7 @@ export default function ServicesV2() {
     {
       text: <span>Identify <strong>bottlenecks &amp; manual repetitive tasks</strong></span>,
       icon: (
-        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="rgba(44, 111, 176, 0.6)" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#18191e" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
           <circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/>
         </svg>
       )
@@ -42,7 +42,7 @@ export default function ServicesV2() {
     {
       text: <span>Build &amp; integrate <strong>custom AI workflows &amp; agents</strong></span>,
       icon: (
-        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="rgba(44, 111, 176, 0.6)" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#18191e" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
           <rect x="3" y="11" width="18" height="10" rx="2"/><circle cx="12" cy="5" r="2"/><path d="M12 7v4"/><line x1="8" y1="16" x2="8" y2="16"/><line x1="16" y1="16" x2="16" y2="16"/>
         </svg>
       )
@@ -50,7 +50,7 @@ export default function ServicesV2() {
     {
       text: <span>Deploy <strong>practical automation</strong> directly into daily operations</span>,
       icon: (
-        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="rgba(44, 111, 176, 0.6)" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#18191e" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
           <polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"/>
         </svg>
       )
@@ -63,7 +63,7 @@ export default function ServicesV2() {
       title: 'First Draft',
       desc: 'A fast, working build — not polished, but real enough to react to and easy to build on.',
       icon: (
-        <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#5a9ad4" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+        <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#333842" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
           <path d="M17 3a2.828 2.828 0 1 1 4 4L7.5 20.5 2 22l1.5-5.5L17 3z"></path>
           <path d="M15 5l4 4"></path>
         </svg>
@@ -74,7 +74,7 @@ export default function ServicesV2() {
       title: 'Test & Refine',
       desc: 'We test it where it matters — internally if it\'s a team tool, with real users if it\'s client-facing — and refine based on what we find.',
       icon: (
-        <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#5a9ad4" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+        <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#333842" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
           <circle cx="11" cy="11" r="8"></circle>
           <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
         </svg>
@@ -85,7 +85,7 @@ export default function ServicesV2() {
       title: 'Delivery',
       desc: 'Where it lives and how it\'s maintained depends on the project. We figure that out together, based on what actually fits.',
       icon: (
-        <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#5a9ad4" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+        <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#333842" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
           <path d="M4.5 16.5c-1.5 1.26-2 5-2 5s3.74-.5 5-2c.71-.71.18-1.81-.47-2.47l-.06-.06c-.66-.66-1.76-1.18-2.47-.47z" />
           <path d="M12 15l-3-3" />
           <path d="M15 4.5A13.8 13.8 0 0 1 21 11c0 0-3.5 1.5-6.5-1.5S13 3 13 3a13.8 13.8 0 0 1 2 1.5z" />
@@ -101,7 +101,7 @@ export default function ServicesV2() {
       id="expertise" 
       style={{ 
         backgroundColor: '#ffffff',
-        padding: '5.1rem 0 0 0',
+        padding: '5.1rem 0 10.2rem 0',
         margin: '5.1rem 0 0 0',
         position: 'relative',
         overflow: 'hidden'
@@ -161,7 +161,13 @@ export default function ServicesV2() {
       `}</style>
 
       {/* Section 1 Heading: How I Can Help Your Business */}
-      <div style={{ marginBottom: '3.5rem', textAlign: 'center', padding: '0 1.5rem' }}>
+      <motion.div 
+        initial={{ opacity: 0, y: 30 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        viewport={{ once: true, amount: 0.2 }}
+        transition={{ duration: 0.8, ease: [0.16, 1, 0.3, 1] }}
+        style={{ marginBottom: '3.5rem', textAlign: 'center', padding: '0 1.5rem' }}
+      >
         {/* Short decor line */}
         <div style={{ 
           width: '60px', 
@@ -172,9 +178,9 @@ export default function ServicesV2() {
         }} />
 
         <h2 style={{ 
-          fontFamily: "'Times New Roman', Times, Georgia, serif",
+          fontFamily: "var(--font-serif)",
           fontSize: 'clamp(24px, 4vw, 38px)', 
-          color: '#5a9ad4', 
+          color: '#333842', 
           fontWeight: 500,
           lineHeight: 1.25,
           letterSpacing: '-0.01em',
@@ -196,12 +202,16 @@ export default function ServicesV2() {
         }}>
           as a Digital Product Builder
         </p>
-      </div>
+      </motion.div>
 
-      {/* Blue Background Container for 2 Columns of Services */}
-      <div 
+      {/* Matte Charcoal Container for 2 Columns of Services */}
+      <motion.div 
+        initial={{ opacity: 0, y: 35 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        viewport={{ once: true, amount: 0.15 }}
+        transition={{ duration: 0.9, ease: [0.16, 1, 0.3, 1] }}
         style={{
-          backgroundColor: '#d0e8fc', // Light sky blue background
+          backgroundColor: '#333842', // Premium matte charcoal grey full opacity
           width: '100vw',
           marginLeft: 'calc(-50vw + 50%)',
           marginRight: 'calc(-50vw + 50%)',
@@ -232,16 +242,16 @@ export default function ServicesV2() {
           style={{
             width: '100%',
             height: '1px',
-            backgroundColor: '#c0d8fc',
+            backgroundColor: 'rgba(255, 255, 255, 0.1)',
             position: 'relative',
             zIndex: 10
           }}
         />
 
-        {/* Content Container (Center-aligned 2 Columns inside edge-to-edge light blue frame) */}
+        {/* Content Container (Center-aligned 2 Columns inside edge-to-edge frame) */}
         <div 
           style={{
-            maxWidth: '1280px',
+            maxWidth: '1550px',
             margin: '0 auto',
             position: 'relative',
             zIndex: 5
@@ -255,7 +265,7 @@ export default function ServicesV2() {
               minHeight: '460px'
             }}
           >
-            {/* Column 1: Custom Websites (Left Column) */}
+            {/* Column 1: Custom Websites (Left Column - Dark Charcoal BG) */}
             <div 
               className="services-col-left"
               style={{
@@ -263,8 +273,10 @@ export default function ServicesV2() {
                 display: 'flex',
                 flexDirection: 'column',
                 justifyContent: 'space-between',
-                color: '#18191e',
-                borderRight: '1px solid rgba(0, 0, 0, 0.12)'
+                color: '#ffffff',
+                borderRight: '1px solid rgba(255, 255, 255, 0.12)',
+                backgroundColor: '#333842',
+                borderRadius: '0'
               }}
             >
               <div>
@@ -274,39 +286,39 @@ export default function ServicesV2() {
                     fontSize: '11px',
                     letterSpacing: '0.18em',
                     textTransform: 'uppercase',
-                    color: '#3b7ac8',
+                    color: '#eaecf0',
                     fontWeight: 600
                   }}>
                     // 01 &mdash; Solution
                   </span>
                 </div>
                 <h3 style={{
-                  fontFamily: "'Times New Roman', Times, Georgia, serif",
+                  fontFamily: "var(--font-serif)",
                   fontSize: 'clamp(1.48rem, 2.4vw, 2rem)',
                   fontWeight: 400,
-                  color: '#18191e',
+                  color: '#ffffff',
                   margin: '0 0 1.25rem 0',
                   letterSpacing: '-0.02em',
                   lineHeight: 1.15
                 }}>
                   Custom Websites
                 </h3>
-                <div style={{ width: '48px', height: '1px', backgroundColor: '#18191e', opacity: 0.25, marginBottom: '2.25rem' }} />
+                <div style={{ width: '48px', height: '1px', backgroundColor: '#ffffff', opacity: 0.25, marginBottom: '2.25rem' }} />
                 
                 <ul style={{ listStyle: 'none', padding: 0, margin: 0, display: 'flex', flexDirection: 'column', gap: '1.2rem' }}>
                   {websitesBullets.map((bullet, idx) => (
-                    <li key={idx} style={{ fontSize: '1.02rem', color: '#2a3036', display: 'flex', alignItems: 'flex-start', gap: '1rem', lineHeight: 1.55 }}>
+                    <li key={idx} style={{ fontSize: '1.02rem', color: '#e2e8f0', display: 'flex', alignItems: 'flex-start', gap: '1rem', lineHeight: 1.55 }}>
                       <div style={{ 
                         width: '44px', 
                         height: '44px', 
                         borderRadius: '50%', 
-                        backgroundColor: '#e4f2fe',
+                        backgroundColor: 'rgba(255, 255, 255, 0.08)',
                         display: 'flex', 
                         alignItems: 'center', 
                         justifyContent: 'center',
-                        boxShadow: '0 4px 12px rgba(0,0,0,0.06)',
+                        boxShadow: '0 4px 12px rgba(0,0,0,0.2)',
                         flexShrink: 0,
-                        border: '1.5px solid rgba(44, 111, 176, 0.6)'
+                        border: '1.5px solid rgba(255, 255, 255, 0.25)'
                       }}>
                         {bullet.icon}
                       </div>
@@ -316,29 +328,6 @@ export default function ServicesV2() {
                     </li>
                   ))}
                 </ul>
-              </div>
-
-              <div style={{ marginTop: '3.5rem', display: 'flex', justifyContent: 'flex-end', width: '100%' }}>
-                <a 
-                  href="#cases" 
-                  className="see-example-link-light-bg" 
-                  style={{ 
-                    fontFamily: "'JetBrains Mono', Menlo, monospace", 
-                    fontSize: '11px', 
-                    fontWeight: 600, 
-                    letterSpacing: '0.18em', 
-                    textTransform: 'uppercase',
-                    color: '#3b7ac8',
-                    display: 'inline-flex',
-                    alignItems: 'center',
-                    gap: '0.5rem',
-                    cursor: 'pointer',
-                    position: 'relative',
-                    paddingBottom: '2px'
-                  }}
-                >
-                  <span>EXPLORE WEBSITES</span> <span style={{ fontSize: '1.05rem', transform: 'translateY(-1px)' }}>↓</span>
-                </a>
               </div>
             </div>
 
@@ -362,14 +351,14 @@ export default function ServicesV2() {
                     fontSize: '11px',
                     letterSpacing: '0.18em',
                     textTransform: 'uppercase',
-                    color: '#3b7ac8',
+                    color: '#18191e',
                     fontWeight: 600
                   }}>
                     // 02 &mdash; Solution
                   </span>
                 </div>
                 <h3 style={{
-                  fontFamily: "'Times New Roman', Times, Georgia, serif",
+                  fontFamily: "var(--font-serif)",
                   fontSize: 'clamp(1.48rem, 2.4vw, 2rem)',
                   fontWeight: 400,
                   color: '#18191e',
@@ -394,7 +383,7 @@ export default function ServicesV2() {
                         justifyContent: 'center',
                         boxShadow: '0 4px 12px rgba(0,0,0,0.06)',
                         flexShrink: 0,
-                        border: '1.5px solid rgba(44, 111, 176, 0.6)'
+                        border: '1.5px solid rgba(24, 25, 30, 0.15)'
                       }}>
                         {bullet.icon}
                       </div>
@@ -406,28 +395,7 @@ export default function ServicesV2() {
                 </ul>
               </div>
 
-              <div style={{ marginTop: '3.5rem', display: 'flex', justifyContent: 'flex-end', width: '100%' }}>
-                <a 
-                  href="#cases" 
-                  className="see-example-link-light-bg" 
-                  style={{ 
-                    fontFamily: "'JetBrains Mono', Menlo, monospace", 
-                    fontSize: '11px', 
-                    fontWeight: 600, 
-                    letterSpacing: '0.18em', 
-                    textTransform: 'uppercase',
-                    color: '#3b7ac8',
-                    display: 'inline-flex',
-                    alignItems: 'center',
-                    gap: '0.5rem',
-                    cursor: 'pointer',
-                    position: 'relative',
-                    paddingBottom: '2px'
-                  }}
-                >
-                  <span>EXPLORE AI TOOLS</span> <span style={{ fontSize: '1.05rem', transform: 'translateY(-1px)' }}>↓</span>
-                </a>
-              </div>
+              {/* Link removed as requested */}
             </div>
           </div>
         </div>
@@ -445,7 +413,7 @@ export default function ServicesV2() {
             zIndex: 10
           }}
         />
-      </div>
+      </motion.div>
 
       {/* Section 2 Heading: How the Process Looks */}
       <div className="container" style={{ textAlign: 'center', marginBottom: '3.5rem', paddingTop: '5.1rem' }}>
@@ -460,9 +428,9 @@ export default function ServicesV2() {
 
         {/* Intro Section Heading */}
         <h2 style={{ 
-          fontFamily: "'Times New Roman', Times, Georgia, serif",
+          fontFamily: "var(--font-serif)",
           fontSize: 'clamp(24px, 4vw, 38px)', 
-          color: '#5a9ad4', 
+          color: '#333842', 
           fontWeight: 500,
           lineHeight: 1.25,
           letterSpacing: '-0.01em',
@@ -571,8 +539,8 @@ export default function ServicesV2() {
                       width: '48px',
                       height: '48px',
                       borderRadius: '50%',
-                      backgroundColor: '#242730',
-                      border: '1.5px solid #5a9ad4',
+                      backgroundColor: '#eaecf0',
+                      border: '1.5px solid #333842',
                       display: 'flex',
                       alignItems: 'center',
                       justifyContent: 'center',
@@ -586,7 +554,7 @@ export default function ServicesV2() {
                     <div style={{ flex: 1, paddingTop: '0.2rem' }}>
                       <div style={{ display: 'flex', alignItems: 'center', marginBottom: '0.4rem' }}>
                         <h3 style={{ 
-                          fontFamily: "'Times New Roman', Times, Georgia, serif",
+                          fontFamily: "var(--font-serif)",
                           fontSize: '1.55rem', 
                           color: '#eaecf0',
                           fontWeight: 600,
