@@ -99,7 +99,7 @@ export default function ProcessSection() {
             justify-content: center;
           }
           .testimonial-col-right {
-            flex: 1;
+            flex: 2;
             background-color: #333842;
             padding: 3rem 2rem;
             display: flex;
@@ -108,14 +108,23 @@ export default function ProcessSection() {
             justify-content: center;
             position: relative;
           }
+          @media (max-width: 899px) {
+            .testimonial-col-left {
+              display: none;
+            }
+          }
           @media (min-width: 900px) {
             .testimonial-split-section {
               flex-direction: row;
             }
             .testimonial-col-left {
+              flex: 0 0 33.333%;
+              max-width: 33.333%;
               padding: 3.5rem 4rem;
             }
             .testimonial-col-right {
+              flex: 0 0 66.667%;
+              max-width: 66.667%;
               padding: 3.5rem 4rem;
             }
           }
