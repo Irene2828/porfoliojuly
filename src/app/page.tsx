@@ -68,7 +68,7 @@ export default async function HomePage() {
               fontWeight: 500,
               lineHeight: 1.6,
               color: '#2a3036',
-              maxWidth: '850px',
+              maxWidth: '640px',
               margin: '0 auto',
               textAlign: 'center'
             }}>

@@ -102,12 +102,12 @@ export default function EditorialStatement() {
         <p style={{
           fontFamily: "var(--font-sans), Inter, sans-serif",
           fontSize: '1.175rem',
+          fontWeight: 500,
           lineHeight: 1.6,
-          color: 'rgba(42, 48, 54, 0.8)',
+          color: '#2a3036',
           maxWidth: '640px',
           margin: '0 auto',
-          textAlign: 'center',
-          fontWeight: 500
+          textAlign: 'center'
         }}>
           I'd love to help you build one.
         </p>
