@@ -81,62 +81,22 @@ export default function ProcessSection() {
         whileInView={{ opacity: 1, y: 0 }}
         viewport={{ once: true, amount: 0.15 }}
         transition={{ duration: 0.9, ease: [0.16, 1, 0.3, 1] }}
-        className="testimonial-split-section"
+        style={{
+          width: '100vw',
+          marginLeft: 'calc(-50vw + 50%)',
+          marginRight: 'calc(-50vw + 50%)',
+          backgroundColor: '#333842',
+          padding: '4rem 2rem',
+          display: 'flex',
+          flexDirection: 'column',
+          alignItems: 'center',
+          justifyContent: 'center',
+          position: 'relative',
+          borderTop: '1px solid rgba(240, 242, 245, 0.1)',
+          borderBottom: '1px solid rgba(240, 242, 245, 0.1)'
+        }}
       >
-        <style>{`
-          .testimonial-split-section {
-            width: 100vw;
-            margin-left: calc(-50vw + 50%);
-            display: flex;
-            flex-direction: column;
-          }
-          .testimonial-col-left {
-            flex: 1;
-            background-color: #ffffff;
-            padding: 3rem 2rem;
-            display: flex;
-            flex-direction: column;
-            align-items: flex-start;
-            justify-content: center;
-          }
-          .testimonial-col-right {
-            flex: 2;
-            background-color: #333842;
-            padding: 3rem 2rem;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            justify-content: center;
-            position: relative;
-          }
-          @media (max-width: 899px) {
-            .testimonial-col-left {
-              display: none;
-            }
-          }
-          @media (min-width: 900px) {
-            .testimonial-split-section {
-              flex-direction: row;
-            }
-            .testimonial-col-left {
-              flex: 0 0 33.333%;
-              max-width: 33.333%;
-              padding: 3.5rem 4rem;
-            }
-            .testimonial-col-right {
-              flex: 0 0 66.667%;
-              max-width: 66.667%;
-              padding: 3.5rem 4rem;
-            }
-          }
-        `}</style>
-
-        {/* Left Column: Clean space for now */}
-        <div className="testimonial-col-left" />
-
-        {/* Right Column: Carousel */}
-        <div className="testimonial-col-right">
-        <div style={{ position: 'relative', width: '100%', maxWidth: '500px' }}>
+        <div style={{ position: 'relative', width: '100%', maxWidth: '560px' }}>
           <AnimatePresence mode="wait">
             <motion.div
               key={activeIndex}
@@ -169,7 +129,7 @@ export default function ProcessSection() {
                 </div>
                 <p style={{
                   fontFamily: "var(--font-sans), Inter, sans-serif",
-                  fontSize: '0.875rem',
+                  fontSize: '0.925rem',
                   lineHeight: 1.65,
                   color: '#18191e',
                   fontWeight: 400,
@@ -231,8 +191,7 @@ export default function ProcessSection() {
             />
           ))}
         </div>
-      </div>
-    </motion.div>
+      </motion.div>
   </section>
 );
 }
