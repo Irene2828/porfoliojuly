@@ -240,7 +240,7 @@
   left: -100px; /* Extend into the dark area on the left */
   right: auto;
   width: 100px; /* Covers the gap to the image */
-  border-bottom: 1.5px dashed rgba(235, 235, 237, 0.6); /* silver dashed line visible on dark bg */
+  border-bottom: 1.5px dashed #2c6fb0; /* azure blue dashed line */
   z-index: 10;
   pointer-events: none;
 }
@@ -252,7 +252,7 @@
   left: -15px;
   width: 100%;
   height: 100%;
-  border: 1.5px dashed rgba(235, 235, 237, 0.55); /* silver dashed frame visible on black bg */
+  border: 1.5px dashed #2c6fb0; /* azure blue dashed frame */
   z-index: -1;
   pointer-events: none;
 }
@@ -264,7 +264,7 @@
   right: -8px;
   bottom: -8px;
   width: 12px;
-  border-right: 1.5px dashed rgba(235, 235, 237, 0.55);
+  border-right: 1.5px dashed #2c6fb0;
   pointer-events: none;
   z-index: 10;
 }
@@ -276,7 +276,7 @@
   right: -1px; /* Align with right border */
   width: 100%;
   height: 1.5px;
-  background: rgba(235, 235, 237, 0.55);
+  background: #2c6fb0;
 }
 
 .hero-image-brackets::before {
@@ -307,7 +307,7 @@
     left: -8px;
     bottom: -8px;
     width: 12px;
-    border-left: 1.5px dashed rgba(235, 235, 237, 0.55);
+    border-left: 1.5px dashed #2c6fb0;
     pointer-events: none;
     z-index: 10;
   }
@@ -319,7 +319,7 @@
     left: -1px; /* Align with left border */
     width: 100%;
     height: 1.5px;
-    background: rgba(235, 235, 237, 0.55);
+    background: #2c6fb0;
   }
 
   .hero-image-brackets-left::before {

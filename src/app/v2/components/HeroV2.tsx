@@ -33,9 +33,9 @@ export default function HeroV2() {
             <div className="hero-image-brackets"></div>
             <div className="hero-image-brackets-left"></div>
             {/* Decor squares poking out under image */}
-            <div className="hero-decor-square" style={{ position: 'absolute', width: '125px', height: '125px', border: '1.5px dashed rgba(235, 235, 237, 0.4)', bottom: '-45px', left: '-35px', zIndex: 0, opacity: 0.7, pointerEvents: 'none' }} />
-            <div className="hero-decor-square" style={{ position: 'absolute', width: '65px', height: '65px', border: '1.5px dashed rgba(75, 133, 187, 0.55)', bottom: '-20px', left: '-50px', zIndex: 0, opacity: 0.8, pointerEvents: 'none' }} />
-            <div className="hero-decor-square" style={{ position: 'absolute', width: '135px', height: '135px', border: '1.5px solid rgba(235, 235, 237, 0.3)', bottom: '-35px', left: '-65px', zIndex: 0, opacity: 0.6, pointerEvents: 'none' }} />
+            <div className="hero-decor-square" style={{ position: 'absolute', width: '125px', height: '125px', border: '1.5px dashed #2c6fb0', bottom: '-45px', left: '-35px', zIndex: 0, opacity: 0.7, pointerEvents: 'none' }} />
+            <div className="hero-decor-square" style={{ position: 'absolute', width: '65px', height: '65px', border: '1.5px dashed #2c6fb0', bottom: '-20px', left: '-50px', zIndex: 0, opacity: 0.8, pointerEvents: 'none' }} />
+            <div className="hero-decor-square" style={{ position: 'absolute', width: '135px', height: '135px', border: '1.5px solid #2c6fb0', bottom: '-35px', left: '-65px', zIndex: 0, opacity: 0.6, pointerEvents: 'none' }} />
             <img src={heroImage.src} alt="Iryna Sheremeta" className="hero-image" />
             <div className="hero-dot-overlay"></div>
 
