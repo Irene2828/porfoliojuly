@@ -581,7 +581,7 @@ h1, h2, h3, h4, h5, h6 {
   color: #2c6fb0 !important;
   -webkit-text-fill-color: #2c6fb0 !important;
   border-bottom: 1.5px solid #2c6fb0 !important;
-  padding-bottom: 2px;
+  padding-bottom: 0px;
   transition: transform 1.6s cubic-bezier(0.22, 1, 0.36, 1);
   transform-style: preserve-3d;
 }
@@ -602,7 +602,7 @@ h1, h2, h3, h4, h5, h6 {
   color: #2c6fb0 !important;
   -webkit-text-fill-color: #2c6fb0 !important;
   border-bottom: 1.5px solid #2c6fb0 !important;
-  padding-bottom: 2px;
+  padding-bottom: 0px;
 }
 
 .v2-theme .premium-hover:hover .word-internal {
