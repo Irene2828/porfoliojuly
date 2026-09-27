@@ -289,7 +289,8 @@ export default function ServicesV2() {
                     letterSpacing: '0.18em',
                     textTransform: 'uppercase',
                     color: '#333842',
-                    fontWeight: 600
+                    fontWeight: 600,
+                    WebkitTextStroke: '0.35px #333842'
                   }}>
                     // 01 &mdash; Solution
                   </span>
@@ -301,7 +302,8 @@ export default function ServicesV2() {
                   color: '#333842',
                   margin: '0 0 1.25rem 0',
                   letterSpacing: '-0.02em',
-                  lineHeight: 1.15
+                  lineHeight: 1.15,
+                  WebkitTextStroke: '0.35px #333842'
                 }}>
                   Custom Websites
                 </h3>
@@ -309,7 +311,7 @@ export default function ServicesV2() {
                 
                 <ul style={{ listStyle: 'none', padding: 0, margin: 0, display: 'flex', flexDirection: 'column', gap: '1.2rem' }}>
                   {websitesBullets.map((bullet, idx) => (
-                    <li key={idx} style={{ fontSize: '1.02rem', color: '#2a3036', display: 'flex', alignItems: 'flex-start', gap: '1rem', lineHeight: 1.55 }}>
+                    <li key={idx} style={{ fontSize: '1.02rem', color: '#2a3036', display: 'flex', alignItems: 'flex-start', gap: '1rem', lineHeight: 1.55, WebkitTextStroke: '0.35px #2a3036' }}>
                       <div style={{ 
                         width: '44px', 
                         height: '44px', 
@@ -355,7 +357,8 @@ export default function ServicesV2() {
                     letterSpacing: '0.18em',
                     textTransform: 'uppercase',
                     color: '#eaecf0',
-                    fontWeight: 600
+                    fontWeight: 600,
+                    WebkitTextStroke: '0.35px #eaecf0'
                   }}>
                     // 02 &mdash; Solution
                   </span>
@@ -367,7 +370,8 @@ export default function ServicesV2() {
                   color: '#ffffff',
                   margin: '0 0 1.25rem 0',
                   letterSpacing: '-0.02em',
-                  lineHeight: 1.15
+                  lineHeight: 1.15,
+                  WebkitTextStroke: '0.35px #ffffff'
                 }}>
                   Custom AI Tools
                 </h3>
@@ -375,7 +379,7 @@ export default function ServicesV2() {
                 
                 <ul style={{ listStyle: 'none', padding: 0, margin: 0, display: 'flex', flexDirection: 'column', gap: '1.2rem' }}>
                   {aiToolsBullets.map((bullet, idx) => (
-                    <li key={idx} style={{ fontSize: '1.02rem', color: '#e2e8f0', display: 'flex', alignItems: 'flex-start', gap: '1rem', lineHeight: 1.55 }}>
+                    <li key={idx} style={{ fontSize: '1.02rem', color: '#e2e8f0', display: 'flex', alignItems: 'flex-start', gap: '1rem', lineHeight: 1.55, WebkitTextStroke: '0.35px #e2e8f0' }}>
                       <div style={{ 
                         width: '44px', 
                         height: '44px', 
