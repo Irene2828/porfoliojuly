@@ -1525,3 +1525,231 @@
 .pixel-pulse-3 {
   animation: pixelFloat3 6s ease-in-out infinite;
 }
+
+/* ─────────────────────────────────────────────────────────
+   TECH SCAN SYSTEM & SKILL TAG PROJECTION EFFECT
+   ───────────────────────────────────────────────────────── */
+
+.hero-image-wrapper[data-hero-scan="container"] {
+  cursor: crosshair !important;
+}
+
+/* 1. HUD Lock Corners (12x12px, 1px border rgba(255,255,255,0.6)) */
+.hud-corner {
+  position: absolute;
+  width: 12px;
+  height: 12px;
+  border-color: rgba(255, 255, 255, 0.6);
+  border-style: solid;
+  pointer-events: none;
+  z-index: 12;
+  opacity: 0;
+  transition: opacity 300ms ease;
+}
+
+.hud-tl {
+  top: 0;
+  left: 0;
+  border-width: 1px 0 0 1px;
+}
+
+.hud-tr {
+  top: 0;
+  right: 0;
+  border-width: 1px 1px 0 0;
+}
+
+.hud-bl {
+  bottom: 0;
+  left: 0;
+  border-width: 0 0 1px 1px;
+}
+
+.hud-br {
+  bottom: 0;
+  right: 0;
+  border-width: 0 1px 1px 0;
+}
+
+.hero-image-wrapper:hover .hud-corner,
+.hero-image-wrapper.is-scanning .hud-corner {
+  opacity: 1;
+}
+
+/* Image Scale (1.02) + Brightness (1.05) on hover (700ms cubic-bezier(0.16,1,0.3,1)) */
+.hero-image-wrapper .hero-image {
+  transition: transform 700ms cubic-bezier(0.16, 1, 0.3, 1), filter 700ms cubic-bezier(0.16, 1, 0.3, 1), opacity 500ms ease;
+  will-change: transform, filter;
+}
+
+.hero-image-wrapper:hover .hero-image,
+.hero-image-wrapper.is-scanning .hero-image {
+  transform: scale(1.02);
+  filter: brightness(1.05) saturate(1.1);
+}
+
+/* 2. Scan Line (#00FFA3 glow + trailing veil + 0.9s cubic-bezier 2 sweeps) */
+.tech-scan-line {
+  position: absolute;
+  left: 0;
+  width: 100%;
+  height: 2px;
+  background: #00FFA3;
+  box-shadow: 0 0 12px #00FFA3, 0 0 24px rgba(0, 255, 163, 0.5);
+  z-index: 15;
+  pointer-events: none;
+  opacity: 0;
+  top: 0;
+  will-change: top, opacity;
+}
+
+.tech-scan-line::after {
+  content: '';
+  position: absolute;
+  top: 2px;
+  left: 0;
+  width: 100%;
+  height: 80px;
+  background: linear-gradient(to bottom, rgba(0, 255, 163, 0.15), transparent);
+  pointer-events: none;
+}
+
+.hero-image-wrapper:hover .tech-scan-line,
+.hero-image-wrapper.is-scanning .tech-scan-line {
+  opacity: 1;
+  animation: scanMove 0.9s cubic-bezier(0.16, 1, 0.3, 1) 2 forwards;
+}
+
+@keyframes scanMove {
+  0% {
+    top: 0%;
+  }
+  100% {
+    top: 100%;
+  }
+}
+
+/* 3. Texture Overlay (Noise opacity 0.03 + Scanlines opacity 0.06) */
+.tech-texture-overlay {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  z-index: 11;
+  opacity: 0;
+  transition: opacity 300ms ease;
+  background-image: repeating-linear-gradient(
+    to bottom,
+    transparent,
+    transparent 3px,
+    rgba(0, 255, 163, 0.06) 3px,
+    rgba(0, 255, 163, 0.06) 4px
+  );
+}
+
+.hero-image-wrapper:hover .tech-texture-overlay,
+.hero-image-wrapper.is-scanning .tech-texture-overlay {
+  opacity: 1;
+}
+
+/* 4. Projection Container & Skill Tag Pills */
+.tech-projections-container {
+  position: absolute;
+  left: calc(100% + 24px);
+  top: 0;
+  bottom: 0;
+  width: 220px;
+  pointer-events: none;
+  z-index: 25;
+}
+
+.tech-projection-item {
+  position: absolute;
+  display: flex;
+  align-items: center;
+  gap: 0;
+  transform: translateY(-50%) translateX(-8px);
+  opacity: 0;
+  will-change: transform, opacity;
+  transition: opacity 300ms ease, transform 300ms ease;
+}
+
+.tech-projection-line {
+  width: 40px;
+  height: 1px;
+  background: linear-gradient(90deg, rgba(0, 255, 163, 0.6), rgba(0, 255, 163, 0.2));
+  flex-shrink: 0;
+}
+
+.tech-projection-pill {
+  font-family: 'JetBrains Mono', Menlo, monospace !important;
+  font-size: 11px !important;
+  letter-spacing: 0.12em !important;
+  background: rgba(37, 42, 58, 0.8) !important;
+  backdrop-filter: blur(12px) !important;
+  -webkit-backdrop-filter: blur(12px) !important;
+  border: 1px solid rgba(0, 255, 163, 0.3) !important;
+  color: #ffffff !important;
+  padding: 6px 10px !important;
+  border-radius: 4px !important;
+  white-space: nowrap !important;
+  box-shadow: 0 4px 14px rgba(0, 0, 0, 0.25) !important;
+  text-transform: uppercase !important;
+}
+
+/* Reveal stagger during 2nd scan sweep (starts at 0.9s, 80ms stagger, 500ms duration) */
+.hero-image-wrapper:hover .tech-projection-item,
+.hero-image-wrapper.is-scanning .tech-projection-item {
+  animation: projectReveal 500ms cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
+.hero-image-wrapper:hover .tech-projection-item:nth-child(1),
+.hero-image-wrapper.is-scanning .tech-projection-item:nth-child(1) {
+  animation-delay: 0.98s;
+}
+
+.hero-image-wrapper:hover .tech-projection-item:nth-child(2),
+.hero-image-wrapper.is-scanning .tech-projection-item:nth-child(2) {
+  animation-delay: 1.06s;
+}
+
+.hero-image-wrapper:hover .tech-projection-item:nth-child(3),
+.hero-image-wrapper.is-scanning .tech-projection-item:nth-child(3) {
+  animation-delay: 1.14s;
+}
+
+.hero-image-wrapper:hover .tech-projection-item:nth-child(4),
+.hero-image-wrapper.is-scanning .tech-projection-item:nth-child(4) {
+  animation-delay: 1.22s;
+}
+
+.hero-image-wrapper:hover .tech-projection-item:nth-child(5),
+.hero-image-wrapper.is-scanning .tech-projection-item:nth-child(5) {
+  animation-delay: 1.30s;
+}
+
+@keyframes projectReveal {
+  0% {
+    opacity: 0;
+    transform: translateY(-50%) translateX(-8px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(-50%) translateX(0);
+  }
+}
+
+/* Mobile responsive projections adjustment */
+@media (max-width: 900px) {
+  .tech-projections-container {
+    left: auto;
+    right: 12px;
+    width: auto;
+  }
+  .tech-projection-line {
+    width: 20px;
+  }
+  .tech-projection-pill {
+    font-size: 10px !important;
+    padding: 4px 8px !important;
+  }
+}

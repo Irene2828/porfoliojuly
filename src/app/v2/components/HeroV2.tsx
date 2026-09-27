@@ -1,9 +1,12 @@
 'use client';
 
+import { useState } from 'react';
 import '@/app/components/Hero.css';
 import heroImage from '@/app/assets/test.webp';
 
 export default function HeroV2() {
+  const [isScanning, setIsScanning] = useState(false);
+
   return (
     <section className="section hero-section" id="home">
       {/* Background Split */}
@@ -19,8 +22,13 @@ export default function HeroV2() {
 
         {/* Left side: Image / Portrait on charcoal background */}
         <div
-          className="hero-image-wrapper cv-scanner"
+          className={`hero-image-wrapper cv-scanner ${isScanning ? 'is-scanning' : ''}`}
+          data-hero-scan="container"
           tabIndex={0}
+          onMouseEnter={() => setIsScanning(true)}
+          onMouseLeave={() => setIsScanning(false)}
+          onClick={() => setIsScanning((prev) => !prev)}
+          style={{ cursor: 'crosshair' }}
         >
           {/* Mobile Name & Title directly on top of image, centered */}
           <div className="hero-mobile-intro" style={{ position: 'relative', zIndex: 2 }}>
@@ -39,38 +47,37 @@ export default function HeroV2() {
             <img src={heroImage.src} alt="Iryna Sheremeta" className="hero-image" />
             <div className="hero-dot-overlay"></div>
 
-            {/* CV Scanning Overlay */}
-            <div className="cv-overlay">
-              <div className="cv-scanline"></div>
-              <div className="cv-corner cv-tl"></div>
-              <div className="cv-corner cv-tr"></div>
-              <div className="cv-corner cv-bl"></div>
-              <div className="cv-corner cv-br"></div>
-              <div className="cv-crosshair"></div>
-            </div>
+            {/* HUD Lock Corners */}
+            <div className="hud-corner hud-tl" />
+            <div className="hud-corner hud-tr" />
+            <div className="hud-corner hud-bl" />
+            <div className="hud-corner hud-br" />
 
-            {/* Annotation Pointers */}
-            <div className="cv-annotation cv-ann-1">
-              <div className="cv-pointer-line"></div>
-              <div className="cv-label">
-                <span className="cv-label-dot"></span>
-                MARKET POSITIONING
+            {/* Texture & Scan Line Overlays */}
+            <div className="tech-texture-overlay" />
+            <div className="tech-scan-line" />
+
+            {/* Skill Tags Projections */}
+            <div className="tech-projections-container">
+              <div className="tech-projection-item" style={{ top: '22%' }}>
+                <div className="tech-projection-line" />
+                <div className="tech-projection-pill">RESEARCH SKILLS</div>
               </div>
-            </div>
-
-            <div className="cv-annotation cv-ann-2">
-              <div className="cv-pointer-line"></div>
-              <div className="cv-label">
-                <span className="cv-label-dot"></span>
-                AI &amp; GEO ENGINE
+              <div className="tech-projection-item" style={{ top: '38%' }}>
+                <div className="tech-projection-line" />
+                <div className="tech-projection-pill">BUSINESS AWARE</div>
               </div>
-            </div>
-
-            <div className="cv-annotation cv-ann-3">
-              <div className="cv-pointer-line"></div>
-              <div className="cv-label">
-                <span className="cv-label-dot"></span>
-                LEAD AUTOMATION
+              <div className="tech-projection-item" style={{ top: '53%' }}>
+                <div className="tech-projection-line" />
+                <div className="tech-projection-pill">UX &amp; UI</div>
+              </div>
+              <div className="tech-projection-item" style={{ top: '68%' }}>
+                <div className="tech-projection-line" />
+                <div className="tech-projection-pill">AI</div>
+              </div>
+              <div className="tech-projection-item" style={{ top: '83%' }}>
+                <div className="tech-projection-line" />
+                <div className="tech-projection-pill">PROBLEM SOLVING</div>
               </div>
             </div>
           </div>
