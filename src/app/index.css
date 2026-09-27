@@ -147,9 +147,9 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 .btn-primary:hover {
-  background: #005a62;
+  background: #2c6fb0;
   color: #ffffff;
-  border-color: #005a62;
+  border-color: #2c6fb0;
   box-shadow: none;
 }
 
@@ -381,10 +381,10 @@ h1, h2, h3, h4, h5, h6 {
 
 .v2-theme .hero-ctas-outside .btn-primary-outline:hover,
 .v2-theme .face-cta:hover {
-  background: #4a5161 !important; /* lighter charcoal hover */
-  border: none !important;
-  color: #eaecf0 !important;
-  -webkit-text-fill-color: #eaecf0 !important;
+  background: #2c6fb0 !important; /* futuristic azure blue hover */
+  border-color: #2c6fb0 !important;
+  color: #ffffff !important;
+  -webkit-text-fill-color: #ffffff !important;
   box-shadow: none !important;
   transform: scale(1.03) !important;
 }
@@ -415,7 +415,7 @@ h1, h2, h3, h4, h5, h6 {
   left: 0;
   width: 0%;
   height: 1.5px;
-  background-color: #111111;
+  background-color: #2c6fb0 !important;
   transition: width 0.25s cubic-bezier(0.16, 1, 0.3, 1);
 }
 

@@ -46,8 +46,8 @@ export default function EditorialStatement() {
           -webkit-text-stroke: 0 !important;
         }
         .prefooter-btn-primary:hover {
-          background: #4a5161 !important;
-          border-color: #4a5161 !important;
+          background: #2c6fb0 !important;
+          border-color: #2c6fb0 !important;
           color: #ffffff !important;
           -webkit-text-fill-color: #ffffff !important;
         }
