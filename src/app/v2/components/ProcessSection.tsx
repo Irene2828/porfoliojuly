@@ -7,19 +7,19 @@ export default function ProcessSection() {
   const testimonials = [
     {
       num: '01',
-      quote: "Iryna turned our complex manual operational workflow into an intuitive, automated internal AI tool. What used to take our team hours every day now runs seamlessly in minutes.",
+      quote: <>"Iryna turned our complex manual operational workflow into an intuitive, automated internal AI tool. What used to take our team <span style={{ background: 'rgba(0,255,163,0.15)', padding: '2px 6px' }}>hours every day now runs seamlessly in minutes</span>."</>,
       author: 'Elena Ross',
       role: 'Founder & CEO, Apex Operations'
     },
     {
       num: '02',
-      quote: "Working with Iryna was completely frictionless. She captured our brand identity perfectly and delivered a high-converting, boutique website that elevated our market positioning immediately.",
+      quote: <>"Working with Iryna was completely frictionless. She captured our brand identity perfectly and delivered a high-converting, boutique website that elevated our market positioning immediately."</>,
       author: 'Marcus Vance',
       role: 'Managing Director, Vance Studio'
     },
     {
       num: '03',
-      quote: "From initial concept to final deployment, Iryna took complete ownership of our product. Her ability to blend strategic UX design with robust tech execution is unmatched.",
+      quote: <>"From initial concept to final deployment, Iryna took complete ownership of our product. Her ability to blend strategic UX design with robust tech execution is unmatched."</>,
       author: 'Sarah Jenkins',
       role: 'VP of Product, Nexus Tech'
     }
@@ -72,7 +72,7 @@ export default function ProcessSection() {
           margin: '0 auto',
           textAlign: 'center'
         }}>
-          Here are some reviews on my work from the clients:
+          Here's what clients say after we ship:
         </p>
       </motion.div>
 
@@ -108,8 +108,9 @@ export default function ProcessSection() {
                 backgroundColor: '#ffffff',
                 borderRadius: '16px',
                 padding: '3rem 2.5rem',
-                boxShadow: '0 6px 16px -4px rgba(0,0,0,0.12)',
+                boxShadow: '0 12px 40px rgba(0,0,0,0.15)',
                 border: 'none',
+                borderLeft: '4px solid #00FFA3',
                 display: 'flex',
                 flexDirection: 'column',
                 justifyContent: 'space-between',
@@ -136,7 +137,7 @@ export default function ProcessSection() {
                   fontStyle: 'italic',
                   margin: '0 0 2rem 0'
                 }}>
-                  "{testimonials[activeIndex].quote}"
+                  {testimonials[activeIndex].quote}
                 </p>
               </div>
 
@@ -144,27 +145,44 @@ export default function ProcessSection() {
                 borderTop: '1px solid rgba(24, 25, 30, 0.10)', 
                 paddingTop: '1.5rem', 
                 display: 'flex',
-                flexDirection: 'column',
-                alignItems: 'flex-end',
-                textAlign: 'right' 
+                alignItems: 'center',
+                justifyContent: 'flex-start',
+                gap: '12px'
               }}>
-                <div style={{ 
-                  fontFamily: "var(--font-sans), Inter, sans-serif",
-                  fontSize: '1rem',
-                  fontWeight: 700,
-                  color: '#18191e',
-                  lineHeight: 1.3
+                <div style={{
+                  width: '40px',
+                  height: '40px',
+                  borderRadius: '50%',
+                  backgroundColor: '#252A3A',
+                  color: '#ffffff',
+                  display: 'flex',
+                  alignItems: 'center',
+                  justifyContent: 'center',
+                  fontFamily: 'var(--font-sans)',
+                  fontSize: '14px',
+                  fontWeight: 600
                 }}>
-                  {testimonials[activeIndex].author}
+                  {testimonials[activeIndex].author.split(' ').map(n => n[0]).join('')}
                 </div>
-                <div style={{ 
-                  fontFamily: "'JetBrains Mono', Menlo, monospace",
-                  fontSize: '0.75rem',
-                  color: '#55606a',
-                  marginTop: '0.3rem',
-                  letterSpacing: '0.02em'
-                }}>
-                  {testimonials[activeIndex].role}
+                <div style={{ textAlign: 'left' }}>
+                  <div style={{ 
+                    fontFamily: "var(--font-sans), Inter, sans-serif",
+                    fontSize: '1rem',
+                    fontWeight: 700,
+                    color: '#18191e',
+                    lineHeight: 1.3
+                  }}>
+                    {testimonials[activeIndex].author}
+                  </div>
+                  <div style={{ 
+                    fontFamily: "'JetBrains Mono', Menlo, monospace",
+                    fontSize: '0.75rem',
+                    color: '#55606a',
+                    marginTop: '0.3rem',
+                    letterSpacing: '0.02em'
+                  }}>
+                    {testimonials[activeIndex].role}
+                  </div>
                 </div>
               </div>
             </motion.div>
@@ -172,14 +190,14 @@ export default function ProcessSection() {
         </div>
 
         {/* Pagination Dots */}
-        <div style={{ display: 'flex', gap: '10px', marginTop: '2.5rem' }}>
+        <div style={{ display: 'flex', gap: '8px', marginTop: '2.5rem' }}>
           {testimonials.map((_, i) => (
             <button
               key={i}
               onClick={() => setActiveIndex(i)}
               style={{
-                width: i === activeIndex ? '24px' : '8px',
-                height: '8px',
+                width: i === activeIndex ? '24px' : '6px',
+                height: '6px',
                 borderRadius: '4px',
                 backgroundColor: i === activeIndex ? '#ffffff' : 'rgba(255,255,255,0.3)',
                 border: 'none',

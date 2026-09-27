@@ -37,13 +37,9 @@ export default function HeroV2() {
           </div>
 
           <div className="hero-image-container" style={{ position: 'relative', zIndex: 2 }}>
-            <div className="hero-image-offset-frame"></div>
+            {/* Decor removed as requested */}
             <div className="hero-image-brackets"></div>
             <div className="hero-image-brackets-left"></div>
-            {/* Decor squares poking out under image */}
-            <div className="hero-decor-square" style={{ position: 'absolute', width: '125px', height: '125px', border: '1.5px dashed rgba(235, 235, 237, 0.4)', bottom: '-45px', left: '-35px', zIndex: 0, opacity: 0.7, pointerEvents: 'none' }} />
-            <div className="hero-decor-square" style={{ position: 'absolute', width: '65px', height: '65px', border: '1.5px dashed rgba(75, 133, 187, 0.55)', bottom: '-20px', left: '-50px', zIndex: 0, opacity: 0.8, pointerEvents: 'none' }} />
-            <div className="hero-decor-square" style={{ position: 'absolute', width: '135px', height: '135px', border: '1.5px solid rgba(235, 235, 237, 0.3)', bottom: '-35px', left: '-65px', zIndex: 0, opacity: 0.6, pointerEvents: 'none' }} />
             <img src={heroImage.src} alt="Iryna Sheremeta" className="hero-image" />
             <div className="hero-dot-overlay"></div>
 
@@ -61,23 +57,23 @@ export default function HeroV2() {
             <div className="tech-projections-container">
               <div className="tech-projection-item" style={{ top: '22%' }}>
                 <div className="tech-projection-line" />
-                <div className="tech-projection-pill">RESEARCH SKILLS</div>
+                <div className="tech-projection-pill">PRODUCT STRATEGY</div>
               </div>
               <div className="tech-projection-item" style={{ top: '38%' }}>
                 <div className="tech-projection-line" />
-                <div className="tech-projection-pill">BUSINESS AWARE</div>
+                <div className="tech-projection-pill">UX &amp; UI DESIGN</div>
               </div>
               <div className="tech-projection-item" style={{ top: '53%' }}>
                 <div className="tech-projection-line" />
-                <div className="tech-projection-pill">UX &amp; UI</div>
+                <div className="tech-projection-pill">CUSTOM WEB APPS</div>
               </div>
               <div className="tech-projection-item" style={{ top: '68%' }}>
                 <div className="tech-projection-line" />
-                <div className="tech-projection-pill">AI</div>
+                <div className="tech-projection-pill">AI &amp; AUTOMATION</div>
               </div>
               <div className="tech-projection-item" style={{ top: '83%' }}>
                 <div className="tech-projection-line" />
-                <div className="tech-projection-pill">PROBLEM SOLVING</div>
+                <div className="tech-projection-pill">END-TO-END SHIP</div>
               </div>
             </div>
           </div>
@@ -98,10 +94,10 @@ export default function HeroV2() {
                 className="hero-text"
                 style={{ transform: 'translateY(-0.4rem)' }}
               >
-                <h1 className="title-serif hero-statement hero-statement-anim" style={{ fontFamily: "var(--font-serif)", fontSize: 'clamp(49.8px, 6.12vw, 54.8px)', color: '#2c6fb0', WebkitTextFillColor: '#2c6fb0', fontWeight: 500, fontStyle: 'italic', marginTop: '0.6rem', textTransform: 'none', letterSpacing: '-0.04em' }}>
+                <h1 className="title-serif hero-statement hero-statement-anim" style={{ fontFamily: "var(--font-serif)", fontSize: 'clamp(49.8px, 6.12vw, 54.8px)', color: '#333842', WebkitTextFillColor: '#333842', fontWeight: 500, fontStyle: 'italic', marginTop: '0.6rem', textTransform: 'none', letterSpacing: '-0.04em' }}>
                   Looking for a <span className="br-mobile"><br /></span><span className="premium-hover"><span className="word-custom">custom</span></span> <span className="premium-hover">website</span> <span className="br-desktop"><br /></span>or <span className="br-mobile"><br /></span>an <span className="premium-hover"><span className="word-internal">internal</span> AI tool</span>?
                 </h1>
-                <p className="hero-frame-paragraph hero-paragraph-anim" style={{ marginTop: '1.7rem', fontSize: '1.10rem', lineHeight: '1.75', color: '#5f6a7a', maxWidth: '673px' }}>
+                <p className="hero-frame-paragraph hero-paragraph-anim" style={{ marginTop: '1.7rem', fontSize: '1.10rem', lineHeight: '1.75', color: '#5f6a7a', maxWidth: '100%' }}>
                   <strong>I design and build custom digital products end-to-end</strong> for business <span className="br-desktop"><br /></span>and professionals &mdash; from figuring out what solution you need to <span className="br-desktop"><br /></span>shipping a working product.
                 </p>
               </div>

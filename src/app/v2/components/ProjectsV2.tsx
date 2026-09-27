@@ -266,8 +266,8 @@ export default function ProjectsV2({ initialProjects = [] }: ProjectsV2Props) {
                       )}
                     </div>
                   </div>
-                  <div className="preview-card-caption">
-                    Click to expand full case study ↗
+                  <div className="preview-card-caption" style={{ fontFamily: 'var(--font-mono), monospace', fontSize: '11px', color: '#3B82F6', marginTop: '16px', letterSpacing: '0.05em' }}>
+                    EXPAND CASE &rarr;
                   </div>
                 </div>
               </motion.div>
@@ -309,8 +309,8 @@ export default function ProjectsV2({ initialProjects = [] }: ProjectsV2Props) {
                     />
                   </div>
                 </div>
-                <div className="preview-card-caption">
-                  Click to expand full case study ↗
+                <div className="preview-card-caption" style={{ fontFamily: 'var(--font-mono), monospace', fontSize: '11px', color: '#3B82F6', marginTop: '16px', letterSpacing: '0.05em' }}>
+                  EXPAND CASE &rarr;
                 </div>
               </div>
             </motion.div>

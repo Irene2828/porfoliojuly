@@ -8,7 +8,7 @@ export default function EditorialStatement() {
 
   const handleCopyEmail = (e: React.MouseEvent) => {
     e.preventDefault();
-    navigator.clipboard.writeText('hello@example.com');
+    navigator.clipboard.writeText('iryna@irynasheremeta.com');
     setCopied(true);
     setTimeout(() => setCopied(false), 2000);
   };
@@ -17,7 +17,7 @@ export default function EditorialStatement() {
     <section 
       style={{
         backgroundColor: '#ffffff', // White background
-        padding: '3.25rem 1.5rem 1.75rem 1.5rem',
+        padding: '80px 0',
         width: '100%',
         display: 'flex',
         justifyContent: 'center',
@@ -46,10 +46,20 @@ export default function EditorialStatement() {
           -webkit-text-stroke: 0 !important;
         }
         .prefooter-btn-primary:hover {
-          background: #2c6fb0 !important;
-          border-color: #2c6fb0 !important;
+          background: #4a5161 !important;
+          border-color: #4a5161 !important;
           color: #ffffff !important;
           -webkit-text-fill-color: #ffffff !important;
+        }
+        .face-cta {
+          background-color: #252A3A !important;
+          color: #ffffff !important;
+          transition: box-shadow 0.3s ease !important;
+          border: none !important;
+        }
+        .face-cta:hover {
+          box-shadow: 0 0 20px rgba(0,255,163,0.3) !important;
+          background-color: #252A3A !important;
         }
       `}</style>
       <motion.div
@@ -71,7 +81,7 @@ export default function EditorialStatement() {
       >
         {/* Short decor line above section heading */}
         <div style={{ 
-          width: '60px', 
+          width: '48px', 
           height: '1px', 
           backgroundColor: '#0b0c10', 
           margin: '0 auto 2rem auto', 
@@ -95,7 +105,7 @@ export default function EditorialStatement() {
             WebkitTextStroke: '0.35px #333842'
           }}
         >
-          Need a solution to grow your business?
+          Have a workflow that should take minutes, not hours?
         </h2>
 
         {/* Statement Subtitle */}
@@ -112,14 +122,14 @@ export default function EditorialStatement() {
           I'd love to help you build one.
         </p>
 
-        {/* Action CTAs with reduced spacing (marginTop: 1.75rem) */}
+        {/* Action CTAs */}
         <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', gap: '1rem', marginTop: '1.75rem', justifyContent: 'center' }}>
           <a 
-            href="mailto:hello@example.com" 
-            className="btn face-cta"
+            href="mailto:iryna@irynasheremeta.com" 
+            className="btn prefooter-btn-primary face-cta"
             style={{ display: 'inline-flex', alignItems: 'center', gap: '0.45rem' }}
           >
-            <span>Send your problem my way</span>
+            <span>SEND YOUR PROBLEM MY WAY</span>
             <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round" style={{ transform: 'translateY(-0.5px)' }}>
               <line x1="7" y1="17" x2="17" y2="7"></line>
               <polyline points="7 7 17 7 17 17"></polyline>
@@ -131,35 +141,32 @@ export default function EditorialStatement() {
             style={{
               background: 'transparent',
               border: 'none',
-              color: '#555555',
+              color: copied ? '#00FFA3' : '#252A3A',
               fontFamily: "'JetBrains Mono', Menlo, monospace",
               fontSize: '11px',
-              fontWeight: 300,
+              fontWeight: 500,
               letterSpacing: '0.08em',
-              textTransform: 'uppercase',
               cursor: 'pointer',
               textDecoration: 'none',
               padding: '0.5rem',
-              opacity: 0.75,
               display: 'inline-flex',
               alignItems: 'center',
               gap: '0.45rem',
-              transition: 'opacity 0.22s ease'
-            }}
-            onMouseEnter={(e) => {
-              e.currentTarget.style.transform = 'scale(1.05)';
-              e.currentTarget.style.opacity = '1';
-            }}
-            onMouseLeave={(e) => {
-              e.currentTarget.style.transform = 'scale(1)';
-              e.currentTarget.style.opacity = '0.9';
+              transition: 'all 0.22s ease'
             }}
           >
-            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round" style={{ transform: 'translateY(-0.5px)' }}>
-              <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path>
-              <polyline points="22,6 12,13 2,6"></polyline>
-            </svg>
-            <span>{copied ? 'Email Copied!' : 'Copy email'}</span>
+            {copied ? (
+              <span>COPIED ✓</span>
+            ) : (
+              <>
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round" style={{ transform: 'translateY(-0.5px)' }}>
+                  <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path>
+                  <polyline points="22,6 12,13 2,6"></polyline>
+                </svg>
+                <span>iryna@irynasheremeta.com</span>
+                <span style={{ marginLeft: '4px', opacity: 0.5 }}>COPY EMAIL</span>
+              </>
+            )}
           </button>
         </div>
       </motion.div>

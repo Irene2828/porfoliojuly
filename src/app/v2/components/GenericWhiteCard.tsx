@@ -29,6 +29,10 @@ export default function GenericWhiteCard({ title, annotations, stats, image }: G
       <div className="guertin-content">
         
         {/* Mockup Area */}
+        <div style={{ fontFamily: 'var(--font-mono), monospace', fontSize: '11px', opacity: 0.6, marginBottom: '16px', width: '100%', textAlign: 'left' }}>
+          TERRY FOX RUN // AI Poster Generator<br/>
+          Ukraine Case 01 - Non-profit tool
+        </div>
         <div className="guertin-mockup-area">
           
           {/* Pill 01: Top Left */}
@@ -37,7 +41,7 @@ export default function GenericWhiteCard({ title, annotations, stats, image }: G
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
               transition={{ delay: 0.1 }}
-              className="guertin-pill guertin-pill-1"
+              className="guertin-pill guertin-pill-1 guertin-pill-light"
             >
               <span className="guertin-pill-num">01</span>
               <span className="guertin-pill-sep">|</span>
@@ -69,10 +73,10 @@ export default function GenericWhiteCard({ title, annotations, stats, image }: G
             </div>
           </motion.div>
 
-          {/* iPhone Mockup (Right 24%, rotated -3deg) */}
+          {/* iPhone Mockup */}
           <motion.div 
-            initial={{ opacity: 0, x: 30, rotate: 0 }}
-            whileInView={{ opacity: 1, x: 0, rotate: -3 }}
+            initial={{ opacity: 0, x: 30 }}
+            whileInView={{ opacity: 1, x: 0 }}
             transition={{ delay: 0.4, duration: 0.7 }}
             className="guertin-phone"
             style={{ boxShadow: '-10px 20px 40px rgba(0,0,0,0.15)' }}
@@ -88,7 +92,7 @@ export default function GenericWhiteCard({ title, annotations, stats, image }: G
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
               transition={{ delay: 0.5 }}
-              className="guertin-pill guertin-pill-2"
+              className="guertin-pill guertin-pill-2 guertin-pill-light"
             >
               <span className="guertin-pill-num">02</span>
               <span className="guertin-pill-sep">|</span>
@@ -102,7 +106,7 @@ export default function GenericWhiteCard({ title, annotations, stats, image }: G
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
               transition={{ delay: 0.6 }}
-              className="guertin-pill guertin-pill-3"
+              className="guertin-pill guertin-pill-3 guertin-pill-light"
             >
               <span className="guertin-pill-num">03</span>
               <span className="guertin-pill-sep">|</span>
@@ -114,7 +118,7 @@ export default function GenericWhiteCard({ title, annotations, stats, image }: G
         {/* 3 Light Cards Below */}
         <div className="guertin-cards-area">
           <h3 className="guertin-cards-title" style={{ color: '#18191e' }}>
-            Interactive features &amp; performance metrics.
+            From 4.8h manual delays to &lt;30s self-serve.
           </h3>
           
           <div className="guertin-cards-grid">

@@ -53,6 +53,10 @@ export default function GuertinProject() {
       <div className="guertin-content">
         
         {/* Mockup Area */}
+        <div style={{ fontFamily: 'var(--font-mono), monospace', fontSize: '11px', opacity: 0.6, marginBottom: '16px', width: '100%', textAlign: 'left', color: '#ffffff' }}>
+          GUERTIN ISABELLE // Professional Services Website<br/>
+          Quebec - Service business
+        </div>
         <div className="guertin-mockup-area">
           
           {/* Pill 01: Top Left */}
@@ -60,7 +64,7 @@ export default function GuertinProject() {
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ delay: 0.1 }}
-            className="guertin-pill guertin-pill-1"
+            className="guertin-pill guertin-pill-1 guertin-pill-dark"
           >
             <span className="guertin-pill-num">01</span>
             <span className="guertin-pill-sep">|</span>
@@ -90,10 +94,10 @@ export default function GuertinProject() {
             </div>
           </motion.div>
 
-          {/* iPhone Mockup (Right 24%, rotated -3deg) */}
+          {/* iPhone Mockup */}
           <motion.div 
-            initial={{ opacity: 0, x: 30, rotate: 0 }}
-            whileInView={{ opacity: 1, x: 0, rotate: -3 }}
+            initial={{ opacity: 0, x: 30 }}
+            whileInView={{ opacity: 1, x: 0 }}
             transition={{ delay: 0.4, duration: 0.7 }}
             className="guertin-phone"
           >
@@ -107,7 +111,7 @@ export default function GuertinProject() {
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ delay: 0.5 }}
-            className="guertin-pill guertin-pill-2"
+            className="guertin-pill guertin-pill-2 guertin-pill-dark"
           >
             <span className="guertin-pill-num">02</span>
             <span className="guertin-pill-sep">|</span>
@@ -119,9 +123,9 @@ export default function GuertinProject() {
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ delay: 0.6 }}
-            className="guertin-pill guertin-pill-3"
+            className="guertin-pill guertin-pill-3 guertin-pill-dark"
           >
-            <span className="guertin-pill-num">02</span>
+            <span className="guertin-pill-num">03</span>
             <span className="guertin-pill-sep">|</span>
             <span>RESPONSIVE IA<br/>ONE FILE AT A TIME</span>
           </motion.div>
@@ -129,7 +133,7 @@ export default function GuertinProject() {
 
         {/* 3 Dark Cards Below */}
         <div className="guertin-cards-area">
-          <h3 className="guertin-cards-title">Technical expertise. Clear analysis. Informed decisions.</h3>
+          <h3 className="guertin-cards-title">Designed to turn expertise into booked consultations.</h3>
           
           <div className="guertin-cards-grid">
             <motion.div 
@@ -137,12 +141,13 @@ export default function GuertinProject() {
               whileInView={{ opacity: 1, y: 0 }}
               transition={{ delay: 0.2 }}
               className="guertin-card"
+              style={{ backgroundColor: 'rgba(255,255,255,0.06)', border: '1px solid rgba(255,255,255,0.1)' }}
             >
-              <h4 className="guertin-card-title">
-                <span className="guertin-card-icon">🏛</span> Municipal Civil Liability
+              <h4 className="guertin-card-title" style={{ color: 'rgba(255,255,255,0.8)' }}>
+                <span className="guertin-card-icon">⚡</span> Problem: Low conversions
               </h4>
-              <p className="guertin-card-desc">
-                Investigation and handling of municipal liability claims involving property damage and bodily injury.
+              <p className="guertin-card-desc" style={{ color: 'rgba(255,255,255,0.8)' }}>
+                Outdated digital presence failing to build trust.
               </p>
             </motion.div>
 
@@ -151,12 +156,13 @@ export default function GuertinProject() {
               whileInView={{ opacity: 1, y: 0 }}
               transition={{ delay: 0.3 }}
               className="guertin-card"
+              style={{ backgroundColor: 'rgba(255,255,255,0.06)', border: '1px solid rgba(255,255,255,0.1)' }}
             >
-              <h4 className="guertin-card-title">
-                <span className="guertin-card-icon">⚖️</span> Public Adjuster Services
+              <h4 className="guertin-card-title" style={{ color: 'rgba(255,255,255,0.8)' }}>
+                <span className="guertin-card-icon">⚡</span> Built with: Next.js
               </h4>
-              <p className="guertin-card-desc">
-                Independent claims assistance for individuals navigating property insurance claims with expertise.
+              <p className="guertin-card-desc" style={{ color: 'rgba(255,255,255,0.8)' }}>
+                Modern stack for lightning-fast performance.
               </p>
             </motion.div>
 
@@ -165,12 +171,13 @@ export default function GuertinProject() {
               whileInView={{ opacity: 1, y: 0 }}
               transition={{ delay: 0.4 }}
               className="guertin-card"
+              style={{ backgroundColor: 'rgba(255,255,255,0.06)', border: '1px solid rgba(255,255,255,0.1)' }}
             >
-              <h4 className="guertin-card-title">
-                <span className="guertin-card-icon">🔍</span> Damage Assessment & Tech
+              <h4 className="guertin-card-title" style={{ color: 'rgba(255,255,255,0.8)' }}>
+                <span className="guertin-card-icon">⚡</span> Impact: +120% Leads
               </h4>
-              <p className="guertin-card-desc">
-                Detailed analysis of property damage, causation, and evaluation supported by documentation.
+              <p className="guertin-card-desc" style={{ color: 'rgba(255,255,255,0.8)' }}>
+                Doubled consultation bookings in 3 months.
               </p>
             </motion.div>
           </div>

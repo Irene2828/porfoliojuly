@@ -52,14 +52,21 @@
   display: none !important;
 }
 
-@keyframes heroBgSlideFromBottom {
+@keyframes heroBgFadeIn {
   0% {
     opacity: 0;
-    transform: translateY(100%);
   }
   100% {
     opacity: 1;
-    transform: translateY(0);
+  }
+}
+
+@keyframes heroBgSlideFromBottom {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
   }
 }
 
@@ -100,7 +107,7 @@
   transform: translateY(0);
   position: relative;
   z-index: 2;
-  max-width: 1552px !important; /* +10% wider layout for hero */
+  max-width: 1670px !important; /* matching global container width */
 }
 
 @media (min-width: 1670px) {
@@ -109,11 +116,11 @@
     --hero-inner-width: min(calc(100vw - 4rem), 1347px);
   }
   .hero-container {
-    max-width: 1707px !important; /* +10% wider on 1670px screens */
+    max-width: 1837px !important; /* matching global large screen container width */
   }
   .hero-content {
-    max-width: 726px;
-    margin-left: 25%;
+    max-width: 720px;
+    margin-left: auto;
   }
   .hero-name-group .hero-text h1 {
     font-size: clamp(3.01rem, 6.02vw, 5.12rem);
@@ -148,7 +155,7 @@
 
 .hero-content {
   flex: 1;
-  max-width: 726px;
+  max-width: 720px;
   position: relative;
   z-index: 5;
   transform: none;
@@ -156,24 +163,26 @@
   display: flex;
   flex-direction: column;
   align-items: flex-start;
-  margin-left: 25%; /* moved 10% more to the right side of the screen */
+  margin-left: auto; /* align to the right edge of the container */
 }
 
 .hero-copy-motion {
   width: 100%;
   padding-top: 0;
   will-change: transform, opacity;
+  backface-visibility: hidden;
+  -webkit-backface-visibility: hidden;
   animation: heroFrameSlideFromBottom 1.6s cubic-bezier(0.22, 1, 0.36, 1) 0.2s both;
 }
 
 @keyframes heroFrameSlideFromBottom {
   0% {
     opacity: 0;
-    transform: translateY(120px);
+    transform: translate3d(0, 120px, 0);
   }
   100% {
     opacity: 1;
-    transform: translateY(0);
+    transform: translate3d(0, 0, 0);
   }
 }
 
@@ -184,22 +193,22 @@
 
 /* 2. Subline ("I design and build custom digital products...") slides up from bottom */
 .hero-paragraph-anim {
-  animation: heroSlideFromBottom 1.0s cubic-bezier(0.22, 1, 0.36, 1) 0.6s both;
+  animation: none;
 }
 
 /* 3. CTA Buttons slide up from bottom following subline */
 .hero-ctas-anim {
-  animation: heroSlideFromBottom 1.0s cubic-bezier(0.22, 1, 0.36, 1) 0.85s both;
+  animation: none;
 }
 
 @keyframes heroSlideFromBottom {
   0% {
     opacity: 0;
-    transform: translateY(40px);
+    transform: translate3d(0, 40px, 0);
   }
   100% {
     opacity: 1;
-    transform: translateY(0);
+    transform: translate3d(0, 0, 0);
   }
 }
 
@@ -210,11 +219,11 @@
   margin-top: 0;
   margin-bottom: 0;
   max-width: none !important;
-  width: calc(100% + 13.5rem); /* increased by another 10% */
+  width: calc(100% + 2rem);
   background: #ffffff !important;
-  border: 1px dashed #121212; /* dashed green frame */
+  border: 1px dashed rgba(18, 18, 18, 0.25); /* dashed frame */
   padding: 3.79rem 5.06rem; /* top and bottom padding increased by 25% */
-  margin-left: -13.5rem;
+  margin-left: -2rem;
   margin-right: 0; /* aligns right edge of the frame with the right edge of sections */
   transform: none;
   transform-style: preserve-3d; /* establishes a 3D rendering context to layer pseudo-elements underneath */
@@ -237,9 +246,9 @@
 .hero-connector-line {
   position: absolute;
   top: 60%; /* Roughly aligns with the visual center gap */
-  left: -100px; /* Extend into the dark area on the left */
+  left: -280px; /* Extend into the dark area on the left */
   right: auto;
-  width: 100px; /* Covers the gap to the image */
+  width: 280px; /* Covers the gap to the image */
   border-bottom: 1.5px dashed rgba(235, 235, 237, 0.6); /* silver dashed line visible on dark bg */
   z-index: 10;
   pointer-events: none;
@@ -257,14 +266,14 @@
   pointer-events: none;
 }
 
-/* Corner brackets top-right and bottom-right of portrait */
+/* Corner brackets inside portrait */
 .hero-image-brackets {
   position: absolute;
-  top: -8px;
-  right: -8px;
-  bottom: -8px;
+  top: 8px;
+  right: 8px;
+  bottom: 8px;
   width: 12px;
-  border-right: 1.5px dashed rgba(235, 235, 237, 0.55);
+  border-right: 1.5px dashed rgba(235, 235, 237, 0.25);
   pointer-events: none;
   z-index: 10;
 }
@@ -276,7 +285,7 @@
   right: -1px; /* Align with right border */
   width: 100%;
   height: 1.5px;
-  background: rgba(235, 235, 237, 0.55);
+  background: rgba(235, 235, 237, 0.25);
 }
 
 .hero-image-brackets::before {
@@ -307,7 +316,7 @@
     left: -8px;
     bottom: -8px;
     width: 12px;
-    border-left: 1.5px dashed rgba(235, 235, 237, 0.55);
+    border-left: 1.5px dashed rgba(235, 235, 237, 0.25);
     pointer-events: none;
     z-index: 10;
   }
@@ -319,7 +328,7 @@
     left: -1px; /* Align with left border */
     width: 100%;
     height: 1.5px;
-    background: rgba(235, 235, 237, 0.55);
+    background: rgba(235, 235, 237, 0.25);
   }
 
   .hero-image-brackets-left::before {
@@ -613,6 +622,8 @@
   animation: heroImageSlideFromLeft var(--hero-motion-duration) cubic-bezier(0.22, 1, 0.36, 1) both;
   animation-delay: var(--hero-intro-delay);
   will-change: transform, opacity;
+  backface-visibility: hidden;
+  -webkit-backface-visibility: hidden;
   box-shadow: none;
 }
 
@@ -636,11 +647,11 @@
 @keyframes heroImageSlideFromLeft {
   0% {
     opacity: 0;
-    transform: translateX(-140px);
+    transform: translate3d(-140px, 0, 0);
   }
   100% {
     opacity: 1;
-    transform: translateX(0);
+    transform: translate3d(0, 0, 0);
   }
 }
 
@@ -831,7 +842,7 @@
     margin: 0 !important;
     padding: 1.85rem 1.4rem !important;
     background: #ffffff !important;
-    border: 1px dashed #121212 !important;
+    border: 1px dashed rgba(18, 18, 18, 0.25) !important;
     box-shadow: none !important;
     transform: none !important;
     align-items: flex-start !important;
@@ -1593,9 +1604,9 @@
   position: absolute;
   left: 0;
   width: 100%;
-  height: 2px;
+  height: 1px;
   background: #00FFA3;
-  box-shadow: 0 0 12px #00FFA3, 0 0 24px rgba(0, 255, 163, 0.5);
+  box-shadow: 0 0 8px rgba(0, 255, 163, 0.6);
   z-index: 15;
   pointer-events: none;
   opacity: 0;
@@ -1606,11 +1617,12 @@
 .tech-scan-line::after {
   content: '';
   position: absolute;
-  top: 2px;
+  top: 1px;
   left: 0;
   width: 100%;
-  height: 80px;
+  height: 120px;
   background: linear-gradient(to bottom, rgba(0, 255, 163, 0.15), transparent);
+  filter: blur(24px);
   pointer-events: none;
 }
 
@@ -1654,7 +1666,7 @@
 /* 4. Projection Container & Skill Tag Pills */
 .tech-projections-container {
   position: absolute;
-  left: calc(100% + 24px);
+  left: calc(100% + 8px);
   top: 0;
   bottom: 0;
   width: 220px;
@@ -1674,26 +1686,41 @@
 }
 
 .tech-projection-line {
-  width: 40px;
+  width: 32px;
   height: 1px;
-  background: linear-gradient(90deg, rgba(0, 255, 163, 0.6), rgba(0, 255, 163, 0.2));
+  background: #00FFA3;
+  opacity: 0.5;
   flex-shrink: 0;
 }
 
 .tech-projection-pill {
+  position: relative;
+  display: flex;
+  align-items: center;
+  gap: 8px;
   font-family: 'JetBrains Mono', Menlo, monospace !important;
   font-size: 11px !important;
   letter-spacing: 0.12em !important;
-  background: rgba(37, 42, 58, 0.8) !important;
-  backdrop-filter: blur(12px) !important;
-  -webkit-backdrop-filter: blur(12px) !important;
-  border: 1px solid rgba(0, 255, 163, 0.3) !important;
-  color: #ffffff !important;
+  background: rgba(37, 42, 58, 0.6) !important;
+  border: 1px solid rgba(0, 255, 163, 0.25) !important;
+  color: rgba(255, 255, 255, 0.75) !important;
   padding: 6px 10px !important;
-  border-radius: 4px !important;
+  border-radius: 2px !important;
   white-space: nowrap !important;
-  box-shadow: 0 4px 14px rgba(0, 0, 0, 0.25) !important;
   text-transform: uppercase !important;
+  cursor: default !important;
+  pointer-events: auto;
+}
+
+.tech-projection-pill::before {
+  content: '';
+  display: block;
+  width: 4px;
+  height: 4px;
+  border-radius: 50%;
+  background: #00FFA3;
+  box-shadow: 0 0 6px #00FFA3;
+  flex-shrink: 0;
 }
 
 /* Reveal stagger during 2nd scan sweep (starts at 0.9s, 80ms stagger, 500ms duration) */
@@ -1751,5 +1778,64 @@
   .tech-projection-pill {
     font-size: 10px !important;
     padding: 4px 8px !important;
+  }
+}
+
+@media (max-width: 767px) {
+  .tech-projections-container {
+    position: absolute;
+    bottom: 16px;
+    left: 16px;
+    right: 16px;
+    top: auto;
+    width: auto;
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    align-items: flex-start;
+    justify-content: flex-end;
+  }
+  
+  .tech-projection-item {
+    position: relative !important;
+    right: auto !important;
+    top: auto !important;
+    transform: none !important;
+    animation: none !important;
+    opacity: 1 !important;
+    width: auto;
+    max-width: 85%;
+  }
+  
+  .tech-projection-line {
+    display: none !important;
+  }
+  
+  .tech-projection-pill {
+    width: auto;
+    max-width: 100%;
+    white-space: nowrap !important;
+    overflow: visible !important;
+    font-size: 10px !important;
+    padding: 6px 10px !important;
+    background: rgba(37, 42, 58, 0.85) !important;
+    backdrop-filter: blur(4px) !important;
+    -webkit-backdrop-filter: blur(4px) !important;
+  }
+  
+  .hero-image-container {
+    overflow: hidden !important;
+    padding-bottom: 16px !important;
+  }
+  
+  .v2-theme .hero-name-group,
+  .hero-name-group {
+    margin-bottom: 16px !important;
+  }
+  
+  .hero-ctas .btn,
+  .hero-ctas-outside .btn-primary-outline {
+    width: 100% !important;
+    justify-content: center !important;
   }
 }
