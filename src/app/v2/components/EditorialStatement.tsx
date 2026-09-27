@@ -83,7 +83,7 @@ export default function EditorialStatement() {
           className="editorial-blue-heading"
           style={{ 
             fontFamily: "var(--font-serif)",
-            fontSize: 'clamp(23px, 4vw, 30px)', 
+            fontSize: 'clamp(28px, 4.8vw, 36px)', 
             color: '#333842', 
             fontWeight: 400,
             fontStyle: 'normal',
