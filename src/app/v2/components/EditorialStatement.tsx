@@ -91,7 +91,8 @@ export default function EditorialStatement() {
             letterSpacing: '-0.01em',
             textAlign: 'center',
             width: '100%',
-            margin: '0 auto 1.25rem auto'
+            margin: '0 auto 1.25rem auto',
+            WebkitTextStroke: '0.35px #333842'
           }}
         >
           Need a solution to grow your business?

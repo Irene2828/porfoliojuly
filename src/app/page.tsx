@@ -57,7 +57,8 @@ export default async function HomePage() {
               lineHeight: 1.25,
               letterSpacing: '-0.01em',
               textAlign: 'center',
-              margin: '0 auto 0.75rem auto'
+              margin: '0 auto 0.75rem auto',
+              WebkitTextStroke: '0.35px #333842'
             }}>
               Featured Cases
             </h2>

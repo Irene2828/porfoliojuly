@@ -633,3 +633,12 @@ h1, h2, h3, h4, h5, h6 {
   }
 }
 
+/* Section Headings Stroke */
+.v2-theme section h2,
+.v2-theme #cases-section h2,
+.v2-theme #expertise h2,
+.v2-theme #process h2 {
+  -webkit-text-stroke: 0.35px #333842;
+  text-stroke: 0.35px #333842;
+}
+

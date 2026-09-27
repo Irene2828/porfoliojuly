@@ -187,7 +187,8 @@ export default function ServicesV2() {
           letterSpacing: '-0.01em',
           textAlign: 'center',
           width: '100%',
-          margin: '0 auto 0.75rem auto'
+          margin: '0 auto 0.75rem auto',
+          WebkitTextStroke: '0.35px #333842'
         }}>
           How I Can Help Your Business
         </h2>
@@ -436,7 +437,8 @@ export default function ServicesV2() {
           letterSpacing: '-0.01em',
           textAlign: 'center',
           width: '100%',
-          margin: '0 auto 0.75rem auto'
+          margin: '0 auto 0.75rem auto',
+          WebkitTextStroke: '0.35px #333842'
         }}>
           How the Process Looks
         </h2>
