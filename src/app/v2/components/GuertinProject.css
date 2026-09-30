@@ -1,8 +1,11 @@
 .guertin-wrapper {
   position: relative;
   width: 100%;
-  border-radius: 24px;
+  height: 100%;
+  min-height: 100%;
+  border-radius: 0px;
   overflow: hidden;
+  box-sizing: border-box;
 }
 
 
@@ -10,9 +13,13 @@
   position: relative;
   z-index: 10;
   padding: 2rem;
+  height: 100%;
+  min-height: 100%;
+  box-sizing: border-box;
   display: flex;
   flex-direction: column;
   align-items: center;
+  justify-content: space-between;
 }
 @media (min-width: 768px) {
   .guertin-content { padding: 4rem; }

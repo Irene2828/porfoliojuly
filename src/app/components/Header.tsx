@@ -8,8 +8,16 @@ export default function Header() {
 
   return (
     <header className="premium-header">
-      {/* Left side (Desktop): Spacer for center alignment balance */}
-      <div className="header-spacer-desktop" aria-hidden="true" />
+      {/* Left side (Desktop): Signature Logo */}
+      <div className="header-spacer-desktop">
+        <a href="/" aria-label="Home" style={{ position: 'relative', textDecoration: 'none', display: 'inline-flex', alignItems: 'center', justifyContent: 'center', width: '46px', height: '46px', fontFamily: 'var(--font-serif)', color: '#25150C', fontSize: '34px' }}>
+          {/* Subtle Geometry Circle */}
+          <div style={{ position: 'absolute', width: '100%', height: '100%', borderRadius: '50%', border: '0.5px solid rgba(37, 21, 12, 0.25)', top: 0, left: 0, pointerEvents: 'none' }} />
+          
+          <span style={{ transform: 'translateY(-4px)' }}>I</span>
+          <span style={{ transform: 'translateY(4px)', marginLeft: '-0.08em' }}>S</span>
+        </a>
+      </div>
 
       {/* Center (Desktop): Nav links */}
       <nav className="header-nav header-nav-desktop">
@@ -35,8 +43,15 @@ export default function Header() {
         </a>
       </div>
 
-      {/* Mobile Header Elements: Standard Social Icons on Left, CASES link + Hamburger on Right */}
-      <div className="mobile-header-left">
+      {/* Mobile Header Elements: Signature Logo + Standard Social Icons on Left, CASES link + Hamburger on Right */}
+      <div className="mobile-header-left" style={{ gap: '0.75rem' }}>
+        <a href="/" aria-label="Home" style={{ position: 'relative', textDecoration: 'none', display: 'inline-flex', alignItems: 'center', justifyContent: 'center', width: '38px', height: '38px', fontFamily: 'var(--font-serif)', color: '#25150C', fontSize: '28px' }}>
+          {/* Subtle Geometry Circle */}
+          <div style={{ position: 'absolute', width: '100%', height: '100%', borderRadius: '50%', border: '0.5px solid rgba(37, 21, 12, 0.25)', top: 0, left: 0, pointerEvents: 'none' }} />
+          
+          <span style={{ transform: 'translateY(-3px)' }}>I</span>
+          <span style={{ transform: 'translateY(3px)', marginLeft: '-0.08em' }}>S</span>
+        </a>
         <a href="mailto:hello@example.com" className="social-link-icon-mobile" title="Email" aria-label="Email">
           <svg width="19" height="19" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.4" strokeLinecap="round" strokeLinejoin="round">
             <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path>

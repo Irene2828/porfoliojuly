@@ -1,12 +1,9 @@
 'use client';
 
-import { useState } from 'react';
 import '@/app/components/Hero.css';
 import heroImage from '@/app/assets/test.webp';
 
 export default function HeroV2() {
-  const [isScanning, setIsScanning] = useState(false);
-
   return (
     <section className="section hero-section" id="home">
       {/* Background Split */}
@@ -20,72 +17,7 @@ export default function HeroV2() {
           <div style={{ position: 'absolute', width: '120px', height: '120px', border: '2px solid rgba(235, 235, 237, 0.55)', top: '60px', left: '43%' }} />
         </div>
 
-        {/* Left side: Image / Portrait on charcoal background */}
-        <div
-          className={`hero-image-wrapper cv-scanner ${isScanning ? 'is-scanning' : ''}`}
-          data-hero-scan="container"
-          tabIndex={0}
-          onMouseEnter={() => setIsScanning(true)}
-          onMouseLeave={() => setIsScanning(false)}
-          onClick={() => setIsScanning((prev) => !prev)}
-          style={{ cursor: 'crosshair' }}
-        >
-          {/* Mobile Name & Title directly on top of image, centered */}
-          <div className="hero-mobile-intro" style={{ position: 'relative', zIndex: 2 }}>
-            <h2 className="hero-mobile-name">IRYNA SHEREMETA</h2>
-            <p className="hero-mobile-role" style={{ color: '#d1d5db' }}>WEB &amp; AI PRODUCT BUILDER</p>
-          </div>
-
-          <div className="hero-image-container" style={{ position: 'relative', zIndex: 2 }}>
-            {/* Decor removed as requested */}
-            <div className="hero-image-brackets"></div>
-            <div className="hero-image-brackets-left"></div>
-            <img src={heroImage.src} alt="Iryna Sheremeta" className="hero-image" />
-            <div className="hero-dot-overlay"></div>
-
-            {/* HUD Lock Corners */}
-            <div className="hud-corner hud-tl" />
-            <div className="hud-corner hud-tr" />
-            <div className="hud-corner hud-bl" />
-            <div className="hud-corner hud-br" />
-
-            {/* Texture & Scan Line Overlays */}
-            <div className="tech-texture-overlay" />
-            <div className="tech-scan-line" />
-
-            {/* Skill Tags Projections */}
-            <div className="tech-projections-container">
-              <div className="tech-projection-item" style={{ top: '22%' }}>
-                <div className="tech-projection-line" />
-                <div className="tech-projection-pill">PRODUCT STRATEGY</div>
-              </div>
-              <div className="tech-projection-item" style={{ top: '38%' }}>
-                <div className="tech-projection-line" />
-                <div className="tech-projection-pill">UX &amp; UI DESIGN</div>
-              </div>
-              <div className="tech-projection-item" style={{ top: '53%' }}>
-                <div className="tech-projection-line" />
-                <div className="tech-projection-pill">CUSTOM WEB APPS</div>
-              </div>
-              <div className="tech-projection-item" style={{ top: '68%' }}>
-                <div className="tech-projection-line" />
-                <div className="tech-projection-pill">AI &amp; AUTOMATION</div>
-              </div>
-              <div className="tech-projection-item" style={{ top: '83%' }}>
-                <div className="tech-projection-line" />
-                <div className="tech-projection-pill">END-TO-END SHIP</div>
-              </div>
-            </div>
-          </div>
-          <span className="hero-hover-surface" aria-hidden="true"></span>
-          
-          <div className="hero-image-tagline-stacked">
-            <div className="tagline-name">IRYNA SHEREMETA</div>
-            <div className="tagline-title">WEB &amp; AI PRODUCT BUILDER</div>
-          </div>
-        </div>
-
-        {/* Right side: Content, Headline frame, and CTAs */}
+        {/* Left side (now visually Left): Content, Headline frame, and CTAs */}
         <div className="hero-content">
           <div className="hero-copy-motion">
             <div className="hero-name-group" style={{ position: 'relative' }}>
@@ -94,11 +26,11 @@ export default function HeroV2() {
                 className="hero-text"
                 style={{ transform: 'translateY(-0.4rem)' }}
               >
-                <h1 className="title-serif hero-statement hero-statement-anim" style={{ fontFamily: "var(--font-serif)", fontSize: 'clamp(49.8px, 6.12vw, 54.8px)', color: '#333842', WebkitTextFillColor: '#333842', fontWeight: 500, fontStyle: 'italic', marginTop: '0.6rem', textTransform: 'none', letterSpacing: '-0.04em' }}>
+                <h1 className="title-serif hero-statement hero-statement-anim" style={{ fontFamily: "var(--font-serif)", fontSize: 'clamp(49.8px, 6.12vw, 54.8px)', color: '#25150C', WebkitTextFillColor: '#25150C', fontWeight: 500, fontStyle: 'normal', marginTop: '0.6rem', textTransform: 'none', letterSpacing: '-0.005em' }}>
                   Looking for a <span className="br-mobile"><br /></span><span className="premium-hover"><span className="word-custom">custom</span></span> <span className="premium-hover">website</span> <span className="br-desktop"><br /></span>or <span className="br-mobile"><br /></span>an <span className="premium-hover"><span className="word-internal">internal</span> AI tool</span>?
                 </h1>
-                <p className="hero-frame-paragraph hero-paragraph-anim" style={{ marginTop: '1.7rem', fontSize: '1.10rem', lineHeight: '1.75', color: '#5f6a7a', maxWidth: '100%' }}>
-                  <strong>I design and build custom digital products end-to-end</strong> for business <span className="br-desktop"><br /></span>and professionals &mdash; from figuring out what solution you need to <span className="br-desktop"><br /></span>shipping a working product.
+                <p className="hero-frame-paragraph hero-paragraph-anim" style={{ marginTop: '1.7rem', fontSize: '1.10rem', lineHeight: '1.75', color: '#222222', WebkitTextFillColor: '#222222', maxWidth: '100%', fontWeight: 400 }}>
+                  <span style={{ fontWeight: 600 }}>I design and build custom digital products end-to-end</span> for business <span className="br-desktop"><br /></span>and professionals &mdash; from figuring out what solution you need to <span className="br-desktop"><br /></span>shipping a working product.
                 </p>
               </div>
               <div
@@ -117,6 +49,31 @@ export default function HeroV2() {
                 </a>
               </div>
             </div>
+          </div>
+        </div>
+
+        {/* Right side (now visually Right): Image / Portrait on white background */}
+        <div
+          className="hero-image-wrapper"
+        >
+          {/* Mobile Name & Title directly on top of image, centered */}
+          <div className="hero-mobile-intro" style={{ position: 'relative', zIndex: 2 }}>
+            <h2 className="hero-mobile-name">IRYNA SHEREMETA</h2>
+            <p className="hero-mobile-role" style={{ color: '#d1d5db' }}>WEB &amp; AI PRODUCT BUILDER</p>
+          </div>
+
+          <div className="hero-image-container" style={{ position: 'relative', zIndex: 2 }}>
+            {/* Decor removed as requested */}
+            <div className="hero-image-brackets"></div>
+            <div className="hero-image-brackets-left"></div>
+            <img src={heroImage.src} alt="Iryna Sheremeta" className="hero-image" />
+            <div className="hero-dot-overlay"></div>
+          </div>
+          <span className="hero-hover-surface" aria-hidden="true"></span>
+          
+          <div className="hero-image-tagline-stacked">
+            <div className="tagline-name">IRYNA SHEREMETA</div>
+            <div className="tagline-title">WEB &amp; AI PRODUCT BUILDER</div>
           </div>
         </div>
       </div>

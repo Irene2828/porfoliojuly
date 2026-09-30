@@ -14,13 +14,11 @@ interface GenericWhiteCardProps {
 export default function GenericWhiteCard({ title, annotations, stats, image }: GenericWhiteCardProps) {
   return (
     <div className="guertin-wrapper" style={{ backgroundColor: '#ffffff' }}>
-      {/* Dot Grid Stack on White */}
+      {/* Clean White Background without dots */}
       <div 
         style={{
           position: 'absolute', inset: 0, zIndex: 0,
           backgroundColor: '#ffffff',
-          backgroundImage: `radial-gradient(circle, rgba(0, 0, 0, 0.08) 1.25px, transparent 1.25px)`,
-          backgroundSize: '28px 28px',
           pointerEvents: 'none'
         }}
       />

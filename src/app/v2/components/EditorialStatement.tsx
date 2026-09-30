@@ -1,10 +1,23 @@
 'use client';
 
-import { useState } from 'react';
-import { motion } from 'framer-motion';
+import { useState, useEffect } from 'react';
+import { motion, AnimatePresence } from 'framer-motion';
 
 export default function EditorialStatement() {
   const [copied, setCopied] = useState(false);
+  const [statementIndex, setStatementIndex] = useState(0);
+
+  const statements = [
+    "Turn visitors into clients with a custom website.",
+    "Turn hours of work into minutes with a custom AI tool."
+  ];
+
+  useEffect(() => {
+    const timer = setInterval(() => {
+      setStatementIndex((prev) => (prev + 1) % statements.length);
+    }, 3800);
+    return () => clearInterval(timer);
+  }, []);
 
   const handleCopyEmail = (e: React.MouseEvent) => {
     e.preventDefault();
@@ -36,7 +49,7 @@ export default function EditorialStatement() {
           justify-content: center;
           height: 3.48rem !important;
           padding: 0 2rem !important;
-          background: #333842 !important;
+          background: #18191e !important;
           color: #ffffff !important;
           -webkit-text-fill-color: #ffffff !important;
           border: none !important;
@@ -46,20 +59,20 @@ export default function EditorialStatement() {
           -webkit-text-stroke: 0 !important;
         }
         .prefooter-btn-primary:hover {
-          background: #4a5161 !important;
-          border-color: #4a5161 !important;
+          background: #24252a !important;
+          border-color: #24252a !important;
           color: #ffffff !important;
           -webkit-text-fill-color: #ffffff !important;
         }
         .face-cta {
-          background-color: #252A3A !important;
+          background-color: #18191e !important;
           color: #ffffff !important;
           transition: box-shadow 0.3s ease !important;
           border: none !important;
         }
         .face-cta:hover {
-          box-shadow: 0 0 20px rgba(0,255,163,0.3) !important;
-          background-color: #252A3A !important;
+          box-shadow: 0 0 20px rgba(0,255,163,0.15) !important;
+          background-color: #18191e !important;
         }
       `}</style>
       <motion.div
@@ -88,33 +101,44 @@ export default function EditorialStatement() {
           opacity: 0.6 
         }} />
 
-        {/* Section Heading */}
-        <h2 
-          className="editorial-blue-heading"
-          style={{ 
-            fontFamily: "var(--font-serif)",
-            fontSize: 'clamp(28px, 4.8vw, 36px)', 
-            color: '#333842', 
-            fontWeight: 400,
-            fontStyle: 'normal',
-            lineHeight: 1.25,
-            letterSpacing: '-0.01em',
-            textAlign: 'center',
-            width: '100%',
-            margin: '0 auto 1.25rem auto',
-            WebkitTextStroke: '0.35px #333842'
-          }}
-        >
-          Have a workflow that should take minutes, not hours?
-        </h2>
+        {/* Section Heading Animated Loop */}
+        <div style={{ minHeight: '64px', display: 'flex', alignItems: 'center', justifyContent: 'center', marginBottom: '1.25rem' }}>
+          <AnimatePresence mode="wait">
+            <motion.h2 
+              key={statementIndex}
+              initial={{ opacity: 0, y: 12 }}
+              animate={{ opacity: 1, y: 0 }}
+              exit={{ opacity: 0, y: -12 }}
+              transition={{ duration: 0.5, ease: [0.16, 1, 0.3, 1] }}
+              className="editorial-blue-heading"
+              style={{ 
+                fontFamily: "var(--font-serif)",
+                fontSize: 'clamp(24px, 4.16vw, 33.6px)', 
+                color: '#25150C', 
+                fontWeight: 400,
+                fontStyle: 'normal',
+                lineHeight: 1.25,
+                letterSpacing: '-0.01em',
+                textAlign: 'center',
+                width: '100%',
+                margin: 0,
+                WebkitTextStroke: '0.35px #25150C'
+              }}
+            >
+              {statements[statementIndex]}
+            </motion.h2>
+          </AnimatePresence>
+        </div>
 
         {/* Statement Subtitle */}
         <p style={{
           fontFamily: "var(--font-sans), Inter, sans-serif",
-          fontSize: '1.175rem',
+          fontSize: '18px',
           fontWeight: 500,
+          fontStyle: 'normal',
           lineHeight: 1.6,
           color: '#2a3036',
+          opacity: 0.7,
           maxWidth: '640px',
           margin: '0 auto',
           textAlign: 'center'
@@ -127,7 +151,7 @@ export default function EditorialStatement() {
           <a 
             href="mailto:iryna@irynasheremeta.com" 
             className="btn prefooter-btn-primary face-cta"
-            style={{ display: 'inline-flex', alignItems: 'center', gap: '0.45rem' }}
+            style={{ display: 'inline-flex', alignItems: 'center', gap: '0.45rem', transform: 'scale(1.05)' }}
           >
             <span>SEND YOUR PROBLEM MY WAY</span>
             <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round" style={{ transform: 'translateY(-0.5px)' }}>
@@ -163,8 +187,7 @@ export default function EditorialStatement() {
                   <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path>
                   <polyline points="22,6 12,13 2,6"></polyline>
                 </svg>
-                <span>iryna@irynasheremeta.com</span>
-                <span style={{ marginLeft: '4px', opacity: 0.5 }}>COPY EMAIL</span>
+                <span>COPY EMAIL</span>
               </>
             )}
           </button>

@@ -14,7 +14,6 @@
   align-items: center;
   justify-content: center;
   position: relative;
-  overflow: hidden;
   height: 100vh;
   min-height: 550px;
   background-color: #ffffff !important;
@@ -36,15 +35,32 @@
   position: absolute;
   top: 3.5rem; /* starts right under header */
   bottom: 0;
-  left: 0;
-  right: auto;
+  left: auto;
+  right: 0;
   width: 55%;
-  background: #333842;
-  border-right: 1px solid rgba(0, 0, 0, 0.08);
+  background: radial-gradient(ellipse at 60% 40%, rgba(255, 255, 255, 0.85) 0%, rgba(255, 255, 255, 0.35) 55%, rgba(255, 255, 255, 0) 85%), linear-gradient(135deg, #e8ebee 0%, #dcdfe3 45%, #c9ced3 100%);
+  border-left: 1px solid rgba(0, 0, 0, 0.08);
+  border-right: none;
+  box-shadow: none;
   z-index: 1;
   pointer-events: none;
   will-change: transform, opacity;
   animation: heroBgSlideFromBottom 1.6s cubic-bezier(0.22, 1, 0.36, 1) 0.2s both;
+  overflow: hidden;
+}
+
+.hero-bg-split::after {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 85%;
+  height: 85%;
+  background: radial-gradient(ellipse at center, rgba(255, 255, 255, 0.9) 0%, rgba(255, 255, 255, 0.4) 45%, rgba(255, 255, 255, 0) 75%);
+  pointer-events: none;
+  filter: blur(30px);
+  z-index: 1;
 }
 
 /* Modern minimal dot matrix pattern for AI Product Builder aesthetic */
@@ -163,7 +179,8 @@
   display: flex;
   flex-direction: column;
   align-items: flex-start;
-  margin-left: auto; /* align to the right edge of the container */
+  margin-right: auto;
+  margin-left: 0;
 }
 
 .hero-copy-motion {
@@ -172,17 +189,17 @@
   will-change: transform, opacity;
   backface-visibility: hidden;
   -webkit-backface-visibility: hidden;
-  animation: heroFrameSlideFromBottom 1.6s cubic-bezier(0.22, 1, 0.36, 1) 0.2s both;
+  animation: heroFrameSlideFromBottom 1.8s cubic-bezier(0.16, 1, 0.3, 1) 0.15s both;
 }
 
 @keyframes heroFrameSlideFromBottom {
   0% {
     opacity: 0;
-    transform: translate3d(0, 120px, 0);
+    transform: translate3d(0, 14px, 0) scale(0.995);
   }
   100% {
     opacity: 1;
-    transform: translate3d(0, 0, 0);
+    transform: translate3d(0, 0, 0) scale(1);
   }
 }
 
@@ -223,8 +240,8 @@
   background: #ffffff !important;
   border: 1px dashed rgba(18, 18, 18, 0.25); /* dashed frame */
   padding: 3.79rem 5.06rem; /* top and bottom padding increased by 25% */
-  margin-left: -2rem;
-  margin-right: 0; /* aligns right edge of the frame with the right edge of sections */
+  margin-right: -2rem;
+  margin-left: 0;
   transform: none;
   transform-style: preserve-3d; /* establishes a 3D rendering context to layer pseudo-elements underneath */
   position: relative;
@@ -242,14 +259,13 @@
   display: none;
 }
 
-/* Connector line between white card and dark charcoal section */
 .hero-connector-line {
   position: absolute;
   top: 60%; /* Roughly aligns with the visual center gap */
-  left: -280px; /* Extend into the dark area on the left */
-  right: auto;
+  right: -280px; /* Extend into the image area on the right */
+  left: auto;
   width: 280px; /* Covers the gap to the image */
-  border-bottom: 1.5px dashed rgba(235, 235, 237, 0.6); /* silver dashed line visible on dark bg */
+  border-bottom: 1.5px dashed rgba(235, 235, 237, 0.6); /* silver dashed line */
   z-index: 10;
   pointer-events: none;
 }
@@ -378,10 +394,10 @@
   margin: 0;
   background: none;
   -webkit-background-clip: initial;
-  -webkit-text-fill-color: #333842 !important;
-  color: #333842 !important;
+  -webkit-text-fill-color: #25150C !important;
+  color: #25150C !important;
   text-transform: none;
-  letter-spacing: -0.01em !important;
+  letter-spacing: -0.015em !important;
   font-weight: 400 !important;
   -webkit-font-smoothing: antialiased;
   font-synthesis: none;
@@ -531,11 +547,11 @@
   justify-content: center;
   height: 3.44rem !important;
   padding: 0 1.98rem !important;
-  background: #333842 !important;
+  background: #18191e !important;
   color: #ffffff !important;
   border: none !important;
-  border-radius: 56px !important;
-  box-shadow: none !important;
+  border-radius: 0px !important;
+  box-shadow: 6px 6px 0px #dcdfe3 !important;
   transform: none !important;
   align-self: auto;
   transition: background 0.22s ease, border-color 0.22s ease, transform 0.2s ease, box-shadow 0.2s ease !important;
@@ -544,8 +560,8 @@
 }
 
 .hero-ctas-outside .btn-primary-outline:hover {
-  background: #4a5161 !important;
-  border-color: #4a5161 !important;
+  background: #24252a !important;
+  border-color: #24252a !important;
   color: #ffffff !important;
 }
 
@@ -555,7 +571,7 @@
   font-size: 9.9px !important; /* 2px smaller */
   font-weight: 400 !important;
   text-transform: uppercase !important;
-  letter-spacing: 0.18em !important;
+  letter-spacing: 0.24em !important;
   background: transparent !important;
   border: 0 !important;
   color: #222222 !important;
@@ -613,14 +629,15 @@
   max-width: var(--hero-visual-width);
   height: 490px; /* 10% smaller height */
   margin-top: 0; /* vertically centered in hero section */
-  margin-left: 5%; /* shifted 5% to the left */
+  margin-right: 10%;
+  margin-left: 0;
   z-index: 2;
   overflow: visible;
   position: relative;
   outline: none;
   cursor: pointer;
-  animation: heroImageSlideFromLeft var(--hero-motion-duration) cubic-bezier(0.22, 1, 0.36, 1) both;
-  animation-delay: var(--hero-intro-delay);
+  animation: heroImageSlideFromLeft 1.8s cubic-bezier(0.16, 1, 0.3, 1) both;
+  animation-delay: 0.3s;
   will-change: transform, opacity;
   backface-visibility: hidden;
   -webkit-backface-visibility: hidden;
@@ -647,18 +664,18 @@
 @keyframes heroImageSlideFromLeft {
   0% {
     opacity: 0;
-    transform: translate3d(-140px, 0, 0);
+    transform: translate3d(0, 14px, 0) scale(0.99);
   }
   100% {
     opacity: 1;
-    transform: translate3d(0, 0, 0);
+    transform: translate3d(0, 0, 0) scale(1);
   }
 }
 
 @keyframes heroImageSwap {
   0% {
     opacity: 0;
-    transform: translateX(-140px);
+    transform: translateX(0);
   }
   100% {
     opacity: 1;
@@ -732,14 +749,15 @@
   border-radius: 0; /* sharp rectangle */
   overflow: hidden;
   object-position: center 20%;
-  opacity: 0.9;
-  transition: opacity 0.5s ease;
+  opacity: 1;
+  filter: brightness(1.06) saturate(1.1);
+  transition: opacity 0.5s ease, filter 0.5s ease, transform 0.5s ease;
 }
 
 .hero-image-wrapper:hover .hero-image,
 .hero-image-wrapper:focus-within .hero-image,
 .hero-image-wrapper:focus-visible .hero-image {
-  opacity: 0.9 !important; /* 90% on hover */
+  opacity: 1 !important;
 }
 
 .hero-image-caption {
@@ -883,12 +901,12 @@
     max-width: 100% !important;
     font-family: var(--font-serif) !important;
     font-size: clamp(1.95rem, 7.8vw, 2.45rem) !important;
-    letter-spacing: -0.02em !important;
+    letter-spacing: -0.015em !important;
     text-align: left !important;
     margin: 0 !important;
     line-height: 1.22 !important;
-    -webkit-text-fill-color: #333842 !important;
-    color: #333842 !important;
+    -webkit-text-fill-color: #25150C !important;
+    color: #25150C !important;
     font-weight: 500 !important;
     opacity: 1 !important;
   }
@@ -945,11 +963,11 @@
     font-weight: 600 !important;
     letter-spacing: 0.08em !important;
     text-transform: uppercase !important;
-    background: #333842 !important;
+    background: #18191e !important;
     color: #ffffff !important;
     border: none !important;
-    border-radius: 56px !important;
-    box-shadow: none !important;
+    border-radius: 0px !important;
+    box-shadow: 6px 6px 0px #dcdfe3 !important;
     display: inline-flex !important;
     align-items: center !important;
   }
@@ -984,8 +1002,9 @@
     flex: none;
     margin: 0 !important;
     position: relative;
-    background: #333842 !important; /* Charcoal dark card matching desktop hero left side */
+    background: linear-gradient(135deg, #cbcfd4 0%, #C2C7CC 45%, #b4b9bd 100%) !important; /* Soft brushed silver grey sheen */
     border-radius: 4px !important;
+    border: 1px dashed rgba(18, 18, 18, 0.25) !important;
     padding: 2.2rem 1.6rem !important;
     box-sizing: border-box !important;
     display: flex !important;
@@ -997,7 +1016,7 @@
     animation: none !important;
   }
 
-  /* Name & Title on top of portrait inside dark charcoal container, left-aligned */
+  /* Name & Title on top of portrait inside light silver container, left-aligned */
   .v2-theme .hero-mobile-intro,
   .hero-mobile-intro {
     display: flex !important;
@@ -1016,7 +1035,7 @@
     font-size: 1.15rem !important;
     font-weight: 800 !important;
     letter-spacing: 0.14em !important;
-    color: #ffffff !important;
+    color: #18191e !important;
     text-transform: uppercase !important;
     text-align: left !important;
     margin: 0 !important;
@@ -1029,7 +1048,7 @@
     font-size: 0.76rem !important;
     font-weight: 600 !important;
     letter-spacing: 0.1em !important;
-    color: #9da3af !important;
+    color: #4b5563 !important;
     text-transform: uppercase !important;
     text-align: left !important;
     margin-top: 0.35rem !important;
@@ -1162,20 +1181,24 @@
 
 @keyframes heroImageSwapMobile {
   0% {
-    transform: translateX(-18vw) scale(0.98);
+    opacity: 0;
+    transform: translateX(0) scale(1);
   }
 
   100% {
+    opacity: 1;
     transform: translateX(0) scale(1);
   }
 }
 
 @keyframes heroCopySwapMobile {
   0% {
-    transform: translateX(18vw);
+    opacity: 0;
+    transform: translateX(0);
   }
 
   100% {
+    opacity: 1;
     transform: translateX(0);
   }
 }
@@ -1438,9 +1461,9 @@
 .hero-image-tagline-stacked {
   position: absolute;
   bottom: -1.0rem; /* shifted 20% higher up */
-  right: -30px;
   left: auto;
-  text-align: left;
+  right: calc(-10px - 17%);
+  text-align: right;
   z-index: 8;
   font-family: var(--font-sans);
   font-size: clamp(0.62rem, 0.88vw, 0.74rem); /* 20% smaller text size */
@@ -1591,6 +1614,7 @@
 .hero-image-wrapper .hero-image {
   transition: transform 700ms cubic-bezier(0.16, 1, 0.3, 1), filter 700ms cubic-bezier(0.16, 1, 0.3, 1), opacity 500ms ease;
   will-change: transform, filter;
+  filter: brightness(1.06) saturate(1.1);
 }
 
 .hero-image-wrapper:hover .hero-image,

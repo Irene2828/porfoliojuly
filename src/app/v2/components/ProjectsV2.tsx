@@ -1,6 +1,6 @@
 'use client';
 
-import { useState, useEffect } from 'react';
+import { useState, useEffect, useRef } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import '@/app/components/Projects.css';
 import SectionDivider from '@/app/components/SectionDivider';
@@ -22,6 +22,22 @@ interface ProjectsV2Props {
 
 export default function ProjectsV2({ initialProjects = [] }: ProjectsV2Props) {
   const [selectedProjectId, setSelectedProjectId] = useState<string | null>(null);
+  const scrollTrackRef = useRef<HTMLDivElement>(null);
+
+  useEffect(() => {
+    const track = scrollTrackRef.current;
+    if (track && initialProjectsData.length >= 2) {
+      // A slightly longer timeout to ensure layout and browser scroll restoration have finished
+      const timer = setTimeout(() => {
+        if (track.children.length > 1) {
+          const secondItem = track.children[1] as HTMLElement;
+          const targetScroll = secondItem.offsetLeft - track.clientWidth / 2 + secondItem.clientWidth / 2;
+          track.scrollTo({ left: targetScroll, behavior: 'instant' });
+        }
+      }, 150);
+      return () => clearTimeout(timer);
+    }
+  }, []);
 
   const initialProjectsData = [
     {
@@ -57,40 +73,6 @@ export default function ProjectsV2({ initialProjects = [] }: ProjectsV2Props) {
         { chip: 'Impact', text: 'Automated 85% of standard intake processing', stat: '85%', statLabel: 'auto-processed' }
       ],
       image: initialProjects[1]?.screens?.[0]?.originalUrl || '/skills.png'
-    },
-    {
-      id: 'v2-3',
-      title: 'Terry Fox Tool',
-      slug: 'terry-fox-tool',
-      subline: 'Automated poster creation & global campaign workflow',
-      annotations: [
-        { markerNumber: 1, title: 'Sub-second Speed', text: 'Blazing fast global edge rendering with 99+ Performance score.' },
-        { markerNumber: 2, title: 'AI Recommender', text: 'Personalizes product bundles based on real-time user browsing.' },
-        { markerNumber: 3, title: 'Generative Search', text: 'Optimized for AI answer engines (Perplexity, ChatGPT, Gemini).' }
-      ],
-      stats: [
-        { chip: 'Problem', text: 'Low mobile conversion rates', stat: '1.4%', statLabel: 'old conversion' },
-        { chip: 'Built with', text: 'Next.js 14, Tailwind & Stripe API', stat: '99', statLabel: 'performance' },
-        { chip: 'Impact', text: 'Increased sales and organic AI engine leads', stat: '+42%', statLabel: 'revenue boost' }
-      ],
-      image: initialProjects[0]?.screens?.[0]?.originalUrl || '/skills.png'
-    },
-    {
-      id: 'v2-4',
-      title: 'Terry Fox App',
-      slug: 'terry-fox-app',
-      subline: 'Mobile application for volunteers and runners',
-      annotations: [
-        { markerNumber: 1, title: 'Sub-second Speed', text: 'Blazing fast global edge rendering with 99+ Performance score.' },
-        { markerNumber: 2, title: 'AI Recommender', text: 'Personalizes product bundles based on real-time user browsing.' },
-        { markerNumber: 3, title: 'Generative Search', text: 'Optimized for AI answer engines (Perplexity, ChatGPT, Gemini).' }
-      ],
-      stats: [
-        { chip: 'Problem', text: 'Low mobile conversion rates', stat: '1.4%', statLabel: 'old conversion' },
-        { chip: 'Built with', text: 'Next.js 14, Tailwind & Stripe API', stat: '99', statLabel: 'performance' },
-        { chip: 'Impact', text: 'Increased sales and organic AI engine leads', stat: '+42%', statLabel: 'revenue boost' }
-      ],
-      image: initialProjects[0]?.screens?.[0]?.originalUrl || '/skills.png'
     }
   ];
 
@@ -205,37 +187,57 @@ export default function ProjectsV2({ initialProjects = [] }: ProjectsV2Props) {
   const row2Projects = projectsList.slice(1, 3);
 
   return (
-    <section className="projects-section" id="cases" style={{ width: '100%', margin: '0 auto', padding: '0 1rem' }}>
+    <section className="projects-section" id="cases" style={{ width: '100%', margin: '0 auto', padding: '1rem 0', overflow: 'hidden' }}>
+      <style>{`
+        .cases-scroll-track {
+          display: flex;
+          gap: 2.5rem;
+          width: 100%;
+          overflow-x: auto;
+          scroll-snap-type: x mandatory;
+          -webkit-overflow-scrolling: touch;
+          scrollbar-width: none; /* Firefox */
+          padding: 0 2rem; /* Small edge padding */
+        }
+        .cases-scroll-track::-webkit-scrollbar {
+          display: none; /* Chrome/Safari */
+        }
+        .cases-scroll-row-item {
+          scroll-snap-align: center;
+          scroll-snap-stop: always;
+        }
+        @media (max-width: 900px) {
+          .cases-scroll-track {
+            padding: 0 calc(50vw - 42.5vw); /* Center padding for 85vw cards */
+            gap: 1.5rem;
+          }
+          .cases-scroll-row-item {
+            flex: 0 0 85vw !important;
+            min-width: 300px !important;
+          }
+        }
+      `}</style>
       
-      {/* Container Wrapper */}
+      {/* Scroll Container Wrapper */}
       <div 
         style={{ 
-          display: 'flex', 
-          flexDirection: 'column', 
-          gap: '4.5rem', 
-          width: '90vw', 
-          maxWidth: '1540px', 
-          margin: '0 auto' 
+          width: '100%', 
+          paddingBottom: '2rem',
+          paddingTop: '0.5rem'
         }}
       >
-        {/* Row 1: 2 Cards (Case 1 White, Case 2 Navy) */}
-        <div 
-          className="cases-row-two-grid"
-          style={{ 
-            display: 'grid', 
-            gridTemplateColumns: 'repeat(2, 1fr)', 
-            gap: '4.5rem', 
-            width: '100%'
-          }}
-        >
-          {projectsList.slice(0, 2).map((project) => {
+        <div className="cases-scroll-track" ref={scrollTrackRef}>
+          {(projectsList.length >= 2 ? [projectsList[1], projectsList[0], projectsList[1]] : projectsList).map((project, idx) => {
             const isNavyCard = project.id === 'v2-2';
             return (
-              <motion.div 
-                layout 
-                key={project.id}
-                transition={{ duration: 0.5, ease: [0.16, 1, 0.3, 1] }}
-                style={{ width: '100%' }}
+              <div 
+                key={`${project.id}-${idx}`}
+                className="cases-scroll-row-item"
+                style={{ 
+                  flex: '0 0 calc(45vw - 2.25rem)',
+                  minWidth: '540px',
+                  maxWidth: '720px'
+                }}
               >
                 <div 
                   className="preview-item-container"
@@ -270,52 +272,10 @@ export default function ProjectsV2({ initialProjects = [] }: ProjectsV2Props) {
                     EXPAND CASE &rarr;
                   </div>
                 </div>
-              </motion.div>
+              </div>
             );
           })}
         </div>
-
-        {/* Row 2: 1 Centered Card (Case 3 White, same size as row 1 cards) */}
-        {projectsList[2] && (
-          <div style={{ display: 'flex', justifyContent: 'center', width: '100%' }}>
-            <motion.div 
-              layout 
-              key={projectsList[2].id}
-              transition={{ duration: 0.5, ease: [0.16, 1, 0.3, 1] }}
-              style={{ width: 'calc(50% - 2.25rem)' }}
-            >
-              <div 
-                className="preview-item-container"
-                tabIndex={0}
-                role="button"
-                aria-label={`View ${projectsList[2].title} case study`}
-                onClick={() => setSelectedProjectId(projectsList[2].id)}
-                onKeyDown={(e) => {
-                  if (e.key === 'Enter' || e.key === ' ') {
-                    e.preventDefault();
-                    setSelectedProjectId(projectsList[2].id);
-                  }
-                }}
-                style={{ cursor: 'pointer' }}
-              >
-                <div className="preview-card-wrapper">
-                  <div className="preview-card-scaler">
-                    <GenericWhiteCard 
-                      title={projectsList[2].title}
-                      subline={projectsList[2].subline}
-                      annotations={projectsList[2].annotations}
-                      stats={projectsList[2].stats}
-                      image={projectsList[2].image}
-                    />
-                  </div>
-                </div>
-                <div className="preview-card-caption" style={{ fontFamily: 'var(--font-mono), monospace', fontSize: '11px', color: '#3B82F6', marginTop: '16px', letterSpacing: '0.05em' }}>
-                  EXPAND CASE &rarr;
-                </div>
-              </div>
-            </motion.div>
-          </div>
-        )}
       </div>
 
       <AnimatePresence>
