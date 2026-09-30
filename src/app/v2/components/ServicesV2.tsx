@@ -369,8 +369,8 @@ export default function ServicesV2() {
                   ))}
                 </ul>
                 <div style={{ display: 'flex', justifyContent: 'flex-end', marginTop: '64px' }}>
-                  <a href="#cases" style={{ display: 'inline-flex', alignItems: 'center', gap: '8px', fontFamily: 'var(--font-mono), monospace', fontSize: '11px', letterSpacing: '0.1em', opacity: 0.85, textDecoration: 'none', color: '#FFFFFF', transition: 'opacity 0.2s' }} onMouseEnter={(e) => e.currentTarget.style.opacity = '1'} onMouseLeave={(e) => e.currentTarget.style.opacity = '0.85'}>
-                    <span style={{ width: '8px', height: '8px', borderRadius: '50%', backgroundColor: '#dcdfe3', display: 'inline-block', flexShrink: 0 }} />
+                  <a href="#cases" style={{ display: 'inline-flex', alignItems: 'center', gap: '8px', fontFamily: 'var(--font-mono), monospace', fontSize: '11px', letterSpacing: '0.1em', opacity: 0.85, textDecoration: 'none', color: '#A9B4C0', transition: 'opacity 0.2s' }} onMouseEnter={(e) => e.currentTarget.style.opacity = '1'} onMouseLeave={(e) => e.currentTarget.style.opacity = '0.85'}>
+                    <span style={{ width: '8px', height: '8px', borderRadius: '50%', backgroundColor: '#A9B4C0', display: 'inline-block', flexShrink: 0 }} />
                     <span>SEE WEBSITE EXAMPLES &darr;</span>
                   </a>
                 </div>
@@ -453,8 +453,8 @@ export default function ServicesV2() {
                   ))}
                 </ul>
                 <div style={{ display: 'flex', justifyContent: 'flex-end', marginTop: '64px' }}>
-                  <a href="#cases" style={{ display: 'inline-flex', alignItems: 'center', gap: '8px', fontFamily: 'var(--font-mono), monospace', fontSize: '11px', letterSpacing: '0.1em', opacity: 0.85, textDecoration: 'none', color: '#1A1F2B', transition: 'opacity 0.2s' }} onMouseEnter={(e) => e.currentTarget.style.opacity = '1'} onMouseLeave={(e) => e.currentTarget.style.opacity = '0.85'}>
-                    <span style={{ width: '8px', height: '8px', borderRadius: '50%', backgroundColor: '#8c96a0', display: 'inline-block', flexShrink: 0 }} />
+                  <a href="#cases" style={{ display: 'inline-flex', alignItems: 'center', gap: '8px', fontFamily: 'var(--font-mono), monospace', fontSize: '11px', letterSpacing: '0.1em', opacity: 0.85, textDecoration: 'none', color: '#5C6672', transition: 'opacity 0.2s' }} onMouseEnter={(e) => e.currentTarget.style.opacity = '1'} onMouseLeave={(e) => e.currentTarget.style.opacity = '0.85'}>
+                    <span style={{ width: '8px', height: '8px', borderRadius: '50%', backgroundColor: '#5C6672', display: 'inline-block', flexShrink: 0 }} />
                     <span>SEE AI TOOL EXAMPLES &darr;</span>
                   </a>
                 </div>

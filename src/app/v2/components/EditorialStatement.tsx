@@ -8,8 +8,8 @@ export default function EditorialStatement() {
   const [statementIndex, setStatementIndex] = useState(0);
 
   const statements = [
-    "Turn visitors into clients with a custom website.",
-    "Turn hours of work into minutes with a custom AI tool."
+    <span key="1">Turn visitors into clients with a <span style={{ color: '#5C6672' }}>custom website</span>.</span>,
+    <span key="2">Turn hours of work into minutes with a <span style={{ color: '#5C6672' }}>custom AI tool</span>.</span>
   ];
 
   useEffect(() => {
@@ -17,7 +17,7 @@ export default function EditorialStatement() {
       setStatementIndex((prev) => (prev + 1) % statements.length);
     }, 3800);
     return () => clearInterval(timer);
-  }, []);
+  }, [statements.length]);
 
   const handleCopyEmail = (e: React.MouseEvent) => {
     e.preventDefault();

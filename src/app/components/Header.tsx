@@ -10,9 +10,9 @@ export default function Header() {
     <header className="premium-header">
       {/* Left side (Desktop): Signature Logo */}
       <div className="header-spacer-desktop">
-        <a href="/" aria-label="Home" style={{ position: 'relative', textDecoration: 'none', display: 'inline-flex', alignItems: 'center', justifyContent: 'center', width: '46px', height: '46px', fontFamily: 'var(--font-serif)', color: '#25150C', fontSize: '34px' }}>
+        <a href="/" aria-label="Home" style={{ position: 'relative', textDecoration: 'none', display: 'inline-flex', alignItems: 'center', justifyContent: 'center', width: '46px', height: '46px', fontFamily: 'var(--font-serif)', color: '#5C6672', fontSize: '34px' }}>
           {/* Subtle Geometry Circle */}
-          <div style={{ position: 'absolute', width: '100%', height: '100%', borderRadius: '50%', border: '0.5px solid rgba(37, 21, 12, 0.25)', top: 0, left: 0, pointerEvents: 'none' }} />
+          <div style={{ position: 'absolute', width: '100%', height: '100%', borderRadius: '50%', border: '0.5px solid rgba(92, 102, 114, 0.3)', top: 0, left: 0, pointerEvents: 'none' }} />
           
           <span style={{ transform: 'translateY(-4px)' }}>I</span>
           <span style={{ transform: 'translateY(4px)', marginLeft: '-0.08em' }}>S</span>
@@ -45,9 +45,9 @@ export default function Header() {
 
       {/* Mobile Header Elements: Signature Logo + Standard Social Icons on Left, CASES link + Hamburger on Right */}
       <div className="mobile-header-left" style={{ gap: '0.75rem' }}>
-        <a href="/" aria-label="Home" style={{ position: 'relative', textDecoration: 'none', display: 'inline-flex', alignItems: 'center', justifyContent: 'center', width: '38px', height: '38px', fontFamily: 'var(--font-serif)', color: '#25150C', fontSize: '28px' }}>
+        <a href="/" aria-label="Home" style={{ position: 'relative', textDecoration: 'none', display: 'inline-flex', alignItems: 'center', justifyContent: 'center', width: '38px', height: '38px', fontFamily: 'var(--font-serif)', color: '#5C6672', fontSize: '28px' }}>
           {/* Subtle Geometry Circle */}
-          <div style={{ position: 'absolute', width: '100%', height: '100%', borderRadius: '50%', border: '0.5px solid rgba(37, 21, 12, 0.25)', top: 0, left: 0, pointerEvents: 'none' }} />
+          <div style={{ position: 'absolute', width: '100%', height: '100%', borderRadius: '50%', border: '0.5px solid rgba(92, 102, 114, 0.3)', top: 0, left: 0, pointerEvents: 'none' }} />
           
           <span style={{ transform: 'translateY(-3px)' }}>I</span>
           <span style={{ transform: 'translateY(3px)', marginLeft: '-0.08em' }}>S</span>

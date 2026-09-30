@@ -268,7 +268,7 @@ export default function ProjectsV2({ initialProjects = [] }: ProjectsV2Props) {
                       )}
                     </div>
                   </div>
-                  <div className="preview-card-caption" style={{ fontFamily: 'var(--font-mono), monospace', fontSize: '11px', color: '#3B82F6', marginTop: '16px', letterSpacing: '0.05em' }}>
+                  <div className="preview-card-caption" style={{ fontFamily: 'var(--font-mono), monospace', fontSize: '11px', color: '#5C6672', marginTop: '16px', letterSpacing: '0.05em' }}>
                     EXPAND CASE &rarr;
                   </div>
                 </div>
