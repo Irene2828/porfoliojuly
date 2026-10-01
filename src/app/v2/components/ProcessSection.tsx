@@ -148,7 +148,7 @@ export default function ProcessSection() {
                   style={{
                     backgroundColor: isCenter ? '#18191e' : '#ffffff',
                     padding: '3rem 2.5rem',
-                    boxShadow: isCenter ? '0 12px 40px rgba(0, 0, 0, 0.12)' : '0 4px 15px rgba(0, 0, 0, 0.05)',
+                    boxShadow: 'none',
                     border: isCenter ? '1px solid rgba(255, 255, 255, 0.05)' : '1px solid rgba(0, 0, 0, 0.05)',
                     display: 'flex',
                     flexDirection: 'column',
@@ -252,6 +252,7 @@ export default function ProcessSection() {
               opacity: 1 !important;
               transform: scale(1.02) !important;
               z-index: 20;
+              box-shadow: none !important;
             }
 
             @media (max-width: 1000px) {

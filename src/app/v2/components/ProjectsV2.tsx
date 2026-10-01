@@ -24,21 +24,6 @@ export default function ProjectsV2({ initialProjects = [] }: ProjectsV2Props) {
   const [selectedProjectId, setSelectedProjectId] = useState<string | null>(null);
   const scrollTrackRef = useRef<HTMLDivElement>(null);
 
-  useEffect(() => {
-    const track = scrollTrackRef.current;
-    if (track && initialProjectsData.length >= 2) {
-      // A slightly longer timeout to ensure layout and browser scroll restoration have finished
-      const timer = setTimeout(() => {
-        if (track.children.length > 1) {
-          const secondItem = track.children[1] as HTMLElement;
-          const targetScroll = secondItem.offsetLeft - track.clientWidth / 2 + secondItem.clientWidth / 2;
-          track.scrollTo({ left: targetScroll, behavior: 'instant' });
-        }
-      }, 150);
-      return () => clearTimeout(timer);
-    }
-  }, []);
-
   const initialProjectsData = [
     {
       id: 'v2-1',
@@ -89,14 +74,20 @@ export default function ProjectsV2({ initialProjects = [] }: ProjectsV2Props) {
     };
   }, [selectedProjectId]);
 
-  const swapToTop = (clickedIndex: number) => {
-    setProjectsList((prev) => {
-      const next = [...prev];
-      const [clickedItem] = next.splice(clickedIndex, 1);
-      next.unshift(clickedItem);
-      return next;
-    });
-  };
+  useEffect(() => {
+    const track = scrollTrackRef.current;
+    if (track && projectsList.length >= 2) {
+      // A slightly longer timeout to ensure layout and browser scroll restoration have finished
+      const timer = setTimeout(() => {
+        if (track.children.length > 1) {
+          const secondItem = track.children[1] as HTMLElement;
+          const targetScroll = secondItem.offsetLeft - track.clientWidth / 2 + secondItem.clientWidth / 2;
+          track.scrollTo({ left: targetScroll, behavior: 'instant' });
+        }
+      }, 150);
+      return () => clearTimeout(timer);
+    }
+  }, [projectsList.length]);
 
   const renderProjectContent = (project: any, isModal = false) => (
     <div 
@@ -183,18 +174,32 @@ export default function ProjectsV2({ initialProjects = [] }: ProjectsV2Props) {
   );
 
   const selectedProject = projectsList.find(p => p.id === selectedProjectId);
-  const row1Project = projectsList[0];
-  const row2Projects = projectsList.slice(1, 3);
 
   return (
-    <section className="projects-section" id="cases" style={{ width: '100%', margin: '0 auto', padding: '1rem 0', overflow: 'hidden' }}>
+    <section className="projects-section" id="cases" style={{ position: 'relative', width: '100%', margin: '0 auto', padding: '1rem 0', overflow: 'hidden' }}>
+      {/* Top Edge-to-Edge 1px Subtle Grey Divider Bar */}
+      <div 
+        className="process-divider"
+        style={{
+          position: 'absolute',
+          top: 0,
+          left: 0,
+          width: '100%',
+          height: '1px',
+          backgroundColor: 'rgba(0, 0, 0, 0.08)',
+          zIndex: 10
+        }}
+      />
       <style>{`
         .cases-scroll-track {
           display: flex;
           gap: 2.5rem;
           width: 100%;
           overflow-x: auto;
-          scroll-snap-type: x mandatory;
+          overflow-y: hidden;
+          overscroll-behavior-x: contain;
+          touch-action: pan-x pan-y;
+          scroll-snap-type: x proximity;
           -webkit-overflow-scrolling: touch;
           scrollbar-width: none; /* Firefox */
           padding: 0 2rem; /* Small edge padding */
@@ -268,7 +273,7 @@ export default function ProjectsV2({ initialProjects = [] }: ProjectsV2Props) {
                       )}
                     </div>
                   </div>
-                  <div className="preview-card-caption" style={{ fontFamily: 'var(--font-mono), monospace', fontSize: '11px', color: '#5C6672', marginTop: '16px', letterSpacing: '0.05em' }}>
+                  <div className="preview-card-caption" style={{ fontFamily: 'var(--font-mono), monospace', fontSize: '22px', color: '#5C6672', marginTop: '16px', letterSpacing: '0.05em', textAlign: 'center' }}>
                     EXPAND CASE &rarr;
                   </div>
                 </div>
@@ -304,6 +309,20 @@ export default function ProjectsV2({ initialProjects = [] }: ProjectsV2Props) {
           </motion.div>
         )}
       </AnimatePresence>
+
+      {/* Bottom Edge-to-Edge 1px Subtle Grey Divider Bar */}
+      <div 
+        className="process-divider"
+        style={{
+          position: 'absolute',
+          bottom: 0,
+          left: 0,
+          width: '100%',
+          height: '1px',
+          backgroundColor: 'rgba(0, 0, 0, 0.08)',
+          zIndex: 10
+        }}
+      />
     </section>
   );
 }

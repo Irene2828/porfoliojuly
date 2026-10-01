@@ -130,22 +130,6 @@ export default function EditorialStatement() {
           </AnimatePresence>
         </div>
 
-        {/* Statement Subtitle */}
-        <p style={{
-          fontFamily: "var(--font-sans), Inter, sans-serif",
-          fontSize: '18px',
-          fontWeight: 500,
-          fontStyle: 'normal',
-          lineHeight: 1.6,
-          color: '#2a3036',
-          opacity: 0.7,
-          maxWidth: '640px',
-          margin: '0 auto',
-          textAlign: 'center'
-        }}>
-          I'd love to help you build one.
-        </p>
-
         {/* Action CTAs */}
         <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', gap: '1rem', marginTop: '1.75rem', justifyContent: 'center' }}>
           <a 
