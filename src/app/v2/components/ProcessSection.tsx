@@ -53,30 +53,30 @@ export default function ProcessSection() {
           <h2 style={{ 
             fontFamily: "var(--font-serif)",
             fontSize: 'clamp(29px, 4.8vw, 46px)', 
-            color: '#25150C', 
+            color: '#3b7ac8', 
             fontWeight: 500,
             lineHeight: 1.25,
             letterSpacing: '-0.02em',
             textAlign: 'left',
             width: '100%',
             margin: '0 0 16px 0',
-            WebkitTextStroke: '0.35px #25150C'
+            WebkitTextStroke: '0.35px #3b7ac8'
           }}>
             Why Work With Me
           </h2>
           <p style={{
             fontFamily: "var(--font-sans), Inter, sans-serif",
             fontSize: '18px',
-            fontWeight: 500,
-            fontStyle: 'normal',
+            fontWeight: 400,
+            fontStyle: 'italic',
             lineHeight: 1.6,
-            color: '#2a3036',
-            opacity: 0.7,
+            color: '#3b7ac8',
+            opacity: 1,
             maxWidth: '640px',
             margin: '0',
             textAlign: 'left'
           }}>
-            Here's what clients say after we ship:
+            here's what clients say after we ship:
           </p>
         </div>
       </motion.div>

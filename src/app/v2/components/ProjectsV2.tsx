@@ -228,7 +228,7 @@ export default function ProjectsV2({ initialProjects = [] }: ProjectsV2Props) {
         style={{ 
           width: '100%', 
           paddingBottom: '2rem',
-          paddingTop: '0.5rem'
+          paddingTop: '2.5rem'
         }}
       >
         <div className="cases-scroll-track" ref={scrollTrackRef}>
@@ -273,7 +273,7 @@ export default function ProjectsV2({ initialProjects = [] }: ProjectsV2Props) {
                       )}
                     </div>
                   </div>
-                  <div className="preview-card-caption" style={{ fontFamily: 'var(--font-mono), monospace', fontSize: '22px', color: '#5C6672', marginTop: '16px', letterSpacing: '0.05em', textAlign: 'center' }}>
+                  <div className="preview-card-caption">
                     EXPAND CASE &rarr;
                   </div>
                 </div>

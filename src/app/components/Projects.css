@@ -970,21 +970,22 @@
 }
 
 .preview-card-caption {
-  opacity: 0;
+  opacity: 0 !important;
   transform: translateY(4px);
   transition: opacity 0.25s ease, transform 0.25s ease;
   font-family: 'JetBrains Mono', Menlo, monospace;
-  font-size: 0.75rem;
-  letter-spacing: 0.12em;
+  font-size: 0.84375rem !important;
+  letter-spacing: 0.1em;
   text-transform: uppercase;
   color: #3b7ac8;
-  margin-top: 0.75rem;
+  margin-top: 0.65rem;
   text-align: center;
 }
 
-.preview-item-container:hover .preview-card-caption {
-  opacity: 1;
-  transform: translateY(0);
+.preview-item-container:hover .preview-card-caption,
+.preview-item-container:focus-within .preview-card-caption {
+  opacity: 1 !important;
+  transform: translateY(0) !important;
 }
 
 @media (max-width: 900px) {

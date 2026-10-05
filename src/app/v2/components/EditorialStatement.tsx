@@ -8,8 +8,8 @@ export default function EditorialStatement() {
   const [statementIndex, setStatementIndex] = useState(0);
 
   const statements = [
-    <span key="1">Turn visitors into clients with a <span style={{ color: '#5C6672' }}>custom website</span>.</span>,
-    <span key="2">Turn hours of work into minutes with a <span style={{ color: '#5C6672' }}>custom AI tool</span>.</span>
+    <span key="1">Turn <span style={{ color: '#3b7ac8', WebkitTextStroke: '0.35px #3b7ac8', fontStyle: 'italic' }}>visitors into clients</span> with a custom website.</span>,
+    <span key="2">Turn <span style={{ color: '#3b7ac8', WebkitTextStroke: '0.35px #3b7ac8', fontStyle: 'italic' }}>hours of work into minutes</span> with a custom AI tool.</span>
   ];
 
   useEffect(() => {

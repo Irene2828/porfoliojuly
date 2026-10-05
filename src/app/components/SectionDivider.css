@@ -440,10 +440,10 @@
 
 .section-divider-subline {
   font-family: var(--font-serif);
-  font-style: normal; /* non italic */
+  font-style: italic; /* italic style */
   font-size: clamp(1.045rem, 1.43vw, 1.21rem); /* 10% larger font size */
   font-weight: 400;
-  text-transform: none !important;
+  text-transform: lowercase !important;
   letter-spacing: 0.01em;
   color: #1A1A1A; /* off-black color */
   opacity: 0.85;

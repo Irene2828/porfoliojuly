@@ -184,30 +184,30 @@ export default function ServicesV2() {
         <h2 style={{ 
           fontFamily: "var(--font-serif)",
           fontSize: 'clamp(29px, 4.8vw, 46px)', 
-          color: '#25150C', 
+          color: '#3b7ac8', 
           fontWeight: 500,
           lineHeight: 1.25,
           letterSpacing: '-0.02em',
           textAlign: 'center',
           width: '100%',
           margin: '0 auto 16px auto',
-          WebkitTextStroke: '0.35px #25150C'
+          WebkitTextStroke: '0.35px #3b7ac8'
         }}>
           How I Can Help Your Business
         </h2>
         <p style={{
           fontFamily: "var(--font-sans), Inter, sans-serif",
           fontSize: '18px',
-          fontWeight: 500,
-          fontStyle: 'normal',
+          fontWeight: 400,
+          fontStyle: 'italic',
           lineHeight: 1.6,
-          color: '#2a3036',
-          opacity: 0.7,
+          color: '#3b7ac8',
+          opacity: 1,
           maxWidth: '640px',
           margin: '0 auto',
           textAlign: 'center'
         }}>
-          as a Digital Product Builder
+          as a digital product builder
         </p>
       </motion.div>
 
@@ -493,30 +493,30 @@ export default function ServicesV2() {
         <h2 style={{ 
           fontFamily: "var(--font-serif)",
           fontSize: 'clamp(29px, 4.8vw, 46px)', 
-          color: '#25150C', 
+          color: '#3b7ac8', 
           fontWeight: 500,
           lineHeight: 1.25,
           letterSpacing: '-0.01em',
           textAlign: 'center',
           width: '100%',
           margin: '0 auto 0.75rem auto',
-          WebkitTextStroke: '0.35px #25150C'
+          WebkitTextStroke: '0.35px #3b7ac8'
         }}>
           How the Process Looks
         </h2>
         <p style={{
           fontFamily: "var(--font-sans), Inter, sans-serif",
           fontSize: '18px',
-          fontWeight: 500,
-          fontStyle: 'normal',
+          fontWeight: 400,
+          fontStyle: 'italic',
           lineHeight: 1.6,
-          color: '#2a3036',
-          opacity: 0.7,
+          color: '#3b7ac8',
+          opacity: 1,
           maxWidth: '640px',
           margin: '0 auto',
           textAlign: 'center'
         }}>
-          From concept to launch in 3 simple steps:
+          from concept to launch in 3 simple steps:
         </p>
       </div>
 
@@ -585,109 +585,186 @@ export default function ServicesV2() {
           </svg>
         </div>
 
-        <div className="container" style={{ position: 'relative', zIndex: 3, paddingTop: '4rem', paddingBottom: '5rem', paddingLeft: '32%' }}>
-          {/* Vertical Creative Process Flow */}
+        <div className="container" style={{ position: 'relative', zIndex: 3, paddingTop: '4rem', paddingBottom: '5rem', paddingLeft: '1.5rem', paddingRight: '1.5rem' }}>
+          {/* Zigzag Process Flow */}
           <motion.div 
             initial={{ opacity: 0, y: 25 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.8, ease: [0.16, 1, 0.3, 1] }}
             style={{ 
-            maxWidth: '740px', 
-            margin: '0', 
-            position: 'relative', 
-            padding: '1.5rem 0'
-          }}>
-            <div style={{ display: 'flex', flexDirection: 'column', position: 'relative', zIndex: 2 }}>
-              {steps.map((step, i) => (
-                <div key={step.num} style={{ position: 'relative' }}>
-                  {i < steps.length - 1 && (
-                    <motion.div
-                      initial={{ scaleY: 0 }}
-                      whileInView={{ scaleY: 1 }}
-                      viewport={{ once: true }}
-                      transition={{ duration: 0.8, delay: 0.1, ease: [0.16, 1, 0.3, 1] }}
-                      style={{
-                        position: 'absolute',
-                        top: '54px',
-                        left: '23.5px',
-                        width: '1px',
-                        height: 'calc(100% + 3.5rem - 48px - 12px)',
-                        borderLeft: '1px dashed rgba(0,0,0,0.25)',
-                        transformOrigin: 'top center',
-                        pointerEvents: 'none',
-                        zIndex: 1
-                      }}
-                    />
-                  )}
+              maxWidth: '960px', 
+              margin: '0 auto', 
+              position: 'relative', 
+              padding: '1.5rem 0'
+            }}
+          >
+            {/* SVG Mathematically Curved Dashed Flow Arrows with Animated Path */}
+            <svg 
+              style={{
+                position: 'absolute',
+                top: 0,
+                left: 0,
+                width: '100%',
+                height: '100%',
+                pointerEvents: 'none',
+                zIndex: 2,
+                overflow: 'visible'
+              }}
+              viewBox="0 0 960 480"
+              preserveAspectRatio="none"
+            >
+              <defs>
+                <marker
+                  id="process-arrowhead-1"
+                  viewBox="0 0 10 10"
+                  refX="6"
+                  refY="5"
+                  markerWidth="7"
+                  markerHeight="7"
+                  orient="auto-start-reverse"
+                >
+                  <path d="M 0 1.5 L 8 5 L 0 8.5 z" fill="#3b7ac8" />
+                </marker>
+                <marker
+                  id="process-arrowhead-2"
+                  viewBox="0 0 10 10"
+                  refX="6"
+                  refY="5"
+                  markerWidth="7"
+                  markerHeight="7"
+                  orient="auto-start-reverse"
+                >
+                  <path d="M 0 1.5 L 8 5 L 0 8.5 z" fill="#3b7ac8" />
+                </marker>
+              </defs>
+
+              {/* Curve 1: From Bullet 1 (Top-Left) curving down-right to Bullet 2 (Center-Right) */}
+              <motion.path
+                d="M 460 65 C 640 65, 620 180, 430 205"
+                fill="none"
+                stroke="#3b7ac8"
+                strokeWidth="2"
+                strokeDasharray="6 6"
+                strokeLinecap="round"
+                markerEnd="url(#process-arrowhead-1)"
+                initial={{ pathLength: 0, opacity: 0 }}
+                whileInView={{ pathLength: 1, opacity: 0.85 }}
+                viewport={{ once: true }}
+                transition={{ duration: 1.1, delay: 0.2, ease: [0.16, 1, 0.3, 1] }}
+              />
+
+              {/* Curve 2: From Bullet 2 (Center-Right) curving down-left to Bullet 3 (Bottom-Left) */}
+              <motion.path
+                d="M 430 245 C 160 270, 210 370, 440 370"
+                fill="none"
+                stroke="#3b7ac8"
+                strokeWidth="2"
+                strokeDasharray="6 6"
+                strokeLinecap="round"
+                markerEnd="url(#process-arrowhead-2)"
+                initial={{ pathLength: 0, opacity: 0 }}
+                whileInView={{ pathLength: 1, opacity: 0.85 }}
+                viewport={{ once: true }}
+                transition={{ duration: 1.1, delay: 0.6, ease: [0.16, 1, 0.3, 1] }}
+              />
+            </svg>
+
+            <div style={{ display: 'flex', flexDirection: 'column', gap: '4.5rem', position: 'relative', zIndex: 3 }}>
+              {steps.map((step, i) => {
+                const isOdd = i % 2 === 1; // Step 2 shifted to right side
+                return (
                   <motion.div
-                    initial={{ opacity: 0, x: -20 }}
-                    whileInView={{ opacity: 1, x: 0 }}
-                    viewport={{ once: true }}
-                    transition={{ duration: 0.6, delay: i * 0.18 }}
+                    key={step.num}
+                    initial={{ opacity: 0, y: 35, scale: 0.96 }}
+                    whileInView={{ opacity: 1, y: 0, scale: 1 }}
+                    viewport={{ once: true, amount: 0.3 }}
+                    transition={{ duration: 0.75, delay: i * 0.25, ease: [0.16, 1, 0.3, 1] }}
                     style={{
                       display: 'flex',
+                      flexDirection: 'row',
                       alignItems: 'flex-start',
-                      gap: '1.75rem',
+                      justifyContent: 'flex-start',
+                      gap: '1.35rem',
                       position: 'relative',
-                      marginBottom: i < steps.length - 1 ? '3.5rem' : 0
+                      width: '100%',
+                      paddingLeft: isOdd ? '40%' : '0%',
+                      paddingRight: isOdd ? '0%' : '20%'
                     }}
                   >
-                    {/* Step Icon & Number Badge */}
+                    {/* Step Icon Badge */}
                     <motion.div 
-                      initial={{ borderColor: 'rgba(0,0,0,0.12)', boxShadow: 'none' }}
-                      whileInView={{ borderColor: 'rgba(0,0,0,0.25)', boxShadow: 'none' }}
-                      viewport={{ once: true, margin: '-20%' }}
-                      transition={{ duration: 0.4, delay: i * 0.18 + 0.2 }}
+                      initial={{ scale: 0.7, opacity: 0, borderColor: 'rgba(0,0,0,0.12)' }}
+                      whileInView={{ scale: 1, opacity: 1, borderColor: '#3b7ac8' }}
+                      viewport={{ once: true, margin: '-10%' }}
+                      transition={{ duration: 0.5, delay: i * 0.25 + 0.15, ease: [0.16, 1, 0.3, 1] }}
                       style={{
                         flexShrink: 0,
-                        width: '48px',
-                        height: '48px',
+                        width: '52px',
+                        height: '52px',
                         borderRadius: '50%',
-                        backgroundColor: 'rgba(255, 255, 255, 0.75)',
-                        border: '1px solid rgba(0, 0, 0, 0.12)',
-                        boxShadow: '0 1px 4px rgba(0,0,0,0.025)',
+                        backgroundColor: '#ffffff',
+                        border: '1.5px solid #3b7ac8',
+                        boxShadow: '0 4px 14px rgba(59, 122, 200, 0.12)',
                         display: 'flex',
                         alignItems: 'center',
                         justifyContent: 'center',
-                        zIndex: 3
+                        zIndex: 4,
+                        marginTop: '0.1rem'
                       }}
                     >
                       {step.icon}
                     </motion.div>
 
-                    {/* Step Details */}
-                    <div style={{ flex: 1, paddingTop: '0' }}>
-                      <div style={{ marginBottom: '0.4rem' }}>
-                        <h3 style={{ 
-                          fontFamily: "var(--font-serif)",
-                          fontSize: '25.3px', 
-                          color: '#333842',
-                          fontWeight: 600,
-                          margin: 0,
-                          lineHeight: 1.2,
-                          WebkitTextStroke: '0.35px #333842'
-                        }}>
-                          {step.title}
-                        </h3>
+                    {/* Step Content Frame with Reveal Arrival */}
+                    <motion.div 
+                      initial={{ opacity: 0, x: isOdd ? 20 : -20 }}
+                      whileInView={{ opacity: 1, x: 0 }}
+                      viewport={{ once: true }}
+                      transition={{ duration: 0.65, delay: i * 0.25 + 0.2, ease: [0.16, 1, 0.3, 1] }}
+                      style={{ 
+                        flex: 1, 
+                        textAlign: 'left',
+                        padding: '1.25rem 1.6rem',
+                        backgroundColor: 'rgba(255, 255, 255, 0.85)',
+                        backdropFilter: 'blur(12px)',
+                        WebkitBackdropFilter: 'blur(12px)',
+                        border: '1px solid rgba(59, 122, 200, 0.2)',
+                        borderRadius: '8px',
+                        boxShadow: '0 8px 24px rgba(0, 0, 0, 0.03)'
+                      }}
+                    >
+                      <div style={{ marginBottom: '0.35rem', display: 'flex', alignItems: 'center', gap: '0.65rem' }}>
+                        <span style={{ fontFamily: 'var(--font-mono), monospace', fontSize: '11px', color: '#3b7ac8', fontWeight: 600, letterSpacing: '0.08em' }}>{step.label}</span>
                       </div>
+                      <h3 style={{ 
+                        fontFamily: "var(--font-serif)",
+                        fontSize: '24px', 
+                        color: '#1A1F2B',
+                        fontWeight: 600,
+                        margin: '0 0 0.45rem 0',
+                        lineHeight: 1.2,
+                        WebkitTextStroke: '0.3px #1A1F2B'
+                      }}>
+                        {step.title}
+                      </h3>
 
                       <p style={{
                         fontFamily: "var(--font-sans), Inter, sans-serif",
-                        fontSize: '1.07rem',
+                        fontSize: '1.02rem',
                         lineHeight: 1.55,
-                        color: '#2a3036',
+                        color: '#333842',
                         fontWeight: 400,
                         opacity: 0.9,
-                        margin: 0,
-                        maxWidth: '540px'
+                        margin: '0',
+                        maxWidth: '520px'
                       }}>
                         {step.desc}
                       </p>
-                    </div>
+                    </motion.div>
                   </motion.div>
-                </div>
-              ))}
+                );
+              })}
             </div>
           </motion.div>
         </div>

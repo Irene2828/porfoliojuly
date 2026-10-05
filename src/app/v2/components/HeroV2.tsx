@@ -26,11 +26,11 @@ export default function HeroV2() {
                 className="hero-text"
                 style={{ transform: 'translateY(-0.4rem)' }}
               >
-                <h1 className="title-serif hero-statement hero-statement-anim" style={{ fontFamily: "var(--font-serif)", fontSize: 'clamp(49.8px, 6.12vw, 54.8px)', color: '#25150C', WebkitTextFillColor: '#25150C', fontWeight: 500, fontStyle: 'normal', marginTop: '0.6rem', textTransform: 'none', letterSpacing: '-0.005em' }}>
+                <h1 className="title-serif hero-statement hero-statement-anim" style={{ fontFamily: "var(--font-serif)", fontSize: 'clamp(49.8px, 6.12vw, 54.8px)', color: '#3b7ac8', WebkitTextFillColor: '#3b7ac8', WebkitTextStroke: '0.35px #3b7ac8', fontWeight: 500, fontStyle: 'normal', marginTop: '0.6rem', textTransform: 'none', letterSpacing: '-0.005em' }}>
                   Looking for a <span className="br-mobile"><br /></span><span className="premium-hover"><span className="word-custom">custom</span></span> <span className="premium-hover">website</span> <span className="br-desktop"><br /></span>or <span className="br-mobile"><br /></span>an <span className="premium-hover"><span className="word-internal">internal</span> AI tool</span>?
                 </h1>
-                <p className="hero-frame-paragraph hero-paragraph-anim" style={{ marginTop: '1.7rem', fontSize: '1.10rem', lineHeight: '1.75', color: '#222222', maxWidth: '100%', fontWeight: 400 }}>
-                  <span style={{ fontWeight: 600, color: '#5C6672' }}>I design and build custom digital products end-to-end</span> for business <span className="br-desktop"><br /></span>and professionals &mdash; from figuring out what solution you need to <span className="br-desktop"><br /></span>shipping a working product.
+                <p className="hero-frame-paragraph hero-paragraph-anim" style={{ marginTop: '1.7rem', fontSize: '1.10rem', lineHeight: '1.75', color: '#4a5568', maxWidth: '100%', fontWeight: 400 }}>
+                  <span style={{ fontWeight: 600, color: '#2d3748' }}>I design and build custom digital products end-to-end</span> for business <span className="br-desktop"><br /></span>and professionals &mdash; from figuring out what solution you need to <span className="br-desktop"><br /></span>shipping a working product.
                 </p>
               </div>
               <div

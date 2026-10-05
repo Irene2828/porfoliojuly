@@ -39,7 +39,7 @@ export default async function HomePage() {
 
         {/* Cases Section Header */}
         <section id="cases-section" style={{ padding: '5.1rem 0 0 0', backgroundColor: '#ffffff' }}>
-          <div className="container" style={{ textAlign: 'center', marginBottom: '3.5rem' }}>
+          <div className="container" style={{ textAlign: 'center', marginBottom: '0.875rem' }}>
             {/* Short decor line directly above Cases heading */}
             <div style={{ 
               width: '60px', 
@@ -52,30 +52,30 @@ export default async function HomePage() {
             <h2 style={{ 
               fontFamily: "var(--font-serif)",
               fontSize: 'clamp(29px, 4.8vw, 46px)', 
-              color: '#25150C', 
+              color: '#3b7ac8', 
               fontWeight: 500,
               lineHeight: 1.25,
               letterSpacing: '-0.02em',
               textAlign: 'center',
               width: '100%',
               margin: '0 auto 16px auto',
-              WebkitTextStroke: '0.35px #25150C'
+              WebkitTextStroke: '0.35px #3b7ac8'
             }}>
               Featured Cases
             </h2>
             <p style={{
               fontFamily: "var(--font-sans), Inter, sans-serif",
               fontSize: '18px',
-              fontWeight: 500,
-              fontStyle: 'normal',
+              fontWeight: 400,
+              fontStyle: 'italic',
               lineHeight: 1.6,
-              color: '#2a3036',
-              opacity: 0.7,
+              color: '#3b7ac8',
+              opacity: 1,
               maxWidth: '640px',
               margin: '0 auto',
               textAlign: 'center'
             }}>
-              Custom websites &amp; AI tools built end-to-end.
+              custom websites &amp; ai tools built end-to-end.
             </p>
           </div>
 
