@@ -777,16 +777,25 @@ export default function ServicesV2() {
                       }}
                     >
                       <div style={{ marginBottom: '0.35rem', display: 'flex', alignItems: 'center', gap: '0.65rem' }}>
-                        <span style={{ fontFamily: 'var(--font-mono), monospace', fontSize: '11px', color: '#8A9099', fontWeight: 600, letterSpacing: '0.08em' }}>{step.label}</span>
+                        <span style={{ 
+                          fontFamily: 'var(--font-mono), monospace', 
+                          fontSize: '11px', 
+                          color: '#3b7ac8', 
+                          fontWeight: 600, 
+                          letterSpacing: '0.08em',
+                          WebkitTextStroke: '0.35px #3b7ac8'
+                        }}>
+                          {step.label}
+                        </span>
                       </div>
                       <h3 style={{ 
                         fontFamily: "var(--font-serif)",
                         fontSize: '24px', 
-                        color: '#4a5568',
+                        color: '#3b7ac8',
                         fontWeight: 600,
                         margin: '0 0 0.45rem 0',
                         lineHeight: 1.2,
-                        WebkitTextStroke: '0px transparent'
+                        WebkitTextStroke: '0.35px #3b7ac8'
                       }}>
                         {step.title}
                       </h3>
