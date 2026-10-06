@@ -105,10 +105,7 @@ export default function ProcessSection() {
             opacity: 0.85
           }}
         >
-          {/* Top-Center Shapes (Moved 50% lower over testimonial frame) */}
-          <div style={{ position: 'absolute', width: '160px', height: '160px', border: '1.5px dashed rgba(58, 35, 24, 0.18)', top: '42%', left: '50%', transform: 'translateX(-50%)' }} />
-          <div style={{ position: 'absolute', width: '45px', height: '45px', border: '1.5px solid rgba(181, 153, 122, 0.35)', top: '48%', left: '50%', transform: 'translateX(-50%)' }} />
-          
+
           {/* Top-Right Shapes */}
           <div style={{ position: 'absolute', width: '220px', height: '130px', border: '1.5px solid rgba(58, 35, 24, 0.14)', top: '7%', right: '7%' }} />
           <div style={{ position: 'absolute', width: '75px', height: '75px', border: '1.5px dashed rgba(181, 153, 122, 0.35)', borderRadius: '50%', top: '18%', right: '15%' }} />
