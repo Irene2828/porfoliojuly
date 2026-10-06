@@ -1,6 +1,5 @@
 'use client';
 
-import { motion } from 'framer-motion';
 import { ReactNode, useEffect } from 'react';
 
 export default function ClientWrapper({ children }: { children: ReactNode }) {
@@ -14,13 +13,5 @@ export default function ClientWrapper({ children }: { children: ReactNode }) {
     window.scrollTo({ top: 0, left: 0, behavior: 'instant' });
   }, []);
 
-  return (
-    <motion.div
-      initial={{ opacity: 0 }}
-      animate={{ opacity: 1 }}
-      transition={{ duration: 0.4, ease: 'easeOut' }}
-    >
-      {children}
-    </motion.div>
-  );
+  return <>{children}</>;
 }

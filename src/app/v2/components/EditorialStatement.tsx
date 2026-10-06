@@ -1,14 +1,27 @@
 'use client';
 
-import { useState } from 'react';
-import { motion } from 'framer-motion';
+import { useState, useEffect } from 'react';
+import { motion, AnimatePresence } from 'framer-motion';
 
 export default function EditorialStatement() {
   const [copied, setCopied] = useState(false);
+  const [statementIndex, setStatementIndex] = useState(0);
+
+  const statements = [
+    <span key="1">Turn <span style={{ color: '#3b7ac8', WebkitTextStroke: '0.35px #3b7ac8', fontStyle: 'italic' }}>visitors into clients</span> with a custom website.</span>,
+    <span key="2">Turn <span style={{ color: '#3b7ac8', WebkitTextStroke: '0.35px #3b7ac8', fontStyle: 'italic' }}>hours of work into minutes</span> with a custom AI tool.</span>
+  ];
+
+  useEffect(() => {
+    const timer = setInterval(() => {
+      setStatementIndex((prev) => (prev + 1) % statements.length);
+    }, 3800);
+    return () => clearInterval(timer);
+  }, [statements.length]);
 
   const handleCopyEmail = (e: React.MouseEvent) => {
     e.preventDefault();
-    navigator.clipboard.writeText('hello@example.com');
+    navigator.clipboard.writeText('iryna@irynasheremeta.com');
     setCopied(true);
     setTimeout(() => setCopied(false), 2000);
   };
@@ -17,7 +30,7 @@ export default function EditorialStatement() {
     <section 
       style={{
         backgroundColor: '#ffffff', // White background
-        padding: '3.25rem 1.5rem 1.75rem 1.5rem',
+        padding: '80px 0',
         width: '100%',
         display: 'flex',
         justifyContent: 'center',
@@ -36,7 +49,7 @@ export default function EditorialStatement() {
           justify-content: center;
           height: 3.48rem !important;
           padding: 0 2rem !important;
-          background: #333842 !important;
+          background: #18191e !important;
           color: #ffffff !important;
           -webkit-text-fill-color: #ffffff !important;
           border: none !important;
@@ -46,10 +59,20 @@ export default function EditorialStatement() {
           -webkit-text-stroke: 0 !important;
         }
         .prefooter-btn-primary:hover {
-          background: #4a5161 !important;
-          border-color: #4a5161 !important;
+          background: #24252a !important;
+          border-color: #24252a !important;
           color: #ffffff !important;
           -webkit-text-fill-color: #ffffff !important;
+        }
+        .face-cta {
+          background-color: #18191e !important;
+          color: #ffffff !important;
+          transition: box-shadow 0.3s ease !important;
+          border: none !important;
+        }
+        .face-cta:hover {
+          box-shadow: 0 0 20px rgba(0,255,163,0.15) !important;
+          background-color: #18191e !important;
         }
       `}</style>
       <motion.div
@@ -71,55 +94,50 @@ export default function EditorialStatement() {
       >
         {/* Short decor line above section heading */}
         <div style={{ 
-          width: '60px', 
+          width: '48px', 
           height: '1px', 
           backgroundColor: '#0b0c10', 
           margin: '0 auto 2rem auto', 
           opacity: 0.6 
         }} />
 
-        {/* Section Heading */}
-        <h2 
-          className="editorial-blue-heading"
-          style={{ 
-            fontFamily: "var(--font-serif)",
-            fontSize: 'clamp(23px, 4vw, 30px)', 
-            color: '#333842', 
-            fontWeight: 400,
-            fontStyle: 'normal',
-            lineHeight: 1.25,
-            letterSpacing: '-0.01em',
-            textAlign: 'center',
-            width: '100%',
-            margin: '0 auto 1.25rem auto',
-            WebkitTextStroke: '0.35px #333842'
-          }}
-        >
-          Need a solution to grow your business?
-        </h2>
+        {/* Section Heading Animated Loop */}
+        <div style={{ minHeight: '64px', display: 'flex', alignItems: 'center', justifyContent: 'center', marginBottom: '1.25rem' }}>
+          <AnimatePresence mode="wait">
+            <motion.h2 
+              key={statementIndex}
+              initial={{ opacity: 0, y: 12 }}
+              animate={{ opacity: 1, y: 0 }}
+              exit={{ opacity: 0, y: -12 }}
+              transition={{ duration: 0.5, ease: [0.16, 1, 0.3, 1] }}
+              className="editorial-blue-heading"
+              style={{ 
+                fontFamily: "var(--font-serif)",
+                fontSize: 'clamp(24px, 4.16vw, 33.6px)', 
+                color: '#3b7ac8', 
+                fontWeight: 400,
+                fontStyle: 'normal',
+                lineHeight: 1.25,
+                letterSpacing: '-0.01em',
+                textAlign: 'center',
+                width: '100%',
+                margin: 0,
+                WebkitTextStroke: '0.35px #3b7ac8'
+              }}
+            >
+              {statements[statementIndex]}
+            </motion.h2>
+          </AnimatePresence>
+        </div>
 
-        {/* Statement Subtitle */}
-        <p style={{
-          fontFamily: "var(--font-sans), Inter, sans-serif",
-          fontSize: '1.175rem',
-          lineHeight: 1.6,
-          color: 'rgba(42, 48, 54, 0.8)',
-          maxWidth: '640px',
-          margin: '0 auto',
-          textAlign: 'center',
-          fontWeight: 500
-        }}>
-          I'd love to help you build one.
-        </p>
-
-        {/* Action CTAs with reduced spacing (marginTop: 1.75rem) */}
+        {/* Action CTAs */}
         <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', gap: '1rem', marginTop: '1.75rem', justifyContent: 'center' }}>
           <a 
-            href="mailto:hello@example.com" 
-            className="btn face-cta"
-            style={{ display: 'inline-flex', alignItems: 'center', gap: '0.45rem' }}
+            href="mailto:iryna@irynasheremeta.com" 
+            className="btn prefooter-btn-primary face-cta"
+            style={{ display: 'inline-flex', alignItems: 'center', gap: '0.45rem', transform: 'scale(1.05)' }}
           >
-            <span>Send your problem my way</span>
+            <span>SEND YOUR PROBLEM MY WAY</span>
             <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round" style={{ transform: 'translateY(-0.5px)' }}>
               <line x1="7" y1="17" x2="17" y2="7"></line>
               <polyline points="7 7 17 7 17 17"></polyline>
@@ -131,35 +149,31 @@ export default function EditorialStatement() {
             style={{
               background: 'transparent',
               border: 'none',
-              color: '#555555',
+              color: copied ? '#00FFA3' : '#252A3A',
               fontFamily: "'JetBrains Mono', Menlo, monospace",
               fontSize: '11px',
-              fontWeight: 300,
+              fontWeight: 500,
               letterSpacing: '0.08em',
-              textTransform: 'uppercase',
               cursor: 'pointer',
               textDecoration: 'none',
               padding: '0.5rem',
-              opacity: 0.75,
               display: 'inline-flex',
               alignItems: 'center',
               gap: '0.45rem',
-              transition: 'opacity 0.22s ease'
-            }}
-            onMouseEnter={(e) => {
-              e.currentTarget.style.transform = 'scale(1.05)';
-              e.currentTarget.style.opacity = '1';
-            }}
-            onMouseLeave={(e) => {
-              e.currentTarget.style.transform = 'scale(1)';
-              e.currentTarget.style.opacity = '0.9';
+              transition: 'all 0.22s ease'
             }}
           >
-            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round" style={{ transform: 'translateY(-0.5px)' }}>
-              <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path>
-              <polyline points="22,6 12,13 2,6"></polyline>
-            </svg>
-            <span>{copied ? 'Email Copied!' : 'Copy email'}</span>
+            {copied ? (
+              <span>COPIED ✓</span>
+            ) : (
+              <>
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round" style={{ transform: 'translateY(-0.5px)' }}>
+                  <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path>
+                  <polyline points="22,6 12,13 2,6"></polyline>
+                </svg>
+                <span>COPY EMAIL</span>
+              </>
+            )}
           </button>
         </div>
       </motion.div>

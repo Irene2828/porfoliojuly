@@ -14,7 +14,6 @@
   align-items: center;
   justify-content: center;
   position: relative;
-  overflow: hidden;
   height: 100vh;
   min-height: 550px;
   background-color: #ffffff !important;
@@ -36,15 +35,32 @@
   position: absolute;
   top: 3.5rem; /* starts right under header */
   bottom: 0;
-  left: 0;
-  right: auto;
+  left: auto;
+  right: 0;
   width: 55%;
-  background: #333842;
-  border-right: 1px solid rgba(0, 0, 0, 0.08);
+  background: radial-gradient(ellipse at 60% 40%, rgba(255, 255, 255, 0.85) 0%, rgba(255, 255, 255, 0.35) 55%, rgba(255, 255, 255, 0) 85%), linear-gradient(135deg, #e8ebee 0%, #dcdfe3 45%, #c9ced3 100%);
+  border-left: 1px solid rgba(0, 0, 0, 0.08);
+  border-right: none;
+  box-shadow: none;
   z-index: 1;
   pointer-events: none;
   will-change: transform, opacity;
   animation: heroBgSlideFromBottom 1.6s cubic-bezier(0.22, 1, 0.36, 1) 0.2s both;
+  overflow: hidden;
+}
+
+.hero-bg-split::after {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 85%;
+  height: 85%;
+  background: radial-gradient(ellipse at center, rgba(255, 255, 255, 0.9) 0%, rgba(255, 255, 255, 0.4) 45%, rgba(255, 255, 255, 0) 75%);
+  pointer-events: none;
+  filter: blur(30px);
+  z-index: 1;
 }
 
 /* Modern minimal dot matrix pattern for AI Product Builder aesthetic */
@@ -52,14 +68,21 @@
   display: none !important;
 }
 
-@keyframes heroBgSlideFromBottom {
+@keyframes heroBgFadeIn {
   0% {
     opacity: 0;
-    transform: translateY(100%);
   }
   100% {
     opacity: 1;
-    transform: translateY(0);
+  }
+}
+
+@keyframes heroBgSlideFromBottom {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
   }
 }
 
@@ -100,7 +123,7 @@
   transform: translateY(0);
   position: relative;
   z-index: 2;
-  max-width: 1552px !important; /* +10% wider layout for hero */
+  max-width: 1670px !important; /* matching global container width */
 }
 
 @media (min-width: 1670px) {
@@ -109,11 +132,11 @@
     --hero-inner-width: min(calc(100vw - 4rem), 1347px);
   }
   .hero-container {
-    max-width: 1707px !important; /* +10% wider on 1670px screens */
+    max-width: 1837px !important; /* matching global large screen container width */
   }
   .hero-content {
-    max-width: 726px;
-    margin-left: 25%;
+    max-width: 720px;
+    margin-left: auto;
   }
   .hero-name-group .hero-text h1 {
     font-size: clamp(3.01rem, 6.02vw, 5.12rem);
@@ -148,7 +171,7 @@
 
 .hero-content {
   flex: 1;
-  max-width: 726px;
+  max-width: 720px;
   position: relative;
   z-index: 5;
   transform: none;
@@ -156,24 +179,27 @@
   display: flex;
   flex-direction: column;
   align-items: flex-start;
-  margin-left: 25%; /* moved 10% more to the right side of the screen */
+  margin-right: auto;
+  margin-left: 0;
 }
 
 .hero-copy-motion {
   width: 100%;
   padding-top: 0;
   will-change: transform, opacity;
-  animation: heroFrameSlideFromBottom 1.6s cubic-bezier(0.22, 1, 0.36, 1) 0.2s both;
+  backface-visibility: hidden;
+  -webkit-backface-visibility: hidden;
+  animation: heroFrameSlideFromBottom 1.8s cubic-bezier(0.16, 1, 0.3, 1) 0.15s both;
 }
 
 @keyframes heroFrameSlideFromBottom {
   0% {
     opacity: 0;
-    transform: translateY(120px);
+    transform: translate3d(0, 14px, 0) scale(0.995);
   }
   100% {
     opacity: 1;
-    transform: translateY(0);
+    transform: translate3d(0, 0, 0) scale(1);
   }
 }
 
@@ -184,22 +210,22 @@
 
 /* 2. Subline ("I design and build custom digital products...") slides up from bottom */
 .hero-paragraph-anim {
-  animation: heroSlideFromBottom 1.0s cubic-bezier(0.22, 1, 0.36, 1) 0.6s both;
+  animation: none;
 }
 
 /* 3. CTA Buttons slide up from bottom following subline */
 .hero-ctas-anim {
-  animation: heroSlideFromBottom 1.0s cubic-bezier(0.22, 1, 0.36, 1) 0.85s both;
+  animation: none;
 }
 
 @keyframes heroSlideFromBottom {
   0% {
     opacity: 0;
-    transform: translateY(40px);
+    transform: translate3d(0, 40px, 0);
   }
   100% {
     opacity: 1;
-    transform: translateY(0);
+    transform: translate3d(0, 0, 0);
   }
 }
 
@@ -210,12 +236,12 @@
   margin-top: 0;
   margin-bottom: 0;
   max-width: none !important;
-  width: calc(100% + 13.5rem); /* increased by another 10% */
+  width: calc(100% + 2rem);
   background: #ffffff !important;
-  border: 1px dashed #121212; /* dashed green frame */
+  border: 1px dashed rgba(18, 18, 18, 0.25); /* dashed frame */
   padding: 3.79rem 5.06rem; /* top and bottom padding increased by 25% */
-  margin-left: -13.5rem;
-  margin-right: 0; /* aligns right edge of the frame with the right edge of sections */
+  margin-right: -2rem;
+  margin-left: 0;
   transform: none;
   transform-style: preserve-3d; /* establishes a 3D rendering context to layer pseudo-elements underneath */
   position: relative;
@@ -233,14 +259,13 @@
   display: none;
 }
 
-/* Connector line between white card and dark charcoal section */
 .hero-connector-line {
   position: absolute;
   top: 60%; /* Roughly aligns with the visual center gap */
-  left: -100px; /* Extend into the dark area on the left */
-  right: auto;
-  width: 100px; /* Covers the gap to the image */
-  border-bottom: 1.5px dashed rgba(235, 235, 237, 0.6); /* silver dashed line visible on dark bg */
+  right: -280px; /* Extend into the image area on the right */
+  left: auto;
+  width: 280px; /* Covers the gap to the image */
+  border-bottom: 1.5px dashed rgba(235, 235, 237, 0.6); /* silver dashed line */
   z-index: 10;
   pointer-events: none;
 }
@@ -257,14 +282,14 @@
   pointer-events: none;
 }
 
-/* Corner brackets top-right and bottom-right of portrait */
+/* Corner brackets inside portrait */
 .hero-image-brackets {
   position: absolute;
-  top: -8px;
-  right: -8px;
-  bottom: -8px;
+  top: 8px;
+  right: 8px;
+  bottom: 8px;
   width: 12px;
-  border-right: 1.5px dashed rgba(235, 235, 237, 0.55);
+  border-right: 1.5px dashed rgba(235, 235, 237, 0.25);
   pointer-events: none;
   z-index: 10;
 }
@@ -276,7 +301,7 @@
   right: -1px; /* Align with right border */
   width: 100%;
   height: 1.5px;
-  background: rgba(235, 235, 237, 0.55);
+  background: rgba(235, 235, 237, 0.25);
 }
 
 .hero-image-brackets::before {
@@ -307,7 +332,7 @@
     left: -8px;
     bottom: -8px;
     width: 12px;
-    border-left: 1.5px dashed rgba(235, 235, 237, 0.55);
+    border-left: 1.5px dashed rgba(235, 235, 237, 0.25);
     pointer-events: none;
     z-index: 10;
   }
@@ -319,7 +344,7 @@
     left: -1px; /* Align with left border */
     width: 100%;
     height: 1.5px;
-    background: rgba(235, 235, 237, 0.55);
+    background: rgba(235, 235, 237, 0.25);
   }
 
   .hero-image-brackets-left::before {
@@ -369,15 +394,15 @@
   margin: 0;
   background: none;
   -webkit-background-clip: initial;
-  -webkit-text-fill-color: #333842 !important;
-  color: #333842 !important;
+  -webkit-text-fill-color: #121212 !important;
+  color: #121212 !important;
   text-transform: none;
-  letter-spacing: -0.01em !important;
+  letter-spacing: -0.015em !important;
   font-weight: 400 !important;
   -webkit-font-smoothing: antialiased;
   font-synthesis: none;
-  -webkit-text-stroke: 0;
-  text-stroke: 0;
+  -webkit-text-stroke: 0.35px #121212;
+  text-stroke: 0.35px #121212;
 }
 
 .br-mobile {
@@ -522,11 +547,11 @@
   justify-content: center;
   height: 3.44rem !important;
   padding: 0 1.98rem !important;
-  background: #333842 !important;
+  background: #18191e !important;
   color: #ffffff !important;
   border: none !important;
-  border-radius: 56px !important;
-  box-shadow: none !important;
+  border-radius: 0px !important;
+  box-shadow: 6px 6px 0px #dcdfe3 !important;
   transform: none !important;
   align-self: auto;
   transition: background 0.22s ease, border-color 0.22s ease, transform 0.2s ease, box-shadow 0.2s ease !important;
@@ -535,8 +560,8 @@
 }
 
 .hero-ctas-outside .btn-primary-outline:hover {
-  background: #4a5161 !important;
-  border-color: #4a5161 !important;
+  background: #24252a !important;
+  border-color: #24252a !important;
   color: #ffffff !important;
 }
 
@@ -546,7 +571,7 @@
   font-size: 9.9px !important; /* 2px smaller */
   font-weight: 400 !important;
   text-transform: uppercase !important;
-  letter-spacing: 0.18em !important;
+  letter-spacing: 0.24em !important;
   background: transparent !important;
   border: 0 !important;
   color: #222222 !important;
@@ -604,15 +629,18 @@
   max-width: var(--hero-visual-width);
   height: 490px; /* 10% smaller height */
   margin-top: 0; /* vertically centered in hero section */
-  margin-left: 5%; /* shifted 5% to the left */
+  margin-right: 2%; /* shifted 20% closer to the right edge */
+  margin-left: 0;
   z-index: 2;
   overflow: visible;
   position: relative;
   outline: none;
   cursor: pointer;
-  animation: heroImageSlideFromLeft var(--hero-motion-duration) cubic-bezier(0.22, 1, 0.36, 1) both;
-  animation-delay: var(--hero-intro-delay);
+  animation: heroImageSlideFromLeft 1.8s cubic-bezier(0.16, 1, 0.3, 1) both;
+  animation-delay: 0.3s;
   will-change: transform, opacity;
+  backface-visibility: hidden;
+  -webkit-backface-visibility: hidden;
   box-shadow: none;
 }
 
@@ -636,18 +664,18 @@
 @keyframes heroImageSlideFromLeft {
   0% {
     opacity: 0;
-    transform: translateX(-140px);
+    transform: translate3d(0, 14px, 0) scale(0.99);
   }
   100% {
     opacity: 1;
-    transform: translateX(0);
+    transform: translate3d(0, 0, 0) scale(1);
   }
 }
 
 @keyframes heroImageSwap {
   0% {
     opacity: 0;
-    transform: translateX(-140px);
+    transform: translateX(0);
   }
   100% {
     opacity: 1;
@@ -721,14 +749,15 @@
   border-radius: 0; /* sharp rectangle */
   overflow: hidden;
   object-position: center 20%;
-  opacity: 0.9;
-  transition: opacity 0.5s ease;
+  opacity: 1;
+  filter: brightness(1.06) saturate(1.1);
+  transition: opacity 0.5s ease, filter 0.5s ease, transform 0.5s ease;
 }
 
 .hero-image-wrapper:hover .hero-image,
 .hero-image-wrapper:focus-within .hero-image,
 .hero-image-wrapper:focus-visible .hero-image {
-  opacity: 0.9 !important; /* 90% on hover */
+  opacity: 1 !important;
 }
 
 .hero-image-caption {
@@ -831,7 +860,7 @@
     margin: 0 !important;
     padding: 1.85rem 1.4rem !important;
     background: #ffffff !important;
-    border: 1px dashed #121212 !important;
+    border: 1px dashed rgba(18, 18, 18, 0.25) !important;
     box-shadow: none !important;
     transform: none !important;
     align-items: flex-start !important;
@@ -872,12 +901,12 @@
     max-width: 100% !important;
     font-family: var(--font-serif) !important;
     font-size: clamp(1.95rem, 7.8vw, 2.45rem) !important;
-    letter-spacing: -0.02em !important;
+    letter-spacing: -0.015em !important;
     text-align: left !important;
     margin: 0 !important;
     line-height: 1.22 !important;
-    -webkit-text-fill-color: #333842 !important;
-    color: #333842 !important;
+    -webkit-text-fill-color: #25150C !important;
+    color: #25150C !important;
     font-weight: 500 !important;
     opacity: 1 !important;
   }
@@ -934,11 +963,11 @@
     font-weight: 600 !important;
     letter-spacing: 0.08em !important;
     text-transform: uppercase !important;
-    background: #333842 !important;
+    background: #18191e !important;
     color: #ffffff !important;
     border: none !important;
-    border-radius: 56px !important;
-    box-shadow: none !important;
+    border-radius: 0px !important;
+    box-shadow: 6px 6px 0px #dcdfe3 !important;
     display: inline-flex !important;
     align-items: center !important;
   }
@@ -973,8 +1002,9 @@
     flex: none;
     margin: 0 !important;
     position: relative;
-    background: #333842 !important; /* Charcoal dark card matching desktop hero left side */
+    background: linear-gradient(135deg, #cbcfd4 0%, #C2C7CC 45%, #b4b9bd 100%) !important; /* Soft brushed silver grey sheen */
     border-radius: 4px !important;
+    border: 1px dashed rgba(18, 18, 18, 0.25) !important;
     padding: 2.2rem 1.6rem !important;
     box-sizing: border-box !important;
     display: flex !important;
@@ -986,7 +1016,7 @@
     animation: none !important;
   }
 
-  /* Name & Title on top of portrait inside dark charcoal container, left-aligned */
+  /* Name & Title on top of portrait inside light silver container, left-aligned */
   .v2-theme .hero-mobile-intro,
   .hero-mobile-intro {
     display: flex !important;
@@ -1005,7 +1035,7 @@
     font-size: 1.15rem !important;
     font-weight: 800 !important;
     letter-spacing: 0.14em !important;
-    color: #ffffff !important;
+    color: #18191e !important;
     text-transform: uppercase !important;
     text-align: left !important;
     margin: 0 !important;
@@ -1018,7 +1048,7 @@
     font-size: 0.76rem !important;
     font-weight: 600 !important;
     letter-spacing: 0.1em !important;
-    color: #9da3af !important;
+    color: #4b5563 !important;
     text-transform: uppercase !important;
     text-align: left !important;
     margin-top: 0.35rem !important;
@@ -1151,20 +1181,24 @@
 
 @keyframes heroImageSwapMobile {
   0% {
-    transform: translateX(-18vw) scale(0.98);
+    opacity: 0;
+    transform: translateX(0) scale(1);
   }
 
   100% {
+    opacity: 1;
     transform: translateX(0) scale(1);
   }
 }
 
 @keyframes heroCopySwapMobile {
   0% {
-    transform: translateX(18vw);
+    opacity: 0;
+    transform: translateX(0);
   }
 
   100% {
+    opacity: 1;
     transform: translateX(0);
   }
 }
@@ -1426,45 +1460,48 @@
 
 .hero-image-tagline-stacked {
   position: absolute;
-  bottom: -1.0rem; /* shifted 20% higher up */
-  right: -30px;
-  left: auto;
-  text-align: left;
+  bottom: -5.25rem; /* placed under the image and shifted 50% lower again */
+  left: 50%;
+  right: auto;
+  transform: translateX(-50%);
+  text-align: center;
   z-index: 8;
   font-family: var(--font-sans);
   font-size: clamp(0.62rem, 0.88vw, 0.74rem); /* 20% smaller text size */
   text-transform: uppercase;
   letter-spacing: 0.12em;
   line-height: 1.4;
-  /* Apple Tahoe Frosted Glass background blur overlay */
-  background: rgba(18, 19, 24, 0.75) !important;
-  backdrop-filter: blur(16px) saturate(180%);
-  -webkit-backdrop-filter: blur(16px) saturate(180%);
-  padding: 0.6rem 0.9rem;
-  border-radius: 4px;
-  border: 1px solid rgba(255, 255, 255, 0.12) !important;
-  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.25);
+  /* Barely visible glass background */
+  background: rgba(255, 255, 255, 0.15) !important;
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  padding: 0.6rem 1.2rem;
+  border-radius: 6px;
+  border: 1px solid rgba(255, 255, 255, 0.15) !important;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.02);
   pointer-events: none;
   opacity: 0;
+  width: max-content;
+  white-space: nowrap;
   animation: taglineIntro 0.8s ease 0.6s forwards;
   transition: opacity 0.25s ease, transform 0.25s ease;
 }
 
 .hero-image-tagline-stacked .tagline-name {
-  color: #ffffff;
+  color: #000000;
   font-size: clamp(0.68rem, 0.97vw, 0.81rem);
-  font-weight: 600;
+  font-weight: 700;
   margin-bottom: 0.15rem; /* 10% vertical spacing gap */
 }
 
 .hero-image-tagline-stacked .tagline-title {
-  color: rgba(235, 235, 237, 0.85);
-  font-weight: 500;
+  color: #4a5056;
+  font-weight: 600;
 }
 
 @keyframes taglineIntro {
-  0% { opacity: 0; transform: translateY(8px); }
-  100% { opacity: 1; transform: translateY(0); }
+  0% { opacity: 0; transform: translateX(-50%) translateY(8px); }
+  100% { opacity: 1; transform: translateX(-50%) translateY(0); }
 }
 
 /* When wrapper is hovered, hide the tagline so scanner and annotations show */
@@ -1524,4 +1561,308 @@
 
 .pixel-pulse-3 {
   animation: pixelFloat3 6s ease-in-out infinite;
+}
+
+/* ─────────────────────────────────────────────────────────
+   TECH SCAN SYSTEM & SKILL TAG PROJECTION EFFECT
+   ───────────────────────────────────────────────────────── */
+
+.hero-image-wrapper[data-hero-scan="container"] {
+  cursor: crosshair !important;
+}
+
+/* 1. HUD Lock Corners (12x12px, 1px border rgba(255,255,255,0.6)) */
+.hud-corner {
+  position: absolute;
+  width: 12px;
+  height: 12px;
+  border-color: rgba(255, 255, 255, 0.6);
+  border-style: solid;
+  pointer-events: none;
+  z-index: 12;
+  opacity: 0;
+  transition: opacity 300ms ease;
+}
+
+.hud-tl {
+  top: 0;
+  left: 0;
+  border-width: 1px 0 0 1px;
+}
+
+.hud-tr {
+  top: 0;
+  right: 0;
+  border-width: 1px 1px 0 0;
+}
+
+.hud-bl {
+  bottom: 0;
+  left: 0;
+  border-width: 0 0 1px 1px;
+}
+
+.hud-br {
+  bottom: 0;
+  right: 0;
+  border-width: 0 1px 1px 0;
+}
+
+.hero-image-wrapper:hover .hud-corner,
+.hero-image-wrapper.is-scanning .hud-corner {
+  opacity: 1;
+}
+
+/* Image Scale (1.02) + Brightness (1.05) on hover (700ms cubic-bezier(0.16,1,0.3,1)) */
+.hero-image-wrapper .hero-image {
+  transition: transform 700ms cubic-bezier(0.16, 1, 0.3, 1), filter 700ms cubic-bezier(0.16, 1, 0.3, 1), opacity 500ms ease;
+  will-change: transform, filter;
+  filter: brightness(1.06) saturate(1.1);
+}
+
+.hero-image-wrapper:hover .hero-image,
+.hero-image-wrapper.is-scanning .hero-image {
+  transform: scale(1.02);
+  filter: brightness(1.05) saturate(1.1);
+}
+
+/* 2. Scan Line (#00FFA3 glow + trailing veil + 0.9s cubic-bezier 2 sweeps) */
+.tech-scan-line {
+  position: absolute;
+  left: 0;
+  width: 100%;
+  height: 1px;
+  background: #00FFA3;
+  box-shadow: 0 0 8px rgba(0, 255, 163, 0.6);
+  z-index: 15;
+  pointer-events: none;
+  opacity: 0;
+  top: 0;
+  will-change: top, opacity;
+}
+
+.tech-scan-line::after {
+  content: '';
+  position: absolute;
+  top: 1px;
+  left: 0;
+  width: 100%;
+  height: 120px;
+  background: linear-gradient(to bottom, rgba(0, 255, 163, 0.15), transparent);
+  filter: blur(24px);
+  pointer-events: none;
+}
+
+.hero-image-wrapper:hover .tech-scan-line,
+.hero-image-wrapper.is-scanning .tech-scan-line {
+  opacity: 1;
+  animation: scanMove 0.9s cubic-bezier(0.16, 1, 0.3, 1) 2 forwards;
+}
+
+@keyframes scanMove {
+  0% {
+    top: 0%;
+  }
+  100% {
+    top: 100%;
+  }
+}
+
+/* 3. Texture Overlay (Noise opacity 0.03 + Scanlines opacity 0.06) */
+.tech-texture-overlay {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  z-index: 11;
+  opacity: 0;
+  transition: opacity 300ms ease;
+  background-image: repeating-linear-gradient(
+    to bottom,
+    transparent,
+    transparent 3px,
+    rgba(0, 255, 163, 0.06) 3px,
+    rgba(0, 255, 163, 0.06) 4px
+  );
+}
+
+.hero-image-wrapper:hover .tech-texture-overlay,
+.hero-image-wrapper.is-scanning .tech-texture-overlay {
+  opacity: 1;
+}
+
+/* 4. Projection Container & Skill Tag Pills */
+.tech-projections-container {
+  position: absolute;
+  left: calc(100% + 8px);
+  top: 0;
+  bottom: 0;
+  width: 220px;
+  pointer-events: none;
+  z-index: 25;
+}
+
+.tech-projection-item {
+  position: absolute;
+  display: flex;
+  align-items: center;
+  gap: 0;
+  transform: translateY(-50%) translateX(-8px);
+  opacity: 0;
+  will-change: transform, opacity;
+  transition: opacity 300ms ease, transform 300ms ease;
+}
+
+.tech-projection-line {
+  width: 32px;
+  height: 1px;
+  background: #00FFA3;
+  opacity: 0.5;
+  flex-shrink: 0;
+}
+
+.tech-projection-pill {
+  position: relative;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-family: 'JetBrains Mono', Menlo, monospace !important;
+  font-size: 11px !important;
+  letter-spacing: 0.12em !important;
+  background: rgba(37, 42, 58, 0.6) !important;
+  border: 1px solid rgba(0, 255, 163, 0.25) !important;
+  color: rgba(255, 255, 255, 0.75) !important;
+  padding: 6px 10px !important;
+  border-radius: 2px !important;
+  white-space: nowrap !important;
+  text-transform: uppercase !important;
+  cursor: default !important;
+  pointer-events: auto;
+}
+
+.tech-projection-pill::before {
+  content: '';
+  display: block;
+  width: 4px;
+  height: 4px;
+  border-radius: 50%;
+  background: #00FFA3;
+  box-shadow: 0 0 6px #00FFA3;
+  flex-shrink: 0;
+}
+
+/* Reveal stagger during 2nd scan sweep (starts at 0.9s, 80ms stagger, 500ms duration) */
+.hero-image-wrapper:hover .tech-projection-item,
+.hero-image-wrapper.is-scanning .tech-projection-item {
+  animation: projectReveal 500ms cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
+.hero-image-wrapper:hover .tech-projection-item:nth-child(1),
+.hero-image-wrapper.is-scanning .tech-projection-item:nth-child(1) {
+  animation-delay: 0.98s;
+}
+
+.hero-image-wrapper:hover .tech-projection-item:nth-child(2),
+.hero-image-wrapper.is-scanning .tech-projection-item:nth-child(2) {
+  animation-delay: 1.06s;
+}
+
+.hero-image-wrapper:hover .tech-projection-item:nth-child(3),
+.hero-image-wrapper.is-scanning .tech-projection-item:nth-child(3) {
+  animation-delay: 1.14s;
+}
+
+.hero-image-wrapper:hover .tech-projection-item:nth-child(4),
+.hero-image-wrapper.is-scanning .tech-projection-item:nth-child(4) {
+  animation-delay: 1.22s;
+}
+
+.hero-image-wrapper:hover .tech-projection-item:nth-child(5),
+.hero-image-wrapper.is-scanning .tech-projection-item:nth-child(5) {
+  animation-delay: 1.30s;
+}
+
+@keyframes projectReveal {
+  0% {
+    opacity: 0;
+    transform: translateY(-50%) translateX(-8px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(-50%) translateX(0);
+  }
+}
+
+/* Mobile responsive projections adjustment */
+@media (max-width: 900px) {
+  .tech-projections-container {
+    left: auto;
+    right: 12px;
+    width: auto;
+  }
+  .tech-projection-line {
+    width: 20px;
+  }
+  .tech-projection-pill {
+    font-size: 10px !important;
+    padding: 4px 8px !important;
+  }
+}
+
+@media (max-width: 767px) {
+  .tech-projections-container {
+    position: absolute;
+    bottom: 16px;
+    left: 16px;
+    right: 16px;
+    top: auto;
+    width: auto;
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    align-items: flex-start;
+    justify-content: flex-end;
+  }
+  
+  .tech-projection-item {
+    position: relative !important;
+    right: auto !important;
+    top: auto !important;
+    transform: none !important;
+    animation: none !important;
+    opacity: 1 !important;
+    width: auto;
+    max-width: 85%;
+  }
+  
+  .tech-projection-line {
+    display: none !important;
+  }
+  
+  .tech-projection-pill {
+    width: auto;
+    max-width: 100%;
+    white-space: nowrap !important;
+    overflow: visible !important;
+    font-size: 10px !important;
+    padding: 6px 10px !important;
+    background: rgba(37, 42, 58, 0.85) !important;
+    backdrop-filter: blur(4px) !important;
+    -webkit-backdrop-filter: blur(4px) !important;
+  }
+  
+  .hero-image-container {
+    overflow: hidden !important;
+    padding-bottom: 16px !important;
+  }
+  
+  .v2-theme .hero-name-group,
+  .hero-name-group {
+    margin-bottom: 16px !important;
+  }
+  
+  .hero-ctas .btn,
+  .hero-ctas-outside .btn-primary-outline {
+    width: 100% !important;
+    justify-content: center !important;
+  }
 }

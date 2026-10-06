@@ -1,5 +1,6 @@
 import type { Metadata } from 'next';
 import './index.css';
+import CursorTrail from './v2/components/CursorTrail';
 
 export const metadata: Metadata = {
   title: 'Iryna Sheremeta — Product Designer & Builder',
@@ -37,6 +38,7 @@ export default function RootLayout({
         />
       </head>
       <body>
+        <CursorTrail />
         {children}
         {shouldInjectToolbar && <VercelToolbar />}
       </body>

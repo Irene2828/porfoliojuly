@@ -39,7 +39,7 @@ export default async function HomePage() {
 
         {/* Cases Section Header */}
         <section id="cases-section" style={{ padding: '5.1rem 0 0 0', backgroundColor: '#ffffff' }}>
-          <div className="container" style={{ textAlign: 'center', marginBottom: '3.5rem' }}>
+          <div className="container" style={{ textAlign: 'center', marginBottom: '0.875rem' }}>
             {/* Short decor line directly above Cases heading */}
             <div style={{ 
               width: '60px', 
@@ -51,28 +51,31 @@ export default async function HomePage() {
 
             <h2 style={{ 
               fontFamily: "var(--font-serif)",
-              fontSize: 'clamp(24px, 4vw, 38px)', 
-              color: '#333842', 
+              fontSize: 'clamp(29px, 4.8vw, 46px)', 
+              color: '#3b7ac8', 
               fontWeight: 500,
               lineHeight: 1.25,
-              letterSpacing: '-0.01em',
+              letterSpacing: '-0.02em',
               textAlign: 'center',
-              margin: '0 auto 0.75rem auto',
-              WebkitTextStroke: '0.35px #333842'
+              width: '100%',
+              margin: '0 auto 16px auto',
+              WebkitTextStroke: '0.35px #3b7ac8'
             }}>
               Featured Cases
             </h2>
             <p style={{
               fontFamily: "var(--font-sans), Inter, sans-serif",
-              fontSize: '1.175rem',
-              fontWeight: 500,
+              fontSize: '18px',
+              fontWeight: 400,
+              fontStyle: 'italic',
               lineHeight: 1.6,
               color: '#2a3036',
-              maxWidth: '850px',
+              opacity: 0.75,
+              maxWidth: '640px',
               margin: '0 auto',
               textAlign: 'center'
             }}>
-              Selected digital products, custom web tools, and AI solutions built end-to-end.
+              custom websites &amp; ai tools built end-to-end.
             </p>
           </div>
 
@@ -80,16 +83,12 @@ export default async function HomePage() {
           <div 
             style={{
               backgroundColor: '#ffffff',
-              backgroundImage: 'radial-gradient(circle, rgba(0, 0, 0, 0.065) 1.25px, transparent 1.25px)',
-              backgroundSize: '28px 28px',
-              width: '100vw',
-              marginLeft: 'calc(-50vw + 50%)',
-              marginRight: 'calc(-50vw + 50%)',
+              width: '100%',
               padding: '2.25rem 0',
               marginBottom: '3.3rem'
             }}
           >
-            <div className="container" style={{ maxWidth: '1550px', margin: '0 auto', padding: '0 1.5rem' }}>
+            <div style={{ width: '100%', margin: '0', padding: '0' }}>
               <ProjectsV2 initialProjects={publishedProjects as any} />
             </div>
           </div>

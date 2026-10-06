@@ -1,6 +1,6 @@
 'use client';
 
-import { useState, useEffect } from 'react';
+import { useState, useEffect, useRef } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import '@/app/components/Projects.css';
 import SectionDivider from '@/app/components/SectionDivider';
@@ -22,6 +22,7 @@ interface ProjectsV2Props {
 
 export default function ProjectsV2({ initialProjects = [] }: ProjectsV2Props) {
   const [selectedProjectId, setSelectedProjectId] = useState<string | null>(null);
+  const scrollTrackRef = useRef<HTMLDivElement>(null);
 
   const initialProjectsData = [
     {
@@ -60,37 +61,37 @@ export default function ProjectsV2({ initialProjects = [] }: ProjectsV2Props) {
     },
     {
       id: 'v2-3',
-      title: 'Terry Fox Tool',
-      slug: 'terry-fox-tool',
-      subline: 'Automated poster creation & global campaign workflow',
+      title: 'Ukraine Case 1',
+      slug: 'ukraine-case-1-dup',
+      subline: 'Custom platform for Ukraine relief efforts',
       annotations: [
-        { markerNumber: 1, title: 'Sub-second Speed', text: 'Blazing fast global edge rendering with 99+ Performance score.' },
-        { markerNumber: 2, title: 'AI Recommender', text: 'Personalizes product bundles based on real-time user browsing.' },
-        { markerNumber: 3, title: 'Generative Search', text: 'Optimized for AI answer engines (Perplexity, ChatGPT, Gemini).' }
+        { markerNumber: 1, title: 'AI Qualification', text: 'Engages inbound lead inquiries & volunteer requests automatically.' },
+        { markerNumber: 2, title: 'Instant Canvas Sync', text: 'Generates personalized localized campaign graphics in seconds.' },
+        { markerNumber: 3, title: 'CRM Integration', text: 'Syncs data directly with Hubspot & internal tracking tools.' }
       ],
       stats: [
-        { chip: 'Problem', text: 'Low mobile conversion rates', stat: '1.4%', statLabel: 'old conversion' },
-        { chip: 'Built with', text: 'Next.js 14, Tailwind & Stripe API', stat: '99', statLabel: 'performance' },
-        { chip: 'Impact', text: 'Increased sales and organic AI engine leads', stat: '+42%', statLabel: 'revenue boost' }
+        { chip: 'Problem', text: 'Manual campaign delays', stat: '4.8h', statLabel: 'old delay' },
+        { chip: 'Built with', text: 'Next.js, Canvas Engine & AI API', stat: '< 30s', statLabel: 'build time' },
+        { chip: 'Impact', text: 'Empowered volunteers across 25+ countries', stat: '+340%', statLabel: 'campaign reach' }
       ],
       image: initialProjects[0]?.screens?.[0]?.originalUrl || '/skills.png'
     },
     {
       id: 'v2-4',
-      title: 'Terry Fox App',
-      slug: 'terry-fox-app',
-      subline: 'Mobile application for volunteers and runners',
+      title: 'Ukraine Case 2',
+      slug: 'ukraine-case-2-dup',
+      subline: 'Logistics and tracking platform for Ukraine',
       annotations: [
-        { markerNumber: 1, title: 'Sub-second Speed', text: 'Blazing fast global edge rendering with 99+ Performance score.' },
-        { markerNumber: 2, title: 'AI Recommender', text: 'Personalizes product bundles based on real-time user browsing.' },
-        { markerNumber: 3, title: 'Generative Search', text: 'Optimized for AI answer engines (Perplexity, ChatGPT, Gemini).' }
+        { markerNumber: 1, title: 'Doc Parsing', text: 'Extracts key structured fields from PDFs and receipts instantly.' },
+        { markerNumber: 2, title: 'Smart Validation', text: 'Flags discrepancies and potential fraud markers in real time.' },
+        { markerNumber: 3, title: 'Instant Routing', text: 'Pushes verified cases to claims managers for one-click approval.' }
       ],
       stats: [
-        { chip: 'Problem', text: 'Low mobile conversion rates', stat: '1.4%', statLabel: 'old conversion' },
-        { chip: 'Built with', text: 'Next.js 14, Tailwind & Stripe API', stat: '99', statLabel: 'performance' },
-        { chip: 'Impact', text: 'Increased sales and organic AI engine leads', stat: '+42%', statLabel: 'revenue boost' }
+        { chip: 'Problem', text: 'Slow manual claim reviews', stat: '48h', statLabel: 'old turnaround' },
+        { chip: 'Built with', text: 'Gemini Vision, Next.js & Postgres', stat: '2.5 min', statLabel: 'new processing' },
+        { chip: 'Impact', text: 'Automated 85% of standard intake processing', stat: '85%', statLabel: 'auto-processed' }
       ],
-      image: initialProjects[0]?.screens?.[0]?.originalUrl || '/skills.png'
+      image: initialProjects[1]?.screens?.[0]?.originalUrl || '/skills.png'
     }
   ];
 
@@ -107,14 +108,20 @@ export default function ProjectsV2({ initialProjects = [] }: ProjectsV2Props) {
     };
   }, [selectedProjectId]);
 
-  const swapToTop = (clickedIndex: number) => {
-    setProjectsList((prev) => {
-      const next = [...prev];
-      const [clickedItem] = next.splice(clickedIndex, 1);
-      next.unshift(clickedItem);
-      return next;
-    });
-  };
+  useEffect(() => {
+    const track = scrollTrackRef.current;
+    if (track && projectsList.length >= 2) {
+      // A slightly longer timeout to ensure layout and browser scroll restoration have finished
+      const timer = setTimeout(() => {
+        if (track.children.length > 1) {
+          const secondItem = track.children[1] as HTMLElement;
+          const targetScroll = secondItem.offsetLeft - track.clientWidth / 2 + secondItem.clientWidth / 2;
+          track.scrollTo({ left: targetScroll, behavior: 'instant' });
+        }
+      }, 150);
+      return () => clearTimeout(timer);
+    }
+  }, [projectsList.length]);
 
   const renderProjectContent = (project: any, isModal = false) => (
     <div 
@@ -200,42 +207,73 @@ export default function ProjectsV2({ initialProjects = [] }: ProjectsV2Props) {
     </div>
   );
 
-  const selectedProject = projectsList.find(p => p.id === selectedProjectId);
-  const row1Project = projectsList[0];
-  const row2Projects = projectsList.slice(1, 3);
+  const [activeCardIndex, setActiveCardIndex] = useState(0);
+
+  useEffect(() => {
+    const track = scrollTrackRef.current;
+    if (!track) return;
+
+    const handleScroll = () => {
+      const children = Array.from(track.children) as HTMLElement[];
+      if (!children.length) return;
+      const trackCenter = track.scrollLeft + track.clientWidth / 2;
+      let closestIdx = 0;
+      let minDistance = Infinity;
+
+      children.forEach((child, idx) => {
+        const childCenter = child.offsetLeft + child.clientWidth / 2;
+        const distance = Math.abs(trackCenter - childCenter);
+        if (distance < minDistance) {
+          minDistance = distance;
+          closestIdx = idx;
+        }
+      });
+      setActiveCardIndex(closestIdx);
+    };
+
+    track.addEventListener('scroll', handleScroll, { passive: true });
+    return () => track.removeEventListener('scroll', handleScroll);
+  }, [projectsList.length]);
 
   return (
-    <section className="projects-section" id="cases" style={{ width: '100%', margin: '0 auto', padding: '0 1rem' }}>
+    <section className="projects-section" id="cases" style={{ position: 'relative', width: '100%', margin: '0 auto', padding: '1rem 0 2rem 0' }}>
+      <style>{`
+        .cases-grid-container {
+          display: grid;
+          grid-template-columns: repeat(2, 1fr);
+          gap: 3.5rem 2.5rem;
+          width: 100%;
+          max-width: 1400px;
+          margin: 0 auto;
+          padding: 0 2rem;
+        }
+        @media (max-width: 900px) {
+          .cases-grid-container {
+            grid-template-columns: 1fr !important;
+            gap: 2.5rem !important;
+            padding: 0 1.5rem !important;
+          }
+        }
+      `}</style>
       
-      {/* Container Wrapper */}
+      {/* 2x2 Grid Wrapper */}
       <div 
         style={{ 
-          display: 'flex', 
-          flexDirection: 'column', 
-          gap: '4.5rem', 
-          width: '90vw', 
-          maxWidth: '1540px', 
-          margin: '0 auto' 
+          width: '100%', 
+          paddingBottom: '1.5rem',
+          paddingTop: '1.5rem'
         }}
       >
-        {/* Row 1: 2 Cards (Case 1 White, Case 2 Navy) */}
-        <div 
-          className="cases-row-two-grid"
-          style={{ 
-            display: 'grid', 
-            gridTemplateColumns: 'repeat(2, 1fr)', 
-            gap: '4.5rem', 
-            width: '100%'
-          }}
-        >
-          {projectsList.slice(0, 2).map((project) => {
-            const isNavyCard = project.id === 'v2-2';
+        <div className="cases-grid-container">
+          {projectsList.map((project, idx) => {
+            const isNavyCard = project.id === 'v2-2' || project.id === 'v2-4';
             return (
-              <motion.div 
-                layout 
-                key={project.id}
-                transition={{ duration: 0.5, ease: [0.16, 1, 0.3, 1] }}
-                style={{ width: '100%' }}
+              <div 
+                key={`${project.id}-${idx}`}
+                className="cases-grid-item"
+                style={{ 
+                  width: '100%'
+                }}
               >
                 <div 
                   className="preview-item-container"
@@ -267,55 +305,13 @@ export default function ProjectsV2({ initialProjects = [] }: ProjectsV2Props) {
                     </div>
                   </div>
                   <div className="preview-card-caption">
-                    Click to expand full case study ↗
+                    EXPAND CASE &rarr;
                   </div>
                 </div>
-              </motion.div>
+              </div>
             );
           })}
         </div>
-
-        {/* Row 2: 1 Centered Card (Case 3 White, same size as row 1 cards) */}
-        {projectsList[2] && (
-          <div style={{ display: 'flex', justifyContent: 'center', width: '100%' }}>
-            <motion.div 
-              layout 
-              key={projectsList[2].id}
-              transition={{ duration: 0.5, ease: [0.16, 1, 0.3, 1] }}
-              style={{ width: 'calc(50% - 2.25rem)' }}
-            >
-              <div 
-                className="preview-item-container"
-                tabIndex={0}
-                role="button"
-                aria-label={`View ${projectsList[2].title} case study`}
-                onClick={() => setSelectedProjectId(projectsList[2].id)}
-                onKeyDown={(e) => {
-                  if (e.key === 'Enter' || e.key === ' ') {
-                    e.preventDefault();
-                    setSelectedProjectId(projectsList[2].id);
-                  }
-                }}
-                style={{ cursor: 'pointer' }}
-              >
-                <div className="preview-card-wrapper">
-                  <div className="preview-card-scaler">
-                    <GenericWhiteCard 
-                      title={projectsList[2].title}
-                      subline={projectsList[2].subline}
-                      annotations={projectsList[2].annotations}
-                      stats={projectsList[2].stats}
-                      image={projectsList[2].image}
-                    />
-                  </div>
-                </div>
-                <div className="preview-card-caption">
-                  Click to expand full case study ↗
-                </div>
-              </div>
-            </motion.div>
-          </div>
-        )}
       </div>
 
       <AnimatePresence>
