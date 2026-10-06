@@ -1866,3 +1866,4 @@
     justify-content: center !important;
   }
 }
+/* ── Mobile hero: circular avatar instead of large portrait (2026-10-06) ── */ @media (max-width: 900px) { .hero-mobile-intro { display: none !important; } .hero-image-wrapper { order: 0 !important; margin-bottom: 1.25rem !important; background: transparent !important; border: none !important; border-radius: 0 !important; padding: 0 !important; box-shadow: none !important; } .hero-image-container { width: 96px !important; height: 96px !important; max-width: none !important; aspect-ratio: auto !important; border-radius: 50% !important; overflow: hidden !important; margin: 0 !important; } .hero-image { width: 100% !important; height: 100% !important; object-fit: cover !important; object-position: top center !important; } .hero-image-brackets, .hero-image-brackets-left, .hero-image-offset-frame, .hero-decor-square { display: none !important; } }
