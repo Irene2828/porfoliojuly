@@ -30,18 +30,32 @@ export default function ProcessSection() {
   return (
     <section 
       id="process" 
-      style={{ padding: '4rem 0 6rem 0', backgroundColor: '#ffffff' }}
+      style={{ padding: '0 0 6rem 0', backgroundColor: '#ffffff' }}
     >
-      {/* Section Header above the split frame */}
-      <motion.div 
-        initial={{ opacity: 0, y: 30 }}
-        whileInView={{ opacity: 1, y: 0 }}
-        viewport={{ once: true, amount: 0.2 }}
-        transition={{ duration: 0.8, ease: [0.16, 1, 0.3, 1] }}
-        className="container"
-        style={{ textAlign: 'left', marginBottom: '3.5rem' }}
+      {/* The entire Testimonial Section is now within the grey background */}
+      <div 
+        style={{
+          width: '100%',
+          background: 'radial-gradient(ellipse at 60% 40%, rgba(255, 255, 255, 0.85) 0%, rgba(255, 255, 255, 0.35) 55%, rgba(255, 255, 255, 0) 85%), linear-gradient(135deg, #e8ebee 0%, #dcdfe3 45%, #c9ced3 100%)',
+          padding: '4rem 2rem 8rem 2rem',
+          display: 'flex',
+          flexDirection: 'column',
+          alignItems: 'center',
+          justifyContent: 'center',
+          position: 'relative',
+          borderTop: '1px solid rgba(0, 0, 0, 0.08)',
+          borderBottom: '1px solid rgba(0, 0, 0, 0.08)',
+          overflow: 'hidden'
+        }}
       >
-        <div style={{ paddingLeft: '5%' }}>
+        {/* Section Header moved inside grey background */}
+        <motion.div 
+          initial={{ opacity: 0, y: 30 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true, amount: 0.2 }}
+          transition={{ duration: 0.8, ease: [0.16, 1, 0.3, 1] }}
+          style={{ width: '100%', maxWidth: '1440px', paddingLeft: '5%', marginBottom: '5rem', zIndex: 2, position: 'relative', textAlign: 'left' }}
+        >
           <div style={{ 
             width: '60px', 
             height: '1px', 
@@ -70,33 +84,16 @@ export default function ProcessSection() {
             fontWeight: 400,
             fontStyle: 'italic',
             lineHeight: 1.6,
-            color: '#3b7ac8',
-            opacity: 1,
+            color: '#2a3036',
+            opacity: 0.75,
             maxWidth: '640px',
             margin: '0',
             textAlign: 'left'
           }}>
             here's what clients say after we ship:
           </p>
-        </div>
-      </motion.div>
+        </motion.div>
 
-      <div 
-
-        style={{
-          width: '100%',
-          background: 'radial-gradient(ellipse at 60% 40%, rgba(255, 255, 255, 0.85) 0%, rgba(255, 255, 255, 0.35) 55%, rgba(255, 255, 255, 0) 85%), linear-gradient(135deg, #e8ebee 0%, #dcdfe3 45%, #c9ced3 100%)',
-          padding: '8rem 2rem',
-          display: 'flex',
-          flexDirection: 'column',
-          alignItems: 'center',
-          justifyContent: 'center',
-          position: 'relative',
-          borderTop: '1px solid rgba(0, 0, 0, 0.08)',
-          borderBottom: '1px solid rgba(0, 0, 0, 0.08)',
-          overflow: 'hidden'
-        }}
-      >
         {/* Geometric Abstract Decor Layer (Brown & Beige Tones) */}
         <div 
           className="hide-on-mobile"
@@ -108,9 +105,9 @@ export default function ProcessSection() {
             opacity: 0.85
           }}
         >
-          {/* Top-Left Shapes */}
-          <div style={{ position: 'absolute', width: '160px', height: '160px', border: '1.5px dashed rgba(58, 35, 24, 0.18)', top: '10%', left: '6%' }} />
-          <div style={{ position: 'absolute', width: '45px', height: '45px', border: '1.5px solid rgba(181, 153, 122, 0.35)', top: '14%', left: '12%' }} />
+          {/* Top-Center Shapes (Moved 50% lower over testimonial frame) */}
+          <div style={{ position: 'absolute', width: '160px', height: '160px', border: '1.5px dashed rgba(58, 35, 24, 0.18)', top: '42%', left: '50%', transform: 'translateX(-50%)' }} />
+          <div style={{ position: 'absolute', width: '45px', height: '45px', border: '1.5px solid rgba(181, 153, 122, 0.35)', top: '48%', left: '50%', transform: 'translateX(-50%)' }} />
           
           {/* Top-Right Shapes */}
           <div style={{ position: 'absolute', width: '220px', height: '130px', border: '1.5px solid rgba(58, 35, 24, 0.14)', top: '7%', right: '7%' }} />
@@ -278,7 +275,7 @@ export default function ProcessSection() {
             alignItems: 'center', 
             gap: '12px',
             cursor: 'pointer',
-            opacity: 0.6,
+            opacity: 0.85,
             transition: 'opacity 0.2s ease, transform 0.2s ease',
             zIndex: 10
           }}
@@ -287,7 +284,7 @@ export default function ProcessSection() {
             e.currentTarget.style.transform = 'translateX(5px)';
           }}
           onMouseLeave={(e) => {
-            e.currentTarget.style.opacity = '0.6';
+            e.currentTarget.style.opacity = '0.85';
             e.currentTarget.style.transform = 'translateX(0)';
           }}
         >
@@ -295,11 +292,11 @@ export default function ProcessSection() {
             fontFamily: "var(--font-sans), Inter, sans-serif",
             fontSize: '0.75rem',
             letterSpacing: '0.08em',
-            fontWeight: 500,
-            color: '#121212'
+            fontWeight: 600,
+            color: '#3b7ac8'
           }}>{activeIndex + 1} / {testimonials.length}</span>
           <svg width="65" height="12" viewBox="0 0 65 12" fill="none" xmlns="http://www.w3.org/2000/svg">
-            <path d="M0 6H63.5M63.5 6L58.5 1M63.5 6L58.5 11" stroke="#121212" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"/>
+            <path d="M0 6H63.5M63.5 6L58.5 1M63.5 6L58.5 11" stroke="#3b7ac8" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"/>
           </svg>
         </div>
       </div>

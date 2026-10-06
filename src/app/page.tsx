@@ -69,8 +69,8 @@ export default async function HomePage() {
               fontWeight: 400,
               fontStyle: 'italic',
               lineHeight: 1.6,
-              color: '#3b7ac8',
-              opacity: 1,
+              color: '#2a3036',
+              opacity: 0.75,
               maxWidth: '640px',
               margin: '0 auto',
               textAlign: 'center'

@@ -58,6 +58,40 @@ export default function ProjectsV2({ initialProjects = [] }: ProjectsV2Props) {
         { chip: 'Impact', text: 'Automated 85% of standard intake processing', stat: '85%', statLabel: 'auto-processed' }
       ],
       image: initialProjects[1]?.screens?.[0]?.originalUrl || '/skills.png'
+    },
+    {
+      id: 'v2-3',
+      title: 'Ukraine Case 1',
+      slug: 'ukraine-case-1-dup',
+      subline: 'Custom platform for Ukraine relief efforts',
+      annotations: [
+        { markerNumber: 1, title: 'AI Qualification', text: 'Engages inbound lead inquiries & volunteer requests automatically.' },
+        { markerNumber: 2, title: 'Instant Canvas Sync', text: 'Generates personalized localized campaign graphics in seconds.' },
+        { markerNumber: 3, title: 'CRM Integration', text: 'Syncs data directly with Hubspot & internal tracking tools.' }
+      ],
+      stats: [
+        { chip: 'Problem', text: 'Manual campaign delays', stat: '4.8h', statLabel: 'old delay' },
+        { chip: 'Built with', text: 'Next.js, Canvas Engine & AI API', stat: '< 30s', statLabel: 'build time' },
+        { chip: 'Impact', text: 'Empowered volunteers across 25+ countries', stat: '+340%', statLabel: 'campaign reach' }
+      ],
+      image: initialProjects[0]?.screens?.[0]?.originalUrl || '/skills.png'
+    },
+    {
+      id: 'v2-4',
+      title: 'Ukraine Case 2',
+      slug: 'ukraine-case-2-dup',
+      subline: 'Logistics and tracking platform for Ukraine',
+      annotations: [
+        { markerNumber: 1, title: 'Doc Parsing', text: 'Extracts key structured fields from PDFs and receipts instantly.' },
+        { markerNumber: 2, title: 'Smart Validation', text: 'Flags discrepancies and potential fraud markers in real time.' },
+        { markerNumber: 3, title: 'Instant Routing', text: 'Pushes verified cases to claims managers for one-click approval.' }
+      ],
+      stats: [
+        { chip: 'Problem', text: 'Slow manual claim reviews', stat: '48h', statLabel: 'old turnaround' },
+        { chip: 'Built with', text: 'Gemini Vision, Next.js & Postgres', stat: '2.5 min', statLabel: 'new processing' },
+        { chip: 'Impact', text: 'Automated 85% of standard intake processing', stat: '85%', statLabel: 'auto-processed' }
+      ],
+      image: initialProjects[1]?.screens?.[0]?.originalUrl || '/skills.png'
     }
   ];
 
@@ -173,75 +207,72 @@ export default function ProjectsV2({ initialProjects = [] }: ProjectsV2Props) {
     </div>
   );
 
-  const selectedProject = projectsList.find(p => p.id === selectedProjectId);
+  const [activeCardIndex, setActiveCardIndex] = useState(0);
+
+  useEffect(() => {
+    const track = scrollTrackRef.current;
+    if (!track) return;
+
+    const handleScroll = () => {
+      const children = Array.from(track.children) as HTMLElement[];
+      if (!children.length) return;
+      const trackCenter = track.scrollLeft + track.clientWidth / 2;
+      let closestIdx = 0;
+      let minDistance = Infinity;
+
+      children.forEach((child, idx) => {
+        const childCenter = child.offsetLeft + child.clientWidth / 2;
+        const distance = Math.abs(trackCenter - childCenter);
+        if (distance < minDistance) {
+          minDistance = distance;
+          closestIdx = idx;
+        }
+      });
+      setActiveCardIndex(closestIdx);
+    };
+
+    track.addEventListener('scroll', handleScroll, { passive: true });
+    return () => track.removeEventListener('scroll', handleScroll);
+  }, [projectsList.length]);
 
   return (
-    <section className="projects-section" id="cases" style={{ position: 'relative', width: '100%', margin: '0 auto', padding: '1rem 0', overflow: 'hidden' }}>
-      {/* Top Edge-to-Edge 1px Subtle Grey Divider Bar */}
-      <div 
-        className="process-divider"
-        style={{
-          position: 'absolute',
-          top: 0,
-          left: 0,
-          width: '100%',
-          height: '1px',
-          backgroundColor: 'rgba(0, 0, 0, 0.08)',
-          zIndex: 10
-        }}
-      />
+    <section className="projects-section" id="cases" style={{ position: 'relative', width: '100%', margin: '0 auto', padding: '1rem 0 2rem 0' }}>
       <style>{`
-        .cases-scroll-track {
-          display: flex;
-          gap: 2.5rem;
+        .cases-grid-container {
+          display: grid;
+          grid-template-columns: repeat(2, 1fr);
+          gap: 3.5rem 2.5rem;
           width: 100%;
-          overflow-x: auto;
-          overflow-y: hidden;
-          overscroll-behavior-x: contain;
-          touch-action: pan-x pan-y;
-          scroll-snap-type: x proximity;
-          -webkit-overflow-scrolling: touch;
-          scrollbar-width: none; /* Firefox */
-          padding: 0 2rem; /* Small edge padding */
-        }
-        .cases-scroll-track::-webkit-scrollbar {
-          display: none; /* Chrome/Safari */
-        }
-        .cases-scroll-row-item {
-          scroll-snap-align: center;
-          scroll-snap-stop: always;
+          max-width: 1400px;
+          margin: 0 auto;
+          padding: 0 2rem;
         }
         @media (max-width: 900px) {
-          .cases-scroll-track {
-            padding: 0 calc(50vw - 42.5vw); /* Center padding for 85vw cards */
-            gap: 1.5rem;
-          }
-          .cases-scroll-row-item {
-            flex: 0 0 85vw !important;
-            min-width: 300px !important;
+          .cases-grid-container {
+            grid-template-columns: 1fr !important;
+            gap: 2.5rem !important;
+            padding: 0 1.5rem !important;
           }
         }
       `}</style>
       
-      {/* Scroll Container Wrapper */}
+      {/* 2x2 Grid Wrapper */}
       <div 
         style={{ 
           width: '100%', 
-          paddingBottom: '2rem',
-          paddingTop: '2.5rem'
+          paddingBottom: '1.5rem',
+          paddingTop: '1.5rem'
         }}
       >
-        <div className="cases-scroll-track" ref={scrollTrackRef}>
-          {(projectsList.length >= 2 ? [projectsList[1], projectsList[0], projectsList[1]] : projectsList).map((project, idx) => {
-            const isNavyCard = project.id === 'v2-2';
+        <div className="cases-grid-container">
+          {projectsList.map((project, idx) => {
+            const isNavyCard = project.id === 'v2-2' || project.id === 'v2-4';
             return (
               <div 
                 key={`${project.id}-${idx}`}
-                className="cases-scroll-row-item"
+                className="cases-grid-item"
                 style={{ 
-                  flex: '0 0 calc(45vw - 2.25rem)',
-                  minWidth: '540px',
-                  maxWidth: '720px'
+                  width: '100%'
                 }}
               >
                 <div 
@@ -309,20 +340,6 @@ export default function ProjectsV2({ initialProjects = [] }: ProjectsV2Props) {
           </motion.div>
         )}
       </AnimatePresence>
-
-      {/* Bottom Edge-to-Edge 1px Subtle Grey Divider Bar */}
-      <div 
-        className="process-divider"
-        style={{
-          position: 'absolute',
-          bottom: 0,
-          left: 0,
-          width: '100%',
-          height: '1px',
-          backgroundColor: 'rgba(0, 0, 0, 0.08)',
-          zIndex: 10
-        }}
-      />
     </section>
   );
 }

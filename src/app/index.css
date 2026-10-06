@@ -334,9 +334,9 @@ h1, h2, h3, h4, h5, h6 {
     font-weight: 500 !important;
     font-style: italic !important;
     letter-spacing: -0.015em !important;
-    color: #3b7ac8 !important;
-    -webkit-text-fill-color: #3b7ac8 !important;
-    -webkit-text-stroke: 0.35px #3b7ac8 !important;
+    color: #333333 !important;
+    -webkit-text-fill-color: #333333 !important;
+    -webkit-text-stroke: 0.35px #333333 !important;
   }
 }
 
@@ -349,9 +349,9 @@ h1, h2, h3, h4, h5, h6 {
     font-style: italic !important;
     letter-spacing: -0.015em !important;
     line-height: 1.22 !important;
-    color: #3b7ac8 !important;
-    -webkit-text-fill-color: #3b7ac8 !important;
-    -webkit-text-stroke: 0.35px #3b7ac8 !important;
+    color: #333333 !important;
+    -webkit-text-fill-color: #333333 !important;
+    -webkit-text-stroke: 0.35px #333333 !important;
     text-align: left !important;
   }
 }
@@ -580,8 +580,8 @@ h1, h2, h3, h4, h5, h6 {
 .v2-theme .word-custom,
 .word-custom {
   display: inline-block;
-  color: #3b7ac8 !important;
-  -webkit-text-fill-color: #3b7ac8 !important;
+  color: #121212 !important;
+  -webkit-text-fill-color: #121212 !important;
   text-decoration: none !important;
   text-decoration-color: transparent !important;
   text-decoration-thickness: 1.5px !important;
@@ -598,15 +598,15 @@ h1, h2, h3, h4, h5, h6 {
 
 @keyframes internalPulse {
   0% { transform: scale(1); }
-  50% { transform: scale(1.08); color: #3b7ac8; -webkit-text-fill-color: #3b7ac8; }
+  50% { transform: scale(1.08); color: #121212; -webkit-text-fill-color: #121212; }
   100% { transform: scale(1); }
 }
 
 .v2-theme .word-internal,
 .word-internal {
   display: inline-block;
-  color: #3b7ac8 !important;
-  -webkit-text-fill-color: #3b7ac8 !important;
+  color: #121212 !important;
+  -webkit-text-fill-color: #121212 !important;
   text-decoration: none !important;
   text-decoration-color: transparent !important;
   text-decoration-thickness: 1.5px !important;

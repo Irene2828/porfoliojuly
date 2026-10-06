@@ -394,15 +394,15 @@
   margin: 0;
   background: none;
   -webkit-background-clip: initial;
-  -webkit-text-fill-color: #3b7ac8 !important;
-  color: #3b7ac8 !important;
+  -webkit-text-fill-color: #121212 !important;
+  color: #121212 !important;
   text-transform: none;
   letter-spacing: -0.015em !important;
   font-weight: 400 !important;
   -webkit-font-smoothing: antialiased;
   font-synthesis: none;
-  -webkit-text-stroke: 0.35px #3b7ac8;
-  text-stroke: 0.35px #3b7ac8;
+  -webkit-text-stroke: 0.35px #121212;
+  text-stroke: 0.35px #121212;
 }
 
 .br-mobile {
@@ -1460,26 +1460,29 @@
 
 .hero-image-tagline-stacked {
   position: absolute;
-  bottom: -2.35rem; /* moved lower */
-  left: calc(-10px - 17%);
+  bottom: -5.25rem; /* placed under the image and shifted 50% lower again */
+  left: 50%;
   right: auto;
-  text-align: left;
+  transform: translateX(-50%);
+  text-align: center;
   z-index: 8;
   font-family: var(--font-sans);
   font-size: clamp(0.62rem, 0.88vw, 0.74rem); /* 20% smaller text size */
   text-transform: uppercase;
   letter-spacing: 0.12em;
   line-height: 1.4;
-  /* Apple Tahoe White Frosted Glass background blur overlay */
-  background: rgba(255, 255, 255, 0.72) !important;
-  backdrop-filter: blur(20px) saturate(180%);
-  -webkit-backdrop-filter: blur(20px) saturate(180%);
-  padding: 0.6rem 0.9rem;
+  /* Barely visible glass background */
+  background: rgba(255, 255, 255, 0.15) !important;
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  padding: 0.6rem 1.2rem;
   border-radius: 6px;
-  border: 1px solid rgba(255, 255, 255, 0.8) !important;
-  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.08), 0 2px 6px rgba(0, 0, 0, 0.04);
+  border: 1px solid rgba(255, 255, 255, 0.15) !important;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.02);
   pointer-events: none;
   opacity: 0;
+  width: max-content;
+  white-space: nowrap;
   animation: taglineIntro 0.8s ease 0.6s forwards;
   transition: opacity 0.25s ease, transform 0.25s ease;
 }
@@ -1492,13 +1495,13 @@
 }
 
 .hero-image-tagline-stacked .tagline-title {
-  color: #333333;
+  color: #4a5056;
   font-weight: 600;
 }
 
 @keyframes taglineIntro {
-  0% { opacity: 0; transform: translateY(8px); }
-  100% { opacity: 1; transform: translateY(0); }
+  0% { opacity: 0; transform: translateX(-50%) translateY(8px); }
+  100% { opacity: 1; transform: translateX(-50%) translateY(0); }
 }
 
 /* When wrapper is hovered, hide the tagline so scanner and annotations show */

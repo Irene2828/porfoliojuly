@@ -114,7 +114,7 @@ export default function EditorialStatement() {
               style={{ 
                 fontFamily: "var(--font-serif)",
                 fontSize: 'clamp(24px, 4.16vw, 33.6px)', 
-                color: '#25150C', 
+                color: '#3b7ac8', 
                 fontWeight: 400,
                 fontStyle: 'normal',
                 lineHeight: 1.25,
@@ -122,7 +122,7 @@ export default function EditorialStatement() {
                 textAlign: 'center',
                 width: '100%',
                 margin: 0,
-                WebkitTextStroke: '0.35px #25150C'
+                WebkitTextStroke: '0.35px #3b7ac8'
               }}
             >
               {statements[statementIndex]}
