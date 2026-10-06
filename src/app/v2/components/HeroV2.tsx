@@ -26,7 +26,7 @@ export default function HeroV2() {
                 className="hero-text"
                 style={{ transform: 'translateY(-0.4rem)' }}
               >
-                <h1 className="title-serif hero-statement hero-statement-anim" style={{ fontFamily: "var(--font-serif)", fontSize: 'clamp(49.8px, 6.12vw, 54.8px)', color: '#333333', WebkitTextFillColor: '#333333', WebkitTextStroke: '0px transparent', fontWeight: 500, fontStyle: 'normal', marginTop: '0.6rem', textTransform: 'none', letterSpacing: '-0.005em' }}>
+                <h1 className="title-serif hero-statement hero-statement-anim" style={{ fontFamily: "var(--font-serif)", fontSize: 'clamp(49.8px, 6.12vw, 54.8px)', color: '#4a5568', WebkitTextFillColor: '#4a5568', WebkitTextStroke: '0px transparent', fontWeight: 500, fontStyle: 'normal', marginTop: '0.6rem', textTransform: 'none', letterSpacing: '-0.005em' }}>
                   Looking for a <span className="br-mobile"><br /></span><span className="premium-hover"><span className="word-custom">custom</span></span> <span className="premium-hover">website</span> <span className="br-desktop"><br /></span>or <span className="br-mobile"><br /></span>an <span className="premium-hover"><span className="word-internal">internal</span> AI tool</span>?
                 </h1>
                 <p className="hero-frame-paragraph hero-paragraph-anim" style={{ marginTop: '1.7rem', fontSize: '1.10rem', lineHeight: '1.75', color: '#4a5568', maxWidth: '100%', fontWeight: 400 }}>
