@@ -95,7 +95,7 @@ export default function ProjectsV2({ initialProjects = [] }: ProjectsV2Props) {
     }
   ];
 
-  const [projectsList, setProjectsList] = useState(initialProjectsData);
+  const [projectsList, setProjectsList] = useState(initialProjectsData);  const selectedProject = projectsList.find((p) => p.id === selectedProjectId) ?? null;
 
   useEffect(() => {
     if (selectedProjectId) {
