@@ -64,7 +64,7 @@ export default function ServicesV2() {
       title: 'First Draft',
       desc: 'A fast, working build you can click through in days - not polished, but real enough to react to and easy to build on.',
       icon: (
-        <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#8A9099" strokeWidth="1.75" strokeLinecap="round" strokeLinejoin="round">
+        <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="rgba(59, 122, 200, 0.6)" strokeWidth="1.75" strokeLinecap="round" strokeLinejoin="round">
           <path d="M17 3a2.828 2.828 0 1 1 4 4L7.5 20.5 2 22l1.5-5.5L17 3z"></path>
           <path d="M15 5l4 4"></path>
         </svg>
@@ -76,7 +76,7 @@ export default function ServicesV2() {
       title: 'Test & Refine',
       desc: 'We test where it matters - internally if it\'s a team tool, with real users if it\'s client-facing - and refine based on what we find.',
       icon: (
-        <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#8A9099" strokeWidth="1.75" strokeLinecap="round" strokeLinejoin="round">
+        <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="rgba(59, 122, 200, 0.6)" strokeWidth="1.75" strokeLinecap="round" strokeLinejoin="round">
           <circle cx="11" cy="11" r="8"></circle>
           <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
         </svg>
@@ -88,7 +88,7 @@ export default function ServicesV2() {
       title: 'Delivery',
       desc: 'Launch, handover, and maintenance - we figure out where it lives and how it\'s supported together, based on what actually fits.',
       icon: (
-        <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#8A9099" strokeWidth="1.75" strokeLinecap="round" strokeLinejoin="round">
+        <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="rgba(59, 122, 200, 0.6)" strokeWidth="1.75" strokeLinecap="round" strokeLinejoin="round">
           <line x1="22" y1="2" x2="11" y2="13"></line>
           <polygon points="22 2 15 22 11 13 2 9 22 2"></polygon>
         </svg>
@@ -617,7 +617,7 @@ export default function ServicesV2() {
                   <motion.path
                     d="M 0 0 C 0 84, 384 84, 384 168"
                     fill="none"
-                    stroke="#CBD5E1"
+                    stroke="rgba(59, 122, 200, 0.6)"
                     strokeWidth="2"
                     strokeDasharray="8 12"
                     vectorEffect="non-scaling-stroke"
@@ -642,7 +642,7 @@ export default function ServicesV2() {
                     height: 0,
                     borderLeft: '6px solid transparent',
                     borderRight: '6px solid transparent',
-                    borderTop: '8px solid #CBD5E1'
+                    borderTop: '8px solid rgba(59, 122, 200, 0.6)'
                   }}
                 />
               </div>
@@ -653,7 +653,7 @@ export default function ServicesV2() {
                   <motion.path
                     d="M 384 0 C 384 84, 0 84, 0 168"
                     fill="none"
-                    stroke="#CBD5E1"
+                    stroke="rgba(59, 122, 200, 0.6)"
                     strokeWidth="2"
                     strokeDasharray="8 12"
                     vectorEffect="non-scaling-stroke"
@@ -678,7 +678,7 @@ export default function ServicesV2() {
                     height: 0,
                     borderLeft: '6px solid transparent',
                     borderRight: '6px solid transparent',
-                    borderTop: '8px solid #CBD5E1'
+                    borderTop: '8px solid rgba(59, 122, 200, 0.6)'
                   }}
                 />
               </div>
@@ -700,7 +700,7 @@ export default function ServicesV2() {
             >
               <motion.line 
                 x1="26" y1="80" x2="26" y2="88%" 
-                stroke="#CBD5E1" 
+                stroke="rgba(59, 122, 200, 0.6)" 
                 strokeWidth="2" 
                 strokeDasharray="8 12" 
                 strokeLinecap="round"
@@ -736,8 +736,8 @@ export default function ServicesV2() {
                   >
                     {/* Step Icon Badge */}
                     <motion.div 
-                      initial={{ scale: 0.7, opacity: 0, borderColor: 'rgba(0,0,0,0.12)' }}
-                      whileInView={{ scale: 1, opacity: 1, borderColor: '#CBD5E1' }}
+                      initial={{ scale: 0.7, opacity: 0, borderColor: 'rgba(59, 122, 200, 0.3)' }}
+                      whileInView={{ scale: 1, opacity: 1, borderColor: 'rgba(59, 122, 200, 0.6)' }}
                       viewport={{ once: true, margin: '-10%' }}
                       transition={{ duration: 0.5, delay: i * 0.25 + 0.15, ease: [0.16, 1, 0.3, 1] }}
                       style={{
@@ -746,7 +746,7 @@ export default function ServicesV2() {
                         height: '52px',
                         borderRadius: '50%',
                         backgroundColor: '#ffffff',
-                        border: '1.5px solid #CBD5E1',
+                        border: '1.5px solid rgba(59, 122, 200, 0.6)',
                         boxShadow: 'none',
                         display: 'flex',
                         alignItems: 'center',
@@ -780,10 +780,10 @@ export default function ServicesV2() {
                         <span style={{ 
                           fontFamily: 'var(--font-mono), monospace', 
                           fontSize: '11px', 
-                          color: '#3b7ac8', 
+                          color: '#8A9099', 
                           fontWeight: 600, 
                           letterSpacing: '0.08em',
-                          WebkitTextStroke: '0.35px #3b7ac8'
+                          WebkitTextStroke: '0px transparent'
                         }}>
                           {step.label}
                         </span>
