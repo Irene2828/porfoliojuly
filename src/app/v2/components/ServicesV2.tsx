@@ -418,11 +418,11 @@ export default function ServicesV2() {
                   fontFamily: "var(--font-serif)",
                   fontSize: 'clamp(1.48rem, 2.4vw, 2rem)',
                   fontWeight: 400,
-                  color: '#1A1F2B',
+                  color: '#4a5568',
                   margin: '0 0 1.25rem 0',
                   letterSpacing: '-0.02em',
                   lineHeight: 1.15,
-                  WebkitTextStroke: '0.35px #1A1F2B'
+                  WebkitTextStroke: '0px transparent'
                 }}>
                   Custom AI Tools
                 </h3>
@@ -782,11 +782,11 @@ export default function ServicesV2() {
                       <h3 style={{ 
                         fontFamily: "var(--font-serif)",
                         fontSize: '24px', 
-                        color: '#1A1F2B',
+                        color: '#4a5568',
                         fontWeight: 600,
                         margin: '0 0 0.45rem 0',
                         lineHeight: 1.2,
-                        WebkitTextStroke: '0.3px #1A1F2B'
+                        WebkitTextStroke: '0px transparent'
                       }}>
                         {step.title}
                       </h3>
