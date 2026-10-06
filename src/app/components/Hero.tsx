@@ -127,10 +127,7 @@ export default function Hero() {
           <span className="hero-hover-surface" aria-hidden="true"></span>
           
 
-          <div className="hero-image-tagline-stacked">
-            <div className="tagline-name">IRYNA SHEREMETA</div>
-            <div className="tagline-title">Product builder / Designer</div>
-          </div>
+
         </div>
       </div>
       <div className="hero-bottom-hairline-line"></div>
