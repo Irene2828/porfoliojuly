@@ -1848,3 +1848,27 @@
   }
 }
 
+.mobile-hero-name-badge {
+  display: none;
+}
+
+@media (max-width: 900px) {
+  .hero-frame-paragraph {
+    max-width: 85% !important;
+  }
+  
+  .hero-image-wrapper {
+    display: flex !important;
+    align-items: center !important;
+    justify-content: flex-start !important;
+    gap: 1.25rem !important;
+  }
+
+  .mobile-hero-name-badge {
+    display: flex !important;
+    flex-direction: column !important;
+    justify-content: center !important;
+    gap: 0.15rem !important;
+  }
+}
+

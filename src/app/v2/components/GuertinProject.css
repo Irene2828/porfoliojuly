@@ -175,6 +175,12 @@
   z-index: 10;
   text-align: center;
 }
+@media (max-width: 900px) {
+  .guertin-cards-area,
+  .guertin-pill {
+    display: none !important;
+  }
+}
 .guertin-cards-title {
   color: rgba(255,255,255,0.9);
   font-family: 'Times New Roman', Times, serif;

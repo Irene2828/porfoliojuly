@@ -29,8 +29,8 @@ export default function HeroV2() {
                 <h1 className="title-serif hero-statement hero-statement-anim">
                   Looking for a <span className="br-mobile"><br /></span><span className="premium-hover"><span className="word-custom">custom</span></span> <span className="premium-hover">website</span> <span className="br-desktop"><br /></span>or <span className="br-mobile"><br /></span>an <span className="premium-hover"><span className="word-internal">internal</span> AI tool</span>?
                 </h1>
-                <p className="hero-frame-paragraph hero-paragraph-anim" style={{ marginTop: '1.7rem', fontSize: '1.10rem', lineHeight: '1.75', color: '#333842', maxWidth: '100%', fontWeight: 400, fontStyle: 'italic' }}>
-                  I design and build custom digital products end-to-end for business <span className="br-desktop"><br /></span>and professionals &mdash; from <span style={{ fontWeight: 500, color: '#333842' }}>figuring out what solution you need</span> to <span className="br-desktop"><br /></span><span style={{ fontWeight: 500, color: '#333842' }}>shipping a working product</span>.
+                <p className="hero-frame-paragraph hero-paragraph-anim" style={{ marginTop: '1.7rem', fontSize: '1.10rem', lineHeight: '1.75', color: '#333842', maxWidth: '100%', fontWeight: 400 }}>
+                  I design and build custom digital products end-to-end for business <span className="br-desktop"><br /></span>and professionals &mdash; <span style={{ fontStyle: 'italic' }}>from figuring out what solution you need to <span className="br-desktop"><br /></span>shipping a working product.</span>
                 </p>
               </div>
               <div
@@ -56,11 +56,7 @@ export default function HeroV2() {
         <div
           className="hero-image-wrapper"
         >
-          {/* Mobile Name & Title directly on top of image, centered */}
-          <div className="hero-mobile-intro" style={{ position: 'relative', zIndex: 2 }}>
-            <h2 className="hero-mobile-name">IRYNA SHEREMETA</h2>
-            <p className="hero-mobile-role" style={{ color: '#d1d5db' }}>WEB &amp; AI PRODUCT BUILDER</p>
-          </div>
+
 
           <div className="hero-image-container" style={{ position: 'relative', zIndex: 2 }}>
             {/* Decor removed as requested */}
@@ -68,6 +64,11 @@ export default function HeroV2() {
             <div className="hero-image-brackets-left"></div>
             <img src={heroImage.src} alt="Iryna Sheremeta" className="hero-image" />
             <div className="hero-dot-overlay"></div>
+          </div>
+          
+          <div className="mobile-hero-name-badge">
+            <span style={{ fontFamily: 'Inter, Helvetica, Arial, sans-serif', fontSize: '12px', fontWeight: 600, color: '#000000', letterSpacing: '0.15em', textTransform: 'uppercase', lineHeight: '1.2' }}>IRYNA SHEREMETA</span>
+            <span style={{ fontFamily: 'var(--font-sans)', fontSize: '0.75rem', fontWeight: 400, color: '#5C6672', lineHeight: '1.2' }}>/ Web &amp; AI product builder /</span>
           </div>
           <span className="hero-hover-surface" aria-hidden="true"></span>
           
