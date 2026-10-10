@@ -339,14 +339,6 @@
   top: 3.5rem; /* aligns top edge with top edge of headings */
 }
 
-@media (min-width: 1670px) {
-  .section-divider-live-link {
-    max-width: 1411px;
-  }
-  .section-divider-stats-row {
-    max-width: 1254px;
-  }
-}
 
 .section-divider-live-link.mobile-only-placeholder {
   display: none; /* hide placeholder link on desktop */

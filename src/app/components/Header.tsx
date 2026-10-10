@@ -8,23 +8,25 @@ export default function Header() {
 
   return (
     <header className="premium-header">
-      {/* Left side (Desktop): Name and Title */}
-      <div className="header-spacer-desktop">
-        <a href="/" aria-label="Home" style={{ textDecoration: 'none', display: 'flex', flexDirection: 'row', alignItems: 'baseline', gap: '0.4rem' }}>
-          <span style={{ fontFamily: 'Inter, Helvetica, Arial, sans-serif', fontSize: '13px', fontWeight: 500, color: '#000000', letterSpacing: '0.22em', textTransform: 'uppercase', lineHeight: '1.3' }}>IRYNA SHEREMETA</span>
-          <span style={{ fontFamily: 'var(--font-sans)', fontSize: '0.75rem', fontWeight: 400, color: '#5C6672', lineHeight: '1.2' }}>/ Web &amp; AI product builder /</span>
-        </a>
+      <div className="header-inner-wrapper">
+        {/* Left side (Desktop): Name and Title */}
+        <div className="header-spacer-desktop">
+          <a href="/" aria-label="Home" style={{ textDecoration: 'none', display: 'flex', flexDirection: 'row', alignItems: 'baseline', gap: '0.4rem' }}>
+            <span style={{ fontFamily: 'Inter, Helvetica, Arial, sans-serif', fontSize: '13px', fontWeight: 500, color: '#000000', letterSpacing: '0.22em', textTransform: 'uppercase', lineHeight: '1.3' }}>IRYNA SHEREMETA</span>
+            <span style={{ fontFamily: 'var(--font-sans)', fontSize: '0.7875rem', fontWeight: 400, color: '#5C6672', lineHeight: '1.2' }}>/ Web &amp; AI product builder /</span>
+          </a>
+        </div>
+
+        {/* Center (Desktop): Empty */}
+        <div className="header-center-empty"></div>
+
+        {/* Right side (Desktop): Nav links */}
+        <nav className="header-nav header-nav-desktop" style={{ marginLeft: 'auto', marginRight: '0', justifyContent: 'flex-end' }}>
+          <a href="#expertise" className="nav-link">EXPERTISE</a>
+          <a href="#cases" className="nav-link">CASES</a>
+          <a href="#about" className="nav-link">ABOUT</a>
+        </nav>
       </div>
-
-      {/* Center (Desktop): Empty */}
-      <div className="header-center-empty"></div>
-
-      {/* Right side (Desktop): Nav links */}
-      <nav className="header-nav header-nav-desktop" style={{ marginLeft: 'auto', marginRight: '0', justifyContent: 'flex-end' }}>
-        <a href="#expertise" className="nav-link">EXPERTISE</a>
-        <a href="#cases" className="nav-link">CASES</a>
-        <a href="#about" className="nav-link">ABOUT</a>
-      </nav>
 
       {/* Mobile Header Elements: Social Icons on Left, CASES link + Hamburger on Right */}
       <div className="mobile-header-left" style={{ gap: '0.75rem' }}>

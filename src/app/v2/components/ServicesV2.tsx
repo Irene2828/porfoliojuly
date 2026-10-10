@@ -60,11 +60,11 @@ export default function ServicesV2() {
   const steps = [
     {
       num: '01',
-      label: '// 01 - DRAFT',
+      label: '// DRAFT',
       title: 'First Draft',
       desc: 'A fast, working build you can click through in days - not polished, but real enough to react to and easy to build on.',
       icon: (
-        <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="rgba(59, 122, 200, 0.6)" strokeWidth="1.75" strokeLinecap="round" strokeLinejoin="round">
+        <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#f4f4f5" strokeWidth="1.75" strokeLinecap="round" strokeLinejoin="round">
           <path d="M17 3a2.828 2.828 0 1 1 4 4L7.5 20.5 2 22l1.5-5.5L17 3z"></path>
           <path d="M15 5l4 4"></path>
         </svg>
@@ -72,11 +72,11 @@ export default function ServicesV2() {
     },
     {
       num: '02',
-      label: '// 02 - TEST',
+      label: '// TEST',
       title: 'Test & Refine',
       desc: 'We test where it matters - internally if it\'s a team tool, with real users if it\'s client-facing - and refine based on what we find.',
       icon: (
-        <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="rgba(59, 122, 200, 0.6)" strokeWidth="1.75" strokeLinecap="round" strokeLinejoin="round">
+        <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#f4f4f5" strokeWidth="1.75" strokeLinecap="round" strokeLinejoin="round">
           <circle cx="11" cy="11" r="8"></circle>
           <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
         </svg>
@@ -84,11 +84,11 @@ export default function ServicesV2() {
     },
     {
       num: '03',
-      label: '// 03 - LAUNCH',
+      label: '// LAUNCH',
       title: 'Delivery',
       desc: 'Launch, handover, and maintenance - we figure out where it lives and how it\'s supported together, based on what actually fits.',
       icon: (
-        <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="rgba(59, 122, 200, 0.6)" strokeWidth="1.75" strokeLinecap="round" strokeLinejoin="round">
+        <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#f4f4f5" strokeWidth="1.75" strokeLinecap="round" strokeLinejoin="round">
           <line x1="22" y1="2" x2="11" y2="13"></line>
           <polygon points="22 2 15 22 11 13 2 9 22 2"></polygon>
         </svg>
@@ -422,7 +422,7 @@ export default function ServicesV2() {
                   margin: '0 0 1.25rem 0',
                   letterSpacing: '-0.02em',
                   lineHeight: 1.15,
-                  WebkitTextStroke: '0px transparent'
+                  WebkitTextStroke: '0.35px #4a5568'
                 }}>
                   Custom AI Tools
                 </h3>
@@ -536,29 +536,13 @@ export default function ServicesV2() {
         style={{
           position: 'relative',
           width: '100%',
-          background: 'radial-gradient(ellipse at 60% 40%, rgba(255, 255, 255, 0.85) 0%, rgba(255, 255, 255, 0.35) 55%, rgba(255, 255, 255, 0) 85%), linear-gradient(135deg, #e8ebee 0%, #dcdfe3 45%, #c9ced3 100%)',
-          borderTop: '1px solid rgba(0, 0, 0, 0.08)',
-          borderBottom: '1px solid rgba(0, 0, 0, 0.08)',
+          backgroundColor: '#18191e',
+          borderTop: '1px solid rgba(255, 255, 255, 0.08)',
+          borderBottom: '1px solid rgba(255, 255, 255, 0.08)',
           boxShadow: '0 20px 48px rgba(0, 0, 0, 0.03)',
           overflow: 'hidden'
         }}
       >
-        {/* Ambient Luminous White Glow Spotlight */}
-        <div 
-          style={{
-            position: 'absolute',
-            top: '50%',
-            left: '45%',
-            transform: 'translate(-50%, -50%)',
-            width: '60%',
-            height: '80%',
-            background: 'radial-gradient(ellipse at center, rgba(255, 255, 255, 0.9) 0%, rgba(255, 255, 255, 0.4) 45%, rgba(255, 255, 255, 0) 75%)',
-            pointerEvents: 'none',
-            filter: 'blur(30px)',
-            zIndex: 1
-          }}
-        />
-
         {/* Premium Geometric Abstract Decor Layer (Process) */}
         <div 
           className="hide-on-mobile"
@@ -609,107 +593,9 @@ export default function ServicesV2() {
               padding: '1.5rem 0'
             }}
           >
-            {/* Desktop Curved Dashed Flow Arrows */}
-            <div className="process-svg-desktop" style={{ position: 'absolute', top: 0, left: 0, width: '100%', height: '100%', pointerEvents: 'none', zIndex: 2 }}>
-              {/* Curve 1: From Bullet 1 to Bullet 2 */}
-              <div style={{ position: 'absolute', left: '26px', top: '60px', width: '40%', height: '168px' }}>
-                <svg width="100%" height="100%" viewBox="0 0 384 168" preserveAspectRatio="none" style={{ overflow: 'visible' }}>
-                  <motion.path
-                    d="M 0 0 C 0 84, 384 84, 384 168"
-                    fill="none"
-                    stroke="rgba(59, 122, 200, 0.6)"
-                    strokeWidth="2"
-                    strokeDasharray="8 12"
-                    vectorEffect="non-scaling-stroke"
-                    strokeLinecap="round"
-                    initial={{ pathLength: 0, opacity: 0 }}
-                    whileInView={{ pathLength: 1, opacity: 0.85 }}
-                    viewport={{ once: true }}
-                    transition={{ duration: 1.1, delay: 0.2, ease: [0.16, 1, 0.3, 1] }}
-                  />
-                </svg>
-                {/* Fixed HTML Arrowhead */}
-                <motion.div 
-                  initial={{ opacity: 0 }}
-                  whileInView={{ opacity: 0.85 }}
-                  viewport={{ once: true }}
-                  transition={{ duration: 0.3, delay: 1.3 }}
-                  style={{
-                    position: 'absolute',
-                    bottom: '-2px',
-                    right: '-6px',
-                    width: 0,
-                    height: 0,
-                    borderLeft: '6px solid transparent',
-                    borderRight: '6px solid transparent',
-                    borderTop: '8px solid rgba(59, 122, 200, 0.6)'
-                  }}
-                />
-              </div>
 
-              {/* Curve 2: From Bullet 2 to Bullet 3 */}
-              <div style={{ position: 'absolute', left: '26px', top: '296px', width: '40%', height: '168px' }}>
-                <svg width="100%" height="100%" viewBox="0 0 384 168" preserveAspectRatio="none" style={{ overflow: 'visible' }}>
-                  <motion.path
-                    d="M 384 0 C 384 84, 0 84, 0 168"
-                    fill="none"
-                    stroke="rgba(59, 122, 200, 0.6)"
-                    strokeWidth="2"
-                    strokeDasharray="8 12"
-                    vectorEffect="non-scaling-stroke"
-                    strokeLinecap="round"
-                    initial={{ pathLength: 0, opacity: 0 }}
-                    whileInView={{ pathLength: 1, opacity: 0.85 }}
-                    viewport={{ once: true }}
-                    transition={{ duration: 1.1, delay: 0.6, ease: [0.16, 1, 0.3, 1] }}
-                  />
-                </svg>
-                {/* Fixed HTML Arrowhead */}
-                <motion.div 
-                  initial={{ opacity: 0 }}
-                  whileInView={{ opacity: 0.85 }}
-                  viewport={{ once: true }}
-                  transition={{ duration: 0.3, delay: 1.7 }}
-                  style={{
-                    position: 'absolute',
-                    bottom: '-2px',
-                    left: '-6px',
-                    width: 0,
-                    height: 0,
-                    borderLeft: '6px solid transparent',
-                    borderRight: '6px solid transparent',
-                    borderTop: '8px solid rgba(59, 122, 200, 0.6)'
-                  }}
-                />
-              </div>
-            </div>
 
-            {/* Mobile Vertical Dashed Line */}
-            <svg 
-              className="process-svg-mobile"
-              style={{
-                position: 'absolute',
-                top: 0,
-                left: 0,
-                width: '100%',
-                height: '100%',
-                pointerEvents: 'none',
-                zIndex: 2,
-                overflow: 'visible'
-              }}
-            >
-              <motion.line 
-                x1="26" y1="80" x2="26" y2="88%" 
-                stroke="rgba(59, 122, 200, 0.6)" 
-                strokeWidth="2" 
-                strokeDasharray="8 12" 
-                strokeLinecap="round"
-                initial={{ pathLength: 0, opacity: 0 }}
-                whileInView={{ pathLength: 1, opacity: 0.85 }}
-                viewport={{ once: true }}
-                transition={{ duration: 1.5, delay: 0.2, ease: [0.16, 1, 0.3, 1] }}
-              />
-            </svg>
+
 
             <div style={{ display: 'flex', flexDirection: 'column', gap: '4.5rem', position: 'relative', zIndex: 3 }}>
               {steps.map((step, i) => {
@@ -734,28 +620,28 @@ export default function ServicesV2() {
                       paddingRight: isOdd ? '0%' : '20%'
                     }}
                   >
-                    {/* Step Icon Badge */}
+                    {/* Step Number */}
                     <motion.div 
-                      initial={{ scale: 0.7, opacity: 0, borderColor: 'rgba(59, 122, 200, 0.3)' }}
-                      whileInView={{ scale: 1, opacity: 1, borderColor: 'rgba(59, 122, 200, 0.6)' }}
+                      initial={{ scale: 0.9, opacity: 0 }}
+                      whileInView={{ scale: 1, opacity: 1 }}
                       viewport={{ once: true, margin: '-10%' }}
                       transition={{ duration: 0.5, delay: i * 0.25 + 0.15, ease: [0.16, 1, 0.3, 1] }}
                       style={{
                         flexShrink: 0,
-                        width: '52px',
-                        height: '52px',
-                        borderRadius: '50%',
-                        backgroundColor: '#ffffff',
-                        border: '1.5px solid rgba(59, 122, 200, 0.6)',
-                        boxShadow: 'none',
+                        width: '60px',
                         display: 'flex',
-                        alignItems: 'center',
-                        justifyContent: 'center',
+                        alignItems: 'flex-start',
+                        justifyContent: 'flex-start',
                         zIndex: 4,
-                        marginTop: '0.1rem'
+                        marginTop: '-0.2rem',
+                        fontFamily: "var(--font-serif)",
+                        fontSize: '3.5rem',
+                        fontWeight: 300,
+                        color: 'rgba(255, 255, 255, 0.15)',
+                        lineHeight: 1
                       }}
                     >
-                      {step.icon}
+                      {step.num}
                     </motion.div>
 
                     {/* Step Content Frame with Reveal Arrival */}
@@ -768,10 +654,10 @@ export default function ServicesV2() {
                         flex: 1, 
                         textAlign: 'left',
                         padding: '1.25rem 1.6rem',
-                        backgroundColor: 'rgba(255, 255, 255, 0.85)',
+                        backgroundColor: 'transparent',
                         backdropFilter: 'blur(12px)',
                         WebkitBackdropFilter: 'blur(12px)',
-                        border: '1px solid rgba(26, 31, 43, 0.15)',
+                        border: '1px solid rgba(255, 255, 255, 0.15)',
                         borderRadius: '0px',
                         boxShadow: '0 8px 24px rgba(0, 0, 0, 0.03)'
                       }}
@@ -791,11 +677,11 @@ export default function ServicesV2() {
                       <h3 style={{ 
                         fontFamily: "var(--font-serif)",
                         fontSize: '24px', 
-                        color: '#3b7ac8',
+                        color: '#ffffff',
                         fontWeight: 600,
                         margin: '0 0 0.45rem 0',
                         lineHeight: 1.2,
-                        WebkitTextStroke: '0.35px #3b7ac8'
+                        WebkitTextStroke: '0.35px #ffffff'
                       }}>
                         {step.title}
                       </h3>
@@ -804,7 +690,7 @@ export default function ServicesV2() {
                         fontFamily: "var(--font-sans), Inter, sans-serif",
                         fontSize: '1.02rem',
                         lineHeight: 1.55,
-                        color: '#333842',
+                        color: '#d1d5db',
                         fontWeight: 400,
                         opacity: 0.9,
                         margin: '0',

@@ -12,11 +12,6 @@
   max-width: 1283px !important;
 }
 
-@media (min-width: 1670px) {
-  .services-section .container {
-    max-width: 1411px !important;
-  }
-}
 
 @media (max-width: 900px) {
   .services-section {
