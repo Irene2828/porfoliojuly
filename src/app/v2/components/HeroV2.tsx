@@ -6,27 +6,39 @@ import heroImage from '@/app/assets/test.webp';
 export default function HeroV2() {
   return (
     <section className="section hero-section" id="home">
-      {/* Background Split */}
-      <div className="hero-bg-split" />
-      <div className="container hero-container" style={{ position: 'relative' }}>
-        {/* Geometric support layer (z-index 1, under content z-10) */}
-        <div className="hero-decor-layer hide-on-mobile" style={{ position: 'absolute', inset: 0, zIndex: 1, pointerEvents: 'none', opacity: 0.7 }}>
-          {/* Right & center decor squares */}
-          <div style={{ position: 'absolute', width: '160px', height: '100px', border: '1.5px dashed rgba(235, 235, 237, 0.45)', top: '-25px', left: '47%' }} />
-          <div style={{ position: 'absolute', width: '40px', height: '40px', border: '1.5px solid rgba(235, 235, 237, 0.45)', top: '-10px', left: '53%' }} />
-          <div style={{ position: 'absolute', width: '120px', height: '120px', border: '2px solid rgba(235, 235, 237, 0.55)', top: '60px', left: '43%' }} />
-        </div>
+      {/* Background Split with Testimonial-Style Architecture Geometry */}
+      <div className="hero-bg-split">
+        {/* Geometric Abstract Decor Layer (matching Testimonials Grey BG) */}
+        <div 
+          className="hide-on-mobile"
+          style={{
+            position: 'absolute',
+            inset: 0,
+            pointerEvents: 'none',
+            zIndex: 1,
+            opacity: 0.85
+          }}
+        >
+          {/* Top-Right Shapes */}
+          <div style={{ position: 'absolute', width: '220px', height: '130px', border: '1.5px solid rgba(232, 127, 115, 0.5)', top: '8%', right: '8%' }} />
+          <div style={{ position: 'absolute', width: '75px', height: '75px', border: '1.5px dashed rgba(232, 127, 115, 0.45)', borderRadius: '50%', top: '22%', right: '18%' }} />
 
+          {/* Center-Left Shapes */}
+          <div style={{ position: 'absolute', width: '160px', height: '100px', border: '1.5px solid rgba(232, 127, 115, 0.5)', top: '42%', left: '8%' }} />
+          <div style={{ position: 'absolute', width: '45px', height: '45px', border: '1.5px dashed rgba(232, 127, 115, 0.45)', top: '55%', left: '15%' }} />
+        </div>
+      </div>
+
+      <div className="container hero-container" style={{ position: 'relative' }}>
         {/* Left side (now visually Left): Content, Headline frame, and CTAs */}
         <div className="hero-content">
           <div className="hero-copy-motion">
             <div className="hero-name-group" style={{ position: 'relative' }}>
-              <div className="hero-connector-line"></div>
               <div
                 className="hero-text"
                 style={{ transform: 'translateY(-0.4rem)' }}
               >
-                <h1 className="title-serif hero-statement hero-statement-anim">
+                <h1 className="hero-statement hero-statement-anim">
                   Looking for a <span className="br-mobile"><br /></span><span className="premium-hover"><span className="word-custom">custom</span></span> <span className="premium-hover">website</span> <span className="br-desktop"><br /></span>or <span className="br-mobile"><br /></span>an <span className="premium-hover"><span className="word-internal">internal</span> AI tool</span>?
                 </h1>
                 <p className="hero-frame-paragraph hero-paragraph-anim" style={{ marginTop: '1.7rem', fontSize: '1.10rem', lineHeight: '1.75', color: '#333842', maxWidth: '100%', fontWeight: 400 }}>
@@ -56,23 +68,40 @@ export default function HeroV2() {
         <div
           className="hero-image-wrapper"
         >
-
-
           <div className="hero-image-container" style={{ position: 'relative', zIndex: 2 }}>
-            {/* Decor removed as requested */}
             <div className="hero-image-brackets"></div>
             <div className="hero-image-brackets-left"></div>
             <img src={heroImage.src} alt="Iryna Sheremeta" className="hero-image" />
             <div className="hero-dot-overlay"></div>
           </div>
-          
-          <div className="mobile-hero-name-badge">
-            <span style={{ fontFamily: 'Inter, Helvetica, Arial, sans-serif', fontSize: '12px', fontWeight: 600, color: '#000000', letterSpacing: '0.15em', textTransform: 'uppercase', lineHeight: '1.2' }}>IRYNA SHEREMETA</span>
-            <span style={{ fontFamily: 'var(--font-sans)', fontSize: '0.75rem', fontWeight: 400, color: '#5C6672', lineHeight: '1.2' }}>/ Web &amp; AI product builder /</span>
-          </div>
-          <span className="hero-hover-surface" aria-hidden="true"></span>
-          
 
+          {/* 3 Labels Under Image */}
+          <div 
+            className="hero-image-labels"
+            style={{
+              display: 'flex',
+              alignItems: 'center',
+              justifyContent: 'center',
+              gap: '11px',
+              marginTop: '1.25rem',
+              position: 'relative',
+              zIndex: 3
+            }}
+          >
+            <span style={{ fontFamily: 'var(--font-heading)', fontSize: '14.5px', fontWeight: 500, letterSpacing: '0.04em', color: '#3d4454' }}>
+              Designer
+            </span>
+            <span style={{ color: '#888888', fontSize: '12px', opacity: 0.5 }}>•</span>
+            <span style={{ fontFamily: 'var(--font-heading)', fontSize: '14.5px', fontWeight: 500, letterSpacing: '0.04em', color: '#3d4454' }}>
+              Builder
+            </span>
+            <span style={{ color: '#888888', fontSize: '12px', opacity: 0.5 }}>•</span>
+            <span style={{ fontFamily: 'var(--font-heading)', fontSize: '14.5px', fontWeight: 500, letterSpacing: '0.04em', color: '#3d4454' }}>
+              AI consultant
+            </span>
+          </div>
+          
+          <span className="hero-hover-surface" aria-hidden="true"></span>
         </div>
       </div>
       <div className="hero-bottom-hairline-line"></div>

@@ -58,8 +58,9 @@ export default function Services() {
                       display: 'block', 
                       marginBottom: '0.5rem', 
                       fontSize: '1.2rem',
-                      fontFamily: "'Times New Roman', Times, Georgia, serif",
-                      fontWeight: 500
+                      fontFamily: "var(--font-heading), 'Outfit', sans-serif",
+                      fontWeight: 600,
+                      letterSpacing: '-0.02em'
                     }}>
                       {benefit.title}
                     </strong>

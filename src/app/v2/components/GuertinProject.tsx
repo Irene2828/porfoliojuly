@@ -3,7 +3,15 @@
 import { motion } from 'framer-motion';
 import './GuertinProject.css';
 
-export default function GuertinProject() {
+interface GuertinProjectProps {
+  title?: string;
+  subline?: string;
+  kicker?: string;
+  browserTitle?: string;
+  cardsTitle?: string;
+}
+
+export default function GuertinProject({ kicker, subline, browserTitle, cardsTitle }: GuertinProjectProps = {}) {
   return (
     <div className="guertin-wrapper">
       {/* --- Exact 5-Layer Background Stack --- */}
@@ -54,8 +62,8 @@ export default function GuertinProject() {
         
         {/* Mockup Area */}
         <div style={{ fontFamily: 'var(--font-mono), monospace', fontSize: '11px', opacity: 0.6, marginBottom: '16px', width: '100%', textAlign: 'left', color: '#ffffff' }}>
-          GUERTIN ISABELLE // Professional Services Website<br/>
-          Quebec - Service business
+          {kicker || 'GUERTIN ISABELLE // Professional Services Website'}<br/>
+          {subline || 'Quebec - Service business'}
         </div>
         <div className="guertin-mockup-area">
           
@@ -85,7 +93,7 @@ export default function GuertinProject() {
                 <div className="guertin-browser-dot" />
                 <div className="guertin-browser-dot" />
               </div>
-              <div className="guertin-browser-title">Guertin Isabelle</div>
+              <div className="guertin-browser-title">{browserTitle || 'Guertin Isabelle'}</div>
               <div style={{ width: '40px' }}></div>
             </div>
             {/* Browser Content Image */}
@@ -133,7 +141,7 @@ export default function GuertinProject() {
 
         {/* 3 Dark Cards Below */}
         <div className="guertin-cards-area">
-          <h3 className="guertin-cards-title">Designed to turn expertise into booked consultations.</h3>
+          <h3 className="guertin-cards-title">{cardsTitle || 'Designed to turn expertise into booked consultations.'}</h3>
           
           <div className="guertin-cards-grid">
             <motion.div 

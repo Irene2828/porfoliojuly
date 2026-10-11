@@ -8,8 +8,8 @@ export default function EditorialStatement() {
   const [statementIndex, setStatementIndex] = useState(0);
 
   const statements = [
-    <span key="1">Turn <span style={{ color: '#3b7ac8', WebkitTextStroke: '0.35px #3b7ac8', fontStyle: 'italic' }}>visitors into clients</span> with a custom website.</span>,
-    <span key="2">Turn <span style={{ color: '#3b7ac8', WebkitTextStroke: '0.35px #3b7ac8', fontStyle: 'italic' }}>hours of work into minutes</span> with a custom AI tool.</span>
+    <span key="1">Turn <span style={{ color: 'var(--color-heading-peach)' }}>visitors into clients</span> with a custom website.</span>,
+    <span key="2">Turn <span style={{ color: 'var(--color-heading-peach)' }}>hours of work into minutes</span> with a custom AI tool.</span>
   ];
 
   useEffect(() => {
@@ -41,9 +41,9 @@ export default function EditorialStatement() {
     >
       <style>{`
         .prefooter-btn-primary {
-          font-family: var(--font-sans), Inter, sans-serif !important;
+          font-family: var(--font-label), sans-serif !important;
           font-size: 0.81rem !important;
-          font-weight: 700 !important;
+          font-weight: 600 !important;
           text-transform: uppercase !important;
           letter-spacing: 0.08em !important;
           justify-content: center;
@@ -54,7 +54,7 @@ export default function EditorialStatement() {
           -webkit-text-fill-color: #ffffff !important;
           border: none !important;
           border-radius: 56px !important;
-          box-shadow: none !important;
+          box-shadow: 6px 6px 0px rgba(232, 127, 115, 0.45) !important;
           transition: background 0.22s ease, border-color 0.22s ease, transform 0.2s ease, box-shadow 0.2s ease !important;
           -webkit-text-stroke: 0 !important;
         }
@@ -63,6 +63,7 @@ export default function EditorialStatement() {
           border-color: #24252a !important;
           color: #ffffff !important;
           -webkit-text-fill-color: #ffffff !important;
+          box-shadow: 0 8px 24px rgba(232, 127, 115, 0.4) !important;
         }
         .face-cta {
           background-color: #18191e !important;
@@ -71,7 +72,7 @@ export default function EditorialStatement() {
           border: none !important;
         }
         .face-cta:hover {
-          box-shadow: 0 0 20px rgba(0,255,163,0.15) !important;
+          box-shadow: 0 8px 24px rgba(232, 127, 115, 0.4) !important;
           background-color: #18191e !important;
         }
       `}</style>
@@ -112,17 +113,17 @@ export default function EditorialStatement() {
               transition={{ duration: 0.5, ease: [0.16, 1, 0.3, 1] }}
               className="editorial-blue-heading"
               style={{ 
-                fontFamily: "var(--font-serif)",
-                fontSize: 'clamp(24px, 4.16vw, 33.6px)', 
-                color: '#3b7ac8', 
+                fontFamily: "var(--font-heading)",
+                fontSize: 'clamp(24px, 4vw, 34px)', 
+                color: '#3a3d46', 
                 fontWeight: 400,
                 fontStyle: 'normal',
                 lineHeight: 1.25,
-                letterSpacing: '-0.01em',
+                letterSpacing: '-0.02em',
                 textAlign: 'center',
                 width: '100%',
                 margin: 0,
-                WebkitTextStroke: '0.35px #3b7ac8'
+                WebkitTextStroke: '0'
               }}
             >
               {statements[statementIndex]}

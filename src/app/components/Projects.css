@@ -767,22 +767,6 @@
   padding-bottom: 0rem;
 }
 
-.preview-card-caption {
-  font-family: 'JetBrains Mono', Menlo, monospace !important;
-  font-size: 10px !important;
-  font-weight: 400 !important;
-  color: #4b85bb !important;
-  text-align: center;
-  text-transform: uppercase !important;
-  letter-spacing: 0.18em !important;
-  transition: color 0.2s ease;
-}
-
-.preview-item-container:hover .preview-card-caption {
-  color: #4b85bb !important;
-  text-decoration: none;
-}
-
 /* --- Preview Card Custom Colors (Silver Grey) --- */
 .v2-theme .page-section-divider.preview-view .section-divider-tag-row,
 .v2-theme .page-section-divider.preview-view .section-divider-stats-row,
@@ -904,9 +888,10 @@
 
 .page-section-divider.modal-view .section-divider-tag-text,
 .v2-theme .page-section-divider.modal-view .section-divider-tag-text {
-  font-family: 'Times New Roman', Times, Georgia, serif !important;
-  font-size: clamp(26px, 3.2vw, 28px) !important;
-  font-weight: 400 !important;
+  font-family: var(--font-heading), 'Outfit', sans-serif !important;
+  font-size: clamp(24px, 3.2vw, 28px) !important;
+  font-weight: 500 !important;
+  letter-spacing: -0.02em !important;
   color: #121212 !important;
   -webkit-text-stroke: 0px !important;
   text-stroke: 0px !important;
@@ -948,7 +933,7 @@
   right: 1.5rem;
   background: transparent !important;
   border: none !important;
-  font-family: 'Inter', sans-serif !important;
+  font-family: var(--font-body), 'Plus Jakarta Sans', sans-serif !important;
   font-size: 24px !important;
   font-weight: 300 !important;
   color: #1a1a1a !important;
@@ -973,19 +958,30 @@
   opacity: 0 !important;
   transform: translateY(4px);
   transition: opacity 0.25s ease, transform 0.25s ease;
-  font-family: 'JetBrains Mono', Menlo, monospace;
-  font-size: 0.84375rem !important;
-  letter-spacing: 0.1em;
-  text-transform: uppercase;
-  color: #3b7ac8;
-  margin-top: 0.65rem;
+  font-family: var(--font-heading), 'Outfit', sans-serif !important;
+  font-size: 0.92rem !important;
+  font-weight: 300 !important;
+  letter-spacing: 0.01em !important;
+  text-transform: none !important;
+  color: #3a3d46 !important;
+  margin-top: 0.75rem;
   text-align: center;
+  padding: 0 0.5rem;
+  line-height: 1.35;
 }
 
 .preview-item-container:hover .preview-card-caption,
 .preview-item-container:focus-within .preview-card-caption {
   opacity: 1 !important;
   transform: translateY(0) !important;
+}
+
+@media (max-width: 900px), (hover: none) {
+  .preview-card-caption {
+    opacity: 1 !important;
+    transform: translateY(0) !important;
+    font-size: 0.86rem !important;
+  }
 }
 
 @media (max-width: 900px) {

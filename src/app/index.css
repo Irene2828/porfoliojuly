@@ -1,11 +1,12 @@
-@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&family=Baskervville:ital@0;1&family=Libre+Bodoni:ital,wght@0,400;0,500;0,600;1,400&family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;0,700;1,300;1,400&family=Lora:ital,wght@0,400;0,500;0,600;0,700;1,400&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800&family=Plus+Jakarta+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;1,400;1,500&family=JetBrains+Mono:wght@400;500&display=swap');
 
 :root {
-  --font-serif: 'Editorial New Light', 'PPEditorialNew-Light', 'Editorial New', 'Cormorant Garamond', serif;
-  --font-baskerville: 'Baskervville', serif;
-  --font-bodoni: 'Libre Bodoni', serif;
-  --font-lora: 'Lora', serif;
-  --font-sans: 'Inter', sans-serif;
+  --font-heading: 'Outfit', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  --font-body: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  --font-label: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  --font-sans: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  --font-serif: 'Outfit', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  --font-mono: 'JetBrains Mono', Menlo, Monaco, monospace;
   
   --color-bg: #ffffff;
   --color-text: #0a0a0a;
@@ -14,6 +15,8 @@
   --color-accent-border: #b9e1fb;
   --color-accent-soft: #eef8ff;
   --color-accent-deep: #6cb8e8;
+  --color-heading-peach: #e87f73;
+  --color-headline-matte: #3a3d46;
   
   --space-sm: 1rem;
   --space-md: 2rem;
@@ -35,11 +38,13 @@ html, body {
 }
 
 body {
-  font-family: var(--font-sans);
+  font-family: var(--font-body);
   background-color: var(--color-bg);
   color: var(--color-text);
-  line-height: 1.6;
+  line-height: 1.65;
+  letter-spacing: -0.011em;
   -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
 }
 
 a {
@@ -55,28 +60,45 @@ img, picture, video, canvas, svg {
 
 /* Typography */
 h1, h2, h3, h4, h5, h6 {
+  font-family: var(--font-heading);
   font-weight: 400;
   line-height: 1.2;
+  letter-spacing: -0.02em;
+  -webkit-text-stroke: 0 !important;
+  text-stroke: 0 !important;
 }
 
 .title-serif {
-  font-family: var(--font-serif);
+  font-family: var(--font-heading) !important;
+  font-weight: 400 !important;
+  letter-spacing: -0.02em;
+  -webkit-text-stroke: 0 !important;
+  text-stroke: 0 !important;
 }
 
 .text-huge {
+  font-family: var(--font-heading);
   font-size: clamp(3rem, 10vw, 8rem);
-  letter-spacing: -0.02em;
+  letter-spacing: -0.025em;
+  font-weight: 500;
+  -webkit-text-stroke: 0 !important;
+  text-stroke: 0 !important;
 }
 
 .text-large {
+  font-family: var(--font-heading);
   font-size: clamp(2rem, 5vw, 4rem);
+  letter-spacing: -0.02em;
+  font-weight: 500;
+  -webkit-text-stroke: 0 !important;
+  text-stroke: 0 !important;
 }
 
 .text-sans {
-  font-family: var(--font-sans);
+  font-family: var(--font-label);
   text-transform: uppercase;
-  letter-spacing: 0.1em;
-  font-weight: 300;
+  letter-spacing: 0.08em;
+  font-weight: 500;
 }
 
 /* Layout */
@@ -329,13 +351,14 @@ h1, h2, h3, h4, h5, h6 {
 @media (min-width: 901px) {
   .v2-theme .hero-statement,
   .v2-theme .hero-name-group .hero-text h1 {
+    font-family: var(--font-heading) !important;
     font-size: clamp(36px, 4.8vw, 46px) !important;
-    font-weight: 500 !important;
-    font-style: normal !important;
-    letter-spacing: -0.015em !important;
-    color: #3b7ac8 !important;
-    -webkit-text-fill-color: #3b7ac8 !important;
-    -webkit-text-stroke: 0.35px #3b7ac8 !important;
+    font-weight: 400 !important;
+    letter-spacing: -0.02em !important;
+    color: #3a3d46 !important;
+    -webkit-text-fill-color: #3a3d46 !important;
+    -webkit-text-stroke: 0 !important;
+    text-stroke: 0 !important;
   }
 }
 
@@ -349,15 +372,15 @@ h1, h2, h3, h4, h5, h6 {
 @media (max-width: 900px) {
   .v2-theme .hero-statement,
   .v2-theme .hero-name-group .hero-text h1 {
-    font-family: var(--font-serif) !important;
-    font-size: clamp(34.5px, 8.97vw, 46px) !important;
-    font-weight: 500 !important;
-    font-style: normal !important;
-    letter-spacing: -0.015em !important;
+    font-family: var(--font-heading) !important;
+    font-size: clamp(32px, 8.5vw, 44px) !important;
+    font-weight: 400 !important;
+    letter-spacing: -0.02em !important;
     line-height: 1.22 !important;
-    color: #3b7ac8 !important;
-    -webkit-text-fill-color: #3b7ac8 !important;
-    -webkit-text-stroke: 0.35px #3b7ac8 !important;
+    color: #3a3d46 !important;
+    -webkit-text-fill-color: #3a3d46 !important;
+    -webkit-text-stroke: 0 !important;
+    text-stroke: 0 !important;
     text-align: left !important;
   }
 }
@@ -365,9 +388,9 @@ h1, h2, h3, h4, h5, h6 {
 /* V2 Specific Button Overrides */
 .v2-theme .hero-ctas-outside .btn-primary-outline,
 .v2-theme .face-cta {
-  font-family: var(--font-sans), Inter, sans-serif !important;
+  font-family: var(--font-label), sans-serif !important;
   font-size: 0.803rem !important; /* +5% larger */
-  font-weight: 600 !important; /* one touch less bold */
+  font-weight: 600 !important;
   text-transform: uppercase !important;
   letter-spacing: 0.08em !important;
   height: 3.43rem !important; /* +5% taller */
@@ -377,7 +400,7 @@ h1, h2, h3, h4, h5, h6 {
   -webkit-text-fill-color: #eaecf0 !important;
   border: none !important;
   border-radius: 0px !important;
-  box-shadow: 6px 6px 0px #dcdfe3 !important;
+  box-shadow: 6px 6px 0px rgba(232, 127, 115, 0.45) !important;
   transform: scale(1) !important;
   transition: transform 0.22s cubic-bezier(0.16, 1, 0.3, 1), background 0.22s ease, border-color 0.22s ease !important;
   display: inline-flex !important;
@@ -402,9 +425,9 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 .v2-theme .hero-ctas-outside .btn-secondary-stacked {
-  font-family: 'JetBrains Mono', Menlo, monospace !important;
-  font-size: 12.47px !important; /* +5% larger */
-  font-weight: 400 !important; /* regular/lighter font weight */
+  font-family: var(--font-label), sans-serif !important;
+  font-size: 12.47px !important;
+  font-weight: 600 !important;
   text-transform: uppercase !important;
   letter-spacing: 0.08em !important;
   background: transparent !important;
@@ -578,43 +601,52 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 .v2-theme .premium-hover:hover {
-  color: #3b70a3;
-  text-shadow: 0 4px 12px rgba(75, 133, 187, 0.15);
+  color: #3a3d46;
+  text-shadow: none;
 }
 
 /* Specific word effects on hover */
 .v2-theme .word-custom,
 .word-custom {
   display: inline-block;
-  color: #3b7ac8 !important;
-  -webkit-text-fill-color: #3b7ac8 !important;
-  font-style: italic !important;
+  position: relative;
+  color: #3a3d46 !important;
+  -webkit-text-fill-color: #3a3d46 !important;
+  font-style: normal !important;
   text-decoration: none !important;
-  text-decoration-color: transparent !important;
-  text-decoration-thickness: 1.5px !important;
-  text-underline-offset: 2.5px !important;
   border-bottom: none !important;
-  padding-bottom: 0px;
-  transition: transform 1.6s cubic-bezier(0.22, 1, 0.36, 1);
-  transform-style: preserve-3d;
+  padding-bottom: 2px;
 }
 
-.v2-theme .premium-hover:hover .word-custom {
-  transform: rotateX(360deg); /* 3D flip for that "custom engineered" feel */
+.v2-theme .word-custom::after,
+.word-custom::after {
+  content: '';
+  position: absolute;
+  bottom: 1px;
+  left: 0;
+  width: 0%;
+  height: 1px;
+  background-color: #3a3d46;
+  transition: width 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.v2-theme .premium-hover:hover .word-custom::after,
+.v2-theme .word-custom:hover::after {
+  width: 100%;
 }
 
 @keyframes internalPulse {
   0% { transform: scale(1); }
-  50% { transform: scale(1.08); color: #3b7ac8; -webkit-text-fill-color: #3b7ac8; }
+  50% { transform: scale(1.08); color: #3a3d46; -webkit-text-fill-color: #3a3d46; }
   100% { transform: scale(1); }
 }
 
 .v2-theme .word-internal,
 .word-internal {
   display: inline-block;
-  color: #3b7ac8 !important;
-  -webkit-text-fill-color: #3b7ac8 !important;
-  font-style: italic !important;
+  color: #3a3d46 !important;
+  -webkit-text-fill-color: #3a3d46 !important;
+  font-style: normal !important;
   text-decoration: none !important;
   text-decoration-color: transparent !important;
   text-decoration-thickness: 1.5px !important;
@@ -665,12 +697,25 @@ h1, h2, h3, h4, h5, h6 {
   }
 }
 
-/* Section Headings Stroke */
+/* Section Headings */
 .v2-theme section h2,
 .v2-theme #cases-section h2,
 .v2-theme #expertise h2,
+.v2-theme #how-it-works h2 {
+  font-family: var(--font-heading) !important;
+  font-weight: 400 !important;
+  letter-spacing: -0.02em !important;
+  color: var(--color-heading-peach) !important;
+  -webkit-text-stroke: 0 !important;
+  text-stroke: 0 !important;
+}
+
 .v2-theme #process h2 {
-  -webkit-text-stroke: 0.35px #3b7ac8;
-  text-stroke: 0.35px #3b7ac8;
+  font-family: var(--font-heading) !important;
+  font-weight: 400 !important;
+  letter-spacing: -0.02em !important;
+  color: #3a3d46 !important;
+  -webkit-text-stroke: 0 !important;
+  text-stroke: 0 !important;
 }
 

@@ -11,9 +11,9 @@ export default function Header() {
       <div className="header-inner-wrapper">
         {/* Left side (Desktop): Name and Title */}
         <div className="header-spacer-desktop">
-          <a href="/" aria-label="Home" style={{ textDecoration: 'none', display: 'flex', flexDirection: 'row', alignItems: 'baseline', gap: '0.4rem' }}>
-            <span style={{ fontFamily: 'Inter, Helvetica, Arial, sans-serif', fontSize: '13px', fontWeight: 500, color: '#000000', letterSpacing: '0.22em', textTransform: 'uppercase', lineHeight: '1.3' }}>IRYNA SHEREMETA</span>
-            <span style={{ fontFamily: 'var(--font-sans)', fontSize: '0.7875rem', fontWeight: 400, color: '#5C6672', lineHeight: '1.2' }}>/ Web &amp; AI product builder /</span>
+          <a href="/" aria-label="Home" style={{ textDecoration: 'none', display: 'flex', flexDirection: 'row', alignItems: 'baseline', gap: '0.5rem' }}>
+            <span style={{ fontFamily: 'var(--font-heading), Outfit, sans-serif', fontSize: '13px', fontWeight: 600, color: '#333740', letterSpacing: '0.14em', textTransform: 'uppercase', lineHeight: '1.3' }}>IRYNA SHEREMETA</span>
+            <span style={{ fontFamily: 'var(--font-body), "Plus Jakarta Sans", sans-serif', fontSize: '0.7875rem', fontWeight: 500, color: '#5C6672', lineHeight: '1.2' }}>/ Creative technologist /</span>
           </a>
         </div>
 
@@ -28,8 +28,13 @@ export default function Header() {
         </nav>
       </div>
 
-      {/* Mobile Header Elements: Social Icons on Left, CASES link + Hamburger on Right */}
-
+      {/* Mobile Header Elements: Name and Title on Left, CASES/ABOUT on Right */}
+      <div className="mobile-header-left">
+        <a href="/" aria-label="Home" className="mobile-brand-link">
+          <span className="mobile-brand-name">IRYNA SHEREMETA</span>
+          <span className="mobile-brand-title">/ Creative technologist /</span>
+        </a>
+      </div>
 
       <div className="mobile-header-right">
         <a href="#cases" className="mobile-featured-link">CASES</a>

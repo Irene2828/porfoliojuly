@@ -57,51 +57,12 @@ export default function ServicesV2() {
     }
   ];
 
-  const steps = [
-    {
-      num: '01',
-      label: '// DRAFT',
-      title: 'First Draft',
-      desc: 'A fast, working build you can click through in days - not polished, but real enough to react to and easy to build on.',
-      icon: (
-        <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#f4f4f5" strokeWidth="1.75" strokeLinecap="round" strokeLinejoin="round">
-          <path d="M17 3a2.828 2.828 0 1 1 4 4L7.5 20.5 2 22l1.5-5.5L17 3z"></path>
-          <path d="M15 5l4 4"></path>
-        </svg>
-      )
-    },
-    {
-      num: '02',
-      label: '// TEST',
-      title: 'Test & Refine',
-      desc: 'We test where it matters - internally if it\'s a team tool, with real users if it\'s client-facing - and refine based on what we find.',
-      icon: (
-        <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#f4f4f5" strokeWidth="1.75" strokeLinecap="round" strokeLinejoin="round">
-          <circle cx="11" cy="11" r="8"></circle>
-          <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
-        </svg>
-      )
-    },
-    {
-      num: '03',
-      label: '// LAUNCH',
-      title: 'Delivery',
-      desc: 'Launch, handover, and maintenance - we figure out where it lives and how it\'s supported together, based on what actually fits.',
-      icon: (
-        <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#f4f4f5" strokeWidth="1.75" strokeLinecap="round" strokeLinejoin="round">
-          <line x1="22" y1="2" x2="11" y2="13"></line>
-          <polygon points="22 2 15 22 11 13 2 9 22 2"></polygon>
-        </svg>
-      )
-    }
-  ];
-
   return (
     <section 
       id="expertise" 
       style={{ 
         backgroundColor: '#ffffff',
-        padding: '5.1rem 0 10.2rem 0',
+        padding: '5.1rem 0 2.5rem 0',
         margin: '5.1rem 0 0 0',
         position: 'relative',
         overflow: 'hidden'
@@ -194,30 +155,30 @@ export default function ServicesV2() {
         }} />
 
         <h2 style={{ 
-          fontFamily: "var(--font-serif)",
-          fontSize: 'clamp(29px, 4.8vw, 46px)', 
-          color: '#3b7ac8', 
-          fontWeight: 500,
-          lineHeight: 1.25,
+          fontFamily: "var(--font-heading)",
+          fontSize: 'clamp(28px, 4.4vw, 42px)', 
+          color: 'var(--color-heading-peach)', 
+          fontWeight: 400,
+          lineHeight: 1.2,
           letterSpacing: '-0.02em',
           textAlign: 'center',
           width: '100%',
-          margin: '0 auto 16px auto',
-          WebkitTextStroke: '0.35px #3b7ac8'
+          margin: '0 auto 14px auto',
+          WebkitTextStroke: '0'
         }}>
           How I Can Help Your Business
         </h2>
         <p style={{
-          fontFamily: "var(--font-sans), Inter, sans-serif",
-          fontSize: '18px',
+          fontFamily: "var(--font-body)",
+          fontSize: '17px',
           fontWeight: 400,
-          fontStyle: 'italic',
           lineHeight: 1.6,
-          color: '#2a3036',
-          opacity: 0.75,
+          color: '#333842',
+          opacity: 0.9,
           maxWidth: '640px',
           margin: '0 auto',
-          textAlign: 'center'
+          textAlign: 'center',
+          letterSpacing: '-0.01em'
         }}>
           as a digital product builder
         </p>
@@ -332,18 +293,17 @@ export default function ServicesV2() {
               {/* Real Card Content (zIndex: 1) */}
               <div style={{ position: 'relative', zIndex: 1, paddingTop: '1.25rem' }}>
                 <h3 style={{
-                  fontFamily: "var(--font-serif)",
-                  fontSize: 'clamp(1.48rem, 2.4vw, 2rem)',
+                  fontFamily: "var(--font-heading)",
+                  fontSize: 'clamp(1.48rem, 2.4vw, 1.95rem)',
                   fontWeight: 400,
                   color: '#FFFFFF',
-                  margin: '0 0 1.25rem 0',
+                  margin: '0 0 3.5rem 0',
                   letterSpacing: '-0.02em',
-                  lineHeight: 1.15,
-                  WebkitTextStroke: '0.35px #FFFFFF'
+                  lineHeight: 1.2,
+                  WebkitTextStroke: '0'
                 }}>
                   Custom Websites
                 </h3>
-                <div style={{ width: '48px', height: '1px', backgroundColor: 'rgba(255, 255, 255, 0.2)', marginBottom: '4.5rem' }} />
                 
                 <ul style={{ listStyle: 'none', padding: 0, margin: 0, display: 'flex', flexDirection: 'column', gap: '16px' }}>
                   {websitesBullets.map((bullet, idx) => (
@@ -381,7 +341,7 @@ export default function ServicesV2() {
                   ))}
                 </ul>
                 <div style={{ display: 'flex', justifyContent: 'flex-end', marginTop: '64px' }}>
-                  <a href="#cases" className="see-example-link-dark" style={{ position: 'relative', display: 'inline-flex', alignItems: 'center', fontFamily: 'var(--font-mono), monospace', fontSize: '11px', letterSpacing: '0.1em', opacity: 0.85, textDecoration: 'none', color: '#A9B4C0', paddingBottom: '4px', transition: 'opacity 0.2s' }} onMouseEnter={(e) => e.currentTarget.style.opacity = '1'} onMouseLeave={(e) => e.currentTarget.style.opacity = '0.85'}>
+                  <a href="#cases" className="see-example-link-dark" style={{ position: 'relative', display: 'inline-flex', alignItems: 'center', fontFamily: 'var(--font-label), sans-serif', fontSize: '11px', fontWeight: 600, letterSpacing: '0.1em', opacity: 0.9, textDecoration: 'none', color: '#A9B4C0', paddingBottom: '4px', transition: 'opacity 0.2s' }} onMouseEnter={(e) => e.currentTarget.style.opacity = '1'} onMouseLeave={(e) => e.currentTarget.style.opacity = '0.9'}>
                     <span>SEE WEBSITE EXAMPLES &darr;</span>
                   </a>
                 </div>
@@ -415,18 +375,17 @@ export default function ServicesV2() {
               {/* Real Card Content (zIndex: 1) */}
               <div style={{ position: 'relative', zIndex: 1, paddingTop: '1.25rem' }}>
                 <h3 style={{
-                  fontFamily: "var(--font-serif)",
-                  fontSize: 'clamp(1.48rem, 2.4vw, 2rem)',
+                  fontFamily: "var(--font-heading)",
+                  fontSize: 'clamp(1.48rem, 2.4vw, 1.95rem)',
                   fontWeight: 400,
-                  color: '#4a5568',
-                  margin: '0 0 1.25rem 0',
+                  color: '#3a3d46',
+                  margin: '0 0 3.5rem 0',
                   letterSpacing: '-0.02em',
-                  lineHeight: 1.15,
-                  WebkitTextStroke: '0.35px #4a5568'
+                  lineHeight: 1.2,
+                  WebkitTextStroke: '0'
                 }}>
                   Custom AI Tools
                 </h3>
-                <div style={{ width: '48px', height: '1px', backgroundColor: 'rgba(26, 31, 43, 0.25)', marginBottom: '4.5rem' }} />
                 
                 <ul style={{ listStyle: 'none', padding: 0, margin: 0, display: 'flex', flexDirection: 'column', gap: '16px' }}>
                   {aiToolsBullets.map((bullet, idx) => (
@@ -464,7 +423,7 @@ export default function ServicesV2() {
                   ))}
                 </ul>
                 <div style={{ display: 'flex', justifyContent: 'flex-end', marginTop: '64px' }}>
-                  <a href="#cases" className="see-example-link-light-bg" style={{ position: 'relative', display: 'inline-flex', alignItems: 'center', fontFamily: 'var(--font-mono), monospace', fontSize: '11px', letterSpacing: '0.1em', opacity: 0.85, textDecoration: 'none', color: '#5C6672', paddingBottom: '4px', transition: 'opacity 0.2s' }} onMouseEnter={(e) => e.currentTarget.style.opacity = '1'} onMouseLeave={(e) => e.currentTarget.style.opacity = '0.85'}>
+                  <a href="#cases" className="see-example-link-light-bg" style={{ position: 'relative', display: 'inline-flex', alignItems: 'center', fontFamily: 'var(--font-label), sans-serif', fontSize: '11px', fontWeight: 600, letterSpacing: '0.1em', opacity: 0.9, textDecoration: 'none', color: '#5C6672', paddingBottom: '4px', transition: 'opacity 0.2s' }} onMouseEnter={(e) => e.currentTarget.style.opacity = '1'} onMouseLeave={(e) => e.currentTarget.style.opacity = '0.9'}>
                     <span>SEE AI TOOL EXAMPLES &darr;</span>
                   </a>
                 </div>
@@ -486,225 +445,6 @@ export default function ServicesV2() {
             zIndex: 10
           }}
         />
-      </div>
-
-      {/* Section 2 Heading: How the Process Looks */}
-      <div className="container" style={{ textAlign: 'center', marginBottom: '3.5rem', paddingTop: '5.1rem' }}>
-        {/* Short decor line above section heading */}
-        <div style={{ 
-          width: '60px', 
-          height: '1px', 
-          backgroundColor: '#0b0c10', 
-          margin: '0 auto 2.5rem auto', 
-          opacity: 0.6 
-        }} />
-
-        {/* Intro Section Heading */}
-        <h2 style={{ 
-          fontFamily: "var(--font-serif)",
-          fontSize: 'clamp(29px, 4.8vw, 46px)', 
-          color: '#3b7ac8', 
-          fontWeight: 500,
-          lineHeight: 1.25,
-          letterSpacing: '-0.01em',
-          textAlign: 'center',
-          width: '100%',
-          margin: '0 auto 0.75rem auto',
-          WebkitTextStroke: '0.35px #3b7ac8'
-        }}>
-          How the Process Looks
-        </h2>
-        <p style={{
-          fontFamily: "var(--font-sans), Inter, sans-serif",
-          fontSize: '18px',
-          fontWeight: 400,
-          fontStyle: 'italic',
-          lineHeight: 1.6,
-          color: '#2a3036',
-          opacity: 0.75,
-          maxWidth: '640px',
-          margin: '0 auto',
-          textAlign: 'center'
-        }}>
-          from concept to launch in 3 simple steps:
-        </p>
-      </div>
-
-      {/* Edge-to-Edge Matte Black Frame for 3-Step Process Flow */}
-      <div
-        className="services-black-frame-wrapper"
-        style={{
-          position: 'relative',
-          width: '100%',
-          backgroundColor: '#18191e',
-          borderTop: '1px solid rgba(255, 255, 255, 0.08)',
-          borderBottom: '1px solid rgba(255, 255, 255, 0.08)',
-          boxShadow: '0 20px 48px rgba(0, 0, 0, 0.03)',
-          overflow: 'hidden'
-        }}
-      >
-        {/* Premium Geometric Abstract Decor Layer (Process) */}
-        <div 
-          className="hide-on-mobile"
-          style={{
-            position: 'absolute',
-            inset: 0,
-            pointerEvents: 'none',
-            zIndex: 2,
-            opacity: 0.8
-          }}
-        >
-          {/* Top-Left Cluster */}
-          <div style={{ position: 'absolute', width: '200px', height: '200px', border: '1px solid rgba(181, 153, 122, 0.3)', borderRadius: '50%', top: '-5%', left: '-2%' }} />
-          <svg style={{ position: 'absolute', top: '15%', left: '8%', opacity: 0.3 }} width="32" height="32" viewBox="0 0 32 32" fill="none" stroke="#3A2318" strokeWidth="1">
-            <line x1="16" y1="0" x2="16" y2="32" /><line x1="0" y1="16" x2="32" y2="16" />
-          </svg>
-          
-          {/* Top-Right Cluster */}
-          <div style={{ position: 'absolute', width: '120px', height: '180px', border: '1px dashed rgba(58, 35, 24, 0.2)', top: '10%', right: '5%' }} />
-          <div style={{ position: 'absolute', width: '80px', height: '80px', border: '1px solid rgba(181, 153, 122, 0.4)', top: '25%', right: '12%' }} />
-
-          {/* Center-Left subtle lines */}
-          <div style={{ position: 'absolute', top: '50%', left: '0', width: '8%', height: '1px', backgroundColor: 'rgba(58, 35, 24, 0.15)' }} />
-          <div style={{ position: 'absolute', top: '52%', left: '0', width: '5%', height: '1px', backgroundColor: 'rgba(181, 153, 122, 0.25)' }} />
-
-          {/* Bottom-Left Cluster */}
-          <div style={{ position: 'absolute', width: '150px', height: '150px', border: '1px solid rgba(58, 35, 24, 0.15)', bottom: '5%', left: '10%', transform: 'rotate(45deg)' }} />
-          <div style={{ position: 'absolute', width: '4px', height: '4px', backgroundColor: 'rgba(181, 153, 122, 0.5)', bottom: '20%', left: '20%', borderRadius: '50%' }} />
-
-          {/* Bottom-Right Cluster */}
-          <div style={{ position: 'absolute', width: '160px', height: '160px', border: '1px dashed rgba(181, 153, 122, 0.3)', borderRadius: '50%', bottom: '10%', right: '8%' }} />
-          <svg style={{ position: 'absolute', bottom: '15%', right: '12%', opacity: 0.25 }} width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#3A2318" strokeWidth="1">
-            <line x1="12" y1="0" x2="12" y2="24" /><line x1="0" y1="12" x2="24" y2="12" />
-          </svg>
-        </div>
-
-        <div className="container" style={{ position: 'relative', zIndex: 3, paddingTop: '4rem', paddingBottom: '5rem', paddingLeft: '1.5rem', paddingRight: '1.5rem' }}>
-          {/* Zigzag Process Flow */}
-          <motion.div 
-            initial={{ opacity: 0, y: 25 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.8, ease: [0.16, 1, 0.3, 1] }}
-            style={{ 
-              maxWidth: '960px', 
-              margin: '0 auto', 
-              position: 'relative', 
-              padding: '1.5rem 0'
-            }}
-          >
-
-
-
-
-            <div style={{ display: 'flex', flexDirection: 'column', gap: '4.5rem', position: 'relative', zIndex: 3 }}>
-              {steps.map((step, i) => {
-                const isOdd = i % 2 === 1; // Step 2 shifted to right side
-                return (
-                  <motion.div
-                    key={step.num}
-                    className="process-step-container"
-                    initial={{ opacity: 0, y: 35, scale: 0.96 }}
-                    whileInView={{ opacity: 1, y: 0, scale: 1 }}
-                    viewport={{ once: true, amount: 0.3 }}
-                    transition={{ duration: 0.75, delay: i * 0.25, ease: [0.16, 1, 0.3, 1] }}
-                    style={{
-                      display: 'flex',
-                      flexDirection: 'row',
-                      alignItems: 'flex-start',
-                      justifyContent: 'flex-start',
-                      gap: '1.35rem',
-                      position: 'relative',
-                      width: '100%',
-                      paddingLeft: isOdd ? '40%' : '0%',
-                      paddingRight: isOdd ? '0%' : '20%'
-                    }}
-                  >
-                    {/* Step Number */}
-                    <motion.div 
-                      initial={{ scale: 0.9, opacity: 0 }}
-                      whileInView={{ scale: 1, opacity: 1 }}
-                      viewport={{ once: true, margin: '-10%' }}
-                      transition={{ duration: 0.5, delay: i * 0.25 + 0.15, ease: [0.16, 1, 0.3, 1] }}
-                      style={{
-                        flexShrink: 0,
-                        width: '60px',
-                        display: 'flex',
-                        alignItems: 'flex-start',
-                        justifyContent: 'flex-start',
-                        zIndex: 4,
-                        marginTop: '-0.2rem',
-                        fontFamily: "var(--font-serif)",
-                        fontSize: '3.5rem',
-                        fontWeight: 300,
-                        color: 'rgba(255, 255, 255, 0.15)',
-                        lineHeight: 1
-                      }}
-                    >
-                      {step.num}
-                    </motion.div>
-
-                    {/* Step Content Frame with Reveal Arrival */}
-                    <motion.div 
-                      initial={{ opacity: 0, x: isOdd ? 20 : -20 }}
-                      whileInView={{ opacity: 1, x: 0 }}
-                      viewport={{ once: true }}
-                      transition={{ duration: 0.65, delay: i * 0.25 + 0.2, ease: [0.16, 1, 0.3, 1] }}
-                      style={{ 
-                        flex: 1, 
-                        textAlign: 'left',
-                        padding: '1.25rem 1.6rem',
-                        backgroundColor: 'transparent',
-                        backdropFilter: 'blur(12px)',
-                        WebkitBackdropFilter: 'blur(12px)',
-                        border: '1px solid rgba(255, 255, 255, 0.15)',
-                        borderRadius: '0px',
-                        boxShadow: '0 8px 24px rgba(0, 0, 0, 0.03)'
-                      }}
-                    >
-                      <div style={{ marginBottom: '0.35rem', display: 'flex', alignItems: 'center', gap: '0.65rem' }}>
-                        <span style={{ 
-                          fontFamily: 'var(--font-mono), monospace', 
-                          fontSize: '11px', 
-                          color: '#8A9099', 
-                          fontWeight: 600, 
-                          letterSpacing: '0.08em',
-                          WebkitTextStroke: '0px transparent'
-                        }}>
-                          {step.label}
-                        </span>
-                      </div>
-                      <h3 style={{ 
-                        fontFamily: "var(--font-serif)",
-                        fontSize: '24px', 
-                        color: '#ffffff',
-                        fontWeight: 600,
-                        margin: '0 0 0.45rem 0',
-                        lineHeight: 1.2,
-                        WebkitTextStroke: '0.35px #ffffff'
-                      }}>
-                        {step.title}
-                      </h3>
-
-                      <p style={{
-                        fontFamily: "var(--font-sans), Inter, sans-serif",
-                        fontSize: '1.02rem',
-                        lineHeight: 1.55,
-                        color: '#d1d5db',
-                        fontWeight: 400,
-                        opacity: 0.9,
-                        margin: '0',
-                        maxWidth: '520px'
-                      }}>
-                        {step.desc}
-                      </p>
-                    </motion.div>
-                  </motion.div>
-                );
-              })}
-            </div>
-          </motion.div>
-        </div>
       </div>
     </section>
   );

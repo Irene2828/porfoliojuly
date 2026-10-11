@@ -2,7 +2,7 @@ import Header from './components/Header';
 import HeroV2 from './v2/components/HeroV2';
 import ProjectsV2 from './v2/components/ProjectsV2';
 import ServicesV2 from './v2/components/ServicesV2';
-
+import HowItWorks from './v2/components/HowItWorks';
 import ProcessSection from './v2/components/ProcessSection';
 import EditorialStatement from './v2/components/EditorialStatement';
 import ClientWrapper from './components/ClientWrapper';
@@ -50,30 +50,30 @@ export default async function HomePage() {
             }} />
 
             <h2 style={{ 
-              fontFamily: "var(--font-serif)",
-              fontSize: 'clamp(29px, 4.8vw, 46px)', 
-              color: '#3b7ac8', 
-              fontWeight: 500,
-              lineHeight: 1.25,
+              fontFamily: "var(--font-heading)",
+              fontSize: 'clamp(28px, 4.4vw, 42px)', 
+              color: 'var(--color-heading-peach)', 
+              fontWeight: 400,
+              lineHeight: 1.2,
               letterSpacing: '-0.02em',
               textAlign: 'center',
               width: '100%',
-              margin: '0 auto 16px auto',
-              WebkitTextStroke: '0.35px #3b7ac8'
+              margin: '0 auto 14px auto',
+              WebkitTextStroke: '0'
             }}>
-              Featured Cases
+              Examples of my work
             </h2>
             <p style={{
-              fontFamily: "var(--font-sans), Inter, sans-serif",
-              fontSize: '18px',
+              fontFamily: "var(--font-body)",
+              fontSize: '17px',
               fontWeight: 400,
-              fontStyle: 'italic',
               lineHeight: 1.6,
-              color: '#2a3036',
-              opacity: 0.75,
+              color: '#333842',
+              opacity: 0.9,
               maxWidth: '640px',
               margin: '0 auto',
-              textAlign: 'center'
+              textAlign: 'center',
+              letterSpacing: '-0.01em'
             }}>
               custom websites &amp; ai tools built end-to-end.
             </p>
@@ -93,6 +93,9 @@ export default async function HomePage() {
             </div>
           </div>
         </section>
+
+        {/* How It Works (3 simple steps process) */}
+        <HowItWorks />
 
         {/* Process Section */}
         <ProcessSection />

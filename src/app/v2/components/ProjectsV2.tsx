@@ -27,9 +27,10 @@ export default function ProjectsV2({ initialProjects = [] }: ProjectsV2Props) {
   const initialProjectsData = [
     {
       id: 'v2-1',
-      title: 'Ukraine Case 1',
+      title: 'Ukraine Relief AI // Terry Fox Run',
       slug: 'ukraine-case-1',
       subline: 'Custom platform for Ukraine relief efforts',
+      hoverLabel: 'Cutting days of work to minutes for volunteers worldwide',
       annotations: [
         { markerNumber: 1, title: 'AI Qualification', text: 'Engages inbound lead inquiries & volunteer requests automatically.' },
         { markerNumber: 2, title: 'Instant Canvas Sync', text: 'Generates personalized localized campaign graphics in seconds.' },
@@ -44,9 +45,10 @@ export default function ProjectsV2({ initialProjects = [] }: ProjectsV2Props) {
     },
     {
       id: 'v2-2',
-      title: 'Ukraine Case 2',
-      slug: 'ukraine-case-2',
-      subline: 'Logistics and tracking platform for Ukraine',
+      title: 'Professional website presence for a local legal expert',
+      slug: 'guertin-isabelle',
+      subline: 'Quebec service business & consultation booking',
+      hoverLabel: 'Professional website presence for a local legal expert',
       annotations: [
         { markerNumber: 1, title: 'Doc Parsing', text: 'Extracts key structured fields from PDFs and receipts instantly.' },
         { markerNumber: 2, title: 'Smart Validation', text: 'Flags discrepancies and potential fraud markers in real time.' },
@@ -61,35 +63,37 @@ export default function ProjectsV2({ initialProjects = [] }: ProjectsV2Props) {
     },
     {
       id: 'v2-3',
-      title: 'Ukraine Case 1',
-      slug: 'ukraine-case-1-dup',
-      subline: 'Custom platform for Ukraine relief efforts',
+      title: 'Community map-based volunteer project',
+      slug: 'community-map-project',
+      subline: 'Interactive geospatial platform for local relief teams',
+      hoverLabel: 'Community map-based volunteer project',
       annotations: [
-        { markerNumber: 1, title: 'AI Qualification', text: 'Engages inbound lead inquiries & volunteer requests automatically.' },
-        { markerNumber: 2, title: 'Instant Canvas Sync', text: 'Generates personalized localized campaign graphics in seconds.' },
-        { markerNumber: 3, title: 'CRM Integration', text: 'Syncs data directly with Hubspot & internal tracking tools.' }
+        { markerNumber: 1, title: 'Live Mapping', text: 'Real-time pin drops and localized dispatch for mutual aid.' },
+        { markerNumber: 2, title: 'Offline Cache', text: 'PWA support for field volunteers in low-bandwidth zones.' },
+        { markerNumber: 3, title: 'Role Routing', text: 'Automatic triage based on volunteer proximity and skillsets.' }
       ],
       stats: [
-        { chip: 'Problem', text: 'Manual campaign delays', stat: '4.8h', statLabel: 'old delay' },
-        { chip: 'Built with', text: 'Next.js, Canvas Engine & AI API', stat: '< 30s', statLabel: 'build time' },
-        { chip: 'Impact', text: 'Empowered volunteers across 25+ countries', stat: '+340%', statLabel: 'campaign reach' }
+        { chip: 'Problem', text: 'Fragmented chat coordinates', stat: '6+ apps', statLabel: 'old chaos' },
+        { chip: 'Built with', text: 'Next.js, Map Engine & Realtime DB', stat: 'Instant', statLabel: 'dispatch' },
+        { chip: 'Impact', text: 'Connected over 1,200 local aid deliveries', stat: '1.2k+', statLabel: 'deliveries' }
       ],
       image: initialProjects[0]?.screens?.[0]?.originalUrl || '/skills.png'
     },
     {
       id: 'v2-4',
-      title: 'Ukraine Case 2',
-      slug: 'ukraine-case-2-dup',
-      subline: 'Logistics and tracking platform for Ukraine',
+      title: "Old ipads' second life: interactive desk assistant for kids",
+      slug: 'ipad-kids-assistant',
+      subline: 'Hardware repurposing & smart interactive assistant',
+      hoverLabel: "Old ipads' second life: interactive desk assistant for kids",
       annotations: [
-        { markerNumber: 1, title: 'Doc Parsing', text: 'Extracts key structured fields from PDFs and receipts instantly.' },
-        { markerNumber: 2, title: 'Smart Validation', text: 'Flags discrepancies and potential fraud markers in real time.' },
-        { markerNumber: 3, title: 'Instant Routing', text: 'Pushes verified cases to claims managers for one-click approval.' }
+        { markerNumber: 1, title: 'Kiosk Mode', text: 'Locks obsolete iOS devices into dedicated child-safe tools.' },
+        { markerNumber: 2, title: 'Voice & Touch', text: 'Interactive audio prompts and visual schedules for homework.' },
+        { markerNumber: 3, title: 'Parent Portal', text: 'Remote routine updates synced over lightweight WebSocket.' }
       ],
       stats: [
-        { chip: 'Problem', text: 'Slow manual claim reviews', stat: '48h', statLabel: 'old turnaround' },
-        { chip: 'Built with', text: 'Gemini Vision, Next.js & Postgres', stat: '2.5 min', statLabel: 'new processing' },
-        { chip: 'Impact', text: 'Automated 85% of standard intake processing', stat: '85%', statLabel: 'auto-processed' }
+        { chip: 'Problem', text: 'E-waste from obsolete iPads', stat: '0 utility', statLabel: 'before' },
+        { chip: 'Built with', text: 'WebSockets, Next.js & Speech API', stat: '100%', statLabel: 'repurposed' },
+        { chip: 'Impact', text: 'Daily learning routines without modern App Store constraints', stat: 'Daily', statLabel: 'engagement' }
       ],
       image: initialProjects[1]?.screens?.[0]?.originalUrl || '/skills.png'
     }
@@ -292,7 +296,13 @@ export default function ProjectsV2({ initialProjects = [] }: ProjectsV2Props) {
                   <div className="preview-card-wrapper">
                     <div className="preview-card-scaler">
                       {isNavyCard ? (
-                        <GuertinProject />
+                        <GuertinProject 
+                          title={project.title}
+                          subline={project.subline}
+                          kicker={project.id === 'v2-4' ? "INTERACTIVE ASSISTANT // KIDS TECH" : "GUERTIN ISABELLE // Professional Services Website"}
+                          browserTitle={project.id === 'v2-4' ? "Desk Assistant for Kids" : "Guertin Isabelle"}
+                          cardsTitle={project.id === 'v2-4' ? "Giving old hardware a second life with smart software." : "Designed to turn expertise into booked consultations."}
+                        />
                       ) : (
                         <GenericWhiteCard 
                           title={project.title}
@@ -305,7 +315,7 @@ export default function ProjectsV2({ initialProjects = [] }: ProjectsV2Props) {
                     </div>
                   </div>
                   <div className="preview-card-caption">
-                    EXPAND CASE &rarr;
+                    {project.hoverLabel || project.title} &rarr;
                   </div>
                 </div>
               </div>

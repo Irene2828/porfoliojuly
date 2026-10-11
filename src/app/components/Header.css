@@ -98,11 +98,11 @@
 
 .nav-link,
 .header-nav-desktop .nav-link {
-  font-family: Inter, Helvetica, Arial, sans-serif !important;
-  font-size: 13px !important;
+  font-family: var(--font-label), 'Plus Jakarta Sans', sans-serif !important;
+  font-size: 12.5px !important;
   font-weight: 500 !important;
   text-transform: uppercase !important;
-  letter-spacing: 0.22em !important;
+  letter-spacing: 0.12em !important;
   color: #000000 !important;
   text-decoration: none;
   position: relative;
@@ -288,10 +288,10 @@
 }
 
 .drawer-link {
-  font-family: Inter, Helvetica, Arial, sans-serif;
+  font-family: var(--font-heading), 'Outfit', sans-serif;
   font-size: 1.1rem;
-  font-weight: 500;
-  letter-spacing: 0.15em;
+  font-weight: 600;
+  letter-spacing: 0.08em;
   text-transform: uppercase;
   color: #111111;
   text-decoration: none;
@@ -337,8 +337,15 @@
 @media (max-width: 900px) {
   .premium-header {
     display: flex !important;
-    justify-content: center !important;
+    justify-content: space-between !important;
+    align-items: center !important;
     position: fixed !important;
+    top: 0 !important;
+    left: 0 !important;
+    right: 0 !important;
+    width: 100% !important;
+    padding: 0 1.5rem !important; /* safe side margins */
+    box-sizing: border-box !important;
     background-color: rgba(255, 255, 255, 0.85) !important;
     backdrop-filter: saturate(180%) blur(20px) !important;
     -webkit-backdrop-filter: saturate(180%) blur(20px) !important;
@@ -346,6 +353,7 @@
     opacity: 0;
     transform: translateY(-100%);
     animation: headerSlideDown 0.65s cubic-bezier(0.22, 1, 0.36, 1) 0.1s forwards !important;
+    z-index: 1000 !important;
   }
 
   .header-inner-wrapper,
@@ -358,41 +366,53 @@
   .mobile-header-left {
     display: flex !important;
     align-items: center !important;
-    gap: 1.25rem !important;
     pointer-events: auto !important;
+    flex-shrink: 1;
+    min-width: 0;
   }
 
-  .social-link-icon-mobile {
-    display: inline-flex;
-    align-items: center;
-    justify-content: center;
-    color: #000000 !important;
-    opacity: 1 !important;
+  .mobile-brand-link {
     text-decoration: none;
-    transition: opacity 0.2s ease;
+    display: flex;
+    flex-direction: row;
+    align-items: baseline;
+    gap: 0.4rem;
+    white-space: nowrap;
   }
 
-  .social-link-icon-mobile svg {
-    stroke: #000000 !important;
+  .mobile-brand-name {
+    font-family: var(--font-heading), Outfit, sans-serif;
+    font-size: 12px;
+    font-weight: 600;
+    color: #333740;
+    letter-spacing: 0.13em;
+    text-transform: uppercase;
+    line-height: 1.2;
   }
 
-  .social-link-icon-mobile:hover {
-    opacity: 1 !important;
+  .mobile-brand-title {
+    font-family: var(--font-body), 'Plus Jakarta Sans', sans-serif;
+    font-size: 0.72rem;
+    font-weight: 500;
+    color: #5C6672;
+    line-height: 1.2;
   }
 
   .mobile-header-right {
     display: flex !important;
     align-items: center !important;
-    gap: 0.85rem !important;
+    gap: 0.65rem !important;
     pointer-events: auto !important;
+    flex-shrink: 0;
+    margin-left: 0.75rem;
   }
 
   .mobile-featured-link {
-    font-family: Inter, Helvetica, Arial, sans-serif !important;
-    font-size: 12.1px !important;
+    font-family: var(--font-label), 'Plus Jakarta Sans', sans-serif !important;
+    font-size: 11.5px !important;
     font-weight: 600 !important;
     text-transform: uppercase !important;
-    letter-spacing: 0.18em !important;
+    letter-spacing: 0.12em !important;
     color: #333842 !important;
     text-decoration: none;
     padding: 0.2rem 0;
@@ -404,6 +424,20 @@
 
   .hamburger-bar {
     background-color: #111111 !important;
+  }
+}
+
+@media (max-width: 440px) {
+  .mobile-header-left .mobile-brand-link {
+    flex-direction: column !important;
+    align-items: flex-start !important;
+    gap: 0.05rem !important;
+  }
+  .mobile-brand-name {
+    font-size: 11px !important;
+  }
+  .mobile-brand-title {
+    font-size: 0.64rem !important;
   }
 }
 

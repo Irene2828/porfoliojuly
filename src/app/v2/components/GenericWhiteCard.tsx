@@ -11,7 +11,7 @@ interface GenericWhiteCardProps {
   image: string;
 }
 
-export default function GenericWhiteCard({ title, annotations, stats, image }: GenericWhiteCardProps) {
+export default function GenericWhiteCard({ title, subline, annotations, stats, image }: GenericWhiteCardProps) {
   return (
     <div className="guertin-wrapper" style={{ backgroundColor: '#ffffff' }}>
       {/* Clean White Background without dots */}
@@ -28,8 +28,8 @@ export default function GenericWhiteCard({ title, annotations, stats, image }: G
         
         {/* Mockup Area */}
         <div style={{ fontFamily: 'var(--font-mono), monospace', fontSize: '11px', opacity: 0.6, marginBottom: '16px', width: '100%', textAlign: 'left' }}>
-          TERRY FOX RUN // AI Poster Generator<br/>
-          Ukraine Case 01 - Non-profit tool
+          {title.toUpperCase()}<br/>
+          {subline || 'Interactive Digital Tool'}
         </div>
         <div className="guertin-mockup-area">
           
@@ -115,8 +115,8 @@ export default function GenericWhiteCard({ title, annotations, stats, image }: G
 
         {/* 3 Light Cards Below */}
         <div className="guertin-cards-area">
-          <h3 className="guertin-cards-title" style={{ color: '#18191e' }}>
-            From 4.8h manual delays to &lt;30s self-serve.
+          <h3 className="guertin-cards-title" style={{ color: '#18191e', fontWeight: 500 }}>
+            {stats?.[0]?.stat ? `From ${stats[0].stat} down to automated workflows.` : 'Designed for high efficiency and clarity.'}
           </h3>
           
           <div className="guertin-cards-grid">

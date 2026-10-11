@@ -29,13 +29,13 @@
 }
 
 .face-closure {
-  font-family: 'Times New Roman', Times, Georgia, serif !important;
-  font-size: clamp(26px, 3.2vw, 28px) !important;
-  font-weight: 400 !important;
+  font-family: var(--font-heading), 'Outfit', sans-serif !important;
+  font-size: clamp(24px, 3.2vw, 28px) !important;
+  font-weight: 500 !important;
   text-transform: none;
-  letter-spacing: -0.01em !important;
+  letter-spacing: -0.02em !important;
   -webkit-font-smoothing: antialiased;
-  line-height: 1.2 !important;
+  line-height: 1.25 !important;
   color: #008b8b !important;
   -webkit-text-fill-color: #008b8b !important;
   -webkit-text-stroke: 0px !important;
@@ -67,19 +67,20 @@
 }
 
 .face-preheadline {
-  font-family: var(--font-sans);
+  font-family: var(--font-body);
   font-size: clamp(0.92rem, 1.6vw, 1.08rem);
   font-weight: 400;
-  letter-spacing: 0;
+  letter-spacing: -0.01em;
   text-transform: none;
   color: #000000;
   margin: 0;
 }
 
 .face-headline {
-  font-family: var(--font-serif);
+  font-family: var(--font-heading);
   font-size: clamp(2.875rem, 6.9vw, 5.175rem);
-  font-weight: 600;
+  font-weight: 700;
+  letter-spacing: -0.03em;
   text-transform: uppercase;
   background-image: linear-gradient(180deg, #1A1A1A 0%, #4a4a4a 100%);
   -webkit-background-clip: text;
@@ -89,7 +90,7 @@
 }
 
 .face-cta {
-  font-family: var(--font-sans), Inter, sans-serif !important;
+  font-family: var(--font-label), sans-serif !important;
   background: #008b8b !important;
   border-color: #008b8b !important;
   color: #ffffff !important;

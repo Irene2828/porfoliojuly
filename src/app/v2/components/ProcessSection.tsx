@@ -54,7 +54,7 @@ export default function ProcessSection() {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true, amount: 0.2 }}
           transition={{ duration: 0.8, ease: [0.16, 1, 0.3, 1] }}
-          style={{ width: '100%', maxWidth: '1440px', paddingLeft: '5%', marginBottom: '5rem', zIndex: 2, position: 'relative', textAlign: 'left' }}
+          style={{ width: '100%', maxWidth: '1440px', paddingLeft: '5%', marginBottom: '2.5rem', zIndex: 2, position: 'relative', textAlign: 'left' }}
         >
           <div style={{ 
             width: '60px', 
@@ -65,33 +65,19 @@ export default function ProcessSection() {
           }} />
 
           <h2 style={{ 
-            fontFamily: "var(--font-serif)",
-            fontSize: 'clamp(29px, 4.8vw, 46px)', 
-            color: '#3b7ac8', 
-            fontWeight: 500,
-            lineHeight: 1.25,
+            fontFamily: "var(--font-heading)",
+            fontSize: 'clamp(28px, 4.4vw, 42px)', 
+            color: '#3a3d46', 
+            fontWeight: 400,
+            lineHeight: 1.2,
             letterSpacing: '-0.02em',
             textAlign: 'left',
             width: '100%',
-            margin: '0 0 16px 0',
-            WebkitTextStroke: '0.35px #3b7ac8'
-          }}>
-            Why Work With Me
-          </h2>
-          <p style={{
-            fontFamily: "var(--font-sans), Inter, sans-serif",
-            fontSize: '18px',
-            fontWeight: 400,
-            fontStyle: 'italic',
-            lineHeight: 1.6,
-            color: '#2a3036',
-            opacity: 0.75,
-            maxWidth: '640px',
             margin: '0',
-            textAlign: 'left'
+            WebkitTextStroke: '0'
           }}>
-            here's what clients say after we ship:
-          </p>
+            Words from people I've built with:
+          </h2>
         </motion.div>
 
         {/* Geometric Abstract Decor Layer (Brown & Beige Tones) */}
@@ -152,7 +138,7 @@ export default function ProcessSection() {
                 >
                   <div>
                     <div style={{ 
-                      fontFamily: "var(--font-serif)",
+                      fontFamily: "var(--font-heading)",
                       fontSize: '2.5rem',
                       lineHeight: '0.8',
                       color: isCenter ? '#b5997a' : '#C8CCD1',
@@ -162,8 +148,8 @@ export default function ProcessSection() {
                       &ldquo;
                     </div>
                     <p style={{
-                      fontFamily: "var(--font-sans), Inter, sans-serif",
-                      fontSize: '0.925rem',
+                      fontFamily: "var(--font-body)",
+                      fontSize: '0.94rem',
                       lineHeight: 1.65,
                       color: isCenter ? '#e8ebee' : '#2a3036',
                       fontWeight: 400,
@@ -184,20 +170,22 @@ export default function ProcessSection() {
                   }}>
                     <div style={{ textAlign: 'left' }}>
                       <div style={{ 
-                        fontFamily: "var(--font-sans), Inter, sans-serif",
-                        fontSize: '1rem',
-                        fontWeight: 700,
+                        fontFamily: "var(--font-heading)",
+                        fontSize: '0.98rem',
+                        fontWeight: 500,
+                        letterSpacing: '-0.01em',
                         color: isCenter ? '#ffffff' : '#121212',
                         lineHeight: 1.3
                       }}>
                         {testimonial.author}
                       </div>
                       <div style={{ 
-                        fontFamily: "'JetBrains Mono', Menlo, monospace",
+                        fontFamily: "var(--font-label)",
                         fontSize: '0.75rem',
-                        color: '#8c96a0',
+                        fontWeight: 500,
+                        color: isCenter ? '#9ca3af' : '#6b7280',
                         marginTop: '0.3rem',
-                        letterSpacing: '0.02em'
+                        letterSpacing: '0.04em'
                       }}>
                         {testimonial.role}
                       </div>
@@ -222,31 +210,36 @@ export default function ProcessSection() {
               flex: 0 0 540px;
               transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
               cursor: pointer;
+              box-shadow: none !important;
+              filter: none !important;
             }
             .testimonial-card.side-card {
-              filter: blur(2.5px);
-              opacity: 0.55;
-              transform: scale(0.95);
+              opacity: 0.65;
+              transform: scale(0.96);
+              box-shadow: none !important;
+              filter: none !important;
             }
             .testimonial-card.center-card {
-              filter: blur(0px);
               opacity: 1;
               transform: scale(1);
               z-index: 10;
+              box-shadow: none !important;
+              filter: none !important;
             }
             
-            /* Group Hover Logic: if ANY card is hovered, blur all other cards */
+            /* Group Hover Logic: if ANY card is hovered, tone down other cards */
             .testimonials-track:hover .testimonial-card {
-              filter: blur(4px);
-              opacity: 0.4;
-              transform: scale(0.95);
+              opacity: 0.5;
+              transform: scale(0.96);
+              box-shadow: none !important;
+              filter: none !important;
             }
             .testimonials-track .testimonial-card:hover {
-              filter: blur(0px) !important;
               opacity: 1 !important;
               transform: scale(1.02) !important;
               z-index: 20;
               box-shadow: none !important;
+              filter: none !important;
             }
 
             @media (max-width: 1000px) {
@@ -286,14 +279,14 @@ export default function ProcessSection() {
           }}
         >
           <span style={{ 
-            fontFamily: "var(--font-sans), Inter, sans-serif",
+            fontFamily: "var(--font-label)",
             fontSize: '0.75rem',
             letterSpacing: '0.08em',
             fontWeight: 600,
-            color: '#3b7ac8'
+            color: '#3a3d46'
           }}>{activeIndex + 1} / {testimonials.length}</span>
           <svg width="65" height="12" viewBox="0 0 65 12" fill="none" xmlns="http://www.w3.org/2000/svg">
-            <path d="M0 6H63.5M63.5 6L58.5 1M63.5 6L58.5 11" stroke="#3b7ac8" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"/>
+            <path d="M0 6H63.5M63.5 6L58.5 1M63.5 6L58.5 11" stroke="#3a3d46" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"/>
           </svg>
         </div>
       </div>

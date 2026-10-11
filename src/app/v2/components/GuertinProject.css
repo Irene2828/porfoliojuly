@@ -182,12 +182,12 @@
   }
 }
 .guertin-cards-title {
-  color: rgba(255,255,255,0.9);
-  font-family: 'Times New Roman', Times, serif;
-  font-size: 1.5rem;
-  font-style: italic;
+  color: rgba(255,255,255,0.95);
+  font-family: var(--font-heading), 'Outfit', sans-serif;
+  font-size: 1.35rem;
+  letter-spacing: -0.02em;
   margin-bottom: 1.5rem;
-  font-weight: 400;
+  font-weight: 500;
 }
 
 .guertin-cards-grid {

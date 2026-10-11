@@ -22,7 +22,7 @@ export default function FaceDivider() {
       }}
     >
       <div style={{
-        fontFamily: "var(--font-sans), Inter, sans-serif",
+        fontFamily: "var(--font-body)",
         fontSize: '0.82rem',
         color: '#2a3036',
         letterSpacing: '0.02em',

@@ -34,7 +34,7 @@
 }
 
 .greeting-text {
-  font-family: var(--font-serif) !important;
+  font-family: var(--font-heading), 'Outfit', sans-serif !important;
   font-size: clamp(2rem, 3.4vw, 3.25rem); /* Proportional large font size for the frame */
   font-weight: 500;
   line-height: 1.25;
@@ -43,9 +43,8 @@
   margin: 0;
   letter-spacing: -0.02em;
   -webkit-font-smoothing: antialiased;
-  -webkit-text-stroke: 0.35px rgba(50, 57, 65, 0.45); /* Added stroke to matching headline style */
-  text-stroke: 0.35px rgba(50, 57, 65, 0.45);
-  paint-order: stroke fill;
+  -webkit-text-stroke: 0 !important;
+  text-stroke: 0 !important;
 }
 
 /* Responsive spacing for mobile */
