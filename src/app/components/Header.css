@@ -6,20 +6,21 @@
   --hero-motion-duration: 0.2s;
   --hero-scan-delay: 0.2s;
   --hero-nav-frame-offset: clamp(0rem, calc((100% - 70rem) * 0.15), 3rem);
-  position: absolute;
+  position: fixed !important;
   top: 0;
   left: 0;
   right: 0;
   width: 100%;
-  background-color: rgba(255, 255, 255, 0.82) !important;
-  backdrop-filter: saturate(180%) blur(20px);
-  -webkit-backdrop-filter: saturate(180%) blur(20px);
+  background: rgba(255, 255, 255, 0.72) !important;
+  backdrop-filter: blur(24px) saturate(180%);
+  -webkit-backdrop-filter: blur(24px) saturate(180%);
   display: flex;
   justify-content: center;
   align-items: center;
   height: 3.5rem;
   box-sizing: border-box;
-  border-bottom: 1px solid rgba(0, 0, 0, 0.08);
+  border-bottom: 1px solid rgba(0, 0, 0, 0.06);
+  box-shadow: 0 4px 24px rgba(0, 0, 0, 0.03), inset 0 -1px 0 rgba(255, 255, 255, 0.4);
   z-index: 1000;
   pointer-events: auto;
   opacity: 0;
@@ -384,18 +385,14 @@
     font-family: var(--font-heading), Outfit, sans-serif;
     font-size: 12px;
     font-weight: 600;
-    color: #333740;
+    color: var(--color-heading-silver) !important;
     letter-spacing: 0.13em;
     text-transform: uppercase;
     line-height: 1.2;
   }
 
   .mobile-brand-title {
-    font-family: var(--font-body), 'Plus Jakarta Sans', sans-serif;
-    font-size: 0.72rem;
-    font-weight: 500;
-    color: #5C6672;
-    line-height: 1.2;
+    display: none !important;
   }
 
   .mobile-header-right {

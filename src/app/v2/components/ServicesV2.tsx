@@ -157,7 +157,7 @@ export default function ServicesV2() {
         <h2 style={{ 
           fontFamily: "var(--font-heading)",
           fontSize: 'clamp(28px, 4.4vw, 42px)', 
-          color: 'var(--color-heading-peach)', 
+          color: 'var(--color-heading-silver)', 
           fontWeight: 400,
           lineHeight: 1.2,
           letterSpacing: '-0.02em',
@@ -276,18 +276,18 @@ export default function ServicesV2() {
             >
               {/* Premium Geometric Decor Layer for Left Card */}
               <div style={{ position: 'absolute', inset: 0, overflow: 'hidden', pointerEvents: 'none', zIndex: 0 }}>
-                <div style={{ position: 'absolute', width: '140px', height: '140px', border: '1px solid rgba(232, 216, 178, 0.15)', top: '-30px', left: '-30px', borderRadius: '50%' }} />
-                <div style={{ position: 'absolute', width: '70px', height: '70px', border: '1px dashed rgba(232, 216, 178, 0.2)', bottom: '10%', right: '-20px', transform: 'rotate(15deg)' }} />
-                <svg style={{ position: 'absolute', top: '35%', left: '8%', opacity: 0.2 }} width="28" height="28" viewBox="0 0 28 28" fill="none" stroke="#e8d8b2" strokeWidth="1">
+                <div style={{ position: 'absolute', width: '140px', height: '140px', border: '1px solid rgba(200, 206, 218, 0.16)', top: '-30px', left: '-30px', borderRadius: '50%' }} />
+                <div style={{ position: 'absolute', width: '70px', height: '70px', border: '1px dashed rgba(200, 206, 218, 0.2)', bottom: '10%', right: '-20px', transform: 'rotate(15deg)' }} />
+                <svg style={{ position: 'absolute', top: '35%', left: '8%', opacity: 0.2 }} width="28" height="28" viewBox="0 0 28 28" fill="none" stroke="#8c95a3" strokeWidth="1">
                   <line x1="14" y1="0" x2="14" y2="28" /><line x1="0" y1="14" x2="28" y2="14" />
                 </svg>
               </div>
 
               {/* Premium Ghost Geometry (Replacing 01) */}
               <div style={{ position: 'absolute', inset: 0, overflow: 'hidden', borderRadius: '0px', pointerEvents: 'none' }}>
-                <div style={{ position: 'absolute', width: '320px', height: '320px', borderRadius: '50%', border: '1.5px solid rgba(232, 216, 178, 0.05)', top: '-60px', right: '-40px' }} />
-                <div style={{ position: 'absolute', width: '240px', height: '240px', borderRadius: '50%', border: '1px dashed rgba(232, 216, 178, 0.08)', top: '-20px', right: '0px' }} />
-                <div style={{ position: 'absolute', width: '160px', height: '160px', borderRadius: '50%', border: '1.5px solid rgba(232, 216, 178, 0.04)', top: '20px', right: '40px' }} />
+                <div style={{ position: 'absolute', width: '320px', height: '320px', borderRadius: '50%', border: '1.5px solid rgba(200, 206, 218, 0.08)', top: '-60px', right: '-40px' }} />
+                <div style={{ position: 'absolute', width: '240px', height: '240px', borderRadius: '50%', border: '1px dashed rgba(200, 206, 218, 0.1)', top: '-20px', right: '0px' }} />
+                <div style={{ position: 'absolute', width: '160px', height: '160px', borderRadius: '50%', border: '1.5px solid rgba(200, 206, 218, 0.06)', top: '20px', right: '40px' }} />
               </div>
 
               {/* Real Card Content (zIndex: 1) */}

@@ -6,9 +6,12 @@ export default function HowItWorks() {
   const steps = [
     {
       num: '01',
-      label: '// DRAFT',
       title: 'First Draft',
-      desc: 'A fast, working build you can click through in days - not polished, but real enough to react to and easy to build on.',
+      bullets: [
+        { bold: 'Fast, working build', rest: ' clickable in days' },
+        { bold: 'Functional prototype', rest: ' to react to and validate early' },
+        { bold: 'Solid foundation', rest: ' that is easy to build on' }
+      ],
       icon: (
         <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#f4f4f5" strokeWidth="1.75" strokeLinecap="round" strokeLinejoin="round">
           <path d="M17 3a2.828 2.828 0 1 1 4 4L7.5 20.5 2 22l1.5-5.5L17 3z"></path>
@@ -18,9 +21,12 @@ export default function HowItWorks() {
     },
     {
       num: '02',
-      label: '// TEST',
       title: 'Test & Refine',
-      desc: 'We test where it matters - internally if it\'s a team tool, with real users if it\'s client-facing - and refine based on what we find.',
+      bullets: [
+        { bold: 'Targeted testing', rest: ' with internal teams or real users' },
+        { bold: 'Direct feedback', rest: ' to catch friction and gaps' },
+        { bold: 'Rapid refinement', rest: ' based on actual findings' }
+      ],
       icon: (
         <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#f4f4f5" strokeWidth="1.75" strokeLinecap="round" strokeLinejoin="round">
           <circle cx="11" cy="11" r="8"></circle>
@@ -30,9 +36,12 @@ export default function HowItWorks() {
     },
     {
       num: '03',
-      label: '// LAUNCH',
       title: 'Delivery',
-      desc: 'Launch, handover, and maintenance - we figure out where it lives and how it\'s supported together, based on what actually fits.',
+      bullets: [
+        { bold: 'Smooth launch', rest: ' and comprehensive handover' },
+        { bold: 'Hosting & setup', rest: ' aligned with your stack' },
+        { bold: 'Tailored maintenance', rest: ' and support plan' }
+      ],
       icon: (
         <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#f4f4f5" strokeWidth="1.75" strokeLinecap="round" strokeLinejoin="round">
           <line x1="22" y1="2" x2="11" y2="13"></line>
@@ -87,7 +96,7 @@ export default function HowItWorks() {
         <h2 style={{ 
           fontFamily: "var(--font-heading)",
           fontSize: 'clamp(28px, 4.4vw, 42px)', 
-          color: 'var(--color-heading-peach)', 
+          color: 'var(--color-heading-silver)', 
           fontWeight: 400,
           lineHeight: 1.2,
           letterSpacing: '-0.02em',
@@ -139,26 +148,26 @@ export default function HowItWorks() {
           }}
         >
           {/* Top-Left Cluster */}
-          <div style={{ position: 'absolute', width: '200px', height: '200px', border: '1px solid rgba(181, 153, 122, 0.3)', borderRadius: '50%', top: '-5%', left: '-2%' }} />
-          <svg style={{ position: 'absolute', top: '15%', left: '8%', opacity: 0.3 }} width="32" height="32" viewBox="0 0 32 32" fill="none" stroke="#3A2318" strokeWidth="1">
+          <div style={{ position: 'absolute', width: '200px', height: '200px', border: '1px solid rgba(215, 222, 232, 0.32)', borderRadius: '50%', top: '-5%', left: '-2%' }} />
+          <svg style={{ position: 'absolute', top: '15%', left: '8%', opacity: 0.35 }} width="32" height="32" viewBox="0 0 32 32" fill="none" stroke="#b0b8c6" strokeWidth="1">
             <line x1="16" y1="0" x2="16" y2="32" /><line x1="0" y1="16" x2="32" y2="16" />
           </svg>
           
           {/* Top-Right Cluster */}
-          <div style={{ position: 'absolute', width: '120px', height: '180px', border: '1px dashed rgba(58, 35, 24, 0.2)', top: '10%', right: '5%' }} />
-          <div style={{ position: 'absolute', width: '80px', height: '80px', border: '1px solid rgba(181, 153, 122, 0.4)', top: '25%', right: '12%' }} />
+          <div style={{ position: 'absolute', width: '120px', height: '180px', border: '1px dashed rgba(215, 222, 232, 0.25)', top: '10%', right: '5%' }} />
+          <div style={{ position: 'absolute', width: '80px', height: '80px', border: '1px solid rgba(215, 222, 232, 0.35)', top: '25%', right: '12%' }} />
 
           {/* Center-Left subtle lines */}
-          <div style={{ position: 'absolute', top: '50%', left: '0', width: '8%', height: '1px', backgroundColor: 'rgba(58, 35, 24, 0.15)' }} />
-          <div style={{ position: 'absolute', top: '52%', left: '0', width: '5%', height: '1px', backgroundColor: 'rgba(181, 153, 122, 0.25)' }} />
+          <div style={{ position: 'absolute', top: '50%', left: '0', width: '8%', height: '1px', backgroundColor: 'rgba(215, 222, 232, 0.22)' }} />
+          <div style={{ position: 'absolute', top: '52%', left: '0', width: '5%', height: '1px', backgroundColor: 'rgba(215, 222, 232, 0.28)' }} />
 
           {/* Bottom-Left Cluster */}
-          <div style={{ position: 'absolute', width: '150px', height: '150px', border: '1px solid rgba(58, 35, 24, 0.15)', bottom: '5%', left: '10%', transform: 'rotate(45deg)' }} />
-          <div style={{ position: 'absolute', width: '4px', height: '4px', backgroundColor: 'rgba(181, 153, 122, 0.5)', bottom: '20%', left: '20%', borderRadius: '50%' }} />
+          <div style={{ position: 'absolute', width: '150px', height: '150px', border: '1px solid rgba(215, 222, 232, 0.25)', bottom: '5%', left: '10%', transform: 'rotate(45deg)' }} />
+          <div style={{ position: 'absolute', width: '4px', height: '4px', backgroundColor: 'rgba(215, 222, 232, 0.6)', bottom: '20%', left: '20%', borderRadius: '50%' }} />
 
           {/* Bottom-Right Cluster */}
-          <div style={{ position: 'absolute', width: '160px', height: '160px', border: '1px dashed rgba(181, 153, 122, 0.3)', borderRadius: '50%', bottom: '10%', right: '8%' }} />
-          <svg style={{ position: 'absolute', bottom: '15%', right: '12%', opacity: 0.25 }} width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#3A2318" strokeWidth="1">
+          <div style={{ position: 'absolute', width: '160px', height: '160px', border: '1px dashed rgba(215, 222, 232, 0.32)', borderRadius: '50%', bottom: '10%', right: '8%' }} />
+          <svg style={{ position: 'absolute', bottom: '15%', right: '12%', opacity: 0.3 }} width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#b0b8c6" strokeWidth="1">
             <line x1="12" y1="0" x2="12" y2="24" /><line x1="0" y1="12" x2="24" y2="12" />
           </svg>
         </div>
@@ -217,7 +226,7 @@ export default function HowItWorks() {
                         fontFamily: "var(--font-heading)",
                         fontSize: '3.2rem',
                         fontWeight: 300,
-                        color: 'rgba(255, 255, 255, 0.18)',
+                        color: 'rgba(215, 222, 232, 0.38)',
                         lineHeight: 1
                       }}
                     >
@@ -242,25 +251,12 @@ export default function HowItWorks() {
                         boxShadow: '0 8px 32px rgba(0, 0, 0, 0.2), inset 0 1px 0 rgba(255, 255, 255, 0.12)'
                       }}
                     >
-                      <div style={{ marginBottom: '0.35rem', display: 'flex', alignItems: 'center', gap: '0.65rem' }}>
-                        <span style={{ 
-                          fontFamily: 'var(--font-label)', 
-                          fontSize: '11px', 
-                          color: '#cbd5e1', 
-                          fontWeight: 600, 
-                          letterSpacing: '0.14em',
-                          textTransform: 'uppercase',
-                          WebkitTextStroke: '0px transparent'
-                        }}>
-                          {step.label}
-                        </span>
-                      </div>
                       <h3 style={{ 
                         fontFamily: "var(--font-heading)",
                         fontSize: '22px', 
                         color: '#f8fafc',
                         fontWeight: 400,
-                        margin: '0 0 0.45rem 0',
+                        margin: '0 0 0.85rem 0',
                         letterSpacing: '0.025em',
                         lineHeight: 1.25,
                         WebkitTextStroke: '0'
@@ -268,18 +264,47 @@ export default function HowItWorks() {
                         {step.title}
                       </h3>
 
-                      <p style={{
-                        fontFamily: "var(--font-body)",
-                        fontSize: '0.98rem',
-                        lineHeight: 1.6,
-                        color: '#d1d5db',
-                        fontWeight: 400,
-                        opacity: 0.95,
-                        margin: '0',
+                      <ul style={{
+                        listStyle: 'none',
+                        padding: 0,
+                        margin: 0,
+                        display: 'flex',
+                        flexDirection: 'column',
+                        gap: '0.45rem',
                         maxWidth: '520px'
                       }}>
-                        {step.desc}
-                      </p>
+                        {step.bullets.map((bullet, bIdx) => (
+                          <li 
+                            key={bIdx}
+                            style={{
+                              display: 'flex',
+                              alignItems: 'baseline',
+                              gap: '0.65rem',
+                              fontFamily: "var(--font-body)",
+                              fontSize: '0.94rem',
+                              lineHeight: 1.5,
+                              color: '#cbd5e1',
+                              fontWeight: 400
+                            }}
+                          >
+                            <span 
+                              style={{
+                                display: 'inline-block',
+                                width: '4px',
+                                height: '4px',
+                                borderRadius: '50%',
+                                backgroundColor: 'rgba(215, 222, 232, 0.75)',
+                                flexShrink: 0,
+                                transform: 'translateY(-2px)'
+                              }} 
+                            />
+                            <span>
+                              <strong style={{ fontWeight: 600, color: '#f8fafc' }}>{bullet.bold}</strong>
+                              {bullet.rest}
+                            </span>
+                          </li>
+                        ))}
+                      </ul>
                     </motion.div>
                   </motion.div>
                 );

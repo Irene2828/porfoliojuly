@@ -52,7 +52,7 @@ export default async function HomePage() {
             <h2 style={{ 
               fontFamily: "var(--font-heading)",
               fontSize: 'clamp(28px, 4.4vw, 42px)', 
-              color: 'var(--color-heading-peach)', 
+              color: 'var(--color-heading-silver)', 
               fontWeight: 400,
               lineHeight: 1.2,
               letterSpacing: '-0.02em',

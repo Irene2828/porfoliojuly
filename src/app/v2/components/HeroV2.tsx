@@ -20,12 +20,12 @@ export default function HeroV2() {
           }}
         >
           {/* Top-Right Shapes */}
-          <div style={{ position: 'absolute', width: '220px', height: '130px', border: '1.5px solid rgba(232, 127, 115, 0.5)', top: '8%', right: '8%' }} />
-          <div style={{ position: 'absolute', width: '75px', height: '75px', border: '1.5px dashed rgba(232, 127, 115, 0.45)', borderRadius: '50%', top: '22%', right: '18%' }} />
+          <div style={{ position: 'absolute', width: '220px', height: '130px', border: '1.5px solid rgba(160, 168, 182, 0.45)', top: '8%', right: '8%' }} />
+          <div style={{ position: 'absolute', width: '75px', height: '75px', border: '1.5px dashed rgba(160, 168, 182, 0.45)', borderRadius: '50%', top: '22%', right: '18%' }} />
 
           {/* Center-Left Shapes */}
-          <div style={{ position: 'absolute', width: '160px', height: '100px', border: '1.5px solid rgba(232, 127, 115, 0.5)', top: '42%', left: '8%' }} />
-          <div style={{ position: 'absolute', width: '45px', height: '45px', border: '1.5px dashed rgba(232, 127, 115, 0.45)', top: '55%', left: '15%' }} />
+          <div style={{ position: 'absolute', width: '160px', height: '100px', border: '1.5px solid rgba(160, 168, 182, 0.45)', top: '42%', left: '8%' }} />
+          <div style={{ position: 'absolute', width: '45px', height: '45px', border: '1.5px dashed rgba(160, 168, 182, 0.45)', top: '55%', left: '15%' }} />
         </div>
       </div>
 

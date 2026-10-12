@@ -8,8 +8,8 @@ export default function EditorialStatement() {
   const [statementIndex, setStatementIndex] = useState(0);
 
   const statements = [
-    <span key="1">Turn <span style={{ color: 'var(--color-heading-peach)' }}>visitors into clients</span> with a custom website.</span>,
-    <span key="2">Turn <span style={{ color: 'var(--color-heading-peach)' }}>hours of work into minutes</span> with a custom AI tool.</span>
+    <span key="1">Turn <span style={{ color: 'var(--color-heading-silver)' }}>visitors into clients</span> with a custom website.</span>,
+    <span key="2">Turn <span style={{ color: 'var(--color-heading-silver)' }}>hours of work into minutes</span> with a custom AI tool.</span>
   ];
 
   useEffect(() => {
@@ -54,7 +54,7 @@ export default function EditorialStatement() {
           -webkit-text-fill-color: #ffffff !important;
           border: none !important;
           border-radius: 56px !important;
-          box-shadow: 6px 6px 0px rgba(232, 127, 115, 0.45) !important;
+          box-shadow: 6px 6px 0px #dcdfe3 !important;
           transition: background 0.22s ease, border-color 0.22s ease, transform 0.2s ease, box-shadow 0.2s ease !important;
           -webkit-text-stroke: 0 !important;
         }
@@ -63,7 +63,7 @@ export default function EditorialStatement() {
           border-color: #24252a !important;
           color: #ffffff !important;
           -webkit-text-fill-color: #ffffff !important;
-          box-shadow: 0 8px 24px rgba(232, 127, 115, 0.4) !important;
+          box-shadow: 0 8px 24px rgba(180, 186, 196, 0.4) !important;
         }
         .face-cta {
           background-color: #18191e !important;
@@ -72,7 +72,7 @@ export default function EditorialStatement() {
           border: none !important;
         }
         .face-cta:hover {
-          box-shadow: 0 8px 24px rgba(232, 127, 115, 0.4) !important;
+          box-shadow: 0 8px 24px rgba(180, 186, 196, 0.4) !important;
           background-color: #18191e !important;
         }
       `}</style>

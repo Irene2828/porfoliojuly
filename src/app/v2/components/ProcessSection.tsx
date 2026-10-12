@@ -93,16 +93,16 @@ export default function ProcessSection() {
         >
 
           {/* Top-Right Shapes */}
-          <div style={{ position: 'absolute', width: '220px', height: '130px', border: '1.5px solid rgba(58, 35, 24, 0.14)', top: '7%', right: '7%' }} />
-          <div style={{ position: 'absolute', width: '75px', height: '75px', border: '1.5px dashed rgba(181, 153, 122, 0.35)', borderRadius: '50%', top: '18%', right: '15%' }} />
+          <div style={{ position: 'absolute', width: '220px', height: '130px', border: '1.5px solid rgba(160, 168, 182, 0.45)', top: '7%', right: '7%' }} />
+          <div style={{ position: 'absolute', width: '75px', height: '75px', border: '1.5px dashed rgba(160, 168, 182, 0.45)', borderRadius: '50%', top: '18%', right: '15%' }} />
 
           {/* Bottom-Left Shapes */}
-          <div style={{ position: 'absolute', width: '190px', height: '110px', border: '1.5px solid rgba(58, 35, 24, 0.14)', bottom: '10%', left: '8%' }} />
-          <div style={{ position: 'absolute', width: '50px', height: '50px', border: '1.5px dashed rgba(181, 153, 122, 0.35)', bottom: '18%', left: '14%' }} />
+          <div style={{ position: 'absolute', width: '190px', height: '110px', border: '1.5px solid rgba(160, 168, 182, 0.45)', bottom: '10%', left: '8%' }} />
+          <div style={{ position: 'absolute', width: '50px', height: '50px', border: '1.5px dashed rgba(160, 168, 182, 0.45)', bottom: '18%', left: '14%' }} />
 
           {/* Bottom-Right Shapes */}
-          <div style={{ position: 'absolute', width: '140px', height: '140px', border: '1.5px dashed rgba(58, 35, 24, 0.18)', bottom: '10%', right: '9%' }} />
-          <div style={{ position: 'absolute', width: '60px', height: '60px', border: '1.5px solid rgba(181, 153, 122, 0.35)', bottom: '20%', right: '6%' }} />
+          <div style={{ position: 'absolute', width: '140px', height: '140px', border: '1.5px dashed rgba(160, 168, 182, 0.45)', bottom: '10%', right: '9%' }} />
+          <div style={{ position: 'absolute', width: '60px', height: '60px', border: '1.5px solid rgba(160, 168, 182, 0.45)', bottom: '20%', right: '6%' }} />
         </div>
 
         <motion.div 
@@ -141,7 +141,7 @@ export default function ProcessSection() {
                       fontFamily: "var(--font-heading)",
                       fontSize: '2.5rem',
                       lineHeight: '0.8',
-                      color: isCenter ? '#b5997a' : '#C8CCD1',
+                      color: isCenter ? '#dcdfe3' : '#8c95a3',
                       fontWeight: 700,
                       marginBottom: '1rem'
                     }}>
