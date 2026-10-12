@@ -49,18 +49,18 @@
 }
 
 .guertin-pill-light {
-  background-color: rgba(236, 145, 119, 0.14);
-  color: var(--accent-dark, #C26A4E);
-  border: 1px solid rgba(236, 145, 119, 0.35);
+  background-color: rgba(240, 242, 245, 0.95);
+  color: #4b5563;
+  border: 1px solid rgba(0, 0, 0, 0.12);
 }
-.guertin-pill-light .guertin-pill-num { font-weight: 600; color: var(--accent-dark, #C26A4E); }
+.guertin-pill-light .guertin-pill-num { font-weight: 600; color: #1a202c; }
 
 .guertin-pill-dark {
-  background-color: rgba(236, 145, 119, 0.18);
-  color: var(--accent, #EC9177);
-  border: 1px solid rgba(236, 145, 119, 0.4);
+  background-color: rgba(255, 255, 255, 0.08);
+  color: rgba(255, 255, 255, 0.85);
+  border: 1px solid rgba(255, 255, 255, 0.16);
 }
-.guertin-pill-dark .guertin-pill-num { font-weight: 600; color: var(--accent, #EC9177); }
+.guertin-pill-dark .guertin-pill-num { font-weight: 600; color: #ffffff; }
 
 .guertin-pill-1 {
   top: -1.5rem;
@@ -219,7 +219,7 @@
   gap: 0.5rem;
 }
 .guertin-card-icon {
-  color: var(--accent, #EC9177);
+  color: rgba(255,255,255,0.6);
 }
 .guertin-card-desc {
   color: rgba(255,255,255,0.5);

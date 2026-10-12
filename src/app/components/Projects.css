@@ -478,9 +478,9 @@
 
 .project-chip {
   display: inline-block;
-  background: rgba(236, 145, 119, 0.12) !important; 
-  color: var(--accent-dark, #C26A4E) !important;
-  border: 1px solid rgba(236, 145, 119, 0.4) !important;
+  background: #f1f3f5 !important; 
+  color: #4b5563 !important;
+  border: 1px solid #d1d5db !important;
   font-size: 0.62rem;
   font-family: var(--font-sans);
   font-weight: 600;
@@ -492,13 +492,13 @@
   vertical-align: middle;
 }
 
-/* Custom chips styling (coral tag chip look) */
+/* Custom chips styling (grey tag chip look) */
 .annotation-card-index-0 .project-chip,
 .annotation-card-index-1 .project-chip,
 .annotation-card-index-2 .project-chip {
-  background: rgba(236, 145, 119, 0.12) !important;
-  color: var(--accent-dark, #C26A4E) !important;
-  border-color: rgba(236, 145, 119, 0.4) !important;
+  background: #f1f3f5 !important;
+  color: #4b5563 !important;
+  border-color: #d1d5db !important;
 }
 
 .annotation-stat {
@@ -805,9 +805,9 @@
 
 .page-section-divider.preview-view .project-chip,
 .v2-theme .page-section-divider.preview-view .project-chip {
-  background: rgba(236, 145, 119, 0.12) !important;
-  color: var(--accent-dark, #C26A4E) !important;
-  border-color: rgba(236, 145, 119, 0.4) !important;
+  background: #f1f3f5 !important;
+  color: #4b5563 !important;
+  border-color: #d1d5db !important;
 }
 
 /* --- Modal Overlay & Expanded View (Apple Tahoe Frosted Glass Style, Clean Single Scrollbar) --- */
@@ -920,9 +920,9 @@
 
 .page-section-divider.modal-view .project-chip,
 .v2-theme .page-section-divider.modal-view .project-chip {
-  background: rgba(236, 145, 119, 0.12) !important;
-  color: var(--accent-dark, #C26A4E) !important;
-  border-color: rgba(236, 145, 119, 0.4) !important;
+  background: #f1f3f5 !important;
+  color: #4b5563 !important;
+  border-color: #d1d5db !important;
 }
 
 /* Sidebar captions are brand blue via .sidebar-col global rule */

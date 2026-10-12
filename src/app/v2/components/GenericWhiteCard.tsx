@@ -28,7 +28,7 @@ export default function GenericWhiteCard({ title, subline, annotations, stats, i
         
         {/* Mockup Area */}
         <div style={{ fontFamily: 'var(--font-mono), monospace', fontSize: '11px', marginBottom: '16px', width: '100%', textAlign: 'left' }}>
-          <span style={{ color: 'var(--accent-dark, #C26A4E)', fontWeight: 600 }}>{title.toUpperCase()}</span><br/>
+          <span style={{ color: '#4B5565', fontWeight: 600 }}>{title.toUpperCase()}</span><br/>
           <span style={{ color: '#555555' }}>{subline || 'Interactive Digital Tool'}</span>
         </div>
         <div className="guertin-mockup-area">
@@ -130,7 +130,7 @@ export default function GenericWhiteCard({ title, subline, annotations, stats, i
                 style={{ backgroundColor: '#ffffff', border: '1px solid rgba(0,0,0,0.1)', boxShadow: '0 4px 12px rgba(0,0,0,0.04)' }}
               >
                 <h4 className="guertin-card-title" style={{ color: '#18191e' }}>
-                  <span className="guertin-card-icon" style={{ color: 'var(--accent, #EC9177)' }}>⚡</span> <span style={{ color: 'var(--accent-dark, #C26A4E)' }}>{statItem.chip}</span>: <strong style={{ color: '#18191e' }}>{statItem.stat}</strong>
+                  <span className="guertin-card-icon" style={{ color: '#717885' }}>⚡</span> <span style={{ color: '#4B5565' }}>{statItem.chip}</span>: <strong style={{ color: '#18191e' }}>{statItem.stat}</strong>
                 </h4>
                 <p className="guertin-card-desc" style={{ color: '#555555' }}>
                   {statItem.text}

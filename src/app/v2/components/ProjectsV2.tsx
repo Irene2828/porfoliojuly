@@ -315,7 +315,7 @@ export default function ProjectsV2({ initialProjects = [] }: ProjectsV2Props) {
                     </div>
                   </div>
                   <div className="preview-card-caption">
-                    Tap to Zoom <span style={{ color: 'var(--accent, #EC9177)', marginLeft: '4px' }}>&rarr;</span>
+                    Tap to Zoom <span style={{ color: '#717885', marginLeft: '4px' }}>&rarr;</span>
                   </div>
                 </div>
               </div>
