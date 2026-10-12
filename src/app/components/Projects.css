@@ -478,9 +478,9 @@
 
 .project-chip {
   display: inline-block;
-  background: #1A1A1A; 
-  color: #ffffff; /* white text */
-  border: 1px solid #1A1A1A;
+  background: rgba(236, 145, 119, 0.12) !important; 
+  color: var(--accent-dark, #C26A4E) !important;
+  border: 1px solid rgba(236, 145, 119, 0.4) !important;
   font-size: 0.62rem;
   font-family: var(--font-sans);
   font-weight: 600;
@@ -488,24 +488,24 @@
   letter-spacing: 0.06em;
   padding: 0.15rem 0.5rem; /* small padding */
   margin-right: 0.5rem;
-  border-radius: 0px !important; /* rectangular with no radius */
+  border-radius: 2px !important;
   vertical-align: middle;
 }
 
-/* Custom chips styling (uniform black-white look) */
+/* Custom chips styling (coral tag chip look) */
 .annotation-card-index-0 .project-chip,
 .annotation-card-index-1 .project-chip,
 .annotation-card-index-2 .project-chip {
-  background: #121212; /* teal ocean brand green */
-  color: #ffffff;
-  border-color: #121212;
+  background: rgba(236, 145, 119, 0.12) !important;
+  color: var(--accent-dark, #C26A4E) !important;
+  border-color: rgba(236, 145, 119, 0.4) !important;
 }
 
 .annotation-stat {
   font-family: var(--font-sans);
   font-size: clamp(1.8rem, 3.8vw, 3.2rem);
   font-weight: 500;
-  color: #121212; /* teal ocean color */
+  color: var(--accent, #EC9177) !important;
   line-height: 1.1;
   letter-spacing: -0.04em; /* tightened spacing (half as wide) */
   -webkit-font-smoothing: antialiased;
@@ -805,9 +805,9 @@
 
 .page-section-divider.preview-view .project-chip,
 .v2-theme .page-section-divider.preview-view .project-chip {
-  background: #363636 !important;
-  color: #ffffff !important;
-  border-color: #363636 !important;
+  background: rgba(236, 145, 119, 0.12) !important;
+  color: var(--accent-dark, #C26A4E) !important;
+  border-color: rgba(236, 145, 119, 0.4) !important;
 }
 
 /* --- Modal Overlay & Expanded View (Apple Tahoe Frosted Glass Style, Clean Single Scrollbar) --- */
@@ -920,9 +920,9 @@
 
 .page-section-divider.modal-view .project-chip,
 .v2-theme .page-section-divider.modal-view .project-chip {
-  background: #363636 !important;
-  color: #ffffff !important;
-  border-color: #363636 !important;
+  background: rgba(236, 145, 119, 0.12) !important;
+  color: var(--accent-dark, #C26A4E) !important;
+  border-color: rgba(236, 145, 119, 0.4) !important;
 }
 
 /* Sidebar captions are brand blue via .sidebar-col global rule */

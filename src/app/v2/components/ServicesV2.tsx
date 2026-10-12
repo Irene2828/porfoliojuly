@@ -5,7 +5,7 @@ import { motion } from 'framer-motion';
 export default function ServicesV2() {
   const websitesBullets = [
     {
-      text: <span>Generate <strong style={{ fontWeight: 500 }}>qualified leads</strong> for your business</span>,
+      text: <span>Generate <strong style={{ fontWeight: 600, color: '#FFFFFF' }}>qualified leads</strong> for your business</span>,
       icon: (
         <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#e8ebee" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
           <circle cx="12" cy="12" r="10"/><circle cx="12" cy="12" r="6"/><circle cx="12" cy="12" r="2"/>
@@ -13,7 +13,7 @@ export default function ServicesV2() {
       )
     },
     {
-      text: <span>Showcase your <strong style={{ fontWeight: 500 }}>offer</strong> in a premium way that converts</span>,
+      text: <span>Showcase your <strong style={{ fontWeight: 600, color: '#FFFFFF' }}>offer</strong> in a premium way that converts</span>,
       icon: (
         <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#e8ebee" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
           <rect x="3" y="3" width="18" height="18" rx="2" ry="2"/><line x1="3" y1="9" x2="21" y2="9"/><line x1="9" y1="21" x2="9" y2="9"/>
@@ -21,7 +21,7 @@ export default function ServicesV2() {
       )
     },
     {
-      text: <span>Build <strong style={{ fontWeight: 500 }}>trust &amp; authority</strong> with your audience</span>,
+      text: <span>Build <strong style={{ fontWeight: 600, color: '#FFFFFF' }}>trust &amp; authority</strong> with your audience</span>,
       icon: (
         <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#e8ebee" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
           <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/>
@@ -32,7 +32,7 @@ export default function ServicesV2() {
 
   const aiToolsBullets = [
     {
-      text: <span>Audit your ops to find <strong style={{ fontWeight: 500 }}>bottlenecks &amp; manual tasks</strong></span>,
+      text: <span>Audit your ops to find <strong style={{ fontWeight: 600, color: '#1A1F2B' }}>bottlenecks &amp; manual tasks</strong></span>,
       icon: (
         <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#1A1F2B" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
           <circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/>
@@ -40,7 +40,7 @@ export default function ServicesV2() {
       )
     },
     {
-      text: <span>Build &amp; integrate <strong style={{ fontWeight: 500 }}>custom AI workflows &amp; agents</strong></span>,
+      text: <span>Build &amp; integrate <strong style={{ fontWeight: 600, color: '#1A1F2B' }}>custom AI workflows &amp; agents</strong></span>,
       icon: (
         <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#1A1F2B" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
           <rect x="3" y="11" width="18" height="10" rx="2"/><circle cx="12" cy="5" r="2"/><path d="M12 7v4"/><line x1="8" y1="16" x2="8" y2="16"/><line x1="16" y1="16" x2="16" y2="16"/>
@@ -48,7 +48,7 @@ export default function ServicesV2() {
       )
     },
     {
-      text: <span>Deploy <strong style={{ fontWeight: 500 }}>practical automation</strong> directly into daily operations</span>,
+      text: <span>Deploy <strong style={{ fontWeight: 600, color: '#1A1F2B' }}>practical automation</strong> directly into daily operations</span>,
       icon: (
         <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#1A1F2B" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
           <polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"/>
@@ -276,18 +276,18 @@ export default function ServicesV2() {
             >
               {/* Premium Geometric Decor Layer for Left Card */}
               <div style={{ position: 'absolute', inset: 0, overflow: 'hidden', pointerEvents: 'none', zIndex: 0 }}>
-                <div style={{ position: 'absolute', width: '140px', height: '140px', border: '1px solid rgba(200, 206, 218, 0.16)', top: '-30px', left: '-30px', borderRadius: '50%' }} />
-                <div style={{ position: 'absolute', width: '70px', height: '70px', border: '1px dashed rgba(200, 206, 218, 0.2)', bottom: '10%', right: '-20px', transform: 'rotate(15deg)' }} />
-                <svg style={{ position: 'absolute', top: '35%', left: '8%', opacity: 0.2 }} width="28" height="28" viewBox="0 0 28 28" fill="none" stroke="#8c95a3" strokeWidth="1">
+                <div style={{ position: 'absolute', width: '140px', height: '140px', border: '1px solid rgba(236, 145, 119, 0.12)', top: '-30px', left: '-30px', borderRadius: '50%' }} />
+                <div style={{ position: 'absolute', width: '70px', height: '70px', border: '1px dashed rgba(236, 145, 119, 0.14)', bottom: '10%', right: '-20px', transform: 'rotate(15deg)' }} />
+                <svg style={{ position: 'absolute', top: '35%', left: '8%', opacity: 0.15 }} width="28" height="28" viewBox="0 0 28 28" fill="none" stroke="var(--accent, #EC9177)" strokeWidth="1">
                   <line x1="14" y1="0" x2="14" y2="28" /><line x1="0" y1="14" x2="28" y2="14" />
                 </svg>
               </div>
 
               {/* Premium Ghost Geometry (Replacing 01) */}
               <div style={{ position: 'absolute', inset: 0, overflow: 'hidden', borderRadius: '0px', pointerEvents: 'none' }}>
-                <div style={{ position: 'absolute', width: '320px', height: '320px', borderRadius: '50%', border: '1.5px solid rgba(200, 206, 218, 0.08)', top: '-60px', right: '-40px' }} />
-                <div style={{ position: 'absolute', width: '240px', height: '240px', borderRadius: '50%', border: '1px dashed rgba(200, 206, 218, 0.1)', top: '-20px', right: '0px' }} />
-                <div style={{ position: 'absolute', width: '160px', height: '160px', borderRadius: '50%', border: '1.5px solid rgba(200, 206, 218, 0.06)', top: '20px', right: '40px' }} />
+                <div style={{ position: 'absolute', width: '320px', height: '320px', borderRadius: '50%', border: '1px solid rgba(236, 145, 119, 0.08)', top: '-60px', right: '-40px' }} />
+                <div style={{ position: 'absolute', width: '240px', height: '240px', borderRadius: '50%', border: '1px dashed rgba(236, 145, 119, 0.10)', top: '-20px', right: '0px' }} />
+                <div style={{ position: 'absolute', width: '160px', height: '160px', borderRadius: '50%', border: '1px solid rgba(236, 145, 119, 0.07)', top: '20px', right: '40px' }} />
               </div>
 
               {/* Real Card Content (zIndex: 1) */}
@@ -342,7 +342,7 @@ export default function ServicesV2() {
                 </ul>
                 <div style={{ display: 'flex', justifyContent: 'flex-end', marginTop: '64px' }}>
                   <a href="#cases" className="see-example-link-dark" style={{ position: 'relative', display: 'inline-flex', alignItems: 'center', fontFamily: 'var(--font-label), sans-serif', fontSize: '11px', fontWeight: 600, letterSpacing: '0.1em', opacity: 0.9, textDecoration: 'none', color: '#A9B4C0', paddingBottom: '4px', transition: 'opacity 0.2s' }} onMouseEnter={(e) => e.currentTarget.style.opacity = '1'} onMouseLeave={(e) => e.currentTarget.style.opacity = '0.9'}>
-                    <span>SEE WEBSITE EXAMPLES &darr;</span>
+                    <span>SEE WEBSITE EXAMPLES <span style={{ color: 'var(--accent, #EC9177)', marginLeft: '4px' }}>&darr;</span></span>
                   </a>
                 </div>
               </div>
@@ -367,9 +367,9 @@ export default function ServicesV2() {
             >
               {/* Premium Ghost Geometry (Replacing 02) */}
               <div style={{ position: 'absolute', inset: 0, overflow: 'hidden', borderRadius: '0px', pointerEvents: 'none' }}>
-                <div style={{ position: 'absolute', width: '320px', height: '320px', borderRadius: '50%', border: '1.5px solid rgba(255, 255, 255, 0.6)', top: '-60px', right: '-40px' }} />
-                <div style={{ position: 'absolute', width: '240px', height: '240px', borderRadius: '50%', border: '1px dashed rgba(255, 255, 255, 0.8)', top: '-20px', right: '0px' }} />
-                <div style={{ position: 'absolute', width: '160px', height: '160px', borderRadius: '50%', border: '1.5px solid rgba(255, 255, 255, 0.5)', top: '20px', right: '40px' }} />
+                <div style={{ position: 'absolute', width: '320px', height: '320px', borderRadius: '50%', border: '1px solid rgba(236, 145, 119, 0.12)', top: '-60px', right: '-40px' }} />
+                <div style={{ position: 'absolute', width: '240px', height: '240px', borderRadius: '50%', border: '1px dashed rgba(236, 145, 119, 0.14)', top: '-20px', right: '0px' }} />
+                <div style={{ position: 'absolute', width: '160px', height: '160px', borderRadius: '50%', border: '1px solid rgba(236, 145, 119, 0.10)', top: '20px', right: '40px' }} />
               </div>
 
               {/* Real Card Content (zIndex: 1) */}
@@ -424,7 +424,7 @@ export default function ServicesV2() {
                 </ul>
                 <div style={{ display: 'flex', justifyContent: 'flex-end', marginTop: '64px' }}>
                   <a href="#cases" className="see-example-link-light-bg" style={{ position: 'relative', display: 'inline-flex', alignItems: 'center', fontFamily: 'var(--font-label), sans-serif', fontSize: '11px', fontWeight: 600, letterSpacing: '0.1em', opacity: 0.9, textDecoration: 'none', color: '#5C6672', paddingBottom: '4px', transition: 'opacity 0.2s' }} onMouseEnter={(e) => e.currentTarget.style.opacity = '1'} onMouseLeave={(e) => e.currentTarget.style.opacity = '0.9'}>
-                    <span>SEE AI TOOL EXAMPLES &darr;</span>
+                    <span>SEE AI TOOL EXAMPLES <span style={{ color: 'var(--accent, #EC9177)', marginLeft: '4px' }}>&darr;</span></span>
                   </a>
                 </div>
               </div>

@@ -26,7 +26,7 @@ export default function RootLayout({
 }: {
   children: React.ReactNode;
 }) {
-  const shouldInjectToolbar = process.env.NODE_ENV === 'development' || process.env.VERCEL_ENV === 'preview';
+  const shouldInjectToolbar = process.env.VERCEL_ENV === 'preview';
 
   return (
     <html lang="en">

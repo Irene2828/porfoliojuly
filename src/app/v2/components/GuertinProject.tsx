@@ -61,9 +61,9 @@ export default function GuertinProject({ kicker, subline, browserTitle, cardsTit
       <div className="guertin-content">
         
         {/* Mockup Area */}
-        <div style={{ fontFamily: 'var(--font-mono), monospace', fontSize: '11px', opacity: 0.6, marginBottom: '16px', width: '100%', textAlign: 'left', color: '#ffffff' }}>
-          {kicker || 'GUERTIN ISABELLE // Professional Services Website'}<br/>
-          {subline || 'Quebec - Service business'}
+        <div style={{ fontFamily: 'var(--font-mono), monospace', fontSize: '11px', marginBottom: '16px', width: '100%', textAlign: 'left' }}>
+          <span style={{ color: 'var(--accent, #EC9177)', fontWeight: 600 }}>{kicker || 'GUERTIN ISABELLE // Professional Services Website'}</span><br/>
+          <span style={{ color: 'rgba(255,255,255,0.7)' }}>{subline || 'Quebec - Service business'}</span>
         </div>
         <div className="guertin-mockup-area">
           

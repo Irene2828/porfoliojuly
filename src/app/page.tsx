@@ -44,9 +44,9 @@ export default async function HomePage() {
             <div style={{ 
               width: '60px', 
               height: '1px', 
-              backgroundColor: '#0b0c10', 
+              backgroundColor: 'var(--accent, #EC9177)', 
               margin: '0 auto 2.5rem auto', 
-              opacity: 0.6 
+              opacity: 0.9 
             }} />
 
             <h2 style={{ 

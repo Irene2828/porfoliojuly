@@ -130,13 +130,13 @@
 
 .nav-link:hover,
 .header-nav-desktop .nav-link:hover {
-  color: #1a5690 !important;
+  color: var(--accent, #EC9177) !important;
 }
 
 .nav-link:hover::after,
 .header-nav-desktop .nav-link:hover::after {
   transform: scaleX(1);
-  background-color: #1a5690;
+  background-color: var(--accent, #EC9177) !important;
 }
 
 .hamburger-btn {
@@ -278,7 +278,7 @@
 }
 
 .drawer-close-btn:hover {
-  color: #008b8b;
+  color: var(--accent, #EC9177);
 }
 
 .drawer-nav-links {
@@ -300,7 +300,7 @@
 }
 
 .drawer-link:hover {
-  color: #008b8b;
+  color: var(--accent, #EC9177);
   transform: translateX(4px);
 }
 

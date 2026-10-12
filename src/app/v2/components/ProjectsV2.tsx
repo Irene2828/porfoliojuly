@@ -30,7 +30,7 @@ export default function ProjectsV2({ initialProjects = [] }: ProjectsV2Props) {
       title: 'Ukraine Relief AI // Terry Fox Run',
       slug: 'ukraine-case-1',
       subline: 'Custom platform for Ukraine relief efforts',
-      hoverLabel: 'Cutting days of work to minutes for volunteers worldwide',
+      hoverLabel: 'Tap to Zoom',
       annotations: [
         { markerNumber: 1, title: 'AI Qualification', text: 'Engages inbound lead inquiries & volunteer requests automatically.' },
         { markerNumber: 2, title: 'Instant Canvas Sync', text: 'Generates personalized localized campaign graphics in seconds.' },
@@ -48,7 +48,7 @@ export default function ProjectsV2({ initialProjects = [] }: ProjectsV2Props) {
       title: 'Professional website presence for a local legal expert',
       slug: 'guertin-isabelle',
       subline: 'Quebec service business & consultation booking',
-      hoverLabel: 'Professional website presence for a local legal expert',
+      hoverLabel: 'Tap to Zoom',
       annotations: [
         { markerNumber: 1, title: 'Doc Parsing', text: 'Extracts key structured fields from PDFs and receipts instantly.' },
         { markerNumber: 2, title: 'Smart Validation', text: 'Flags discrepancies and potential fraud markers in real time.' },
@@ -66,7 +66,7 @@ export default function ProjectsV2({ initialProjects = [] }: ProjectsV2Props) {
       title: 'Community map-based volunteer project',
       slug: 'community-map-project',
       subline: 'Interactive geospatial platform for local relief teams',
-      hoverLabel: 'Community map-based volunteer project',
+      hoverLabel: 'Tap to Zoom',
       annotations: [
         { markerNumber: 1, title: 'Live Mapping', text: 'Real-time pin drops and localized dispatch for mutual aid.' },
         { markerNumber: 2, title: 'Offline Cache', text: 'PWA support for field volunteers in low-bandwidth zones.' },
@@ -84,7 +84,7 @@ export default function ProjectsV2({ initialProjects = [] }: ProjectsV2Props) {
       title: "Old ipads' second life: interactive desk assistant for kids",
       slug: 'ipad-kids-assistant',
       subline: 'Hardware repurposing & smart interactive assistant',
-      hoverLabel: "Old ipads' second life: interactive desk assistant for kids",
+      hoverLabel: 'Tap to Zoom',
       annotations: [
         { markerNumber: 1, title: 'Kiosk Mode', text: 'Locks obsolete iOS devices into dedicated child-safe tools.' },
         { markerNumber: 2, title: 'Voice & Touch', text: 'Interactive audio prompts and visual schedules for homework.' },
@@ -315,7 +315,7 @@ export default function ProjectsV2({ initialProjects = [] }: ProjectsV2Props) {
                     </div>
                   </div>
                   <div className="preview-card-caption">
-                    {project.hoverLabel || project.title} &rarr;
+                    Tap to Zoom <span style={{ color: 'var(--accent, #EC9177)', marginLeft: '4px' }}>&rarr;</span>
                   </div>
                 </div>
               </div>

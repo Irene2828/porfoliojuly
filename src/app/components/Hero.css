@@ -562,26 +562,26 @@
 .hero-ctas-outside .btn-secondary-stacked:hover {
   background: transparent !important;
   border: 0 !important;
-  color: #000000 !important;
+  color: var(--accent, #EC9177) !important;
 }
 
 .hero-ctas-outside .btn-secondary-stacked .arrow {
-  color: inherit !important;
+  color: var(--accent, #EC9177) !important;
   margin-left: 0.35rem;
 }
 
 .hero-ctas .btn-secondary:hover {
   background: #e5e5e7;
-  color: #1A1A1A;
-  border-color: rgba(18, 18, 18, 0.65);
+  color: var(--accent, #EC9177);
+  border-color: var(--accent, #EC9177);
 }
 
 .hero-ctas .btn-secondary .arrow {
-  color: #0a0a0a;
+  color: var(--accent, #EC9177);
 }
 
 .hero-ctas .btn-secondary:hover .arrow {
-  color: #1A1A1A;
+  color: var(--accent, #EC9177);
 }
 
 .hero-ctas {

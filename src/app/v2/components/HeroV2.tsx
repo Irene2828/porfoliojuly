@@ -20,12 +20,12 @@ export default function HeroV2() {
           }}
         >
           {/* Top-Right Shapes */}
-          <div style={{ position: 'absolute', width: '220px', height: '130px', border: '1.5px solid rgba(160, 168, 182, 0.45)', top: '8%', right: '8%' }} />
-          <div style={{ position: 'absolute', width: '75px', height: '75px', border: '1.5px dashed rgba(160, 168, 182, 0.45)', borderRadius: '50%', top: '22%', right: '18%' }} />
+          <div style={{ position: 'absolute', width: '220px', height: '130px', border: '1.5px solid rgba(236, 145, 119, 0.65)', top: '8%', right: '8%' }} />
+          <div style={{ position: 'absolute', width: '75px', height: '75px', border: '1.5px dashed rgba(236, 145, 119, 0.75)', borderRadius: '50%', top: '22%', right: '18%' }} />
 
           {/* Center-Left Shapes */}
-          <div style={{ position: 'absolute', width: '160px', height: '100px', border: '1.5px solid rgba(160, 168, 182, 0.45)', top: '42%', left: '8%' }} />
-          <div style={{ position: 'absolute', width: '45px', height: '45px', border: '1.5px dashed rgba(160, 168, 182, 0.45)', top: '55%', left: '15%' }} />
+          <div style={{ position: 'absolute', width: '160px', height: '100px', border: '1.5px solid rgba(236, 145, 119, 0.65)', top: '42%', left: '23%' }} />
+          <div style={{ position: 'absolute', width: '45px', height: '45px', border: '1.5px dashed rgba(236, 145, 119, 0.75)', top: '55%', left: '30%' }} />
         </div>
       </div>
 
@@ -39,7 +39,7 @@ export default function HeroV2() {
                 style={{ transform: 'translateY(-0.4rem)' }}
               >
                 <h1 className="hero-statement hero-statement-anim">
-                  Looking for a <span className="br-mobile"><br /></span><span className="premium-hover"><span className="word-custom">custom</span></span> <span className="premium-hover">website</span> <span className="br-desktop"><br /></span>or <span className="br-mobile"><br /></span>an <span className="premium-hover"><span className="word-internal">internal</span> AI tool</span>?
+                  Looking for a <span className="br-mobile"><br /></span>custom website <span className="br-desktop"><br /></span>or <span className="br-mobile"><br /></span>an internal AI tool?
                 </h1>
                 <p className="hero-frame-paragraph hero-paragraph-anim" style={{ marginTop: '1.7rem', fontSize: '1.10rem', lineHeight: '1.75', color: '#333842', maxWidth: '100%', fontWeight: 400 }}>
                   I design and build custom digital products end-to-end for business <span className="br-desktop"><br /></span>and professionals &mdash; <span style={{ fontStyle: 'italic' }}>from figuring out what solution you need to <span className="br-desktop"><br /></span>shipping a working product.</span>
@@ -51,13 +51,13 @@ export default function HeroV2() {
               >
                 <a href="#contact" className="btn btn-primary btn-primary-outline" style={{ display: 'inline-flex', alignItems: 'center', gap: '0.5rem' }}>
                   <span>BOOK MY SERVICES</span>
-                  <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round" style={{ transform: 'translateY(-0.5px)' }}>
+                  <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="var(--accent, #EC9177)" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round" style={{ transform: 'translateY(-0.5px)' }}>
                     <line x1="7" y1="17" x2="17" y2="7"></line>
                     <polyline points="7 7 17 7 17 17"></polyline>
                   </svg>
                 </a>
                 <a href="#process" className="btn btn-secondary btn-secondary-stacked">
-                  SEE WORK EXAMPLES <span className="arrow">↓</span>
+                  SEE WORK EXAMPLES <span className="arrow" style={{ color: 'var(--accent, #EC9177)' }}>↓</span>
                 </a>
               </div>
             </div>

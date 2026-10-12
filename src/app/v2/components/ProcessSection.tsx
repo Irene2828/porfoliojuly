@@ -59,9 +59,9 @@ export default function ProcessSection() {
           <div style={{ 
             width: '60px', 
             height: '1px', 
-            backgroundColor: '#0b0c10', 
+            backgroundColor: 'var(--accent, #EC9177)', 
             margin: '0 0 2.5rem 0', 
-            opacity: 0.6 
+            opacity: 0.9 
           }} />
 
           <h2 style={{ 
@@ -93,16 +93,16 @@ export default function ProcessSection() {
         >
 
           {/* Top-Right Shapes */}
-          <div style={{ position: 'absolute', width: '220px', height: '130px', border: '1.5px solid rgba(160, 168, 182, 0.45)', top: '7%', right: '7%' }} />
-          <div style={{ position: 'absolute', width: '75px', height: '75px', border: '1.5px dashed rgba(160, 168, 182, 0.45)', borderRadius: '50%', top: '18%', right: '15%' }} />
+          <div style={{ position: 'absolute', width: '220px', height: '130px', border: '1.5px solid rgba(236, 145, 119, 0.55)', top: '7%', right: '7%' }} />
+          <div style={{ position: 'absolute', width: '75px', height: '75px', border: '1.5px dashed rgba(236, 145, 119, 0.65)', borderRadius: '50%', top: '18%', right: '15%' }} />
 
           {/* Bottom-Left Shapes */}
-          <div style={{ position: 'absolute', width: '190px', height: '110px', border: '1.5px solid rgba(160, 168, 182, 0.45)', bottom: '10%', left: '8%' }} />
-          <div style={{ position: 'absolute', width: '50px', height: '50px', border: '1.5px dashed rgba(160, 168, 182, 0.45)', bottom: '18%', left: '14%' }} />
+          <div style={{ position: 'absolute', width: '190px', height: '110px', border: '1.5px solid rgba(236, 145, 119, 0.55)', bottom: '10%', left: '8%' }} />
+          <div style={{ position: 'absolute', width: '50px', height: '50px', border: '1.5px dashed rgba(236, 145, 119, 0.65)', borderRadius: '50%', bottom: '18%', left: '14%' }} />
 
           {/* Bottom-Right Shapes */}
-          <div style={{ position: 'absolute', width: '140px', height: '140px', border: '1.5px dashed rgba(160, 168, 182, 0.45)', bottom: '10%', right: '9%' }} />
-          <div style={{ position: 'absolute', width: '60px', height: '60px', border: '1.5px solid rgba(160, 168, 182, 0.45)', bottom: '20%', right: '6%' }} />
+          <div style={{ position: 'absolute', width: '140px', height: '140px', border: '1.5px dashed rgba(236, 145, 119, 0.55)', bottom: '10%', right: '9%' }} />
+          <div style={{ position: 'absolute', width: '60px', height: '60px', border: '1.5px solid rgba(236, 145, 119, 0.55)', bottom: '20%', right: '6%' }} />
         </div>
 
         <motion.div 
