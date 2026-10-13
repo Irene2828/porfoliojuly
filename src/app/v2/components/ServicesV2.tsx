@@ -115,7 +115,7 @@ export default function ServicesV2() {
             padding: 3.5rem 2rem !important;
           }
           .services-col-right {
-            background-color: #C8CCD1 !important;
+            background-color: #ffffff !important;
             border-radius: 0px !important;
             padding: 3.5rem 2rem !important;
           }
