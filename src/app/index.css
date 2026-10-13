@@ -428,7 +428,7 @@ h1, h2, h3, h4, h5, h6 {
   .v2-theme .hero-statement,
   .v2-theme .hero-name-group .hero-text h1 {
     font-family: var(--font-heading) !important;
-    font-size: clamp(33px, 7.7vw, 36.96px) !important; /* +10% larger on mobile */
+    font-size: clamp(38px, 8.85vw, 42.5px) !important; /* +15% larger on mobile */
     font-weight: 300 !important;
     letter-spacing: -0.03em !important;
     line-height: 1.18 !important;
