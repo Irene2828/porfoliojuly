@@ -505,7 +505,7 @@
   font-family: var(--font-sans);
   font-size: clamp(1.8rem, 3.8vw, 3.2rem);
   font-weight: 500;
-  color: var(--accent, #EC9177) !important;
+  color: var(--accent, #1d4e5b) !important;
   line-height: 1.1;
   letter-spacing: -0.04em; /* tightened spacing (half as wide) */
   -webkit-font-smoothing: antialiased;

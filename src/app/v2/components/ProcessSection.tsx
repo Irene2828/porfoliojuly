@@ -1,7 +1,7 @@
 'use client';
 
 import { useState } from 'react';
-import { motion, AnimatePresence } from 'framer-motion';
+import { motion } from 'framer-motion';
 
 export default function ProcessSection() {
   const testimonials = [
@@ -27,12 +27,20 @@ export default function ProcessSection() {
 
   const [activeIndex, setActiveIndex] = useState(0);
 
+  const handleCardClick = (index: number) => {
+    setActiveIndex(index);
+  };
+
+  const handleNext = () => {
+    setActiveIndex((prev) => (prev + 1) % testimonials.length);
+  };
+
   return (
     <section 
       id="process" 
       style={{ padding: '0 0 6rem 0', backgroundColor: '#ffffff' }}
     >
-      {/* The entire Testimonial Section is now within the grey background */}
+      {/* Grey background container */}
       <div 
         style={{
           width: '100%',
@@ -48,7 +56,7 @@ export default function ProcessSection() {
           overflow: 'hidden'
         }}
       >
-        {/* Section Header moved inside grey background */}
+        {/* Section Header */}
         <motion.div 
           initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
@@ -59,7 +67,7 @@ export default function ProcessSection() {
           <div style={{ 
             width: '60px', 
             height: '1px', 
-            backgroundColor: 'var(--accent, #EC9177)', 
+            backgroundColor: 'var(--accent, #1d4e5b)', 
             margin: '0 0 2.5rem 0', 
             opacity: 0.9 
           }} />
@@ -67,7 +75,7 @@ export default function ProcessSection() {
           <h2 style={{ 
             fontFamily: "var(--font-heading)",
             fontSize: 'clamp(28px, 4.4vw, 42px)', 
-            color: '#3a3d46', 
+            color: 'var(--color-heading-silver)', 
             fontWeight: 400,
             lineHeight: 1.2,
             letterSpacing: '-0.02em',
@@ -80,7 +88,7 @@ export default function ProcessSection() {
           </h2>
         </motion.div>
 
-        {/* Geometric Abstract Decor Layer (Brown & Beige Tones) */}
+        {/* Geometric Abstract Decor Layer (Large Shapes Only) */}
         <div 
           className="hide-on-mobile"
           style={{
@@ -91,49 +99,45 @@ export default function ProcessSection() {
             opacity: 0.85
           }}
         >
+          {/* Top-Right Large Shape */}
+          <div style={{ position: 'absolute', width: '220px', height: '130px', border: '1.5px solid rgba(29, 78, 91, 0.35)', top: '7%', right: '7%' }} />
 
-          {/* Top-Right Shapes */}
-          <div style={{ position: 'absolute', width: '220px', height: '130px', border: '1.5px solid rgba(236, 145, 119, 0.55)', top: '7%', right: '7%' }} />
-          <div style={{ position: 'absolute', width: '75px', height: '75px', border: '1.5px dashed rgba(236, 145, 119, 0.65)', borderRadius: '50%', top: '18%', right: '15%' }} />
+          {/* Bottom-Left Large Shape (30% less opacity) */}
+          <div style={{ position: 'absolute', width: '190px', height: '110px', border: '1.5px solid rgba(29, 78, 91, 0.24)', bottom: '10%', left: '8%' }} />
 
-          {/* Bottom-Left Shapes */}
-          <div style={{ position: 'absolute', width: '190px', height: '110px', border: '1.5px solid rgba(236, 145, 119, 0.55)', bottom: '10%', left: '8%' }} />
-          <div style={{ position: 'absolute', width: '50px', height: '50px', border: '1.5px dashed rgba(236, 145, 119, 0.65)', borderRadius: '50%', bottom: '18%', left: '14%' }} />
-
-          {/* Bottom-Right Shapes */}
-          <div style={{ position: 'absolute', width: '140px', height: '140px', border: '1.5px dashed rgba(236, 145, 119, 0.55)', bottom: '10%', right: '9%' }} />
-          <div style={{ position: 'absolute', width: '60px', height: '60px', border: '1.5px solid rgba(236, 145, 119, 0.55)', bottom: '20%', right: '6%' }} />
+          {/* Bottom-Right Large Shape (30% less opacity) */}
+          <div style={{ position: 'absolute', width: '140px', height: '140px', border: '1.5px dashed rgba(29, 78, 91, 0.24)', bottom: '10%', right: '9%' }} />
         </div>
 
-        <motion.div 
-          initial={{ opacity: 0, y: 35 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true, amount: 0.15 }}
-          transition={{ duration: 0.9, ease: [0.16, 1, 0.3, 1] }}
+        {/* Testimonials 3-Card Carousel Track */}
+        <div 
           style={{ position: 'relative', zIndex: 2, width: '100%' }}
         >
           <div className="testimonials-track">
             {[-1, 0, 1].map((offset) => {
               const index = (activeIndex + offset + testimonials.length) % testimonials.length;
               const isCenter = offset === 0;
+              const isLeft = offset === -1;
+              const isRight = offset === 1;
               const testimonial = testimonials[index];
+              const cardRoleClass = isCenter ? 'center-card' : isLeft ? 'left-card' : 'right-card';
               
               return (
                 <div
-                  key={`${offset}-${index}`}
-                  className={`testimonial-card ${isCenter ? 'center-card' : 'side-card'}`}
+                  key={`${offset}-${testimonial.author}`}
+                  className={`testimonial-card ${cardRoleClass}`}
                   onClick={() => {
-                    if (!isCenter) setActiveIndex(index);
+                    if (!isCenter) handleCardClick(index);
                   }}
                   style={{
                     backgroundColor: isCenter ? '#18191e' : '#ffffff',
                     padding: '3rem 2.5rem',
-                    boxShadow: 'none',
-                    border: isCenter ? '1px solid rgba(255, 255, 255, 0.05)' : '1px solid rgba(0, 0, 0, 0.05)',
+                    border: isCenter ? '1px solid rgba(255, 255, 255, 0.08)' : '1px solid rgba(0, 0, 0, 0.06)',
                     display: 'flex',
                     flexDirection: 'column',
                     justifyContent: 'space-between',
-                    minHeight: '320px'
+                    minHeight: '330px',
+                    borderRadius: '0px'
                   }}
                 >
                   <div>
@@ -143,7 +147,8 @@ export default function ProcessSection() {
                       lineHeight: '0.8',
                       color: isCenter ? '#dcdfe3' : '#8c95a3',
                       fontWeight: 700,
-                      marginBottom: '1rem'
+                      marginBottom: '1rem',
+                      transition: 'color 0.35s ease'
                     }}>
                       &ldquo;
                     </div>
@@ -154,7 +159,8 @@ export default function ProcessSection() {
                       color: isCenter ? '#e8ebee' : '#2a3036',
                       fontWeight: 400,
                       fontStyle: 'normal',
-                      margin: '0 0 2rem 0'
+                      margin: '0 0 2rem 0',
+                      transition: 'color 0.35s ease'
                     }}>
                       {testimonial.quote}
                     </p>
@@ -166,7 +172,8 @@ export default function ProcessSection() {
                     display: 'flex',
                     alignItems: 'center',
                     justifyContent: 'flex-start',
-                    gap: '12px'
+                    gap: '12px',
+                    transition: 'border-color 0.35s ease'
                   }}>
                     <div style={{ textAlign: 'left' }}>
                       <div style={{ 
@@ -175,7 +182,8 @@ export default function ProcessSection() {
                         fontWeight: 500,
                         letterSpacing: '-0.01em',
                         color: isCenter ? '#ffffff' : '#121212',
-                        lineHeight: 1.3
+                        lineHeight: 1.3,
+                        transition: 'color 0.35s ease'
                       }}>
                         {testimonial.author}
                       </div>
@@ -185,7 +193,8 @@ export default function ProcessSection() {
                         fontWeight: 500,
                         color: isCenter ? '#9ca3af' : '#6b7280',
                         marginTop: '0.3rem',
-                        letterSpacing: '0.04em'
+                        letterSpacing: '0.04em',
+                        transition: 'color 0.35s ease'
                       }}>
                         {testimonial.role}
                       </div>
@@ -207,39 +216,62 @@ export default function ProcessSection() {
               padding: 2rem 0;
             }
             .testimonial-card {
-              flex: 0 0 540px;
-              transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+              flex: 0 0 clamp(380px, 33vw, 480px);
+              width: clamp(380px, 33vw, 480px);
+              border-radius: 0px !important;
+              box-shadow: none !important;
+              transition: transform 0.35s cubic-bezier(0.16, 1, 0.3, 1),
+                          opacity 0.35s ease,
+                          background-color 0.35s ease,
+                          border-color 0.35s ease;
               cursor: pointer;
-              box-shadow: none !important;
-              filter: none !important;
+              user-select: none;
+              box-sizing: border-box;
             }
-            .testimonial-card.side-card {
-              opacity: 0.65;
-              transform: scale(0.96);
-              box-shadow: none !important;
-              filter: none !important;
-            }
+
+            /* Center Card */
             .testimonial-card.center-card {
               opacity: 1;
               transform: scale(1);
               z-index: 10;
               box-shadow: none !important;
-              filter: none !important;
             }
-            
-            /* Group Hover Logic: if ANY card is hovered, tone down other cards */
-            .testimonials-track:hover .testimonial-card {
-              opacity: 0.5;
-              transform: scale(0.96);
+            .testimonial-card.center-card:hover {
+              transform: scale(1.025) !important;
               box-shadow: none !important;
-              filter: none !important;
+            }
+
+            /* Side Cards at rest */
+            .testimonial-card.left-card,
+            .testimonial-card.right-card {
+              opacity: 0.65;
+              transform: scale(0.96);
+              z-index: 2;
+              box-shadow: none !important;
+            }
+
+            /* Hover on Left Card: smoothly push inward towards center by 130px so full text is seen clearly */
+            .testimonial-card.left-card:hover {
+              opacity: 1 !important;
+              transform: translateX(min(130px, 11vw)) scale(1.045) !important;
+              z-index: 25 !important;
+              box-shadow: none !important;
+            }
+
+            /* Hover on Right Card: smoothly push inward towards center by 130px so full text is seen clearly */
+            .testimonial-card.right-card:hover {
+              opacity: 1 !important;
+              transform: translateX(max(-130px, -11vw)) scale(1.045) !important;
+              z-index: 25 !important;
+              box-shadow: none !important;
+            }
+
+            /* Subtle focus effect on track hover */
+            .testimonials-track:hover .testimonial-card.center-card {
+              opacity: 0.9;
             }
             .testimonials-track .testimonial-card:hover {
               opacity: 1 !important;
-              transform: scale(1.02) !important;
-              z-index: 20;
-              box-shadow: none !important;
-              filter: none !important;
             }
 
             @media (max-width: 1000px) {
@@ -247,18 +279,20 @@ export default function ProcessSection() {
                 gap: 1rem;
               }
               .testimonial-card {
-                flex: 0 0 85vw;
+                flex: 0 0 88vw;
+                width: 88vw;
               }
-              .testimonial-card.side-card {
+              .testimonial-card.left-card,
+              .testimonial-card.right-card {
                 display: none;
               }
             }
           `}</style>
-        </motion.div>
+        </div>
 
         {/* Premium Scroll Arrow */}
         <div 
-          onClick={() => setActiveIndex((activeIndex + 1) % testimonials.length)}
+          onClick={handleNext}
           style={{ 
             marginTop: '2.5rem', 
             display: 'flex', 
@@ -283,13 +317,13 @@ export default function ProcessSection() {
             fontSize: '0.75rem',
             letterSpacing: '0.08em',
             fontWeight: 600,
-            color: '#3a3d46'
+            color: 'var(--color-heading-silver)'
           }}>{activeIndex + 1} / {testimonials.length}</span>
           <svg width="65" height="12" viewBox="0 0 65 12" fill="none" xmlns="http://www.w3.org/2000/svg">
-            <path d="M0 6H63.5M63.5 6L58.5 1M63.5 6L58.5 11" stroke="#3a3d46" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"/>
+            <path d="M0 6H63.5M63.5 6L58.5 1M63.5 6L58.5 11" stroke="var(--color-heading-silver)" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"/>
           </svg>
         </div>
       </div>
-  </section>
-);
+    </section>
+  );
 }

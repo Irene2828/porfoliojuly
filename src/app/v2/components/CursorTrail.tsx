@@ -47,8 +47,13 @@ export default function CursorTrail() {
       mouse.x = e.clientX;
       mouse.y = e.clientY;
       isMoving = true;
+
+      // Only spawn particle trail when hovering over links, buttons, or interactive elements
+      const target = e.target as HTMLElement | null;
+      const isInteractive = target?.closest('a, button, [role="button"], input[type="submit"], input[type="button"], .btn, .nav-link, .hero-ring-badge');
+      if (!isInteractive) return;
       
-      // Spawn particles on movement
+      // Spawn particles only on interactive hover movement
       const numParticles = 2; // Keep it minimalist, not too dense
       for (let i = 0; i < numParticles; i++) {
         particles.push({

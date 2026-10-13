@@ -1,19 +1,56 @@
 'use client';
 
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import './Header.css';
 
 export default function Header() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
+  const [isScrolled, setIsScrolled] = useState(false);
+
+  useEffect(() => {
+    const handleScroll = () => {
+      // Transition when user scrolls down (e.g. past top hero area, ~80px)
+      if (window.scrollY > 80) {
+        setIsScrolled(true);
+      } else {
+        setIsScrolled(false);
+      }
+    };
+
+    window.addEventListener('scroll', handleScroll, { passive: true });
+    handleScroll();
+
+    return () => {
+      window.removeEventListener('scroll', handleScroll);
+    };
+  }, []);
 
   return (
-    <header className="premium-header">
+    <header className={`premium-header ${isScrolled ? 'header-scrolled' : ''}`}>
       <div className="header-inner-wrapper">
         {/* Left side (Desktop): Name and Title */}
         <div className="header-spacer-desktop">
-          <a href="/" aria-label="Home" style={{ textDecoration: 'none', display: 'flex', flexDirection: 'row', alignItems: 'baseline', gap: '0.5rem' }}>
-            <span style={{ fontFamily: 'var(--font-heading), Outfit, sans-serif', fontSize: '13.65px', fontWeight: 600, color: 'var(--color-heading-silver)', letterSpacing: '0.14em', textTransform: 'uppercase', lineHeight: '1.3' }}>IRYNA SHEREMETA</span>
-            <span style={{ fontFamily: 'var(--font-body), "Plus Jakarta Sans", sans-serif', fontSize: '0.827rem', fontWeight: 500, color: '#5C6672', lineHeight: '1.2', letterSpacing: '0.06em' }}>/ Creative technologist /</span>
+          <a href="/" aria-label="Home" style={{ textDecoration: 'none', display: 'flex', flexDirection: 'row', alignItems: 'center', gap: '0.5rem' }}>
+            <span style={{ 
+              fontFamily: 'var(--font-heading), Outfit, sans-serif', 
+              fontSize: '14.5px', 
+              fontWeight: 500, 
+              color: '#3d4454', 
+              letterSpacing: '0.04em', 
+              lineHeight: '1.2'
+            }}>
+              IRYNA SHEREMETA
+            </span>
+            <span style={{ 
+              fontFamily: 'var(--font-heading), Outfit, sans-serif', 
+              fontSize: '13px', 
+              fontWeight: 400, 
+              color: 'rgba(0, 0, 0, 0.75)', 
+              lineHeight: '1.2', 
+              letterSpacing: '0.03em' 
+            }}>
+              / Creative technologist /
+            </span>
           </a>
         </div>
 

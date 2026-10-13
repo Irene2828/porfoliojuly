@@ -87,7 +87,7 @@ export default function HowItWorks() {
         <div style={{ 
           width: '60px', 
           height: '1px', 
-          backgroundColor: 'var(--accent, #EC9177)', 
+          backgroundColor: 'var(--accent, #1d4e5b)', 
           margin: '0 auto 2.5rem auto', 
           opacity: 0.9 
         }} />
@@ -148,28 +148,21 @@ export default function HowItWorks() {
           }}
         >
           {/* Top-Left Cluster */}
-          <div style={{ position: 'absolute', width: '200px', height: '200px', border: '1px solid rgba(236, 145, 119, 0.45)', borderRadius: '50%', top: '-5%', left: '-2%' }} />
-          <svg style={{ position: 'absolute', top: '15%', left: '8%', opacity: 0.5 }} width="32" height="32" viewBox="0 0 32 32" fill="none" stroke="var(--accent, #EC9177)" strokeWidth="1">
-            <line x1="16" y1="0" x2="16" y2="32" /><line x1="0" y1="16" x2="32" y2="16" />
-          </svg>
+          <div style={{ position: 'absolute', width: '200px', height: '200px', border: '1px solid rgba(29, 78, 91, 0.45)', borderRadius: '50%', top: '-5%', left: '-2%' }} />
           
           {/* Top-Right Cluster */}
-          <div style={{ position: 'absolute', width: '120px', height: '180px', border: '1px dashed rgba(236, 145, 119, 0.45)', top: '10%', right: '5%' }} />
-          <div style={{ position: 'absolute', width: '80px', height: '80px', border: '1px solid rgba(236, 145, 119, 0.5)', top: '25%', right: '12%' }} />
+          <div style={{ position: 'absolute', width: '120px', height: '180px', border: '1px dashed rgba(29, 78, 91, 0.45)', top: '10%', right: '5%' }} />
+          <div style={{ position: 'absolute', width: '80px', height: '80px', border: '1px solid rgba(29, 78, 91, 0.5)', top: '25%', right: '12%' }} />
 
           {/* Center-Left subtle lines */}
-          <div style={{ position: 'absolute', top: '50%', left: '0', width: '8%', height: '1px', backgroundColor: 'rgba(236, 145, 119, 0.45)' }} />
-          <div style={{ position: 'absolute', top: '52%', left: '0', width: '5%', height: '1px', backgroundColor: 'rgba(236, 145, 119, 0.5)' }} />
+          <div style={{ position: 'absolute', top: '50%', left: '0', width: '8%', height: '1px', backgroundColor: 'rgba(29, 78, 91, 0.45)' }} />
+          <div style={{ position: 'absolute', top: '52%', left: '0', width: '5%', height: '1px', backgroundColor: 'rgba(29, 78, 91, 0.5)' }} />
 
           {/* Bottom-Left Cluster */}
-          <div style={{ position: 'absolute', width: '150px', height: '150px', border: '1px solid rgba(236, 145, 119, 0.4)', bottom: '5%', left: '10%', transform: 'rotate(45deg)' }} />
-          <div style={{ position: 'absolute', width: '4px', height: '4px', backgroundColor: 'var(--accent, #EC9177)', bottom: '20%', left: '20%', borderRadius: '50%' }} />
+          <div style={{ position: 'absolute', width: '150px', height: '150px', border: '1px solid rgba(29, 78, 91, 0.4)', bottom: '5%', left: '10%', transform: 'rotate(45deg)' }} />
 
           {/* Bottom-Right Cluster */}
-          <div style={{ position: 'absolute', width: '160px', height: '160px', border: '1px dashed rgba(236, 145, 119, 0.45)', borderRadius: '50%', bottom: '10%', right: '8%' }} />
-          <svg style={{ position: 'absolute', bottom: '15%', right: '12%', opacity: 0.45 }} width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="var(--accent, #EC9177)" strokeWidth="1">
-            <line x1="12" y1="0" x2="12" y2="24" /><line x1="0" y1="12" x2="24" y2="12" />
-          </svg>
+          <div style={{ position: 'absolute', width: '160px', height: '160px', border: '1px dashed rgba(29, 78, 91, 0.45)', borderRadius: '50%', bottom: '10%', right: '8%' }} />
         </div>
 
         <div className="container" style={{ position: 'relative', zIndex: 3, paddingTop: '4rem', paddingBottom: '5rem', paddingLeft: '1.5rem', paddingRight: '1.5rem' }}>

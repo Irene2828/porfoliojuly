@@ -139,7 +139,7 @@ export default function EditorialStatement() {
             style={{ display: 'inline-flex', alignItems: 'center', gap: '0.45rem', transform: 'scale(1.05)' }}
           >
             <span>SEND YOUR PROBLEM MY WAY</span>
-            <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="var(--accent, #EC9177)" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round" style={{ transform: 'translateY(-0.5px)' }}>
+            <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="var(--color-accent-light, #7fc5d5)" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round" style={{ transform: 'translateY(-0.5px)' }}>
               <line x1="7" y1="17" x2="17" y2="7"></line>
               <polyline points="7 7 17 7 17 17"></polyline>
             </svg>
@@ -150,7 +150,7 @@ export default function EditorialStatement() {
             style={{
               background: 'transparent',
               border: 'none',
-              color: copied ? '#00FFA3' : 'var(--accent-dark, #C26A4E)',
+              color: copied ? '#00FFA3' : '#1d4e5b',
               fontFamily: "var(--font-sans), 'Plus Jakarta Sans', sans-serif",
               fontSize: '11.5px',
               fontWeight: 600,

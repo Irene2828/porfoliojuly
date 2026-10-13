@@ -19,7 +19,7 @@
   align-items: center;
   height: 3.5rem;
   box-sizing: border-box;
-  border-bottom: 1px solid rgba(236, 145, 119, 0.35);
+  border-bottom: 1.5px solid rgba(255, 255, 255, 0.82);
   box-shadow: none !important;
   z-index: 1000;
   pointer-events: auto;
@@ -130,13 +130,13 @@
 
 .nav-link:hover,
 .header-nav-desktop .nav-link:hover {
-  color: var(--accent, #EC9177) !important;
+  color: var(--accent, #1d4e5b) !important;
 }
 
 .nav-link:hover::after,
 .header-nav-desktop .nav-link:hover::after {
   transform: scaleX(1);
-  background-color: var(--accent, #EC9177) !important;
+  background-color: var(--accent, #1d4e5b) !important;
 }
 
 .hamburger-btn {
@@ -278,7 +278,7 @@
 }
 
 .drawer-close-btn:hover {
-  color: var(--accent, #EC9177);
+  color: var(--accent, #1d4e5b);
 }
 
 .drawer-nav-links {
@@ -300,7 +300,7 @@
 }
 
 .drawer-link:hover {
-  color: var(--accent, #EC9177);
+  color: var(--accent, #1d4e5b);
   transform: translateX(4px);
 }
 
@@ -350,7 +350,7 @@
     background-color: rgba(255, 255, 255, 0.85) !important;
     backdrop-filter: saturate(180%) blur(20px) !important;
     -webkit-backdrop-filter: saturate(180%) blur(20px) !important;
-    border-bottom: 1px solid rgba(236, 145, 119, 0.35) !important;
+    border-bottom: 1px solid rgba(235, 235, 237, 0.65) !important;
     opacity: 0;
     transform: translateY(-100%);
     animation: headerSlideDown 0.65s cubic-bezier(0.22, 1, 0.36, 1) 0.1s forwards !important;
