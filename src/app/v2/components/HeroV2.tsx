@@ -80,11 +80,16 @@ export default function HeroV2() {
         </div>
 
         {/* Right side (now visually Right): Image with Concentric Geometric Rings & Hugging Labels */}
-        <div
-          className="hero-image-wrapper"
-        >
+        <div className="hero-image-wrapper">
+          <div className="hero-image-container" style={{ position: 'relative', zIndex: 2 }}>
+            <div className="hero-image-brackets"></div>
+            <div className="hero-image-brackets-left"></div>
+            <img src={heroImage.src} alt="Iryna Sheremeta" className="hero-image" />
+            <div className="hero-dot-overlay"></div>
+          </div>
+
           {/* Concentric Geometric Rings & Hugging Labels */}
-          <div style={{ position: 'absolute', top: '50%', left: '50%', transform: 'translate(-50%, -50%)', width: '420px', height: '420px', pointerEvents: 'none', zIndex: 1 }}>
+          <div className="hero-rings-badge-container" style={{ position: 'absolute', top: '50%', left: '50%', transform: 'translate(-50%, -50%)', width: '420px', height: '420px', pointerEvents: 'none', zIndex: 1 }}>
             {/* Pure Silver Concentric Rings with left-to-right fade mask */}
             <svg 
               className="hero-concentric-rings" 
@@ -112,7 +117,7 @@ export default function HeroV2() {
 
             {/* Circular Hugging Chart Labels - Creative Tech Indicators */}
             {/* 1. "Websites" hugging the top-left curve of the middle ring + Hand pointer */}
-            <div style={{ position: 'absolute', top: '56px', left: '12px', zIndex: 10 }}>
+            <div className="hero-badge-anchor badge-anchor-websites" style={{ position: 'absolute', top: '56px', left: '12px', zIndex: 10 }}>
               {/* Pointing Hand Icon */}
               <div 
                 className="badge-hand-pointer"
@@ -164,7 +169,7 @@ export default function HeroV2() {
             </div>
 
             {/* 2. "AI products" hugging the right edge of the outer ring + Thick 2D Arrow under label */}
-            <div style={{ position: 'absolute', top: '190px', right: '-18px', zIndex: 10 }}>
+            <div className="hero-badge-anchor badge-anchor-products" style={{ position: 'absolute', top: '190px', right: '-18px', zIndex: 10 }}>
               <div className="hero-ring-badge badge-builder" style={{
                 transform: 'rotate(6deg)',
                 padding: '4px 12px',
@@ -213,7 +218,7 @@ export default function HeroV2() {
             </div>
 
             {/* 3. "AI consultations" hugging the bottom-left curve of the outer ring + Pulsing circles */}
-            <div style={{ position: 'absolute', bottom: '40px', left: '42px', zIndex: 10 }}>
+            <div className="hero-badge-anchor badge-anchor-consultations" style={{ position: 'absolute', bottom: '40px', left: '42px', zIndex: 10 }}>
               {/* Pulsing radar circles indicator */}
               <div 
                 style={{
@@ -288,13 +293,6 @@ export default function HeroV2() {
                 AI consultations
               </div>
             </div>
-          </div>
-
-          <div className="hero-image-container" style={{ position: 'relative', zIndex: 2 }}>
-            <div className="hero-image-brackets"></div>
-            <div className="hero-image-brackets-left"></div>
-            <img src={heroImage.src} alt="Iryna Sheremeta" className="hero-image" />
-            <div className="hero-dot-overlay"></div>
           </div>
           
           <span className="hero-hover-surface" aria-hidden="true"></span>

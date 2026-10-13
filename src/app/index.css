@@ -428,10 +428,10 @@ h1, h2, h3, h4, h5, h6 {
   .v2-theme .hero-statement,
   .v2-theme .hero-name-group .hero-text h1 {
     font-family: var(--font-heading) !important;
-    font-size: clamp(48.5px, 12.78vw, 67.03px) !important; /* +5% increase */
+    font-size: clamp(30px, 7vw, 33.6px) !important; /* 20% larger than section heading max (28px * 1.2 = 33.6px) */
     font-weight: 300 !important;
-    letter-spacing: -0.035em !important;
-    line-height: 1.13 !important; /* +10% line spacing on mobile */
+    letter-spacing: -0.03em !important;
+    line-height: 1.18 !important;
     max-width: 100% !important;
     color: #3ba3b8 !important;
     -webkit-text-fill-color: #3ba3b8 !important;
@@ -927,9 +927,27 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 @media (max-width: 900px) {
+  /* Thin subtle teal stroke bottom to header on mobiles only */
+  .v2-theme .premium-header,
+  .premium-header {
+    border-bottom: 1px solid rgba(59, 163, 184, 0.28) !important;
+  }
+  .v2-theme .premium-header.header-scrolled,
+  .premium-header.header-scrolled {
+    border-bottom: 1px solid rgba(59, 163, 184, 0.35) !important;
+  }
+
   .v2-theme .hero-image-wrapper {
+    width: 100% !important;
+    display: flex !important;
+    flex-direction: column !important;
     align-items: center !important;
-    padding: 1.5rem !important;
+    justify-content: center !important;
+    padding: 0 !important;
+    margin-right: 0 !important;
+    margin-top: 1.8rem !important; /* shifted 10% lower in mobile hero */
+    margin-bottom: 0 !important;
+    transform: none !important;
   }
   .v2-theme .hero-image-container,
   .v2-theme .cv-scanner .hero-image-container {
@@ -938,11 +956,84 @@ h1, h2, h3, h4, h5, h6 {
     max-width: 120px !important;
     aspect-ratio: 1 / 1 !important;
     border-radius: 50% !important;
-    margin: 0 auto 0.5rem auto !important;
+    margin: 0 auto !important;
     box-shadow: -5px -5px 0px rgba(236, 145, 119, 0.2) !important;
   }
   .v2-theme .hero-image-offset-frame {
     display: none !important;
+  }
+
+  /* Hide concentric rings, pointers, and icons on mobile */
+  .v2-theme .hero-concentric-rings,
+  .v2-theme .badge-hand-pointer,
+  .v2-theme .badge-arrow-pointer,
+  .v2-theme .badge-radar-circle-outer,
+  .v2-theme .badge-anchor-websites > div:first-child,
+  .v2-theme .badge-anchor-products > div:last-child,
+  .v2-theme .badge-anchor-consultations > div:first-child,
+  .v2-theme .hero-ring-badge svg {
+    display: none !important;
+  }
+
+  /* Place labels under image in hero on mobile in 2 lines centered, no fill, just text */
+  .v2-theme .hero-rings-badge-container {
+    position: static !important;
+    width: 100% !important;
+    max-width: 100% !important;
+    height: auto !important;
+    transform: none !important;
+    display: flex !important;
+    flex-flow: row wrap !important;
+    justify-content: center !important;
+    align-items: center !important;
+    column-gap: 1.25rem !important;
+    row-gap: 0.35rem !important;
+    margin: 0.75rem auto 0 auto !important;
+    padding: 0 !important;
+    pointer-events: auto !important;
+    text-align: center !important;
+  }
+
+  .v2-theme .hero-badge-anchor {
+    position: static !important;
+    top: auto !important;
+    bottom: auto !important;
+    left: auto !important;
+    right: auto !important;
+    transform: none !important;
+    display: inline-flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+  }
+
+  /* Force "AI consultations" onto line 2 centered */
+  .v2-theme .badge-anchor-consultations {
+    flex-basis: 100% !important;
+    width: 100% !important;
+    display: flex !important;
+    justify-content: center !important;
+  }
+
+  /* No fill, shadow or borders - just clean typographic text */
+  .v2-theme .hero-ring-badge {
+    background: transparent !important;
+    background-color: transparent !important;
+    border: none !important;
+    box-shadow: none !important;
+    backdrop-filter: none !important;
+    -webkit-backdrop-filter: none !important;
+    border-radius: 0 !important;
+    padding: 0 !important;
+    margin: 0 !important;
+    transform: none !important;
+    font-family: var(--font-heading) !important;
+    font-size: 13.5px !important;
+    font-weight: 500 !important;
+    letter-spacing: 0.025em !important;
+    color: #4a5568 !important;
+    line-height: 1.4 !important;
+    white-space: nowrap !important;
+    display: inline-block !important;
   }
 }
 

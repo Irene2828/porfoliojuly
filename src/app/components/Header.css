@@ -350,7 +350,7 @@
     background-color: rgba(255, 255, 255, 0.85) !important;
     backdrop-filter: saturate(180%) blur(20px) !important;
     -webkit-backdrop-filter: saturate(180%) blur(20px) !important;
-    border-bottom: 1px solid rgba(235, 235, 237, 0.65) !important;
+    border-bottom: 1px solid rgba(59, 163, 184, 0.28) !important;
     opacity: 0;
     transform: translateY(-100%);
     animation: headerSlideDown 0.65s cubic-bezier(0.22, 1, 0.36, 1) 0.1s forwards !important;
