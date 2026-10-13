@@ -358,7 +358,7 @@ h1, h2, h3, h4, h5, h6 {
   .v2-theme .hero-statement,
   .v2-theme .hero-name-group .hero-text h1 {
     font-family: var(--font-heading) !important;
-    font-size: clamp(36px, 4.8vw, 46px) !important;
+    font-size: clamp(40px, 3.8vw, 55.2px) !important;
     font-weight: 200 !important;
     letter-spacing: -0.02em !important;
     color: var(--color-heading-silver) !important;
@@ -371,7 +371,7 @@ h1, h2, h3, h4, h5, h6 {
 @media (min-width: 1600px) {
   .v2-theme .hero-statement,
   .v2-theme .hero-name-group .hero-text h1 {
-    font-size: 50.6px !important; /* 46px * 1.1 */
+    font-size: 60.72px !important; /* 55.2px * 1.1 */
   }
 }
 
@@ -379,7 +379,7 @@ h1, h2, h3, h4, h5, h6 {
   .v2-theme .hero-statement,
   .v2-theme .hero-name-group .hero-text h1 {
     font-family: var(--font-heading) !important;
-    font-size: clamp(32px, 8.5vw, 44px) !important;
+    font-size: clamp(38.4px, 10.2vw, 52.8px) !important;
     font-weight: 200 !important;
     letter-spacing: -0.02em !important;
     line-height: 1.22 !important;

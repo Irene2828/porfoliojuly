@@ -149,9 +149,9 @@ export default function ServicesV2() {
         <div style={{ 
           width: '60px', 
           height: '1px', 
-          backgroundColor: '#18191e', 
+          backgroundColor: 'var(--accent, #EC9177)', 
           margin: '0 auto 2.5rem auto', 
-          opacity: 0.6 
+          opacity: 0.9 
         }} />
 
         <h2 style={{ 

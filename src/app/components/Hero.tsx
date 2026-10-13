@@ -47,8 +47,8 @@ export default function Hero() {
                 className="hero-text"
               >
                 <h1 className="title-serif hero-statement">
-                  I turn unclear problems<br />
-                  into clear digital solutions
+                  <span className="headline-line">I turn unclear problems</span><br />
+                  <span className="headline-line">into clear digital solutions</span>
                 </h1>
                 <ul className="hero-frame-bullets">
                   <li>&mdash; Workflow tools & internal products</li>

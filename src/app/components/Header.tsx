@@ -12,8 +12,8 @@ export default function Header() {
         {/* Left side (Desktop): Name and Title */}
         <div className="header-spacer-desktop">
           <a href="/" aria-label="Home" style={{ textDecoration: 'none', display: 'flex', flexDirection: 'row', alignItems: 'baseline', gap: '0.5rem' }}>
-            <span style={{ fontFamily: 'var(--font-heading), Outfit, sans-serif', fontSize: '13px', fontWeight: 600, color: 'var(--color-heading-silver)', letterSpacing: '0.14em', textTransform: 'uppercase', lineHeight: '1.3' }}>IRYNA SHEREMETA</span>
-            <span style={{ fontFamily: 'var(--font-body), "Plus Jakarta Sans", sans-serif', fontSize: '0.7875rem', fontWeight: 500, color: '#5C6672', lineHeight: '1.2', letterSpacing: '0.06em' }}>/ Creative technologist /</span>
+            <span style={{ fontFamily: 'var(--font-heading), Outfit, sans-serif', fontSize: '13.65px', fontWeight: 600, color: 'var(--color-heading-silver)', letterSpacing: '0.14em', textTransform: 'uppercase', lineHeight: '1.3' }}>IRYNA SHEREMETA</span>
+            <span style={{ fontFamily: 'var(--font-body), "Plus Jakarta Sans", sans-serif', fontSize: '0.827rem', fontWeight: 500, color: '#5C6672', lineHeight: '1.2', letterSpacing: '0.06em' }}>/ Creative technologist /</span>
           </a>
         </div>
 

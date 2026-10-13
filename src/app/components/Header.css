@@ -19,8 +19,8 @@
   align-items: center;
   height: 3.5rem;
   box-sizing: border-box;
-  border-bottom: 1px solid rgba(0, 0, 0, 0.06);
-  box-shadow: 0 4px 24px rgba(0, 0, 0, 0.03), inset 0 -1px 0 rgba(255, 255, 255, 0.4);
+  border-bottom: 1px solid rgba(236, 145, 119, 0.35);
+  box-shadow: none !important;
   z-index: 1000;
   pointer-events: auto;
   opacity: 0;
@@ -350,7 +350,7 @@
     background-color: rgba(255, 255, 255, 0.85) !important;
     backdrop-filter: saturate(180%) blur(20px) !important;
     -webkit-backdrop-filter: saturate(180%) blur(20px) !important;
-    border-bottom: 1px solid rgba(0, 0, 0, 0.08) !important;
+    border-bottom: 1px solid rgba(236, 145, 119, 0.35) !important;
     opacity: 0;
     transform: translateY(-100%);
     animation: headerSlideDown 0.65s cubic-bezier(0.22, 1, 0.36, 1) 0.1s forwards !important;
@@ -383,7 +383,7 @@
 
   .mobile-brand-name {
     font-family: var(--font-heading), Outfit, sans-serif;
-    font-size: 12px;
+    font-size: 12.6px;
     font-weight: 600;
     color: var(--color-heading-silver) !important;
     letter-spacing: 0.13em;
@@ -431,10 +431,10 @@
     gap: 0.05rem !important;
   }
   .mobile-brand-name {
-    font-size: 11px !important;
+    font-size: 11.55px !important;
   }
   .mobile-brand-title {
-    font-size: 0.64rem !important;
+    font-size: 0.672rem !important;
   }
 }
 

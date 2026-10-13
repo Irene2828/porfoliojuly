@@ -39,7 +39,7 @@
   right: 0;
   width: 55%;
   background: radial-gradient(ellipse at 60% 40%, rgba(255, 255, 255, 0.85) 0%, rgba(255, 255, 255, 0.35) 55%, rgba(255, 255, 255, 0) 85%), linear-gradient(135deg, #e8ebee 0%, #dcdfe3 45%, #c9ced3 100%);
-  border-left: 1px solid rgba(0, 0, 0, 0.08);
+  border-left: 1px solid rgba(236, 145, 119, 0.35);
   border-right: none;
   box-shadow: none;
   z-index: 1;
@@ -140,7 +140,7 @@
 
 .hero-content {
   flex: 1;
-  max-width: 720px;
+  max-width: 810px;
   position: relative;
   z-index: 5;
   transform: none;
@@ -207,8 +207,8 @@
   max-width: none !important;
   width: calc(100% + 2rem);
   background: #ffffff !important;
-  border: 1px dashed rgba(18, 18, 18, 0.25); /* dashed frame */
-  padding: 3.79rem 5.06rem; /* top and bottom padding increased by 25% */
+  border: 1px dashed rgba(236, 145, 119, 0.24); /* subtle dashed peach frame */
+  padding: 3.79rem clamp(2.5rem, 3.2vw, 3.8rem);
   margin-right: -2rem;
   margin-left: 0;
   transform: none;
@@ -358,7 +358,7 @@
 
 .hero-name-group .hero-text h1 {
   font-family: var(--font-heading) !important;
-  font-size: clamp(40px, 4.9vw, 45.5px) !important;
+  font-size: clamp(40px, 3.8vw, 54.6px) !important;
   line-height: 1.18 !important;
   margin: 0;
   background: none;
@@ -372,6 +372,42 @@
   font-synthesis: style;
   -webkit-text-stroke: 0 !important;
   text-stroke: 0 !important;
+}
+
+.headline-line {
+  display: inline;
+}
+
+@media (min-width: 901px) {
+  .headline-line {
+    display: inline-block;
+    white-space: nowrap;
+  }
+}
+
+.headline-emphasis {
+  font-style: italic;
+  font-family: inherit;
+  font-weight: inherit;
+  display: inline-block;
+  position: relative;
+  cursor: pointer;
+}
+
+.headline-emphasis::after {
+  content: '';
+  position: absolute;
+  left: 0;
+  bottom: 2px;
+  width: 0%;
+  height: 1.5px;
+  background-color: currentColor;
+  transition: width 0.25s cubic-bezier(0.16, 1, 0.3, 1);
+  pointer-events: none;
+}
+
+.headline-emphasis:hover::after {
+  width: 100%;
 }
 
 .br-mobile {
@@ -659,6 +695,7 @@
   margin-top: 15px;
   z-index: 1;
   pointer-events: none;
+  box-shadow: -8px -8px 0px rgba(236, 145, 119, 0.2);
 }
 
 .hero-dot-overlay {
@@ -829,7 +866,7 @@
     margin: 0 !important;
     padding: 1.85rem 1.4rem !important;
     background: #ffffff !important;
-    border: 1px dashed rgba(18, 18, 18, 0.25) !important;
+    border: 1px dashed rgba(236, 145, 119, 0.24) !important;
     box-shadow: none !important;
     transform: none !important;
     align-items: flex-start !important;
@@ -869,7 +906,7 @@
     width: 100% !important;
     max-width: 100% !important;
     font-family: var(--font-heading) !important;
-    font-size: clamp(1.95rem, 7.8vw, 2.45rem) !important;
+    font-size: clamp(2.34rem, 9.36vw, 2.94rem) !important;
     letter-spacing: -0.025em !important;
     text-align: left !important;
     margin: 0 !important;
@@ -1136,7 +1173,7 @@
     padding: 2.25rem 1.15rem 2.25rem 1.15rem !important;
   }
   .hero-name-group .hero-text h1 {
-    font-size: clamp(1.25rem, 6.8vw, 1.65rem) !important;
+    font-size: clamp(1.5rem, 8.16vw, 1.98rem) !important;
   }
 }
 
@@ -1146,7 +1183,7 @@
     padding: 2.25rem 1.15rem 2.25rem 1.15rem !important;
   }
   .hero-name-group .hero-text h1 {
-    font-size: clamp(1.25rem, 6.8vw, 1.65rem) !important;
+    font-size: clamp(1.5rem, 8.16vw, 1.98rem) !important;
   }
 }
 
@@ -1837,7 +1874,7 @@
     justify-content: center !important;
   }
 }
-/* ── Mobile hero: circular avatar instead of large portrait (2026-10-06) ── */ @media (max-width: 900px) { .hero-mobile-intro { display: none !important; } .hero-image-wrapper { order: 0 !important; margin-bottom: 0 !important; background: transparent !important; border: none !important; border-radius: 0 !important; padding: 0 !important; box-shadow: none !important; } .hero-image-container { width: 110px !important; height: 110px !important; max-width: none !important; aspect-ratio: auto !important; border-radius: 50% !important; overflow: hidden !important; margin: 0 !important; padding: 0 !important; } .hero-image { width: 100% !important; height: 100% !important; object-fit: cover !important; object-position: top center !important; } .hero-image-brackets, .hero-image-brackets-left, .hero-image-offset-frame, .hero-decor-square { display: none !important; } }
+/* ── Mobile hero: circular avatar instead of large portrait (2026-10-06) ── */ @media (max-width: 900px) { .hero-mobile-intro { display: none !important; } .hero-image-wrapper { order: 0 !important; margin-bottom: 0 !important; background: transparent !important; border: none !important; border-radius: 0 !important; padding: 0 !important; box-shadow: none !important; } .hero-image-container { width: 110px !important; height: 110px !important; max-width: none !important; aspect-ratio: auto !important; border-radius: 50% !important; overflow: hidden !important; margin: 0 !important; padding: 0 !important; box-shadow: none !important; } .hero-image { width: 100% !important; height: 100% !important; object-fit: cover !important; object-position: top center !important; } .hero-image-brackets, .hero-image-brackets-left, .hero-image-offset-frame, .hero-decor-square { display: none !important; } }
 
 @media (min-width: 1600px) {
   .hero-copy-motion {

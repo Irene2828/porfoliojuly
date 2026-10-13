@@ -6,43 +6,33 @@ import heroImage from '@/app/assets/test.webp';
 export default function HeroV2() {
   return (
     <section className="section hero-section" id="home">
-      {/* Background Split with Testimonial-Style Architecture Geometry */}
+      {/* Background Split */}
       <div className="hero-bg-split">
-        {/* Geometric Abstract Decor Layer (matching Testimonials Grey BG) */}
-        <div 
-          className="hide-on-mobile"
-          style={{
-            position: 'absolute',
-            inset: 0,
-            pointerEvents: 'none',
-            zIndex: 1,
-            opacity: 0.85
-          }}
-        >
-          {/* Top-Right Shapes */}
-          <div style={{ position: 'absolute', width: '220px', height: '130px', border: '1.5px solid rgba(236, 145, 119, 0.65)', top: '8%', right: '8%' }} />
-          <div style={{ position: 'absolute', width: '75px', height: '75px', border: '1.5px dashed rgba(236, 145, 119, 0.75)', borderRadius: '50%', top: '22%', right: '18%' }} />
-
-          {/* Center-Left Shapes */}
-          <div style={{ position: 'absolute', width: '160px', height: '100px', border: '1.5px solid rgba(236, 145, 119, 0.65)', top: '42%', left: '23%' }} />
-          <div style={{ position: 'absolute', width: '45px', height: '45px', border: '1.5px dashed rgba(236, 145, 119, 0.75)', top: '55%', left: '30%' }} />
+        {/* Off-white concentric circled graphics matching Services grey bg style */}
+        <div style={{ position: 'absolute', inset: 0, overflow: 'hidden', pointerEvents: 'none', zIndex: 1 }}>
+          <div style={{ position: 'absolute', width: '420px', height: '420px', borderRadius: '50%', border: '1.5px solid rgba(255, 255, 255, 0.55)', top: '10%', right: '5%' }} />
+          <div style={{ position: 'absolute', width: '310px', height: '310px', borderRadius: '50%', border: '1.5px dashed rgba(255, 255, 255, 0.65)', top: '17%', right: '9%' }} />
+          <div style={{ position: 'absolute', width: '200px', height: '200px', borderRadius: '50%', border: '1.5px solid rgba(255, 255, 255, 0.45)', top: '24%', right: '13%' }} />
         </div>
       </div>
 
       <div className="container hero-container" style={{ position: 'relative' }}>
         {/* Left side (now visually Left): Content, Headline frame, and CTAs */}
         <div className="hero-content">
-          <div className="hero-copy-motion">
+          <div className="hero-copy-motion" style={{ position: 'relative' }}>
             <div className="hero-name-group" style={{ position: 'relative' }}>
               <div
                 className="hero-text"
                 style={{ transform: 'translateY(-0.4rem)' }}
               >
                 <h1 className="hero-statement hero-statement-anim">
-                  Looking for a <span className="br-mobile"><br /></span>custom website <span className="br-desktop"><br /></span>or <span className="br-mobile"><br /></span>an internal AI tool?
+                  <span className="headline-line">Looking for a <span className="br-mobile"><br /></span><span className="headline-emphasis">custom</span> website</span> <span className="br-desktop"><br /></span>
+                  <span className="headline-line">or <span className="br-mobile"><br /></span>an <span className="headline-emphasis">internal</span> AI tool?</span>
                 </h1>
                 <p className="hero-frame-paragraph hero-paragraph-anim" style={{ marginTop: '1.7rem', fontSize: '1.10rem', lineHeight: '1.75', color: '#333842', maxWidth: '100%', fontWeight: 400 }}>
-                  I design and build custom digital products end-to-end for business <span className="br-desktop"><br /></span>and professionals &mdash; <span style={{ fontStyle: 'italic' }}>from figuring out what solution you need to <span className="br-desktop"><br /></span>shipping a working product.</span>
+                  I design and build custom digital products end-to-end <span className="br-desktop"><br /></span>
+                  for business and professionals &mdash; <span style={{ fontStyle: 'italic' }}>from figuring out what solution you need <span className="br-desktop"><br /></span>
+                  to shipping a working product.</span>
                 </p>
               </div>
               <div
