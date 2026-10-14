@@ -155,7 +155,7 @@
 .hamburger-bar {
   width: 20px;
   height: 1.5px;
-  background-color: #111111;
+  background-color: #3ba3b8; /* teal, matches headline accent */
   transition: transform 0.25s ease, opacity 0.25s ease;
 }
 
@@ -433,7 +433,7 @@
   }
 
   .hamburger-bar {
-    background-color: #111111 !important;
+    background-color: #3ba3b8 !important;
   }
 }
 
