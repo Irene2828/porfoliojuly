@@ -74,7 +74,7 @@ export default function HeroV2() {
           </div>
 
           <div className="hero-copy-motion" style={{ position: 'relative', zIndex: 1 }}>
-            <div className="hero-name-group" style={{ position: 'relative' }}>
+            <div className="hero-name-group" style={{ position: 'relative', width: 'fit-content', maxWidth: '100%' }}>
               <div
                 className="hero-text"
                 style={{ transform: 'translateY(-0.4rem)' }}

@@ -853,13 +853,19 @@ h1, h2, h3, h4, h5, h6 {
     margin: 0 auto !important;
   }
 
-  /* Balanced position for circle decor and image on desktop */
+  /* Shift circle decor and image 5% more to the left on desktop */
   .v2-theme .hero-image-wrapper {
     position: relative !important;
-    right: clamp(1rem, 3.5vw, 4.5rem) !important;
+    right: clamp(2.5rem, 8.5vw, 9rem) !important;
     top: -2.8rem !important;
     margin-right: 0 !important;
     animation: none !important;
+  }
+
+  /* Make hero-name-group fit-content on desktop so CTAs align flush with headline right side */
+  .v2-theme .hero-name-group {
+    width: fit-content !important;
+    max-width: 100% !important;
   }
 }
 
