@@ -107,15 +107,15 @@ export default function HeroV2() {
                     to <span className="headline-italic-thinner" style={{ fontStyle: 'italic' }}>scale your business?</span>
                   </span>
                 </h1>
-                <p className="hero-frame-paragraph hero-paragraph-anim" style={{ marginTop: '1.7rem', fontSize: '1.213rem', lineHeight: '1.75', color: 'var(--color-body-dark, #333842)', maxWidth: '100%', fontWeight: 400, opacity: 0.9 }}>
-                  I <strong style={{ fontWeight: 600, color: '#1a1d24' }}>design</strong> and <strong style={{ fontWeight: 600, color: '#1a1d24' }}>build</strong> custom digital products <strong style={{ fontWeight: 600, color: '#1a1d24' }}>end-to-end</strong> &mdash; <span className="br-desktop"><br /></span>
-                  <span style={{ fontStyle: 'italic' }}>from figuring out what solution you need to shipping a working product.</span>
-                </p>
                 <ul className="hero-benefits">
                   <li>stronger digital presence;</li>
                   <li>automated workflows;</li>
                   <li>streamlined business processes.</li>
                 </ul>
+                <p className="hero-frame-paragraph hero-paragraph-anim" style={{ marginTop: '1.7rem', fontSize: '1.213rem', lineHeight: '1.75', color: 'var(--color-body-dark, #333842)', maxWidth: '100%', fontWeight: 400, opacity: 0.9 }}>
+                  I <strong style={{ fontWeight: 600, color: '#1a1d24' }}>design</strong> and <strong style={{ fontWeight: 600, color: '#1a1d24' }}>build</strong> custom digital products <strong style={{ fontWeight: 600, color: '#1a1d24' }}>end-to-end</strong> &mdash; <span className="br-desktop"><br /></span>
+                  <span style={{ fontStyle: 'italic' }}>from figuring out what solution you need to shipping a working product.</span>
+                </p>
               </div>
 
               {/* CTAs: right-aligned flush with line 2 of headline */}
