@@ -355,15 +355,15 @@ h1, h2, h3, h4, h5, h6 {
   border-color: #363636 !important;
 }
 
-/* V2 Specific Hero H1 Override (Crisp, non-curvy editorial serif with zero stroke) */
+/* V2 Specific Hero H1 Override (Calm, highly professional editorial serif — no girly swashes or delicate hairlines) */
 @media (min-width: 901px) {
   .v2-theme .hero-statement,
   .v2-theme .hero-name-group .hero-text h1 {
-    font-family: 'Instrument Serif', 'Cormorant Garamond', Georgia, serif !important;
-    font-size: clamp(48px, 4.6vw, 70px) !important;
+    font-family: 'Source Serif 4', 'Newsreader', Georgia, serif !important;
+    font-size: clamp(44px, 4.1vw, 62px) !important;
     font-weight: 400 !important;
-    letter-spacing: -0.01em !important;
-    line-height: 1.15 !important;
+    letter-spacing: -0.015em !important;
+    line-height: 1.16 !important;
     max-width: 100% !important;
     color: #3ba3b8 !important;
     -webkit-text-fill-color: #3ba3b8 !important;
@@ -377,15 +377,15 @@ h1, h2, h3, h4, h5, h6 {
   }
 
   .v2-theme .headline-line {
-    line-height: 1.12 !important;
+    line-height: 1.14 !important;
     white-space: nowrap !important;
   }
 }
 
 .headline-italic-thinner {
   font-style: italic !important;
-  font-weight: 400 !important;
-  letter-spacing: -0.01em !important;
+  font-weight: 300 !important;
+  letter-spacing: -0.015em !important;
 }
 
 .headline-underline {
@@ -403,9 +403,9 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 .headline-spaced-word {
-  font-family: 'Instrument Serif', 'Cormorant Garamond', Georgia, serif !important;
+  font-family: 'Source Serif 4', 'Newsreader', Georgia, serif !important;
   font-weight: 400 !important;
-  letter-spacing: -0.01em !important;
+  letter-spacing: -0.015em !important;
   color: #3ba3b8 !important; /* matching bright vibrant teal */
   -webkit-text-fill-color: #3ba3b8 !important;
   -webkit-text-stroke: 0px transparent !important;
@@ -437,18 +437,18 @@ h1, h2, h3, h4, h5, h6 {
 @media (min-width: 1600px) {
   .v2-theme .hero-statement,
   .v2-theme .hero-name-group .hero-text h1 {
-    font-size: 82px !important;
+    font-size: 74px !important;
   }
 }
 
 @media (max-width: 900px) {
   .v2-theme .hero-statement,
   .v2-theme .hero-name-group .hero-text h1 {
-    font-family: 'Instrument Serif', 'Cormorant Garamond', Georgia, serif !important;
-    font-size: clamp(30px, 8.2vw, 44px) !important; /* Perfectly sized for 3 lines on mobile */
+    font-family: 'Source Serif 4', 'Newsreader', Georgia, serif !important;
+    font-size: clamp(28px, 7.5vw, 40px) !important; /* Perfectly sized for 3 lines on mobile */
     font-weight: 400 !important;
     letter-spacing: -0.01em !important;
-    line-height: 1.24 !important;
+    line-height: 1.25 !important;
     max-width: 100% !important;
     color: #3ba3b8 !important;
     -webkit-text-fill-color: #3ba3b8 !important;
@@ -891,8 +891,8 @@ h1, h2, h3, h4, h5, h6 {
   max-height: 200px !important;
   margin-top: 0 !important;
   border-radius: 50% !important;
-  /* Rounded white shadow next to image circle */
-  box-shadow: -8px -8px 0px #ffffff !important;
+  /* Rounded pale peach shadow next to image circle */
+  box-shadow: -8px -8px 0px rgba(236, 145, 119, 0.22) !important;
   position: relative !important;
   overflow: visible !important;
 }
@@ -1039,8 +1039,8 @@ h1, h2, h3, h4, h5, h6 {
     padding: 0 !important;
     overflow: visible !important;
     position: relative !important;
-    /* White offset shadow matching desktop hero */
-    box-shadow: -6px -6px 0px #ffffff !important;
+    /* Pale peach offset shadow matching desktop hero */
+    box-shadow: -6px -6px 0px rgba(236, 145, 119, 0.22) !important;
     background: transparent !important;
     border: none !important;
   }
