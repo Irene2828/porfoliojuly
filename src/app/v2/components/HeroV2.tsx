@@ -79,14 +79,14 @@ export default function HeroV2() {
                 WebkitMaskImage: 'linear-gradient(135deg, rgba(0, 0, 0, 0.9) 0%, rgba(0, 0, 0, 0.65) 50%, rgba(0, 0, 0, 0.25) 100%)'
               }}
             >
-              {/* Outer Ring (210px -> r=104) - Brand Teal */}
-              <circle cx="105" cy="105" r="104" stroke="rgba(59, 163, 184, 0.45)" strokeWidth="1.3" />
+              {/* Outer Ring (210px -> r=104) - White */}
+              <circle cx="105" cy="105" r="104" stroke="#ffffff" strokeWidth="1.3" strokeOpacity="0.8" />
 
-              {/* Middle Dashed Ring (154px -> r=77) - Brand Teal */}
-              <circle cx="105" cy="105" r="77" stroke="rgba(59, 163, 184, 0.55)" strokeWidth="1.3" strokeDasharray="4 4" />
+              {/* Middle Dashed Ring (154px -> r=77) - White */}
+              <circle cx="105" cy="105" r="77" stroke="#ffffff" strokeWidth="1.3" strokeDasharray="4 4" strokeOpacity="0.9" />
 
-              {/* Inner Ring (98px -> r=49) - Brand Teal */}
-              <circle cx="105" cy="105" r="49" stroke="rgba(59, 163, 184, 0.38)" strokeWidth="1.3" />
+              {/* Inner Ring (98px -> r=49) - White */}
+              <circle cx="105" cy="105" r="49" stroke="#ffffff" strokeWidth="1.3" strokeOpacity="0.75" />
             </svg>
           </div>
 
