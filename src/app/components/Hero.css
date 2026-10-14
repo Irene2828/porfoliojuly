@@ -2124,33 +2124,33 @@
     color: #3ba3b8 !important; /* teal base */
     -webkit-text-fill-color: #3ba3b8 !important;
     font-weight: 400 !important;
-    font-size: clamp(2.599rem, 10.397vw, 3.266rem) !important; /* +10% */
+    font-size: clamp(2.339rem, 9.357vw, 2.939rem) !important; /* +10% */
   }
   .hero-text .headline-teal-underline {
     color: #3ba3b8 !important; /* teal italic bold keywords */
     -webkit-text-fill-color: #3ba3b8 !important;
     font-weight: 500 !important;
     font-style: italic !important;
-    font-size: clamp(2.599rem, 10.397vw, 3.266rem) !important; /* +10% */
+    font-size: clamp(2.339rem, 9.357vw, 2.939rem) !important; /* +10% */
     text-decoration: none !important; /* no underline on mobile */
   }
   .hero-text .headline-italic-thinner {
     color: #3ba3b8 !important;
     -webkit-text-fill-color: #3ba3b8 !important;
     font-weight: 500 !important;
-    font-size: clamp(2.363rem, 9.452vw, 2.969rem) !important;
+    font-size: clamp(2.127rem, 8.507vw, 2.672rem) !important;
   }
 }
 @media (min-width: 414px) and (max-width: 900px) {
   .hero-text .headline-line {
-    font-size: clamp(2.861rem, 11.444vw, 3.594rem) !important; /* +10% */
+    font-size: clamp(2.575rem, 10.3vw, 3.235rem) !important; /* +10% */
     line-height: 1.124 !important; /* -10% */
     color: #3ba3b8 !important;
     -webkit-text-fill-color: #3ba3b8 !important;
     font-weight: 400 !important;
   }
   .hero-text .headline-teal-underline {
-    font-size: clamp(2.861rem, 11.444vw, 3.594rem) !important; /* +10% */
+    font-size: clamp(2.575rem, 10.3vw, 3.235rem) !important; /* +10% */
     line-height: 1.124 !important; /* -10% */
     color: #3ba3b8 !important;
     -webkit-text-fill-color: #3ba3b8 !important;
@@ -2159,7 +2159,7 @@
     text-decoration: none !important;
   }
   .hero-text .headline-italic-thinner {
-    font-size: clamp(2.601rem, 10.404vw, 3.267rem) !important;
+    font-size: clamp(2.341rem, 9.364vw, 2.94rem) !important;
     line-height: 1.124 !important; /* -10% */
     color: #3ba3b8 !important;
     -webkit-text-fill-color: #3ba3b8 !important;
