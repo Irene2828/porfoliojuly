@@ -964,28 +964,61 @@ h1, h2, h3, h4, h5, h6 {
     box-shadow: none !important;
   }
 
+  /* Mobile Hero Top Row: Avatar on left, 3 labels stacked on right */
   .v2-theme .hero-image-wrapper,
   .hero-image-wrapper {
+    order: 0 !important;
     width: 100% !important;
+    max-width: 100% !important;
     display: flex !important;
-    flex-direction: column !important;
+    flex-direction: row !important;
     align-items: center !important;
-    justify-content: center !important;
-    padding: 0 !important;
-    margin-right: 0 !important;
-    margin-top: 0 !important;
+    justify-content: flex-start !important;
+    padding-left: clamp(0.75rem, 4vw, 1.5rem) !important;
+    padding-right: clamp(0.75rem, 4vw, 1.5rem) !important;
+    gap: clamp(1.2rem, 4.5vw, 2.2rem) !important;
+    margin-top: 0.35rem !important;
     margin-bottom: 0 !important;
+    box-sizing: border-box !important;
     transform: none !important;
     background: transparent !important;
     border: none !important;
     box-shadow: none !important;
   }
-  /* Avatar moved to header on mobile */
+
+  /* Circled Avatar under header on mobile, aligned with headline left edge */
   .v2-theme .hero-image-container,
   .v2-theme .cv-scanner .hero-image-container,
   .hero-image-container {
-    display: none !important;
+    display: block !important;
+    width: clamp(82px, 23vw, 98px) !important;
+    height: clamp(82px, 23vw, 98px) !important;
+    max-width: none !important;
+    max-height: none !important;
+    aspect-ratio: 1 / 1 !important;
+    border-radius: 50% !important;
+    flex-shrink: 0 !important;
+    margin: 0 !important;
+    padding: 0 !important;
+    overflow: visible !important;
+    position: relative !important;
+    /* Peach offset shadow matching desktop hero */
+    box-shadow: -6px -6px 0px rgba(236, 145, 119, 0.2) !important;
+    background: transparent !important;
+    border: none !important;
   }
+
+  .v2-theme .hero-image-container .hero-image,
+  .hero-image-container .hero-image,
+  .hero-image {
+    width: 100% !important;
+    height: 100% !important;
+    border-radius: 50% !important;
+    object-fit: cover !important;
+    object-position: center 15% !important;
+    display: block !important;
+  }
+
   .v2-theme .hero-image-offset-frame {
     display: none !important;
   }
@@ -1002,23 +1035,22 @@ h1, h2, h3, h4, h5, h6 {
     display: none !important;
   }
 
-  /* Place labels under image in hero on mobile in 2 lines centered, no fill, just text */
+  /* 3 labels opposite the image on the right side of hero top, aligned by left */
   .v2-theme .hero-rings-badge-container {
     position: static !important;
-    width: 100% !important;
-    max-width: 100% !important;
+    width: auto !important;
+    max-width: none !important;
     height: auto !important;
     transform: none !important;
     display: flex !important;
-    flex-flow: row wrap !important;
+    flex-direction: column !important;
+    align-items: flex-start !important;
     justify-content: center !important;
-    align-items: center !important;
-    column-gap: 1.25rem !important;
-    row-gap: 0.35rem !important;
-    margin: 0.75rem auto 0 auto !important;
+    gap: 0.5rem !important;
+    margin: 0 !important;
     padding: 0 !important;
     pointer-events: auto !important;
-    text-align: center !important;
+    text-align: left !important;
   }
 
   .v2-theme .hero-badge-anchor {
@@ -1028,20 +1060,20 @@ h1, h2, h3, h4, h5, h6 {
     left: auto !important;
     right: auto !important;
     transform: none !important;
-    display: inline-flex !important;
-    align-items: center !important;
-    justify-content: center !important;
-  }
-
-  /* Force "AI consultations" onto line 2 centered */
-  .v2-theme .badge-anchor-consultations {
-    flex-basis: 100% !important;
-    width: 100% !important;
     display: flex !important;
-    justify-content: center !important;
+    align-items: center !important;
+    justify-content: flex-start !important;
+    width: auto !important;
   }
 
-  /* No fill, shadow or borders - just clean typographic text */
+  .v2-theme .badge-anchor-consultations {
+    flex-basis: auto !important;
+    width: auto !important;
+    display: flex !important;
+    justify-content: flex-start !important;
+  }
+
+  /* No fill, shadow or borders - clean typographic text, left-aligned */
   .v2-theme .hero-ring-badge {
     background: transparent !important;
     background-color: transparent !important;
@@ -1054,13 +1086,14 @@ h1, h2, h3, h4, h5, h6 {
     margin: 0 !important;
     transform: none !important;
     font-family: var(--font-heading) !important;
-    font-size: 13.5px !important;
+    font-size: clamp(13px, 3.7vw, 15px) !important;
     font-weight: 500 !important;
     letter-spacing: 0.025em !important;
     color: #4a5568 !important;
-    line-height: 1.4 !important;
+    line-height: 1.35 !important;
     white-space: nowrap !important;
-    display: inline-block !important;
+    display: block !important;
+    text-align: left !important;
   }
 }
 

@@ -1,7 +1,6 @@
 'use client';
 
 import { useState, useEffect } from 'react';
-import heroImage from '@/app/assets/test.webp';
 import './Header.css';
 
 export default function Header() {
@@ -66,14 +65,9 @@ export default function Header() {
         </nav>
       </div>
 
-      {/* Mobile Header Elements: Avatar + Name on Left, CASES/ABOUT on Right */}
+      {/* Mobile Header Elements: Name and Title on Left, CASES/ABOUT on Right */}
       <div className="mobile-header-left">
         <a href="/" aria-label="Home" className="mobile-brand-link">
-          <img 
-            src={heroImage.src} 
-            alt="Iryna Sheremeta" 
-            className="mobile-header-avatar" 
-          />
           <span className="mobile-brand-name">IRYNA SHEREMETA</span>
           <span className="mobile-brand-title">/ Creative technologist /</span>
         </a>
