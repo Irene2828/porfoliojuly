@@ -363,7 +363,7 @@ h1, h2, h3, h4, h5, h6 {
     font-size: clamp(44px, 4.1vw, 63px) !important;
     font-weight: 400 !important;
     letter-spacing: -0.035em !important;
-    line-height: 1.22 !important;
+    line-height: 1.26 !important;
     max-width: 100% !important;
     color: #4e5563 !important;
     -webkit-text-fill-color: #4e5563 !important;
@@ -377,7 +377,7 @@ h1, h2, h3, h4, h5, h6 {
   }
 
   .v2-theme .headline-line {
-    line-height: 1.20 !important;
+    line-height: 1.24 !important;
     white-space: nowrap !important;
   }
 }
@@ -392,18 +392,18 @@ h1, h2, h3, h4, h5, h6 {
 
 .headline-teal-underline {
   text-decoration: underline !important;
-  text-decoration-color: #3ba3b8 !important;
+  text-decoration-color: #62b6c6 !important;
   text-decoration-thickness: 1.5px !important;
-  text-underline-offset: 5px !important;
+  text-underline-offset: 6.5px !important;
 }
 
 .headline-underline {
   position: relative;
   display: inline-block;
   text-decoration: underline;
-  text-decoration-color: #3ba3b8;
+  text-decoration-color: #62b6c6;
   text-decoration-thickness: 1.5px;
-  text-underline-offset: 5px;
+  text-underline-offset: 6.5px;
 }
 
 .headline-light {
@@ -458,7 +458,7 @@ h1, h2, h3, h4, h5, h6 {
     font-size: clamp(28px, 7.6vw, 40px) !important; /* Perfectly sized for 3 lines on mobile */
     font-weight: 400 !important;
     letter-spacing: -0.025em !important;
-    line-height: 1.31 !important;
+    line-height: 1.35 !important;
     max-width: 100% !important;
     color: #4e5563 !important;
     -webkit-text-fill-color: #4e5563 !important;
@@ -1022,15 +1022,15 @@ h1, h2, h3, h4, h5, h6 {
     flex-direction: row !important;
     align-items: center !important;
     justify-content: flex-end !important; /* aligned to the right side */
-    padding-left: clamp(0.75rem, 4vw, 1.5rem) !important;
-    padding-right: clamp(1rem, 5vw, 2rem) !important;
-    margin-top: 0.35rem !important;
+    padding: 10px 0 6px 10px !important;
+    margin-top: 0 !important;
     margin-bottom: 0.5rem !important;
     box-sizing: border-box !important;
     transform: none !important;
     background: transparent !important;
     border: none !important;
     box-shadow: none !important;
+    overflow: visible !important;
   }
 
   /* Circled Avatar under header on mobile, aligned to the right */
@@ -1050,7 +1050,7 @@ h1, h2, h3, h4, h5, h6 {
     overflow: visible !important;
     position: relative !important;
     /* Pale peach offset shadow matching desktop hero */
-    box-shadow: -6px -6px 0px rgba(236, 145, 119, 0.22) !important;
+    box-shadow: -8px -8px 0px rgba(236, 145, 119, 0.28) !important;
     background: transparent !important;
     border: none !important;
   }

@@ -377,7 +377,8 @@
     display: flex !important;
     flex-direction: column !important;
     align-items: flex-start !important;
-    gap: 0.15rem !important;
+    text-align: left !important;
+    gap: 0.38rem !important;
     white-space: nowrap;
   }
 
@@ -389,6 +390,8 @@
     letter-spacing: 0.12em;
     text-transform: uppercase;
     line-height: 1.1;
+    text-align: left !important;
+    align-self: flex-start !important;
   }
 
   .mobile-brand-title {
@@ -400,6 +403,8 @@
     letter-spacing: 0.04em !important;
     line-height: 1.1 !important;
     text-transform: none;
+    text-align: left !important;
+    align-self: flex-start !important;
   }
 
   .mobile-header-right {
@@ -435,13 +440,18 @@
   .mobile-header-left .mobile-brand-link {
     flex-direction: column !important;
     align-items: flex-start !important;
-    gap: 0.05rem !important;
+    text-align: left !important;
+    gap: 0.35rem !important;
   }
   .mobile-brand-name {
     font-size: 11.55px !important;
+    text-align: left !important;
+    align-self: flex-start !important;
   }
   .mobile-brand-title {
     font-size: 0.672rem !important;
+    text-align: left !important;
+    align-self: flex-start !important;
   }
 }
 
