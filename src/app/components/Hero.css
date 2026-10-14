@@ -2111,19 +2111,21 @@
   }
 }
 
-/* ── Mobile hero: black headline text +20%, teal/coral pinned (14.10.2026) ── */
+/* ── Mobile hero: explicit headline sizes — black +20%, teal & last line pinned (14.10.2026) ── */
 @media (max-width: 900px) {
-  .hero-name-group .hero-text h1 {
+  .hero-text .headline-line {
     font-size: clamp(3.089rem, 12.355vw, 3.881rem) !important;
   }
+  .hero-text .headline-teal-underline,
   .hero-text .headline-italic-thinner {
     font-size: clamp(2.574rem, 10.296vw, 3.234rem) !important;
   }
 }
 @media (min-width: 414px) and (max-width: 900px) {
-  .hero-name-group .hero-text h1 {
+  .hero-text .headline-line {
     font-size: clamp(3.4rem, 13.6vw, 4.27rem) !important;
   }
+  .hero-text .headline-teal-underline,
   .hero-text .headline-italic-thinner {
     font-size: clamp(2.83rem, 11.33vw, 3.56rem) !important;
   }
