@@ -814,7 +814,23 @@
   }
 
   .hero-bg-split {
-    display: none !important; /* Hide split background on mobile; image card has its own charcoal container */
+    display: block !important; /* Silver gradient on mobile: top-right + bottom-left corners */
+    top: 0 !important;
+    bottom: 0 !important;
+    left: 0 !important;
+    right: 0 !important;
+    width: 100% !important;
+    background:
+      radial-gradient(ellipse 70% 45% at 100% 0%, rgba(255, 255, 255, 0.9) 0%, rgba(232, 235, 238, 0.75) 45%, rgba(232, 235, 238, 0) 75%),
+      radial-gradient(ellipse 70% 45% at 0% 100%, rgba(255, 255, 255, 0.9) 0%, rgba(220, 223, 227, 0.75) 45%, rgba(201, 206, 211, 0) 75%) !important;
+    border: none !important;
+    box-shadow: none !important;
+    animation: none !important;
+    z-index: 0 !important;
+    pointer-events: none !important;
+  }
+  .hero-bg-split::after {
+    display: none !important;
   }
 
   /* Container holds Content (Order 1) then Image (Order 2) */
@@ -2082,7 +2098,7 @@
   }
   .v2-theme .hero-image-wrapper,
   .hero-image-wrapper {
-    margin-bottom: 4.4px !important; /* +10% */
+    margin-bottom: 4.84px !important; /* +10% */
   }
 }
 
