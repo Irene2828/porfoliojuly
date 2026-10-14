@@ -2041,3 +2041,27 @@
     margin-bottom: 3.5px !important;
   }
 }
+
+/* ── Mobile hero: benefits bullets under body, right-aligned (14.10.2026) ── */
+.hero-benefits {
+  display: none !important; /* mobile only */
+}
+@media (max-width: 900px) {
+  .hero-benefits {
+    display: block !important;
+    list-style: none !important;
+    margin: 1.25rem 0 0 0 !important;
+    padding: 0 !important;
+    text-align: right !important;
+  }
+  .hero-benefits li {
+    font-family: var(--font-sans), 'Plus Jakarta Sans', sans-serif !important;
+    font-size: 0.95rem !important;
+    line-height: 1.8 !important;
+    color: #5f6a7a !important;
+  }
+  .hero-benefits li::before {
+    content: '• ' !important;
+    color: #C26A4E !important;
+  }
+}
