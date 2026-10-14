@@ -911,7 +911,7 @@
     max-width: 100% !important;
     font-family: var(--font-heading) !important;
     font-size: clamp(2.83rem, 11.33vw, 3.56rem) !important; /* +10% more */ /* +10% */
-    letter-spacing: -0.025em !important;
+    letter-spacing: -0.015em !important;
     text-align: left !important;
     margin: 0 !important;
     line-height: 1.26 !important; /* +5% */
@@ -2118,7 +2118,7 @@
   .hero-text .headline-italic-thinner {
     font-family: -apple-system, BlinkMacSystemFont, "Helvetica Neue", Helvetica, Arial, sans-serif !important;
     font-weight: 600 !important;
-    letter-spacing: -0.025em !important;
+    letter-spacing: -0.015em !important;
     font-size: clamp(2.363rem, 9.452vw, 2.969rem) !important; /* -10% */
     line-height: 1.032 !important; /* +5% */
   }
