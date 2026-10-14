@@ -101,13 +101,13 @@ export default function HeroV2() {
                     Looking for a
                   </span>
                   <span ref={line2Ref} className="headline-line headline-light" style={{ width: 'fit-content' }}>
-                    <span className="headline-teal-underline">website</span> or an
+                    <span className="headline-teal-underline">custom</span> website or an
                   </span>
                   <span className="headline-line headline-light">
-                    <span className="headline-teal-underline">AI tool</span>
+                    <span className="headline-teal-underline">internal</span> AI tool
                   </span>
                   <span className="headline-line headline-light">
-                    <span className="headline-italic-thinner" style={{ fontStyle: 'italic' }}>to scale your business?</span>
+                    to <span className="headline-teal-underline">scale</span> your business?
                   </span>
                 </h1>
                 <p className="hero-frame-paragraph hero-paragraph-anim" style={{ marginTop: '1.7rem', fontSize: '1.213rem', lineHeight: '1.75', color: 'var(--color-body-dark, #333842)', maxWidth: '100%', fontWeight: 400, opacity: 0.9 }}>
