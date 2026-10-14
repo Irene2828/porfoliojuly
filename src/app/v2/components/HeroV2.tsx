@@ -80,12 +80,11 @@ export default function HeroV2() {
                 style={{ transform: 'translateY(-0.4rem)' }}
               >
                 <h1 className="hero-statement hero-statement-anim" style={{ display: 'flex', flexDirection: 'column', gap: '0px', lineHeight: '1.02' }}>
-                  <span className="headline-line headline-light">Looking for a</span>
                   <span className="headline-line headline-light">
-                    <span className="headline-spaced-word">custom</span> website or
+                    Looking for a <span className="headline-spaced-word">custom</span>
                   </span>
                   <span className="headline-line headline-light">
-                    an <span className="headline-spaced-word">internal</span> AI tool
+                    website or an <span className="headline-spaced-word">internal</span> AI tool
                   </span>
                   <span className="headline-line headline-light">
                     to scale your business?

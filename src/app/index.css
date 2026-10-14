@@ -360,11 +360,11 @@ h1, h2, h3, h4, h5, h6 {
   .v2-theme .hero-statement,
   .v2-theme .hero-name-group .hero-text h1 {
     font-family: var(--font-heading) !important;
-    font-size: clamp(50.7px, 4.83vw, 70.1px) !important; /* +5% increase */
+    font-size: clamp(45px, 4.2vw, 64px) !important;
     font-weight: 300 !important;
     letter-spacing: -0.048em !important; /* tightened letter spacing */
     line-height: 1.02 !important; /* tightened line spacing */
-    max-width: 75% !important; /* 25% shorter line width */
+    max-width: 100% !important;
     color: #3ba3b8 !important; /* brighter vibrant teal matching CTA 1 arrow */
     -webkit-text-fill-color: #3ba3b8 !important;
     -webkit-text-stroke: 0 !important;
@@ -373,6 +373,7 @@ h1, h2, h3, h4, h5, h6 {
 
   .v2-theme .headline-line {
     line-height: 1.02 !important;
+    white-space: nowrap !important;
   }
 }
 
@@ -428,7 +429,7 @@ h1, h2, h3, h4, h5, h6 {
   .v2-theme .hero-statement,
   .v2-theme .hero-name-group .hero-text h1 {
     font-family: var(--font-heading) !important;
-    font-size: clamp(31px, 7.8vw, 42px) !important; /* Perfectly sized for 4 lines on mobile */
+    font-size: clamp(27px, 7.3vw, 40px) !important; /* Perfectly sized for 3 lines on mobile */
     font-weight: 300 !important;
     letter-spacing: -0.03em !important;
     line-height: 1.18 !important;
@@ -440,11 +441,10 @@ h1, h2, h3, h4, h5, h6 {
     text-align: left !important;
   }
 
-  /* Spread mobile hero headline into 4 distinct lines:
-     Line 1: "Looking for a"
-     Line 2: "custom website or"
-     Line 3: "an internal AI tool"
-     Line 4: "to scale your business?" */
+  /* 3 distinct lines:
+     Line 1: "Looking for a custom"
+     Line 2: "website or an internal AI tool"
+     Line 3: "to scale your business?" */
   .v2-theme .headline-line {
     display: block !important;
     white-space: nowrap !important;
@@ -825,10 +825,10 @@ h1, h2, h3, h4, h5, h6 {
     margin: 0 auto !important;
   }
 
-  /* Shift image 10% more to the left side on desktop */
+  /* Shift circle decor and image 15% more to the left from the right edge on desktop */
   .v2-theme .hero-image-wrapper {
-    transform: translate(-10%, -2.8rem) !important;
-    margin-right: 4.5rem !important;
+    transform: translate(-25%, -2.8rem) !important;
+    margin-right: 7.5rem !important;
   }
 }
 
