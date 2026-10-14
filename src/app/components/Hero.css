@@ -910,7 +910,7 @@
     width: 100% !important;
     max-width: 100% !important;
     font-family: var(--font-heading) !important;
-    font-size: clamp(2.34rem, 9.36vw, 2.94rem) !important;
+    font-size: clamp(2.83rem, 11.33vw, 3.56rem) !important; /* +10% more */ /* +10% */
     letter-spacing: -0.025em !important;
     text-align: left !important;
     margin: 0 !important;
@@ -2107,6 +2107,6 @@
 /* ── Larger mobiles: hero headline +10% (14.10.2026) ── */
 @media (min-width: 414px) and (max-width: 900px) {
   .hero-name-group .hero-text h1 {
-    font-size: clamp(2.574rem, 10.296vw, 3.234rem) !important;
+    font-size: clamp(2.83rem, 11.33vw, 3.56rem) !important; /* +10% more */
   }
 }
