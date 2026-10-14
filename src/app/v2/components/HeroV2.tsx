@@ -81,10 +81,10 @@ export default function HeroV2() {
               >
                 <h1 className="hero-statement hero-statement-anim" style={{ display: 'flex', flexDirection: 'column', gap: '0px', lineHeight: '1.12' }}>
                   <span className="headline-line headline-light">
-                    Looking for a <span className="headline-spaced-word headline-emphasis-custom" style={{ fontStyle: 'italic', fontWeight: 500 }}>custom website</span>
+                    Looking for a <span className="headline-spaced-word headline-emphasis-custom" style={{ fontStyle: 'italic', fontWeight: 500 }}>custom</span>
                   </span>
                   <span className="headline-line headline-light">
-                    or an <span className="headline-spaced-word headline-emphasis-custom" style={{ fontStyle: 'italic', fontWeight: 500 }}>internal AI tool</span>
+                    <span className="headline-spaced-word headline-emphasis-custom" style={{ fontStyle: 'italic', fontWeight: 500 }}>website</span> or an <span className="headline-spaced-word headline-emphasis-custom" style={{ fontStyle: 'italic', fontWeight: 500 }}>internal AI tool</span>
                   </span>
                   <span className="headline-line headline-light">
                     to <span className="headline-italic-thinner" style={{ fontStyle: 'italic', fontWeight: 200, opacity: 0.95 }}>scale your business?</span>

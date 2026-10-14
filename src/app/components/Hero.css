@@ -1875,7 +1875,7 @@
   }
 }
 
-/* ── Mobile hero: avatar on left aligned with headline, labels on right ── */
+/* ── Mobile hero: avatar on right side, labels removed ── */
 @media (max-width: 900px) {
   .hero-mobile-intro { display: none !important; }
   .v2-theme .hero-image-wrapper,
@@ -1884,12 +1884,11 @@
     display: flex !important;
     flex-direction: row !important;
     align-items: center !important;
-    justify-content: flex-start !important;
+    justify-content: flex-end !important; /* aligned to the right side */
     padding-left: clamp(0.75rem, 4vw, 1.5rem) !important;
-    padding-right: clamp(0.75rem, 4vw, 1.5rem) !important;
-    gap: clamp(1.2rem, 4.5vw, 2.2rem) !important;
+    padding-right: clamp(1rem, 5vw, 2rem) !important;
     margin-top: 0.35rem !important;
-    margin-bottom: 0 !important;
+    margin-bottom: 0.5rem !important;
     background: transparent !important;
     border: none !important;
     border-radius: 0 !important;
@@ -1912,7 +1911,9 @@
   .hero-image-brackets,
   .hero-image-brackets-left,
   .hero-image-offset-frame,
-  .hero-decor-square {
+  .hero-decor-square,
+  .hero-rings-badge-container,
+  .v2-theme .hero-rings-badge-container {
     display: none !important;
   }
 }
@@ -1955,14 +1956,6 @@
   .v2-theme .hero-container,
   .hero-container {
     gap: 2.2rem !important;
-  }
-
-  .hero-image-wrapper {
-    display: flex !important;
-    flex-direction: column !important;
-    align-items: center !important;
-    justify-content: center !important;
-    margin-bottom: 0 !important;
   }
 
   .hero-image-labels {
