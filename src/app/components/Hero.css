@@ -2056,7 +2056,7 @@
   }
   .hero-benefits li {
     font-family: var(--font-heading), Outfit, sans-serif !important;
-    font-size: 22.58px !important; /* doubled, like header title */
+    font-size: 15.81px !important; /* -30%, like header title */
     font-weight: 400 !important;
     letter-spacing: 0.04em !important;
     text-transform: none !important;
