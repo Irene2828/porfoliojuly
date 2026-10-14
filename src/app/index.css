@@ -448,8 +448,8 @@ h1, h2, h3, h4, h5, h6 {
   }
 
   /* 3 distinct lines:
-     Line 1: "Looking for a custom"
-     Line 2: "website or an internal AI tool"
+     Line 1: "Looking for a custom website"
+     Line 2: "or an internal AI tool"
      Line 3: "to scale your business?" */
   .v2-theme .headline-line {
     display: block !important;
@@ -853,10 +853,10 @@ h1, h2, h3, h4, h5, h6 {
     margin: 0 auto !important;
   }
 
-  /* Shift circle decor and image 15% more to the left from the right edge on desktop */
+  /* Balanced position for circle decor and image on desktop */
   .v2-theme .hero-image-wrapper {
     position: relative !important;
-    right: clamp(4.5rem, 15vw, 18rem) !important;
+    right: clamp(1rem, 3.5vw, 4.5rem) !important;
     top: -2.8rem !important;
     margin-right: 0 !important;
     animation: none !important;
