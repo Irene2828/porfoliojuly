@@ -2056,7 +2056,7 @@
   }
   .hero-benefits li {
     font-family: var(--font-heading), Outfit, sans-serif !important;
-    font-size: 11.29px !important; /* header title /Creative technologist/ +5% */
+    font-size: 22.58px !important; /* doubled, like header title */
     font-weight: 400 !important;
     letter-spacing: 0.04em !important;
     text-transform: none !important;
