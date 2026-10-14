@@ -35,7 +35,7 @@ export default function HeroV2() {
             <span style={{ position: 'absolute', bottom: '16px', left: '-18px', width: '6px', height: '6px', border: '1px solid rgba(160, 170, 182, 0.32)', backgroundColor: 'transparent' }} />
           </div>
 
-          {/* Pale brand teal concentric rings decor: twice smaller (210px), under top-left of headline */}
+          {/* Silver concentric rings decor: twice smaller (210px), under top-left of headline */}
           <div 
             className="hero-teal-concentric-rings" 
             aria-hidden="true" 
@@ -62,14 +62,14 @@ export default function HeroV2() {
                 WebkitMaskImage: 'linear-gradient(135deg, rgba(0, 0, 0, 0.9) 0%, rgba(0, 0, 0, 0.65) 50%, rgba(0, 0, 0, 0.25) 100%)'
               }}
             >
-              {/* Outer Ring (210px -> r=104) - Pale Brand Teal */}
-              <circle cx="105" cy="105" r="104" stroke="rgba(59, 163, 184, 0.42)" strokeWidth="1.2" />
+              {/* Outer Ring (210px -> r=104) - Light Silver */}
+              <circle cx="105" cy="105" r="104" stroke="#d2d7de" strokeWidth="1.3" strokeOpacity="0.8" />
 
-              {/* Middle Dashed Ring (154px -> r=77) - Pale Brand Teal */}
-              <circle cx="105" cy="105" r="77" stroke="rgba(59, 163, 184, 0.52)" strokeWidth="1.2" strokeDasharray="4 4" />
+              {/* Middle Dashed Ring (154px -> r=77) - Light Silver */}
+              <circle cx="105" cy="105" r="77" stroke="#c4cad3" strokeWidth="1.3" strokeDasharray="4 4" strokeOpacity="0.85" />
 
-              {/* Inner Ring (98px -> r=49) - Pale Brand Teal */}
-              <circle cx="105" cy="105" r="49" stroke="rgba(59, 163, 184, 0.35)" strokeWidth="1.2" />
+              {/* Inner Ring (98px -> r=49) - Light Silver */}
+              <circle cx="105" cy="105" r="49" stroke="#d2d7de" strokeWidth="1.3" strokeOpacity="0.7" />
             </svg>
           </div>
 
@@ -79,7 +79,7 @@ export default function HeroV2() {
                 className="hero-text"
                 style={{ transform: 'translateY(-0.4rem)' }}
               >
-                <h1 className="hero-statement hero-statement-anim" style={{ display: 'flex', flexDirection: 'column', gap: '0px', lineHeight: '1.02' }}>
+                <h1 className="hero-statement hero-statement-anim" style={{ display: 'flex', flexDirection: 'column', gap: '0px', lineHeight: '1.12' }}>
                   <span className="headline-line headline-light">
                     Looking for a <span className="headline-spaced-word">custom</span>
                   </span>
@@ -87,7 +87,7 @@ export default function HeroV2() {
                     website or an <span className="headline-spaced-word">internal</span> AI tool
                   </span>
                   <span className="headline-line headline-light">
-                    to scale your business?
+                    to <span className="headline-italic-thinner" style={{ fontStyle: 'italic', fontWeight: 200, opacity: 0.95 }}>scale your business?</span>
                   </span>
                 </h1>
                 <p className="hero-frame-paragraph hero-paragraph-anim" style={{ marginTop: '1.7rem', fontSize: '1.213rem', lineHeight: '1.75', color: 'var(--color-body-dark, #333842)', maxWidth: '100%', fontWeight: 400, opacity: 0.9 }}>

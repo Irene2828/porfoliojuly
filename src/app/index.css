@@ -363,7 +363,7 @@ h1, h2, h3, h4, h5, h6 {
     font-size: clamp(45px, 4.2vw, 64px) !important;
     font-weight: 300 !important;
     letter-spacing: -0.048em !important; /* tightened letter spacing */
-    line-height: 1.02 !important; /* tightened line spacing */
+    line-height: 1.12 !important; /* +10% increased line spacing */
     max-width: 100% !important;
     color: #3ba3b8 !important; /* brighter vibrant teal matching CTA 1 arrow */
     -webkit-text-fill-color: #3ba3b8 !important;
@@ -372,9 +372,15 @@ h1, h2, h3, h4, h5, h6 {
   }
 
   .v2-theme .headline-line {
-    line-height: 1.02 !important;
+    line-height: 1.12 !important;
     white-space: nowrap !important;
   }
+}
+
+.headline-italic-thinner {
+  font-style: italic !important;
+  font-weight: 200 !important;
+  letter-spacing: -0.035em !important;
 }
 
 .headline-underline {
@@ -432,7 +438,7 @@ h1, h2, h3, h4, h5, h6 {
     font-size: clamp(27px, 7.3vw, 40px) !important; /* Perfectly sized for 3 lines on mobile */
     font-weight: 300 !important;
     letter-spacing: -0.03em !important;
-    line-height: 1.18 !important;
+    line-height: 1.30 !important; /* +10% increased line spacing */
     max-width: 100% !important;
     color: #3ba3b8 !important;
     -webkit-text-fill-color: #3ba3b8 !important;
