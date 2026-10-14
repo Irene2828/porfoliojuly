@@ -2055,14 +2055,17 @@
     text-align: right !important;
   }
   .hero-benefits li {
-    font-family: var(--font-sans), 'Plus Jakarta Sans', sans-serif !important;
-    font-size: 0.95rem !important;
+    font-family: var(--font-heading), Outfit, sans-serif !important;
+    font-size: 12.13px !important; /* header name +5% */
+    font-weight: 600 !important;
+    letter-spacing: 0.12em !important;
+    text-transform: uppercase !important;
+    color: #5c6574 !important; /* var(--color-heading-silver) */
     line-height: 1.8 !important;
-    color: #5f6a7a !important;
   }
   .hero-benefits li::before {
     content: '- ' !important;
-    color: #5f6a7a !important; /* same as body text */
+    color: #5c6574 !important;
   }
 }
 
@@ -2079,5 +2082,13 @@
   .v2-theme .hero-image-wrapper,
   .hero-image-wrapper {
     margin-bottom: 4px !important;
+  }
+}
+
+/* ── Mobile hero: peach shadow twice smaller (14.10.2026) ── */
+@media (max-width: 900px) {
+  .v2-theme .hero-image-container,
+  .hero-image-container {
+    box-shadow: -5px -5px 0 3px rgba(236, 145, 119, 0.28) !important;
   }
 }
