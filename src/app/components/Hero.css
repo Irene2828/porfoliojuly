@@ -2118,7 +2118,6 @@
   .hero-text .headline-italic-thinner {
     font-family: -apple-system, BlinkMacSystemFont, "Helvetica Neue", Helvetica, Arial, sans-serif !important;
     letter-spacing: -0.015em !important;
-    font-size: clamp(2.363rem, 9.452vw, 2.969rem) !important; /* -10% */
     line-height: 1.249 !important; /* +10% */
     color: #3ba3b8 !important;
     -webkit-text-fill-color: #3ba3b8 !important;
@@ -2126,9 +2125,14 @@
   .hero-text .headline-line,
   .hero-text .headline-teal-underline {
     font-weight: 250 !important; /* half thickness */
+    font-size: clamp(2.599rem, 10.397vw, 3.266rem) !important; /* +10% */
+  }
+  .hero-text .headline-teal-underline {
+    text-decoration: none !important; /* no underline on mobile */
   }
   .hero-text .headline-italic-thinner {
     font-weight: 500 !important;
+    font-size: clamp(2.363rem, 9.452vw, 2.969rem) !important;
   }
 }
 @media (min-width: 414px) and (max-width: 900px) {
