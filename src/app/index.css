@@ -359,11 +359,11 @@ h1, h2, h3, h4, h5, h6 {
 @media (min-width: 901px) {
   .v2-theme .hero-statement,
   .v2-theme .hero-name-group .hero-text h1 {
-    font-family: var(--font-heading) !important;
+    font-family: 'Lora', Georgia, 'Times New Roman', serif !important;
     font-size: clamp(45px, 4.2vw, 64px) !important;
-    font-weight: 300 !important;
-    letter-spacing: -0.048em !important; /* tightened letter spacing */
-    line-height: 1.12 !important; /* +10% increased line spacing */
+    font-weight: 400 !important;
+    letter-spacing: -0.015em !important;
+    line-height: 1.15 !important; /* increased line spacing for editorial serif */
     max-width: 100% !important;
     color: #3ba3b8 !important; /* brighter vibrant teal matching CTA 1 arrow */
     -webkit-text-fill-color: #3ba3b8 !important;
@@ -398,9 +398,9 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 .headline-spaced-word {
-  font-family: var(--font-heading) !important;
-  font-weight: 400 !important; /* keep weight as is */
-  letter-spacing: -0.02em !important;
+  font-family: 'Lora', Georgia, 'Times New Roman', serif !important;
+  font-weight: 500 !important;
+  letter-spacing: -0.01em !important;
   color: #3ba3b8 !important; /* matching bright vibrant teal */
   -webkit-text-fill-color: #3ba3b8 !important;
   opacity: 1 !important;
@@ -434,10 +434,10 @@ h1, h2, h3, h4, h5, h6 {
 @media (max-width: 900px) {
   .v2-theme .hero-statement,
   .v2-theme .hero-name-group .hero-text h1 {
-    font-family: var(--font-heading) !important;
+    font-family: 'Lora', Georgia, 'Times New Roman', serif !important;
     font-size: clamp(27px, 7.3vw, 40px) !important; /* Perfectly sized for 3 lines on mobile */
-    font-weight: 300 !important;
-    letter-spacing: -0.03em !important;
+    font-weight: 400 !important;
+    letter-spacing: -0.01em !important;
     line-height: 1.30 !important; /* +10% increased line spacing */
     max-width: 100% !important;
     color: #3ba3b8 !important;
