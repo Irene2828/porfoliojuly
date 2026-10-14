@@ -2029,7 +2029,7 @@
   /* Зверху було 50px (6rem − 3.5rem хедер + 10px паддінг враппера) → 25px */
   .v2-theme .hero-section,
   .hero-section {
-    padding-top: calc(3.5rem + 15px) !important;
+    padding-top: 6rem !important; /* doubled image-header gap */
   }
   /* Знизу було 35px (gap 1.75rem + margin 7px) → 17.5px */
   .v2-theme .hero-container,
@@ -2056,16 +2056,16 @@
   }
   .hero-benefits li {
     font-family: var(--font-heading), Outfit, sans-serif !important;
-    font-size: 12.13px !important; /* header name +5% */
-    font-weight: 600 !important;
-    letter-spacing: 0.12em !important;
-    text-transform: uppercase !important;
-    color: #5c6574 !important; /* var(--color-heading-silver) */
+    font-size: 11.29px !important; /* header title /Creative technologist/ +5% */
+    font-weight: 400 !important;
+    letter-spacing: 0.04em !important;
+    text-transform: none !important;
+    color: #64748b !important;
     line-height: 1.8 !important;
   }
   .hero-benefits li::before {
     content: '- ' !important;
-    color: #5c6574 !important;
+    color: #64748b !important;
   }
 }
 
