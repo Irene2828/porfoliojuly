@@ -360,10 +360,10 @@ h1, h2, h3, h4, h5, h6 {
   .v2-theme .hero-statement,
   .v2-theme .hero-name-group .hero-text h1 {
     font-family: var(--font-body), sans-serif !important;
-    font-size: clamp(41px, 3.8vw, 58px) !important;
+    font-size: clamp(44px, 4.1vw, 63px) !important;
     font-weight: 400 !important;
     letter-spacing: -0.035em !important;
-    line-height: 1.16 !important;
+    line-height: 1.22 !important;
     max-width: 100% !important;
     color: #4e5563 !important;
     -webkit-text-fill-color: #4e5563 !important;
@@ -377,7 +377,7 @@ h1, h2, h3, h4, h5, h6 {
   }
 
   .v2-theme .headline-line {
-    line-height: 1.14 !important;
+    line-height: 1.20 !important;
     white-space: nowrap !important;
   }
 }
@@ -390,13 +390,20 @@ h1, h2, h3, h4, h5, h6 {
   -webkit-text-fill-color: #3ba3b8 !important;
 }
 
+.headline-teal-underline {
+  text-decoration: underline !important;
+  text-decoration-color: #3ba3b8 !important;
+  text-decoration-thickness: 1.5px !important;
+  text-underline-offset: 5px !important;
+}
+
 .headline-underline {
   position: relative;
   display: inline-block;
   text-decoration: underline;
-  text-decoration-color: var(--accent, #1d4e5b);
+  text-decoration-color: #3ba3b8;
   text-decoration-thickness: 1.5px;
-  text-underline-offset: 9px;
+  text-underline-offset: 5px;
 }
 
 .headline-light {
@@ -440,7 +447,7 @@ h1, h2, h3, h4, h5, h6 {
 @media (min-width: 1600px) {
   .v2-theme .hero-statement,
   .v2-theme .hero-name-group .hero-text h1 {
-    font-size: 69px !important;
+    font-size: 75px !important;
   }
 }
 
@@ -448,10 +455,10 @@ h1, h2, h3, h4, h5, h6 {
   .v2-theme .hero-statement,
   .v2-theme .hero-name-group .hero-text h1 {
     font-family: var(--font-body), sans-serif !important;
-    font-size: clamp(26px, 7vw, 37px) !important; /* Perfectly sized for 3 lines on mobile */
+    font-size: clamp(28px, 7.6vw, 40px) !important; /* Perfectly sized for 3 lines on mobile */
     font-weight: 400 !important;
     letter-spacing: -0.025em !important;
-    line-height: 1.25 !important;
+    line-height: 1.31 !important;
     max-width: 100% !important;
     color: #4e5563 !important;
     -webkit-text-fill-color: #4e5563 !important;

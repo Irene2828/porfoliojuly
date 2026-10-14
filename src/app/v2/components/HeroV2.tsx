@@ -96,12 +96,12 @@ export default function HeroV2() {
                 className="hero-text"
                 style={{ transform: 'translateY(-0.4rem)' }}
               >
-                <h1 className="hero-statement hero-statement-anim" style={{ display: 'flex', flexDirection: 'column', gap: '0px', lineHeight: '1.12' }}>
+                <h1 className="hero-statement hero-statement-anim" style={{ display: 'flex', flexDirection: 'column', gap: '0px', lineHeight: '1.18' }}>
                   <span className="headline-line headline-light">
-                    Looking for a <span className="headline-spaced-word headline-emphasis-custom">custom</span>
+                    Looking for a <span className="headline-teal-underline">custom</span>
                   </span>
                   <span ref={line2Ref} className="headline-line headline-light" style={{ width: 'fit-content' }}>
-                    <span className="headline-spaced-word headline-emphasis-custom">website</span> or an <span className="headline-spaced-word headline-emphasis-custom">internal AI tool</span>
+                    <span className="headline-teal-underline">website</span> or an internal <span className="headline-teal-underline">AI tool</span>
                   </span>
                   <span className="headline-line headline-light">
                     to <span className="headline-italic-thinner" style={{ fontStyle: 'italic' }}>scale your business?</span>
