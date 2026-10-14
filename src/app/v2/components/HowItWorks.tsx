@@ -138,7 +138,6 @@ export default function HowItWorks() {
       >
         {/* Premium Geometric Abstract Decor Layer (Process) */}
         <div 
-          className="hide-on-mobile"
           style={{
             position: 'absolute',
             inset: 0,
