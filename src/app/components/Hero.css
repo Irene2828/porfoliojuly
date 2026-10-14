@@ -2082,7 +2082,7 @@
   }
   .v2-theme .hero-image-wrapper,
   .hero-image-wrapper {
-    margin-bottom: 4px !important;
+    margin-bottom: 4.4px !important; /* +10% */
   }
 }
 
