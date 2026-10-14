@@ -2015,11 +2015,11 @@
      неврахований gap і давав зайвий відступ.) */
   .v2-theme .hero-container,
   .hero-container {
-    gap: 2.5rem !important;
+    gap: 1.75rem !important;
   }
   .v2-theme .hero-image-wrapper,
   .hero-image-wrapper {
-    margin-bottom: 10px !important;
+    margin-bottom: 7px !important;
     padding-bottom: 0 !important;
   }
 }
