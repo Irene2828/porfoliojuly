@@ -2116,7 +2116,6 @@
   .hero-name-group .hero-text h1 {
     font-size: clamp(3.089rem, 12.355vw, 3.881rem) !important;
   }
-  .hero-text .headline-teal-underline,
   .hero-text .headline-italic-thinner {
     font-size: clamp(2.574rem, 10.296vw, 3.234rem) !important;
   }
@@ -2125,7 +2124,6 @@
   .hero-name-group .hero-text h1 {
     font-size: clamp(3.4rem, 13.6vw, 4.27rem) !important;
   }
-  .hero-text .headline-teal-underline,
   .hero-text .headline-italic-thinner {
     font-size: clamp(2.83rem, 11.33vw, 3.56rem) !important;
   }
