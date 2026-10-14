@@ -101,10 +101,10 @@ export default function HeroV2() {
                     Looking for <span className="headline-teal-underline">custom</span>
                   </span>
                   <span ref={line2Ref} className="headline-line headline-light" style={{ width: 'fit-content' }}>
-                    <span className="headline-teal-underline">websites</span> or internal
+                    websites or <span className="headline-teal-underline">internal</span>
                   </span>
                   <span className="headline-line headline-light">
-                    <span className="headline-teal-underline">AI tools</span> to
+                    AI tools to
                   </span>
                   <span className="headline-line headline-light">
                     <span className="headline-italic-thinner" style={{ fontStyle: 'italic' }}>scale your business?</span>
