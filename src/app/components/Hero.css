@@ -2006,3 +2006,20 @@
     box-shadow: -9px -9px 0px rgba(236, 145, 119, 0.28) !important;
   }
 }
+
+/* ── Mobile hero: точна рівність відступів фото (14.10.2026) ── */
+@media (max-width: 900px) {
+  /* Зверху фото: 6rem (секція) − 3.5rem (фіксований хедер) + 10px (паддінг враппера) = 50px.
+     Знизу робимо ті самі 50px: gap контейнера 2.5rem + margin враппера 10px.
+     (gap 2.2rem контейнера і margin-bottom враппера складаються — саме цей
+     неврахований gap і давав зайвий відступ.) */
+  .v2-theme .hero-container,
+  .hero-container {
+    gap: 2.5rem !important;
+  }
+  .v2-theme .hero-image-wrapper,
+  .hero-image-wrapper {
+    margin-bottom: 10px !important;
+    padding-bottom: 0 !important;
+  }
+}
