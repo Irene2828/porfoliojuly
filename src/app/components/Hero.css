@@ -2062,6 +2062,22 @@
   }
   .hero-benefits li::before {
     content: '• ' !important;
-    color: #C26A4E !important;
+    color: #5f6a7a !important; /* same as body text */
+  }
+}
+
+/* ── Mobile hero: optical equal gaps (14.10.2026) ── */
+@media (max-width: 900px) {
+  /* Not a code bug: the h1's line-height adds ~10px invisible half-leading
+     above the capitals, and the peach shadow eats ~6px of the top gap.
+     So equal CSS px look unequal. Compensate: 9px CSS below renders as
+     ~19px visible — same as the ~19px visible above the photo. */
+  .v2-theme .hero-container,
+  .hero-container {
+    gap: 0 !important;
+  }
+  .v2-theme .hero-image-wrapper,
+  .hero-image-wrapper {
+    margin-bottom: 9px !important;
   }
 }
