@@ -2120,7 +2120,7 @@
     font-weight: 600 !important;
     letter-spacing: -0.025em !important;
     font-size: clamp(2.363rem, 9.452vw, 2.969rem) !important; /* -10% */
-    line-height: 0.983 !important; /* +30% */
+    line-height: 1.032 !important; /* +5% */
   }
 }
 @media (min-width: 414px) and (max-width: 900px) {
@@ -2128,6 +2128,6 @@
   .hero-text .headline-teal-underline,
   .hero-text .headline-italic-thinner {
     font-size: clamp(2.601rem, 10.404vw, 3.267rem) !important; /* -10% */
-    line-height: 0.983 !important; /* +30% */
+    line-height: 1.032 !important; /* +5% */
   }
 }
