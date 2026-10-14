@@ -1895,6 +1895,20 @@
   .hero-frame-paragraph {
     max-width: 85% !important;
   }
+
+  /* Keep italic body copy on the same line as the em dash (no forced desktop break) */
+  .br-desktop,
+  .hero-frame-paragraph .br-desktop {
+    display: none !important;
+  }
+
+  /* Better side margins for hero text content (headline, body, CTAs) on smaller screens */
+  .v2-theme .hero-content,
+  .hero-content {
+    padding-left: clamp(0.75rem, 4vw, 1.5rem) !important;
+    padding-right: clamp(0.75rem, 4vw, 1.5rem) !important;
+    box-sizing: border-box !important;
+  }
   
   /* Double spacing between labels under image and headline frame on mobile */
   .v2-theme .hero-container,
