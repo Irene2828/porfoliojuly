@@ -2061,7 +2061,7 @@
     color: #5f6a7a !important;
   }
   .hero-benefits li::before {
-    content: '• ' !important;
+    content: '- ' !important;
     color: #5f6a7a !important; /* same as body text */
   }
 }
