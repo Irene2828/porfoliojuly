@@ -821,23 +821,6 @@ h1, h2, h3, h4, h5, h6 {
   text-stroke: 0 !important;
 }
 
-/* V2 Hero Circle Avatar (1/3 size of rectangular image) */
-@media (min-width: 901px) {
-  .v2-theme .hero-container {
-    flex-direction: row !important;
-    justify-content: space-between !important;
-    align-items: center !important;
-    gap: clamp(2rem, 4vw, 4rem) !important;
-    margin: 0 auto !important;
-  }
-
-  /* Shift circle decor and image 15% more to the left from the right edge on desktop */
-  .v2-theme .hero-image-wrapper {
-    transform: translate(-25%, -2.8rem) !important;
-    margin-right: 7.5rem !important;
-  }
-}
-
 .v2-theme .hero-content {
   flex: 1 1 auto !important;
   margin-right: 0 !important;
@@ -856,9 +839,28 @@ h1, h2, h3, h4, h5, h6 {
   align-self: center !important;
   position: relative !important;
   margin-top: 0 !important;
-  margin-right: 2rem !important;
+  margin-right: 0 !important;
   margin-left: 0 !important;
-  transform: translateY(-2.8rem) !important; /* shifted 10% lower down */
+}
+
+/* V2 Hero Circle Avatar (1/3 size of rectangular image) */
+@media (min-width: 901px) {
+  .v2-theme .hero-container {
+    flex-direction: row !important;
+    justify-content: space-between !important;
+    align-items: center !important;
+    gap: clamp(2rem, 4vw, 4rem) !important;
+    margin: 0 auto !important;
+  }
+
+  /* Shift circle decor and image 15% more to the left from the right edge on desktop */
+  .v2-theme .hero-image-wrapper {
+    position: relative !important;
+    right: clamp(4.5rem, 15vw, 18rem) !important;
+    top: -2.8rem !important;
+    margin-right: 0 !important;
+    animation: none !important;
+  }
 }
 
 .v2-theme .hero-image-container {
@@ -979,7 +981,7 @@ h1, h2, h3, h4, h5, h6 {
     box-shadow: none !important;
   }
 
-  /* Mobile Hero Top Row: Avatar on left, 3 labels stacked on right */
+  /* Mobile Hero Top Row: Avatar on right side, labels removed */
   .v2-theme .hero-image-wrapper,
   .hero-image-wrapper {
     order: 0 !important;
@@ -988,12 +990,11 @@ h1, h2, h3, h4, h5, h6 {
     display: flex !important;
     flex-direction: row !important;
     align-items: center !important;
-    justify-content: flex-start !important;
+    justify-content: flex-end !important; /* aligned to the right side */
     padding-left: clamp(0.75rem, 4vw, 1.5rem) !important;
-    padding-right: clamp(0.75rem, 4vw, 1.5rem) !important;
-    gap: clamp(1.2rem, 4.5vw, 2.2rem) !important;
+    padding-right: clamp(1rem, 5vw, 2rem) !important;
     margin-top: 0.35rem !important;
-    margin-bottom: 0 !important;
+    margin-bottom: 0.5rem !important;
     box-sizing: border-box !important;
     transform: none !important;
     background: transparent !important;
@@ -1001,7 +1002,7 @@ h1, h2, h3, h4, h5, h6 {
     box-shadow: none !important;
   }
 
-  /* Circled Avatar under header on mobile, aligned with headline left edge */
+  /* Circled Avatar under header on mobile, aligned to the right */
   .v2-theme .hero-image-container,
   .v2-theme .cv-scanner .hero-image-container,
   .hero-image-container {
@@ -1038,34 +1039,9 @@ h1, h2, h3, h4, h5, h6 {
     display: none !important;
   }
 
-  /* Hide concentric rings, pointers, and icons on mobile */
-  .v2-theme .hero-concentric-rings,
-  .v2-theme .badge-hand-pointer,
-  .v2-theme .badge-arrow-pointer,
-  .v2-theme .badge-radar-circle-outer,
-  .v2-theme .badge-anchor-websites > div:first-child,
-  .v2-theme .badge-anchor-products > div:last-child,
-  .v2-theme .badge-anchor-consultations > div:first-child,
-  .v2-theme .hero-ring-badge svg {
-    display: none !important;
-  }
-
-  /* 3 labels opposite the image on the right side of hero top, aligned by left */
+  /* Remove the labels and badges completely on mobile */
   .v2-theme .hero-rings-badge-container {
-    position: static !important;
-    width: auto !important;
-    max-width: none !important;
-    height: auto !important;
-    transform: none !important;
-    display: flex !important;
-    flex-direction: column !important;
-    align-items: flex-start !important;
-    justify-content: center !important;
-    gap: 0.5rem !important;
-    margin: 0 !important;
-    padding: 0 !important;
-    pointer-events: auto !important;
-    text-align: left !important;
+    display: none !important;
   }
 
   .v2-theme .hero-badge-anchor {

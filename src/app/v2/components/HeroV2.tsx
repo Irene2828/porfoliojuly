@@ -81,10 +81,10 @@ export default function HeroV2() {
               >
                 <h1 className="hero-statement hero-statement-anim" style={{ display: 'flex', flexDirection: 'column', gap: '0px', lineHeight: '1.12' }}>
                   <span className="headline-line headline-light">
-                    Looking for a <span className="headline-spaced-word">custom</span>
+                    Looking for a <span className="headline-spaced-word headline-emphasis-custom" style={{ fontStyle: 'italic', fontWeight: 500 }}>custom website</span> or
                   </span>
                   <span className="headline-line headline-light">
-                    website or an <span className="headline-spaced-word">internal</span> AI tool
+                    an <span className="headline-spaced-word headline-emphasis-custom" style={{ fontStyle: 'italic', fontWeight: 500 }}>internal AI tool</span>
                   </span>
                   <span className="headline-line headline-light">
                     to <span className="headline-italic-thinner" style={{ fontStyle: 'italic', fontWeight: 200, opacity: 0.95 }}>scale your business?</span>
@@ -96,13 +96,13 @@ export default function HeroV2() {
                 </p>
               </div>
 
-              {/* CTAs: left-aligned with headline, lifted 50% closer to body */}
+              {/* CTAs: right-aligned with headline, lifted 50% closer to body */}
               <div
                 className="hero-ctas hero-ctas-outside hero-ctas-anim"
                 style={{ 
                   width: '100%', 
                   display: 'flex', 
-                  justifyContent: 'flex-start', 
+                  justifyContent: 'flex-end', 
                   alignItems: 'center', 
                   gap: '1.5rem', 
                   marginTop: '3.9rem' 

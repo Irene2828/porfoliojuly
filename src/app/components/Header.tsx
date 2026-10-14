@@ -69,7 +69,7 @@ export default function Header() {
       <div className="mobile-header-left">
         <a href="/" aria-label="Home" className="mobile-brand-link">
           <span className="mobile-brand-name">IRYNA SHEREMETA</span>
-          <span className="mobile-brand-title">/ Creative technologist /</span>
+          <span className="mobile-brand-title">Creative technologist</span>
         </a>
       </div>
 
