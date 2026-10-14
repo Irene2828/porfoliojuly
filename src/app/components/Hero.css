@@ -2001,9 +2001,9 @@
   }
   .v2-theme .hero-image-container,
   .hero-image-container {
-    width: clamp(94px, 26.5vw, 113px) !important;
-    height: clamp(94px, 26.5vw, 113px) !important;
-    box-shadow: -9px -9px 0px rgba(236, 145, 119, 0.28) !important;
+    width: clamp(108px, 30.5vw, 130px) !important;
+    height: clamp(108px, 30.5vw, 130px) !important;
+    box-shadow: -10px -10px 0px rgba(236, 145, 119, 0.28) !important;
   }
 }
 
