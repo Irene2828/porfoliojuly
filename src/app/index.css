@@ -439,6 +439,24 @@ h1, h2, h3, h4, h5, h6 {
     text-stroke: 0 !important;
     text-align: left !important;
   }
+
+  /* Spread mobile hero headline into 4 distinct lines:
+     Line 1: "Need custom websites"
+     Line 2: "or internal AI tools"
+     Line 3: "to scale up"
+     Line 4: "your business?" */
+  .v2-theme .headline-lead-line {
+    display: block !important;
+    white-space: nowrap !important;
+  }
+  .v2-theme .headline-sub-line {
+    display: block !important;
+  }
+  .v2-theme .headline-scale-part,
+  .v2-theme .headline-business-part {
+    display: block !important;
+    white-space: nowrap !important;
+  }
 }
 
 /* V2 Specific Button Overrides */
@@ -937,7 +955,17 @@ h1, h2, h3, h4, h5, h6 {
     border-bottom: 1px solid rgba(59, 163, 184, 0.35) !important;
   }
 
-  .v2-theme .hero-image-wrapper {
+  /* No dashed frame or white container on mobile hero */
+  .v2-theme .hero-name-group,
+  .hero-name-group {
+    background: transparent !important;
+    border: none !important;
+    padding: 0 !important;
+    box-shadow: none !important;
+  }
+
+  .v2-theme .hero-image-wrapper,
+  .hero-image-wrapper {
     width: 100% !important;
     display: flex !important;
     flex-direction: column !important;
@@ -948,6 +976,9 @@ h1, h2, h3, h4, h5, h6 {
     margin-top: 1.8rem !important; /* shifted 10% lower in mobile hero */
     margin-bottom: 0 !important;
     transform: none !important;
+    background: transparent !important;
+    border: none !important;
+    box-shadow: none !important;
   }
   .v2-theme .hero-image-container,
   .v2-theme .cv-scanner .hero-image-container {

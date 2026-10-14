@@ -44,7 +44,10 @@ export default function HeroV2() {
                 <h1 className="hero-statement hero-statement-anim" style={{ display: 'flex', flexDirection: 'column', gap: '0px', lineHeight: '1.08' }}>
                   <span className="headline-line headline-lead-line headline-light">Need <span className="headline-spaced-word">custom</span> websites</span>
                   <span className="headline-line headline-lead-line headline-light">or <span className="headline-spaced-word">internal</span> AI tools</span>
-                  <span className="headline-line headline-sub-line headline-light">to scale up your business?</span>
+                  <span className="headline-line headline-sub-line headline-light">
+                    <span className="headline-scale-part">to scale up</span>{' '}
+                    <span className="headline-business-part">your business?</span>
+                  </span>
                 </h1>
                 <p className="hero-frame-paragraph hero-paragraph-anim" style={{ marginTop: '1.7rem', fontSize: '1.213rem', lineHeight: '1.75', color: 'var(--color-body-dark, #333842)', maxWidth: '100%', fontWeight: 400, opacity: 0.9 }}>
                   I <strong style={{ fontWeight: 600, color: '#1a1d24' }}>design</strong> and <strong style={{ fontWeight: 600, color: '#1a1d24' }}>build</strong> custom digital products <strong style={{ fontWeight: 600, color: '#1a1d24' }}>end-to-end</strong> &mdash; <span className="br-desktop"><br /></span>

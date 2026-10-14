@@ -856,7 +856,7 @@
     transform: none !important;
   }
 
-  /* Desktop-matching white frame with 1px dashed dark border */
+  /* Frame-free mobile hero */
   .v2-theme .hero-name-group,
   .hero-name-group {
     display: flex !important;
@@ -864,9 +864,9 @@
     width: 100% !important;
     max-width: 100% !important;
     margin: 0 !important;
-    padding: 1.85rem 1.4rem !important;
-    background: #ffffff !important;
-    border: 1px dashed rgba(29, 78, 91, 0.24) !important;
+    padding: 0 !important;
+    background: transparent !important;
+    border: none !important;
     box-shadow: none !important;
     transform: none !important;
     align-items: flex-start !important;
@@ -1010,14 +1010,14 @@
     flex: none;
     margin: 0 !important;
     position: relative;
-    background: linear-gradient(135deg, #cbcfd4 0%, #C2C7CC 45%, #b4b9bd 100%) !important; /* Soft brushed silver grey sheen */
-    border-radius: 4px !important;
-    border: 1px dashed rgba(18, 18, 18, 0.25) !important;
-    padding: 2.2rem 1.6rem !important;
+    background: transparent !important;
+    border-radius: 0 !important;
+    border: none !important;
+    padding: 0 !important;
     box-sizing: border-box !important;
     display: flex !important;
     flex-direction: column !important;
-    align-items: flex-start !important;
+    align-items: center !important;
     align-self: stretch !important;
     box-shadow: none !important;
     opacity: 1 !important;

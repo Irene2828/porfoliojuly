@@ -104,20 +104,37 @@ export default function ServicesV2() {
           .services-left-split-bg {
             display: none !important;
           }
+          .services-cards-container {
+            padding-left: clamp(1rem, 4vw, 1.5rem) !important;
+            padding-right: clamp(1rem, 4vw, 1.5rem) !important;
+            width: 100% !important;
+            box-sizing: border-box !important;
+          }
           .services-grid {
             grid-template-columns: 1fr !important;
+            width: 100% !important;
+            gap: 2rem !important;
           }
           .services-col-left {
+            width: 100% !important;
+            max-width: 100% !important;
+            box-sizing: border-box !important;
             background-color: #18191e !important;
             backdrop-filter: blur(20px) !important;
             -webkit-backdrop-filter: blur(20px) !important;
             border-radius: 0px !important;
-            padding: 3.5rem 2rem !important;
+            padding: 3.2rem 1.6rem !important;
+            overflow: hidden !important;
           }
           .services-col-right {
-            background-color: #ffffff !important;
+            width: 100% !important;
+            max-width: 100% !important;
+            box-sizing: border-box !important;
+            background: linear-gradient(135deg, #f0f3f6 0%, #e2e6eb 50%, #cdd2d8 100%) !important;
+            background-color: #C8CCD1 !important;
             border-radius: 0px !important;
-            padding: 3.5rem 2rem !important;
+            padding: 3.2rem 1.6rem !important;
+            overflow: hidden !important;
           }
           .process-step-container {
             padding-left: 0 !important;
@@ -235,7 +252,7 @@ export default function ServicesV2() {
         />
 
         <div 
-          className="container"
+          className="container services-cards-container"
           style={{
             margin: '0 auto',
             position: 'relative',
