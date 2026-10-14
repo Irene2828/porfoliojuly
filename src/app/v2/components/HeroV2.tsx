@@ -104,10 +104,10 @@ export default function HeroV2() {
                     <span className="headline-teal-underline">websites</span> or internal
                   </span>
                   <span className="headline-line headline-light">
-                    <span className="headline-teal-underline">AI tools</span> to <span className="headline-italic-thinner" style={{ fontStyle: 'italic' }}>scale</span>
+                    <span className="headline-teal-underline">AI tools</span> to
                   </span>
                   <span className="headline-line headline-light">
-                    <span className="headline-italic-thinner" style={{ fontStyle: 'italic' }}>your business?</span>
+                    <span className="headline-italic-thinner" style={{ fontStyle: 'italic' }}>scale your business?</span>
                   </span>
                 </h1>
                 <p className="hero-frame-paragraph hero-paragraph-anim" style={{ marginTop: '1.7rem', fontSize: '1.213rem', lineHeight: '1.75', color: 'var(--color-body-dark, #333842)', maxWidth: '100%', fontWeight: 400, opacity: 0.9 }}>
