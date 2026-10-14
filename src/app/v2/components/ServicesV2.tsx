@@ -105,9 +105,13 @@ export default function ServicesV2() {
             display: none !important;
           }
           .services-cards-container {
-            padding-left: clamp(1rem, 4vw, 1.5rem) !important;
-            padding-right: clamp(1rem, 4vw, 1.5rem) !important;
+            /* Mobile: black/grey card backgrounds go edge-to-edge (full-bleed),
+               like the black frame in "How the Process Looks". Inner text keeps
+               its padding from the cards themselves (3.2rem 1.6rem). */
+            padding-left: 0 !important;
+            padding-right: 0 !important;
             width: 100% !important;
+            max-width: 100% !important;
             box-sizing: border-box !important;
           }
           .services-grid {
