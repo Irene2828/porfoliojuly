@@ -1,9 +1,26 @@
 'use client';
 
+import { useState, useEffect, useRef } from 'react';
 import '@/app/components/Hero.css';
 import heroImage from '@/app/assets/test.webp';
 
 export default function HeroV2() {
+  const line2Ref = useRef<HTMLSpanElement>(null);
+  const [line2Width, setLine2Width] = useState<number | null>(null);
+
+  useEffect(() => {
+    const updateWidth = () => {
+      if (line2Ref.current) {
+        setLine2Width(line2Ref.current.offsetWidth);
+      }
+    };
+    updateWidth();
+    if (typeof document !== 'undefined' && document.fonts) {
+      document.fonts.ready.then(updateWidth);
+    }
+    window.addEventListener('resize', updateWidth);
+    return () => window.removeEventListener('resize', updateWidth);
+  }, []);
   return (
     <section className="section hero-section" id="home">
       {/* Background Split */}
@@ -83,7 +100,7 @@ export default function HeroV2() {
                   <span className="headline-line headline-light">
                     Looking for a <span className="headline-spaced-word headline-emphasis-custom" style={{ fontStyle: 'italic', fontWeight: 500 }}>custom</span>
                   </span>
-                  <span className="headline-line headline-light">
+                  <span ref={line2Ref} className="headline-line headline-light" style={{ width: 'fit-content' }}>
                     <span className="headline-spaced-word headline-emphasis-custom" style={{ fontStyle: 'italic', fontWeight: 500 }}>website</span> or an <span className="headline-spaced-word headline-emphasis-custom" style={{ fontStyle: 'italic', fontWeight: 500 }}>internal AI tool</span>
                   </span>
                   <span className="headline-line headline-light">
@@ -96,11 +113,12 @@ export default function HeroV2() {
                 </p>
               </div>
 
-              {/* CTAs: right-aligned with headline, lifted 50% closer to body */}
+              {/* CTAs: right-aligned flush with line 2 of headline */}
               <div
                 className="hero-ctas hero-ctas-outside hero-ctas-anim"
                 style={{ 
-                  width: '100%', 
+                  width: line2Width ? `${line2Width}px` : 'fit-content', 
+                  maxWidth: '100%',
                   display: 'flex', 
                   justifyContent: 'flex-end', 
                   alignItems: 'center', 
