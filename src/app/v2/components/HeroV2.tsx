@@ -167,14 +167,14 @@ export default function HeroV2() {
                 WebkitMaskImage: 'linear-gradient(to right, rgba(0, 0, 0, 0.3) 0%, rgba(0, 0, 0, 0.65) 40%, rgba(0, 0, 0, 1) 100%)'
               }}
             >
-              {/* Outer Ring (420px -> r=209.25) - Brand Teal */}
-              <circle cx="210" cy="210" r="209" stroke="#3ba3b8" strokeWidth="1.4" strokeOpacity="0.48" />
+              {/* Outer Ring (420px -> r=209.25) - Light Silver */}
+              <circle cx="210" cy="210" r="209" stroke="#d2d7de" strokeWidth="1.4" strokeOpacity="0.85" />
 
-              {/* Middle Dashed Ring (310px -> r=154.25) - Brand Teal */}
-              <circle cx="210" cy="210" r="154" stroke="#3ba3b8" strokeWidth="1.4" strokeDasharray="5 5" strokeOpacity="0.58" />
+              {/* Middle Dashed Ring (310px -> r=154.25) - Light Silver */}
+              <circle cx="210" cy="210" r="154" stroke="#c4cad3" strokeWidth="1.4" strokeDasharray="5 5" strokeOpacity="0.9" />
 
-              {/* Inner Ring (200px -> r=99.25) - Brand Teal */}
-              <circle cx="210" cy="210" r="99" stroke="#3ba3b8" strokeWidth="1.4" strokeOpacity="0.38" />
+              {/* Inner Ring (200px -> r=99.25) - Light Silver */}
+              <circle cx="210" cy="210" r="99" stroke="#d2d7de" strokeWidth="1.4" strokeOpacity="0.75" />
             </svg>
 
             {/* Circular Hugging Chart Labels - Creative Tech Indicators */}
