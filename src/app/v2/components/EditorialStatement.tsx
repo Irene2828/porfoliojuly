@@ -75,6 +75,18 @@ export default function EditorialStatement() {
           box-shadow: 0 8px 24px rgba(180, 186, 196, 0.4) !important;
           background-color: #18191e !important;
         }
+        /* Mobile: rotating statements in header-title text style */
+        @media (max-width: 900px) {
+          .editorial-blue-heading,
+          .editorial-blue-heading span {
+            font-family: var(--font-heading), Outfit, sans-serif !important;
+            font-size: 15.81px !important;
+            font-weight: 400 !important;
+            letter-spacing: 0.04em !important;
+            color: #64748b !important;
+            -webkit-text-fill-color: #64748b !important;
+          }
+        }
       `}</style>
       <motion.div
         initial={{ opacity: 0, y: 20 }}
