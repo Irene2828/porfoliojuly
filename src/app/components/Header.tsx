@@ -74,9 +74,16 @@ export default function Header() {
       </div>
 
       <div className="mobile-header-right">
-        <a href="#cases" className="mobile-featured-link">CASES</a>
-        <span style={{ color: '#888888', fontWeight: 400, fontSize: '0.75rem', margin: '0 0.1rem' }}>/</span>
-        <a href="#about" className="mobile-featured-link">ABOUT</a>
+        <button
+          className={`hamburger-btn ${isMenuOpen ? 'open' : ''}`}
+          onClick={() => setIsMenuOpen(!isMenuOpen)}
+          aria-label="Menu"
+          aria-expanded={isMenuOpen}
+        >
+          <span className="hamburger-bar"></span>
+          <span className="hamburger-bar"></span>
+          <span className="hamburger-bar"></span>
+        </button>
       </div>
 
       {/* Drawer Overlay Menu */}
