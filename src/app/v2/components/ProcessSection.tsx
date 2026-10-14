@@ -90,7 +90,6 @@ export default function ProcessSection() {
 
         {/* Geometric Abstract Decor Layer (Large Shapes Only) */}
         <div 
-          className="hide-on-mobile"
           style={{
             position: 'absolute',
             inset: 0,
@@ -127,7 +126,8 @@ export default function ProcessSection() {
                   key={`${offset}-${testimonial.author}`}
                   className={`testimonial-card ${cardRoleClass}`}
                   onClick={() => {
-                    if (!isCenter) handleCardClick(index);
+                    if (isCenter) handleNext();
+                    else handleCardClick(index);
                   }}
                   style={{
                     backgroundColor: isCenter ? '#18191e' : '#ffffff',
@@ -276,15 +276,22 @@ export default function ProcessSection() {
 
             @media (max-width: 1000px) {
               .testimonials-track {
-                gap: 1rem;
+                gap: 1.25rem;
               }
               .testimonial-card {
-                flex: 0 0 88vw;
-                width: 88vw;
+                flex: 0 0 76vw;
+                width: 76vw;
               }
               .testimonial-card.left-card,
               .testimonial-card.right-card {
-                display: none;
+                display: flex;
+                opacity: 0.55;
+                transform: scale(0.93);
+              }
+              .testimonial-card.left-card:hover,
+              .testimonial-card.right-card:hover {
+                transform: scale(0.93) !important;
+                opacity: 0.55 !important;
               }
             }
           `}</style>
