@@ -362,18 +362,18 @@ h1, h2, h3, h4, h5, h6 {
     font-family: var(--font-heading) !important;
     font-size: clamp(50.7px, 4.83vw, 70.1px) !important; /* +5% increase */
     font-weight: 300 !important;
-    letter-spacing: -0.035em !important; /* tighter letter spacing */
-    line-height: 1.08 !important; /* +10% line spacing */
+    letter-spacing: -0.048em !important; /* tightened letter spacing */
+    line-height: 1.02 !important; /* tightened line spacing */
     max-width: 75% !important; /* 25% shorter line width */
     color: #3ba3b8 !important; /* brighter vibrant teal matching CTA 1 arrow */
     -webkit-text-fill-color: #3ba3b8 !important;
     -webkit-text-stroke: 0 !important;
     text-stroke: 0 !important;
   }
-}
 
-.v2-theme .headline-line {
-  line-height: 1.08 !important;
+  .v2-theme .headline-line {
+    line-height: 1.02 !important;
+  }
 }
 
 .headline-underline {
@@ -824,6 +824,12 @@ h1, h2, h3, h4, h5, h6 {
     align-items: center !important;
     gap: clamp(2rem, 4vw, 4rem) !important;
     margin: 0 auto !important;
+  }
+
+  /* Shift image 10% more to the left side on desktop */
+  .v2-theme .hero-image-wrapper {
+    transform: translate(-10%, -2.8rem) !important;
+    margin-right: 4.5rem !important;
   }
 }
 

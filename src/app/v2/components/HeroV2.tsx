@@ -41,7 +41,7 @@ export default function HeroV2() {
                 className="hero-text"
                 style={{ transform: 'translateY(-0.4rem)' }}
               >
-                <h1 className="hero-statement hero-statement-anim" style={{ display: 'flex', flexDirection: 'column', gap: '0px', lineHeight: '1.08' }}>
+                <h1 className="hero-statement hero-statement-anim" style={{ display: 'flex', flexDirection: 'column', gap: '0px', lineHeight: '1.02' }}>
                   <span className="headline-line headline-lead-line headline-light">Need <span className="headline-spaced-word">custom</span> websites</span>
                   <span className="headline-line headline-lead-line headline-light">or <span className="headline-spaced-word">internal</span> AI tools</span>
                   <span className="headline-line headline-sub-line headline-light">
