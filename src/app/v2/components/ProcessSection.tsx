@@ -90,6 +90,7 @@ export default function ProcessSection() {
 
         {/* Geometric Abstract Decor Layer (Large Shapes Only) */}
         <div 
+          className="hide-on-mobile"
           style={{
             position: 'absolute',
             inset: 0,
