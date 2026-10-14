@@ -2092,3 +2092,13 @@
     box-shadow: -5px -5px 0 3px rgba(236, 145, 119, 0.28) !important;
   }
 }
+
+/* ── Mobile hero: center the photo (14.10.2026) ── */
+@media (max-width: 900px) {
+  .v2-theme .hero-image-wrapper,
+  .hero-image-wrapper {
+    justify-content: center !important;
+    padding-left: 0 !important;
+    padding-right: 0 !important;
+  }
+}
