@@ -2023,3 +2023,21 @@
     padding-bottom: 0 !important;
   }
 }
+
+/* ── Mobile hero: обидва відступи фото вдвічі менші (14.10.2026) ── */
+@media (max-width: 900px) {
+  /* Зверху було 50px (6rem − 3.5rem хедер + 10px паддінг враппера) → 25px */
+  .v2-theme .hero-section,
+  .hero-section {
+    padding-top: calc(3.5rem + 15px) !important;
+  }
+  /* Знизу було 35px (gap 1.75rem + margin 7px) → 17.5px */
+  .v2-theme .hero-container,
+  .hero-container {
+    gap: 0.875rem !important;
+  }
+  .v2-theme .hero-image-wrapper,
+  .hero-image-wrapper {
+    margin-bottom: 3.5px !important;
+  }
+}
