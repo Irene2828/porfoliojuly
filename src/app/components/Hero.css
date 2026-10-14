@@ -695,7 +695,7 @@
   margin-top: 15px;
   z-index: 1;
   pointer-events: none;
-  box-shadow: -8px -8px 0px rgba(236, 145, 119, 0.2);
+  box-shadow: -8px -8px 0px rgba(59, 163, 184, 0.22);
 }
 
 .hero-dot-overlay {
@@ -1902,7 +1902,7 @@
     width: clamp(82px, 23vw, 98px) !important;
     height: clamp(82px, 23vw, 98px) !important;
     border-radius: 50% !important;
-    box-shadow: -6px -6px 0px rgba(236, 145, 119, 0.2) !important;
+    box-shadow: -6px -6px 0px rgba(59, 163, 184, 0.22) !important;
     margin: 0 !important;
     padding: 0 !important;
     flex-shrink: 0 !important;

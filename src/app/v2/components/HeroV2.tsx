@@ -62,14 +62,14 @@ export default function HeroV2() {
                 WebkitMaskImage: 'linear-gradient(135deg, rgba(0, 0, 0, 0.9) 0%, rgba(0, 0, 0, 0.65) 50%, rgba(0, 0, 0, 0.25) 100%)'
               }}
             >
-              {/* Outer Ring (210px -> r=104) - Light Silver */}
-              <circle cx="105" cy="105" r="104" stroke="#d2d7de" strokeWidth="1.3" strokeOpacity="0.8" />
+              {/* Outer Ring (210px -> r=104) - Brand Teal */}
+              <circle cx="105" cy="105" r="104" stroke="rgba(59, 163, 184, 0.45)" strokeWidth="1.3" />
 
-              {/* Middle Dashed Ring (154px -> r=77) - Light Silver */}
-              <circle cx="105" cy="105" r="77" stroke="#c4cad3" strokeWidth="1.3" strokeDasharray="4 4" strokeOpacity="0.85" />
+              {/* Middle Dashed Ring (154px -> r=77) - Brand Teal */}
+              <circle cx="105" cy="105" r="77" stroke="rgba(59, 163, 184, 0.55)" strokeWidth="1.3" strokeDasharray="4 4" />
 
-              {/* Inner Ring (98px -> r=49) - Light Silver */}
-              <circle cx="105" cy="105" r="49" stroke="#d2d7de" strokeWidth="1.3" strokeOpacity="0.7" />
+              {/* Inner Ring (98px -> r=49) - Brand Teal */}
+              <circle cx="105" cy="105" r="49" stroke="rgba(59, 163, 184, 0.38)" strokeWidth="1.3" />
             </svg>
           </div>
 
@@ -149,14 +149,14 @@ export default function HeroV2() {
                 WebkitMaskImage: 'linear-gradient(to right, rgba(0, 0, 0, 0.3) 0%, rgba(0, 0, 0, 0.65) 40%, rgba(0, 0, 0, 1) 100%)'
               }}
             >
-              {/* Outer Ring (420px -> r=209.25) - Light Silver */}
-              <circle cx="210" cy="210" r="209" stroke="#d2d7de" strokeWidth="1.5" strokeOpacity="0.85" />
+              {/* Outer Ring (420px -> r=209.25) - Brand Teal */}
+              <circle cx="210" cy="210" r="209" stroke="#3ba3b8" strokeWidth="1.4" strokeOpacity="0.48" />
 
-              {/* Middle Dashed Ring (310px -> r=154.25) - Light Silver */}
-              <circle cx="210" cy="210" r="154" stroke="#c4cad3" strokeWidth="1.5" strokeDasharray="5 5" strokeOpacity="0.9" />
+              {/* Middle Dashed Ring (310px -> r=154.25) - Brand Teal */}
+              <circle cx="210" cy="210" r="154" stroke="#3ba3b8" strokeWidth="1.4" strokeDasharray="5 5" strokeOpacity="0.58" />
 
-              {/* Inner Ring (200px -> r=99.25) - Light Silver */}
-              <circle cx="210" cy="210" r="99" stroke="#d2d7de" strokeWidth="1.5" strokeOpacity="0.75" />
+              {/* Inner Ring (200px -> r=99.25) - Brand Teal */}
+              <circle cx="210" cy="210" r="99" stroke="#3ba3b8" strokeWidth="1.4" strokeOpacity="0.38" />
             </svg>
 
             {/* Circular Hugging Chart Labels - Creative Tech Indicators */}
