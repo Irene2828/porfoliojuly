@@ -876,8 +876,8 @@ h1, h2, h3, h4, h5, h6 {
   max-height: 200px !important;
   margin-top: 0 !important;
   border-radius: 50% !important;
-  /* Rounded brand teal shadow with same low opacity: left/top, 22% opacity */
-  box-shadow: -8px -8px 0px rgba(59, 163, 184, 0.22) !important;
+  /* Rounded white shadow next to image circle */
+  box-shadow: -8px -8px 0px #ffffff !important;
   position: relative !important;
   overflow: visible !important;
 }
@@ -1024,8 +1024,8 @@ h1, h2, h3, h4, h5, h6 {
     padding: 0 !important;
     overflow: visible !important;
     position: relative !important;
-    /* Brand teal offset shadow matching desktop hero */
-    box-shadow: -6px -6px 0px rgba(59, 163, 184, 0.22) !important;
+    /* White offset shadow matching desktop hero */
+    box-shadow: -6px -6px 0px #ffffff !important;
     background: transparent !important;
     border: none !important;
   }
