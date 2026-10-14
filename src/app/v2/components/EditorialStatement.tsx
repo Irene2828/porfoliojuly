@@ -102,6 +102,24 @@ export default function EditorialStatement() {
           opacity: 0.6 
         }} />
 
+        {/* Closing headline — hero-headline style, single uniform treatment */}
+        <h2
+          className="prefooter-closing-line"
+          style={{
+            fontFamily: 'var(--font-heading)',
+            fontSize: 'clamp(2rem, 8vw, 3.25rem)',
+            fontWeight: 500,
+            letterSpacing: '-0.02em',
+            lineHeight: 1.15,
+            color: '#333842',
+            textAlign: 'center',
+            margin: '0 0 1.75rem 0',
+            maxWidth: '20ch',
+          }}
+        >
+          AI is changing how business gets done. Let&rsquo;s put it to work for yours.
+        </h2>
+
         {/* Section Heading Animated Loop */}
         <div style={{ minHeight: '64px', display: 'flex', alignItems: 'center', justifyContent: 'center', marginBottom: '1.25rem' }}>
           <AnimatePresence mode="wait">
