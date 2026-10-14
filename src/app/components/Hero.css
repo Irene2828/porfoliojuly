@@ -1974,3 +1974,33 @@
   }
 }
 
+
+/* ── Mobile hero refinements — 14.10.2026, за проханням Iryna ── */
+@media (max-width: 900px) {
+  /* 1. Заголовок, боді і кнопки: лівий край рівно під лого в хедері.
+     Мобільний хедер має padding 0 1.5rem. Добираємо відступ контентної
+     колонки так, щоб сума (секція + контент) давала ті самі 1.5rem
+     на будь-якій ширині екрана. */
+  .v2-theme .hero-content,
+  .hero-content {
+    padding-left: calc(1.5rem - clamp(1rem, 4vw, 1.5rem)) !important;
+  }
+
+  /* 2. Фото: +15% (96px -> ~110px). Вже стоїть справа над заголовком —
+     лишаємо так; вирівнюємо вертикальні відстані: від хедера до фото
+     стільки ж, скільки від фото до заголовка. */
+  .v2-theme .hero-section,
+  .hero-section {
+    padding-top: 2.5rem !important;
+  }
+  .v2-theme .hero-image-wrapper,
+  .hero-image-wrapper {
+    margin-bottom: 2.5rem !important;
+  }
+  .v2-theme .hero-image-container,
+  .hero-image-container {
+    width: clamp(94px, 26.5vw, 113px) !important;
+    height: clamp(94px, 26.5vw, 113px) !important;
+    box-shadow: -9px -9px 0px rgba(236, 145, 119, 0.28) !important;
+  }
+}
