@@ -904,20 +904,24 @@ h1, h2, h3, h4, h5, h6 {
   background:
     /* Top edge closure: soft subtle light silver gradient spanning the very top edge */
     linear-gradient(180deg, rgba(210, 216, 224, 0.25) 0%, rgba(230, 234, 240, 0.1) 6%, rgba(255, 255, 255, 0) 14%),
+    /* Bottom edge subtle silver ground */
+    linear-gradient(0deg, rgba(210, 217, 226, 0.42) 0%, rgba(228, 233, 240, 0.2) 12%, rgba(255, 255, 255, 0) 24%),
+    /* Centered bottom rich silver gradient fill */
+    radial-gradient(ellipse 75% 52% at 50% 100%, rgba(206, 214, 224, 0.62) 0%, rgba(222, 228, 237, 0.4) 45%, rgba(255, 255, 255, 0) 80%),
+    /* Bottom-right rich silver gradient fill */
+    radial-gradient(ellipse 72% 62% at 95% 95%, rgba(202, 211, 222, 0.68) 0%, rgba(218, 225, 234, 0.45) 50%, rgba(255, 255, 255, 0) 85%),
     /* Localized luminous white bloom strictly in top-left corner */
     radial-gradient(ellipse 48% 40% at 0% 0%, rgba(255, 255, 255, 1) 0%, rgba(255, 255, 255, 0.75) 45%, rgba(255, 255, 255, 0) 100%),
     /* Top-right silver gradient */
     radial-gradient(ellipse 70% 60% at 100% 0%, rgba(228, 232, 238, 0.42) 0%, rgba(240, 243, 247, 0.25) 45%, rgba(255, 255, 255, 0) 80%),
     /* Localized luminous white bloom strictly in bottom-left corner */
-    radial-gradient(ellipse 48% 40% at 0% 100%, rgba(255, 255, 255, 1) 0%, rgba(255, 255, 255, 0.75) 45%, rgba(255, 255, 255, 0) 100%),
-    /* Ambient luminous white lift at bottom-right */
-    radial-gradient(ellipse 70% 65% at 95% 90%, rgba(255, 255, 255, 0.8) 0%, rgba(255, 255, 255, 0.3) 65%, rgba(255, 255, 255, 0) 100%),
+    radial-gradient(ellipse 44% 36% at 0% 100%, rgba(255, 255, 255, 0.9) 0%, rgba(255, 255, 255, 0.6) 45%, rgba(255, 255, 255, 0) 100%),
     /* Central crisp light bloom directly behind the headline & visual for clarity */
-    radial-gradient(ellipse 70% 70% at 50% 50%, rgba(255, 255, 255, 0.98) 0%, rgba(255, 255, 255, 0.8) 45%, rgba(255, 255, 255, 0) 78%),
+    radial-gradient(ellipse 65% 65% at 50% 45%, rgba(255, 255, 255, 0.96) 0%, rgba(255, 255, 255, 0.72) 45%, rgba(255, 255, 255, 0) 76%),
     /* Left-side silver gradient (mirrored from right side) */
     radial-gradient(ellipse 85% 95% at 5% 45%, rgba(226, 230, 236, 0.38) 0%, rgba(236, 239, 244, 0.22) 55%, rgba(230, 234, 240, 0.15) 100%),
     /* Right-side silver gradient: airy, delicate luminous silver */
-    radial-gradient(ellipse 85% 95% at 95% 45%, rgba(226, 230, 236, 0.38) 0%, rgba(236, 239, 244, 0.22) 55%, rgba(230, 234, 240, 0.15) 100%),
+    radial-gradient(ellipse 85% 95% at 95% 45%, rgba(218, 224, 233, 0.48) 0%, rgba(230, 235, 242, 0.3) 55%, rgba(230, 234, 240, 0.15) 100%),
     /* Base mirrored linear gradient: soft silver on both sides, crisp white in center */
     linear-gradient(90deg, #eff1f5 0%, #f9fafb 25%, #ffffff 50%, #f9fafb 75%, #eff1f5 100%) !important;
 }
