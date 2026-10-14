@@ -914,7 +914,8 @@
     letter-spacing: -0.025em !important;
     text-align: left !important;
     margin: 0 !important;
-    line-height: 1.2 !important;
+    line-height: 1.26 !important; /* +5% */
+
     -webkit-text-fill-color: var(--color-body-dark, #333842) !important;
     color: var(--color-body-dark, #333842) !important;
     font-weight: 500 !important;
