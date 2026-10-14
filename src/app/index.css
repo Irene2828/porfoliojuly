@@ -428,7 +428,7 @@ h1, h2, h3, h4, h5, h6 {
   .v2-theme .hero-statement,
   .v2-theme .hero-name-group .hero-text h1 {
     font-family: var(--font-heading) !important;
-    font-size: clamp(38px, 8.85vw, 42.5px) !important; /* +15% larger on mobile */
+    font-size: clamp(31px, 7.8vw, 42px) !important; /* Perfectly sized for 4 lines on mobile */
     font-weight: 300 !important;
     letter-spacing: -0.03em !important;
     line-height: 1.18 !important;
@@ -441,21 +441,20 @@ h1, h2, h3, h4, h5, h6 {
   }
 
   /* Spread mobile hero headline into 4 distinct lines:
-     Line 1: "Need custom websites"
-     Line 2: "or internal AI tools"
-     Line 3: "to scale up"
-     Line 4: "your business?" */
-  .v2-theme .headline-lead-line {
+     Line 1: "Looking for a"
+     Line 2: "custom website or"
+     Line 3: "an internal AI tool"
+     Line 4: "to scale your business?" */
+  .v2-theme .headline-line {
     display: block !important;
     white-space: nowrap !important;
   }
-  .v2-theme .headline-sub-line {
-    display: block !important;
-  }
-  .v2-theme .headline-scale-part,
-  .v2-theme .headline-business-part {
-    display: block !important;
-    white-space: nowrap !important;
+
+  .v2-theme .hero-teal-concentric-rings {
+    top: -24px !important;
+    left: -20px !important;
+    transform: scale(0.78);
+    transform-origin: top left;
   }
 }
 

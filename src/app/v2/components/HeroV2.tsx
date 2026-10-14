@@ -35,6 +35,44 @@ export default function HeroV2() {
             <span style={{ position: 'absolute', bottom: '16px', left: '-18px', width: '6px', height: '6px', border: '1px solid rgba(160, 170, 182, 0.32)', backgroundColor: 'transparent' }} />
           </div>
 
+          {/* Pale brand teal concentric rings decor: twice smaller (210px), under top-left of headline */}
+          <div 
+            className="hero-teal-concentric-rings" 
+            aria-hidden="true" 
+            style={{ 
+              position: 'absolute', 
+              top: '-48px', 
+              left: '-60px', 
+              width: '210px', 
+              height: '210px', 
+              pointerEvents: 'none', 
+              zIndex: 0 
+            }}
+          >
+            <svg 
+              width="210" 
+              height="210" 
+              viewBox="0 0 210 210" 
+              fill="none" 
+              xmlns="http://www.w3.org/2000/svg"
+              style={{ 
+                width: '100%', 
+                height: '100%',
+                maskImage: 'linear-gradient(135deg, rgba(0, 0, 0, 0.9) 0%, rgba(0, 0, 0, 0.65) 50%, rgba(0, 0, 0, 0.25) 100%)',
+                WebkitMaskImage: 'linear-gradient(135deg, rgba(0, 0, 0, 0.9) 0%, rgba(0, 0, 0, 0.65) 50%, rgba(0, 0, 0, 0.25) 100%)'
+              }}
+            >
+              {/* Outer Ring (210px -> r=104) - Pale Brand Teal */}
+              <circle cx="105" cy="105" r="104" stroke="rgba(59, 163, 184, 0.42)" strokeWidth="1.2" />
+
+              {/* Middle Dashed Ring (154px -> r=77) - Pale Brand Teal */}
+              <circle cx="105" cy="105" r="77" stroke="rgba(59, 163, 184, 0.52)" strokeWidth="1.2" strokeDasharray="4 4" />
+
+              {/* Inner Ring (98px -> r=49) - Pale Brand Teal */}
+              <circle cx="105" cy="105" r="49" stroke="rgba(59, 163, 184, 0.35)" strokeWidth="1.2" />
+            </svg>
+          </div>
+
           <div className="hero-copy-motion" style={{ position: 'relative', zIndex: 1 }}>
             <div className="hero-name-group" style={{ position: 'relative' }}>
               <div
@@ -42,11 +80,15 @@ export default function HeroV2() {
                 style={{ transform: 'translateY(-0.4rem)' }}
               >
                 <h1 className="hero-statement hero-statement-anim" style={{ display: 'flex', flexDirection: 'column', gap: '0px', lineHeight: '1.02' }}>
-                  <span className="headline-line headline-lead-line headline-light">Need <span className="headline-spaced-word">custom</span> websites</span>
-                  <span className="headline-line headline-lead-line headline-light">or <span className="headline-spaced-word">internal</span> AI tools</span>
-                  <span className="headline-line headline-sub-line headline-light">
-                    <span className="headline-scale-part">to scale up</span>{' '}
-                    <span className="headline-business-part">your business?</span>
+                  <span className="headline-line headline-light">Looking for a</span>
+                  <span className="headline-line headline-light">
+                    <span className="headline-spaced-word">custom</span> website or
+                  </span>
+                  <span className="headline-line headline-light">
+                    an <span className="headline-spaced-word">internal</span> AI tool
+                  </span>
+                  <span className="headline-line headline-light">
+                    to scale your business?
                   </span>
                 </h1>
                 <p className="hero-frame-paragraph hero-paragraph-anim" style={{ marginTop: '1.7rem', fontSize: '1.213rem', lineHeight: '1.75', color: 'var(--color-body-dark, #333842)', maxWidth: '100%', fontWeight: 400, opacity: 0.9 }}>
