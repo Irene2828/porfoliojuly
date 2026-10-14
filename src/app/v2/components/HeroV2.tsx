@@ -111,6 +111,11 @@ export default function HeroV2() {
                   I <strong style={{ fontWeight: 600, color: '#1a1d24' }}>design</strong> and <strong style={{ fontWeight: 600, color: '#1a1d24' }}>build</strong> custom digital products <strong style={{ fontWeight: 600, color: '#1a1d24' }}>end-to-end</strong> &mdash; <span className="br-desktop"><br /></span>
                   <span style={{ fontStyle: 'italic' }}>from figuring out what solution you need to shipping a working product.</span>
                 </p>
+                <ul className="hero-benefits">
+                  <li>stronger digital presence;</li>
+                  <li>automated workflows;</li>
+                  <li>streamlined business processes.</li>
+                </ul>
               </div>
 
               {/* CTAs: right-aligned flush with line 2 of headline */}
