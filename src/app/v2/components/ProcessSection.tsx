@@ -44,15 +44,15 @@ export default function ProcessSection() {
       <div 
         style={{
           width: '100%',
-          background: 'radial-gradient(ellipse at 60% 40%, rgba(255, 255, 255, 0.85) 0%, rgba(255, 255, 255, 0.35) 55%, rgba(255, 255, 255, 0) 85%), linear-gradient(135deg, #e8ebee 0%, #dcdfe3 45%, #c9ced3 100%)',
+          background: 'linear-gradient(0deg, rgba(255, 255, 255, 0.7) 0%, rgba(255, 255, 255, 0.25) 35%, rgba(255, 255, 255, 0) 65%), radial-gradient(ellipse at 60% 40%, rgba(255, 255, 255, 0.9) 0%, rgba(255, 255, 255, 0.45) 55%, rgba(255, 255, 255, 0) 90%), linear-gradient(135deg, #f4f6f8 0%, #eaecee 45%, #dfe2e6 100%)',
           padding: '4rem 2rem 8rem 2rem',
           display: 'flex',
           flexDirection: 'column',
           alignItems: 'center',
           justifyContent: 'center',
           position: 'relative',
-          borderTop: '1px solid rgba(0, 0, 0, 0.08)',
-          borderBottom: '1px solid rgba(0, 0, 0, 0.08)',
+          borderTop: '1px solid rgba(0, 0, 0, 0.07)',
+          borderBottom: '1px solid rgba(0, 0, 0, 0.04)',
           overflow: 'hidden'
         }}
       >

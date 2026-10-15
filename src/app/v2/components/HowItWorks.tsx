@@ -105,7 +105,7 @@ export default function HowItWorks() {
           margin: '0 auto 0.75rem auto',
           WebkitTextStroke: '0'
         }}>
-          Why Work With Me
+          Working With Me Means...
         </h2>
         <p style={{
           fontFamily: "var(--font-body)",

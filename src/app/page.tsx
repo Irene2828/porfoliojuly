@@ -61,7 +61,7 @@ export default async function HomePage() {
               margin: '0 auto 14px auto',
               WebkitTextStroke: '0'
             }}>
-              How I Solve Problems
+              Examples of Problems I Solved
             </h2>
             <p style={{
               fontFamily: "var(--font-body)",
@@ -75,7 +75,7 @@ export default async function HomePage() {
               textAlign: 'center',
               letterSpacing: '-0.01em'
             }}>
-              custom websites &amp; ai tools built end-to-end.
+              custom websites &amp; AI tools built end-to-end.
             </p>
           </div>
 
