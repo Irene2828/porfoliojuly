@@ -478,3 +478,59 @@
 }
 
 
+
+
+
+
+
+
+
+
+/* MOBILE ONLY (2026-10-15): hamburger on the left, brand name+title centered.
+   Desktop untouched. */
+@media (max-width: 900px) {
+  .mobile-header-right {
+    order: -1 !important;
+    margin-left: 0 !important;
+    margin-right: 0 !important;
+  }
+  .mobile-header-left {
+    position: absolute !important;
+    left: 50% !important;
+    top: 50% !important;
+    transform: translate(-50%, -50%) !important;
+    flex-shrink: 0 !important;
+  }
+  .mobile-header-left .mobile-brand-link {
+    align-items: center !important;
+    text-align: center !important;
+  }
+  .mobile-header-left .mobile-brand-name,
+  .mobile-header-left .mobile-brand-title {
+    text-align: center !important;
+    align-self: center !important;
+  }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
