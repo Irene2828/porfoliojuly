@@ -150,6 +150,8 @@ export default function ServicesV2() {
           .process-svg-mobile {
             display: block !important;
           }
+          .ghost-circles-dark > div { opacity: 0.45 !important; }
+          .ghost-circles-light > div { opacity: 0.45 !important; }
         }
         @media (min-width: 861px) {
           .process-svg-mobile {
@@ -305,7 +307,7 @@ export default function ServicesV2() {
               </div>
 
               {/* Premium Ghost Geometry (Replacing 01) */}
-              <div style={{ position: 'absolute', inset: 0, overflow: 'hidden', borderRadius: '0px', pointerEvents: 'none' }}>
+              <div className="ghost-circles-dark" style={{ position: 'absolute', inset: 0, overflow: 'hidden', borderRadius: '0px', pointerEvents: 'none' }}>
                 <div style={{ position: 'absolute', width: '320px', height: '320px', borderRadius: '50%', border: '1px solid rgba(59, 163, 184, 0.24)', top: '-60px', right: '-40px' }} />
                 <div style={{ position: 'absolute', width: '240px', height: '240px', borderRadius: '50%', border: '1px dashed rgba(59, 163, 184, 0.26)', top: '-20px', right: '0px' }} />
                 <div style={{ position: 'absolute', width: '160px', height: '160px', borderRadius: '50%', border: '1px solid rgba(59, 163, 184, 0.22)', top: '20px', right: '40px' }} />
@@ -387,7 +389,7 @@ export default function ServicesV2() {
               }}
             >
               {/* Premium Ghost Geometry (Replacing 02) */}
-              <div style={{ position: 'absolute', inset: 0, overflow: 'hidden', borderRadius: '0px', pointerEvents: 'none' }}>
+                            <div className="ghost-circles-light" style={{ position: 'absolute', inset: 0, overflow: 'hidden', borderRadius: '0px', pointerEvents: 'none' }}>
                 <div style={{ position: 'absolute', width: '320px', height: '320px', borderRadius: '50%', border: '1px solid rgba(29, 78, 91, 0.12)', top: '-60px', right: '-40px' }} />
                 <div style={{ position: 'absolute', width: '240px', height: '240px', borderRadius: '50%', border: '1px dashed rgba(29, 78, 91, 0.14)', top: '-20px', right: '0px' }} />
                 <div style={{ position: 'absolute', width: '160px', height: '160px', borderRadius: '50%', border: '1px solid rgba(29, 78, 91, 0.10)', top: '20px', right: '40px' }} />
