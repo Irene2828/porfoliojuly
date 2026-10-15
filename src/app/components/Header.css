@@ -486,7 +486,7 @@
 
 
 
-/* MOBILE ONLY (2026-10-15): hamburger on the left, brand name+title centered.
+/* MOBILE ONLY (2026-10-15): hamburger on the left, brand name+title right-aligned.
    Desktop untouched. */
 @media (max-width: 900px) {
   .mobile-header-right {
@@ -496,19 +496,20 @@
   }
   .mobile-header-left {
     position: absolute !important;
-    left: 50% !important;
+    right: 1.5rem !important;
+    left: auto !important;
     top: 50% !important;
-    transform: translate(-50%, -50%) !important;
+    transform: translateY(-50%) !important;
     flex-shrink: 0 !important;
   }
   .mobile-header-left .mobile-brand-link {
-    align-items: center !important;
-    text-align: center !important;
+    align-items: flex-end !important;
+    text-align: right !important;
   }
   .mobile-header-left .mobile-brand-name,
   .mobile-header-left .mobile-brand-title {
-    text-align: center !important;
-    align-self: center !important;
+    text-align: right !important;
+    align-self: flex-end !important;
   }
 }
 
