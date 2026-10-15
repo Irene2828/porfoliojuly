@@ -104,7 +104,7 @@ export default function HeroV2() {
                   </span>
                 </h1>
                 <p className="hero-frame-paragraph hero-paragraph-anim" style={{ marginTop: '1.7rem', fontSize: '1.213rem', lineHeight: '1.75', color: '#4a5461', maxWidth: '100%', fontWeight: 400, opacity: 1 }}>
-                  I design and build custom digital products end-to-end &mdash; <span className="br-desktop"><br /></span>
+                  I <strong className="hero-body-bold">design and build custom digital products end-to-end</strong> &mdash; <span className="br-desktop"><br /></span>
                   <span style={{ fontStyle: 'italic' }}>from figuring out what solution you need to shipping a working product.</span>
                 </p>
               </div>
