@@ -100,7 +100,7 @@ export default function HeroV2() {
                       <span className="headline-teal-underline">custom</span> website
                     </span>
                     <span className="headline-line headline-light">
-                      or an <span className="headline-teal-underline">internal</span> AI tool?
+                      <span className="headline-or">or</span> an <span className="headline-teal-underline">internal</span> AI tool?
                     </span>
                   </span>
                 </h1>
