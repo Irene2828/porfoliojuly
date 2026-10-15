@@ -26,7 +26,11 @@ export default function RootLayout({
 }: {
   children: React.ReactNode;
 }) {
-  const shouldInjectToolbar = process.env.VERCEL_ENV === 'preview';
+  // Only inject on actual Vercel preview deployments. Locally, .env.local can carry
+  // VERCEL_ENV=preview, which renders the toolbar unconfigured and triggers a React
+  // "state update on a component that hasn't mounted yet" dev-overlay issue.
+  const shouldInjectToolbar =
+    process.env.VERCEL_ENV === 'preview' && process.env.NODE_ENV === 'production';
 
   return (
     <html lang="en">
