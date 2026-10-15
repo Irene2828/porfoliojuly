@@ -92,17 +92,14 @@ export default function HeroV2() {
 
                   {/* Mobile Headline (3 lines) */}
                   <span className="headline-mobile">
-                    <span className="headline-line headline-mockup-light">
-                      Looking for a
+                    <span className="headline-line">
+                      <span className="headline-mockup-light">Looking for a </span><span className="headline-mockup-bold">custom</span>
                     </span>
-                    <span className="headline-line headline-mockup-bold">
-                      custom website
+                    <span className="headline-line">
+                      <span className="headline-mockup-bold">website</span><span className="headline-mockup-light"> or an </span><span className="headline-mockup-bold">internal</span>
                     </span>
-                    <span className="headline-line headline-mockup-light">
-                      or an
-                    </span>
-                    <span className="headline-line headline-mockup-bold">
-                      internal business tool?
+                    <span className="headline-line">
+                      <span className="headline-mockup-bold">business tool?</span>
                     </span>
                   </span>
                 </h1>
