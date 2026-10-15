@@ -116,25 +116,25 @@ export default function EditorialStatement() {
             opacity: 0.6 
           }} />
 
-          {/* Closing headline — hero-headline style, single uniform treatment */}
+          {/* Closing headline — hero mockup style: light phrase + bold key word */}
           <h2
             className="prefooter-closing-line"
             style={{
               fontFamily: 'var(--font-heading)',
               fontSize: 'clamp(2rem, 8vw, 3.25rem)',
-              fontWeight: 500,
+              fontWeight: 400,
               letterSpacing: '-0.02em',
-              lineHeight: 1.15,
-              color: 'var(--color-heading-silver, #4a5461)',
+              lineHeight: 1.25,
+              color: '#2b2f36',
+              WebkitTextFillColor: '#2b2f36',
               textAlign: 'center',
               margin: '0 0 1.75rem 0',
               maxWidth: '20ch',
             }}
           >
-            Something in your business eats time or loses clients?{' '}
-            <span style={{ color: '#3ba3b8', WebkitTextFillColor: '#3ba3b8' }}>
-              Let&rsquo;s put AI to work on it.
-            </span>
+            The future is <span style={{ fontWeight: 700, color: '#35383E', WebkitTextFillColor: '#35383E' }}>agentic.</span>
+            <br />
+            The future is <span style={{ fontWeight: 700, color: '#35383E', WebkitTextFillColor: '#35383E' }}>custom.</span>
           </h2>
 
           {/* Section Heading Animated Loop */}
