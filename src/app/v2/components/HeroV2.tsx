@@ -81,11 +81,27 @@ export default function HeroV2() {
                 style={{ transform: 'translateY(-0.4rem)' }}
               >
                 <h1 className="hero-statement hero-statement-anim" style={{ display: 'flex', flexDirection: 'column', gap: '0px', lineHeight: '1.22' }}>
-                  <span className="headline-line headline-light">
-                    Looking for a <span className="headline-teal-underline">custom</span> website
+                  {/* Desktop Headline (2 lines) */}
+                  <span className="headline-desktop">
+                    <span className="headline-line headline-light">
+                      Looking for a <span className="headline-teal-underline">custom</span> website
+                    </span>
+                    <span className="headline-line headline-light">
+                      or an <span className="headline-teal-underline">internal</span> AI tool?
+                    </span>
                   </span>
-                  <span className="headline-line headline-light">
-                    or an <span className="headline-teal-underline">internal</span> AI tool?
+
+                  {/* Mobile Headline (3 lines) */}
+                  <span className="headline-mobile">
+                    <span className="headline-line headline-light">
+                      Looking for a
+                    </span>
+                    <span className="headline-line headline-light">
+                      <span className="headline-teal-underline">custom</span> website
+                    </span>
+                    <span className="headline-line headline-light">
+                      or an <span className="headline-teal-underline">internal</span> AI tool?
+                    </span>
                   </span>
                 </h1>
                 <p className="hero-frame-paragraph hero-paragraph-anim" style={{ marginTop: '1.7rem', fontSize: '1.213rem', lineHeight: '1.75', color: '#525d6c', maxWidth: '100%', fontWeight: 400, opacity: 1 }}>
