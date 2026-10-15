@@ -94,18 +94,18 @@ export default function HeroV2() {
                   {/* Mobile Headline (3 lines) */}
                   <span className="headline-mobile">
                     <span className="headline-line headline-light">
-                      Looking for a
+                      Looking for
                     </span>
                     <span className="headline-line headline-light">
-                      <span className="headline-teal-underline">custom</span> website
+                      a <span className="headline-teal-underline">custom</span> website
                     </span>
                     <span className="headline-line headline-light">
                       <span className="headline-or">or</span> an <span className="headline-teal-underline">internal</span> AI tool?
                     </span>
                   </span>
                 </h1>
-                <p className="hero-frame-paragraph hero-paragraph-anim" style={{ marginTop: '1.7rem', fontSize: '1.213rem', lineHeight: '1.75', color: '#525d6c', maxWidth: '100%', fontWeight: 400, opacity: 1 }}>
-                  I <strong style={{ fontWeight: 600, color: '#1a1d24' }}>design</strong> and <strong style={{ fontWeight: 600, color: '#1a1d24' }}>build</strong> custom digital products <strong style={{ fontWeight: 600, color: '#1a1d24' }}>end-to-end</strong> for business and professionals &mdash; <span className="br-desktop"><br /></span>
+                <p className="hero-frame-paragraph hero-paragraph-anim" style={{ marginTop: '1.7rem', fontSize: '1.213rem', lineHeight: '1.75', color: '#4a5461', maxWidth: '100%', fontWeight: 400, opacity: 1 }}>
+                  I design and build custom digital products end-to-end for business and professionals &mdash; <span className="br-desktop"><br /></span>
                   <span style={{ fontStyle: 'italic' }}>from figuring out what solution you need to shipping a working product.</span>
                 </p>
               </div>

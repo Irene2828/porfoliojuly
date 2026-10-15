@@ -360,8 +360,8 @@
   margin: 0;
   background: none;
   -webkit-background-clip: initial;
-  -webkit-text-fill-color: #3ba3b8 !important;
-  color: #3ba3b8 !important;
+  -webkit-text-fill-color: #4a5461 !important;
+  color: #4a5461 !important;
   text-transform: none;
   letter-spacing: -0.015em !important;
   font-weight: 400 !important;
@@ -375,8 +375,8 @@
 }
 
 .hero-text .headline-line {
-  color: #3ba3b8 !important;
-  -webkit-text-fill-color: #3ba3b8 !important;
+  color: #4a5461 !important;
+  -webkit-text-fill-color: #4a5461 !important;
   font-family: -apple-system, BlinkMacSystemFont, "Helvetica Neue", Helvetica, Arial, sans-serif !important;
   font-weight: 400 !important;
   letter-spacing: -0.015em !important;
@@ -996,9 +996,9 @@
 
   .hero-frame-paragraph {
     font-family: var(--font-sans) !important;
-    font-size: 0.95rem !important;
+    font-size: 1.0474rem !important; /* +5% more on mobile */
     line-height: 1.65 !important;
-    color: #5f6a7a !important;
+    color: #4a5461 !important; /* 10% darker */
     text-align: left !important;
     margin-top: 1.25rem !important;
     margin-bottom: 0 !important;
@@ -2006,7 +2006,7 @@
 
 @media (max-width: 900px) {
   .hero-frame-paragraph {
-    max-width: 85% !important;
+    max-width: 100% !important;
   }
 
   /* Keep italic body copy on the same line as the em dash (no forced desktop break) */
@@ -2133,19 +2133,15 @@
   }
 }
 
-/* ── Mobile hero: optical equal gaps (14.10.2026) ── */
+/* ── Mobile hero: space under image doubled (15.10.2026) ── */
 @media (max-width: 900px) {
-  /* Not a code bug: the h1's line-height adds ~10px invisible half-leading
-     above the capitals, and the peach shadow eats ~6px of the top gap.
-     So equal CSS px look unequal. Compensate: 9px CSS below renders as
-     ~19px visible — same as the ~19px visible above the photo. */
   .v2-theme .hero-container,
   .hero-container {
     gap: 0 !important;
   }
   .v2-theme .hero-image-wrapper,
   .hero-image-wrapper {
-    margin-bottom: 4.84px !important; /* +10% */
+    margin-bottom: 35px !important; /* doubled space under image */
   }
 }
 
@@ -2182,15 +2178,19 @@
     font-family: -apple-system, BlinkMacSystemFont, "Helvetica Neue", Helvetica, Arial, sans-serif !important;
     letter-spacing: -0.01575em !important;
     line-height: 0.969 !important;
+    font-style: italic !important;
+    margin: 0 !important;
+    padding: 0 !important;
   }
   .hero-text .headline-or {
     font-weight: 300 !important;
     font-style: italic !important;
   }
   .hero-text .headline-line {
-    color: #3ba3b8 !important; /* teal base */
-    -webkit-text-fill-color: #3ba3b8 !important;
+    color: #4a5461 !important; /* body text color */
+    -webkit-text-fill-color: #4a5461 !important;
     font-weight: 400 !important;
+    font-style: italic !important;
     font-size: clamp(2.446rem, 9.785vw, 3.073rem) !important;
   }
   .hero-text .headline-teal-underline {
@@ -2205,6 +2205,7 @@
     color: #3ba3b8 !important;
     -webkit-text-fill-color: #3ba3b8 !important;
     font-weight: 500 !important;
+    font-style: italic !important;
     font-size: inherit !important;
   }
 }
@@ -2212,13 +2213,14 @@
   .hero-text .headline-line {
     font-size: clamp(2.689rem, 10.764vw, 3.382rem) !important;
     line-height: 0.969 !important;
-    color: #3ba3b8 !important;
-    -webkit-text-fill-color: #3ba3b8 !important;
+    font-style: italic !important;
+    color: #4a5461 !important;
+    -webkit-text-fill-color: #4a5461 !important;
     font-weight: 400 !important;
   }
   .hero-text .headline-teal-underline {
     font-size: inherit !important;
-    line-height: 1.14 !important;
+    line-height: 0.969 !important;
     color: #3ba3b8 !important;
     -webkit-text-fill-color: #3ba3b8 !important;
     font-weight: 500 !important;
@@ -2227,7 +2229,8 @@
   }
   .hero-text .headline-italic-thinner {
     font-size: inherit !important;
-    line-height: 1.14 !important;
+    line-height: 0.969 !important;
+    font-style: italic !important;
     color: #3ba3b8 !important;
     -webkit-text-fill-color: #3ba3b8 !important;
     font-weight: 500 !important;

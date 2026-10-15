@@ -125,7 +125,7 @@ export default function EditorialStatement() {
               fontWeight: 500,
               letterSpacing: '-0.02em',
               lineHeight: 1.15,
-              color: '#333842',
+              color: 'var(--color-heading-silver, #4a5461)',
               textAlign: 'center',
               margin: '0 0 1.75rem 0',
               maxWidth: '20ch',

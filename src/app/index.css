@@ -20,7 +20,7 @@
   --color-accent-light: #7fc5d5;
   --color-accent-deep: #256678;
   --color-heading-peach: #3ba3b8;
-  --color-heading-silver: #5c6574;
+  --color-heading-silver: #4a5461;
   --color-headline-matte: #3a3d46;
   --color-body-dark: #333842;
   --color-matte-black: #18191e;
@@ -844,6 +844,7 @@ h1, h2, h3, h4, h5, h6 {
   font-weight: 400 !important;
   letter-spacing: -0.02em !important;
   color: var(--color-heading-silver) !important;
+  -webkit-text-fill-color: var(--color-heading-silver) !important;
   -webkit-text-stroke: 0 !important;
   text-stroke: 0 !important;
 }
