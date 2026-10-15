@@ -2198,8 +2198,8 @@
     font-size: clamp(2.446rem, 9.785vw, 3.073rem) !important;
   }
   .hero-text .headline-mockup-bold {
-    color: #1a1d24 !important;
-    -webkit-text-fill-color: #1a1d24 !important;
+    color: #35383E !important;
+    -webkit-text-fill-color: #35383E !important;
     font-weight: 700 !important;
     font-style: normal !important;
     font-size: inherit !important;
@@ -2222,8 +2222,8 @@
   .hero-text .headline-mockup-bold {
     font-size: inherit !important;
     line-height: 0.969 !important;
-    color: #1a1d24 !important;
-    -webkit-text-fill-color: #1a1d24 !important;
+    color: #35383E !important;
+    -webkit-text-fill-color: #35383E !important;
     font-weight: 700 !important;
     font-style: normal !important;
     text-decoration: none !important;
