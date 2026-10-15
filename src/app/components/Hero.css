@@ -2201,6 +2201,10 @@
     font-size: inherit !important;
     text-decoration: none !important;
   }
+  .hero-frame-paragraph .hero-body-bold {
+    font-weight: 700 !important;
+    color: #1a1d24 !important;
+  }
 }
 @media (min-width: 414px) and (max-width: 900px) {
   .hero-text .headline-mockup-light {
