@@ -75,7 +75,7 @@ export default async function HomePage() {
               textAlign: 'center',
               letterSpacing: '-0.01em'
             }}>
-              custom websites &amp; AI tools built end-to-end.
+              Custom websites &amp; AI tools, built end-to-end.
             </p>
           </div>
 
