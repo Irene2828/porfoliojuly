@@ -411,6 +411,10 @@
     display: flex !important;
     flex-direction: column !important;
   }
+  .hero-frame-paragraph .hero-body-bold {
+    font-weight: 400 !important;
+    color: inherit !important;
+  }
   .headline-mobile {
     display: none !important;
   }
