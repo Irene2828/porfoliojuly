@@ -427,6 +427,7 @@
   .headline-mobile {
     display: flex !important;
     flex-direction: column !important;
+    align-items: center !important;
     gap: 0px !important;
   }
 }
@@ -905,7 +906,7 @@
     margin: 0 !important;
     display: flex !important;
     flex-direction: column !important;
-    align-items: flex-start !important;
+    align-items: center !important;
     align-self: stretch !important;
     transform: none !important;
     overflow: visible !important;
@@ -917,7 +918,7 @@
     width: 100% !important;
     display: flex !important;
     flex-direction: column !important;
-    align-items: flex-start !important;
+    align-items: center !important;
     overflow: visible !important;
     animation: none !important;
     transform: none !important;
@@ -936,8 +937,8 @@
     border: none !important;
     box-shadow: none !important;
     transform: none !important;
-    align-items: flex-start !important;
-    text-align: left !important;
+    align-items: center !important;
+    text-align: center !important;
     z-index: 5 !important;
     box-sizing: border-box !important;
     overflow: visible !important;
@@ -961,8 +962,8 @@
     display: flex !important;
     flex-direction: column !important;
     justify-content: flex-start !important;
-    align-items: flex-start !important;
-    text-align: left !important;
+    align-items: center !important;
+    text-align: center !important;
     background: transparent !important;
     margin: 0 !important;
     padding: 0 !important;
@@ -975,7 +976,7 @@
     font-family: var(--font-heading) !important;
     font-size: clamp(2.83rem, 11.33vw, 3.56rem) !important; /* +10% more */ /* +10% */
     letter-spacing: -0.015em !important;
-    text-align: left !important;
+    text-align: center !important;
     margin: 0 !important;
     line-height: 1.26 !important; /* +5% */
 
@@ -1020,7 +1021,7 @@
     background-image: none !important;
     display: flex !important;
     flex-direction: column !important;
-    align-items: flex-start !important;
+    align-items: center !important;
     gap: 0.9rem !important;
     opacity: 1 !important;
     animation: none !important;
@@ -1952,7 +1953,7 @@
     display: flex !important;
     flex-direction: row !important;
     align-items: center !important;
-    justify-content: flex-end !important; /* aligned to the right side */
+    justify-content: center !important;
     padding: 10px 0 6px 10px !important; /* unclipped space for top-left peach shadow */
     width: 100% !important;
     max-width: 100% !important;
@@ -1968,8 +1969,8 @@
   .v2-theme .hero-image-container,
   .hero-image-container {
     display: block !important;
-    width: clamp(82px, 23vw, 98px) !important;
-    height: clamp(82px, 23vw, 98px) !important;
+    width: clamp(200px, 56vw, 260px) !important;
+    height: clamp(200px, 56vw, 260px) !important;
     border-radius: 50% !important;
     box-shadow: -8px -8px 0px rgba(236, 145, 119, 0.28) !important;
     margin: 0 !important;
@@ -2007,6 +2008,9 @@
 @media (max-width: 900px) {
   .hero-frame-paragraph {
     max-width: 100% !important;
+    text-align: center !important;
+    margin-left: auto !important;
+    margin-right: auto !important;
   }
 
   /* Keep italic body copy on the same line as the em dash (no forced desktop break) */
