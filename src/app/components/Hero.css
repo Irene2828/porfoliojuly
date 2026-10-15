@@ -2177,68 +2177,47 @@
 /* ── Mobile hero: Stripe-style — grotesque teal full scale (14.10.2026) ── */
 @media (max-width: 900px) {
   .hero-text .headline-line,
-  .hero-text .headline-teal-underline,
-  .hero-text .headline-italic-thinner {
+  .hero-text .headline-mockup-light,
+  .hero-text .headline-mockup-bold {
     font-family: -apple-system, BlinkMacSystemFont, "Helvetica Neue", Helvetica, Arial, sans-serif !important;
     letter-spacing: -0.01575em !important;
     line-height: 0.969 !important;
-    font-style: italic !important;
+    font-style: normal !important;
     margin: 0 !important;
     padding: 0 !important;
   }
-  .hero-text .headline-or {
-    font-weight: 300 !important;
-    font-style: italic !important;
-    color: #3ba3b8 !important;
-    -webkit-text-fill-color: #3ba3b8 !important;
-  }
-  .hero-text .headline-line {
-    color: #3ba3b8 !important; /* teal */
-    -webkit-text-fill-color: #3ba3b8 !important;
-    font-weight: 300 !important; /* thin */
-    font-style: italic !important;
+  .hero-text .headline-mockup-light {
+    color: #2b2f36 !important;
+    -webkit-text-fill-color: #2b2f36 !important;
+    font-weight: 400 !important;
+    font-style: normal !important;
     font-size: clamp(2.446rem, 9.785vw, 3.073rem) !important;
   }
-  .hero-text .headline-teal-underline {
-    color: #3ba3b8 !important; /* teal */
-    -webkit-text-fill-color: #3ba3b8 !important;
-    font-weight: 500 !important; /* bolded */
-    font-style: italic !important;
+  .hero-text .headline-mockup-bold {
+    color: #1a1d24 !important;
+    -webkit-text-fill-color: #1a1d24 !important;
+    font-weight: 700 !important;
+    font-style: normal !important;
     font-size: inherit !important;
-    text-decoration: none !important; /* no underline on mobile */
-  }
-  .hero-text .headline-italic-thinner {
-    color: #3ba3b8 !important;
-    -webkit-text-fill-color: #3ba3b8 !important;
-    font-weight: 500 !important; /* bolded */
-    font-style: italic !important;
-    font-size: inherit !important;
+    text-decoration: none !important;
   }
 }
 @media (min-width: 414px) and (max-width: 900px) {
-  .hero-text .headline-line {
+  .hero-text .headline-mockup-light {
     font-size: clamp(2.689rem, 10.764vw, 3.382rem) !important;
     line-height: 0.969 !important;
-    font-style: italic !important;
-    color: #3ba3b8 !important;
-    -webkit-text-fill-color: #3ba3b8 !important;
-    font-weight: 300 !important; /* thin */
+    font-style: normal !important;
+    color: #2b2f36 !important;
+    -webkit-text-fill-color: #2b2f36 !important;
+    font-weight: 400 !important;
   }
-  .hero-text .headline-teal-underline {
+  .hero-text .headline-mockup-bold {
     font-size: inherit !important;
     line-height: 0.969 !important;
-    color: #3ba3b8 !important;
-    -webkit-text-fill-color: #3ba3b8 !important;
-    font-weight: 500 !important; /* bolded */
-    font-style: italic !important;
+    color: #1a1d24 !important;
+    -webkit-text-fill-color: #1a1d24 !important;
+    font-weight: 700 !important;
+    font-style: normal !important;
     text-decoration: none !important;
-  }
-  .hero-text .headline-italic-thinner {
-    font-size: inherit !important;
-    line-height: 0.969 !important;
-    font-style: italic !important;
-    color: #3ba3b8 !important;
-    -webkit-text-fill-color: #3ba3b8 !important;
-    font-weight: 500 !important; /* bolded */
   }
 }
