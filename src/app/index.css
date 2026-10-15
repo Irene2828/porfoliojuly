@@ -1,11 +1,11 @@
 @import url('https://fonts.googleapis.com/css2?family=Outfit:wght@200;300;400;500;600;700;800&family=Plus+Jakarta+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;1,400;1,500&family=JetBrains+Mono:wght@400;500&display=swap');
 
 :root {
-  --font-heading: 'Outfit', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  --font-heading: -apple-system, BlinkMacSystemFont, "Helvetica Neue", Helvetica, Arial, sans-serif;
   --font-body: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
   --font-label: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
   --font-sans: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
-  --font-serif: 'Outfit', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  --font-serif: -apple-system, BlinkMacSystemFont, "Helvetica Neue", Helvetica, Arial, sans-serif;
   --font-mono: 'JetBrains Mono', Menlo, Monaco, monospace;
   
   --color-bg: #ffffff;
@@ -23,6 +23,8 @@
   --color-heading-silver: #5c6574;
   --color-headline-matte: #3a3d46;
   --color-body-dark: #333842;
+  --color-matte-black: #18191e;
+  --color-matte-black-hover: #24252a;
   
   --space-sm: 1rem;
   --space-md: 2rem;
@@ -158,9 +160,9 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 .btn-primary {
-  background: #18191e;
+  background: var(--color-matte-black, #18191e);
   color: #ffffff;
-  border: 1px solid #18191e;
+  border: 1px solid var(--color-matte-black, #18191e);
   box-shadow: none;
   position: relative;
   font-weight: 600;
@@ -168,7 +170,7 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 .btn-primary:hover {
-  background: #24252a;
+  background: var(--color-matte-black-hover, #24252a);
   color: #ffffff;
   border-color: var(--accent, #1d4e5b);
   box-shadow: 0 4px 20px rgba(29, 78, 91, 0.25);
@@ -499,7 +501,7 @@ h1, h2, h3, h4, h5, h6 {
   letter-spacing: 0.08em !important;
   height: 3.43rem !important; /* +5% taller */
   padding: 0 1.98rem !important; /* +5% padding */
-  background: #18191e !important; /* matte black */
+  background: var(--color-matte-black, #18191e) !important; /* matte black token */
   color: #eaecf0 !important; /* soft matte off-white token (#eaecf0) */
   -webkit-text-fill-color: #eaecf0 !important;
   border: none !important;
@@ -520,7 +522,7 @@ h1, h2, h3, h4, h5, h6 {
 
 .v2-theme .hero-ctas-outside .btn-primary-outline:hover,
 .v2-theme .face-cta:hover {
-  background: #24252a !important; /* matte black hover */
+  background: var(--color-matte-black-hover, #24252a) !important; /* matte black hover */
   border-color: #24252a !important;
   color: #ffffff !important;
   -webkit-text-fill-color: #ffffff !important;
@@ -940,38 +942,37 @@ h1, h2, h3, h4, h5, h6 {
 .v2-theme .hero-section {
   padding-top: 3.5rem !important; /* preserves internal text positioning while bg extends to top */
   background:
-    /* Top edge closure: soft subtle light silver gradient spanning the very top edge */
-    linear-gradient(180deg, rgba(210, 216, 224, 0.25) 0%, rgba(230, 234, 240, 0.1) 6%, rgba(255, 255, 255, 0) 14%),
+    /* Subtle, faded teal bloom at top-right corner */
+    radial-gradient(ellipse 55% 45% at 100% 0%, rgba(59, 163, 184, 0.11) 0%, rgba(85, 182, 201, 0.05) 38%, rgba(255, 255, 255, 0) 72%),
+    /* Subtle, faded teal bloom at centered left edge */
+    radial-gradient(ellipse 45% 55% at 0% 50%, rgba(59, 163, 184, 0.10) 0%, rgba(85, 182, 201, 0.04) 38%, rgba(255, 255, 255, 0) 70%),
+    /* Top edge closure: soft subtle light silver gradient spanning top edge */
+    linear-gradient(180deg, rgba(210, 216, 224, 0.2) 0%, rgba(230, 234, 240, 0.08) 6%, rgba(255, 255, 255, 0) 14%),
     /* Bottom edge subtle silver ground */
-    linear-gradient(0deg, rgba(210, 217, 226, 0.42) 0%, rgba(228, 233, 240, 0.2) 12%, rgba(255, 255, 255, 0) 24%),
-    /* Centered bottom rich silver gradient fill */
-    radial-gradient(ellipse 75% 52% at 50% 100%, rgba(206, 214, 224, 0.62) 0%, rgba(222, 228, 237, 0.4) 45%, rgba(255, 255, 255, 0) 80%),
-    /* Bottom-right rich silver gradient fill */
-    radial-gradient(ellipse 72% 62% at 95% 95%, rgba(202, 211, 222, 0.68) 0%, rgba(218, 225, 234, 0.45) 50%, rgba(255, 255, 255, 0) 85%),
-    /* Localized luminous white bloom strictly in top-left corner */
+    linear-gradient(0deg, rgba(210, 217, 226, 0.25) 0%, rgba(228, 233, 240, 0.1) 12%, rgba(255, 255, 255, 0) 24%),
+    /* Mirrored Top-Left & Top-Right white blooms */
     radial-gradient(ellipse 48% 40% at 0% 0%, rgba(255, 255, 255, 1) 0%, rgba(255, 255, 255, 0.75) 45%, rgba(255, 255, 255, 0) 100%),
-    /* Top-right silver gradient */
-    radial-gradient(ellipse 70% 60% at 100% 0%, rgba(228, 232, 238, 0.42) 0%, rgba(240, 243, 247, 0.25) 45%, rgba(255, 255, 255, 0) 80%),
-    /* Localized luminous white bloom strictly in bottom-left corner */
-    radial-gradient(ellipse 44% 36% at 0% 100%, rgba(255, 255, 255, 0.9) 0%, rgba(255, 255, 255, 0.6) 45%, rgba(255, 255, 255, 0) 100%),
-    /* Central crisp light bloom directly behind the headline & visual for clarity */
-    radial-gradient(ellipse 65% 65% at 50% 45%, rgba(255, 255, 255, 0.96) 0%, rgba(255, 255, 255, 0.72) 45%, rgba(255, 255, 255, 0) 76%),
-    /* Left-side silver gradient (mirrored from right side) */
-    radial-gradient(ellipse 85% 95% at 5% 45%, rgba(226, 230, 236, 0.38) 0%, rgba(236, 239, 244, 0.22) 55%, rgba(230, 234, 240, 0.15) 100%),
-    /* Right-side silver gradient: airy, delicate luminous silver */
-    radial-gradient(ellipse 85% 95% at 95% 45%, rgba(218, 224, 233, 0.48) 0%, rgba(230, 235, 242, 0.3) 55%, rgba(230, 234, 240, 0.15) 100%),
+    radial-gradient(ellipse 48% 40% at 100% 0%, rgba(255, 255, 255, 1) 0%, rgba(255, 255, 255, 0.75) 45%, rgba(255, 255, 255, 0) 100%),
+    /* Mirrored Bottom-Left & Bottom-Right soft white/light silver blooms (identically paired) */
+    radial-gradient(ellipse 48% 40% at 0% 100%, rgba(255, 255, 255, 0.95) 0%, rgba(255, 255, 255, 0.65) 45%, rgba(255, 255, 255, 0) 100%),
+    radial-gradient(ellipse 48% 40% at 100% 100%, rgba(255, 255, 255, 0.95) 0%, rgba(255, 255, 255, 0.65) 45%, rgba(255, 255, 255, 0) 100%),
+    /* Mirrored soft silver corner accents (identically paired) */
+    radial-gradient(ellipse 60% 50% at 0% 0%, rgba(228, 232, 238, 0.35) 0%, rgba(240, 243, 247, 0.18) 45%, rgba(255, 255, 255, 0) 80%),
+    radial-gradient(ellipse 60% 50% at 100% 0%, rgba(228, 232, 238, 0.35) 0%, rgba(240, 243, 247, 0.18) 45%, rgba(255, 255, 255, 0) 80%),
+    radial-gradient(ellipse 60% 50% at 0% 100%, rgba(224, 229, 236, 0.32) 0%, rgba(236, 240, 245, 0.15) 45%, rgba(255, 255, 255, 0) 80%),
+    radial-gradient(ellipse 60% 50% at 100% 100%, rgba(224, 229, 236, 0.32) 0%, rgba(236, 240, 245, 0.15) 45%, rgba(255, 255, 255, 0) 80%),
+    /* Central crisp light bloom directly behind content */
+    radial-gradient(ellipse 65% 65% at 50% 50%, rgba(255, 255, 255, 0.98) 0%, rgba(255, 255, 255, 0.7) 45%, rgba(255, 255, 255, 0) 76%),
+    /* Left-side and Right-side silver gradient (perfectly symmetrical) */
+    radial-gradient(ellipse 85% 95% at 0% 50%, rgba(226, 230, 236, 0.3) 0%, rgba(236, 239, 244, 0.15) 55%, rgba(230, 234, 240, 0) 100%),
+    radial-gradient(ellipse 85% 95% at 100% 50%, rgba(226, 230, 236, 0.3) 0%, rgba(236, 239, 244, 0.15) 55%, rgba(230, 234, 240, 0) 100%),
     /* Base mirrored linear gradient: soft silver on both sides, crisp white in center */
     linear-gradient(90deg, #eff1f5 0%, #f9fafb 25%, #ffffff 50%, #f9fafb 75%, #eff1f5 100%) !important;
 }
 
 .v2-theme .hero-bg-split,
 .v2-theme .hero-bg-split::after {
-  top: 0 !important;
-  width: 100% !important;
-  left: 0 !important;
-  right: 0 !important;
-  border-left: none !important;
-  background: transparent !important;
+  display: none !important;
 }
 
 /* Remove the white rectangular box & dashed border around the headline */

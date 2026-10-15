@@ -84,30 +84,10 @@ export default function ProcessSection() {
             margin: '0',
             WebkitTextStroke: '0'
           }}>
-            Words from people I've built with:
+            What My Clients Say...
           </h2>
         </motion.div>
 
-        {/* Geometric Abstract Decor Layer (Large Shapes Only) */}
-        <div 
-          className="hide-on-mobile"
-          style={{
-            position: 'absolute',
-            inset: 0,
-            pointerEvents: 'none',
-            zIndex: 1,
-            opacity: 0.85
-          }}
-        >
-          {/* Top-Right Large Shape */}
-          <div style={{ position: 'absolute', width: '220px', height: '130px', border: '1.5px solid rgba(29, 78, 91, 0.35)', top: '7%', right: '7%' }} />
-
-          {/* Bottom-Left Large Shape (30% less opacity) */}
-          <div style={{ position: 'absolute', width: '190px', height: '110px', border: '1.5px solid rgba(29, 78, 91, 0.24)', bottom: '10%', left: '8%' }} />
-
-          {/* Bottom-Right Large Shape (30% less opacity) */}
-          <div style={{ position: 'absolute', width: '140px', height: '140px', border: '1.5px dashed rgba(29, 78, 91, 0.24)', bottom: '10%', right: '9%' }} />
-        </div>
 
         {/* Testimonials 3-Card Carousel Track */}
         <div 
@@ -131,7 +111,7 @@ export default function ProcessSection() {
                     else handleCardClick(index);
                   }}
                   style={{
-                    backgroundColor: isCenter ? '#18191e' : '#ffffff',
+                    backgroundColor: isCenter ? 'var(--color-matte-black, #18191e)' : '#ffffff',
                     padding: '3rem 2.5rem',
                     border: isCenter ? '1px solid rgba(255, 255, 255, 0.08)' : '1px solid rgba(0, 0, 0, 0.06)',
                     display: 'flex',
@@ -217,8 +197,8 @@ export default function ProcessSection() {
               padding: 2rem 0;
             }
             .testimonial-card {
-              flex: 0 0 clamp(380px, 33vw, 480px);
-              width: clamp(380px, 33vw, 480px);
+              flex: 0 0 clamp(418px, 36.3vw, 528px);
+              width: clamp(418px, 36.3vw, 528px);
               border-radius: 0px !important;
               box-shadow: none !important;
               transition: transform 0.35s cubic-bezier(0.16, 1, 0.3, 1),
@@ -280,8 +260,8 @@ export default function ProcessSection() {
                 gap: 1.25rem;
               }
               .testimonial-card {
-                flex: 0 0 76vw;
-                width: 76vw;
+                flex: 0 0 84vw;
+                width: 84vw;
               }
               .testimonial-card.left-card,
               .testimonial-card.right-card {

@@ -32,8 +32,8 @@ export default function Header() {
         <div className="header-spacer-desktop">
           <a href="/" aria-label="Home" style={{ textDecoration: 'none', display: 'flex', flexDirection: 'row', alignItems: 'center', gap: '0.5rem' }}>
             <span style={{ 
-              fontFamily: 'var(--font-heading), Outfit, sans-serif', 
-              fontSize: '14.5px', 
+              fontFamily: 'var(--font-heading), -apple-system, BlinkMacSystemFont, "Helvetica Neue", Arial, sans-serif', 
+              fontSize: '13.8px', 
               fontWeight: 500, 
               color: '#3d4454', 
               letterSpacing: '0.04em', 
@@ -42,7 +42,7 @@ export default function Header() {
               IRYNA SHEREMETA
             </span>
             <span style={{ 
-              fontFamily: 'var(--font-heading), Outfit, sans-serif', 
+              fontFamily: 'var(--font-heading), -apple-system, BlinkMacSystemFont, "Helvetica Neue", Arial, sans-serif', 
               fontSize: '13px', 
               fontWeight: 400, 
               color: 'rgba(0, 0, 0, 0.75)', 
@@ -92,10 +92,7 @@ export default function Header() {
           <div className="header-drawer-content" onClick={(e) => e.stopPropagation()}>
             <button className="drawer-close-btn" onClick={() => setIsMenuOpen(false)} aria-label="Close menu">&times;</button>
             <div className="drawer-nav-links">
-              <a href="#expertise" onClick={() => setIsMenuOpen(false)} className="drawer-link">EXPERTISE</a>
-              <a href="#cases" onClick={() => setIsMenuOpen(false)} className="drawer-link">CASES</a>
-              <a href="#about" onClick={() => setIsMenuOpen(false)} className="drawer-link">ABOUT</a>
-              <a href="#process" onClick={() => setIsMenuOpen(false)} className="drawer-link">PROCESS</a>
+              <a href="#about" onClick={() => setIsMenuOpen(false)} className="drawer-link">ABOUT ME</a>
             </div>
           </div>
         </div>

@@ -5,22 +5,6 @@ import '@/app/components/Hero.css';
 import heroImage from '@/app/assets/test.webp';
 
 export default function HeroV2() {
-  const line2Ref = useRef<HTMLSpanElement>(null);
-  const [line2Width, setLine2Width] = useState<number | null>(null);
-
-  useEffect(() => {
-    const updateWidth = () => {
-      if (line2Ref.current) {
-        setLine2Width(line2Ref.current.offsetWidth);
-      }
-    };
-    updateWidth();
-    if (typeof document !== 'undefined' && document.fonts) {
-      document.fonts.ready.then(updateWidth);
-    }
-    window.addEventListener('resize', updateWidth);
-    return () => window.removeEventListener('resize', updateWidth);
-  }, []);
   return (
     <section className="section hero-section" id="home">
       {/* Background Split */}
@@ -98,26 +82,23 @@ export default function HeroV2() {
               >
                 <h1 className="hero-statement hero-statement-anim" style={{ display: 'flex', flexDirection: 'column', gap: '0px', lineHeight: '1.22' }}>
                   <span className="headline-line headline-light">
-                    Looking for a
-                  </span>
-                  <span ref={line2Ref} className="headline-line headline-light" style={{ width: 'fit-content' }}>
-                    <span className="headline-teal-underline">custom</span> website
+                    Looking for a <span className="headline-teal-underline">custom</span> website
                   </span>
                   <span className="headline-line headline-light">
                     or an <span className="headline-teal-underline">internal</span> AI tool?
                   </span>
                 </h1>
-                <p className="hero-frame-paragraph hero-paragraph-anim" style={{ marginTop: '1.7rem', fontSize: '1.213rem', lineHeight: '1.75', color: 'var(--color-body-dark, #333842)', maxWidth: '100%', fontWeight: 400, opacity: 0.9 }}>
+                <p className="hero-frame-paragraph hero-paragraph-anim" style={{ marginTop: '1.7rem', fontSize: '1.213rem', lineHeight: '1.75', color: '#525d6c', maxWidth: '100%', fontWeight: 400, opacity: 1 }}>
                   I <strong style={{ fontWeight: 600, color: '#1a1d24' }}>design</strong> and <strong style={{ fontWeight: 600, color: '#1a1d24' }}>build</strong> custom digital products <strong style={{ fontWeight: 600, color: '#1a1d24' }}>end-to-end</strong> for business and professionals &mdash; <span className="br-desktop"><br /></span>
                   <span style={{ fontStyle: 'italic' }}>from figuring out what solution you need to shipping a working product.</span>
                 </p>
               </div>
 
-              {/* CTAs: right-aligned flush with line 2 of headline */}
+              {/* CTAs: right-aligned flush with the content block */}
               <div
                 className="hero-ctas hero-ctas-outside hero-ctas-anim"
                 style={{ 
-                  width: line2Width ? `${line2Width}px` : 'fit-content', 
+                  width: '100%', 
                   maxWidth: '100%',
                   display: 'flex', 
                   justifyContent: 'flex-end', 
@@ -178,32 +159,8 @@ export default function HeroV2() {
             </svg>
 
             {/* Circular Hugging Chart Labels - Creative Tech Indicators */}
-            {/* 1. "Websites" hugging the top-left curve of the middle ring + Hand pointer */}
+            {/* 1. "Websites" hugging the top-left curve of the middle ring */}
             <div className="hero-badge-anchor badge-anchor-websites" style={{ position: 'absolute', top: '56px', left: '12px', zIndex: 10 }}>
-              {/* Pointing Hand Icon */}
-              <div 
-                className="badge-hand-pointer"
-                style={{
-                  position: 'absolute',
-                  top: '-24px',
-                  left: '-18px',
-                  width: '26px',
-                  height: '26px',
-                  display: 'flex',
-                  alignItems: 'center',
-                  justifyContent: 'center',
-                  filter: 'drop-shadow(0 2px 4px rgba(0,0,0,0.12))',
-                  pointerEvents: 'none'
-                }}
-              >
-                <svg width="22" height="22" viewBox="0 0 24 24" fill="#ffffff" stroke="#256678" strokeWidth="1.6" strokeLinecap="round" strokeLinejoin="round">
-                  <path d="M18 11V6a2 2 0 0 0-2-2v0a2 2 0 0 0-2 2v0"></path>
-                  <path d="M14 10V4a2 2 0 0 0-2-2v0a2 2 0 0 0-2 2v2"></path>
-                  <path d="M10 10.5V6a2 2 0 0 0-2-2v0a2 2 0 0 0-2 2v8"></path>
-                  <path d="M18 8a2 2 0 1 1 4 0v6a8 8 0 0 1-8 8h-2c-2.8 0-4.5-.86-5.99-2.34l-3.6-3.6a2 2 0 0 1 2.83-2.82L7 15"></path>
-                </svg>
-              </div>
-
               <div className="hero-ring-badge badge-designer" style={{
                 transform: 'rotate(-16deg)',
                 padding: '4px 12px',
@@ -230,7 +187,7 @@ export default function HeroV2() {
               </div>
             </div>
 
-            {/* 2. "AI products" hugging the right edge of the outer ring + Thick 2D Arrow under label */}
+            {/* 2. "AI products" hugging the right edge of the outer ring */}
             <div className="hero-badge-anchor badge-anchor-products" style={{ position: 'absolute', top: '190px', right: '-18px', zIndex: 10 }}>
               <div className="hero-ring-badge badge-builder" style={{
                 transform: 'rotate(6deg)',
@@ -256,79 +213,10 @@ export default function HeroV2() {
                 </svg>
                 AI products
               </div>
-
-              {/* Thick 2D icon arrow under the label (outlined teal, not filled) pointing up at label */}
-              <div 
-                className="badge-arrow-pointer"
-                style={{
-                  position: 'absolute',
-                  top: 'calc(100% + 5px)',
-                  left: '50%',
-                  transform: 'translateX(-50%)',
-                  display: 'flex',
-                  alignItems: 'center',
-                  justifyContent: 'center',
-                  pointerEvents: 'none',
-                  filter: 'drop-shadow(0 2px 4px rgba(0,0,0,0.1))',
-                  zIndex: 20
-                }}
-              >
-                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#256678" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round" xmlns="http://www.w3.org/2000/svg">
-                  <path d="M12 4L4 12H9V20H15V12H20L12 4Z" />
-                </svg>
-              </div>
             </div>
 
-            {/* 3. "AI consultations" hugging the bottom-left curve of the outer ring + Pulsing circles */}
+            {/* 3. "AI consultations" hugging the bottom-left curve of the outer ring */}
             <div className="hero-badge-anchor badge-anchor-consultations" style={{ position: 'absolute', bottom: '40px', left: '42px', zIndex: 10 }}>
-              {/* Pulsing radar circles indicator */}
-              <div 
-                style={{
-                  position: 'absolute',
-                  top: '50%',
-                  right: 'calc(100% + 10px)',
-                  transform: 'translateY(-50%)',
-                  width: '20px',
-                  height: '20px',
-                  display: 'flex',
-                  alignItems: 'center',
-                  justifyContent: 'center',
-                  pointerEvents: 'none'
-                }}
-              >
-                {/* Outer animated ripple */}
-                <span 
-                  className="badge-radar-circle-outer"
-                  style={{
-                    position: 'absolute',
-                    width: '18px',
-                    height: '18px',
-                    borderRadius: '50%',
-                    border: '1.5px solid #3ba3b8',
-                    backgroundColor: 'rgba(59, 163, 184, 0.2)'
-                  }} 
-                />
-                {/* Middle ring */}
-                <span 
-                  style={{
-                    position: 'absolute',
-                    width: '10px',
-                    height: '10px',
-                    borderRadius: '50%',
-                    border: '1px solid rgba(37, 102, 120, 0.5)'
-                  }} 
-                />
-                {/* Center dot */}
-                <span 
-                  style={{
-                    position: 'absolute',
-                    width: '5px',
-                    height: '5px',
-                    borderRadius: '50%',
-                    backgroundColor: '#256678'
-                  }} 
-                />
-              </div>
 
               <div className="hero-ring-badge badge-ai" style={{
                 transform: 'rotate(12deg)',

@@ -61,7 +61,7 @@ export default async function HomePage() {
               margin: '0 auto 14px auto',
               WebkitTextStroke: '0'
             }}>
-              Examples of my work
+              How I Solve Problems
             </h2>
             <p style={{
               fontFamily: "var(--font-body)",

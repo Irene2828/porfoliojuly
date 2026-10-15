@@ -105,7 +105,7 @@ export default function HowItWorks() {
           margin: '0 auto 0.75rem auto',
           WebkitTextStroke: '0'
         }}>
-          How the Process Looks
+          Why Work With Me
         </h2>
         <p style={{
           fontFamily: "var(--font-body)",
@@ -129,7 +129,7 @@ export default function HowItWorks() {
         style={{
           position: 'relative',
           width: '100%',
-          backgroundColor: '#18191e',
+          backgroundColor: 'var(--color-matte-black, #18191e)',
           borderTop: '1px solid rgba(255, 255, 255, 0.08)',
           borderBottom: '1px solid rgba(255, 255, 255, 0.08)',
           boxShadow: '0 20px 48px rgba(0, 0, 0, 0.03)',

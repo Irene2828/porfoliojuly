@@ -5,7 +5,7 @@ export default function Footer() {
     <footer className="footer">
       <div className="container">
         <div className="footer-bottom">
-          <p>&copy; {new Date().getFullYear()} Iryna Sheremeta. All Rights Reserved.</p>
+          <p>&copy; {new Date().getFullYear()}. All Rights Reserved.</p>
           <div className="social-links">
             <a href="#">Instagram</a>
             <a href="#">Behance</a>

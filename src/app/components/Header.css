@@ -155,12 +155,12 @@
 .hamburger-bar {
   width: 20px;
   height: 1.5px;
-  background-color: #3ba3b8; /* teal, matches headline accent */
+  background-color: var(--color-heading-silver, #5c6574);
   transition: transform 0.25s ease, opacity 0.25s ease;
 }
 
 .hamburger-btn:hover .hamburger-bar {
-  background-color: #008b8b;
+  background-color: var(--color-body-dark, #333842);
 }
 
 .hamburger-btn.open .hamburger-bar:nth-child(1) {
@@ -289,18 +289,18 @@
 }
 
 .drawer-link {
-  font-family: var(--font-heading), 'Outfit', sans-serif;
-  font-size: 1.1rem;
-  font-weight: 600;
-  letter-spacing: 0.08em;
-  text-transform: uppercase;
-  color: #111111;
+  font-family: var(--font-heading), -apple-system, BlinkMacSystemFont, "Helvetica Neue", Arial, sans-serif !important;
+  font-size: 1.15rem;
+  font-weight: 600 !important;
+  letter-spacing: 0.12em !important;
+  text-transform: uppercase !important;
+  color: var(--color-heading-silver, #5c6574) !important;
   text-decoration: none;
   transition: color 0.2s ease, transform 0.2s ease;
 }
 
 .drawer-link:hover {
-  color: var(--accent, #1d4e5b);
+  color: var(--color-body-dark, #333842) !important;
   transform: translateX(4px);
 }
 
@@ -383,7 +383,7 @@
   }
 
   .mobile-brand-name {
-    font-family: var(--font-heading), Outfit, sans-serif;
+    font-family: var(--font-heading), -apple-system, BlinkMacSystemFont, "Helvetica Neue", Arial, sans-serif;
     font-size: 12.2px !important;
 
     font-weight: 600;
@@ -397,7 +397,7 @@
 
   .mobile-brand-title {
     display: block !important;
-    font-family: var(--font-heading), Outfit, sans-serif;
+    font-family: var(--font-heading), -apple-system, BlinkMacSystemFont, "Helvetica Neue", Arial, sans-serif;
     font-size: 12.5px !important; /* -15% */
     font-weight: 400 !important;
     color: #64748b !important;
@@ -433,7 +433,7 @@
   }
 
   .hamburger-bar {
-    background-color: #3ba3b8 !important;
+    background-color: var(--color-heading-silver, #5c6574) !important;
   }
 }
 
