@@ -433,6 +433,7 @@
     flex-direction: column !important;
     align-items: center !important;
     gap: 0px !important;
+    font-size: clamp(1.75rem, 9vw, 4rem) !important;
   }
 }
 
@@ -2195,7 +2196,7 @@
     -webkit-text-fill-color: #2b2f36 !important;
     font-weight: 400 !important;
     font-style: normal !important;
-    font-size: clamp(2.446rem, 9.785vw, 3.073rem) !important;
+    font-size: 1em !important;
   }
   .hero-text .headline-mockup-bold {
     color: #35383E !important;
@@ -2209,10 +2210,14 @@
     font-weight: 700 !important;
     color: #1a1d24 !important;
   }
+  /* Mobile: uniform section rhythm — every gap = hero->services gap (15.10.2026) */
+  #cases { padding-top: 6.1rem !important; }
+  #how-it-works { padding-top: 6.6rem !important; }
+  #process { padding-top: 3.5rem !important; }
 }
 @media (min-width: 414px) and (max-width: 900px) {
   .hero-text .headline-mockup-light {
-    font-size: clamp(2.689rem, 10.764vw, 3.382rem) !important;
+    font-size: 1em !important;
     line-height: 0.969 !important;
     font-style: normal !important;
     color: #2b2f36 !important;
