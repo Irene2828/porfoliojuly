@@ -260,6 +260,48 @@ export default function ProjectsV2({ initialProjects = [] }: ProjectsV2Props) {
         }
       `}</style>
       
+      
+      {/* Section Heading: For every problem there is a solution. */}
+      <div style={{ marginBottom: '3.5rem', textAlign: 'center', padding: '0 1.5rem' }}>
+        {/* Short decor line */}
+        <div style={{
+          width: '60px',
+          height: '1px',
+          backgroundColor: 'var(--accent, #1d4e5b)',
+          margin: '0 auto 2.5rem auto',
+          opacity: 0.9
+        }} />
+
+        <h2 style={{
+          fontFamily: "var(--font-heading)",
+          fontSize: 'clamp(28px, 4.4vw, 42px)',
+          color: 'var(--color-heading-silver)',
+          fontWeight: 400,
+          lineHeight: 1.2,
+          letterSpacing: '-0.02em',
+          textAlign: 'center',
+          width: '100%',
+          margin: '0 auto 14px auto',
+          WebkitTextStroke: '0'
+        }}>
+          For every problem there is a solution.
+        </h2>
+        <p style={{
+          fontFamily: "var(--font-body)",
+          fontSize: '17px',
+          fontWeight: 400,
+          lineHeight: 1.6,
+          color: '#333842',
+          opacity: 0.9,
+          maxWidth: '640px',
+          margin: '0 auto',
+          textAlign: 'center',
+          letterSpacing: '-0.01em'
+        }}>
+          See how I approach them
+        </p>
+      </div>
+      
       {/* 2x2 Grid Wrapper */}
       <div 
         style={{ 
