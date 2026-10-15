@@ -84,8 +84,22 @@ export default function ProcessSection() {
             margin: '0',
             WebkitTextStroke: '0'
           }}>
-            What My Clients Say...
+            Clients' feedback
           </h2>
+          <p style={{
+            fontFamily: "var(--font-body)",
+            fontSize: '17px',
+            fontWeight: 400,
+            lineHeight: 1.6,
+            color: '#333842',
+            opacity: 0.9,
+            maxWidth: '640px',
+            margin: '14px 0 0 0',
+            textAlign: 'left',
+            letterSpacing: '-0.01em'
+          }}>
+            I didn&rsquo;t ask for flattery. I asked &lsquo;why me&rsquo;.
+          </p>
         </motion.div>
 
 
