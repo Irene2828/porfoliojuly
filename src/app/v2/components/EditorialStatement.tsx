@@ -131,9 +131,9 @@ export default function EditorialStatement() {
               maxWidth: '20ch',
             }}
           >
-            AI is changing how business gets done.{' '}
+            Something in your business eats time or loses clients?{' '}
             <span style={{ color: '#3ba3b8', WebkitTextFillColor: '#3ba3b8' }}>
-              Let&rsquo;s put it to work for yours.
+              Let&rsquo;s put AI to work on it.
             </span>
           </h2>
 
