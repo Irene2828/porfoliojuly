@@ -103,9 +103,10 @@ export default function HowItWorks() {
           textAlign: 'center',
           width: '100%',
           margin: '0 auto 0.75rem auto',
-          WebkitTextStroke: '0'
+          WebkitTextStroke: '0',
+          textWrap: 'balance'
         }}>
-          How I get it done
+          <span style={{ fontWeight: 400, color: '#2b2f36' }}>How I </span><span style={{ fontWeight: 700, color: '#35383E' }}>get it done</span>
         </h2>
         <p style={{
           fontFamily: "var(--font-body)",
@@ -117,7 +118,8 @@ export default function HowItWorks() {
           maxWidth: '640px',
           margin: '0 auto',
           textAlign: 'center',
-          letterSpacing: '-0.01em'
+          letterSpacing: '-0.01em',
+          fontStyle: 'italic'
         }}>
           from concept to launch in 3 simple steps:
         </p>
