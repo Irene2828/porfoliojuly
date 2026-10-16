@@ -38,9 +38,9 @@ export default async function HomePage() {
         <ServicesV2 />
 
         {/* Cases Section */}
-        <section id="cases-section" style={{ padding: '5.1rem 0 0 0', backgroundColor: '#ffffff' }}>
+        <section id="cases-section" className="cases-section-wrapper" style={{ padding: '5.1rem 0 0 0', backgroundColor: '#ffffff' }}>
            {/* Frame starting under subline with dot matrix pattern */}
-          <div 
+          <div className="cases-section-frame"
             style={{
               backgroundColor: '#ffffff',
               width: '100%',

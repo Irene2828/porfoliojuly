@@ -41,7 +41,7 @@ export default function ProcessSection() {
       style={{ padding: '0 0 6rem 0', backgroundColor: '#ffffff' }}
     >
       {/* Grey background container */}
-      <div 
+      <div className="testimonials-grey-container"
         style={{
           width: '100%',
           background: 'linear-gradient(0deg, rgba(255, 255, 255, 0.7) 0%, rgba(255, 255, 255, 0.25) 35%, rgba(255, 255, 255, 0) 65%), radial-gradient(ellipse at 60% 40%, rgba(255, 255, 255, 0.9) 0%, rgba(255, 255, 255, 0.45) 55%, rgba(255, 255, 255, 0) 90%), linear-gradient(135deg, #f4f6f8 0%, #eaecee 45%, #dfe2e6 100%)',
@@ -57,7 +57,7 @@ export default function ProcessSection() {
         }}
       >
         {/* Section Header */}
-        <motion.div 
+        <motion.div className="testimonials-header-block"
           initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true, amount: 0.2 }}
@@ -85,7 +85,7 @@ export default function ProcessSection() {
             WebkitTextStroke: '0',
             textWrap: 'balance'
           }}>
-            <span style={{ fontWeight: 700, color: '#35383E' }}>Clients'</span><span style={{ fontWeight: 400, color: '#2b2f36' }}> feedback:</span>
+            <span style={{ fontWeight: 400, color: 'var(--color-heading-silver, #4a5461)' }}>Clients' </span><span style={{ fontWeight: 700, color: 'var(--color-heading-silver, #4a5461)', WebkitTextFillColor: 'var(--color-heading-silver, #4a5461)' }}>Feedback:</span>
           </h2>
           <p style={{
             fontFamily: "var(--font-body)",
@@ -100,7 +100,8 @@ export default function ProcessSection() {
             letterSpacing: '-0.01em',
             fontStyle: 'italic'
           }}>
-            I didn't ask for flattery. I asked 'why me'.
+            <span>I didn't ask for flattery.</span>{' '}
+            <span className="feedback-subline-row2">I asked them 'why me'.</span>
           </p>
         </motion.div>
 
@@ -127,7 +128,7 @@ export default function ProcessSection() {
                     else handleCardClick(index);
                   }}
                   style={{
-                    backgroundColor: isCenter ? 'var(--color-matte-black, #18191e)' : '#ffffff',
+                    backgroundColor: isCenter ? 'var(--color-matte-black, #2b2f36)' : '#ffffff',
                     padding: '3rem 2.5rem',
                     border: isCenter ? '1px solid rgba(255, 255, 255, 0.08)' : '1px solid rgba(0, 0, 0, 0.06)',
                     display: 'flex',
@@ -269,6 +270,16 @@ export default function ProcessSection() {
             }
             .testimonials-track .testimonial-card:hover {
               opacity: 1 !important;
+            }
+
+            .feedback-subline-row2 {
+              display: inline;
+            }
+            @media (max-width: 900px) {
+              .feedback-subline-row2 {
+                display: block !important;
+                margin-top: 0.2rem;
+              }
             }
 
             @media (max-width: 1000px) {

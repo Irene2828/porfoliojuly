@@ -98,7 +98,12 @@ export default function ServicesV2() {
         @media (max-width: 860px) {
           #expertise {
             padding-top: 2.55rem !important;
+            padding-bottom: 0 !important;
             margin-top: 2.55rem !important;
+            margin-bottom: 0 !important;
+          }
+          .services-cards-outer-container {
+            margin-bottom: 0 !important;
           }
           .services-right-split-bg,
           .services-left-split-bg {
@@ -123,7 +128,7 @@ export default function ServicesV2() {
             width: 100% !important;
             max-width: 100% !important;
             box-sizing: border-box !important;
-            background-color: var(--color-matte-black, #18191e) !important;
+            background-color: var(--color-matte-black, #2b2f36) !important;
             backdrop-filter: blur(20px) !important;
             -webkit-backdrop-filter: blur(20px) !important;
             border-radius: 0px !important;
@@ -190,7 +195,7 @@ export default function ServicesV2() {
           WebkitTextStroke: '0',
           textWrap: 'balance'
         }}>
-          <span style={{ fontWeight: 400, color: '#2b2f36' }}>How I Can Help </span><span style={{ fontWeight: 700, color: '#35383E' }}>Your Business</span>
+          <span style={{ fontWeight: 400, color: 'var(--color-heading-silver, #4a5461)' }}>How I Can Help </span><span style={{ fontWeight: 700, color: 'var(--color-heading-silver, #4a5461)', WebkitTextFillColor: 'var(--color-heading-silver, #4a5461)' }}>Your Business</span>
         </h2>
         <p style={{
           fontFamily: "var(--font-body)",
@@ -210,7 +215,7 @@ export default function ServicesV2() {
       </motion.div>
 
       {/* Matte Charcoal Container for 2 Columns of Services */}
-      <div 
+      <div className="services-cards-outer-container"
         style={{
           backgroundColor: '#ffffff',
           width: '100%',
@@ -228,7 +233,7 @@ export default function ServicesV2() {
             bottom: 0,
             left: 0,
             right: '50%',
-            backgroundColor: 'var(--color-matte-black, #18191e)',
+            backgroundColor: 'var(--color-matte-black, #2b2f36)',
             zIndex: 1,
             pointerEvents: 'none'
           }}
@@ -280,11 +285,11 @@ export default function ServicesV2() {
               minHeight: '460px'
             }}
           >
-            {/* Column 1: Custom Websites (Left Card - #18191e Matte Black) */}
+            {/* Column 1: Custom Websites (Left Card - #2b2f36 Matte Black) */}
             <div 
               className="services-col-left"
               style={{
-                backgroundColor: 'var(--color-matte-black, #18191e)',
+                backgroundColor: 'var(--color-matte-black, #2b2f36)',
                 backdropFilter: 'blur(20px)',
                 WebkitBackdropFilter: 'blur(20px)',
                 borderRadius: '0px',
@@ -349,7 +354,7 @@ export default function ServicesV2() {
                         width: '40px', 
                         height: '40px', 
                         borderRadius: '0px', 
-                        backgroundColor: '#18191e',
+                        backgroundColor: '#2b2f36',
                         display: 'flex', 
                         alignItems: 'center', 
                         justifyContent: 'center',

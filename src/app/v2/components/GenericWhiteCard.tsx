@@ -115,7 +115,7 @@ export default function GenericWhiteCard({ title, subline, annotations, stats, i
 
         {/* 3 Light Cards Below */}
         <div className="guertin-cards-area">
-          <h3 className="guertin-cards-title" style={{ color: '#18191e', fontWeight: 500 }}>
+          <h3 className="guertin-cards-title" style={{ color: '#2b2f36', fontWeight: 500 }}>
             {stats?.[0]?.stat ? `From ${stats[0].stat} down to automated workflows.` : 'Designed for high efficiency and clarity.'}
           </h3>
           
@@ -129,8 +129,8 @@ export default function GenericWhiteCard({ title, subline, annotations, stats, i
                 className="guertin-card"
                 style={{ backgroundColor: '#ffffff', border: '1px solid rgba(0,0,0,0.1)', boxShadow: '0 4px 12px rgba(0,0,0,0.04)' }}
               >
-                <h4 className="guertin-card-title" style={{ color: '#18191e' }}>
-                  <span className="guertin-card-icon" style={{ color: '#717885' }}>⚡</span> <span style={{ color: '#4B5565' }}>{statItem.chip}</span>: <strong style={{ color: '#18191e' }}>{statItem.stat}</strong>
+                <h4 className="guertin-card-title" style={{ color: '#2b2f36' }}>
+                  <span className="guertin-card-icon" style={{ color: '#717885' }}>⚡</span> <span style={{ color: '#4B5565' }}>{statItem.chip}</span>: <strong style={{ color: '#2b2f36' }}>{statItem.stat}</strong>
                 </h4>
                 <p className="guertin-card-desc" style={{ color: '#555555' }}>
                   {statItem.text}

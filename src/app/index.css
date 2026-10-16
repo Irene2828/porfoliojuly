@@ -23,8 +23,8 @@
   --color-heading-silver: #4a5461;
   --color-headline-matte: #3a3d46;
   --color-body-dark: #333842;
-  --color-matte-black: #18191e;
-  --color-matte-black-hover: #24252a;
+  --color-matte-black: #2b2f36;
+  --color-matte-black-hover: #383d46;
   
   --space-sm: 1rem;
   --space-md: 2rem;
@@ -160,9 +160,9 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 .btn-primary {
-  background: var(--color-matte-black, #18191e);
+  background: var(--color-matte-black, #2b2f36);
   color: #ffffff;
-  border: 1px solid var(--color-matte-black, #18191e);
+  border: 1px solid var(--color-matte-black, #2b2f36);
   box-shadow: none;
   position: relative;
   font-weight: 600;
@@ -501,7 +501,7 @@ h1, h2, h3, h4, h5, h6 {
   letter-spacing: 0.08em !important;
   height: 3.43rem !important; /* +5% taller */
   padding: 0 1.98rem !important; /* +5% padding */
-  background: var(--color-matte-black, #18191e) !important; /* matte black token */
+  background: var(--color-matte-black, #2b2f36) !important; /* matte black token */
   color: #eaecf0 !important; /* soft matte off-white token (#eaecf0) */
   -webkit-text-fill-color: #eaecf0 !important;
   border: none !important;

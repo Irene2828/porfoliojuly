@@ -82,9 +82,9 @@ export default function HowItWorks() {
       `}</style>
 
       {/* Section Heading: How the Process Looks / How it works */}
-      <div className="container" style={{ textAlign: 'center', marginBottom: '3.5rem' }}>
+      <div className="how-it-works-heading container" style={{ textAlign: 'center', marginBottom: '3.5rem' }}>
         {/* Short decor line above section heading */}
-        <div style={{ 
+        <div className="how-it-works-decor-line" style={{ 
           width: '60px', 
           height: '1px', 
           backgroundColor: 'var(--accent, #1d4e5b)', 
@@ -106,7 +106,7 @@ export default function HowItWorks() {
           WebkitTextStroke: '0',
           textWrap: 'balance'
         }}>
-          <span style={{ fontWeight: 400, color: '#2b2f36' }}>How I </span><span style={{ fontWeight: 700, color: '#35383E' }}>get it done</span>
+          <span style={{ fontWeight: 400, color: 'var(--color-heading-silver, #4a5461)' }}>How I </span><span style={{ fontWeight: 700, color: 'var(--color-heading-silver, #4a5461)', WebkitTextFillColor: 'var(--color-heading-silver, #4a5461)' }}>Get Things Done</span>
         </h2>
         <p style={{
           fontFamily: "var(--font-body)",
@@ -131,7 +131,7 @@ export default function HowItWorks() {
         style={{
           position: 'relative',
           width: '100%',
-          backgroundColor: 'var(--color-matte-black, #18191e)',
+          backgroundColor: 'var(--color-matte-black, #2b2f36)',
           borderTop: '1px solid rgba(255, 255, 255, 0.08)',
           borderBottom: '1px solid rgba(255, 255, 255, 0.08)',
           boxShadow: '0 20px 48px rgba(0, 0, 0, 0.03)',

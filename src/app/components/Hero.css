@@ -413,7 +413,7 @@
   }
   .hero-frame-paragraph .hero-body-bold {
     font-weight: 700 !important;
-    color: #1a1d24 !important;
+    color: var(--color-heading-silver, #4a5461) !important; -webkit-text-fill-color: var(--color-heading-silver, #4a5461) !important;
   }
   .headline-mobile {
     display: none !important;
@@ -604,7 +604,7 @@
   justify-content: center;
   height: 3.44rem !important;
   padding: 0 1.98rem !important;
-  background: var(--color-matte-black, #18191e) !important;
+  background: var(--color-matte-black, #2b2f36) !important;
   color: #ffffff !important;
   border: none !important;
   border-radius: 0px !important;
@@ -1045,7 +1045,7 @@
     font-weight: 600 !important;
     letter-spacing: 0.08em !important;
     text-transform: uppercase !important;
-    background: var(--color-matte-black, #18191e) !important;
+    background: var(--color-matte-black, #2b2f36) !important;
     color: #ffffff !important;
     border: none !important;
     border-radius: 0px !important;
@@ -1117,7 +1117,7 @@
     font-size: 1.15rem !important;
     font-weight: 700 !important;
     letter-spacing: 0.12em !important;
-    color: #18191e !important;
+    color: #2b2f36 !important;
     text-transform: uppercase !important;
     text-align: left !important;
     margin: 0 !important;
@@ -2199,8 +2199,8 @@
     font-size: 1em !important;
   }
   .hero-text .headline-mockup-bold {
-    color: #35383E !important;
-    -webkit-text-fill-color: #35383E !important;
+    color: var(--color-heading-silver, #4a5461) !important;
+    -webkit-text-fill-color: var(--color-heading-silver, #4a5461) !important;
     font-weight: 700 !important;
     font-style: normal !important;
     font-size: inherit !important;
@@ -2208,13 +2208,106 @@
   }
   .hero-frame-paragraph .hero-body-bold {
     font-weight: 700 !important;
-    color: #1a1d24 !important;
+    color: var(--color-heading-silver, #4a5461) !important; -webkit-text-fill-color: var(--color-heading-silver, #4a5461) !important;
   }
-  /* Mobile: cut section spacing in half (15.10.2026) */
-  #cases { padding-top: 3.05rem !important; }
-  #how-it-works { padding-top: 3.3rem !important; }
-  #process { padding-top: 1.75rem !important; padding-bottom: 3rem !important; }
-  .prefooter-section { padding-top: 40px !important; }
+
+  /* ── Mobile: cut section spacing in half across all 4 section transitions ── */
+  /* 1. Services -> Cases */
+  #expertise {
+    padding-bottom: 0 !important;
+    margin-bottom: 0 !important;
+  }
+  .services-cards-outer-container,
+  #expertise > div:nth-of-type(2) {
+    margin-bottom: 0 !important;
+  }
+  .cases-section-wrapper,
+  #cases-section {
+    padding-top: 0 !important;
+    padding-bottom: 0 !important;
+    margin-top: 0 !important;
+    margin-bottom: 0 !important;
+  }
+  .cases-section-frame,
+  #cases-section > div {
+    padding-top: 0 !important;
+    padding-bottom: 0 !important;
+    margin-bottom: 0 !important;
+  }
+  #cases {
+    padding-top: 6rem !important; /* doubled top spacing over cases */
+    padding-bottom: 1rem !important;
+  }
+  .cases-header-block,
+  #cases > div:first-of-type {
+    margin-bottom: 1.75rem !important;
+  }
+  .cases-decor-line,
+  #cases > div:first-of-type > div:first-of-type {
+    margin-top: 0 !important;
+    margin-bottom: 1.25rem !important;
+  }
+
+  /* 2. Cases -> Process (How It Works) */
+  #how-it-works {
+    padding-top: 2.55rem !important;
+    padding-bottom: 0 !important;
+  }
+  .how-it-works-heading,
+  #how-it-works > .container:first-of-type {
+    margin-bottom: 1.75rem !important;
+  }
+  .how-it-works-decor-line,
+  #how-it-works > .container:first-of-type > div:first-of-type {
+    margin-top: 0 !important;
+    margin-bottom: 1.25rem !important;
+  }
+  .services-black-frame-wrapper > .container,
+  #how-it-works .services-black-frame-wrapper > .container {
+    padding-top: 2rem !important;
+    padding-bottom: 2.5rem !important;
+  }
+
+  /* 3. Process (How It Works) -> Testimonials (ProcessSection) */
+  #process {
+    padding-top: 0 !important;
+    padding-bottom: 0 !important;
+  }
+  .testimonials-grey-container,
+  #process > div:first-of-type {
+    padding-top: 8rem !important; /* doubled top spacing over testimonials */
+    padding-bottom: 3.5rem !important;
+  }
+  .testimonials-header-block,
+  #process > div:first-of-type > div:first-of-type {
+    margin-bottom: 1.25rem !important;
+  }
+  .testimonials-decor-line,
+  #process > div:first-of-type > div:first-of-type > div:first-of-type {
+    margin-top: 0 !important;
+    margin-bottom: 1.25rem !important;
+  }
+
+  /* 4. Testimonials -> Prefooter */
+  .prefooter-section {
+    padding-top: 8rem !important; /* doubled top spacing over prefooter */
+    padding-bottom: 2.5rem !important;
+  }
+  .prefooter-inner-container,
+  .prefooter-section > div:first-of-type {
+    padding-top: 0 !important;
+    padding-bottom: 1rem !important;
+  }
+  .prefooter-decor-line,
+  .prefooter-section > div:first-of-type > div:first-of-type {
+    margin-top: 0 !important;
+    margin-bottom: 1.25rem !important;
+  }
+
+  .feedback-subline-row2 {
+    display: block !important;
+    margin-top: 0.2rem !important;
+  }
 }
 @media (min-width: 414px) and (max-width: 900px) {
   .hero-text .headline-mockup-light {
@@ -2228,11 +2321,83 @@
   .hero-text .headline-mockup-bold {
     font-size: inherit !important;
     line-height: 0.969 !important;
-    color: #35383E !important;
-    -webkit-text-fill-color: #35383E !important;
+    color: var(--color-heading-silver, #4a5461) !important;
+    -webkit-text-fill-color: var(--color-heading-silver, #4a5461) !important;
     font-weight: 700 !important;
     font-style: normal !important;
     text-decoration: none !important;
   }
-}/* -- Desktop hero: match mobile dark two-tone headline (15.10.2026) -- */ @media (min-width: 901px) {   .hero-text .headline-line.headline-light {     color: #4b5460 !important;     -webkit-text-fill-color: #4b5460 !important;     font-weight: 400 !important;     font-style: normal !important;   }   .hero-text .headline-teal-underline {     color: #35383E !important;     -webkit-text-fill-color: #35383E !important;     font-weight: 700 !important;     font-style: normal !important;     text-decoration: none !important;   } }
+}/* -- Desktop hero: match mobile dark two-tone headline (15.10.2026) -- */ @media (min-width: 901px) {
+  .hero-text .headline-line.headline-light {
+    color: #4b5460 !important;
+    -webkit-text-fill-color: #4b5460 !important;
+    font-weight: 400 !important;
+    font-style: normal !important;
+  }
+  .hero-text .headline-teal-underline {
+    color: var(--color-heading-silver, #4a5461) !important;
+    -webkit-text-fill-color: var(--color-heading-silver, #4a5461) !important;
+    font-weight: 700 !important;
+    font-style: normal !important;
+    text-decoration: none !important;
+  }
+  /* Prefooter desktop typography: -20% smaller */
+  .prefooter-closing-line {
+    font-size: 2.6rem !important; /* -20% on desktop (was 3.25rem) */
+  }
+  .editorial-blue-heading {
+    font-size: 27.2px !important; /* -20% on desktop (was 34px) */
+  }
+
+  /* Desktop: doubled top spacing over services and cases headings (10.2rem / ~163px) */
+  #expertise {
+    margin-top: 0 !important;
+    padding-top: 10.2rem !important;
+    padding-bottom: 0 !important;
+    margin-bottom: 0 !important;
+  }
+  .services-cards-outer-container {
+    margin-bottom: 0 !important;
+  }
+
+  #cases-section.cases-section-wrapper,
+  #cases-section {
+    margin-top: 0 !important;
+    padding-top: 10.2rem !important;
+    padding-bottom: 0 !important;
+    margin-bottom: 0 !important;
+  }
+  .cases-section-frame {
+    padding-top: 0 !important;
+    padding-bottom: 0 !important;
+    margin-bottom: 0 !important;
+  }
+  #cases {
+    padding-top: 0 !important;
+    padding-bottom: 0 !important;
+    margin-bottom: 0 !important;
+  }
+
+  #how-it-works {
+    margin-top: 0 !important;
+    padding-top: 2.55rem !important;
+    padding-bottom: 0 !important;
+    margin-bottom: 0 !important;
+  }
+
+  #process {
+    padding-bottom: 0 !important;
+    margin-bottom: 0 !important;
+  }
+
+  .prefooter-section {
+    margin-top: 0 !important;
+    padding-top: 2.55rem !important;
+    padding-bottom: 0 !important;
+    margin-bottom: 0 !important;
+  }
+  .prefooter-inner-container {
+    padding-top: 0 !important;
+  }
+}
 

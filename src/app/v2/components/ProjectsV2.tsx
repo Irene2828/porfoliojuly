@@ -261,10 +261,10 @@ export default function ProjectsV2({ initialProjects = [] }: ProjectsV2Props) {
       `}</style>
       
       
-      {/* Section Heading: For every problem there is a solution. */}
-      <div style={{ marginBottom: '3.5rem', textAlign: 'center', padding: '0 1.5rem' }}>
+      {/* Section Heading: For Every Problem There is a Solution. */}
+      <div className="cases-header-block" style={{ marginBottom: '3.5rem', textAlign: 'center', padding: '0 1.5rem' }}>
         {/* Short decor line */}
-        <div style={{
+        <div className="cases-decor-line" style={{
           width: '60px',
           height: '1px',
           backgroundColor: 'var(--accent, #1d4e5b)',
@@ -285,7 +285,7 @@ export default function ProjectsV2({ initialProjects = [] }: ProjectsV2Props) {
           WebkitTextStroke: '0',
           textWrap: 'balance'
         }}>
-          <span style={{ fontWeight: 400, color: '#2b2f36' }}>For every problem there is a </span><span style={{ fontWeight: 700, color: '#35383E' }}>solution.</span>
+          <span style={{ fontWeight: 400, color: 'var(--color-heading-silver, #4a5461)' }}>For Every Problem There is a </span><span style={{ fontWeight: 700, color: 'var(--color-heading-silver, #4a5461)', WebkitTextFillColor: 'var(--color-heading-silver, #4a5461)' }}>Solution.</span>
         </h2>
         <p style={{
           fontFamily: "var(--font-body)",
@@ -300,7 +300,7 @@ export default function ProjectsV2({ initialProjects = [] }: ProjectsV2Props) {
           letterSpacing: '-0.01em',
           fontStyle: 'italic'
         }}>
-          See how I approach them
+          / see how I approach problems /
         </p>
       </div>
       

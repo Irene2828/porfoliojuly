@@ -4,6 +4,15 @@ import { useState, useEffect } from 'react';
 import './Header.css';
 
 export default function Header() {
+  const [copied, setCopied] = useState(false);
+
+  const handleCopyEmail = (e: React.MouseEvent) => {
+    e.preventDefault();
+    e.stopPropagation();
+    navigator.clipboard.writeText('iryna@irynasheremeta.com');
+    setCopied(true);
+    setTimeout(() => setCopied(false), 2000);
+  };
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [isScrolled, setIsScrolled] = useState(false);
 
@@ -59,9 +68,17 @@ export default function Header() {
 
         {/* Right side (Desktop): Nav links */}
         <nav className="header-nav header-nav-desktop" style={{ marginLeft: 'auto', marginRight: '0', justifyContent: 'flex-end' }}>
-          <a href="#expertise" className="nav-link">EXPERTISE</a>
-          <a href="#cases" className="nav-link">CASES</a>
-          <a href="#about" className="nav-link">ABOUT</a>
+          <a href="#cases" className="nav-link">WORK</a>
+          <a href="#about" className="nav-link">ABOUT ME</a>
+          <a 
+            href="mailto:iryna@irynasheremeta.com" 
+            className="nav-link"
+            onClick={handleCopyEmail}
+            title="iryna@irynasheremeta.com (click to copy)"
+            style={{ color: copied ? '#3ba3b8' : undefined }}
+          >
+            {copied ? 'COPIED ✓' : 'EMAIL'}
+          </a>
         </nav>
       </div>
 
@@ -92,7 +109,16 @@ export default function Header() {
           <div className="header-drawer-content" onClick={(e) => e.stopPropagation()}>
             <button className="drawer-close-btn" onClick={() => setIsMenuOpen(false)} aria-label="Close menu">&times;</button>
             <div className="drawer-nav-links">
+              <a href="#cases" onClick={() => setIsMenuOpen(false)} className="drawer-link">WORK</a>
               <a href="#about" onClick={() => setIsMenuOpen(false)} className="drawer-link">ABOUT ME</a>
+              <a 
+                href="mailto:iryna@irynasheremeta.com" 
+                onClick={(e) => { handleCopyEmail(e); setIsMenuOpen(false); }} 
+                className="drawer-link"
+                style={{ color: copied ? '#3ba3b8' : undefined }}
+              >
+                {copied ? 'COPIED ✓' : 'EMAIL'}
+              </a>
             </div>
           </div>
         </div>
