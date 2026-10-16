@@ -29,7 +29,7 @@ export default function EditorialStatement() {
 
   return (
     <>
-      <sectio
+      <section
         className="prefooter-section"
         style={{
           backgroundColor: '#ffffff', // White background
@@ -88,11 +88,6 @@ export default function EditorialStatement() {
               letter-spacing: 0.04em !important;
               color: #64748b !important;
               -webkit-text-fill-color: #64748b !important;
-
-
-              
-              }
-              
             }
           }
         `}</style>
