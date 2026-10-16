@@ -85,7 +85,7 @@ export default function ProcessSection() {
             WebkitTextStroke: '0',
             textWrap: 'balance'
           }}>
-            <span style={{ fontWeight: 700, color: '#35383E' }}>Clients'</span><span style={{ fontWeight: 400, color: '#2b2f36' }}> feedback</span>
+            <span style={{ fontWeight: 700, color: '#35383E' }}>Clients's</span><span style={{ fontWeight: 400, color: '#2b2f36' }}> feedback:</span>
           </h2>
           <p style={{
             fontFamily: "var(--font-body)",
@@ -100,7 +100,7 @@ export default function ProcessSection() {
             letterSpacing: '-0.01em',
             fontStyle: 'italic'
           }}>
-            I didn&rsquo;t ask for flattery. I asked &lsquo;why me&rsquo;.
+            I didn't ask for flattery. I asked 'why me'.
           </p>
         </motion.div>
 
