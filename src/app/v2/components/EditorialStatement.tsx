@@ -29,7 +29,8 @@ export default function EditorialStatement() {
 
   return (
     <>
-      <section 
+      <sectio
+        className="prefooter-section"
         style={{
           backgroundColor: '#ffffff', // White background
           padding: '80px 0 60px 0',
@@ -87,6 +88,11 @@ export default function EditorialStatement() {
               letter-spacing: 0.04em !important;
               color: #64748b !important;
               -webkit-text-fill-color: #64748b !important;
+
+
+              
+              }
+              
             }
           }
         `}</style>
