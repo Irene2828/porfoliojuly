@@ -1,3 +1,23 @@
+import Header from './components/Header';
+import HeroV2 from './v2/components/HeroV2';
+import ProjectsV2 from './v2/components/ProjectsV2';
+import ServicesV2 from './v2/components/ServicesV2';
+import HowItWorks from './v2/components/HowItWorks';
+import ProcessSection from './v2/components/ProcessSection';
+import EditorialStatement from './v2/components/EditorialStatement';
+import ClientWrapper from './components/ClientWrapper';
+
+import { db } from '@/db';
+import { projects, screens, annotations } from '@/db/schema';
+import { eq, asc } from 'drizzle-orm';
+
+export const dynamic = 'force-dynamic';
+
+export default async function HomePage() {
+  const publishedProjects = await db.query.projects.findMany({
+    where: eq(projects.status, 'published'),
+    orderBy: [asc(projects.displayOrder)],
+    with: {
       screens: {
         orderBy: [asc(screens.displayOrder)],
         with: {
