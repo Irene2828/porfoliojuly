@@ -2192,8 +2192,8 @@
     padding: 0 !important;
   }
   .hero-text .headline-mockup-light {
-    color: #2b2f36 !important;
-    -webkit-text-fill-color: #2b2f36 !important;
+    color: #4b5460 !important;
+    -webkit-text-fill-color: #4b5460 !important;
     font-weight: 400 !important;
     font-style: normal !important;
     font-size: 1em !important;
@@ -2220,8 +2220,8 @@
     font-size: 1em !important;
     line-height: 0.969 !important;
     font-style: normal !important;
-    color: #2b2f36 !important;
-    -webkit-text-fill-color: #2b2f36 !important;
+    color: #4b5460 !important;
+    -webkit-text-fill-color: #4b5460 !important;
     font-weight: 400 !important;
   }
   .hero-text .headline-mockup-bold {
@@ -2233,4 +2233,5 @@
     font-style: normal !important;
     text-decoration: none !important;
   }
-}
+}/* -- Desktop hero: match mobile dark two-tone headline (15.10.2026) -- */ @media (min-width: 901px) {   .hero-text .headline-line.headline-light {     color: #4b5460 !important;     -webkit-text-fill-color: #4b5460 !important;     font-weight: 400 !important;     font-style: normal !important;   }   .hero-text .headline-teal-underline {     color: #35383E !important;     -webkit-text-fill-color: #35383E !important;     font-weight: 700 !important;     font-style: normal !important;     text-decoration: none !important;   } }
+
