@@ -171,7 +171,7 @@ export default function ServicesV2() {
         {/* Short decor line */}
         <div style={{ 
           width: '60px', 
-          height: '1px', 
+          height: '1px',
           backgroundColor: 'var(--accent, #1d4e5b)', 
           margin: '0 auto 2.5rem auto', 
           opacity: 0.9 
@@ -187,9 +187,10 @@ export default function ServicesV2() {
           textAlign: 'center',
           width: '100%',
           margin: '0 auto 14px auto',
-          WebkitTextStroke: '0'
+          WebkitTextStroke: '0',
+          textWrap: 'balance'
         }}>
-          How I Can Help Your Business
+          <span style={{ fontWeight: 400, color: '#2b2f36' }}>How I Can Help </span><span style={{ fontWeight: 700, color: '#35383E' }}>Your Business</span>
         </h2>
         <p style={{
           fontFamily: "var(--font-body)",
@@ -201,7 +202,8 @@ export default function ServicesV2() {
           maxWidth: '640px',
           margin: '0 auto',
           textAlign: 'center',
-          letterSpacing: '-0.01em'
+          letterSpacing: '-0.01em',
+          fontStyle: 'italic'
         }}>
           as a digital product builder
         </p>
