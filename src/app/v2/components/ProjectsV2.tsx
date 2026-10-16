@@ -282,9 +282,10 @@ export default function ProjectsV2({ initialProjects = [] }: ProjectsV2Props) {
           textAlign: 'center',
           width: '100%',
           margin: '0 auto 14px auto',
-          WebkitTextStroke: '0'
+          WebkitTextStroke: '0',
+          textWrap: 'balance'
         }}>
-          For every problem there is a solution.
+          <span style={{ fontWeight: 400, color: '#2b2f36' }}>For every problem there is a </span><span style={{ fontWeight: 700, color: '#35383E' }}>solution.</span>
         </h2>
         <p style={{
           fontFamily: "var(--font-body)",
@@ -296,7 +297,8 @@ export default function ProjectsV2({ initialProjects = [] }: ProjectsV2Props) {
           maxWidth: '640px',
           margin: '0 auto',
           textAlign: 'center',
-          letterSpacing: '-0.01em'
+          letterSpacing: '-0.01em',
+          fontStyle: 'italic'
         }}>
           See how I approach them
         </p>
