@@ -82,9 +82,10 @@ export default function ProcessSection() {
             textAlign: 'left',
             width: '100%',
             margin: '0',
-            WebkitTextStroke: '0'
+            WebkitTextStroke: '0',
+            textWrap: 'balance'
           }}>
-            Clients' feedback
+            <span style={{ fontWeight: 700, color: '#35383E' }}>Clients'</span><span style={{ fontWeight: 400, color: '#2b2f36' }}> feedback</span>
           </h2>
           <p style={{
             fontFamily: "var(--font-body)",
@@ -96,7 +97,8 @@ export default function ProcessSection() {
             maxWidth: '640px',
             margin: '14px 0 0 0',
             textAlign: 'left',
-            letterSpacing: '-0.01em'
+            letterSpacing: '-0.01em',
+            fontStyle: 'italic'
           }}>
             I didn&rsquo;t ask for flattery. I asked &lsquo;why me&rsquo;.
           </p>
