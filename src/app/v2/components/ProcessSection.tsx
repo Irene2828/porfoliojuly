@@ -85,7 +85,7 @@ export default function ProcessSection() {
             WebkitTextStroke: '0',
             textWrap: 'balance'
           }}>
-            <span style={{ fontWeight: 700, color: '#35383E' }}>Clients's</span><span style={{ fontWeight: 400, color: '#2b2f36' }}> feedback:</span>
+            <span style={{ fontWeight: 700, color: '#35383E' }}>Clients'</span><span style={{ fontWeight: 400, color: '#2b2f36' }}> feedback:</span>
           </h2>
           <p style={{
             fontFamily: "var(--font-body)",

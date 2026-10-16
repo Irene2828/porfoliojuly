@@ -412,8 +412,8 @@
     flex-direction: column !important;
   }
   .hero-frame-paragraph .hero-body-bold {
-    font-weight: 400 !important;
-    color: inherit !important;
+    font-weight: 700 !important;
+    color: #1a1d24 !important;
   }
   .headline-mobile {
     display: none !important;
@@ -2210,10 +2210,11 @@
     font-weight: 700 !important;
     color: #1a1d24 !important;
   }
-  /* Mobile: uniform section rhythm — every gap = hero->services gap (15.10.2026) */
-  #cases { padding-top: 6.1rem !important; }
-  #how-it-works { padding-top: 6.6rem !important; }
-  #process { padding-top: 3.5rem !important; }
+  /* Mobile: cut section spacing in half (15.10.2026) */
+  #cases { padding-top: 3.05rem !important; }
+  #how-it-works { padding-top: 3.3rem !important; }
+  #process { padding-top: 1.75rem !important; padding-bottom: 3rem !important; }
+  .prefooter-section { padding-top: 40px !important; }
 }
 @media (min-width: 414px) and (max-width: 900px) {
   .hero-text .headline-mockup-light {

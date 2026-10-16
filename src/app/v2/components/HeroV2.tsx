@@ -86,7 +86,7 @@ export default function HeroV2() {
                       Looking for a <span className="headline-teal-underline">custom</span> website
                     </span>
                     <span className="headline-line headline-light">
-                      or an <span className="headline-teal-underline">internal</span> AI tool?
+                      or an <span className="headline-teal-underline">internal</span> business tool?
                     </span>
                   </span>
 
