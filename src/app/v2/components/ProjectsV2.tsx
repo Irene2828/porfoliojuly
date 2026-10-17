@@ -292,7 +292,7 @@ export default function ProjectsV2({ initialProjects = [] }: ProjectsV2Props) {
           fontSize: '17px',
           fontWeight: 400,
           lineHeight: 1.6,
-          color: '#333842',
+          color: 'var(--color-body-dark, #2b3038)',
           opacity: 0.9,
           maxWidth: '640px',
           margin: '0 auto',
@@ -306,6 +306,7 @@ export default function ProjectsV2({ initialProjects = [] }: ProjectsV2Props) {
       
       {/* 2x2 Grid Wrapper */}
       <div 
+        className="cases-grid-wrapper"
         style={{ 
           width: '100%', 
           paddingBottom: '1.5rem',

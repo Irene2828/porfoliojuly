@@ -2,6 +2,7 @@
 
 import { useState, useEffect } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
+import heroImage from '@/app/assets/test.webp';
 
 export default function EditorialStatement() {
   const [statementIndex, setStatementIndex] = useState(0);
@@ -25,7 +26,7 @@ export default function EditorialStatement() {
         className="prefooter-section"
         style={{
           backgroundColor: '#ffffff', // White background
-          padding: '80px 0 60px 0',
+          padding: '80px 0 120px 0', /* doubled bottom space */
           width: '100%',
           display: 'flex',
           justifyContent: 'center',
@@ -44,7 +45,7 @@ export default function EditorialStatement() {
             justify-content: center;
             height: 3.48rem !important;
             padding: 0 2rem !important;
-            background: var(--color-matte-black, #2b2f36) !important;
+            background: var(--color-matte-black, #25282e) !important;
             color: #ffffff !important;
             -webkit-text-fill-color: #ffffff !important;
             border: none !important;
@@ -54,21 +55,21 @@ export default function EditorialStatement() {
             -webkit-text-stroke: 0 !important;
           }
           .prefooter-btn-primary:hover {
-            background: var(--color-matte-black-hover, #24252a) !important;
-            border-color: var(--color-matte-black-hover, #24252a) !important;
+            background: var(--color-matte-black-hover, #1f1f24) !important;
+            border-color: var(--color-matte-black-hover, #1f1f24) !important;
             color: #ffffff !important;
             -webkit-text-fill-color: #ffffff !important;
             box-shadow: 0 8px 24px rgba(180, 186, 196, 0.4) !important;
           }
           .face-cta {
-            background-color: var(--color-matte-black, #2b2f36) !important;
+            background-color: var(--color-matte-black, #25282e) !important;
             color: #ffffff !important;
             transition: box-shadow 0.3s ease !important;
             border: none !important;
           }
           .face-cta:hover {
             box-shadow: 0 8px 24px rgba(180, 186, 196, 0.4) !important;
-            background-color: var(--color-matte-black-hover, #24252a) !important;
+            background-color: var(--color-matte-black-hover, #1f1f24) !important;
           }
           /* Mobile: rotating statements in header-title text style */
           @media (max-width: 900px) {
@@ -100,7 +101,7 @@ export default function EditorialStatement() {
             zIndex: 2
           }}
         >
-          {/* Short decor line above section heading */}
+          {/* Short decor line above closing image */}
           <div className="prefooter-decor-line" style={{ 
             width: '48px', 
             height: '1px', 
@@ -109,7 +110,7 @@ export default function EditorialStatement() {
             opacity: 0.6 
           }} />
 
-          {/* Closing headline — hero mockup style: light phrase + bold key word */}
+          {/* Closing headline — moved above image */}
           <h2
             className="prefooter-closing-line"
             style={{
@@ -121,7 +122,7 @@ export default function EditorialStatement() {
               color: 'var(--color-heading-silver, #4a5461)',
               WebkitTextFillColor: 'var(--color-heading-silver, #4a5461)',
               textAlign: 'center',
-              margin: '0 0 1.75rem 0',
+              margin: '0 0 2.25rem 0',
               maxWidth: '20ch',
             }}
           >
@@ -130,8 +131,83 @@ export default function EditorialStatement() {
             The future is <span style={{ fontWeight: 700, color: 'var(--color-heading-silver, #4a5461)', WebkitTextFillColor: 'var(--color-heading-silver, #4a5461)' }}>custom.</span>
           </h2>
 
+          {/* Centered Tall Rectangular Closing Hero Image (-40% height) with dashed grey left & top shadow style */}
+          <div
+            className="prefooter-closing-image-wrapper"
+            style={{
+              position: 'relative',
+              width: '100%',
+              maxWidth: 'clamp(110px, 15vw, 132px)',
+              margin: '0 auto 1.85rem auto',
+              display: 'flex',
+              justifyContent: 'center'
+            }}
+          >
+            {/* Dashed grey outline left and top shadow style */}
+            <div
+              style={{
+                position: 'absolute',
+                top: '-5px',
+                left: '-5px',
+                width: '100%',
+                height: '100%',
+                borderTop: '1.5px dashed #9ca3af',
+                borderLeft: '1.5px dashed #9ca3af',
+                pointerEvents: 'none',
+                zIndex: 0
+              }}
+            />
+
+            <div
+              className="prefooter-closing-image-container"
+              style={{
+                position: 'relative',
+                zIndex: 1,
+                width: '100%',
+                aspectRatio: '3 / 4',
+                overflow: 'hidden',
+                borderRadius: '0px',
+                border: '1px solid rgba(0, 0, 0, 0.08)',
+                boxShadow: 'none'
+              }}
+            >
+              <img 
+                src={heroImage.src} 
+                alt="Iryna Sheremeta"
+                style={{
+                  width: '100%',
+                  height: '100%',
+                  objectFit: 'cover',
+                  objectPosition: 'center 15%',
+                  display: 'block',
+                  filter: 'brightness(1.04) saturate(1.05)'
+                }}
+              />
+            </div>
+          </div>
+
+          {/* Text under image — styled matching closing headline */}
+          <p
+            className="prefooter-closing-subtext"
+            style={{
+              fontFamily: 'var(--font-heading)',
+              fontSize: 'clamp(1.15rem, 2.8vw, 1.45rem)',
+              fontWeight: 400,
+              letterSpacing: '-0.02em',
+              lineHeight: 1.45,
+              color: 'var(--color-heading-silver, #4a5461)',
+              WebkitTextFillColor: 'var(--color-heading-silver, #4a5461)',
+              textAlign: 'center',
+              margin: '0 auto 2rem auto',
+              maxWidth: '38ch',
+              textWrap: 'balance'
+            }}
+          >
+            I&apos;ll help your business stand out and get future-ready with a custom digital product you need to grow.
+          </p>
+
           {/* Section Heading Animated Loop */}
-          <div style={{ minHeight: '64px', display: 'flex', alignItems: 'center', justifyContent: 'center', marginBottom: '1rem' }}>
+          <div style={{ minHeight: '64px', display: 'flex', alignItems: 'center', justifyContent: 'center', marginBottom: '0.6rem' }}>
             <AnimatePresence mode="wait">
               <motion.h2 
                 key={statementIndex}
@@ -143,7 +219,7 @@ export default function EditorialStatement() {
                 style={{ 
                   fontFamily: "var(--font-heading)",
                   fontSize: 'clamp(22px, 3.5vw, 27.2px)', 
-                  color: '#3a3d46', 
+                  color: 'var(--color-headline-matte, #31343c)', 
                   fontWeight: 400,
                   fontStyle: 'normal',
                   lineHeight: 1.25,
@@ -159,8 +235,8 @@ export default function EditorialStatement() {
             </AnimatePresence>
           </div>
 
-          {/* Action CTAs */}
-          <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', gap: '1rem', marginTop: '1.4rem', justifyContent: 'center' }}>
+          {/* Action CTAs: moved 40% closer to rotating text + doubled space underneath */}
+          <div className="prefooter-cta-container" style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', gap: '1rem', marginTop: '0.84rem', marginBottom: '2.5rem', justifyContent: 'center' }}>
             <a 
               href="mailto:iryna@irynasheremeta.com" 
               className="btn prefooter-btn-primary face-cta"

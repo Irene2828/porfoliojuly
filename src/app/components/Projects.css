@@ -963,7 +963,7 @@
   font-weight: 300 !important;
   letter-spacing: 0.01em !important;
   text-transform: none !important;
-  color: #3a3d46 !important;
+  color: var(--color-headline-matte, #31343c) !important;
   margin-top: 0.75rem;
   text-align: center;
   padding: 0 0.5rem;

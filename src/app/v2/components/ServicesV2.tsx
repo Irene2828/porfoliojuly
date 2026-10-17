@@ -102,6 +102,9 @@ export default function ServicesV2() {
             margin-top: 2.55rem !important;
             margin-bottom: 0 !important;
           }
+          .services-heading-block {
+            margin-bottom: 1.75rem !important; /* cut spacing between subline and services cards in half on mobile */
+          }
           .services-cards-outer-container {
             margin-bottom: 0 !important;
           }
@@ -128,7 +131,7 @@ export default function ServicesV2() {
             width: 100% !important;
             max-width: 100% !important;
             box-sizing: border-box !important;
-            background-color: var(--color-matte-black, #2b2f36) !important;
+            background-color: var(--color-matte-black, #25282e) !important;
             backdrop-filter: blur(20px) !important;
             -webkit-backdrop-filter: blur(20px) !important;
             border-radius: 0px !important;
@@ -167,6 +170,7 @@ export default function ServicesV2() {
 
       {/* Section 1 Heading: How I Can Help Your Business */}
       <motion.div 
+        className="services-heading-block"
         initial={{ opacity: 0, y: 30 }}
         whileInView={{ opacity: 1, y: 0 }}
         viewport={{ once: true, amount: 0.2 }}
@@ -202,7 +206,7 @@ export default function ServicesV2() {
           fontSize: '17px',
           fontWeight: 400,
           lineHeight: 1.6,
-          color: '#333842',
+          color: 'var(--color-body-dark, #2b3038)',
           opacity: 0.9,
           maxWidth: '640px',
           margin: '0 auto',
@@ -233,7 +237,7 @@ export default function ServicesV2() {
             bottom: 0,
             left: 0,
             right: '50%',
-            backgroundColor: 'var(--color-matte-black, #2b2f36)',
+            backgroundColor: 'var(--color-matte-black, #25282e)',
             zIndex: 1,
             pointerEvents: 'none'
           }}
@@ -285,11 +289,11 @@ export default function ServicesV2() {
               minHeight: '460px'
             }}
           >
-            {/* Column 1: Custom Websites (Left Card - #2b2f36 Matte Black) */}
+            {/* Column 1: Custom Websites (Left Card - #25282e Matte Black) */}
             <div 
               className="services-col-left"
               style={{
-                backgroundColor: 'var(--color-matte-black, #2b2f36)',
+                backgroundColor: 'var(--color-matte-black, #25282e)',
                 backdropFilter: 'blur(20px)',
                 WebkitBackdropFilter: 'blur(20px)',
                 borderRadius: '0px',
@@ -354,7 +358,7 @@ export default function ServicesV2() {
                         width: '40px', 
                         height: '40px', 
                         borderRadius: '0px', 
-                        backgroundColor: '#2b2f36',
+                        backgroundColor: 'var(--color-matte-black, #25282e)',
                         display: 'flex', 
                         alignItems: 'center', 
                         justifyContent: 'center',
@@ -408,7 +412,7 @@ export default function ServicesV2() {
                   fontFamily: "var(--font-heading)",
                   fontSize: 'clamp(1.48rem, 2.4vw, 1.95rem)',
                   fontWeight: 400,
-                  color: '#3a3d46',
+                  color: 'var(--color-headline-matte, #31343c)',
                   margin: '0 0 3.5rem 0',
                   letterSpacing: '-0.02em',
                   lineHeight: 1.2,

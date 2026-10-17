@@ -113,7 +113,7 @@ export default function HowItWorks() {
           fontSize: '17px',
           fontWeight: 400,
           lineHeight: 1.6,
-          color: '#333842',
+          color: 'var(--color-body-dark, #2b3038)',
           opacity: 0.9,
           maxWidth: '640px',
           margin: '0 auto',
@@ -131,7 +131,7 @@ export default function HowItWorks() {
         style={{
           position: 'relative',
           width: '100%',
-          backgroundColor: 'var(--color-matte-black, #2b2f36)',
+          backgroundColor: 'var(--color-matte-black, #25282e)',
           borderTop: '1px solid rgba(255, 255, 255, 0.08)',
           borderBottom: '1px solid rgba(255, 255, 255, 0.08)',
           boxShadow: '0 20px 48px rgba(0, 0, 0, 0.03)',

@@ -21,10 +21,10 @@
   --color-accent-deep: #256678;
   --color-heading-peach: #3ba3b8;
   --color-heading-silver: #4a5461;
-  --color-headline-matte: #3a3d46;
-  --color-body-dark: #333842;
-  --color-matte-black: #2b2f36;
-  --color-matte-black-hover: #383d46;
+  --color-headline-matte: #31343c;
+  --color-body-dark: #2b3038;
+  --color-matte-black: #25282e;
+  --color-matte-black-hover: #30343c;
   
   --space-sm: 1rem;
   --space-md: 2rem;
@@ -160,9 +160,9 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 .btn-primary {
-  background: var(--color-matte-black, #2b2f36);
+  background: var(--color-matte-black, #25282e);
   color: #ffffff;
-  border: 1px solid var(--color-matte-black, #2b2f36);
+  border: 1px solid var(--color-matte-black, #25282e);
   box-shadow: none;
   position: relative;
   font-weight: 600;
@@ -170,7 +170,7 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 .btn-primary:hover {
-  background: var(--color-matte-black-hover, #24252a);
+  background: var(--color-matte-black-hover, #1f1f24);
   color: #ffffff;
   border-color: var(--accent, #1d4e5b);
   box-shadow: 0 4px 20px rgba(29, 78, 91, 0.25);
@@ -501,7 +501,7 @@ h1, h2, h3, h4, h5, h6 {
   letter-spacing: 0.08em !important;
   height: 3.43rem !important; /* +5% taller */
   padding: 0 1.98rem !important; /* +5% padding */
-  background: var(--color-matte-black, #2b2f36) !important; /* matte black token */
+  background: var(--color-matte-black, #25282e) !important; /* matte black token */
   color: #eaecf0 !important; /* soft matte off-white token (#eaecf0) */
   -webkit-text-fill-color: #eaecf0 !important;
   border: none !important;
@@ -522,8 +522,8 @@ h1, h2, h3, h4, h5, h6 {
 
 .v2-theme .hero-ctas-outside .btn-primary-outline:hover,
 .v2-theme .face-cta:hover {
-  background: var(--color-matte-black-hover, #24252a) !important; /* matte black hover */
-  border-color: #24252a !important;
+  background: var(--color-matte-black-hover, #1f1f24) !important; /* matte black hover */
+  border-color: #1f1f24 !important;
   color: #ffffff !important;
   -webkit-text-fill-color: #ffffff !important;
   box-shadow: none !important;
@@ -712,7 +712,7 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 .v2-theme .premium-hover:hover {
-  color: #3a3d46;
+  color: #31343c;
   text-shadow: none;
 }
 

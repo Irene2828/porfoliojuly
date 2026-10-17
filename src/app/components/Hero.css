@@ -604,7 +604,7 @@
   justify-content: center;
   height: 3.44rem !important;
   padding: 0 1.98rem !important;
-  background: var(--color-matte-black, #2b2f36) !important;
+  background: var(--color-matte-black, #25282e) !important;
   color: #ffffff !important;
   border: none !important;
   border-radius: 0px !important;
@@ -617,8 +617,8 @@
 }
 
 .hero-ctas-outside .btn-primary-outline:hover {
-  background: var(--color-matte-black-hover, #24252a) !important;
-  border-color: var(--color-matte-black-hover, #24252a) !important;
+  background: var(--color-matte-black-hover, #1f1f24) !important;
+  border-color: var(--color-matte-black-hover, #1f1f24) !important;
   color: #ffffff !important;
 }
 
@@ -991,8 +991,8 @@
     margin: 0 !important;
     line-height: 1.26 !important; /* +5% */
 
-    -webkit-text-fill-color: var(--color-body-dark, #333842) !important;
-    color: var(--color-body-dark, #333842) !important;
+    -webkit-text-fill-color: var(--color-body-dark, #2b3038) !important;
+    color: var(--color-body-dark, #2b3038) !important;
     font-weight: 500 !important;
     opacity: 1 !important;
     -webkit-text-stroke: 0 !important;
@@ -1051,7 +1051,7 @@
     font-weight: 600 !important;
     letter-spacing: 0.08em !important;
     text-transform: uppercase !important;
-    background: var(--color-matte-black, #2b2f36) !important;
+    background: var(--color-matte-black, #25282e) !important;
     color: #ffffff !important;
     border: none !important;
     border-radius: 0px !important;
@@ -1123,7 +1123,7 @@
     font-size: 1.15rem !important;
     font-weight: 700 !important;
     letter-spacing: 0.12em !important;
-    color: #2b2f36 !important;
+    color: #25282e !important;
     text-transform: uppercase !important;
     text-align: left !important;
     margin: 0 !important;
@@ -2192,7 +2192,7 @@
   .hero-text .headline-mockup-bold {
     font-family: -apple-system, BlinkMacSystemFont, "Helvetica Neue", Helvetica, Arial, sans-serif !important;
     letter-spacing: -0.01575em !important;
-    line-height: 0.969 !important;
+    line-height: 1.0175 !important; /* +5% line spacing (was 0.969) */
     font-style: normal !important;
     margin: 0 !important;
     padding: 0 !important;
@@ -2200,14 +2200,14 @@
   .hero-text .headline-mockup-light {
     color: #4b5460 !important;
     -webkit-text-fill-color: #4b5460 !important;
-    font-weight: 400 !important;
+    font-weight: 300 !important;
     font-style: normal !important;
     font-size: 1em !important;
   }
   .hero-text .headline-mockup-bold {
     color: var(--color-heading-silver, #4a5461) !important;
     -webkit-text-fill-color: var(--color-heading-silver, #4a5461) !important;
-    font-weight: 700 !important;
+    font-weight: 600 !important;
     font-style: normal !important;
     font-size: inherit !important;
     text-decoration: none !important;
@@ -2244,9 +2244,15 @@
     padding-top: 6rem !important; /* doubled top spacing over cases */
     padding-bottom: 1rem !important;
   }
+  .services-heading-block {
+    margin-bottom: 1.75rem !important; /* cut spacing between subline and services cards in half */
+  }
   .cases-header-block,
   #cases > div:first-of-type {
-    margin-bottom: 1.75rem !important;
+    margin-bottom: 0.875rem !important; /* cut spacing between subline and cases in half */
+  }
+  .cases-grid-wrapper {
+    padding-top: 0.75rem !important; /* cut grid top padding in half */
   }
   .cases-decor-line,
   #cases > div:first-of-type > div:first-of-type {
@@ -2286,7 +2292,10 @@
   }
   .testimonials-header-block,
   #process > div:first-of-type > div:first-of-type {
-    margin-bottom: 1.25rem !important;
+    margin-bottom: 0.625rem !important; /* cut spacing between subline and testimonial cards in half */
+  }
+  .testimonials-track {
+    padding-top: 1rem !important; /* cut track top padding in half */
   }
   .testimonials-decor-line,
   #process > div:first-of-type > div:first-of-type > div:first-of-type {
@@ -2297,12 +2306,12 @@
   /* 4. Testimonials -> Prefooter */
   .prefooter-section {
     padding-top: 8rem !important; /* doubled top spacing over prefooter */
-    padding-bottom: 2.5rem !important;
+    padding-bottom: 5rem !important; /* doubled space under the button */
   }
   .prefooter-inner-container,
   .prefooter-section > div:first-of-type {
     padding-top: 0 !important;
-    padding-bottom: 1rem !important;
+    padding-bottom: 2rem !important; /* doubled space under the button */
   }
   .prefooter-decor-line,
   .prefooter-section > div:first-of-type > div:first-of-type {
@@ -2311,25 +2320,25 @@
   }
 
   .feedback-subline-row2 {
-    display: block !important;
-    margin-top: 0.2rem !important;
+    display: inline !important;
+    margin-top: 0 !important;
   }
 }
 @media (min-width: 414px) and (max-width: 900px) {
   .hero-text .headline-mockup-light {
     font-size: 1em !important;
-    line-height: 0.969 !important;
+    line-height: 1.0175 !important; /* +5% line spacing (was 0.969) */
     font-style: normal !important;
     color: #4b5460 !important;
     -webkit-text-fill-color: #4b5460 !important;
-    font-weight: 400 !important;
+    font-weight: 300 !important;
   }
   .hero-text .headline-mockup-bold {
     font-size: inherit !important;
-    line-height: 0.969 !important;
+    line-height: 1.0175 !important; /* +5% line spacing (was 0.969) */
     color: var(--color-heading-silver, #4a5461) !important;
     -webkit-text-fill-color: var(--color-heading-silver, #4a5461) !important;
-    font-weight: 700 !important;
+    font-weight: 600 !important;
     font-style: normal !important;
     text-decoration: none !important;
   }

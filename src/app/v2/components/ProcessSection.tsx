@@ -92,7 +92,7 @@ export default function ProcessSection() {
             fontSize: '17px',
             fontWeight: 400,
             lineHeight: 1.6,
-            color: '#333842',
+            color: 'var(--color-body-dark, #2b3038)',
             opacity: 0.9,
             maxWidth: '640px',
             margin: '14px 0 0 0',
@@ -100,8 +100,7 @@ export default function ProcessSection() {
             letterSpacing: '-0.01em',
             fontStyle: 'italic'
           }}>
-            <span>I didn't ask for flattery.</span>{' '}
-            <span className="feedback-subline-row2">I asked them 'why me'.</span>
+            I didn't ask for flattery. I asked: &ldquo;Why me?&rdquo;
           </p>
         </motion.div>
 
@@ -128,7 +127,7 @@ export default function ProcessSection() {
                     else handleCardClick(index);
                   }}
                   style={{
-                    backgroundColor: isCenter ? 'var(--color-matte-black, #2b2f36)' : '#ffffff',
+                    backgroundColor: isCenter ? 'var(--color-matte-black, #25282e)' : '#ffffff',
                     padding: '3rem 2.5rem',
                     border: isCenter ? '1px solid rgba(255, 255, 255, 0.08)' : '1px solid rgba(0, 0, 0, 0.06)',
                     display: 'flex',
@@ -277,8 +276,8 @@ export default function ProcessSection() {
             }
             @media (max-width: 900px) {
               .feedback-subline-row2 {
-                display: block !important;
-                margin-top: 0.2rem;
+                display: inline !important;
+                margin-top: 0 !important;
               }
             }
 

@@ -436,7 +436,7 @@
   font-weight: 400;
   text-transform: none !important;
   letter-spacing: -0.01em;
-  color: #333842;
+  color: var(--color-body-dark, #2b3038);
   opacity: 0.9;
   -webkit-text-stroke: 0 !important;
   text-stroke: 0 !important;
