@@ -2360,9 +2360,6 @@
   .prefooter-closing-line {
     font-size: 2.6rem !important; /* -20% on desktop (was 3.25rem) */
   }
-  .editorial-blue-heading {
-    font-size: 27.2px !important; /* -20% on desktop (was 34px) */
-  }
 
   /* Desktop: doubled top spacing over services and cases headings (10.2rem / ~163px) */
   #expertise {

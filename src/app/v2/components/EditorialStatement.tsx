@@ -1,26 +1,9 @@
 'use client';
 
-import { useState, useEffect } from 'react';
-import { motion, AnimatePresence } from 'framer-motion';
+import { motion } from 'framer-motion';
 import heroImage from '@/app/assets/test.webp';
 
 export default function EditorialStatement() {
-  const [statementIndex, setStatementIndex] = useState(0);
-
-  const statements = [
-    <span key="1" style={{ fontSize: '0.81em', display: 'inline-block' }}>Turn <span style={{ color: 'var(--color-heading-silver)' }}>visitors into clients</span> with a custom website.</span>,
-    <span key="2" style={{ fontSize: '0.81em', display: 'inline-block' }}>Turn <span style={{ color: 'var(--color-heading-silver)' }}>hours of work into minutes</span> with a custom AI tool.</span>
-  ];
-
-  useEffect(() => {
-    const timer = setInterval(() => {
-      setStatementIndex((prev) => (prev + 1) % statements.length);
-    }, 3800);
-    return () => clearInterval(timer);
-  }, [statements.length]);
-
-
-
   return (
       <section
         className="prefooter-section"
@@ -70,18 +53,6 @@ export default function EditorialStatement() {
           .face-cta:hover {
             box-shadow: 0 8px 24px rgba(180, 186, 196, 0.4) !important;
             background-color: var(--color-matte-black-hover, #1f1f24) !important;
-          }
-          /* Mobile: rotating statements in header-title text style */
-          @media (max-width: 900px) {
-            .editorial-blue-heading,
-            .editorial-blue-heading span {
-              font-family: var(--font-heading), -apple-system, BlinkMacSystemFont, "Helvetica Neue", Arial, sans-serif !important;
-              font-size: 15.81px !important;
-              font-weight: 400 !important;
-              letter-spacing: 0.04em !important;
-              color: #64748b !important;
-              -webkit-text-fill-color: #64748b !important;
-            }
           }
         `}</style>
         <motion.div
@@ -206,37 +177,8 @@ export default function EditorialStatement() {
             I&apos;ll help your business stand out and get future-ready with a custom digital product you need to grow.
           </p>
 
-          {/* Section Heading Animated Loop */}
-          <div style={{ minHeight: '64px', display: 'flex', alignItems: 'center', justifyContent: 'center', marginBottom: '0.6rem' }}>
-            <AnimatePresence mode="wait">
-              <motion.h2 
-                key={statementIndex}
-                initial={{ opacity: 0, y: 12 }}
-                animate={{ opacity: 1, y: 0 }}
-                exit={{ opacity: 0, y: -12 }}
-                transition={{ duration: 0.5, ease: [0.16, 1, 0.3, 1] }}
-                className="editorial-blue-heading"
-                style={{ 
-                  fontFamily: "var(--font-heading)",
-                  fontSize: 'clamp(22px, 3.5vw, 27.2px)', 
-                  color: 'var(--color-headline-matte, #31343c)', 
-                  fontWeight: 400,
-                  fontStyle: 'normal',
-                  lineHeight: 1.25,
-                  letterSpacing: '-0.02em',
-                  textAlign: 'center',
-                  width: '100%',
-                  margin: 0,
-                  WebkitTextStroke: '0'
-                }}
-              >
-                {statements[statementIndex]}
-              </motion.h2>
-            </AnimatePresence>
-          </div>
-
-          {/* Action CTAs: moved 40% closer to rotating text + doubled space underneath */}
-          <div className="prefooter-cta-container" style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', gap: '1rem', marginTop: '0.84rem', marginBottom: '2.5rem', justifyContent: 'center' }}>
+          {/* Action CTAs: doubled space underneath */}
+          <div className="prefooter-cta-container" style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', gap: '1rem', marginTop: '0.5rem', marginBottom: '2.5rem', justifyContent: 'center' }}>
             <a 
               href="mailto:iryna@irynasheremeta.com" 
               className="btn prefooter-btn-primary face-cta"
