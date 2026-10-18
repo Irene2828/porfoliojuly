@@ -45,7 +45,7 @@ export default function ProcessSection() {
         style={{
           width: '100%',
           background: 'linear-gradient(0deg, rgba(255, 255, 255, 0.7) 0%, rgba(255, 255, 255, 0.25) 35%, rgba(255, 255, 255, 0) 65%), radial-gradient(ellipse at 60% 40%, rgba(255, 255, 255, 0.9) 0%, rgba(255, 255, 255, 0.45) 55%, rgba(255, 255, 255, 0) 90%), linear-gradient(135deg, #f4f6f8 0%, #eaecee 45%, #dfe2e6 100%)',
-          padding: '4rem 2rem 8rem 2rem',
+          padding: '4rem 2rem 4rem 2rem',
           display: 'flex',
           flexDirection: 'column',
           alignItems: 'center',
@@ -85,7 +85,7 @@ export default function ProcessSection() {
             WebkitTextStroke: '0',
             textWrap: 'balance'
           }}>
-            <span style={{ fontWeight: 400, color: 'var(--color-heading-silver, #4a5461)' }}>Clients' </span><span style={{ fontWeight: 700, color: 'var(--color-heading-silver, #4a5461)', WebkitTextFillColor: 'var(--color-heading-silver, #4a5461)' }}>Feedback:</span>
+            <span style={{ fontWeight: 400, color: 'var(--color-heading-silver, #4a5461)' }}>Clients' </span><span style={{ fontWeight: 700, color: '#3ba3b8', WebkitTextFillColor: '#3ba3b8' }}>Feedback:</span>
           </h2>
           <p style={{
             fontFamily: "var(--font-body)",

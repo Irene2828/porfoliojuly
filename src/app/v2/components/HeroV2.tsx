@@ -62,14 +62,14 @@ export default function HeroV2() {
                 WebkitMaskImage: 'linear-gradient(135deg, rgba(0, 0, 0, 0.9) 0%, rgba(0, 0, 0, 0.65) 50%, rgba(0, 0, 0, 0.25) 100%)'
               }}
             >
-              {/* Outer Ring (210px -> r=104) - White */}
-              <circle cx="105" cy="105" r="104" stroke="#ffffff" strokeWidth="1.3" strokeOpacity="0.8" />
+              {/* Outer Rectangle - Lined (solid), Pale subtle black */}
+              <rect x="6" y="6" width="198" height="198" stroke="#25282e" strokeWidth="1.2" strokeOpacity="0.14" />
 
-              {/* Middle Dashed Ring (154px -> r=77) - White */}
-              <circle cx="105" cy="105" r="77" stroke="#ffffff" strokeWidth="1.3" strokeDasharray="4 4" strokeOpacity="0.9" />
+              {/* Middle Rectangle - Dashed, Pale subtle black */}
+              <rect x="36" y="36" width="138" height="138" stroke="#25282e" strokeWidth="1.2" strokeDasharray="4 4" strokeOpacity="0.16" />
 
-              {/* Inner Ring (98px -> r=49) - White */}
-              <circle cx="105" cy="105" r="49" stroke="#ffffff" strokeWidth="1.3" strokeOpacity="0.75" />
+              {/* Inner Rectangle - Lined (solid), Pale subtle black */}
+              <rect x="66" y="66" width="78" height="78" stroke="#25282e" strokeWidth="1.2" strokeOpacity="0.12" />
             </svg>
           </div>
 
@@ -124,7 +124,7 @@ export default function HeroV2() {
               >
                 <a href="#contact" className="btn btn-primary btn-primary-outline" style={{ display: 'inline-flex', alignItems: 'center', gap: '0.5rem' }}>
                   <span>BOOK MY SERVICES</span>
-                  <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="var(--color-accent-light, #7fc5d5)" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round" style={{ transform: 'translateY(-0.5px)' }}>
+                  <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round" style={{ transform: 'translateY(-0.5px)' }}>
                     <line x1="7" y1="17" x2="17" y2="7"></line>
                     <polyline points="7 7 17 7 17 17"></polyline>
                   </svg>
@@ -146,32 +146,44 @@ export default function HeroV2() {
             <div className="hero-dot-overlay"></div>
           </div>
 
-          {/* Concentric Geometric Rings & Hugging Labels */}
-          <div className="hero-rings-badge-container" style={{ position: 'absolute', top: '50%', left: '50%', transform: 'translate(-50%, -50%)', width: '420px', height: '420px', pointerEvents: 'none', zIndex: 1 }}>
-            {/* Pure Silver Concentric Rings with left-to-right fade mask */}
+          {/* Geometric shapes twice smaller: Top-Right of Image */}
+          <div 
+            className="hero-shape-top-right" 
+            aria-hidden="true" 
+            style={{ 
+              position: 'absolute', 
+              top: '-40px', 
+              right: '-45px', 
+              width: '200px', 
+              height: '200px', 
+              pointerEvents: 'none', 
+              zIndex: 1 
+            }}
+          >
             <svg 
-              className="hero-concentric-rings" 
-              width="420" 
-              height="420" 
-              viewBox="0 0 420 420" 
+              width="200" 
+              height="200" 
+              viewBox="0 0 200 200" 
               fill="none" 
               xmlns="http://www.w3.org/2000/svg"
               style={{ 
-                position: 'absolute', 
-                inset: 0,
-                maskImage: 'linear-gradient(to right, rgba(0, 0, 0, 0.3) 0%, rgba(0, 0, 0, 0.65) 40%, rgba(0, 0, 0, 1) 100%)',
-                WebkitMaskImage: 'linear-gradient(to right, rgba(0, 0, 0, 0.3) 0%, rgba(0, 0, 0, 0.65) 40%, rgba(0, 0, 0, 1) 100%)'
+                width: '100%', 
+                height: '100%',
+                maskImage: 'linear-gradient(135deg, rgba(0, 0, 0, 0.95) 0%, rgba(0, 0, 0, 0.6) 60%, rgba(0, 0, 0, 0.15) 100%)',
+                WebkitMaskImage: 'linear-gradient(135deg, rgba(0, 0, 0, 0.95) 0%, rgba(0, 0, 0, 0.6) 60%, rgba(0, 0, 0, 0.15) 100%)'
               }}
             >
-              {/* Outer Ring (420px -> r=209.25) - White */}
-              <circle cx="210" cy="210" r="209" stroke="#ffffff" strokeWidth="1.4" strokeOpacity="0.85" />
-
-              {/* Middle Dashed Ring (310px -> r=154.25) - White */}
-              <circle cx="210" cy="210" r="154" stroke="#ffffff" strokeWidth="1.4" strokeDasharray="5 5" strokeOpacity="0.9" />
-
-              {/* Inner Ring (200px -> r=99.25) - White */}
-              <circle cx="210" cy="210" r="99" stroke="#ffffff" strokeWidth="1.4" strokeOpacity="0.75" />
+              {/* Outer Rectangle - Lined (solid), Pale subtle black */}
+              <rect x="6" y="6" width="188" height="188" stroke="#25282e" strokeWidth="1.2" strokeOpacity="0.14" />
+              {/* Middle Rectangle - Dashed, Pale subtle black */}
+              <rect x="36" y="36" width="128" height="128" stroke="#25282e" strokeWidth="1.2" strokeDasharray="4 4" strokeOpacity="0.16" />
+              {/* Inner Rectangle - Lined (solid), Pale subtle black */}
+              <rect x="66" y="66" width="68" height="68" stroke="#25282e" strokeWidth="1.2" strokeOpacity="0.12" />
             </svg>
+          </div>
+
+          {/* Hugging Labels container */}
+          <div className="hero-rings-badge-container" style={{ position: 'absolute', top: '50%', left: '50%', transform: 'translate(-50%, -50%)', width: '420px', height: '420px', pointerEvents: 'none', zIndex: 1 }}>
 
             {/* Circular Hugging Chart Labels - Creative Tech Indicators */}
             {/* 1. "Websites" hugging the top-left curve of the middle ring */}

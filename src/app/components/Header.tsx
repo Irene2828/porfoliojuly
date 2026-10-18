@@ -44,7 +44,7 @@ export default function Header() {
               fontFamily: 'var(--font-heading), -apple-system, BlinkMacSystemFont, "Helvetica Neue", Arial, sans-serif', 
               fontSize: '13.8px', 
               fontWeight: 500, 
-              color: '#3d4454', 
+              color: 'rgba(0, 0, 0, 0.9)', 
               letterSpacing: '0.04em', 
               lineHeight: '1.2'
             }}>
@@ -75,9 +75,28 @@ export default function Header() {
             className="nav-link"
             onClick={handleCopyEmail}
             title="iryna@irynasheremeta.com (click to copy)"
-            style={{ color: copied ? '#3ba3b8' : undefined }}
+            style={{ 
+              color: copied ? '#3ba3b8' : undefined,
+              display: 'inline-flex',
+              alignItems: 'center',
+              gap: '6px'
+            }}
           >
-            {copied ? 'COPIED ✓' : 'EMAIL'}
+            <span>{copied ? 'COPIED ✓' : 'EMAIL'}</span>
+            <svg 
+              width="15" 
+              height="11" 
+              viewBox="0 0 22 15" 
+              fill="none" 
+              stroke="currentColor" 
+              strokeWidth="1.6" 
+              strokeLinecap="round" 
+              strokeLinejoin="round"
+              style={{ transform: 'translateY(-0.5px)', opacity: 0.9 }}
+            >
+              <rect x="1" y="1" width="20" height="13" rx="1.5"></rect>
+              <polyline points="1.5 2.5 11 9 20.5 2.5"></polyline>
+            </svg>
           </a>
         </nav>
       </div>
@@ -115,9 +134,27 @@ export default function Header() {
                 href="mailto:iryna@irynasheremeta.com" 
                 onClick={(e) => { handleCopyEmail(e); setIsMenuOpen(false); }} 
                 className="drawer-link"
-                style={{ color: copied ? '#3ba3b8' : undefined }}
+                style={{ 
+                  color: copied ? '#3ba3b8' : undefined,
+                  display: 'inline-flex',
+                  alignItems: 'center',
+                  gap: '8px'
+                }}
               >
-                {copied ? 'COPIED ✓' : 'EMAIL'}
+                <span>{copied ? 'COPIED ✓' : 'EMAIL'}</span>
+                <svg 
+                  width="17" 
+                  height="12" 
+                  viewBox="0 0 22 15" 
+                  fill="none" 
+                  stroke="currentColor" 
+                  strokeWidth="1.6" 
+                  strokeLinecap="round" 
+                  strokeLinejoin="round"
+                >
+                  <rect x="1" y="1" width="20" height="13" rx="1.5"></rect>
+                  <polyline points="1.5 2.5 11 9 20.5 2.5"></polyline>
+                </svg>
               </a>
             </div>
           </div>

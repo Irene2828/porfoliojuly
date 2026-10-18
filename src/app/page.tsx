@@ -5,6 +5,7 @@ import ServicesV2 from './v2/components/ServicesV2';
 import HowItWorks from './v2/components/HowItWorks';
 import ProcessSection from './v2/components/ProcessSection';
 import EditorialStatement from './v2/components/EditorialStatement';
+import Footer from './components/Footer';
 import ClientWrapper from './components/ClientWrapper';
 
 import { db } from '@/db';
@@ -62,6 +63,9 @@ export default async function HomePage() {
 
         {/* Editorial Statement */}
         <EditorialStatement />
+
+        {/* Minimal subtle footer */}
+        <Footer />
       </div>
     </ClientWrapper>
   );

@@ -1,7 +1,6 @@
 'use client';
 
 import { motion } from 'framer-motion';
-import heroImage from '@/app/assets/test.webp';
 
 export default function EditorialStatement() {
   return (
@@ -28,31 +27,38 @@ export default function EditorialStatement() {
             justify-content: center;
             height: 3.48rem !important;
             padding: 0 2rem !important;
-            background: var(--color-matte-black, #25282e) !important;
-            color: #ffffff !important;
-            -webkit-text-fill-color: #ffffff !important;
+            background: rgba(59, 163, 184, 0.85) !important;
+            color: #000000 !important;
+            -webkit-text-fill-color: #000000 !important;
             border: none !important;
-            border-radius: 56px !important;
-            box-shadow: 6px 6px 0px #dcdfe3 !important;
+            border-radius: 0px !important;
+            box-shadow: 6px 6px 0px rgba(59, 163, 184, 0.28) !important;
             transition: background 0.22s ease, border-color 0.22s ease, transform 0.2s ease, box-shadow 0.2s ease !important;
             -webkit-text-stroke: 0 !important;
           }
           .prefooter-btn-primary:hover {
-            background: var(--color-matte-black-hover, #1f1f24) !important;
-            border-color: var(--color-matte-black-hover, #1f1f24) !important;
-            color: #ffffff !important;
-            -webkit-text-fill-color: #ffffff !important;
-            box-shadow: 0 8px 24px rgba(180, 186, 196, 0.4) !important;
+            background: rgba(59, 163, 184, 0.98) !important;
+            border-color: rgba(59, 163, 184, 0.98) !important;
+            color: #000000 !important;
+            -webkit-text-fill-color: #000000 !important;
+            box-shadow: 6px 6px 0px rgba(59, 163, 184, 0.42) !important;
           }
           .face-cta {
-            background-color: var(--color-matte-black, #25282e) !important;
-            color: #ffffff !important;
-            transition: box-shadow 0.3s ease !important;
+            background-color: rgba(59, 163, 184, 0.85) !important;
+            color: #000000 !important;
+            -webkit-text-fill-color: #000000 !important;
+            transition: box-shadow 0.3s ease, background 0.22s ease !important;
             border: none !important;
+            box-shadow: 6px 6px 0px rgba(59, 163, 184, 0.28) !important;
           }
           .face-cta:hover {
-            box-shadow: 0 8px 24px rgba(180, 186, 196, 0.4) !important;
-            background-color: var(--color-matte-black-hover, #1f1f24) !important;
+            box-shadow: 6px 6px 0px rgba(59, 163, 184, 0.42) !important;
+            background-color: rgba(59, 163, 184, 0.98) !important;
+          }
+          @media (min-width: 901px) {
+            .prefooter-closing-subtext {
+              font-size: 1.23rem !important; /* 15% smaller on desktop (was 1.45rem) */
+            }
           }
         `}</style>
         <motion.div
@@ -90,79 +96,24 @@ export default function EditorialStatement() {
               fontWeight: 400,
               letterSpacing: '-0.02em',
               lineHeight: 1.25,
-              color: 'var(--color-heading-silver, #4a5461)',
-              WebkitTextFillColor: 'var(--color-heading-silver, #4a5461)',
+              color: '#3ba3b8',
+              WebkitTextFillColor: '#3ba3b8',
               textAlign: 'center',
               margin: '0 0 2.25rem 0',
               maxWidth: '20ch',
             }}
           >
-            The future is <span style={{ fontWeight: 700, color: 'var(--color-heading-silver, #4a5461)', WebkitTextFillColor: 'var(--color-heading-silver, #4a5461)' }}>agentic.</span>
+            The future is <span style={{ fontWeight: 700, color: '#3ba3b8', WebkitTextFillColor: '#3ba3b8' }}>agentic.</span>
             <br />
-            The future is <span style={{ fontWeight: 700, color: 'var(--color-heading-silver, #4a5461)', WebkitTextFillColor: 'var(--color-heading-silver, #4a5461)' }}>custom.</span>
+            The future is <span style={{ fontWeight: 700, color: '#3ba3b8', WebkitTextFillColor: '#3ba3b8' }}>custom.</span>
           </h2>
 
-          {/* Centered Tall Rectangular Closing Hero Image (-40% height) with dashed grey left & top shadow style */}
-          <div
-            className="prefooter-closing-image-wrapper"
-            style={{
-              position: 'relative',
-              width: '100%',
-              maxWidth: 'clamp(110px, 15vw, 132px)',
-              margin: '0 auto 1.85rem auto',
-              display: 'flex',
-              justifyContent: 'center'
-            }}
-          >
-            {/* Dashed grey outline left and top shadow style */}
-            <div
-              style={{
-                position: 'absolute',
-                top: '-5px',
-                left: '-5px',
-                width: '100%',
-                height: '100%',
-                borderTop: '1.5px dashed #9ca3af',
-                borderLeft: '1.5px dashed #9ca3af',
-                pointerEvents: 'none',
-                zIndex: 0
-              }}
-            />
-
-            <div
-              className="prefooter-closing-image-container"
-              style={{
-                position: 'relative',
-                zIndex: 1,
-                width: '100%',
-                aspectRatio: '3 / 4',
-                overflow: 'hidden',
-                borderRadius: '0px',
-                border: '1px solid rgba(0, 0, 0, 0.08)',
-                boxShadow: 'none'
-              }}
-            >
-              <img 
-                src={heroImage.src} 
-                alt="Iryna Sheremeta"
-                style={{
-                  width: '100%',
-                  height: '100%',
-                  objectFit: 'cover',
-                  objectPosition: 'center 15%',
-                  display: 'block',
-                  filter: 'brightness(1.04) saturate(1.05)'
-                }}
-              />
-            </div>
-          </div>
-
-          {/* Text under image — styled matching closing headline */}
+          {/* Text under closing headline — styled matching closing headline */}
           <p
             className="prefooter-closing-subtext"
             style={{
               fontFamily: 'var(--font-heading)',
-              fontSize: 'clamp(1.15rem, 2.8vw, 1.45rem)',
+              fontSize: 'clamp(1.15rem, 2.8vw, 1.23rem)',
               fontWeight: 400,
               letterSpacing: '-0.02em',
               lineHeight: 1.45,
@@ -174,7 +125,7 @@ export default function EditorialStatement() {
               textWrap: 'balance'
             }}
           >
-            I&apos;ll help your business stand out and get future-ready with a custom digital product you need to grow.
+            I&apos;ll help your business <strong style={{ fontWeight: 700 }}>stand out and get future-ready</strong> with a <em style={{ fontStyle: 'italic' }}>custom digital product you need to grow.</em>
           </p>
 
           {/* Action CTAs: doubled space underneath */}
@@ -185,7 +136,7 @@ export default function EditorialStatement() {
               style={{ display: 'inline-flex', alignItems: 'center', gap: '0.45rem', transform: 'scale(1.05)' }}
             >
               <span>SEND YOUR PROBLEM MY WAY</span>
-              <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="var(--color-accent-light, #7fc5d5)" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round" style={{ transform: 'translateY(-0.5px)' }}>
+              <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round" style={{ transform: 'translateY(-0.5px)' }}>
                 <line x1="7" y1="17" x2="17" y2="7"></line>
                 <polyline points="7 7 17 7 17 17"></polyline>
               </svg>

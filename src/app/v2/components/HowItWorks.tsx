@@ -106,7 +106,7 @@ export default function HowItWorks() {
           WebkitTextStroke: '0',
           textWrap: 'balance'
         }}>
-          <span style={{ fontWeight: 400, color: 'var(--color-heading-silver, #4a5461)' }}>How I </span><span style={{ fontWeight: 700, color: 'var(--color-heading-silver, #4a5461)', WebkitTextFillColor: 'var(--color-heading-silver, #4a5461)' }}>Get Things Done</span>
+          <span style={{ fontWeight: 400, color: 'var(--color-heading-silver, #4a5461)' }}>How I </span><span style={{ fontWeight: 700, color: '#3ba3b8', WebkitTextFillColor: '#3ba3b8' }}>Get Things Done</span>
         </h2>
         <p style={{
           fontFamily: "var(--font-body)",
@@ -121,7 +121,7 @@ export default function HowItWorks() {
           letterSpacing: '-0.01em',
           fontStyle: 'italic'
         }}>
-          from concept to launch in 3 simple steps:
+          From concept to launch in 3 simple steps:
         </p>
       </div>
 

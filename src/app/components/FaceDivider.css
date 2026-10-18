@@ -91,24 +91,27 @@
 
 .face-cta {
   font-family: var(--font-label), sans-serif !important;
-  background: #008b8b !important;
-  border-color: #008b8b !important;
-  color: #ffffff !important;
+  background: rgba(59, 163, 184, 0.85) !important;
+  border-color: rgba(59, 163, 184, 0.85) !important;
+  color: #000000 !important;
+  -webkit-text-fill-color: #000000 !important;
   margin-top: 0.75rem;
-  transition: transform 0.22s ease, box-shadow 0.22s ease !important;
+  transition: transform 0.22s ease, box-shadow 0.22s ease, background 0.22s ease !important;
   height: 3.3rem !important;
   padding: 0 1.9rem !important;
   font-size: 0.77rem !important;
   font-weight: 700 !important;
   letter-spacing: 0.08em !important;
   transform: scale(1) !important;
-  box-shadow: none !important;
+  box-shadow: 6px 6px 0px rgba(59, 163, 184, 0.28) !important;
 }
 
 .face-cta:hover {
-  background: #008b8b !important;
-  border-color: #008b8b !important;
-  color: #ffffff !important;
+  background: rgba(59, 163, 184, 0.98) !important;
+  border-color: rgba(59, 163, 184, 0.98) !important;
+  color: #000000 !important;
+  -webkit-text-fill-color: #000000 !important;
+  box-shadow: 6px 6px 0px rgba(59, 163, 184, 0.42) !important;
   transform: scale(1.03) !important;
 }
 

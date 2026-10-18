@@ -132,9 +132,8 @@ export default function ServicesV2() {
             max-width: 100% !important;
             box-sizing: border-box !important;
             background-color: var(--color-matte-black, #25282e) !important;
-            backdrop-filter: blur(20px) !important;
-            -webkit-backdrop-filter: blur(20px) !important;
             border-radius: 0px !important;
+            box-shadow: none !important;
             padding: 3.2rem 1.6rem !important;
             overflow: hidden !important;
           }
@@ -199,7 +198,7 @@ export default function ServicesV2() {
           WebkitTextStroke: '0',
           textWrap: 'balance'
         }}>
-          <span style={{ fontWeight: 400, color: 'var(--color-heading-silver, #4a5461)' }}>How I Can Help </span><span style={{ fontWeight: 700, color: 'var(--color-heading-silver, #4a5461)', WebkitTextFillColor: 'var(--color-heading-silver, #4a5461)' }}>Your Business</span>
+          <span style={{ fontWeight: 400, color: 'var(--color-heading-silver, #4a5461)' }}>How I Can Help </span><span style={{ fontWeight: 700, color: '#3ba3b8', WebkitTextFillColor: '#3ba3b8' }}>Your Business</span>
         </h2>
         <p style={{
           fontFamily: "var(--font-body)",
@@ -214,7 +213,7 @@ export default function ServicesV2() {
           letterSpacing: '-0.01em',
           fontStyle: 'italic'
         }}>
-          as a digital product builder
+          As a digital product builder
         </p>
       </motion.div>
 
@@ -294,10 +293,8 @@ export default function ServicesV2() {
               className="services-col-left"
               style={{
                 backgroundColor: 'var(--color-matte-black, #25282e)',
-                backdropFilter: 'blur(20px)',
-                WebkitBackdropFilter: 'blur(20px)',
                 borderRadius: '0px',
-                boxShadow: '0 12px 40px rgba(0,0,0,0.12)',
+                boxShadow: 'none',
                 position: 'relative',
                 overflow: 'visible',
                 padding: '5rem 4rem 5rem 4rem',

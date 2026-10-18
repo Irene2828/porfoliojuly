@@ -160,9 +160,9 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 .btn-primary {
-  background: var(--color-matte-black, #25282e);
-  color: #ffffff;
-  border: 1px solid var(--color-matte-black, #25282e);
+  background: rgba(59, 163, 184, 0.75);
+  color: #000000;
+  border: 1px solid rgba(59, 163, 184, 0.75);
   box-shadow: none;
   position: relative;
   font-weight: 600;
@@ -367,8 +367,8 @@ h1, h2, h3, h4, h5, h6 {
     letter-spacing: -0.035em !important;
     line-height: 1.26 !important;
     max-width: 100% !important;
-    color: #4e5563 !important;
-    -webkit-text-fill-color: #4e5563 !important;
+    color: #3ba3b8 !important;
+    -webkit-text-fill-color: #3ba3b8 !important;
     -webkit-text-stroke: 0px transparent !important;
     -webkit-text-stroke-width: 0px !important;
     text-stroke: 0px transparent !important;
@@ -418,8 +418,8 @@ h1, h2, h3, h4, h5, h6 {
   font-weight: 400 !important;
   letter-spacing: -0.035em !important;
   font-style: normal !important;
-  color: #4e5563 !important;
-  -webkit-text-fill-color: #4e5563 !important;
+  color: #3ba3b8 !important;
+  -webkit-text-fill-color: #3ba3b8 !important;
   -webkit-text-stroke: 0px transparent !important;
   -webkit-text-stroke-width: 0px !important;
   text-stroke: 0px transparent !important;
@@ -501,14 +501,14 @@ h1, h2, h3, h4, h5, h6 {
   letter-spacing: 0.08em !important;
   height: 3.43rem !important; /* +5% taller */
   padding: 0 1.98rem !important; /* +5% padding */
-  background: var(--color-matte-black, #25282e) !important; /* matte black token */
-  color: #eaecf0 !important; /* soft matte off-white token (#eaecf0) */
-  -webkit-text-fill-color: #eaecf0 !important;
+  background: rgba(59, 163, 184, 0.85) !important; /* 10% deeper teal */
+  color: #000000 !important;
+  -webkit-text-fill-color: #000000 !important;
   border: none !important;
   border-radius: 0px !important;
-  box-shadow: 6px 6px 0px #dcdfe3 !important;
+  box-shadow: 6px 6px 0px rgba(59, 163, 184, 0.28) !important; /* pale teal shadow */
   transform: scale(1) !important;
-  transition: transform 0.22s cubic-bezier(0.16, 1, 0.3, 1), background 0.22s ease, border-color 0.22s ease !important;
+  transition: transform 0.22s cubic-bezier(0.16, 1, 0.3, 1), background 0.22s ease, border-color 0.22s ease, box-shadow 0.2s ease !important;
   display: inline-flex !important;
   align-items: center !important;
   justify-content: center !important;
@@ -522,11 +522,11 @@ h1, h2, h3, h4, h5, h6 {
 
 .v2-theme .hero-ctas-outside .btn-primary-outline:hover,
 .v2-theme .face-cta:hover {
-  background: var(--color-matte-black-hover, #1f1f24) !important; /* matte black hover */
-  border-color: #1f1f24 !important;
-  color: #ffffff !important;
-  -webkit-text-fill-color: #ffffff !important;
-  box-shadow: none !important;
+  background: rgba(59, 163, 184, 0.98) !important;
+  border-color: rgba(59, 163, 184, 0.98) !important;
+  color: #000000 !important;
+  -webkit-text-fill-color: #000000 !important;
+  box-shadow: 6px 6px 0px rgba(59, 163, 184, 0.42) !important;
   transform: scale(1.03) !important;
 }
 
@@ -835,7 +835,7 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 /* Section Headings */
-.v2-theme section h2,
+.v2-theme section:not(.prefooter-section) h2,
 .v2-theme #cases-section h2,
 .v2-theme #expertise h2,
 .v2-theme #how-it-works h2,
@@ -847,6 +847,23 @@ h1, h2, h3, h4, h5, h6 {
   -webkit-text-fill-color: var(--color-heading-silver) !important;
   -webkit-text-stroke: 0 !important;
   text-stroke: 0 !important;
+}
+
+/* Bolded words in section headings: brand teal matching hero */
+.v2-theme #cases-section h2 span:last-child,
+.v2-theme #expertise h2 span:last-child,
+.v2-theme #how-it-works h2 span:last-child,
+.v2-theme #process h2 span:last-child {
+  color: #3ba3b8 !important;
+  -webkit-text-fill-color: #3ba3b8 !important;
+}
+
+/* Prefooter closing headline: entire text brand teal */
+.v2-theme .prefooter-section h2,
+.v2-theme .prefooter-closing-line,
+.v2-theme .prefooter-closing-line span {
+  color: #3ba3b8 !important;
+  -webkit-text-fill-color: #3ba3b8 !important;
 }
 
 .v2-theme .hero-content {
@@ -904,8 +921,8 @@ h1, h2, h3, h4, h5, h6 {
   max-height: 200px !important;
   margin-top: 0 !important;
   border-radius: 50% !important;
-  /* Rounded pale peach shadow next to image circle */
-  box-shadow: -8px -8px 0px rgba(236, 145, 119, 0.22) !important;
+  /* Rounded silver grey shadow with stroke border matching header stroke opacity */
+  box-shadow: -8px -8px 0px 0px #dcdfe3, -8px -8px 0px 1.5px rgba(59, 163, 184, 0.15) !important;
   position: relative !important;
   overflow: visible !important;
 }
@@ -924,7 +941,7 @@ h1, h2, h3, h4, h5, h6 {
   background: transparent !important;
   backdrop-filter: none !important;
   -webkit-backdrop-filter: none !important;
-  border-bottom: 1.5px solid rgba(255, 255, 255, 0.82) !important;
+  border-bottom: 1px solid rgba(59, 163, 184, 0.15) !important;
   transition: background 0.3s cubic-bezier(0.16, 1, 0.3, 1),
               backdrop-filter 0.3s cubic-bezier(0.16, 1, 0.3, 1),
               -webkit-backdrop-filter 0.3s cubic-bezier(0.16, 1, 0.3, 1),
@@ -936,39 +953,17 @@ h1, h2, h3, h4, h5, h6 {
   background: rgba(255, 255, 255, 0.82) !important;
   backdrop-filter: blur(20px) saturate(180%) !important;
   -webkit-backdrop-filter: blur(20px) saturate(180%) !important;
-  border-bottom: 1.5px solid rgba(255, 255, 255, 0.92) !important;
+  border-bottom: 1px solid rgba(59, 163, 184, 0.15) !important;
   box-shadow: 0 4px 24px rgba(0, 0, 0, 0.04) !important;
 }
 
-.v2-theme .hero-section {
-  padding-top: 3.5rem !important; /* preserves internal text positioning while bg extends to top */
-  background:
-    /* Subtle, faded teal bloom at top-right corner */
-    radial-gradient(ellipse 55% 45% at 100% 0%, rgba(59, 163, 184, 0.11) 0%, rgba(85, 182, 201, 0.05) 38%, rgba(255, 255, 255, 0) 72%),
-    /* Subtle, faded teal bloom at centered left edge */
-    radial-gradient(ellipse 45% 55% at 0% 50%, rgba(59, 163, 184, 0.10) 0%, rgba(85, 182, 201, 0.04) 38%, rgba(255, 255, 255, 0) 70%),
-    /* Top edge closure: soft subtle light silver gradient spanning top edge */
-    linear-gradient(180deg, rgba(210, 216, 224, 0.2) 0%, rgba(230, 234, 240, 0.08) 6%, rgba(255, 255, 255, 0) 14%),
-    /* Bottom edge subtle silver ground */
-    linear-gradient(0deg, rgba(210, 217, 226, 0.25) 0%, rgba(228, 233, 240, 0.1) 12%, rgba(255, 255, 255, 0) 24%),
-    /* Mirrored Top-Left & Top-Right white blooms */
-    radial-gradient(ellipse 48% 40% at 0% 0%, rgba(255, 255, 255, 1) 0%, rgba(255, 255, 255, 0.75) 45%, rgba(255, 255, 255, 0) 100%),
-    radial-gradient(ellipse 48% 40% at 100% 0%, rgba(255, 255, 255, 1) 0%, rgba(255, 255, 255, 0.75) 45%, rgba(255, 255, 255, 0) 100%),
-    /* Mirrored Bottom-Left & Bottom-Right soft white/light silver blooms (identically paired) */
-    radial-gradient(ellipse 48% 40% at 0% 100%, rgba(255, 255, 255, 0.95) 0%, rgba(255, 255, 255, 0.65) 45%, rgba(255, 255, 255, 0) 100%),
-    radial-gradient(ellipse 48% 40% at 100% 100%, rgba(255, 255, 255, 0.95) 0%, rgba(255, 255, 255, 0.65) 45%, rgba(255, 255, 255, 0) 100%),
-    /* Mirrored soft silver corner accents (identically paired) */
-    radial-gradient(ellipse 60% 50% at 0% 0%, rgba(228, 232, 238, 0.35) 0%, rgba(240, 243, 247, 0.18) 45%, rgba(255, 255, 255, 0) 80%),
-    radial-gradient(ellipse 60% 50% at 100% 0%, rgba(228, 232, 238, 0.35) 0%, rgba(240, 243, 247, 0.18) 45%, rgba(255, 255, 255, 0) 80%),
-    radial-gradient(ellipse 60% 50% at 0% 100%, rgba(224, 229, 236, 0.32) 0%, rgba(236, 240, 245, 0.15) 45%, rgba(255, 255, 255, 0) 80%),
-    radial-gradient(ellipse 60% 50% at 100% 100%, rgba(224, 229, 236, 0.32) 0%, rgba(236, 240, 245, 0.15) 45%, rgba(255, 255, 255, 0) 80%),
-    /* Central crisp light bloom directly behind content */
-    radial-gradient(ellipse 65% 65% at 50% 50%, rgba(255, 255, 255, 0.98) 0%, rgba(255, 255, 255, 0.7) 45%, rgba(255, 255, 255, 0) 76%),
-    /* Left-side and Right-side silver gradient (perfectly symmetrical) */
-    radial-gradient(ellipse 85% 95% at 0% 50%, rgba(226, 230, 236, 0.3) 0%, rgba(236, 239, 244, 0.15) 55%, rgba(230, 234, 240, 0) 100%),
-    radial-gradient(ellipse 85% 95% at 100% 50%, rgba(226, 230, 236, 0.3) 0%, rgba(236, 239, 244, 0.15) 55%, rgba(230, 234, 240, 0) 100%),
-    /* Base mirrored linear gradient: soft silver on both sides, crisp white in center */
-    linear-gradient(90deg, #eff1f5 0%, #f9fafb 25%, #ffffff 50%, #f9fafb 75%, #eff1f5 100%) !important;
+@media (min-width: 901px) {
+  .v2-theme .hero-section {
+    padding-top: 3.5rem !important; /* preserves internal text positioning while bg extends to top */
+    background: #ffffff !important;
+    background-color: #ffffff !important;
+    background-image: none !important;
+  }
 }
 
 .v2-theme .hero-bg-split,
@@ -995,14 +990,14 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 @media (max-width: 900px) {
-  /* Thin subtle teal stroke bottom to header on mobiles only */
+  /* Header stroke bottom on mobiles subtle light teal */
   .v2-theme .premium-header,
   .premium-header {
-    border-bottom: 1px solid rgba(59, 163, 184, 0.28) !important;
+    border-bottom: 1px solid rgba(59, 163, 184, 0.15) !important;
   }
   .v2-theme .premium-header.header-scrolled,
   .premium-header.header-scrolled {
-    border-bottom: 1px solid rgba(59, 163, 184, 0.35) !important;
+    border-bottom: 1px solid rgba(59, 163, 184, 0.15) !important;
   }
 
   /* No dashed frame or white container on mobile hero */
@@ -1051,8 +1046,8 @@ h1, h2, h3, h4, h5, h6 {
     padding: 0 !important;
     overflow: visible !important;
     position: relative !important;
-    /* Pale peach offset shadow matching desktop hero */
-    box-shadow: -8px -8px 0px rgba(236, 145, 119, 0.28) !important;
+    /* Silver grey offset shadow with stroke border matching header stroke opacity */
+    box-shadow: -5px -5px 0px 0px #dcdfe3, -5px -5px 0px 1.5px rgba(59, 163, 184, 0.15) !important;
     background: transparent !important;
     border: none !important;
   }
@@ -1072,7 +1067,9 @@ h1, h2, h3, h4, h5, h6 {
     display: none !important;
   }
 
-  /* Remove the labels and badges completely on mobile */
+  /* Remove the labels, badges, and image top shapes completely on mobile */
+  .v2-theme .hero-shape-top-right,
+  .hero-shape-top-right,
   .v2-theme .hero-rings-badge-container {
     display: none !important;
   }
