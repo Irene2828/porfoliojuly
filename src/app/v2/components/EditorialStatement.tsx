@@ -72,7 +72,7 @@ export default function EditorialStatement() {
               font-size: 1.23rem !important; /* 15% smaller on desktop (was 1.45rem) */
             }
             .prefooter-closing-line {
-              font-size: 2.6rem !important;
+              font-size: 2.08rem !important; /* 20% smaller on desktop (was 2.6rem) */
             }
           }
         `}</style>
@@ -107,7 +107,7 @@ export default function EditorialStatement() {
             className="prefooter-closing-line"
             style={{
               fontFamily: 'var(--font-heading)',
-              fontSize: 'clamp(1.48rem, 7.7vw, 2.6rem)',
+              fontSize: 'clamp(1.48rem, 7.7vw, 2.08rem)',
               fontWeight: 400,
               letterSpacing: '-0.02em',
               lineHeight: 1.35,

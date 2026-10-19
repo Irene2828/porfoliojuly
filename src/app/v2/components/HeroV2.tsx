@@ -63,7 +63,9 @@ export default function HeroV2() {
                   </span>
                 </h1>
                 <p className="hero-frame-paragraph hero-paragraph-anim" style={{ marginTop: '1.7rem', fontSize: '1.213rem', lineHeight: '1.75', color: '#4a5461', maxWidth: '100%', fontWeight: 400, opacity: 1 }}>
-                  <em style={{ fontStyle: 'italic' }}>If your site is outdated or your work runs on endless back-and-forth</em>, I’ll build the fix. <strong className="hero-body-bold" style={{ fontWeight: 700, color: '#1a202c' }}>You explain the problem. I handle the rest.</strong>
+                  <em style={{ fontStyle: 'italic' }}>If your site is outdated or your work runs on endless back-and-forth</em>, I’ll build the fix.
+                  <br className="br-desktop" />
+                  <strong className="hero-body-bold" style={{ fontWeight: 700, color: '#1a202c' }}>You explain the problem. I handle the rest.</strong>
                 </p>
               </div>
 

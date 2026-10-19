@@ -2388,9 +2388,9 @@
     font-style: normal !important;
     text-decoration: none !important;
   }
-  /* Prefooter desktop typography: -20% smaller */
+  /* Prefooter desktop typography: -20% smaller (2.08rem) */
   .prefooter-closing-line {
-    font-size: 2.6rem !important; /* -20% on desktop (was 3.25rem) */
+    font-size: 2.08rem !important; /* -20% on desktop (was 2.6rem) */
   }
   .prefooter-closing-subtext {
     font-size: 1.23rem !important; /* -15% smaller on desktop */

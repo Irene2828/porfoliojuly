@@ -564,6 +564,13 @@ h1, h2, h3, h4, h5, h6 {
   opacity: 0.9 !important;
 }
 
+@media (min-width: 901px) {
+  .v2-theme .hero-frame-paragraph .hero-body-bold {
+    display: inline-block !important;
+    white-space: nowrap !important;
+  }
+}
+
 .v2-theme .hero-ctas-outside .btn-secondary-stacked {
   font-family: var(--font-label), sans-serif !important;
   font-size: 12.47px !important;
