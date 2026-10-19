@@ -54,18 +54,14 @@ export default function HeroV2() {
                     </span>
                   </span>
 
-                  {/* Mobile Headline (4 lines, left-aligned) */}
-                  <span className="headline-mobile" style={{ gap: '0px', lineHeight: 1.05 }}>
-                    <span className="headline-line" style={{ lineHeight: 1.05 }}>
-                      <strong className="headline-mockup-bold" style={{ fontWeight: 700 }}>Websites</strong>
-                    </span>
-                    <span className="headline-line" style={{ lineHeight: 1.05 }}>
+                  {/* Mobile Headline (same row per sentence, natural wrap only if constrained) */}
+                  <span className="headline-mobile" style={{ gap: '0.45rem', lineHeight: 1.18 }}>
+                    <span className="headline-line" style={{ lineHeight: 1.18 }}>
+                      <strong className="headline-mockup-bold" style={{ fontWeight: 700 }}>Websites</strong>{' '}
                       <span className="headline-mockup-light" style={{ fontWeight: 300 }}>that work harder.</span>
                     </span>
-                    <span className="headline-line headline-pair-gap" style={{ lineHeight: 1.05, marginTop: '0.45rem' }}>
-                      <strong className="headline-mockup-bold" style={{ fontWeight: 700 }}>Tools</strong>
-                    </span>
-                    <span className="headline-line" style={{ lineHeight: 1.05 }}>
+                    <span className="headline-line headline-pair-gap" style={{ lineHeight: 1.18 }}>
+                      <strong className="headline-mockup-bold" style={{ fontWeight: 700 }}>Tools</strong>{' '}
                       <span className="headline-mockup-light" style={{ fontWeight: 300 }}>that save hours.</span>
                     </span>
                   </span>

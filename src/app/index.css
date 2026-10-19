@@ -466,10 +466,10 @@ h1, h2, h3, h4, h5, h6 {
   .v2-theme .headline-mobile,
   .v2-theme .hero-text .headline-mobile {
     font-family: -apple-system, BlinkMacSystemFont, "Helvetica Neue", Helvetica, Arial, sans-serif !important;
-    font-size: clamp(1.78rem, 9.25vw, 3.54rem) !important; /* +20% larger on mobile */
+    font-size: clamp(1.42rem, 6.75vw, 2.35rem) !important;
     font-weight: 400 !important;
     letter-spacing: -0.02em !important;
-    line-height: 1.08 !important;
+    line-height: 1.18 !important;
     max-width: 100% !important;
     color: #3ba3b8 !important;
     -webkit-text-fill-color: #3ba3b8 !important;
@@ -481,31 +481,31 @@ h1, h2, h3, h4, h5, h6 {
     -webkit-font-smoothing: antialiased !important;
     -moz-osx-font-smoothing: grayscale !important;
     text-align: left !important;
-    white-space: nowrap !important;
+    white-space: normal !important;
   }
 
-  /* 4 lines on mobile - aligned with left side of header */
+  /* Full sentence rows on mobile - aligned with left side of header */
   .v2-theme .headline-mobile {
     display: flex !important;
     flex-direction: column !important;
     align-items: flex-start !important;
     text-align: left !important;
     width: 100% !important;
-    gap: 0px !important;
+    gap: 0.45rem !important;
   }
 
   .v2-theme .headline-line {
     display: block !important;
-    white-space: nowrap !important;
+    white-space: normal !important;
     max-width: 100% !important;
     font-size: inherit !important;
-    line-height: 1.05 !important;
+    line-height: 1.18 !important;
     text-align: left !important;
     align-self: flex-start !important;
   }
 
   .v2-theme .headline-pair-gap {
-    margin-top: 0.45rem !important; /* breathing room between the two thoughts */
+    margin-top: 0rem !important;
   }
 
   .v2-theme .headline-mockup-bold {
@@ -545,17 +545,17 @@ h1, h2, h3, h4, h5, h6 {
   letter-spacing: 0.08em !important;
   height: 3.43rem !important; /* +5% taller */
   padding: 0 1.98rem !important; /* +5% padding */
-  background: rgba(59, 163, 184, 0.88) !important; /* matching rich teal */
-  color: #0b1116 !important;
-  -webkit-text-fill-color: #0b1116 !important;
+  background: rgba(59, 163, 184, 0.92) !important; /* matching rich teal */
+  color: #ffffff !important;
+  -webkit-text-fill-color: #ffffff !important;
   border: none !important;
   border-radius: 0px !important;
-  box-shadow: 6px 6px 0px rgba(59, 163, 184, 0.28) !important; /* pale teal shadow */
-  text-shadow: 0 1px 1px rgba(255, 255, 255, 0.32), 0 0 1px rgba(255, 255, 255, 0.2) !important; /* crisp subtle glow */
+  box-shadow: 0 0 18px rgba(59, 163, 184, 0.45), 6px 6px 0px rgba(59, 163, 184, 0.3) !important;
+  text-shadow: 0 0 10px rgba(255, 255, 255, 0.85), 0 0 18px rgba(255, 255, 255, 0.5) !important; /* white text with glow */
   -webkit-font-smoothing: antialiased !important;
   -moz-osx-font-smoothing: grayscale !important;
   transform: scale(1) !important;
-  transition: transform 0.22s cubic-bezier(0.16, 1, 0.3, 1), background 0.22s ease, border-color 0.22s ease, box-shadow 0.2s ease !important;
+  transition: transform 0.22s cubic-bezier(0.16, 1, 0.3, 1), background 0.22s ease, border-color 0.22s ease, box-shadow 0.2s ease, text-shadow 0.2s ease !important;
   display: inline-flex !important;
   align-items: center !important;
   justify-content: center !important;
@@ -572,9 +572,10 @@ h1, h2, h3, h4, h5, h6 {
 .v2-theme .face-cta:hover {
   background: rgba(59, 163, 184, 1) !important;
   border-color: rgba(59, 163, 184, 1) !important;
-  color: #0b1116 !important;
-  -webkit-text-fill-color: #0b1116 !important;
-  box-shadow: 6px 6px 0px rgba(59, 163, 184, 0.42) !important;
+  color: #ffffff !important;
+  -webkit-text-fill-color: #ffffff !important;
+  box-shadow: 0 0 26px rgba(59, 163, 184, 0.65), 6px 6px 0px rgba(59, 163, 184, 0.45) !important;
+  text-shadow: 0 0 14px rgba(255, 255, 255, 1), 0 0 24px rgba(255, 255, 255, 0.7) !important;
   transform: scale(1.03) !important;
 }
 

@@ -436,20 +436,20 @@
     display: flex !important;
     flex-direction: column !important;
     align-items: flex-start !important;
-    gap: 0px !important;
-    font-size: clamp(1.78rem, 9.25vw, 3.54rem) !important;
-    white-space: nowrap !important;
-    line-height: 1.05 !important;
+    gap: 0.45rem !important;
+    font-size: clamp(1.42rem, 6.75vw, 2.35rem) !important;
+    white-space: normal !important;
+    line-height: 1.18 !important;
     text-align: left !important;
   }
   .headline-line {
-    white-space: nowrap !important;
+    white-space: normal !important;
     text-align: left !important;
-    line-height: 1.05 !important;
+    line-height: 1.18 !important;
     align-self: flex-start !important;
   }
   .headline-pair-gap {
-    margin-top: 0.45rem !important;
+    margin-top: 0rem !important;
   }
 }
 
@@ -638,25 +638,27 @@
   justify-content: center;
   height: 3.44rem !important;
   padding: 0 1.98rem !important;
-  background: rgba(59, 163, 184, 0.85) !important;
-  color: #000000 !important;
-  -webkit-text-fill-color: #000000 !important;
+  background: rgba(59, 163, 184, 0.92) !important;
+  color: #ffffff !important;
+  -webkit-text-fill-color: #ffffff !important;
   border: none !important;
   border-radius: 0px !important;
-  box-shadow: 6px 6px 0px rgba(59, 163, 184, 0.28) !important;
+  box-shadow: 0 0 18px rgba(59, 163, 184, 0.45), 6px 6px 0px rgba(59, 163, 184, 0.3) !important;
+  text-shadow: 0 0 10px rgba(255, 255, 255, 0.85), 0 0 18px rgba(255, 255, 255, 0.5) !important;
   transform: none !important;
   align-self: auto;
-  transition: background 0.22s ease, border-color 0.22s ease, transform 0.2s ease, box-shadow 0.2s ease !important;
+  transition: background 0.22s ease, border-color 0.22s ease, transform 0.2s ease, box-shadow 0.2s ease, text-shadow 0.2s ease !important;
   -webkit-text-stroke: 0 !important;
   text-stroke: 0 !important;
 }
 
 .hero-ctas-outside .btn-primary-outline:hover {
-  background: rgba(59, 163, 184, 0.98) !important;
-  border-color: rgba(59, 163, 184, 0.98) !important;
-  color: #000000 !important;
-  -webkit-text-fill-color: #000000 !important;
-  box-shadow: 6px 6px 0px rgba(59, 163, 184, 0.42) !important;
+  background: rgba(59, 163, 184, 1) !important;
+  border-color: rgba(59, 163, 184, 1) !important;
+  color: #ffffff !important;
+  -webkit-text-fill-color: #ffffff !important;
+  box-shadow: 0 0 26px rgba(59, 163, 184, 0.65), 6px 6px 0px rgba(59, 163, 184, 0.45) !important;
+  text-shadow: 0 0 14px rgba(255, 255, 255, 1), 0 0 24px rgba(255, 255, 255, 0.7) !important;
 }
 
 .hero-ctas-outside .btn-secondary-stacked {
