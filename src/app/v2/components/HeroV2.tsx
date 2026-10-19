@@ -45,26 +45,32 @@ export default function HeroV2() {
                   {/* Desktop Headline (2 lines) */}
                   <span className="headline-desktop">
                     <span className="headline-line headline-light">
-                      A <span className="headline-teal-underline">website</span> that works harder.
+                      <span className="headline-teal-underline">Websites</span> that work <em style={{ fontStyle: 'italic', fontFamily: 'inherit' }}>harder</em>.
                     </span>
                     <span className="headline-line headline-light">
-                      <span className="headline-teal-underline">Tools</span> that save you hours.
+                      <span className="headline-teal-underline">Tools</span> that <em style={{ fontStyle: 'italic', fontFamily: 'inherit' }}>save</em> you hours.
                     </span>
                   </span>
 
-                  {/* Mobile Headline (2 lines) */}
+                  {/* Mobile Headline (4 lines spread) */}
                   <span className="headline-mobile">
                     <span className="headline-line">
-                      <span className="headline-mockup-light">A </span><span className="headline-mockup-bold">website</span><span className="headline-mockup-light"> that works harder.</span>
+                      <span className="headline-mockup-bold">Websites</span>
                     </span>
-                    <span className="headline-line">
-                      <span className="headline-mockup-bold">Tools</span><span className="headline-mockup-light"> that save you hours.</span>
+                    <span className="headline-line headline-support-line" style={{ marginLeft: '25%' }}>
+                      <span className="headline-mockup-light">that work <em style={{ fontStyle: 'italic', fontFamily: 'inherit' }}>harder</em>.</span>
+                    </span>
+                    <span className="headline-line headline-pair-gap">
+                      <span className="headline-mockup-bold">Tools</span>
+                    </span>
+                    <span className="headline-line headline-support-line" style={{ marginLeft: '25%' }}>
+                      <span className="headline-mockup-light">that <em style={{ fontStyle: 'italic', fontFamily: 'inherit' }}>save</em> hours.</span>
                     </span>
                   </span>
                 </h1>
                 <p className="hero-frame-paragraph hero-paragraph-anim" style={{ marginTop: '1.7rem', fontSize: '1.213rem', lineHeight: '1.75', color: '#4a5461', maxWidth: '100%', fontWeight: 400, opacity: 1 }}>
-                  <em style={{ fontStyle: 'italic' }}>If your site is outdated or your work runs on endless back-and-forth</em>, I’ll build the fix.
-                  <br className="br-desktop" />
+                  If your site is outdated or your work runs on endless back-and-forth, I’ll build the fix.
+                  <br className="br-desktop" />{' '}
                   <strong className="hero-body-bold" style={{ fontWeight: 700, color: '#1a202c' }}>You explain the problem. I handle the rest.</strong>
                 </p>
               </div>

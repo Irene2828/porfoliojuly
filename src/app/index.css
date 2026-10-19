@@ -466,10 +466,10 @@ h1, h2, h3, h4, h5, h6 {
   .v2-theme .headline-mobile,
   .v2-theme .hero-text .headline-mobile {
     font-family: -apple-system, BlinkMacSystemFont, "Helvetica Neue", Helvetica, Arial, sans-serif !important;
-    font-size: clamp(1.48rem, 7.7vw, 2.95rem) !important;
+    font-size: clamp(1.78rem, 9.25vw, 3.54rem) !important; /* +20% larger on mobile */
     font-weight: 400 !important;
     letter-spacing: -0.02em !important;
-    line-height: 1.35 !important; /* proportional enhanced line spacing */
+    line-height: 1.18 !important; /* compact line spacing for 4-line spread */
     max-width: 100% !important;
     color: #3ba3b8 !important;
     -webkit-text-fill-color: #3ba3b8 !important;
@@ -480,18 +480,18 @@ h1, h2, h3, h4, h5, h6 {
     font-synthesis: none !important;
     -webkit-font-smoothing: antialiased !important;
     -moz-osx-font-smoothing: grayscale !important;
-    text-align: center !important;
+    text-align: left !important;
     white-space: nowrap !important;
   }
 
-  /* 2 distinct lines on mobile */
+  /* 4 spread lines on mobile - aligned with left side of header */
   .v2-theme .headline-mobile {
     display: flex !important;
     flex-direction: column !important;
-    align-items: center !important;
-    text-align: center !important;
+    align-items: flex-start !important;
+    text-align: left !important;
     width: 100% !important;
-    gap: 0.35rem !important; /* intentional breathing room between the two sentences */
+    gap: 0.12rem !important;
   }
 
   .v2-theme .headline-line {
@@ -500,7 +500,19 @@ h1, h2, h3, h4, h5, h6 {
     max-width: 100% !important;
     font-size: inherit !important;
     line-height: inherit !important;
-    text-align: center !important;
+    text-align: left !important;
+    align-self: flex-start !important;
+  }
+
+  .v2-theme .headline-pair-gap {
+    margin-top: 0.45rem !important; /* breathing room between the two thoughts */
+  }
+
+  .v2-theme .headline-mobile .headline-support-line,
+  .v2-theme .headline-support-line,
+  .headline-support-line {
+    margin-left: 22% !important; /* shifted intentionally to the right side */
+    padding-left: 0 !important;
   }
 
   .v2-theme .hero-teal-concentric-rings {
@@ -510,6 +522,7 @@ h1, h2, h3, h4, h5, h6 {
     transform-origin: top left;
   }
 
+  /* Keep prefooter closing heading size unchanged */
   .v2-theme .prefooter-closing-line {
     font-size: clamp(1.48rem, 7.7vw, 2.95rem) !important;
     line-height: 1.35 !important;
@@ -1057,8 +1070,8 @@ h1, h2, h3, h4, h5, h6 {
     justify-content: space-between !important;
     padding-top: clamp(8.63rem, 18.5vh, 9.95rem) !important; /* shifted another 15% lower */
     padding-bottom: clamp(1.25rem, 3.5vw, 1.75rem) !important;
-    padding-left: 16px !important;
-    padding-right: 16px !important;
+    padding-left: 1.5rem !important; /* matches mobile header side margin (1.5rem / 24px) */
+    padding-right: 1.5rem !important;
     box-sizing: border-box !important;
   }
 
@@ -1165,14 +1178,14 @@ h1, h2, h3, h4, h5, h6 {
   .v2-theme .hero-statement,
   .v2-theme .hero-name-group .hero-text h1,
   .v2-theme .headline-mobile {
-    text-align: center !important;
-    align-items: center !important;
-    justify-content: center !important;
+    text-align: left !important;
+    align-items: flex-start !important;
+    justify-content: flex-start !important;
   }
 
   .v2-theme .hero-frame-paragraph {
     text-align: center !important;
-    margin-top: 1rem !important;
+    margin-top: 1.4rem !important; /* +40% spacing over body on mobile (was 1rem) */
     max-width: 36ch !important;
     margin-left: auto !important;
     margin-right: auto !important;

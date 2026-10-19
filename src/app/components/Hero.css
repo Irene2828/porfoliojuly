@@ -435,16 +435,25 @@
   .headline-mobile {
     display: flex !important;
     flex-direction: column !important;
-    align-items: center !important;
-    gap: 0.35rem !important;
-    font-size: clamp(1.48rem, 7.7vw, 2.95rem) !important;
+    align-items: flex-start !important;
+    gap: 0.12rem !important;
+    font-size: clamp(1.78rem, 9.25vw, 3.54rem) !important;
     white-space: nowrap !important;
-    line-height: 1.35 !important;
+    line-height: 1.18 !important;
+    text-align: left !important;
   }
   .headline-line {
     white-space: nowrap !important;
-    text-align: center !important;
-    line-height: 1.35 !important;
+    text-align: left !important;
+    line-height: 1.18 !important;
+    align-self: flex-start !important;
+  }
+  .headline-pair-gap {
+    margin-top: 0.45rem !important;
+  }
+  .headline-mobile .headline-support-line,
+  .headline-support-line {
+    margin-left: 22% !important;
   }
 }
 
@@ -1026,7 +1035,7 @@
     line-height: 1.65 !important;
     color: #4a5461 !important; /* 10% darker */
     text-align: left !important;
-    margin-top: 1.25rem !important;
+    margin-top: 1.75rem !important; /* +40% spacing over body on mobile */
     margin-bottom: 0 !important;
     margin-left: 0 !important;
     margin-right: 0 !important;
