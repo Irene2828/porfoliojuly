@@ -16,6 +16,10 @@
   position: relative;
   height: 100vh;
   min-height: 550px;
+  background: 
+    radial-gradient(ellipse 70% 60% at 0% 0%, rgba(70, 201, 219, 0.28) 0%, rgba(70, 201, 219, 0.11) 35%, rgba(255, 255, 255, 0) 72%),
+    radial-gradient(ellipse 65% 55% at 100% 100%, rgba(70, 201, 219, 0.25) 0%, rgba(70, 201, 219, 0.09) 35%, rgba(255, 255, 255, 0) 72%),
+    #ffffff !important;
   background-color: #ffffff !important;
   padding: 3.5rem 0 0 0;
   margin-top: 0;
@@ -406,7 +410,7 @@
   display: inline;
 }
 
-@media (min-width: 901px) {
+@media (min-width: 768px) {
   .headline-desktop {
     display: flex !important;
     flex-direction: column !important;
@@ -424,7 +428,7 @@
   }
 }
 
-@media (max-width: 900px) {
+@media (max-width: 767px) {
   .headline-desktop {
     display: none !important;
   }
@@ -432,8 +436,15 @@
     display: flex !important;
     flex-direction: column !important;
     align-items: center !important;
-    gap: 0px !important;
-    font-size: clamp(1.75rem, 9vw, 4rem) !important;
+    gap: 0.35rem !important;
+    font-size: clamp(1.48rem, 7.7vw, 2.95rem) !important;
+    white-space: nowrap !important;
+    line-height: 1.35 !important;
+  }
+  .headline-line {
+    white-space: nowrap !important;
+    text-align: center !important;
+    line-height: 1.35 !important;
   }
 }
 
@@ -984,7 +995,7 @@
     transform: none !important;
   }
 
-  .hero-name-group .hero-text h1 {
+  :not(.v2-theme) .hero-name-group .hero-text h1 {
     width: 100% !important;
     max-width: 100% !important;
     font-family: var(--font-heading) !important;
@@ -2070,6 +2081,19 @@
     padding-left: calc(1.5rem - clamp(1rem, 4vw, 1.5rem)) !important;
   }
 
+  @media (max-width: 767px) {
+    .v2-theme .hero-section,
+    .hero-section {
+      padding-left: 16px !important;
+      padding-right: 16px !important;
+    }
+    .v2-theme .hero-content,
+    .hero-content {
+      padding-left: 0 !important;
+      padding-right: 0 !important;
+    }
+  }
+
   /* 2. Фото: +15% (96px -> ~110px). Вже стоїть справа над заголовком —
      лишаємо так; вирівнюємо вертикальні відстані: від хедера до фото
      стільки ж, скільки від фото до заголовка.
@@ -2077,7 +2101,7 @@
      інакше фото заїжджає під хедер. */
   .v2-theme .hero-section,
   .hero-section {
-    padding-top: 6rem !important;
+    padding-top: 6.9rem !important;
   }
   .v2-theme .hero-image-wrapper,
   .hero-image-wrapper {
@@ -2087,7 +2111,7 @@
   .hero-image-container {
     width: clamp(108px, 30.5vw, 130px) !important;
     height: clamp(108px, 30.5vw, 130px) !important;
-    box-shadow: -8px -8px 0px 0px #dcdfe3, -8px -8px 0px 1.5px rgba(59, 163, 184, 0.15) !important;
+    box-shadow: -8px -8px 0px 0px #dcdfe3 !important;
   }
 }
 
@@ -2113,7 +2137,7 @@
   /* Зверху було 50px (6rem − 3.5rem хедер + 10px паддінг враппера) → 25px */
   .v2-theme .hero-section,
   .hero-section {
-    padding-top: 6rem !important; /* doubled image-header gap */
+    padding-top: 6.9rem !important; /* shifted 15% lower */
   }
   /* Знизу було 35px (gap 1.75rem + margin 7px) → 17.5px */
   .v2-theme .hero-container,
@@ -2169,7 +2193,7 @@
 @media (max-width: 900px) {
   .v2-theme .hero-image-container,
   .hero-image-container {
-    box-shadow: -5px -5px 0px 0px #dcdfe3, -5px -5px 0px 1.5px rgba(59, 163, 184, 0.5) !important;
+    box-shadow: -5px -5px 0px 0px #dcdfe3 !important;
   }
 }
 
@@ -2185,7 +2209,7 @@
 
 /* ── Larger mobiles: hero headline +10% (14.10.2026) ── */
 @media (min-width: 414px) and (max-width: 900px) {
-  .hero-name-group .hero-text h1 {
+  :not(.v2-theme) .hero-name-group .hero-text h1 {
     font-size: clamp(2.83rem, 11.33vw, 3.56rem) !important; /* +10% more */
   }
 }
@@ -2197,7 +2221,7 @@
   .hero-text .headline-mockup-bold {
     font-family: -apple-system, BlinkMacSystemFont, "Helvetica Neue", Helvetica, Arial, sans-serif !important;
     letter-spacing: -0.01575em !important;
-    line-height: 1.0175 !important; /* +5% line spacing (was 0.969) */
+    line-height: 1.068 !important; /* +5% line spacing (was 1.0175) */
     font-style: normal !important;
     margin: 0 !important;
     padding: 0 !important;
@@ -2219,7 +2243,7 @@
   }
   .hero-frame-paragraph .hero-body-bold {
     font-weight: 700 !important;
-    color: var(--color-heading-silver, #4a5461) !important; -webkit-text-fill-color: var(--color-heading-silver, #4a5461) !important;
+    color: #1a202c !important; -webkit-text-fill-color: #1a202c !important;
   }
 
   /* ── Mobile: cut section spacing in half across all 4 section transitions ── */
@@ -2332,7 +2356,7 @@
 @media (min-width: 414px) and (max-width: 900px) {
   .hero-text .headline-mockup-light {
     font-size: 1em !important;
-    line-height: 1.0175 !important; /* +5% line spacing (was 0.969) */
+    line-height: 1.068 !important; /* +5% line spacing (was 1.0175) */
     font-style: normal !important;
     color: #3ba3b8 !important;
     -webkit-text-fill-color: #3ba3b8 !important;
@@ -2340,7 +2364,7 @@
   }
   .hero-text .headline-mockup-bold {
     font-size: inherit !important;
-    line-height: 1.0175 !important; /* +5% line spacing (was 0.969) */
+    line-height: 1.068 !important; /* +5% line spacing (was 1.0175) */
     color: #3ba3b8 !important;
     -webkit-text-fill-color: #3ba3b8 !important;
     font-weight: 600 !important;

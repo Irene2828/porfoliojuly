@@ -3,13 +3,13 @@ import './index.css';
 import CursorTrail from './v2/components/CursorTrail';
 
 export const metadata: Metadata = {
-  title: 'Iryna Sheremeta — Product Designer & Builder',
+  title: 'Iryna Sheremeta — Product designer & builder',
   description:
-    'I turn vague problems into working tools — from first prototype to something real people use.',
+    'I build custom websites and tools for busy professionals. You explain the problem. I handle the rest.',
   openGraph: {
-    title: 'Iryna Sheremeta — Product Designer & Builder',
+    title: 'Iryna Sheremeta — Product designer & builder',
     description:
-      'I turn vague problems into working tools — from first prototype to something real people use.',
+      'I build custom websites and tools for busy professionals. You explain the problem. I handle the rest.',
     type: 'website',
   },
 };

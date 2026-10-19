@@ -152,10 +152,10 @@ export default function GuertinProject({ kicker, subline, browserTitle, cardsTit
               style={{ backgroundColor: 'rgba(255,255,255,0.06)', border: '1px solid rgba(255,255,255,0.1)' }}
             >
               <h4 className="guertin-card-title" style={{ color: 'rgba(255,255,255,0.8)' }}>
-                <span className="guertin-card-icon">⚡</span> Problem: Low conversions
+                <span className="guertin-card-icon">⚡</span> Before: outdated online presence
               </h4>
               <p className="guertin-card-desc" style={{ color: 'rgba(255,255,255,0.8)' }}>
-                Outdated digital presence failing to build trust.
+                An expert whose old website didn’t show it.
               </p>
             </motion.div>
 
@@ -167,10 +167,10 @@ export default function GuertinProject({ kicker, subline, browserTitle, cardsTit
               style={{ backgroundColor: 'rgba(255,255,255,0.06)', border: '1px solid rgba(255,255,255,0.1)' }}
             >
               <h4 className="guertin-card-title" style={{ color: 'rgba(255,255,255,0.8)' }}>
-                <span className="guertin-card-icon">⚡</span> Built with: Next.js
+                <span className="guertin-card-icon">⚡</span> Solution: Trust first
               </h4>
               <p className="guertin-card-desc" style={{ color: 'rgba(255,255,255,0.8)' }}>
-                Modern stack for lightning-fast performance.
+                I built a site that earns trust first, then makes booking easy.
               </p>
             </motion.div>
 
@@ -182,10 +182,10 @@ export default function GuertinProject({ kicker, subline, browserTitle, cardsTit
               style={{ backgroundColor: 'rgba(255,255,255,0.06)', border: '1px solid rgba(255,255,255,0.1)' }}
             >
               <h4 className="guertin-card-title" style={{ color: 'rgba(255,255,255,0.8)' }}>
-                <span className="guertin-card-icon">⚡</span> Impact: +120% Leads
+                <span className="guertin-card-icon">⚡</span> Result: [add after launch]
               </h4>
               <p className="guertin-card-desc" style={{ color: 'rgba(255,255,255,0.8)' }}>
-                Doubled consultation bookings in 3 months.
+                Measurable business outcomes to be added post-launch.
               </p>
             </motion.div>
           </div>

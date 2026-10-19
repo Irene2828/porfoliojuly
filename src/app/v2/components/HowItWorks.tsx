@@ -6,11 +6,9 @@ export default function HowItWorks() {
   const steps = [
     {
       num: '01',
-      title: 'First Draft',
+      title: 'You tell me the problem.',
       bullets: [
-        { bold: 'Fast, working build', rest: ' clickable in days' },
-        { bold: 'Functional prototype', rest: ' to react to and validate early' },
-        { bold: 'Solid foundation', rest: ' that is easy to build on' }
+        { bold: 'A short call or an email.', rest: ' No prep, no tech talk.' }
       ],
       icon: (
         <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#f4f4f5" strokeWidth="1.75" strokeLinecap="round" strokeLinejoin="round">
@@ -21,11 +19,9 @@ export default function HowItWorks() {
     },
     {
       num: '02',
-      title: 'Test & Refine',
+      title: 'I send a first version.',
       bullets: [
-        { bold: 'Targeted testing', rest: ' with internal teams or real users' },
-        { bold: 'Direct feedback', rest: ' to catch friction and gaps' },
-        { bold: 'Rapid refinement', rest: ' based on actual findings' }
+        { bold: 'Something clickable in days,', rest: ' so you react to a real thing.' }
       ],
       icon: (
         <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#f4f4f5" strokeWidth="1.75" strokeLinecap="round" strokeLinejoin="round">
@@ -36,11 +32,9 @@ export default function HowItWorks() {
     },
     {
       num: '03',
-      title: 'Delivery',
+      title: 'We fix it and launch.',
       bullets: [
-        { bold: 'Smooth launch', rest: ' and comprehensive handover' },
-        { bold: 'Hosting & setup', rest: ' aligned with your stack' },
-        { bold: 'Tailored maintenance', rest: ' and support plan' }
+        { bold: 'I ship it, hand it over,', rest: ' and set up hosting and support.' }
       ],
       icon: (
         <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#f4f4f5" strokeWidth="1.75" strokeLinecap="round" strokeLinejoin="round">
@@ -82,7 +76,7 @@ export default function HowItWorks() {
       `}</style>
 
       {/* Section Heading: How the Process Looks / How it works */}
-      <div className="how-it-works-heading container" style={{ textAlign: 'center', marginBottom: '3.5rem' }}>
+      <div className="how-it-works-heading container" style={{ textAlign: 'center', marginBottom: '1.75rem' }}>
         {/* Short decor line above section heading */}
         <div className="how-it-works-decor-line" style={{ 
           width: '60px', 
@@ -106,7 +100,7 @@ export default function HowItWorks() {
           WebkitTextStroke: '0',
           textWrap: 'balance'
         }}>
-          <span style={{ fontWeight: 400, color: 'var(--color-heading-silver, #4a5461)' }}>How I </span><span style={{ fontWeight: 700, color: '#3ba3b8', WebkitTextFillColor: '#3ba3b8' }}>Get Things Done</span>
+          <span style={{ fontWeight: 400, color: 'var(--color-heading-silver, #4a5461)' }}>How it </span><span style={{ fontWeight: 700, color: '#3ba3b8', WebkitTextFillColor: '#3ba3b8' }}>works</span>
         </h2>
         <p style={{
           fontFamily: "var(--font-body)",
@@ -121,7 +115,7 @@ export default function HowItWorks() {
           letterSpacing: '-0.01em',
           fontStyle: 'italic'
         }}>
-          From concept to launch in 3 simple steps:
+          Fast first. Better second.
         </p>
       </div>
 
@@ -242,7 +236,7 @@ export default function HowItWorks() {
                         WebkitBackdropFilter: 'blur(16px)',
                         border: '1px solid rgba(255, 255, 255, 0.14)',
                         borderRadius: '2px',
-                        boxShadow: '0 8px 32px rgba(0, 0, 0, 0.2), inset 0 1px 0 rgba(255, 255, 255, 0.12)'
+                        boxShadow: '0 4px 16px rgba(0, 0, 0, 0.1), inset 0 1px 0 rgba(255, 255, 255, 0.06)'
                       }}
                     >
                       <h3 style={{ 

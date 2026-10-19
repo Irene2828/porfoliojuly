@@ -7,21 +7,21 @@ export default function ProcessSection() {
   const testimonials = [
     {
       num: '01',
-      quote: <>"Iryna turned our complex manual operational workflow into an intuitive, automated internal AI tool. What used to take our team hours every day now runs seamlessly in minutes."</>,
-      author: 'Elena Ross',
-      role: 'Founder & CEO, Apex Operations'
+      quote: <>[Real client quote]</>,
+      author: '[Name]',
+      role: '[role]'
     },
     {
       num: '02',
-      quote: <>"Working with Iryna was completely frictionless. She captured our brand identity perfectly and delivered a high-converting, boutique website that elevated our market positioning immediately."</>,
-      author: 'Marcus Vance',
-      role: 'Managing Director, Vance Studio'
+      quote: <>[Real client quote]</>,
+      author: '[Name]',
+      role: '[role]'
     },
     {
       num: '03',
-      quote: <>"From initial concept to final deployment, Iryna took complete ownership of our product. Her ability to blend strategic UX design with robust tech execution is unmatched."</>,
-      author: 'Sarah Jenkins',
-      role: 'VP of Product, Nexus Tech'
+      quote: <>[Real client quote]</>,
+      author: '[Name]',
+      role: '[role]'
     }
   ];
 
@@ -62,7 +62,7 @@ export default function ProcessSection() {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true, amount: 0.2 }}
           transition={{ duration: 0.8, ease: [0.16, 1, 0.3, 1] }}
-          style={{ width: '100%', maxWidth: '1440px', paddingLeft: '5%', marginBottom: '2.5rem', zIndex: 2, position: 'relative', textAlign: 'left' }}
+          style={{ width: '100%', maxWidth: '1440px', paddingLeft: '5%', marginBottom: '1.25rem', zIndex: 2, position: 'relative', textAlign: 'left' }}
         >
           <div style={{ 
             width: '60px', 
@@ -85,7 +85,7 @@ export default function ProcessSection() {
             WebkitTextStroke: '0',
             textWrap: 'balance'
           }}>
-            <span style={{ fontWeight: 400, color: 'var(--color-heading-silver, #4a5461)' }}>Clients' </span><span style={{ fontWeight: 700, color: '#3ba3b8', WebkitTextFillColor: '#3ba3b8' }}>Feedback:</span>
+            <span style={{ fontWeight: 400, color: 'var(--color-heading-silver, #4a5461)' }}>Clients’ </span><span style={{ fontWeight: 700, color: '#3ba3b8', WebkitTextFillColor: '#3ba3b8' }}>feedback</span>
           </h2>
           <p style={{
             fontFamily: "var(--font-body)",
@@ -100,7 +100,7 @@ export default function ProcessSection() {
             letterSpacing: '-0.01em',
             fontStyle: 'italic'
           }}>
-            I didn't ask for flattery. I asked: &ldquo;Why me?&rdquo;
+            I didn’t ask for flattery. I asked: “Why me?”
           </p>
         </motion.div>
 

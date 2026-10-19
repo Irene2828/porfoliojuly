@@ -27,75 +27,57 @@ export default function ProjectsV2({ initialProjects = [] }: ProjectsV2Props) {
   const initialProjectsData = [
     {
       id: 'v2-1',
-      title: 'Ukraine Relief AI // Terry Fox Run',
-      slug: 'ukraine-case-1',
-      subline: 'Custom platform for Ukraine relief efforts',
+      title: 'Terry Fox Run // Poster tool',
+      slug: 'terry-fox-run',
+      subline: 'Volunteers needed posters. Designers were the bottleneck.',
       hoverLabel: 'Tap to Zoom',
       annotations: [
-        { markerNumber: 1, title: 'AI Qualification', text: 'Engages inbound lead inquiries & volunteer requests automatically.' },
-        { markerNumber: 2, title: 'Instant Canvas Sync', text: 'Generates personalized localized campaign graphics in seconds.' },
-        { markerNumber: 3, title: 'CRM Integration', text: 'Syncs data directly with Hubspot & internal tracking tools.' }
+        { markerNumber: 1, title: 'Locked Template', text: 'Anyone can make an on-brand poster in minutes.' },
+        { markerNumber: 2, title: 'AI Assistant', text: 'An AI agent can also fill in the fields for you, faster still.' },
+        { markerNumber: 3, title: 'Human in Control', text: 'The poster’s owner reviews and approves everything.' }
       ],
       stats: [
-        { chip: 'Problem', text: 'Manual campaign delays', stat: '4.8h', statLabel: 'old delay' },
-        { chip: 'Built with', text: 'Next.js, Canvas Engine & AI API', stat: '< 30s', statLabel: 'build time' },
-        { chip: 'Impact', text: 'Empowered volunteers across 25+ countries', stat: '+340%', statLabel: 'campaign reach' }
+        { chip: 'Before', text: 'Designers were the bottleneck', stat: '[X hours per poster]', statLabel: 'before' },
+        { chip: 'Built with', text: 'Locked template poster tool', stat: 'Minutes', statLabel: 'build time' },
+        { chip: 'Result', text: 'On-brand posters in minutes with owner review', stat: '[real outcome]', statLabel: 'result' }
       ],
       image: initialProjects[0]?.screens?.[0]?.originalUrl || '/skills.png'
     },
     {
       id: 'v2-2',
-      title: 'Professional website presence for a local legal expert',
+      title: 'Guertin Isabelle // Claims adjuster website',
       slug: 'guertin-isabelle',
-      subline: 'Quebec service business & consultation booking',
+      subline: 'An expert whose old website didn’t show it.',
       hoverLabel: 'Tap to Zoom',
       annotations: [
-        { markerNumber: 1, title: 'Doc Parsing', text: 'Extracts key structured fields from PDFs and receipts instantly.' },
-        { markerNumber: 2, title: 'Smart Validation', text: 'Flags discrepancies and potential fraud markers in real time.' },
-        { markerNumber: 3, title: 'Instant Routing', text: 'Pushes verified cases to claims managers for one-click approval.' }
+        { markerNumber: 1, title: 'Trust First', text: 'Earns credibility and authority immediately on landing.' },
+        { markerNumber: 2, title: 'Clear Value', text: 'Presents expertise clearly so visitors understand the offer.' },
+        { markerNumber: 3, title: 'Easy Booking', text: 'Makes scheduling a consultation straightforward and quick.' }
       ],
       stats: [
-        { chip: 'Problem', text: 'Slow manual claim reviews', stat: '48h', statLabel: 'old turnaround' },
-        { chip: 'Built with', text: 'Gemini Vision, Next.js & Postgres', stat: '2.5 min', statLabel: 'new processing' },
-        { chip: 'Impact', text: 'Automated 85% of standard intake processing', stat: '85%', statLabel: 'auto-processed' }
+        { chip: 'Before', text: 'Outdated online presence failing to show expertise', stat: 'outdated presence', statLabel: 'before' },
+        { chip: 'Built with', text: 'Modern Next.js web architecture', stat: 'Fast', statLabel: 'performance' },
+        { chip: 'Result', text: 'Trust-first presence with seamless consultation booking', stat: '[add after launch]', statLabel: 'result' }
       ],
       image: initialProjects[1]?.screens?.[0]?.originalUrl || '/skills.png'
     },
     {
       id: 'v2-3',
-      title: 'Community map-based volunteer project',
+      title: 'Community map // Volunteer coordination',
       slug: 'community-map-project',
-      subline: 'Interactive geospatial platform for local relief teams',
+      subline: 'Aid requests were scattered across six chat apps.',
       hoverLabel: 'Tap to Zoom',
       annotations: [
-        { markerNumber: 1, title: 'Live Mapping', text: 'Real-time pin drops and localized dispatch for mutual aid.' },
-        { markerNumber: 2, title: 'Offline Cache', text: 'PWA support for field volunteers in low-bandwidth zones.' },
-        { markerNumber: 3, title: 'Role Routing', text: 'Automatic triage based on volunteer proximity and skillsets.' }
+        { markerNumber: 1, title: 'One Live Map', text: 'Puts all mutual aid requests onto a single coordinated map.' },
+        { markerNumber: 2, title: 'Role Access', text: 'Assigned roles keep coordinators and volunteers aligned.' },
+        { markerNumber: 3, title: 'Offline Access', text: 'Reliable access in field zones with poor connectivity.' }
       ],
       stats: [
-        { chip: 'Problem', text: 'Fragmented chat coordinates', stat: '6+ apps', statLabel: 'old chaos' },
-        { chip: 'Built with', text: 'Next.js, Map Engine & Realtime DB', stat: 'Instant', statLabel: 'dispatch' },
-        { chip: 'Impact', text: 'Connected over 1,200 local aid deliveries', stat: '1.2k+', statLabel: 'deliveries' }
+        { chip: 'Before', text: 'Aid requests scattered across chat channels', stat: '6+ apps', statLabel: 'before' },
+        { chip: 'Built with', text: 'Live map platform with roles & offline support', stat: '1 map', statLabel: 'unified' },
+        { chip: 'Result', text: 'Coordinated mutual aid response across regions', stat: '[real number]', statLabel: 'result' }
       ],
       image: initialProjects[0]?.screens?.[0]?.originalUrl || '/skills.png'
-    },
-    {
-      id: 'v2-4',
-      title: "Old ipads' second life: interactive desk assistant for kids",
-      slug: 'ipad-kids-assistant',
-      subline: 'Hardware repurposing & smart interactive assistant',
-      hoverLabel: 'Tap to Zoom',
-      annotations: [
-        { markerNumber: 1, title: 'Kiosk Mode', text: 'Locks obsolete iOS devices into dedicated child-safe tools.' },
-        { markerNumber: 2, title: 'Voice & Touch', text: 'Interactive audio prompts and visual schedules for homework.' },
-        { markerNumber: 3, title: 'Parent Portal', text: 'Remote routine updates synced over lightweight WebSocket.' }
-      ],
-      stats: [
-        { chip: 'Problem', text: 'E-waste from obsolete iPads', stat: '0 utility', statLabel: 'before' },
-        { chip: 'Built with', text: 'WebSockets, Next.js & Speech API', stat: '100%', statLabel: 'repurposed' },
-        { chip: 'Impact', text: 'Daily learning routines without modern App Store constraints', stat: 'Daily', statLabel: 'engagement' }
-      ],
-      image: initialProjects[1]?.screens?.[0]?.originalUrl || '/skills.png'
     }
   ];
 
@@ -254,7 +236,7 @@ export default function ProjectsV2({ initialProjects = [] }: ProjectsV2Props) {
         @media (max-width: 900px) {
           .cases-grid-container {
             grid-template-columns: 1fr !important;
-            gap: 2.5rem !important;
+            gap: 5rem !important; /* doubled spacing between cases on mobile */
             padding: 0 1.5rem !important;
           }
         }
@@ -262,7 +244,7 @@ export default function ProjectsV2({ initialProjects = [] }: ProjectsV2Props) {
       
       
       {/* Section Heading: For Every Problem There is a Solution. */}
-      <div className="cases-header-block" style={{ marginBottom: '3.5rem', textAlign: 'center', padding: '0 1.5rem' }}>
+      <div className="cases-header-block" style={{ marginBottom: '1.75rem', textAlign: 'center', padding: '0 1.5rem' }}>
         {/* Short decor line */}
         <div className="cases-decor-line" style={{
           width: '60px',
@@ -285,7 +267,7 @@ export default function ProjectsV2({ initialProjects = [] }: ProjectsV2Props) {
           WebkitTextStroke: '0',
           textWrap: 'balance'
         }}>
-          <span style={{ fontWeight: 400, color: 'var(--color-heading-silver, #4a5461)' }}>For Every Problem There is a </span><span style={{ fontWeight: 700, color: '#3ba3b8', WebkitTextFillColor: '#3ba3b8' }}>Solution</span>
+          <span style={{ fontWeight: 400, color: 'var(--color-heading-silver, #4a5461)' }}>Real problems. </span><span style={{ fontWeight: 700, color: '#3ba3b8', WebkitTextFillColor: '#3ba3b8' }}>Real fixes.</span>
         </h2>
         <p style={{
           fontFamily: "var(--font-body)",
@@ -300,7 +282,7 @@ export default function ProjectsV2({ initialProjects = [] }: ProjectsV2Props) {
           letterSpacing: '-0.01em',
           fontStyle: 'italic'
         }}>
-          See how I approach problems
+          What I built, and why.
         </p>
       </div>
       
@@ -344,9 +326,9 @@ export default function ProjectsV2({ initialProjects = [] }: ProjectsV2Props) {
                         <GuertinProject 
                           title={project.title}
                           subline={project.subline}
-                          kicker={project.id === 'v2-4' ? "INTERACTIVE ASSISTANT // KIDS TECH" : "GUERTIN ISABELLE // Professional Services Website"}
-                          browserTitle={project.id === 'v2-4' ? "Desk Assistant for Kids" : "Guertin Isabelle"}
-                          cardsTitle={project.id === 'v2-4' ? "Giving old hardware a second life with smart software." : "Designed to turn expertise into booked consultations."}
+                          kicker="GUERTIN ISABELLE // Claims adjuster website"
+                          browserTitle="Guertin Isabelle"
+                          cardsTitle="An expert whose old website didn’t show it."
                         />
                       ) : (
                         <GenericWhiteCard 

@@ -5,26 +5,26 @@ import { motion } from 'framer-motion';
 export default function ServicesV2() {
   const websitesBullets = [
     {
-      text: <span>Generate <strong style={{ fontWeight: 600, color: '#FFFFFF' }}>qualified leads</strong> for your business</span>,
+      text: <span>Says what you do in five seconds</span>,
       icon: (
         <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#e8ebee" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
-          <circle cx="12" cy="12" r="10"/><circle cx="12" cy="12" r="6"/><circle cx="12" cy="12" r="2"/>
+          <circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/>
         </svg>
       )
     },
     {
-      text: <span>Present your <strong style={{ fontWeight: 600, color: '#FFFFFF' }}>offer</strong> clearly — so visitors become clients</span>,
+      text: <span>Makes it easy to book or contact you</span>,
       icon: (
         <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#e8ebee" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
-          <rect x="3" y="3" width="18" height="18" rx="2" ry="2"/><line x1="3" y1="9" x2="21" y2="9"/><line x1="9" y1="21" x2="9" y2="9"/>
+          <rect x="3" y="4" width="18" height="18" rx="2" ry="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/>
         </svg>
       )
     },
     {
-      text: <span>Build <strong style={{ fontWeight: 600, color: '#FFFFFF' }}>trust &amp; authority</strong> with your audience</span>,
+      text: <span>Rebuilt on modern tech: fast, and easy to update</span>,
       icon: (
         <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#e8ebee" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
-          <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/>
+          <path d="M13 2L3 14h9l-1 8 10-12h-9l1-8z"/>
         </svg>
       )
     }
@@ -32,7 +32,7 @@ export default function ServicesV2() {
 
   const aiToolsBullets = [
     {
-      text: <span>Audit your ops to find <strong style={{ fontWeight: 600, color: '#1A1F2B' }}>bottlenecks &amp; manual tasks</strong></span>,
+      text: <span>You tell me what eats your time</span>,
       icon: (
         <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#1A1F2B" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
           <circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/>
@@ -40,15 +40,15 @@ export default function ServicesV2() {
       )
     },
     {
-      text: <span>Build &amp; integrate <strong style={{ fontWeight: 600, color: '#1A1F2B' }}>custom AI workflows &amp; agents</strong></span>,
+      text: <span>I build a simple tool just for that task</span>,
       icon: (
         <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#1A1F2B" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
-          <rect x="3" y="11" width="18" height="10" rx="2"/><circle cx="12" cy="5" r="2"/><path d="M12 7v4"/><line x1="8" y1="16" x2="8" y2="16"/><line x1="16" y1="16" x2="16" y2="16"/>
+          <path d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94l-3.76 3.76z"/>
         </svg>
       )
     },
     {
-      text: <span>Deploy <strong style={{ fontWeight: 600, color: '#1A1F2B' }}>practical automation</strong> directly into daily operations</span>,
+      text: <span>You stay in control. AI can use it to do the filling-in even faster.</span>,
       icon: (
         <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#1A1F2B" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
           <polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"/>
@@ -174,7 +174,7 @@ export default function ServicesV2() {
         whileInView={{ opacity: 1, y: 0 }}
         viewport={{ once: true, amount: 0.2 }}
         transition={{ duration: 0.8, ease: [0.16, 1, 0.3, 1] }}
-        style={{ marginBottom: '3.5rem', textAlign: 'center', padding: '0 1.5rem' }}
+        style={{ marginBottom: '1.75rem', textAlign: 'center', padding: '0 1.5rem' }}
       >
         {/* Short decor line */}
         <div style={{ 
@@ -186,7 +186,7 @@ export default function ServicesV2() {
         }} />
 
         <h2 style={{ 
-          fontFamily: "var(--font-heading)",
+          fontFamily: "var(--font-heading)", 
           fontSize: 'clamp(28px, 4.4vw, 42px)', 
           color: 'var(--color-heading-silver)', 
           fontWeight: 400,
@@ -198,7 +198,7 @@ export default function ServicesV2() {
           WebkitTextStroke: '0',
           textWrap: 'balance'
         }}>
-          <span style={{ fontWeight: 400, color: 'var(--color-heading-silver, #4a5461)' }}>How I Can Help </span><span style={{ fontWeight: 700, color: '#3ba3b8', WebkitTextFillColor: '#3ba3b8' }}>Your Business</span>
+          <span style={{ fontWeight: 400, color: 'var(--color-heading-silver, #4a5461)' }}>How I can help</span>
         </h2>
         <p style={{
           fontFamily: "var(--font-body)",
@@ -213,7 +213,7 @@ export default function ServicesV2() {
           letterSpacing: '-0.01em',
           fontStyle: 'italic'
         }}>
-          As a digital product builder
+          A website, a tool, or both.
         </p>
       </motion.div>
 
@@ -328,13 +328,22 @@ export default function ServicesV2() {
                   fontSize: 'clamp(1.48rem, 2.4vw, 1.95rem)',
                   fontWeight: 400,
                   color: '#FFFFFF',
-                  margin: '0 0 3.5rem 0',
+                  margin: '0 0 0.5rem 0',
                   letterSpacing: '-0.02em',
                   lineHeight: 1.2,
                   WebkitTextStroke: '0'
                 }}>
-                  Custom Websites
+                  Custom website
                 </h3>
+                <p style={{
+                  fontFamily: "var(--font-body)",
+                  fontSize: '15px',
+                  color: '#a0abb8',
+                  margin: '0 0 2.5rem 0',
+                  lineHeight: 1.5
+                }}>
+                  New or outdated? Make it work harder.
+                </p>
                 
                 <ul style={{ listStyle: 'none', padding: 0, margin: 0, display: 'flex', flexDirection: 'column', gap: '16px' }}>
                   {websitesBullets.map((bullet, idx) => (
@@ -410,13 +419,22 @@ export default function ServicesV2() {
                   fontSize: 'clamp(1.48rem, 2.4vw, 1.95rem)',
                   fontWeight: 400,
                   color: 'var(--color-headline-matte, #31343c)',
-                  margin: '0 0 3.5rem 0',
+                  margin: '0 0 0.5rem 0',
                   letterSpacing: '-0.02em',
                   lineHeight: 1.2,
                   WebkitTextStroke: '0'
                 }}>
-                  Custom AI Tools
+                  Custom tools, built to work with AI
                 </h3>
+                <p style={{
+                  fontFamily: "var(--font-body)",
+                  fontSize: '15px',
+                  color: '#65707e',
+                  margin: '0 0 2.5rem 0',
+                  lineHeight: 1.5
+                }}>
+                  Stop doing it by hand.
+                </p>
                 
                 <ul style={{ listStyle: 'none', padding: 0, margin: 0, display: 'flex', flexDirection: 'column', gap: '16px' }}>
                   {aiToolsBullets.map((bullet, idx) => (
@@ -455,7 +473,7 @@ export default function ServicesV2() {
                 </ul>
                 <div style={{ display: 'flex', justifyContent: 'flex-end', marginTop: '64px' }}>
                   <a href="#cases" className="see-example-link-light-bg" style={{ position: 'relative', display: 'inline-flex', alignItems: 'center', fontFamily: 'var(--font-label), sans-serif', fontSize: '11px', fontWeight: 600, letterSpacing: '0.1em', opacity: 0.9, textDecoration: 'none', color: '#5C6672', paddingBottom: '4px', transition: 'opacity 0.2s' }} onMouseEnter={(e) => e.currentTarget.style.opacity = '1'} onMouseLeave={(e) => e.currentTarget.style.opacity = '0.9'}>
-                    <span>SEE AI TOOL EXAMPLES <span style={{ color: 'var(--accent, #1d4e5b)', marginLeft: '4px' }}>&darr;</span></span>
+                    <span>SEE TOOL EXAMPLES <span style={{ color: 'var(--accent, #1d4e5b)', marginLeft: '4px' }}>&darr;</span></span>
                   </a>
                 </div>
               </div>

@@ -35,44 +35,6 @@ export default function HeroV2() {
             <span style={{ position: 'absolute', bottom: '16px', left: '-18px', width: '6px', height: '6px', border: '1px solid rgba(160, 170, 182, 0.32)', backgroundColor: 'transparent' }} />
           </div>
 
-          {/* Silver concentric rings decor: twice smaller (210px), under top-left of headline */}
-          <div 
-            className="hero-teal-concentric-rings" 
-            aria-hidden="true" 
-            style={{ 
-              position: 'absolute', 
-              top: '-48px', 
-              left: '-60px', 
-              width: '210px', 
-              height: '210px', 
-              pointerEvents: 'none', 
-              zIndex: 0 
-            }}
-          >
-            <svg 
-              width="210" 
-              height="210" 
-              viewBox="0 0 210 210" 
-              fill="none" 
-              xmlns="http://www.w3.org/2000/svg"
-              style={{ 
-                width: '100%', 
-                height: '100%',
-                maskImage: 'linear-gradient(135deg, rgba(0, 0, 0, 0.9) 0%, rgba(0, 0, 0, 0.65) 50%, rgba(0, 0, 0, 0.25) 100%)',
-                WebkitMaskImage: 'linear-gradient(135deg, rgba(0, 0, 0, 0.9) 0%, rgba(0, 0, 0, 0.65) 50%, rgba(0, 0, 0, 0.25) 100%)'
-              }}
-            >
-              {/* Outer Rectangle - Lined (solid), Pale subtle black */}
-              <rect x="6" y="6" width="198" height="198" stroke="#25282e" strokeWidth="1.2" strokeOpacity="0.14" />
-
-              {/* Middle Rectangle - Dashed, Pale subtle black */}
-              <rect x="36" y="36" width="138" height="138" stroke="#25282e" strokeWidth="1.2" strokeDasharray="4 4" strokeOpacity="0.16" />
-
-              {/* Inner Rectangle - Lined (solid), Pale subtle black */}
-              <rect x="66" y="66" width="78" height="78" stroke="#25282e" strokeWidth="1.2" strokeOpacity="0.12" />
-            </svg>
-          </div>
-
           <div className="hero-copy-motion" style={{ position: 'relative', zIndex: 1 }}>
             <div className="hero-name-group" style={{ position: 'relative', width: 'fit-content', maxWidth: '100%' }}>
               <div
@@ -83,29 +45,25 @@ export default function HeroV2() {
                   {/* Desktop Headline (2 lines) */}
                   <span className="headline-desktop">
                     <span className="headline-line headline-light">
-                      Looking for a <span className="headline-teal-underline">custom</span> website
+                      A <span className="headline-teal-underline">website</span> that works harder.
                     </span>
                     <span className="headline-line headline-light">
-                      or an <span className="headline-teal-underline">internal</span> business tool?
+                      <span className="headline-teal-underline">Tools</span> that save you hours.
                     </span>
                   </span>
 
-                  {/* Mobile Headline (3 lines) */}
+                  {/* Mobile Headline (2 lines) */}
                   <span className="headline-mobile">
                     <span className="headline-line">
-                      <span className="headline-mockup-light">Looking for a </span><span className="headline-mockup-bold">custom</span>
+                      <span className="headline-mockup-light">A </span><span className="headline-mockup-bold">website</span><span className="headline-mockup-light"> that works harder.</span>
                     </span>
                     <span className="headline-line">
-                      <span className="headline-mockup-bold">website</span><span className="headline-mockup-light"> or an </span><span className="headline-mockup-bold">internal</span>
-                    </span>
-                    <span className="headline-line">
-                      <span className="headline-mockup-bold">business tool?</span>
+                      <span className="headline-mockup-bold">Tools</span><span className="headline-mockup-light"> that save you hours.</span>
                     </span>
                   </span>
                 </h1>
                 <p className="hero-frame-paragraph hero-paragraph-anim" style={{ marginTop: '1.7rem', fontSize: '1.213rem', lineHeight: '1.75', color: '#4a5461', maxWidth: '100%', fontWeight: 400, opacity: 1 }}>
-                  I <strong className="hero-body-bold">design and build custom digital products end-to-end</strong> &mdash; <span className="br-desktop"><br /></span>
-                  <span style={{ fontStyle: 'italic' }}>from figuring out what solution you need to shipping a working product.</span>
+                  AI makes custom builds faster and better than ever. <em style={{ fontStyle: 'italic' }}>If your site is outdated or your work runs on endless back-and-forth</em> — I’ll build the fix. <strong className="hero-body-bold" style={{ fontWeight: 700, color: '#1a202c' }}>You explain the problem. I handle the rest.</strong>
                 </p>
               </div>
 
@@ -123,14 +81,14 @@ export default function HeroV2() {
                 }}
               >
                 <a href="#contact" className="btn btn-primary btn-primary-outline" style={{ display: 'inline-flex', alignItems: 'center', gap: '0.5rem' }}>
-                  <span>BOOK MY SERVICES</span>
+                  <span>SEND YOUR PROBLEM</span>
                   <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round" style={{ transform: 'translateY(-0.5px)' }}>
                     <line x1="7" y1="17" x2="17" y2="7"></line>
                     <polyline points="7 7 17 7 17 17"></polyline>
                   </svg>
                 </a>
-                <a href="#process" className="btn btn-secondary btn-secondary-stacked">
-                  SEE WORK EXAMPLES <span className="arrow" style={{ color: '#2d8293' }}>↓</span>
+                <a href="#cases" className="btn btn-secondary btn-secondary-stacked">
+                  SEE WHAT I’VE BUILT <span className="arrow" style={{ color: '#2d8293' }}>↓</span>
                 </a>
               </div>
             </div>
@@ -142,54 +100,123 @@ export default function HeroV2() {
           <div className="hero-image-container" style={{ position: 'relative', zIndex: 2 }}>
             <div className="hero-image-brackets"></div>
             <div className="hero-image-brackets-left"></div>
-            <img src={heroImage.src} alt="Iryna Sheremeta" className="hero-image" />
+            <img src={heroImage.src} alt="Iryna Sheremeta" className="hero-image" style={{ position: 'relative', zIndex: 2 }} />
             <div className="hero-dot-overlay"></div>
-          </div>
 
-          {/* Geometric shapes twice smaller: Top-Right of Image */}
-          <div 
-            className="hero-shape-top-right" 
-            aria-hidden="true" 
-            style={{ 
-              position: 'absolute', 
-              top: '-40px', 
-              right: '-45px', 
-              width: '200px', 
-              height: '200px', 
-              pointerEvents: 'none', 
-              zIndex: 1 
-            }}
-          >
-            <svg 
-              width="200" 
-              height="200" 
-              viewBox="0 0 200 200" 
-              fill="none" 
-              xmlns="http://www.w3.org/2000/svg"
+            {/* Geometric square shapes: Bottom-Left of Image */}
+            <div 
+              className="hero-shape-bottom-left" 
+              aria-hidden="true" 
               style={{ 
-                width: '100%', 
-                height: '100%',
-                maskImage: 'linear-gradient(135deg, rgba(0, 0, 0, 0.95) 0%, rgba(0, 0, 0, 0.6) 60%, rgba(0, 0, 0, 0.15) 100%)',
-                WebkitMaskImage: 'linear-gradient(135deg, rgba(0, 0, 0, 0.95) 0%, rgba(0, 0, 0, 0.6) 60%, rgba(0, 0, 0, 0.15) 100%)'
+                position: 'absolute', 
+                bottom: '-35px', 
+                left: '-45px', 
+                width: '200px', 
+                height: '200px', 
+                pointerEvents: 'none', 
+                zIndex: 1 
               }}
             >
-              {/* Outer Rectangle - Lined (solid), Pale subtle black */}
-              <rect x="6" y="6" width="188" height="188" stroke="#25282e" strokeWidth="1.2" strokeOpacity="0.14" />
-              {/* Middle Rectangle - Dashed, Pale subtle black */}
-              <rect x="36" y="36" width="128" height="128" stroke="#25282e" strokeWidth="1.2" strokeDasharray="4 4" strokeOpacity="0.16" />
-              {/* Inner Rectangle - Lined (solid), Pale subtle black */}
-              <rect x="66" y="66" width="68" height="68" stroke="#25282e" strokeWidth="1.2" strokeOpacity="0.12" />
-            </svg>
-          </div>
+              <svg 
+                width="200" 
+                height="200" 
+                viewBox="0 0 200 200" 
+                fill="none" 
+                xmlns="http://www.w3.org/2000/svg"
+                style={{ 
+                  width: '100%', 
+                  height: '100%',
+                  maskImage: 'linear-gradient(135deg, rgba(0, 0, 0, 0.95) 0%, rgba(0, 0, 0, 0.6) 60%, rgba(0, 0, 0, 0.15) 100%)',
+                  WebkitMaskImage: 'linear-gradient(135deg, rgba(0, 0, 0, 0.95) 0%, rgba(0, 0, 0, 0.6) 60%, rgba(0, 0, 0, 0.15) 100%)'
+                }}
+              >
+                {/* Outer Rectangle - Lined (solid), Pale subtle black */}
+                <rect x="6" y="6" width="188" height="188" stroke="#1c1e23" strokeWidth="1.2" strokeOpacity="0.14" />
+                {/* Middle Rectangle - Dashed, Pale subtle black */}
+                <rect x="36" y="36" width="128" height="128" stroke="#1c1e23" strokeWidth="1.2" strokeDasharray="4 4" strokeOpacity="0.16" />
+                {/* Inner Rectangle - Lined (solid), Pale subtle black */}
+                <rect x="66" y="66" width="68" height="68" stroke="#1c1e23" strokeWidth="1.2" strokeOpacity="0.12" />
+              </svg>
+            </div>
 
-          {/* Hugging Labels container */}
-          <div className="hero-rings-badge-container" style={{ position: 'absolute', top: '50%', left: '50%', transform: 'translate(-50%, -50%)', width: '420px', height: '420px', pointerEvents: 'none', zIndex: 1 }}>
+            {/* Geometric square shapes: Top-Right of Image (Mirror looking) */}
+            <div 
+              className="hero-shape-top-right" 
+              aria-hidden="true" 
+              style={{ 
+                position: 'absolute', 
+                top: '-35px', 
+                right: '-45px', 
+                width: '200px', 
+                height: '200px', 
+                pointerEvents: 'none', 
+                zIndex: 1 
+              }}
+            >
+              <svg 
+                width="200" 
+                height="200" 
+                viewBox="0 0 200 200" 
+                fill="none" 
+                xmlns="http://www.w3.org/2000/svg"
+                style={{ 
+                  width: '100%', 
+                  height: '100%',
+                  maskImage: 'linear-gradient(315deg, rgba(0, 0, 0, 0.95) 0%, rgba(0, 0, 0, 0.6) 60%, rgba(0, 0, 0, 0.15) 100%)',
+                  WebkitMaskImage: 'linear-gradient(315deg, rgba(0, 0, 0, 0.95) 0%, rgba(0, 0, 0, 0.6) 60%, rgba(0, 0, 0, 0.15) 100%)'
+                }}
+              >
+                {/* Outer Rectangle - Lined (solid), Pale subtle black */}
+                <rect x="6" y="6" width="188" height="188" stroke="#1c1e23" strokeWidth="1.2" strokeOpacity="0.14" />
+                {/* Middle Rectangle - Dashed, Pale subtle black */}
+                <rect x="36" y="36" width="128" height="128" stroke="#1c1e23" strokeWidth="1.2" strokeDasharray="4 4" strokeOpacity="0.16" />
+                {/* Inner Rectangle - Lined (solid), Pale subtle black */}
+                <rect x="66" y="66" width="68" height="68" stroke="#1c1e23" strokeWidth="1.2" strokeOpacity="0.12" />
+              </svg>
+            </div>
 
-            {/* Circular Hugging Chart Labels - Creative Tech Indicators */}
-            {/* 1. "Websites" hugging the top-left curve of the middle ring */}
-            <div className="hero-badge-anchor badge-anchor-websites" style={{ position: 'absolute', top: '56px', left: '12px', zIndex: 10 }}>
+            {/* Curved text along right side of the circular image: "built around your needs" */}
+            <div 
+              className="hero-curved-text-container" 
+              aria-hidden="true" 
+              style={{ 
+                position: 'absolute', 
+                top: '50%', 
+                left: '50%', 
+                transform: 'translate(-50%, -50%)', 
+                width: '270px', 
+                height: '270px', 
+                pointerEvents: 'none', 
+                zIndex: 4 
+              }}
+            >
+              <svg width="270" height="270" viewBox="0 0 270 270" fill="none" style={{ width: '100%', height: '100%', overflow: 'visible' }}>
+                <defs>
+                  {/* Arc tracing along the right side of the circle from ~2 o'clock down to ~5:30 o'clock */}
+                  <path
+                    id="hero-curve-path"
+                    d="M 198 42 A 114 114 0 0 1 176 236"
+                    fill="none"
+                  />
+                </defs>
+                <text 
+                  fill="#3ba3b8" 
+                  fontSize="12.5px" 
+                  fontFamily="var(--font-heading), -apple-system, BlinkMacSystemFont, sans-serif" 
+                  fontWeight="500" 
+                  letterSpacing="0.08em"
+                >
+                  <textPath href="#hero-curve-path" startOffset="50%" textAnchor="middle">
+                    built around your needs
+                  </textPath>
+                </text>
+              </svg>
+            </div>
+
+            {/* Label 1: "✓ Websites" at the bottom of bottom-left shape (straight, horizontal) */}
+            <div className="hero-badge-anchor badge-anchor-websites" style={{ position: 'absolute', bottom: '-46px', left: '-15px', zIndex: 10 }}>
               <div className="hero-ring-badge badge-designer" style={{
-                transform: 'rotate(-16deg)',
+                transform: 'none',
                 padding: '4px 12px',
                 borderRadius: '20px',
                 background: 'rgba(255, 255, 255, 0.95)',
@@ -214,10 +241,10 @@ export default function HeroV2() {
               </div>
             </div>
 
-            {/* 2. "AI products" hugging the right edge of the outer ring */}
-            <div className="hero-badge-anchor badge-anchor-products" style={{ position: 'absolute', top: '190px', right: '-18px', zIndex: 10 }}>
+            {/* Label 2: "✓ Custom tools" at the top of top-right shape (straight, horizontal) */}
+            <div className="hero-badge-anchor badge-anchor-products" style={{ position: 'absolute', top: '-46px', right: '-15px', zIndex: 10 }}>
               <div className="hero-ring-badge badge-builder" style={{
-                transform: 'rotate(6deg)',
+                transform: 'none',
                 padding: '4px 12px',
                 borderRadius: '20px',
                 background: 'rgba(255, 255, 255, 0.95)',
@@ -238,36 +265,7 @@ export default function HeroV2() {
                 <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="#256678" strokeWidth="2.2" strokeLinecap="round" strokeLinejoin="round" style={{ flexShrink: 0 }}>
                   <polyline points="20 6 9 17 4 12"></polyline>
                 </svg>
-                AI products
-              </div>
-            </div>
-
-            {/* 3. "AI consultations" hugging the bottom-left curve of the outer ring */}
-            <div className="hero-badge-anchor badge-anchor-consultations" style={{ position: 'absolute', bottom: '40px', left: '42px', zIndex: 10 }}>
-
-              <div className="hero-ring-badge badge-ai" style={{
-                transform: 'rotate(12deg)',
-                padding: '4px 12px',
-                borderRadius: '20px',
-                background: 'rgba(255, 255, 255, 0.95)',
-                backdropFilter: 'blur(10px)',
-                border: '1px solid rgba(255, 255, 255, 0.9)',
-                boxShadow: '0 4px 14px rgba(85, 96, 106, 0.12)',
-                fontFamily: 'var(--font-heading)',
-                fontSize: '13px',
-                fontWeight: 500,
-                letterSpacing: '0.04em',
-                color: '#3d4454',
-                display: 'inline-flex',
-                alignItems: 'center',
-                gap: '6px',
-                whiteSpace: 'nowrap',
-                pointerEvents: 'auto'
-              }}>
-                <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="#256678" strokeWidth="2.2" strokeLinecap="round" strokeLinejoin="round" style={{ flexShrink: 0 }}>
-                  <polyline points="20 6 9 17 4 12"></polyline>
-                </svg>
-                AI consultations
+                Custom tools
               </div>
             </div>
           </div>

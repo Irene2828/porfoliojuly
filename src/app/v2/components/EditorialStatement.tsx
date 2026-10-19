@@ -20,44 +20,59 @@ export default function EditorialStatement() {
         <style>{`
           .prefooter-btn-primary {
             font-family: var(--font-label), sans-serif !important;
-            font-size: 0.81rem !important;
+            font-size: 0.803rem !important;
             font-weight: 600 !important;
             text-transform: uppercase !important;
             letter-spacing: 0.08em !important;
             justify-content: center;
-            height: 3.48rem !important;
-            padding: 0 2rem !important;
-            background: rgba(59, 163, 184, 0.85) !important;
-            color: #000000 !important;
-            -webkit-text-fill-color: #000000 !important;
+            height: 3.43rem !important;
+            padding: 0 1.98rem !important;
+            background: rgba(59, 163, 184, 0.88) !important;
+            color: #0b1116 !important;
+            -webkit-text-fill-color: #0b1116 !important;
             border: none !important;
             border-radius: 0px !important;
             box-shadow: 6px 6px 0px rgba(59, 163, 184, 0.28) !important;
+            text-shadow: 0 1px 1px rgba(255, 255, 255, 0.32), 0 0 1px rgba(255, 255, 255, 0.2) !important;
+            -webkit-font-smoothing: antialiased !important;
+            -moz-osx-font-smoothing: grayscale !important;
             transition: background 0.22s ease, border-color 0.22s ease, transform 0.2s ease, box-shadow 0.2s ease !important;
             -webkit-text-stroke: 0 !important;
           }
           .prefooter-btn-primary:hover {
-            background: rgba(59, 163, 184, 0.98) !important;
-            border-color: rgba(59, 163, 184, 0.98) !important;
-            color: #000000 !important;
-            -webkit-text-fill-color: #000000 !important;
+            background: rgba(59, 163, 184, 1) !important;
+            border-color: rgba(59, 163, 184, 1) !important;
+            color: #0b1116 !important;
+            -webkit-text-fill-color: #0b1116 !important;
             box-shadow: 6px 6px 0px rgba(59, 163, 184, 0.42) !important;
           }
           .face-cta {
-            background-color: rgba(59, 163, 184, 0.85) !important;
-            color: #000000 !important;
-            -webkit-text-fill-color: #000000 !important;
+            background-color: rgba(59, 163, 184, 0.88) !important;
+            color: #0b1116 !important;
+            -webkit-text-fill-color: #0b1116 !important;
             transition: box-shadow 0.3s ease, background 0.22s ease !important;
             border: none !important;
             box-shadow: 6px 6px 0px rgba(59, 163, 184, 0.28) !important;
+            text-shadow: 0 1px 1px rgba(255, 255, 255, 0.32), 0 0 1px rgba(255, 255, 255, 0.2) !important;
+            -webkit-font-smoothing: antialiased !important;
+            -moz-osx-font-smoothing: grayscale !important;
           }
           .face-cta:hover {
             box-shadow: 6px 6px 0px rgba(59, 163, 184, 0.42) !important;
-            background-color: rgba(59, 163, 184, 0.98) !important;
+            background-color: rgba(59, 163, 184, 1) !important;
+          }
+          @media (max-width: 767px) {
+            .prefooter-closing-line {
+              font-size: clamp(1.48rem, 7.7vw, 2.95rem) !important;
+              line-height: 1.35 !important;
+            }
           }
           @media (min-width: 901px) {
             .prefooter-closing-subtext {
               font-size: 1.23rem !important; /* 15% smaller on desktop (was 1.45rem) */
+            }
+            .prefooter-closing-line {
+              font-size: 2.6rem !important;
             }
           }
         `}</style>
@@ -92,41 +107,41 @@ export default function EditorialStatement() {
             className="prefooter-closing-line"
             style={{
               fontFamily: 'var(--font-heading)',
-              fontSize: 'clamp(2rem, 8vw, 2.6rem)',
+              fontSize: 'clamp(1.48rem, 7.7vw, 2.6rem)',
               fontWeight: 400,
               letterSpacing: '-0.02em',
-              lineHeight: 1.25,
+              lineHeight: 1.35,
               color: '#3ba3b8',
               WebkitTextFillColor: '#3ba3b8',
               textAlign: 'center',
               margin: '0 0 2.25rem 0',
-              maxWidth: '20ch',
+              maxWidth: '28ch',
             }}
           >
-            The future is <span style={{ fontWeight: 700, color: '#3ba3b8', WebkitTextFillColor: '#3ba3b8' }}>agentic.</span>
-            <br />
-            The future is <span style={{ fontWeight: 700, color: '#3ba3b8', WebkitTextFillColor: '#3ba3b8' }}>custom.</span>
+            An <span style={{ fontWeight: 700 }}>outdated</span> website or <span style={{ fontWeight: 700 }}>repetitive</span> work is slowing your business down.
           </h2>
 
-          {/* Text under closing headline — styled matching closing headline */}
-          <p
+          {/* Text under closing headline */}
+          <div
             className="prefooter-closing-subtext"
             style={{
               fontFamily: 'var(--font-heading)',
               fontSize: 'clamp(1.15rem, 2.8vw, 1.23rem)',
               fontWeight: 400,
               letterSpacing: '-0.02em',
-              lineHeight: 1.45,
+              lineHeight: 1.55,
               color: 'var(--color-heading-silver, #4a5461)',
               WebkitTextFillColor: 'var(--color-heading-silver, #4a5461)',
               textAlign: 'center',
               margin: '0 auto 2rem auto',
-              maxWidth: '38ch',
+              maxWidth: '46ch',
               textWrap: 'balance'
             }}
           >
-            I&apos;ll help your business <strong style={{ fontWeight: 700 }}>stand out and get future-ready</strong> with a <em style={{ fontStyle: 'italic' }}>custom digital product you need to grow.</em>
-          </p>
+            <p style={{ margin: 0 }}>
+              Let’s solve this. I’ll build the fix.
+            </p>
+          </div>
 
           {/* Action CTAs: doubled space underneath */}
           <div className="prefooter-cta-container" style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', gap: '1rem', marginTop: '0.5rem', marginBottom: '2.5rem', justifyContent: 'center' }}>
