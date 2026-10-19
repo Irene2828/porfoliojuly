@@ -139,7 +139,7 @@ export default function EditorialStatement() {
             }}
           >
             <p style={{ margin: 0 }}>
-              Let’s solve this. I’ll build the fix.
+              <strong style={{ fontWeight: 700, color: 'inherit' }}>Let’s solve this.</strong> I’ll build the fix.
             </p>
           </div>
 

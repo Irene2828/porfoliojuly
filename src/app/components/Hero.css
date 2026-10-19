@@ -437,13 +437,13 @@
     flex-direction: column !important;
     align-items: flex-start !important;
     gap: 0px !important;
-    font-size: clamp(1.72rem, 8.65vw, 3.25rem) !important;
-    white-space: nowrap !important;
+    font-size: clamp(2.05rem, 10.4vw, 3.85rem) !important;
+    white-space: normal !important;
     line-height: 1.05 !important;
     text-align: left !important;
   }
   .headline-line {
-    white-space: nowrap !important;
+    white-space: normal !important;
     text-align: left !important;
     line-height: 1.05 !important;
     align-self: flex-start !important;
@@ -2020,8 +2020,10 @@
   .v2-theme .hero-image-container,
   .hero-image-container {
     display: block !important;
-    width: clamp(200px, 56vw, 260px) !important;
-    height: clamp(200px, 56vw, 260px) !important;
+    width: 200px !important;
+    height: 200px !important;
+    max-width: 200px !important;
+    max-height: 200px !important;
     border-radius: 50% !important;
     box-shadow: -8px -8px 0px 0px #dcdfe3, -8px -8px 0px 1.5px rgba(59, 163, 184, 0.15) !important;
     margin: 0 !important;
@@ -2035,7 +2037,6 @@
   .hero-image-brackets-left,
   .hero-image-offset-frame,
   .hero-decor-square,
-  .hero-shape-top-right,
   .hero-rings-badge-container,
   .v2-theme .hero-rings-badge-container {
     display: none !important;

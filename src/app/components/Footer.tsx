@@ -82,7 +82,7 @@ export default function Footer() {
       `}</style>
       <div className="footer-inner-container">
         <p className="footer-copy-text">
-          &copy; 2026 Iryna Sheremeta &middot; Websites &amp; tools &middot; Worldwide
+          &copy; 2026 Iryna Sheremeta &middot; Websites &amp; tools
         </p>
         <a href="/hire" className="footer-hire-link">
           Hiring? &rarr;
