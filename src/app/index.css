@@ -469,7 +469,7 @@ h1, h2, h3, h4, h5, h6 {
     font-size: clamp(1.78rem, 9.25vw, 3.54rem) !important; /* +20% larger on mobile */
     font-weight: 400 !important;
     letter-spacing: -0.02em !important;
-    line-height: 0.98 !important; /* -40% spacing between lines 1 & 2, and 3 & 4 */
+    line-height: 1.08 !important;
     max-width: 100% !important;
     color: #3ba3b8 !important;
     -webkit-text-fill-color: #3ba3b8 !important;
@@ -484,14 +484,14 @@ h1, h2, h3, h4, h5, h6 {
     white-space: nowrap !important;
   }
 
-  /* 4 spread lines on mobile - aligned with left side of header */
+  /* 2 lines on mobile - aligned with left side of header */
   .v2-theme .headline-mobile {
     display: flex !important;
     flex-direction: column !important;
     align-items: flex-start !important;
     text-align: left !important;
     width: 100% !important;
-    gap: 0px !important; /* -40% tighter gap between paired lines */
+    gap: 0.12rem !important;
   }
 
   .v2-theme .headline-line {
@@ -499,7 +499,7 @@ h1, h2, h3, h4, h5, h6 {
     white-space: nowrap !important;
     max-width: 100% !important;
     font-size: inherit !important;
-    line-height: 0.98 !important;
+    line-height: 1.08 !important;
     text-align: left !important;
     align-self: flex-start !important;
   }
@@ -1189,11 +1189,11 @@ h1, h2, h3, h4, h5, h6 {
   }
 
   .v2-theme .hero-frame-paragraph {
-    text-align: center !important;
+    text-align: left !important;
     margin-top: 1.4rem !important; /* +40% spacing over body on mobile (was 1rem) */
-    max-width: 36ch !important;
-    margin-left: auto !important;
-    margin-right: auto !important;
+    max-width: 100% !important;
+    margin-left: 0 !important;
+    margin-right: 0 !important;
   }
 
   .v2-theme .hero-ctas,

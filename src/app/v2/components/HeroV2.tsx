@@ -47,32 +47,27 @@ export default function HeroV2() {
                   {/* Desktop Headline (2 lines) */}
                   <span className="headline-desktop">
                     <span className="headline-line headline-light">
-                      <span className="headline-teal-underline">Websites</span> that work harder.
+                      From problem to
                     </span>
                     <span className="headline-line headline-light">
-                      <span className="headline-teal-underline">Tools</span> that save you hours.
+                      working solution.
                     </span>
                   </span>
 
-                  {/* Mobile Headline (3 lines, left-aligned) */}
-                  <span className="headline-mobile" style={{ gap: '0px', lineHeight: 0.98 }}>
-                    <span className="headline-line" style={{ lineHeight: 0.98 }}>
-                      <span className="headline-mockup-bold">Websites</span>{' '}
-                      <span className="headline-mockup-light">that work</span>
+                  {/* Mobile Headline (2 lines, left-aligned) */}
+                  <span className="headline-mobile" style={{ gap: '0.12rem', lineHeight: 1.08 }}>
+                    <span className="headline-line" style={{ lineHeight: 1.08 }}>
+                      From problem to
                     </span>
-                    <span className="headline-line" style={{ lineHeight: 0.98 }}>
-                      <span className="headline-mockup-light">harder.</span>
-                    </span>
-                    <span className="headline-line headline-pair-gap" style={{ lineHeight: 0.98 }}>
-                      <span className="headline-mockup-bold">Tools</span>{' '}
-                      <span className="headline-mockup-light">that save hours.</span>
+                    <span className="headline-line" style={{ lineHeight: 1.08 }}>
+                      working solution.
                     </span>
                   </span>
                 </h1>
                 <p className="hero-frame-paragraph hero-paragraph-anim" style={{ marginTop: '1.7rem', fontSize: '1.213rem', lineHeight: '1.75', color: '#4a5461', maxWidth: '100%', fontWeight: 400, opacity: 1 }}>
-                  If your site is outdated or your work runs on endless back-and-forth, I’ll build the fix.
+                  Websites, tools, and smarter workflows — built around what your business actually needs.
                   <br className="br-desktop" />{' '}
-                  <strong className="hero-body-bold" style={{ fontWeight: 700, color: '#1a202c' }}>You explain the problem. I handle the rest.</strong>
+                  <strong className="hero-body-bold" style={{ fontWeight: 700, color: '#1a202c' }}>You bring the problem. I turn it into something that works.</strong>
                 </p>
               </div>
 

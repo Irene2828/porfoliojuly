@@ -436,16 +436,16 @@
     display: flex !important;
     flex-direction: column !important;
     align-items: flex-start !important;
-    gap: 0px !important;
+    gap: 0.12rem !important;
     font-size: clamp(1.78rem, 9.25vw, 3.54rem) !important;
     white-space: nowrap !important;
-    line-height: 0.98 !important;
+    line-height: 1.08 !important;
     text-align: left !important;
   }
   .headline-line {
     white-space: nowrap !important;
     text-align: left !important;
-    line-height: 0.98 !important;
+    line-height: 1.08 !important;
     align-self: flex-start !important;
   }
   .headline-pair-gap {
@@ -2047,9 +2047,9 @@
 @media (max-width: 900px) {
   .hero-frame-paragraph {
     max-width: 100% !important;
-    text-align: center !important;
-    margin-left: auto !important;
-    margin-right: auto !important;
+    text-align: left !important;
+    margin-left: 0 !important;
+    margin-right: 0 !important;
   }
 
   /* Keep italic body copy on the same line as the em dash (no forced desktop break) */
