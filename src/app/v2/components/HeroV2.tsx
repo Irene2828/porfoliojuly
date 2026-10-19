@@ -6,6 +6,8 @@ import heroImage from '@/app/assets/test.webp';
 export default function HeroV2() {
   return (
     <section className="section hero-section" id="home">
+      {/* Mobile: left-align hero body copy (beats the centered .hero-frame-paragraph rule in Hero.css) */}
+      <style>{`@media (max-width:900px){.hero-text .hero-frame-paragraph{text-align:left !important;margin-left:0 !important;margin-right:0 !important}}`}</style>
       {/* Background Split */}
       <div className="hero-bg-split"></div>
 
@@ -52,18 +54,17 @@ export default function HeroV2() {
                     </span>
                   </span>
 
-                  {/* Mobile Headline (4 lines spread) */}
+                  {/* Mobile Headline (3 lines, left-aligned) */}
                   <span className="headline-mobile" style={{ gap: '0px', lineHeight: 0.98 }}>
                     <span className="headline-line" style={{ lineHeight: 0.98 }}>
-                      <span className="headline-mockup-bold">Websites</span>
+                      <span className="headline-mockup-bold">Websites</span>{' '}
+                      <span className="headline-mockup-light">that work</span>
                     </span>
-                    <span className="headline-line headline-support-line" style={{ marginLeft: '25%', lineHeight: 0.98 }}>
-                      <span className="headline-mockup-light">that work harder.</span>
+                    <span className="headline-line" style={{ lineHeight: 0.98 }}>
+                      <span className="headline-mockup-light">harder.</span>
                     </span>
                     <span className="headline-line headline-pair-gap" style={{ lineHeight: 0.98 }}>
-                      <span className="headline-mockup-bold">Tools</span>
-                    </span>
-                    <span className="headline-line headline-support-line headline-support-line-4" style={{ marginLeft: '25%', lineHeight: 0.98, marginTop: '-0.25rem' }}>
+                      <span className="headline-mockup-bold">Tools</span>{' '}
                       <span className="headline-mockup-light">that save hours.</span>
                     </span>
                   </span>
