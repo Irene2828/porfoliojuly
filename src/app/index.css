@@ -1048,7 +1048,7 @@ h1, h2, h3, h4, h5, h6 {
     display: flex !important;
     flex-direction: column !important;
     justify-content: space-between !important;
-    padding-top: clamp(7.5rem, 16.1vh, 8.65rem) !important; /* shifted 15% lower */
+    padding-top: clamp(8.63rem, 18.5vh, 9.95rem) !important; /* shifted another 15% lower */
     padding-bottom: clamp(1.25rem, 3.5vw, 1.75rem) !important;
     padding-left: 16px !important;
     padding-right: 16px !important;

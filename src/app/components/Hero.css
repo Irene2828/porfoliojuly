@@ -2101,7 +2101,7 @@
      інакше фото заїжджає під хедер. */
   .v2-theme .hero-section,
   .hero-section {
-    padding-top: 6.9rem !important;
+    padding-top: 7.94rem !important; /* shifted another 15% lower */
   }
   .v2-theme .hero-image-wrapper,
   .hero-image-wrapper {
@@ -2137,7 +2137,7 @@
   /* Зверху було 50px (6rem − 3.5rem хедер + 10px паддінг враппера) → 25px */
   .v2-theme .hero-section,
   .hero-section {
-    padding-top: 6.9rem !important; /* shifted 15% lower */
+    padding-top: 7.94rem !important; /* shifted another 15% lower */
   }
   /* Знизу було 35px (gap 1.75rem + margin 7px) → 17.5px */
   .v2-theme .hero-container,
