@@ -469,7 +469,7 @@ h1, h2, h3, h4, h5, h6 {
     font-size: clamp(1.78rem, 9.25vw, 3.54rem) !important; /* +20% larger on mobile */
     font-weight: 400 !important;
     letter-spacing: -0.02em !important;
-    line-height: 1.18 !important; /* compact line spacing for 4-line spread */
+    line-height: 0.98 !important; /* -40% spacing between lines 1 & 2, and 3 & 4 */
     max-width: 100% !important;
     color: #3ba3b8 !important;
     -webkit-text-fill-color: #3ba3b8 !important;
@@ -491,7 +491,7 @@ h1, h2, h3, h4, h5, h6 {
     align-items: flex-start !important;
     text-align: left !important;
     width: 100% !important;
-    gap: 0.12rem !important;
+    gap: 0px !important; /* -40% tighter gap between paired lines */
   }
 
   .v2-theme .headline-line {
@@ -499,19 +499,19 @@ h1, h2, h3, h4, h5, h6 {
     white-space: nowrap !important;
     max-width: 100% !important;
     font-size: inherit !important;
-    line-height: inherit !important;
+    line-height: 0.98 !important;
     text-align: left !important;
     align-self: flex-start !important;
   }
 
   .v2-theme .headline-pair-gap {
-    margin-top: 0.45rem !important; /* breathing room between the two thoughts */
+    margin-top: 0.5rem !important; /* breathing room between the two thoughts */
   }
 
   .v2-theme .headline-mobile .headline-support-line,
   .v2-theme .headline-support-line,
   .headline-support-line {
-    margin-left: 22% !important; /* shifted intentionally to the right side */
+    margin-left: 25% !important; /* shifted intentionally to the right side */
     padding-left: 0 !important;
   }
 

@@ -436,24 +436,24 @@
     display: flex !important;
     flex-direction: column !important;
     align-items: flex-start !important;
-    gap: 0.12rem !important;
+    gap: 0px !important;
     font-size: clamp(1.78rem, 9.25vw, 3.54rem) !important;
     white-space: nowrap !important;
-    line-height: 1.18 !important;
+    line-height: 0.98 !important;
     text-align: left !important;
   }
   .headline-line {
     white-space: nowrap !important;
     text-align: left !important;
-    line-height: 1.18 !important;
+    line-height: 0.98 !important;
     align-self: flex-start !important;
   }
   .headline-pair-gap {
-    margin-top: 0.45rem !important;
+    margin-top: 0.5rem !important;
   }
   .headline-mobile .headline-support-line,
   .headline-support-line {
-    margin-left: 22% !important;
+    margin-left: 25% !important;
   }
 }
 

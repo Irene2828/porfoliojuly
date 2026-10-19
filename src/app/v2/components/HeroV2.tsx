@@ -45,26 +45,26 @@ export default function HeroV2() {
                   {/* Desktop Headline (2 lines) */}
                   <span className="headline-desktop">
                     <span className="headline-line headline-light">
-                      <span className="headline-teal-underline">Websites</span> that work <em style={{ fontStyle: 'italic', fontFamily: 'inherit' }}>harder</em>.
+                      <span className="headline-teal-underline">Websites</span> that work harder.
                     </span>
                     <span className="headline-line headline-light">
-                      <span className="headline-teal-underline">Tools</span> that <em style={{ fontStyle: 'italic', fontFamily: 'inherit' }}>save</em> you hours.
+                      <span className="headline-teal-underline">Tools</span> that save you hours.
                     </span>
                   </span>
 
                   {/* Mobile Headline (4 lines spread) */}
-                  <span className="headline-mobile">
-                    <span className="headline-line">
+                  <span className="headline-mobile" style={{ gap: '0px', lineHeight: 0.98 }}>
+                    <span className="headline-line" style={{ lineHeight: 0.98 }}>
                       <span className="headline-mockup-bold">Websites</span>
                     </span>
-                    <span className="headline-line headline-support-line" style={{ marginLeft: '25%' }}>
-                      <span className="headline-mockup-light">that work <em style={{ fontStyle: 'italic', fontFamily: 'inherit' }}>harder</em>.</span>
+                    <span className="headline-line headline-support-line" style={{ marginLeft: '25%', lineHeight: 0.98 }}>
+                      <span className="headline-mockup-light">that work harder.</span>
                     </span>
-                    <span className="headline-line headline-pair-gap">
+                    <span className="headline-line headline-pair-gap" style={{ lineHeight: 0.98 }}>
                       <span className="headline-mockup-bold">Tools</span>
                     </span>
-                    <span className="headline-line headline-support-line" style={{ marginLeft: '25%' }}>
-                      <span className="headline-mockup-light">that <em style={{ fontStyle: 'italic', fontFamily: 'inherit' }}>save</em> hours.</span>
+                    <span className="headline-line headline-support-line" style={{ marginLeft: '25%', lineHeight: 0.98 }}>
+                      <span className="headline-mockup-light">that save hours.</span>
                     </span>
                   </span>
                 </h1>
