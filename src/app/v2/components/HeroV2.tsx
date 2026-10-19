@@ -47,27 +47,33 @@ export default function HeroV2() {
                   {/* Desktop Headline (2 lines) */}
                   <span className="headline-desktop">
                     <span className="headline-line headline-light">
-                      From problem to
+                      <strong className="headline-mockup-bold" style={{ fontWeight: 700 }}>Websites</strong> that work harder.
                     </span>
                     <span className="headline-line headline-light">
-                      working solution.
+                      <strong className="headline-mockup-bold" style={{ fontWeight: 700 }}>Tools</strong> that save hours.
                     </span>
                   </span>
 
-                  {/* Mobile Headline (2 lines, left-aligned) */}
-                  <span className="headline-mobile" style={{ gap: '0.12rem', lineHeight: 1.08 }}>
-                    <span className="headline-line" style={{ lineHeight: 1.08 }}>
-                      From problem to
+                  {/* Mobile Headline (4 lines, left-aligned) */}
+                  <span className="headline-mobile" style={{ gap: '0px', lineHeight: 1.05 }}>
+                    <span className="headline-line" style={{ lineHeight: 1.05 }}>
+                      <strong className="headline-mockup-bold" style={{ fontWeight: 700 }}>Websites</strong>
                     </span>
-                    <span className="headline-line" style={{ lineHeight: 1.08 }}>
-                      working solution.
+                    <span className="headline-line" style={{ lineHeight: 1.05 }}>
+                      <span className="headline-mockup-light" style={{ fontWeight: 300 }}>that work harder.</span>
+                    </span>
+                    <span className="headline-line headline-pair-gap" style={{ lineHeight: 1.05, marginTop: '0.45rem' }}>
+                      <strong className="headline-mockup-bold" style={{ fontWeight: 700 }}>Tools</strong>
+                    </span>
+                    <span className="headline-line" style={{ lineHeight: 1.05 }}>
+                      <span className="headline-mockup-light" style={{ fontWeight: 300 }}>that save hours.</span>
                     </span>
                   </span>
                 </h1>
                 <p className="hero-frame-paragraph hero-paragraph-anim" style={{ marginTop: '1.7rem', fontSize: '1.213rem', lineHeight: '1.75', color: '#4a5461', maxWidth: '100%', fontWeight: 400, opacity: 1 }}>
-                  Websites, tools, and smarter workflows — built around what your business actually needs.
+                  I turn business problems into practical digital solutions — from a better website to a custom tool that simplifies your work.
                   <br className="br-desktop" />{' '}
-                  <strong className="hero-body-bold" style={{ fontWeight: 700, color: '#1a202c' }}>You bring the problem. I turn it into something that works.</strong>
+                  <strong className="hero-body-bold" style={{ fontWeight: 700, color: '#1a202c' }}>You explain the problem. I handle the rest.</strong>
                 </p>
               </div>
 
