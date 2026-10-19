@@ -455,6 +455,9 @@
   .headline-support-line {
     margin-left: 25% !important;
   }
+  .headline-support-line-4 {
+    margin-top: -0.25rem !important;
+  }
 }
 
 .headline-emphasis {

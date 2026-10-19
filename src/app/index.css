@@ -515,6 +515,11 @@ h1, h2, h3, h4, h5, h6 {
     padding-left: 0 !important;
   }
 
+  .v2-theme .headline-mobile .headline-support-line-4,
+  .headline-support-line-4 {
+    margin-top: -0.25rem !important; /* optical correction to match spacing between lines 1 & 2 */
+  }
+
   .v2-theme .hero-teal-concentric-rings {
     top: -24px !important;
     left: -20px !important;

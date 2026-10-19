@@ -63,7 +63,7 @@ export default function HeroV2() {
                     <span className="headline-line headline-pair-gap" style={{ lineHeight: 0.98 }}>
                       <span className="headline-mockup-bold">Tools</span>
                     </span>
-                    <span className="headline-line headline-support-line" style={{ marginLeft: '25%', lineHeight: 0.98 }}>
+                    <span className="headline-line headline-support-line headline-support-line-4" style={{ marginLeft: '25%', lineHeight: 0.98, marginTop: '-0.25rem' }}>
                       <span className="headline-mockup-light">that save hours.</span>
                     </span>
                   </span>
