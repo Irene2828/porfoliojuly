@@ -35,7 +35,7 @@ export default function EditorialStatement() {
             -webkit-text-fill-color: #000000 !important;
             border: 1px solid rgba(255, 255, 255, 0.45) !important;
             border-radius: 0px !important;
-            box-shadow: 4px 4px 0px #ffffff, 0 4px 16px rgba(0, 0, 0, 0.35) !important;
+            box-shadow: none !important;
             text-shadow: none !important;
             -webkit-font-smoothing: antialiased !important;
             -moz-osx-font-smoothing: grayscale !important;
@@ -50,17 +50,25 @@ export default function EditorialStatement() {
             border-color: #ffffff !important;
             color: #000000 !important;
             -webkit-text-fill-color: #000000 !important;
-            box-shadow: 6px 6px 0px #ffffff, 0 6px 20px rgba(0, 0, 0, 0.45) !important;
+            box-shadow: none !important;
           }
           .prefooter-btn-primary:hover svg {
             stroke: #000000 !important;
           }
-          /* Primary CTA: pink -> light silver grey */
+          /* Primary CTA: matches hero button style (soft pastel beige pink, no shadow) */
           .prefooter-section .prefooter-btn-primary.face-cta {
-            background: #C9CED6 !important;
+            background: #f7d6d0 !important;
+            border-color: rgba(255, 255, 255, 0.45) !important;
+            color: #000000 !important;
+            -webkit-text-fill-color: #000000 !important;
+            box-shadow: none !important;
           }
           .prefooter-section .prefooter-btn-primary.face-cta:hover {
-            background: #DCE0E6 !important;
+            background: #fae4e0 !important;
+            border-color: #ffffff !important;
+            color: #000000 !important;
+            -webkit-text-fill-color: #000000 !important;
+            box-shadow: none !important;
           }
           @media (max-width: 767px) {
             .prefooter-closing-line {

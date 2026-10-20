@@ -107,7 +107,7 @@ export default function HirePage() {
             -webkit-text-fill-color: #000000 !important;
             border: none !important;
             border-radius: 0px !important;
-            box-shadow: 6px 6px 0px rgba(59, 163, 184, 0.28) !important;
+            box-shadow: none !important;
             transition: background 0.22s ease, border-color 0.22s ease, transform 0.2s ease, box-shadow 0.2s ease !important;
             display: inline-flex !important;
             align-items: center !important;
@@ -123,7 +123,7 @@ export default function HirePage() {
             border-color: rgba(59, 163, 184, 0.98) !important;
             color: #000000 !important;
             -webkit-text-fill-color: #000000 !important;
-            box-shadow: 6px 6px 0px rgba(59, 163, 184, 0.42) !important;
+            box-shadow: none !important;
             transform: scale(1.02) !important;
           }
           .hire-btn-secondary,
@@ -173,7 +173,7 @@ export default function HirePage() {
             -webkit-text-fill-color: #000000 !important;
             border: none !important;
             border-radius: 0px !important;
-            box-shadow: 6px 6px 0px rgba(59, 163, 184, 0.28) !important;
+            box-shadow: none !important;
             transition: background 0.22s ease, border-color 0.22s ease, transform 0.2s ease, box-shadow 0.2s ease !important;
             display: inline-flex !important;
             align-items: center !important;
@@ -189,7 +189,7 @@ export default function HirePage() {
             border-color: rgba(59, 163, 184, 0.98) !important;
             color: #000000 !important;
             -webkit-text-fill-color: #000000 !important;
-            box-shadow: 6px 6px 0px rgba(59, 163, 184, 0.42) !important;
+            box-shadow: none !important;
             transform: scale(1.07) !important;
           }
         `}</style>

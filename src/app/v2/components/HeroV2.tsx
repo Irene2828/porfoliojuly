@@ -57,17 +57,14 @@ export default function HeroV2() {
         .hero-frame-paragraph em {
           color: #e2e4e9 !important;
           -webkit-text-fill-color: #e2e4e9 !important;
+          font-style: normal !important;
         }
         .hero-offer-item {
           display: inline;
           cursor: pointer;
-          text-decoration: underline transparent;
+          text-decoration: underline #f7d6d0;
           text-decoration-thickness: 1.5px;
           text-underline-offset: 4.5px;
-          transition: text-decoration-color 0.22s ease;
-        }
-        .hero-offer-item:hover {
-          text-decoration-color: #f7d6d0;
         }
         @media (max-width: 900px) {
           .hero-text .hero-frame-paragraph {
@@ -175,7 +172,7 @@ export default function HeroV2() {
                   <span className="hero-offer-item" style={{ whiteSpace: 'nowrap' }}>a modern website</span>,{' '}
                   <span className="hero-offer-item" style={{ whiteSpace: 'nowrap' }}>a custom tool</span>, or{' '}
                   <span className="hero-offer-item" style={{ whiteSpace: 'nowrap' }}>a smarter workflow</span>,{' '}
-                  <em style={{ fontStyle: 'italic', color: '#f7d6d0', WebkitTextFillColor: '#f7d6d0' }}>built around what your business needs.</em>
+                  <span style={{ color: '#f7d6d0', WebkitTextFillColor: '#f7d6d0' }}>built around what your business needs.</span>
                 </p>
               </div>
 
@@ -292,7 +289,7 @@ export default function HeroV2() {
             <div className="hero-badge-anchor badge-anchor-websites" style={{ position: 'absolute', bottom: '-46px', left: '-15px', zIndex: 10 }}>
               <div className="hero-ring-badge badge-designer" style={{
                 transform: 'none',
-                padding: '4px 12px',
+                padding: '5px 16px',
                 borderRadius: '20px',
                 background: 'rgba(24, 26, 32, 0.94)',
                 backdropFilter: 'blur(10px)',

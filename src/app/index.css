@@ -560,7 +560,7 @@ h1, h2, h3, h4, h5, h6 {
   -webkit-text-fill-color: #000000 !important;
   border: 1px solid rgba(255, 255, 255, 0.45) !important;
   border-radius: 0px !important;
-  box-shadow: 4px 4px 0px #ffffff, 0 4px 16px rgba(0, 0, 0, 0.35) !important;
+  box-shadow: none !important;
   text-shadow: none !important;
   -webkit-font-smoothing: antialiased !important;
   -moz-osx-font-smoothing: grayscale !important;
@@ -589,7 +589,7 @@ h1, h2, h3, h4, h5, h6 {
   border-color: #ffffff !important;
   color: #000000 !important;
   -webkit-text-fill-color: #000000 !important;
-  box-shadow: 6px 6px 0px #ffffff, 0 6px 20px rgba(0, 0, 0, 0.45) !important;
+  box-shadow: none !important;
   text-shadow: none !important;
   transform: scale(1.03) !important;
 }
@@ -1378,8 +1378,8 @@ h1, h2, h3, h4, h5, h6 {
   }
 
   .v2-theme .hero-ring-badge {
-    font-size: 11.5px !important;
-    padding: 3.5px 14px 3.5px 12px !important; /* ensures right side has generous margin */
+    font-size: 12px !important;
+    padding: 5px 16px 5px 12px !important; /* ensures right side has generous margin */
     box-sizing: border-box !important;
   }
 
