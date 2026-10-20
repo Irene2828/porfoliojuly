@@ -2005,11 +2005,11 @@
     flex-direction: row !important;
     align-items: center !important;
     justify-content: center !important;
-    padding: 10px 0 6px 10px !important; /* unclipped space for top-left peach shadow */
+    padding: 2.8rem 0 4.5rem 0 !important;
     width: 100% !important;
     max-width: 100% !important;
     margin-top: 0 !important;
-    margin-bottom: 0.5rem !important;
+    margin-bottom: 3.5rem !important;
     background: transparent !important;
     border: none !important;
     border-radius: 0 !important;
