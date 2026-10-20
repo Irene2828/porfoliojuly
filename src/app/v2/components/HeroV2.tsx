@@ -120,11 +120,13 @@ export default function HeroV2() {
           .hero-ring-badge,
           .badge-designer {
             font-size: 11.5px !important;
-            padding: 5px 18px !important;
+            padding: 5px 20px !important;
             width: fit-content !important;
             max-width: none !important;
             display: inline-flex !important;
             align-items: center !important;
+            justify-content: center !important;
+            text-align: center !important;
             box-sizing: border-box !important;
             white-space: nowrap !important;
             letter-spacing: 0.02em !important;
@@ -307,7 +309,7 @@ export default function HeroV2() {
             <div className="hero-badge-anchor badge-anchor-websites" style={{ position: 'absolute', bottom: '-46px', left: '-15px', zIndex: 10 }}>
               <div className="hero-ring-badge badge-designer" style={{
                 transform: 'none',
-                padding: '6px 18px',
+                padding: '6px 20px',
                 borderRadius: '20px',
                 background: 'rgba(24, 26, 32, 0.94)',
                 backdropFilter: 'blur(10px)',
@@ -320,7 +322,9 @@ export default function HeroV2() {
                 color: '#f1f5f9',
                 display: 'inline-flex',
                 alignItems: 'center',
-                gap: '7px',
+                justifyContent: 'center',
+                textAlign: 'center',
+                gap: '8px',
                 whiteSpace: 'nowrap',
                 width: 'fit-content',
                 maxWidth: 'none',
@@ -338,7 +342,7 @@ export default function HeroV2() {
                     <path d="M12 2a7 7 0 0 0-7 7c0 2.5 1.5 4.5 3 6h8c1.5-1.5 3-3.5 3-6a7 7 0 0 0-7-7z" />
                   </svg>
                 </div>
-                <span style={{ display: 'inline-block', paddingRight: '4px', fontSize: 'inherit', letterSpacing: 'normal' }}>
+                <span style={{ display: 'inline-block', fontSize: 'inherit', letterSpacing: 'normal' }}>
                   Product Designer &amp; Builder
                 </span>
               </div>
