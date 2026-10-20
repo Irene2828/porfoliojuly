@@ -46,6 +46,12 @@ export default function Header() {
           color: #C9CED6 !important;
           -webkit-text-fill-color: #C9CED6 !important;
         }
+        @media (max-width: 900px) {
+          .premium-header {
+            padding-left: 0.1rem !important;
+            padding-right: 1rem !important;
+          }
+        }
       `}</style>
       <div className="header-inner-wrapper">
         {/* Left side (Desktop): Name and Title */}
