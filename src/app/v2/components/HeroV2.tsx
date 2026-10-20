@@ -172,12 +172,12 @@ export default function HeroV2() {
                     </span>
                   </span>
                 </h1>
-                <p className="hero-frame-paragraph hero-paragraph-anim" style={{ marginTop: '1.7rem', fontSize: '1.213rem', lineHeight: '1.75', color: '#e2e4e9', WebkitTextFillColor: '#e2e4e9', maxWidth: '100%', fontWeight: 400, opacity: 1 }}>
+                <p className="hero-frame-paragraph hero-paragraph-anim" style={{ marginTop: '1.7rem', fontSize: '1.213rem', lineHeight: '1.75', color: '#e2e4e9', WebkitTextFillColor: '#e2e4e9', maxWidth: '100%', fontWeight: 400, opacity: 1, textWrap: 'pretty' }}>
                   <span className="hero-body-intro" style={{ fontWeight: 400, color: '#e2e4e9', WebkitTextFillColor: '#e2e4e9' }}>You tell me what&apos;s not working. I take it from there</span>{' '}&mdash;{' '}
                   <strong className="hero-offer-item" style={{ fontWeight: 700, whiteSpace: 'nowrap' }}>a modern website</strong>,{' '}
                   <strong className="hero-offer-item" style={{ fontWeight: 700, whiteSpace: 'nowrap' }}>a custom tool</strong>, or{' '}
                   <strong className="hero-offer-item" style={{ fontWeight: 700, whiteSpace: 'nowrap' }}>a smarter workflow</strong>,{' '}
-                  <span>built around what your business needs.</span>
+                  <span>built around what your business&nbsp;needs.</span>
                 </p>
               </div>
 
