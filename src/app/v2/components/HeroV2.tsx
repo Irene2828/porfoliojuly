@@ -114,20 +114,16 @@ export default function HeroV2() {
             margin-top: 1.4rem !important; /* body-buttons spacing, tightened 30% */
             gap: 0.85rem !important;
           }
-          .v2-theme .hero-ctas-outside .btn-primary-outline.btn-primary {
-            width: 90% !important;
-            align-self: flex-start !important;
-          }
         }
-        /* Primary CTA: pink -> light silver grey */
+        /* Primary CTA: soft pastel beige pink */
         .v2-theme .hero-ctas-outside .btn-primary-outline.btn-primary {
-          background: #C9CED6 !important;
+          background: #f7d6d0 !important;
           border-color: rgba(255, 255, 255, 0.45) !important;
           color: #000000 !important;
           -webkit-text-fill-color: #000000 !important;
         }
         .v2-theme .hero-ctas-outside .btn-primary-outline.btn-primary:hover {
-          background: #DCE0E6 !important;
+          background: #fae4e0 !important;
           border-color: #ffffff !important;
           color: #000000 !important;
           -webkit-text-fill-color: #000000 !important;
