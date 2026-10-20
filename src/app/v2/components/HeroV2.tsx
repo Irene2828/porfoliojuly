@@ -318,36 +318,6 @@ export default function HeroV2() {
                 Product Designer &amp; Builder
               </div>
             </div>
-
-            {/* Label 2: Top badge "Iryna Sheremeta" at top of top-right shape */}
-            <div className="hero-badge-anchor badge-anchor-products" style={{ position: 'absolute', top: '-46px', right: '-15px', zIndex: 10 }}>
-              <div className="hero-ring-badge badge-builder" style={{
-                transform: 'none',
-                padding: '4px 14px',
-                borderRadius: '20px',
-                background: 'rgba(24, 26, 32, 0.94)',
-                backdropFilter: 'blur(10px)',
-                border: '1px solid rgba(247, 214, 208, 0.45)',
-                boxShadow: '0 4px 14px rgba(0, 0, 0, 0.35)',
-                fontFamily: 'var(--font-heading)',
-                fontSize: '13px',
-                fontWeight: 500,
-                letterSpacing: '0.04em',
-                color: '#f1f5f9',
-                display: 'inline-flex',
-                alignItems: 'center',
-                gap: '8px',
-                whiteSpace: 'nowrap',
-                pointerEvents: 'auto'
-              }}>
-                {/* Profile Icon (User / Person) */}
-                <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="#f7d6d0" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" style={{ flexShrink: 0 }}>
-                  <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2" />
-                  <circle cx="12" cy="7" r="4" />
-                </svg>
-                <span style={{ paddingRight: '2px', display: 'inline-block' }}>Iryna Sheremeta</span>
-              </div>
-            </div>
           </div>
 
           <span className="hero-hover-surface" aria-hidden="true"></span>
