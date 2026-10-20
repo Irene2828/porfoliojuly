@@ -43,15 +43,20 @@ export default function HeroV2() {
         }
         .v2-theme .hero-frame-paragraph,
         .hero-frame-paragraph {
-          color: #f7d6d0 !important;
-          -webkit-text-fill-color: #f7d6d0 !important;
+          color: #e2e4e9 !important;
+          -webkit-text-fill-color: #e2e4e9 !important;
         }
         .v2-theme .hero-frame-paragraph .hero-body-bold,
         .hero-frame-paragraph .hero-body-bold,
         .hero-body-bold {
-          color: #f7d6d0 !important;
-          -webkit-text-fill-color: #f7d6d0 !important;
+          color: #e2e4e9 !important;
+          -webkit-text-fill-color: #e2e4e9 !important;
           font-weight: 700 !important;
+        }
+        .v2-theme .hero-frame-paragraph em,
+        .hero-frame-paragraph em {
+          color: #e2e4e9 !important;
+          -webkit-text-fill-color: #e2e4e9 !important;
         }
         .hero-offer-item {
           display: inline;
