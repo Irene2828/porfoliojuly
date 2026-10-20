@@ -36,6 +36,17 @@ export default function Header() {
 
   return (
     <header className={`premium-header ${isScrolled ? 'header-scrolled' : ''}`}>
+      <style>{`
+        .v2-theme .premium-header .mobile-brand-title,
+        .v2-theme .header-spacer-desktop a span:last-child {
+          color: #C9CED6 !important;
+          -webkit-text-fill-color: #C9CED6 !important;
+        }
+        .mobile-brand-title {
+          color: #C9CED6 !important;
+          -webkit-text-fill-color: #C9CED6 !important;
+        }
+      `}</style>
       <div className="header-inner-wrapper">
         {/* Left side (Desktop): Name and Title */}
         <div className="header-spacer-desktop">
@@ -54,7 +65,7 @@ export default function Header() {
               fontFamily: 'var(--font-heading), -apple-system, BlinkMacSystemFont, "Helvetica Neue", Arial, sans-serif', 
               fontSize: '13px', 
               fontWeight: 400, 
-              color: 'var(--header-title-color, #a0a6b1)', 
+              color: 'var(--header-title-color, #C9CED6)', 
               lineHeight: '1.2', 
               letterSpacing: '0.03em' 
             }}>
