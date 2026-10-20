@@ -114,6 +114,10 @@ export default function HeroV2() {
             margin-top: 1.4rem !important; /* body-buttons spacing, tightened 30% */
             gap: 0.85rem !important;
           }
+          .v2-theme .hero-ctas-outside .btn-primary-outline.btn-primary {
+            width: 90% !important;
+            align-self: flex-start !important;
+          }
         }
         /* Primary CTA: pink -> light silver grey */
         .v2-theme .hero-ctas-outside .btn-primary-outline.btn-primary {
