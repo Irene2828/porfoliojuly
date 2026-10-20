@@ -113,7 +113,7 @@ export default function HeroV2() {
           }
           .v2-theme .hero-ctas,
           .v2-theme .hero-ctas-outside {
-            margin-top: 1.4rem !important; /* body-buttons spacing, tightened 30% */
+            margin-top: 1.75rem !important; /* body-buttons spacing +25% */
             gap: 0.85rem !important;
           }
           .v2-theme .hero-ring-badge,
@@ -338,7 +338,9 @@ export default function HeroV2() {
                     <path d="M12 2a7 7 0 0 0-7 7c0 2.5 1.5 4.5 3 6h8c1.5-1.5 3-3.5 3-6a7 7 0 0 0-7-7z" />
                   </svg>
                 </div>
-                Product Designer &amp; Builder
+                <span style={{ display: 'inline-block', paddingRight: '4px', fontSize: 'inherit', letterSpacing: 'normal' }}>
+                  Product Designer &amp; Builder
+                </span>
               </div>
             </div>
           </div>
