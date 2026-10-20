@@ -116,6 +116,19 @@ export default function HeroV2() {
             margin-top: 1.4rem !important; /* body-buttons spacing, tightened 30% */
             gap: 0.85rem !important;
           }
+          .v2-theme .hero-ring-badge,
+          .hero-ring-badge,
+          .badge-designer {
+            font-size: 11.5px !important;
+            padding: 5px 18px !important;
+            width: fit-content !important;
+            max-width: none !important;
+            display: inline-flex !important;
+            align-items: center !important;
+            box-sizing: border-box !important;
+            white-space: nowrap !important;
+            letter-spacing: 0.02em !important;
+          }
         }
         /* Primary CTA: soft pastel beige pink */
         .v2-theme .hero-ctas-outside .btn-primary-outline.btn-primary {
