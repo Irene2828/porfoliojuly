@@ -67,6 +67,10 @@ export default function HowItWorks() {
           .process-svg-mobile {
             display: block !important;
           }
+          .process-decor-top-right-squares,
+          .process-decor-bottom-circle {
+            display: none !important;
+          }
         }
         @media (min-width: 861px) {
           .process-svg-mobile {
@@ -142,19 +146,19 @@ export default function HowItWorks() {
             opacity: 0.8
           }}
         >
-          {/* Top-Left Cluster */}
+          {/* Top-Left Cluster (Circle) */}
           <div style={{ position: 'absolute', width: '200px', height: '200px', border: '1px solid rgba(247, 214, 208, 0.45)', borderRadius: '50%', top: '-5%', left: '-2%' }} />
           
-          {/* Top-Right Cluster */}
-          <div style={{ position: 'absolute', width: '120px', height: '180px', border: '1px dashed rgba(247, 214, 208, 0.45)', top: '10%', right: '5%' }} />
-          <div style={{ position: 'absolute', width: '80px', height: '80px', border: '1px solid rgba(247, 214, 208, 0.5)', top: '25%', right: '12%' }} />
+          {/* Top-Right Cluster (Square Shapes - Hidden on Mobile) */}
+          <div className="process-decor-top-right-squares" style={{ position: 'absolute', width: '120px', height: '180px', border: '1px dashed rgba(247, 214, 208, 0.45)', top: '10%', right: '5%' }} />
+          <div className="process-decor-top-right-squares" style={{ position: 'absolute', width: '80px', height: '80px', border: '1px solid rgba(247, 214, 208, 0.5)', top: '25%', right: '12%' }} />
 
           {/* Center-Left subtle lines */}
           <div style={{ position: 'absolute', top: '50%', left: '0', width: '8%', height: '1px', backgroundColor: 'rgba(247, 214, 208, 0.45)' }} />
           <div style={{ position: 'absolute', top: '52%', left: '0', width: '5%', height: '1px', backgroundColor: 'rgba(247, 214, 208, 0.5)' }} />
 
-          {/* Bottom-Right Cluster */}
-          <div style={{ position: 'absolute', width: '160px', height: '160px', border: '1px dashed rgba(247, 214, 208, 0.45)', borderRadius: '50%', bottom: '10%', right: '8%' }} />
+          {/* Bottom-Right Cluster (Circle - Hidden on Mobile) */}
+          <div className="process-decor-bottom-circle" style={{ position: 'absolute', width: '160px', height: '160px', border: '1px dashed rgba(247, 214, 208, 0.45)', borderRadius: '50%', bottom: '10%', right: '8%' }} />
         </div>
 
         <div className="container" style={{ position: 'relative', zIndex: 3, paddingTop: '4rem', paddingBottom: '5rem', paddingLeft: '1.5rem', paddingRight: '1.5rem' }}>

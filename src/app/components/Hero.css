@@ -2131,7 +2131,7 @@
   .hero-text .headline-mockup-bold {
     font-family: -apple-system, BlinkMacSystemFont, "Helvetica Neue", Helvetica, Arial, sans-serif !important;
     letter-spacing: -0.01575em !important;
-    line-height: 1.068 !important; /* +5% line spacing (was 1.0175) */
+    line-height: 1.17 !important; /* +15% line spacing */
     font-style: normal !important;
     margin: 0 !important;
     padding: 0 !important;

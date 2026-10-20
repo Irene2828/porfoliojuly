@@ -19,7 +19,7 @@
   --color-accent-soft: rgba(59, 163, 184, 0.14);
   --color-accent-light: #7fc5d5;
   --color-accent-deep: #256678;
-  --color-heading-peach: #f795a9;
+  --color-heading-peach: #f2908f;
   --color-heading-silver: #4a5461;
   --color-headline-matte: #31343c;
   --color-body-dark: #2b3038;
@@ -268,7 +268,7 @@ h1, h2, h3, h4, h5, h6 {
 
 .v2-theme .page-section-divider.cinematic-section .section-divider-stats-row {
   background: #f7d6d0 !important; /* Button primary fill pastel peach tone */
-  border-top: 4px solid #f795a9 !important; /* Thick brand peach pink line */
+  border-top: 4px solid #f2908f !important; /* Thick brand peach line */
   margin-top: -2.5rem !important;
   position: relative !important;
   z-index: 5 !important;
@@ -369,8 +369,8 @@ h1, h2, h3, h4, h5, h6 {
     letter-spacing: -0.035em !important;
     line-height: 1.26 !important;
     max-width: 100% !important;
-    color: #f795a9 !important;
-    -webkit-text-fill-color: #f795a9 !important;
+    color: #f2908f !important;
+    -webkit-text-fill-color: #f2908f !important;
     -webkit-text-stroke: 0px transparent !important;
     -webkit-text-stroke-width: 0px !important;
     text-stroke: 0px transparent !important;
@@ -388,8 +388,8 @@ h1, h2, h3, h4, h5, h6 {
   .v2-theme .headline-mockup-bold {
     font-weight: 700 !important;
     letter-spacing: 0.025em !important; /* subtly increased spacing in bold words */
-    color: #f795a9 !important;
-    -webkit-text-fill-color: #f795a9 !important;
+    color: #f2908f !important;
+    -webkit-text-fill-color: #f2908f !important;
   }
 
   .v2-theme .headline-mockup-light,
@@ -404,13 +404,13 @@ h1, h2, h3, h4, h5, h6 {
   font-style: italic !important;
   font-weight: 300 !important;
   letter-spacing: -0.035em !important;
-  color: #f795a9 !important;
-  -webkit-text-fill-color: #f795a9 !important;
+  color: #f2908f !important;
+  -webkit-text-fill-color: #f2908f !important;
 }
 
 .headline-teal-underline {
   text-decoration: underline !important;
-  text-decoration-color: #f795a9 !important;
+  text-decoration-color: #f2908f !important;
   text-decoration-thickness: 1.5px !important;
   text-underline-offset: 6.5px !important;
 }
@@ -419,7 +419,7 @@ h1, h2, h3, h4, h5, h6 {
   position: relative;
   display: inline-block;
   text-decoration: underline;
-  text-decoration-color: #f795a9;
+  text-decoration-color: #f2908f;
   text-decoration-thickness: 1.5px;
   text-underline-offset: 6.5px;
 }
@@ -434,8 +434,8 @@ h1, h2, h3, h4, h5, h6 {
   font-weight: 400 !important;
   letter-spacing: -0.035em !important;
   font-style: normal !important;
-  color: #f795a9 !important;
-  -webkit-text-fill-color: #f795a9 !important;
+  color: #f2908f !important;
+  -webkit-text-fill-color: #f2908f !important;
   -webkit-text-stroke: 0px transparent !important;
   -webkit-text-stroke-width: 0px !important;
   text-stroke: 0px transparent !important;
@@ -478,10 +478,10 @@ h1, h2, h3, h4, h5, h6 {
     font-size: clamp(1.85rem, 9.35vw, 3.46rem) !important; /* 10% smaller on mobile */
     font-weight: 400 !important;
     letter-spacing: -0.02em !important;
-    line-height: 1.05 !important;
+    line-height: 1.17 !important; /* +15% line spacing from baseline 1.0175 */
     max-width: 100% !important;
-    color: #f795a9 !important;
-    -webkit-text-fill-color: #f795a9 !important;
+    color: #f7d6d0 !important;
+    -webkit-text-fill-color: #f7d6d0 !important;
     -webkit-text-stroke: 0px transparent !important;
     -webkit-text-stroke-width: 0px !important;
     text-stroke: 0px transparent !important;
@@ -508,26 +508,26 @@ h1, h2, h3, h4, h5, h6 {
     white-space: nowrap !important;
     max-width: 100% !important;
     font-size: inherit !important;
-    line-height: 1.05 !important;
+    line-height: 1.17 !important;
     text-align: left !important;
     align-self: flex-start !important;
   }
 
   .v2-theme .headline-pair-gap {
-    margin-top: 0.45rem !important; /* breathing room before row 3 (Tools that save hours.) */
+    margin-top: 0.45rem !important;
   }
 
   .v2-theme .headline-mockup-bold {
     font-weight: 700 !important;
     letter-spacing: 0.025em !important; /* subtly increased spacing in bold words */
-    color: #f795a9 !important;
-    -webkit-text-fill-color: #f795a9 !important;
+    color: #f2908f !important;
+    -webkit-text-fill-color: #f2908f !important;
   }
 
   .v2-theme .headline-mockup-light {
     font-weight: 300 !important;
-    color: #f795a9 !important;
-    -webkit-text-fill-color: #f795a9 !important;
+    color: #f7d6d0 !important;
+    -webkit-text-fill-color: #f7d6d0 !important;
   }
 
   .v2-theme .hero-teal-concentric-rings {
@@ -978,8 +978,8 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 .v2-theme .prefooter-closing-line span {
-  color: #f795a9 !important;
-  -webkit-text-fill-color: #f795a9 !important;
+  color: #f2908f !important;
+  -webkit-text-fill-color: #f2908f !important;
   letter-spacing: 0.025em !important;
 }
 
@@ -1038,7 +1038,7 @@ h1, h2, h3, h4, h5, h6 {
   max-height: 200px !important;
   margin-top: 0 !important;
   border-radius: 50% !important;
-  box-shadow: -8px -8px 0px 0px #1e2026, -8px -8px 0px 1.5px rgba(247, 149, 169, 0.25) !important;
+  box-shadow: -8px -8px 0px 0px #1e2026, -8px -8px 0px 1.5px rgba(242, 144, 143, 0.25) !important;
   background: #181a1f !important;
   position: relative !important;
   overflow: visible !important;
@@ -1097,24 +1097,24 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 .v2-theme .nav-link::after {
-  background-color: #f795a9 !important; /* Brand peach pink hover underline */
+  background-color: #f2908f !important; /* Brand peach hover underline */
   height: 1px !important; /* Thin hover underline */
 }
 
 .v2-theme .nav-link:hover::after,
 .v2-theme .header-nav-desktop .nav-link:hover::after {
-  background-color: #f795a9 !important;
+  background-color: #f2908f !important;
 }
 
 .v2-theme .premium-header {
-  border-bottom: 1px solid rgba(247, 149, 169, 0.18) !important;
+  border-bottom: 1px solid rgba(242, 144, 143, 0.18) !important;
 }
 
 .v2-theme .premium-header.header-scrolled {
   background: rgba(18, 19, 22, 0.88) !important;
   backdrop-filter: blur(20px) saturate(180%) !important;
   -webkit-backdrop-filter: blur(20px) saturate(180%) !important;
-  border-bottom: 1px solid rgba(247, 149, 169, 0.22) !important;
+  border-bottom: 1px solid rgba(242, 144, 143, 0.22) !important;
   box-shadow: 0 4px 24px rgba(0, 0, 0, 0.3) !important;
 }
 
@@ -1165,14 +1165,20 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 @media (max-width: 900px) {
-  /* Header stroke bottom on mobiles subtle light peach pink */
+  /* Header stroke bottom and doubled inner bottom padding on mobile */
   .v2-theme .premium-header,
   .premium-header {
-    border-bottom: 1px solid rgba(247, 149, 169, 0.2) !important;
+    border-bottom: 1px solid rgba(242, 144, 143, 0.2) !important;
+    padding-top: 0.65rem !important;
+    padding-bottom: 1.3rem !important; /* Doubled header inner bottom padding */
+    height: auto !important;
+    min-height: 4.2rem !important;
   }
   .v2-theme .premium-header.header-scrolled,
   .premium-header.header-scrolled {
-    border-bottom: 1px solid rgba(247, 149, 169, 0.22) !important;
+    border-bottom: 1px solid rgba(242, 144, 143, 0.22) !important;
+    padding-top: 0.65rem !important;
+    padding-bottom: 1.3rem !important;
   }
 
   /* No dashed frame or white container on mobile hero */
@@ -1184,15 +1190,16 @@ h1, h2, h3, h4, h5, h6 {
     box-shadow: none !important;
   }
 
-  /* Mobile Hero: full screen framing, content lower, CTAs close to hero bottom */
+  /* Mobile Hero: fit full hero inside viewport with both buttons visible */
   .v2-theme .hero-section {
     min-height: 100svh !important;
     min-height: 100dvh !important;
+    height: auto !important;
     display: flex !important;
     flex-direction: column !important;
     justify-content: space-between !important;
-    padding-top: clamp(4.5rem, 9.5vh, 5.75rem) !important;
-    padding-bottom: clamp(1.25rem, 3.5vw, 1.75rem) !important;
+    padding-top: clamp(3.8rem, 7vh, 4.5rem) !important;
+    padding-bottom: clamp(1rem, 2.5vh, 1.5rem) !important;
     padding-left: 1.5rem !important; /* matches mobile header side margin (1.5rem / 24px) */
     padding-right: 1.5rem !important;
     box-sizing: border-box !important;
@@ -1219,9 +1226,9 @@ h1, h2, h3, h4, h5, h6 {
     flex-direction: row !important;
     align-items: center !important;
     justify-content: center !important;
-    padding: 3.8rem 0 2.2rem 0 !important;
+    padding: 1.2rem 0 0.5rem 0 !important; /* 50% closer to headline below */
     margin-top: 0 !important;
-    margin-bottom: 1.5rem !important;
+    margin-bottom: 0rem !important;
     box-sizing: border-box !important;
     transform: none !important;
     background: transparent !important;
@@ -1231,15 +1238,15 @@ h1, h2, h3, h4, h5, h6 {
     position: relative !important;
   }
 
-  /* Circled Avatar centered on mobile - matches desktop styling */
+  /* Circled Avatar centered on mobile - shrunk 25% (150px) to guarantee viewport fit */
   .v2-theme .hero-image-container,
   .v2-theme .cv-scanner .hero-image-container,
   .hero-image-container {
     display: block !important;
-    width: 200px !important;
-    height: 200px !important;
-    max-width: 200px !important;
-    max-height: 200px !important;
+    width: 150px !important;
+    height: 150px !important;
+    max-width: 150px !important;
+    max-height: 150px !important;
     aspect-ratio: 1 / 1 !important;
     border-radius: 50% !important;
     flex-shrink: 0 !important;
@@ -1249,7 +1256,7 @@ h1, h2, h3, h4, h5, h6 {
     position: relative !important;
     z-index: 2 !important;
     background: #181a1f !important;
-    box-shadow: -8px -8px 0px 0px #1e2026, -8px -8px 0px 1.5px rgba(247, 149, 169, 0.25) !important;
+    box-shadow: -6px -6px 0px 0px #1e2026, -6px -6px 0px 1.5px rgba(242, 144, 143, 0.25) !important;
     border: none !important;
   }
 
@@ -1273,7 +1280,7 @@ h1, h2, h3, h4, h5, h6 {
   /* Lower headline, body, and CTAs - centered on mobile */
   .v2-theme .hero-content {
     order: 1 !important;
-    margin-top: 0.4rem !important;
+    margin-top: 0rem !important;
     width: 100% !important;
     display: flex !important;
     flex-direction: column !important;
@@ -1308,7 +1315,9 @@ h1, h2, h3, h4, h5, h6 {
 
   .v2-theme .hero-frame-paragraph {
     text-align: left !important;
-    margin-top: 1.4rem !important; /* +40% spacing over body on mobile (was 1rem) */
+    margin-top: 2rem !important; /* Doubled spacing between headline and body */
+    font-size: clamp(0.98rem, 2.7vw, 1.1rem) !important;
+    line-height: 1.55 !important;
     max-width: 100% !important;
     margin-left: 0 !important;
     margin-right: 0 !important;
@@ -1316,7 +1325,7 @@ h1, h2, h3, h4, h5, h6 {
 
   .v2-theme .hero-ctas,
   .v2-theme .hero-ctas-outside {
-    margin-top: clamp(1.2rem, 3vh, 1.75rem) !important;
+    margin-top: 2rem !important; /* Doubled spacing between body and buttons */
     margin-bottom: 0 !important;
     width: 100% !important;
     display: flex !important;
@@ -1325,7 +1334,7 @@ h1, h2, h3, h4, h5, h6 {
     gap: 0.85rem !important;
   }
 
-  /* On mobile: image looks identical to desktop with top and bottom geometry, curved text, and badges */
+  /* On mobile: shapes shrunk 25% with image to fit neatly within bounds */
   .v2-theme .hero-curved-text-container,
   .hero-curved-text-container {
     display: block !important;
@@ -1334,11 +1343,19 @@ h1, h2, h3, h4, h5, h6 {
   .v2-theme .hero-shape-bottom-left,
   .hero-shape-bottom-left {
     display: block !important;
+    width: 150px !important;
+    height: 150px !important;
+    bottom: -26px !important;
+    left: -34px !important;
   }
 
   .v2-theme .hero-shape-top-right,
   .hero-shape-top-right {
     display: block !important;
+    width: 150px !important;
+    height: 150px !important;
+    top: -26px !important;
+    right: -34px !important;
   }
 
   .v2-theme .hero-badge-anchor,
@@ -1348,6 +1365,22 @@ h1, h2, h3, h4, h5, h6 {
   .v2-theme .badge-anchor-websites,
   .v2-theme .badge-anchor-products {
     display: inline-flex !important;
+  }
+
+  .v2-theme .badge-anchor-websites {
+    bottom: -36px !important;
+    left: -10px !important;
+  }
+
+  .v2-theme .badge-anchor-products {
+    top: -36px !important;
+    right: -10px !important;
+  }
+
+  .v2-theme .hero-ring-badge {
+    font-size: 11.5px !important;
+    padding: 3.5px 14px 3.5px 12px !important; /* ensures right side has generous margin */
+    box-sizing: border-box !important;
   }
 
   @media (max-width: 360px) {

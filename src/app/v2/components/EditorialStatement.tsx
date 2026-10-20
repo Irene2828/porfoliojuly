@@ -112,7 +112,7 @@ export default function EditorialStatement() {
               maxWidth: '28ch',
             }}
           >
-            An <span style={{ fontWeight: 700, letterSpacing: '0.025em', color: '#f795a9', WebkitTextFillColor: '#f795a9' }}>outdated</span> website or <span style={{ fontWeight: 700, letterSpacing: '0.025em', color: '#f795a9', WebkitTextFillColor: '#f795a9' }}>repetitive</span> work is slowing your business down.
+            An <span style={{ fontWeight: 700, letterSpacing: '0.025em', color: '#f2908f', WebkitTextFillColor: '#f2908f' }}>outdated</span> website or <span style={{ fontWeight: 700, letterSpacing: '0.025em', color: '#f2908f', WebkitTextFillColor: '#f2908f' }}>repetitive</span> work is slowing your business down.
           </h2>
 
           {/* Text under closing headline */}
@@ -127,18 +127,18 @@ export default function EditorialStatement() {
               color: '#f7d6d0',
               WebkitTextFillColor: '#f7d6d0',
               textAlign: 'center',
-              margin: '0 auto 4rem auto',
+              margin: '0 auto 2rem auto', /* 50% closer to button (was 4rem) */
               maxWidth: '46ch',
               textWrap: 'balance'
             }}
           >
             <p style={{ margin: 0 }}>
-              <strong style={{ fontWeight: 700, letterSpacing: '0.02em', color: '#f795a9', WebkitTextFillColor: '#f795a9' }}>Let’s solve this.</strong> I’ll build the fix.
+              <strong style={{ fontWeight: 700, letterSpacing: '0.02em', color: '#f2908f', WebkitTextFillColor: '#f2908f' }}>Let’s solve this.</strong> I’ll build the fix.
             </p>
           </div>
 
-          {/* Action CTAs: doubled space underneath */}
-          <div className="prefooter-cta-container" style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', gap: '1rem', marginTop: '0.5rem', marginBottom: '2.5rem', justifyContent: 'center' }}>
+          {/* Action CTAs */}
+          <div className="prefooter-cta-container" style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', gap: '1rem', marginTop: '0rem', marginBottom: '2.5rem', justifyContent: 'center' }}>
             <a 
               href="mailto:iryna@irynasheremeta.com" 
               className="btn prefooter-btn-primary face-cta"

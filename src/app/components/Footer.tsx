@@ -9,7 +9,7 @@ export default function Footer() {
         background: '#1e2126',
         width: '100%',
         padding: '1.2rem 0 1.44rem 0',
-        borderTop: '1px solid rgba(247, 214, 208, 0.35)',
+        borderTop: '1px solid rgba(0, 0, 0, 0.45)',
         position: 'relative',
         zIndex: 10
       }}
@@ -18,6 +18,7 @@ export default function Footer() {
         .site-footer-minimal {
           background-color: #1e2126 !important;
           background: #1e2126 !important;
+          border-top: 1px solid rgba(0, 0, 0, 0.45) !important;
         }
         .footer-inner-container {
           display: flex;

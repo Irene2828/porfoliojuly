@@ -76,7 +76,7 @@ export default function Header() {
             onClick={handleCopyEmail}
             title="iryna@irynasheremeta.com (click to copy)"
             style={{ 
-              color: copied ? '#f795a9' : undefined,
+              color: copied ? '#f2908f' : undefined,
               display: 'inline-flex',
               alignItems: 'center',
               gap: '6px'
@@ -135,7 +135,7 @@ export default function Header() {
                 onClick={(e) => { handleCopyEmail(e); setIsMenuOpen(false); }} 
                 className="drawer-link"
                 style={{ 
-                  color: copied ? '#f795a9' : undefined,
+                  color: copied ? '#f2908f' : undefined,
                   display: 'inline-flex',
                   alignItems: 'center',
                   gap: '8px'

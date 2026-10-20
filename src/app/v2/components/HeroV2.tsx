@@ -25,8 +25,8 @@ export default function HeroV2() {
         .headline-mockup-bold {
           font-weight: 700 !important;
           letter-spacing: 0.025em !important;
-          color: #f795a9 !important;
-          -webkit-text-fill-color: #f795a9 !important;
+          color: #f2908f !important;
+          -webkit-text-fill-color: #f2908f !important;
         }
         .v2-theme .headline-mockup-light,
         .headline-mockup-light {
@@ -69,16 +69,41 @@ export default function HeroV2() {
             text-align: left !important;
             margin-left: 0 !important;
             margin-right: 0 !important;
+            margin-top: 2rem !important; /* Doubled spacing between headline and body */
           }
           .v2-theme .hero-image-wrapper,
           .hero-image-wrapper {
-            padding-top: 3.8rem !important;
-            padding-bottom: 2.2rem !important;
-            margin-bottom: 1.5rem !important;
+            padding-top: 1.2rem !important;
+            padding-bottom: 0.5rem !important; /* 50% closer to image */
+            margin-bottom: 0rem !important;
+          }
+          .v2-theme .hero-image-container,
+          .hero-image-container {
+            transform: scale(0.75) !important;
+            transform-origin: center center !important;
           }
           .v2-theme .hero-content,
           .hero-content {
-            margin-top: 0.4rem !important;
+            margin-top: 0rem !important;
+          }
+          .v2-theme .headline-mobile,
+          .headline-mobile {
+            line-height: 1.17 !important;
+            gap: 0px !important;
+          }
+          .v2-theme .headline-line,
+          .headline-line {
+            display: block !important;
+            line-height: 1.17 !important;
+          }
+          .v2-theme .headline-pair-gap,
+          .headline-pair-gap {
+            margin-top: 0.45rem !important;
+          }
+          .v2-theme .hero-ctas,
+          .v2-theme .hero-ctas-outside {
+            margin-top: 2rem !important; /* Doubled spacing between body and buttons */
+            gap: 0.85rem !important;
           }
         }
       `}</style>
@@ -96,36 +121,36 @@ export default function HeroV2() {
                   {/* Desktop Headline (2 lines) */}
                   <span className="headline-desktop" style={{ color: '#f7d6d0' }}>
                     <span className="headline-line headline-light" style={{ color: '#f7d6d0', WebkitTextFillColor: '#f7d6d0' }}>
-                      <strong className="headline-mockup-bold" style={{ fontWeight: 700, letterSpacing: '0.025em', color: '#f795a9', WebkitTextFillColor: '#f795a9' }}>Websites</strong>{' '}
+                      <strong className="headline-mockup-bold" style={{ fontWeight: 700, letterSpacing: '0.025em', color: '#f2908f', WebkitTextFillColor: '#f2908f' }}>Websites</strong>{' '}
                       <span className="headline-mockup-light" style={{ fontWeight: 300, color: '#f7d6d0', WebkitTextFillColor: '#f7d6d0' }}>that work harder.</span>
                     </span>
                     <span className="headline-line headline-light" style={{ color: '#f7d6d0', WebkitTextFillColor: '#f7d6d0' }}>
-                      <strong className="headline-mockup-bold" style={{ fontWeight: 700, letterSpacing: '0.025em', color: '#f795a9', WebkitTextFillColor: '#f795a9' }}>Tools</strong>{' '}
+                      <strong className="headline-mockup-bold" style={{ fontWeight: 700, letterSpacing: '0.025em', color: '#f2908f', WebkitTextFillColor: '#f2908f' }}>Tools</strong>{' '}
                       <span className="headline-mockup-light" style={{ fontWeight: 300, color: '#f7d6d0', WebkitTextFillColor: '#f7d6d0' }}>that save hours.</span>
                     </span>
                   </span>
 
                   {/* Mobile Headline (3 lines, left-aligned) */}
-                  <span className="headline-mobile" style={{ gap: '0px', lineHeight: 1.05, color: '#f7d6d0' }}>
-                    <span className="headline-line" style={{ lineHeight: 1.05, color: '#f7d6d0', WebkitTextFillColor: '#f7d6d0' }}>
-                      <strong className="headline-mockup-bold" style={{ fontWeight: 700, letterSpacing: '0.025em', color: '#f795a9', WebkitTextFillColor: '#f795a9' }}>Websites</strong>{' '}
+                  <span className="headline-mobile" style={{ gap: '0px', lineHeight: 1.17, color: '#f7d6d0' }}>
+                    <span className="headline-line" style={{ lineHeight: 1.17, color: '#f7d6d0', WebkitTextFillColor: '#f7d6d0' }}>
+                      <strong className="headline-mockup-bold" style={{ fontWeight: 700, letterSpacing: '0.025em', color: '#f2908f', WebkitTextFillColor: '#f2908f' }}>Websites</strong>{' '}
                       <span className="headline-mockup-light" style={{ fontWeight: 300, color: '#f7d6d0', WebkitTextFillColor: '#f7d6d0' }}>that work</span>
                     </span>
-                    <span className="headline-line" style={{ lineHeight: 1.05, color: '#f7d6d0', WebkitTextFillColor: '#f7d6d0' }}>
+                    <span className="headline-line" style={{ lineHeight: 1.17, color: '#f7d6d0', WebkitTextFillColor: '#f7d6d0' }}>
                       <span className="headline-mockup-light" style={{ fontWeight: 300, color: '#f7d6d0', WebkitTextFillColor: '#f7d6d0' }}>harder.</span>
                     </span>
-                    <span className="headline-line headline-pair-gap" style={{ lineHeight: 1.05, marginTop: '0.45rem', color: '#f7d6d0', WebkitTextFillColor: '#f7d6d0' }}>
-                      <strong className="headline-mockup-bold" style={{ fontWeight: 700, letterSpacing: '0.025em', color: '#f795a9', WebkitTextFillColor: '#f795a9' }}>Tools</strong>{' '}
+                    <span className="headline-line headline-pair-gap" style={{ lineHeight: 1.17, marginTop: '0.45rem', color: '#f7d6d0', WebkitTextFillColor: '#f7d6d0' }}>
+                      <strong className="headline-mockup-bold" style={{ fontWeight: 700, letterSpacing: '0.025em', color: '#f2908f', WebkitTextFillColor: '#f2908f' }}>Tools</strong>{' '}
                       <span className="headline-mockup-light" style={{ fontWeight: 300, color: '#f7d6d0', WebkitTextFillColor: '#f7d6d0' }}>that save hours.</span>
                     </span>
                   </span>
                 </h1>
                 <p className="hero-frame-paragraph hero-paragraph-anim" style={{ marginTop: '1.7rem', fontSize: '1.213rem', lineHeight: '1.75', color: '#f7d6d0', WebkitTextFillColor: '#f7d6d0', maxWidth: '100%', fontWeight: 400, opacity: 1 }}>
-                  <strong className="hero-body-bold" style={{ fontWeight: 700, color: '#f7d6d0', WebkitTextFillColor: '#f7d6d0' }}>You tell me what&apos;s not working. I take it from there</strong>{' '}—{' '}
-                  <span className="hero-offer-item">a modern website</span>,{' '}
-                  <span className="hero-offer-item">a custom tool</span>, or{' '}
-                  <span className="hero-offer-item">a smarter workflow</span>,{' '}
-                  <em style={{ fontStyle: 'italic', color: '#f7d6d0', WebkitTextFillColor: '#f7d6d0' }}>built around what your business actually needs.</em>
+                  <strong className="hero-body-bold" style={{ fontWeight: 700, color: '#f7d6d0', WebkitTextFillColor: '#f7d6d0' }}>You tell me what&apos;s not working. I take it from there</strong>{' '}&mdash;{' '}
+                  <span className="hero-offer-item" style={{ whiteSpace: 'nowrap' }}>a modern website</span>,{' '}
+                  <span className="hero-offer-item" style={{ whiteSpace: 'nowrap' }}>a custom tool</span>, or{' '}
+                  <span className="hero-offer-item" style={{ whiteSpace: 'nowrap' }}>a smarter workflow</span>,{' '}
+                  <em style={{ fontStyle: 'italic', color: '#f7d6d0', WebkitTextFillColor: '#f7d6d0' }}>built around what your business needs.</em>
                 </p>
               </div>
 
@@ -259,10 +284,17 @@ export default function HeroV2() {
                 whiteSpace: 'nowrap',
                 pointerEvents: 'auto'
               }}>
-                {/* Builder Icon (Wrench / Tool) */}
-                <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="#f7d6d0" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" style={{ flexShrink: 0 }}>
-                  <path d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94l-3.76 3.76z" />
-                </svg>
+                {/* Builder Icons: Wrench / Tool + Lightbulb */}
+                <div style={{ display: 'inline-flex', alignItems: 'center', gap: '4px', flexShrink: 0 }}>
+                  <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="#f7d6d0" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                    <path d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94l-3.76 3.76z" />
+                  </svg>
+                  <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="#f7d6d0" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                    <path d="M9 18h6" />
+                    <path d="M10 22h4" />
+                    <path d="M12 2a7 7 0 0 0-7 7c0 2.5 1.5 4.5 3 6h8c1.5-1.5 3-3.5 3-6a7 7 0 0 0-7-7z" />
+                  </svg>
+                </div>
                 Product Designer &amp; Builder
               </div>
             </div>
@@ -271,7 +303,7 @@ export default function HeroV2() {
             <div className="hero-badge-anchor badge-anchor-products" style={{ position: 'absolute', top: '-46px', right: '-15px', zIndex: 10 }}>
               <div className="hero-ring-badge badge-builder" style={{
                 transform: 'none',
-                padding: '4px 12px',
+                padding: '4px 14px',
                 borderRadius: '20px',
                 background: 'rgba(24, 26, 32, 0.94)',
                 backdropFilter: 'blur(10px)',
@@ -284,7 +316,7 @@ export default function HeroV2() {
                 color: '#f1f5f9',
                 display: 'inline-flex',
                 alignItems: 'center',
-                gap: '7px',
+                gap: '8px',
                 whiteSpace: 'nowrap',
                 pointerEvents: 'auto'
               }}>
@@ -293,7 +325,7 @@ export default function HeroV2() {
                   <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2" />
                   <circle cx="12" cy="7" r="4" />
                 </svg>
-                Iryna Sheremeta
+                <span style={{ paddingRight: '2px', display: 'inline-block' }}>Iryna Sheremeta</span>
               </div>
             </div>
           </div>
