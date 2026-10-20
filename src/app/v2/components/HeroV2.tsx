@@ -106,6 +106,22 @@ export default function HeroV2() {
             gap: 0.85rem !important;
           }
         }
+        /* Primary CTA: pink -> light silver grey */
+        .v2-theme .hero-ctas-outside .btn-primary-outline.btn-primary {
+          background: #C9CED6 !important;
+          border-color: rgba(255, 255, 255, 0.45) !important;
+          color: #000000 !important;
+          -webkit-text-fill-color: #000000 !important;
+        }
+        .v2-theme .hero-ctas-outside .btn-primary-outline.btn-primary:hover {
+          background: #DCE0E6 !important;
+          border-color: #ffffff !important;
+          color: #000000 !important;
+          -webkit-text-fill-color: #000000 !important;
+        }
+        .v2-theme .hero-ctas-outside .btn-primary-outline.btn-primary:hover svg {
+          stroke: #000000 !important;
+        }
       `}</style>
 
       <div className="container hero-container" style={{ position: 'relative' }}>
@@ -329,7 +345,7 @@ export default function HeroV2() {
               </div>
             </div>
           </div>
-          
+
           <span className="hero-hover-surface" aria-hidden="true"></span>
         </div>
       </div>
