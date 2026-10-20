@@ -55,6 +55,13 @@ export default function EditorialStatement() {
           .prefooter-btn-primary:hover svg {
             stroke: #000000 !important;
           }
+          /* Primary CTA: pink -> light silver grey */
+          .prefooter-section .prefooter-btn-primary.face-cta {
+            background: #C9CED6 !important;
+          }
+          .prefooter-section .prefooter-btn-primary.face-cta:hover {
+            background: #DCE0E6 !important;
+          }
           @media (max-width: 767px) {
             .prefooter-closing-line {
               font-size: clamp(1.48rem, 7.7vw, 2.95rem) !important;
