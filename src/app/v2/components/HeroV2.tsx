@@ -289,7 +289,7 @@ export default function HeroV2() {
             <div className="hero-badge-anchor badge-anchor-websites" style={{ position: 'absolute', bottom: '-46px', left: '-15px', zIndex: 10 }}>
               <div className="hero-ring-badge badge-designer" style={{
                 transform: 'none',
-                padding: '5px 16px',
+                padding: '6px 18px',
                 borderRadius: '20px',
                 background: 'rgba(24, 26, 32, 0.94)',
                 backdropFilter: 'blur(10px)',
@@ -304,6 +304,9 @@ export default function HeroV2() {
                 alignItems: 'center',
                 gap: '7px',
                 whiteSpace: 'nowrap',
+                width: 'fit-content',
+                maxWidth: 'none',
+                boxSizing: 'border-box',
                 pointerEvents: 'auto'
               }}>
                 {/* Builder Icons: Wrench / Tool + Lightbulb */}

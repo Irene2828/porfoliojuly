@@ -1379,7 +1379,9 @@ h1, h2, h3, h4, h5, h6 {
 
   .v2-theme .hero-ring-badge {
     font-size: 12px !important;
-    padding: 5px 16px 5px 12px !important; /* ensures right side has generous margin */
+    padding: 6px 18px !important; /* equal side margins for balanced text fit */
+    width: fit-content !important;
+    max-width: none !important;
     box-sizing: border-box !important;
   }
 
