@@ -69,7 +69,7 @@ export default function HeroV2() {
             text-align: left !important;
             margin-left: 0 !important;
             margin-right: 0 !important;
-            margin-top: 2rem !important; /* Doubled spacing between headline and body */
+            margin-top: 1.4rem !important; /* headline-body spacing, tightened 30% */
           }
           .v2-theme .hero-image-wrapper,
           .hero-image-wrapper {
@@ -106,7 +106,7 @@ export default function HeroV2() {
           }
           .v2-theme .hero-ctas,
           .v2-theme .hero-ctas-outside {
-            margin-top: 2rem !important; /* Doubled spacing between body and buttons */
+            margin-top: 1.4rem !important; /* body-buttons spacing, tightened 30% */
             gap: 0.85rem !important;
           }
         }
