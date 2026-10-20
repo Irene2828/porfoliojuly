@@ -98,6 +98,7 @@ export default function Header() {
             className="nav-link"
             onClick={handleCopyEmail}
             title="iryna@irynasheremeta.com (click to copy)"
+            aria-label="Email iryna@irynasheremeta.com (click to copy)"
             style={{ 
               color: copied ? '#f2908f' : undefined,
               display: 'inline-flex',
@@ -105,7 +106,7 @@ export default function Header() {
               gap: '6px'
             }}
           >
-            <span>{copied ? 'COPIED ✓' : 'EMAIL'}</span>
+            {copied && <span style={{ fontSize: '0.82rem' }}>COPIED ✓</span>}
             <svg 
               width="15" 
               height="11" 

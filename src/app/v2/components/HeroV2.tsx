@@ -177,7 +177,7 @@ export default function HeroV2() {
                   <strong className="hero-offer-item" style={{ fontWeight: 700, whiteSpace: 'nowrap' }}>a modern website</strong>,{' '}
                   <strong className="hero-offer-item" style={{ fontWeight: 700, whiteSpace: 'nowrap' }}>a custom tool</strong>, or{' '}
                   <strong className="hero-offer-item" style={{ fontWeight: 700, whiteSpace: 'nowrap' }}>a smarter workflow</strong>,{' '}
-                  <span>built around what your business&nbsp;needs.</span>
+                  <span>built around your business&nbsp;needs.</span>
                 </p>
               </div>
 
