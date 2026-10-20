@@ -62,7 +62,7 @@ export default function HeroV2() {
         .hero-offer-item {
           display: inline;
           cursor: pointer;
-          text-decoration: underline #f7d6d0;
+          text-decoration: underline #f7d6d0 !important;
           text-decoration-thickness: 1.5px;
           text-underline-offset: 4.5px;
         }
