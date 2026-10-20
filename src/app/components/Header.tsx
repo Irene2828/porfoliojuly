@@ -51,6 +51,9 @@ export default function Header() {
             padding-left: 0.1rem !important;
             padding-right: 1rem !important;
           }
+          .mobile-header-left {
+            right: 1rem !important;
+          }
         }
       `}</style>
       <div className="header-inner-wrapper">
