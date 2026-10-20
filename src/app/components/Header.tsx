@@ -54,6 +54,9 @@ export default function Header() {
           .mobile-header-left {
             right: 1rem !important;
           }
+          .mobile-header-right {
+            transform: translateY(0.9rem) !important;
+          }
         }
       `}</style>
       <div className="header-inner-wrapper">
