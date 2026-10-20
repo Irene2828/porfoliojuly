@@ -74,7 +74,7 @@ export default function HeroV2() {
           .v2-theme .hero-image-wrapper,
           .hero-image-wrapper {
             padding-top: 1.2rem !important;
-            padding-bottom: 0.5rem !important; /* 50% closer to image */
+            padding-bottom: 0rem !important; /* tight: text pulled up toward image */
             margin-bottom: 0rem !important;
           }
           .v2-theme .hero-image-container,
@@ -85,6 +85,10 @@ export default function HeroV2() {
           .v2-theme .hero-content,
           .hero-content {
             margin-top: 0rem !important;
+          }
+          .v2-theme .hero-container,
+          .hero-container {
+            gap: 0.5rem !important;
           }
           .v2-theme .headline-mobile,
           .headline-mobile {
