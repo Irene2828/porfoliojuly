@@ -619,14 +619,15 @@ h1, h2, h3, h4, h5, h6 {
 .hero-offer-item {
   display: inline !important;
   cursor: pointer !important;
-  text-decoration: underline #f7d6d0 !important;
+  font-weight: 700 !important;
+  text-decoration: underline transparent !important;
   text-decoration-thickness: 1.5px !important;
   text-underline-offset: 4.5px !important;
   transition: text-decoration-color 0.22s ease !important;
 }
 
 .hero-offer-item:hover {
-  text-decoration-color: #fae4e0 !important;
+  text-decoration-color: #f7d6d0 !important;
 }
 
 @media (min-width: 901px) {

@@ -51,7 +51,7 @@ export default function HeroV2() {
         .hero-body-bold {
           color: #e2e4e9 !important;
           -webkit-text-fill-color: #e2e4e9 !important;
-          font-weight: 700 !important;
+          font-weight: 400 !important;
         }
         .v2-theme .hero-frame-paragraph em,
         .hero-frame-paragraph em {
@@ -62,9 +62,14 @@ export default function HeroV2() {
         .hero-offer-item {
           display: inline;
           cursor: pointer;
-          text-decoration: underline #f7d6d0 !important;
+          font-weight: 700 !important;
+          text-decoration: underline transparent !important;
           text-decoration-thickness: 1.5px;
           text-underline-offset: 4.5px;
+          transition: text-decoration-color 0.22s ease;
+        }
+        .hero-offer-item:hover {
+          text-decoration-color: #f7d6d0 !important;
         }
         @media (max-width: 900px) {
           .hero-text .hero-frame-paragraph {
@@ -168,10 +173,10 @@ export default function HeroV2() {
                   </span>
                 </h1>
                 <p className="hero-frame-paragraph hero-paragraph-anim" style={{ marginTop: '1.7rem', fontSize: '1.213rem', lineHeight: '1.75', color: '#e2e4e9', WebkitTextFillColor: '#e2e4e9', maxWidth: '100%', fontWeight: 400, opacity: 1 }}>
-                  <strong className="hero-body-bold" style={{ fontWeight: 700, color: '#e2e4e9', WebkitTextFillColor: '#e2e4e9' }}>You tell me what&apos;s not working. I take it from there</strong>{' '}&mdash;{' '}
-                  <span className="hero-offer-item" style={{ whiteSpace: 'nowrap' }}>a modern website</span>,{' '}
-                  <span className="hero-offer-item" style={{ whiteSpace: 'nowrap' }}>a custom tool</span>, or{' '}
-                  <span className="hero-offer-item" style={{ whiteSpace: 'nowrap' }}>a smarter workflow</span>,{' '}
+                  <span className="hero-body-intro" style={{ fontWeight: 400, color: '#e2e4e9', WebkitTextFillColor: '#e2e4e9' }}>You tell me what&apos;s not working. I take it from there</span>{' '}&mdash;{' '}
+                  <strong className="hero-offer-item" style={{ fontWeight: 700, whiteSpace: 'nowrap' }}>a modern website</strong>,{' '}
+                  <strong className="hero-offer-item" style={{ fontWeight: 700, whiteSpace: 'nowrap' }}>a custom tool</strong>, or{' '}
+                  <strong className="hero-offer-item" style={{ fontWeight: 700, whiteSpace: 'nowrap' }}>a smarter workflow</strong>,{' '}
                   <span>built around what your business needs.</span>
                 </p>
               </div>
