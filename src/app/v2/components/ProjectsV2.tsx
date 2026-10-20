@@ -249,7 +249,7 @@ export default function ProjectsV2({ initialProjects = [] }: ProjectsV2Props) {
         <div className="cases-decor-line" style={{
           width: '60px',
           height: '1px',
-          backgroundColor: 'var(--accent, #1d4e5b)',
+          backgroundColor: '#2d3139',
           margin: '0 auto 2.5rem auto',
           opacity: 0.9
         }} />

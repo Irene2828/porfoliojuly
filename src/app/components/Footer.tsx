@@ -5,20 +5,20 @@ export default function Footer() {
     <footer 
       className="site-footer-minimal"
       style={{
-        background: `
-          radial-gradient(ellipse 50% 85% at 0% 100%, rgba(70, 201, 219, 0.28) 0%, rgba(70, 201, 219, 0.10) 35%, rgba(255, 255, 255, 0) 72%),
-          radial-gradient(ellipse 50% 85% at 100% 100%, rgba(70, 201, 219, 0.25) 0%, rgba(70, 201, 219, 0.09) 35%, rgba(255, 255, 255, 0) 72%),
-          #ffffff
-        `,
-        backgroundColor: '#ffffff',
+        backgroundColor: '#1e2126',
+        background: '#1e2126',
         width: '100%',
-        padding: '1.5rem 0 1.8rem 0',
-        borderTop: '1px solid rgba(59, 163, 184, 0.15)',
+        padding: '1.2rem 0 1.44rem 0',
+        borderTop: '1px solid rgba(247, 214, 208, 0.35)',
         position: 'relative',
         zIndex: 10
       }}
     >
       <style>{`
+        .site-footer-minimal {
+          background-color: #1e2126 !important;
+          background: #1e2126 !important;
+        }
         .footer-inner-container {
           display: flex;
           justify-content: space-between;
@@ -46,26 +46,30 @@ export default function Footer() {
           font-size: 14px !important;
           font-weight: 400;
           letter-spacing: 0.02em;
-          color: #4a5461 !important;
+          color: #ffffff !important;
+          -webkit-text-fill-color: #ffffff !important;
           margin: 0;
           text-align: left;
-          opacity: 1;
+          opacity: 0.95;
         }
         .footer-hire-link {
           font-family: var(--font-label), -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
           font-size: 14px !important;
           font-weight: 500;
           letter-spacing: 0.02em;
-          color: #4a5461 !important;
+          color: #ffffff !important;
+          -webkit-text-fill-color: #ffffff !important;
           text-decoration: none;
           display: inline-flex;
           align-items: center;
           gap: 4px;
           white-space: nowrap;
-          transition: color 0.2s ease;
+          transition: color 0.2s ease, transform 0.2s ease;
         }
         .footer-hire-link:hover {
-          color: #1d4e5b !important;
+          color: #f7d6d0 !important;
+          -webkit-text-fill-color: #f7d6d0 !important;
+          transform: translateX(2px);
         }
         @media (max-width: 640px) {
           .footer-inner-container {

@@ -44,7 +44,7 @@ export default function Header() {
               fontFamily: 'var(--font-heading), -apple-system, BlinkMacSystemFont, "Helvetica Neue", Arial, sans-serif', 
               fontSize: '13.8px', 
               fontWeight: 500, 
-              color: 'rgba(0, 0, 0, 0.9)', 
+              color: 'var(--header-brand-color, #e2e4e9)', 
               letterSpacing: '0.04em', 
               lineHeight: '1.2'
             }}>
@@ -54,11 +54,11 @@ export default function Header() {
               fontFamily: 'var(--font-heading), -apple-system, BlinkMacSystemFont, "Helvetica Neue", Arial, sans-serif', 
               fontSize: '13px', 
               fontWeight: 400, 
-              color: 'rgba(0, 0, 0, 0.75)', 
+              color: 'var(--header-title-color, #a0a6b1)', 
               lineHeight: '1.2', 
               letterSpacing: '0.03em' 
             }}>
-              / Product designer & builder /
+              / Custom websites, tools and workflows /
             </span>
           </a>
         </div>
@@ -76,7 +76,7 @@ export default function Header() {
             onClick={handleCopyEmail}
             title="iryna@irynasheremeta.com (click to copy)"
             style={{ 
-              color: copied ? '#3ba3b8' : undefined,
+              color: copied ? '#f795a9' : undefined,
               display: 'inline-flex',
               alignItems: 'center',
               gap: '6px'
@@ -105,7 +105,7 @@ export default function Header() {
       <div className="mobile-header-left">
         <a href="/" aria-label="Home" className="mobile-brand-link">
           <span className="mobile-brand-name">IRYNA SHEREMETA</span>
-          <span className="mobile-brand-title">/ Product designer & builder /</span>
+          <span className="mobile-brand-title">/ Custom websites, tools and workflows /</span>
         </a>
       </div>
 
@@ -135,7 +135,7 @@ export default function Header() {
                 onClick={(e) => { handleCopyEmail(e); setIsMenuOpen(false); }} 
                 className="drawer-link"
                 style={{ 
-                  color: copied ? '#3ba3b8' : undefined,
+                  color: copied ? '#f795a9' : undefined,
                   display: 'inline-flex',
                   alignItems: 'center',
                   gap: '8px'

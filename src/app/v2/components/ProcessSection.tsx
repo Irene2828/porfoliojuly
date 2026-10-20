@@ -67,7 +67,7 @@ export default function ProcessSection() {
           <div style={{ 
             width: '60px', 
             height: '1px', 
-            backgroundColor: 'var(--accent, #1d4e5b)', 
+            backgroundColor: '#2d3139', 
             margin: '0 0 2.5rem 0', 
             opacity: 0.9 
           }} />

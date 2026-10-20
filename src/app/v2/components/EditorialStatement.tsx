@@ -7,7 +7,7 @@ export default function EditorialStatement() {
       <section
         className="prefooter-section"
         style={{
-          backgroundColor: '#ffffff', // White background
+          backgroundColor: '#121316',
           padding: '80px 0 120px 0', /* doubled bottom space */
           width: '100%',
           display: 'flex',
@@ -18,6 +18,9 @@ export default function EditorialStatement() {
         }}
       >
         <style>{`
+          .prefooter-section {
+            background-color: #121316 !important;
+          }
           .prefooter-btn-primary {
             font-family: var(--font-label), sans-serif !important;
             font-size: 0.803rem !important;
@@ -27,39 +30,30 @@ export default function EditorialStatement() {
             justify-content: center;
             height: 3.43rem !important;
             padding: 0 1.98rem !important;
-            background: rgba(59, 163, 184, 0.88) !important;
-            color: #0b1116 !important;
-            -webkit-text-fill-color: #0b1116 !important;
-            border: none !important;
+            background: #f7d6d0 !important;
+            color: #000000 !important;
+            -webkit-text-fill-color: #000000 !important;
+            border: 1px solid rgba(255, 255, 255, 0.45) !important;
             border-radius: 0px !important;
-            box-shadow: 6px 6px 0px rgba(59, 163, 184, 0.28) !important;
-            text-shadow: 0 1px 1px rgba(255, 255, 255, 0.32), 0 0 1px rgba(255, 255, 255, 0.2) !important;
+            box-shadow: 4px 4px 0px #ffffff, 0 4px 16px rgba(0, 0, 0, 0.35) !important;
+            text-shadow: none !important;
             -webkit-font-smoothing: antialiased !important;
             -moz-osx-font-smoothing: grayscale !important;
             transition: background 0.22s ease, border-color 0.22s ease, transform 0.2s ease, box-shadow 0.2s ease !important;
             -webkit-text-stroke: 0 !important;
           }
+          .prefooter-btn-primary svg {
+            stroke: #000000 !important;
+          }
           .prefooter-btn-primary:hover {
-            background: rgba(59, 163, 184, 1) !important;
-            border-color: rgba(59, 163, 184, 1) !important;
-            color: #0b1116 !important;
-            -webkit-text-fill-color: #0b1116 !important;
-            box-shadow: 6px 6px 0px rgba(59, 163, 184, 0.42) !important;
+            background: #fae4e0 !important;
+            border-color: #ffffff !important;
+            color: #000000 !important;
+            -webkit-text-fill-color: #000000 !important;
+            box-shadow: 6px 6px 0px #ffffff, 0 6px 20px rgba(0, 0, 0, 0.45) !important;
           }
-          .face-cta {
-            background-color: rgba(59, 163, 184, 0.88) !important;
-            color: #0b1116 !important;
-            -webkit-text-fill-color: #0b1116 !important;
-            transition: box-shadow 0.3s ease, background 0.22s ease !important;
-            border: none !important;
-            box-shadow: 6px 6px 0px rgba(59, 163, 184, 0.28) !important;
-            text-shadow: 0 1px 1px rgba(255, 255, 255, 0.32), 0 0 1px rgba(255, 255, 255, 0.2) !important;
-            -webkit-font-smoothing: antialiased !important;
-            -moz-osx-font-smoothing: grayscale !important;
-          }
-          .face-cta:hover {
-            box-shadow: 6px 6px 0px rgba(59, 163, 184, 0.42) !important;
-            background-color: rgba(59, 163, 184, 1) !important;
+          .prefooter-btn-primary:hover svg {
+            stroke: #000000 !important;
           }
           @media (max-width: 767px) {
             .prefooter-closing-line {
@@ -93,13 +87,13 @@ export default function EditorialStatement() {
             zIndex: 2
           }}
         >
-          {/* Short decor line above closing image */}
+          {/* Short decor line above closing headline */}
           <div className="prefooter-decor-line" style={{ 
             width: '48px', 
             height: '1px', 
-            backgroundColor: '#0b0c10', 
-            margin: '0 auto 2rem auto', 
-            opacity: 0.6 
+            backgroundColor: '#2d3139', 
+            margin: '4rem auto 2rem auto', 
+            opacity: 0.9 
           }} />
 
           {/* Closing headline — moved above image */}
@@ -111,14 +105,14 @@ export default function EditorialStatement() {
               fontWeight: 400,
               letterSpacing: '-0.02em',
               lineHeight: 1.35,
-              color: '#3ba3b8',
-              WebkitTextFillColor: '#3ba3b8',
+              color: '#f7d6d0',
+              WebkitTextFillColor: '#f7d6d0',
               textAlign: 'center',
-              margin: '0 0 2.25rem 0',
+              margin: '0 0 3.5rem 0',
               maxWidth: '28ch',
             }}
           >
-            An <span style={{ fontWeight: 700 }}>outdated</span> website or <span style={{ fontWeight: 700 }}>repetitive</span> work is slowing your business down.
+            An <span style={{ fontWeight: 700, letterSpacing: '0.025em', color: '#f795a9', WebkitTextFillColor: '#f795a9' }}>outdated</span> website or <span style={{ fontWeight: 700, letterSpacing: '0.025em', color: '#f795a9', WebkitTextFillColor: '#f795a9' }}>repetitive</span> work is slowing your business down.
           </h2>
 
           {/* Text under closing headline */}
@@ -130,16 +124,16 @@ export default function EditorialStatement() {
               fontWeight: 400,
               letterSpacing: '-0.02em',
               lineHeight: 1.55,
-              color: 'var(--color-heading-silver, #4a5461)',
-              WebkitTextFillColor: 'var(--color-heading-silver, #4a5461)',
+              color: '#f7d6d0',
+              WebkitTextFillColor: '#f7d6d0',
               textAlign: 'center',
-              margin: '0 auto 2rem auto',
+              margin: '0 auto 4rem auto',
               maxWidth: '46ch',
               textWrap: 'balance'
             }}
           >
             <p style={{ margin: 0 }}>
-              <strong style={{ fontWeight: 700, color: 'inherit' }}>Let’s solve this.</strong> I’ll build the fix.
+              <strong style={{ fontWeight: 700, letterSpacing: '0.02em', color: '#f795a9', WebkitTextFillColor: '#f795a9' }}>Let’s solve this.</strong> I’ll build the fix.
             </p>
           </div>
 
