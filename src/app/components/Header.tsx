@@ -49,7 +49,7 @@ export default function Header() {
         .v2-theme .premium-header .header-nav-desktop a[href^="mailto:"] svg,
         .v2-theme .premium-header .drawer-nav-links a[href^="mailto:"] svg,
         .premium-header a[href^="mailto:"] svg {
-          stroke: #f2908f !important;
+          stroke: #e2e4e9 !important;
         }
         @media (max-width: 900px) {
           .premium-header {
@@ -118,7 +118,7 @@ export default function Header() {
               height="11" 
               viewBox="0 0 22 15" 
               fill="none" 
-              stroke="#f2908f" 
+              stroke="#e2e4e9" 
               strokeWidth="1.6" 
               strokeLinecap="round" 
               strokeLinejoin="round"
@@ -178,7 +178,7 @@ export default function Header() {
                   height="12" 
                   viewBox="0 0 22 15" 
                   fill="none" 
-                  stroke="#f2908f" 
+                  stroke="#e2e4e9" 
                   strokeWidth="1.6" 
                   strokeLinecap="round" 
                   strokeLinejoin="round"
