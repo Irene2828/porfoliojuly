@@ -132,17 +132,19 @@ export default function HeroV2() {
             letter-spacing: 0.02em !important;
           }
         }
-        /* Primary CTA: bold headline color #f2908f with 20% less opacity (0.80) */
+        /* Primary CTA: bold headline color #f2908f with 20% less opacity (0.80), no white stroke */
         .v2-theme .hero-ctas-outside .btn-primary-outline.btn-primary {
           background: rgba(242, 144, 143, 0.8) !important;
-          border-color: rgba(255, 255, 255, 0.45) !important;
+          border: none !important;
+          border-color: transparent !important;
           color: #000000 !important;
           -webkit-text-fill-color: #000000 !important;
           font-weight: 700 !important;
         }
         .v2-theme .hero-ctas-outside .btn-primary-outline.btn-primary:hover {
           background: rgba(242, 144, 143, 0.95) !important;
-          border-color: #ffffff !important;
+          border: none !important;
+          border-color: transparent !important;
           color: #000000 !important;
           -webkit-text-fill-color: #000000 !important;
         }
