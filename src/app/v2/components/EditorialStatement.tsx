@@ -158,7 +158,7 @@ export default function EditorialStatement() {
             }}
           >
             <p style={{ margin: 0 }}>
-              <strong style={{ fontWeight: 700, letterSpacing: '0.035em', color: '#f2908f', WebkitTextFillColor: '#f2908f' }}>Let’s solve this.</strong> I’ll build the fix.
+              <strong style={{ fontWeight: 700, letterSpacing: '0.005em', color: '#f2908f', WebkitTextFillColor: '#f2908f' }}>Let’s solve this.</strong> I’ll build the fix.
             </p>
           </div>
 
