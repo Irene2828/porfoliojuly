@@ -63,6 +63,7 @@ export default function HeroV2() {
           display: inline;
           cursor: pointer;
           font-weight: 700 !important;
+          letter-spacing: 0.025em !important;
           text-decoration: underline transparent !important;
           text-decoration-thickness: 1.5px;
           text-underline-offset: 4.5px;
@@ -192,9 +193,9 @@ export default function HeroV2() {
                 </h1>
                 <p className="hero-frame-paragraph hero-paragraph-anim" style={{ marginTop: '1.7rem', fontSize: '1.213rem', lineHeight: '1.75', color: '#e2e4e9', WebkitTextFillColor: '#e2e4e9', maxWidth: '100%', fontWeight: 400, opacity: 1, textWrap: 'pretty' }}>
                   <span className="hero-body-intro" style={{ fontWeight: 400, color: '#e2e4e9', WebkitTextFillColor: '#e2e4e9' }}>You tell me what&apos;s not working. I take it from there</span>{' '}&mdash;{' '}
-                  <strong className="hero-offer-item" style={{ fontWeight: 700, whiteSpace: 'nowrap' }}>a modern website</strong>,{' '}
-                  <strong className="hero-offer-item" style={{ fontWeight: 700, whiteSpace: 'nowrap' }}>a custom tool</strong>, or{' '}
-                  <strong className="hero-offer-item" style={{ fontWeight: 700, whiteSpace: 'nowrap' }}>a smarter workflow</strong>,{' '}
+                  <strong className="hero-offer-item" style={{ fontWeight: 700, letterSpacing: '0.025em', whiteSpace: 'nowrap' }}>a modern website</strong>,{' '}
+                  <strong className="hero-offer-item" style={{ fontWeight: 700, letterSpacing: '0.025em', whiteSpace: 'nowrap' }}>a custom tool</strong>, or{' '}
+                  <strong className="hero-offer-item" style={{ fontWeight: 700, letterSpacing: '0.025em', whiteSpace: 'nowrap' }}>a smarter workflow</strong>,{' '}
                   <span>built around your business&nbsp;needs.</span>
                 </p>
               </div>

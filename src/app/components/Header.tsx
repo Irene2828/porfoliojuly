@@ -46,6 +46,10 @@ export default function Header() {
           color: #C9CED6 !important;
           -webkit-text-fill-color: #C9CED6 !important;
         }
+        .v2-theme .header-nav-desktop,
+        .header-nav-desktop {
+          gap: 1.75rem !important; /* Less generous spacing between links */
+        }
         .v2-theme .premium-header .header-nav-desktop a[href^="mailto:"] svg,
         .v2-theme .premium-header .drawer-nav-links a[href^="mailto:"] svg,
         .premium-header a[href^="mailto:"] svg {

@@ -622,6 +622,7 @@ h1, h2, h3, h4, h5, h6 {
   display: inline !important;
   cursor: pointer !important;
   font-weight: 700 !important;
+  letter-spacing: 0.025em !important;
   text-decoration: underline transparent !important;
   text-decoration-thickness: 1.5px !important;
   text-underline-offset: 4.5px !important;
@@ -1101,6 +1102,10 @@ h1, h2, h3, h4, h5, h6 {
 .v2-theme .premium-header a:hover {
   color: #ffffff !important;
   -webkit-text-fill-color: #ffffff !important;
+}
+
+.v2-theme .header-nav-desktop {
+  gap: 1.75rem !important; /* Less generous spacing between links */
 }
 
 .v2-theme .nav-link::after {
