@@ -550,7 +550,7 @@ h1, h2, h3, h4, h5, h6 {
 .v2-theme .face-cta {
   font-family: var(--font-label), sans-serif !important;
   font-size: 0.803rem !important; /* +5% larger */
-  font-weight: 600 !important;
+  font-weight: 700 !important; /* more bold weight than CTA 2 */
   text-transform: uppercase !important;
   letter-spacing: 0.08em !important;
   height: 3.43rem !important; /* +5% taller */
@@ -640,7 +640,7 @@ h1, h2, h3, h4, h5, h6 {
 .v2-theme .hero-ctas-outside .btn-secondary-stacked {
   font-family: var(--font-label), sans-serif !important;
   font-size: 12.47px !important;
-  font-weight: 600 !important;
+  font-weight: 500 !important; /* Lighter weight than primary CTA 1 */
   text-transform: uppercase !important;
   letter-spacing: 0.08em !important;
   background: transparent !important;

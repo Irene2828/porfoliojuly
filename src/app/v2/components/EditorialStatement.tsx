@@ -24,7 +24,7 @@ export default function EditorialStatement() {
           .prefooter-btn-primary {
             font-family: var(--font-label), sans-serif !important;
             font-size: 0.803rem !important;
-            font-weight: 600 !important;
+            font-weight: 700 !important;
             text-transform: uppercase !important;
             letter-spacing: 0.08em !important;
             justify-content: center;

@@ -138,6 +138,7 @@ export default function HeroV2() {
           border-color: rgba(255, 255, 255, 0.45) !important;
           color: #000000 !important;
           -webkit-text-fill-color: #000000 !important;
+          font-weight: 700 !important;
         }
         .v2-theme .hero-ctas-outside .btn-primary-outline.btn-primary:hover {
           background: rgba(242, 144, 143, 0.95) !important;
