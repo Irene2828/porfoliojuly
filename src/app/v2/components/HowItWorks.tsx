@@ -248,7 +248,7 @@ export default function HowItWorks() {
                         margin: '0 0 0.95rem 0',
                         paddingBottom: '0.75rem',
                         borderBottom: '1px solid rgba(215, 222, 232, 0.16)',
-                        letterSpacing: '0.025em',
+                        letterSpacing: '0em',
                         lineHeight: 1.25,
                         WebkitTextStroke: '0'
                       }}>
@@ -290,7 +290,7 @@ export default function HowItWorks() {
                               }} 
                             />
                             <span>
-                              <strong style={{ fontWeight: 600, color: '#f8fafc' }}>{bullet.bold}</strong>
+                              <strong style={{ fontWeight: 600, color: '#f8fafc', letterSpacing: '0.025em' }}>{bullet.bold}</strong>
                               {bullet.rest}
                             </span>
                           </li>
