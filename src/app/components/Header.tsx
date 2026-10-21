@@ -98,40 +98,22 @@ export default function Header() {
         {/* Center (Desktop): Empty */}
         <div className="header-center-empty"></div>
 
-        {/* Right side (Desktop): Nav links */}
-        <nav className="header-nav header-nav-desktop" style={{ marginLeft: 'auto', marginRight: '0', justifyContent: 'flex-end' }}>
+        {/* Right side (Desktop): Nav links + Hamburger */}
+        <nav className="header-nav header-nav-desktop" style={{ marginLeft: 'auto', marginRight: '0', justifyContent: 'flex-end', alignItems: 'center' }}>
           <a href="#" onClick={(e) => e.preventDefault()} className="nav-link">AI SOLUTIONS</a>
           <a href="#" onClick={(e) => e.preventDefault()} className="nav-link">WEBSITES</a>
           <a href="#" onClick={(e) => e.preventDefault()} className="nav-link">CONSULTING</a>
-          <a 
-            href="mailto:iryna@irynasheremeta.com" 
-            className="nav-link"
-            onClick={handleCopyEmail}
-            title="iryna@irynasheremeta.com (click to copy)"
-            aria-label="Email iryna@irynasheremeta.com (click to copy)"
-            style={{ 
-              color: copied ? '#f2908f' : undefined,
-              display: 'inline-flex',
-              alignItems: 'center',
-              gap: '6px'
-            }}
+          <button
+            className={`hamburger-btn ${isMenuOpen ? 'open' : ''}`}
+            onClick={() => setIsMenuOpen(!isMenuOpen)}
+            aria-label="Menu"
+            aria-expanded={isMenuOpen}
+            style={{ marginLeft: '0.4rem', cursor: 'pointer' }}
           >
-            {copied && <span style={{ fontSize: '0.82rem' }}>COPIED ✓</span>}
-            <svg 
-              width="15" 
-              height="11" 
-              viewBox="0 0 22 15" 
-              fill="none" 
-              stroke="#e2e4e9" 
-              strokeWidth="1.6" 
-              strokeLinecap="round" 
-              strokeLinejoin="round"
-              style={{ transform: 'translateY(-0.5px)', opacity: 0.9 }}
-            >
-              <rect x="1" y="1" width="20" height="13" rx="1.5"></rect>
-              <polyline points="1.5 2.5 11 9 20.5 2.5"></polyline>
-            </svg>
-          </a>
+            <span className="hamburger-bar"></span>
+            <span className="hamburger-bar"></span>
+            <span className="hamburger-bar"></span>
+          </button>
         </nav>
       </div>
 
