@@ -53,17 +53,17 @@ export default function CursorTrail() {
       const isInteractive = target?.closest('a, button, [role="button"], input[type="submit"], input[type="button"], .btn, .nav-link, .hero-ring-badge');
       if (!isInteractive) return;
       
-      // Spawn particles only on interactive hover movement
-      const numParticles = 3;
+      // Spawn delicate, microscopic dust particles on interactive hover
+      const numParticles = Math.random() > 0.4 ? 1 : 2;
       for (let i = 0; i < numParticles; i++) {
         particles.push({
-          x: mouse.x + (Math.random() - 0.5) * 6,
-          y: mouse.y + (Math.random() - 0.5) * 6,
-          vx: (Math.random() - 0.5) * 1.8,
-          vy: (Math.random() - 0.5) * 1.8 - 0.4, // Slight upward drift like luminous dust
+          x: mouse.x + (Math.random() - 0.5) * 4,
+          y: mouse.y + (Math.random() - 0.5) * 4,
+          vx: (Math.random() - 0.5) * 1.0,
+          vy: (Math.random() - 0.5) * 1.0 - 0.2, // Subtle gentle drift
           life: 1,
-          maxLife: Math.random() * 30 + 25,
-          size: Math.random() * 2 + 2.5, // 2.5px to 4.5px so it is clearly visible
+          maxLife: Math.random() * 25 + 20, // Quick graceful fade
+          size: Math.random() > 0.5 ? 1.5 : 1.2, // Delicate 1.2px - 1.5px fine dust
         });
       }
     };
@@ -89,8 +89,8 @@ export default function CursorTrail() {
         p.life -= 1 / p.maxLife;
 
         if (p.life > 0) {
-          // Draw particle with clear brand peach color and soft outer glow
-          const alpha = Math.min(1, Math.max(0, p.life * 1.0));
+          // Delicate, airy peach dust dot
+          const alpha = Math.min(0.72, Math.max(0, p.life * 0.72));
           ctx.fillStyle = `rgba(${baseColor}, ${alpha})`;
           
           ctx.beginPath();
