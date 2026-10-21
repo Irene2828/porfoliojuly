@@ -81,6 +81,12 @@ export default function EditorialStatement() {
             }
           }
           @media (min-width: 901px) {
+            .prefooter-section {
+              padding-bottom: 10rem !important; /* doubled bottom padding on desktop */
+            }
+            .prefooter-cta-container {
+              margin-bottom: 5rem !important; /* doubled bottom space under CTA on desktop */
+            }
             .prefooter-closing-subtext {
               font-size: 1.23rem !important; /* 15% smaller on desktop (was 1.45rem) */
             }
