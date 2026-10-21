@@ -555,7 +555,7 @@ h1, h2, h3, h4, h5, h6 {
   letter-spacing: 0.08em !important;
   height: 3.43rem !important; /* +5% taller */
   padding: 0 1.98rem !important; /* +5% padding */
-  background: #f7d6d0 !important; /* Mary Kay soft pastel beige pink */
+  background: rgba(242, 144, 143, 0.8) !important; /* bold headline color #f2908f at 0.8 opacity */
   color: #000000 !important;
   -webkit-text-fill-color: #000000 !important;
   border: 1px solid rgba(255, 255, 255, 0.45) !important;
@@ -585,7 +585,7 @@ h1, h2, h3, h4, h5, h6 {
 .v2-theme .hero-ctas-outside .btn-primary-outline:hover,
 .hire-btn-primary:hover,
 .v2-theme .face-cta:hover {
-  background: #fae4e0 !important; /* soft warm glow hover */
+  background: rgba(242, 144, 143, 0.95) !important;
   border-color: #ffffff !important;
   color: #000000 !important;
   -webkit-text-fill-color: #000000 !important;

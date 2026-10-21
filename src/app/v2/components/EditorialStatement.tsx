@@ -55,16 +55,16 @@ export default function EditorialStatement() {
           .prefooter-btn-primary:hover svg {
             stroke: #000000 !important;
           }
-          /* Primary CTA: matches hero button style (soft pastel beige pink, no shadow) */
+          /* Primary CTA: bold headline color #f2908f with 20% less opacity (0.80), no shadow */
           .prefooter-section .prefooter-btn-primary.face-cta {
-            background: #f7d6d0 !important;
+            background: rgba(242, 144, 143, 0.8) !important;
             border-color: rgba(255, 255, 255, 0.45) !important;
             color: #000000 !important;
             -webkit-text-fill-color: #000000 !important;
             box-shadow: none !important;
           }
           .prefooter-section .prefooter-btn-primary.face-cta:hover {
-            background: #fae4e0 !important;
+            background: rgba(242, 144, 143, 0.95) !important;
             border-color: #ffffff !important;
             color: #000000 !important;
             -webkit-text-fill-color: #000000 !important;
