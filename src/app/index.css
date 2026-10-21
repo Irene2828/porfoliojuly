@@ -1089,6 +1089,10 @@ h1, h2, h3, h4, h5, h6 {
   stroke: #d1d5db !important;
 }
 
+.v2-theme .premium-header a[href^="mailto:"] svg {
+  stroke: #f2908f !important;
+}
+
 .v2-theme .hamburger-bar {
   background-color: #d1d5db !important;
 }

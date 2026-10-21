@@ -46,6 +46,11 @@ export default function Header() {
           color: #f2908f !important;
           -webkit-text-fill-color: #f2908f !important;
         }
+        .v2-theme .premium-header .header-nav-desktop a[href^="mailto:"] svg,
+        .v2-theme .premium-header .drawer-nav-links a[href^="mailto:"] svg,
+        .premium-header a[href^="mailto:"] svg {
+          stroke: #f2908f !important;
+        }
         @media (max-width: 900px) {
           .premium-header {
             padding-left: 0.1rem !important;
@@ -112,7 +117,7 @@ export default function Header() {
               height="11" 
               viewBox="0 0 22 15" 
               fill="none" 
-              stroke="currentColor" 
+              stroke="#f2908f" 
               strokeWidth="1.6" 
               strokeLinecap="round" 
               strokeLinejoin="round"
@@ -171,7 +176,7 @@ export default function Header() {
                   height="12" 
                   viewBox="0 0 22 15" 
                   fill="none" 
-                  stroke="currentColor" 
+                  stroke="#f2908f" 
                   strokeWidth="1.6" 
                   strokeLinecap="round" 
                   strokeLinejoin="round"
