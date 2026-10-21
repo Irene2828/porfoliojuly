@@ -11,9 +11,10 @@ export default function HowItWorks() {
         { bold: 'A short call or an email.', rest: ' No prep, no tech talk.' }
       ],
       icon: (
-        <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#f4f4f5" strokeWidth="1.75" strokeLinecap="round" strokeLinejoin="round">
-          <path d="M17 3a2.828 2.828 0 1 1 4 4L7.5 20.5 2 22l1.5-5.5L17 3z"></path>
-          <path d="M15 5l4 4"></path>
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#f2908f" strokeWidth="1.75" strokeLinecap="round" strokeLinejoin="round">
+          <circle cx="12" cy="12" r="10"></circle>
+          <line x1="12" y1="8" x2="12" y2="12"></line>
+          <line x1="12" y1="16" x2="12.01" y2="16"></line>
         </svg>
       )
     },
@@ -24,9 +25,8 @@ export default function HowItWorks() {
         { bold: 'Something clickable in days,', rest: ' so you react to a real thing.' }
       ],
       icon: (
-        <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#f4f4f5" strokeWidth="1.75" strokeLinecap="round" strokeLinejoin="round">
-          <circle cx="11" cy="11" r="8"></circle>
-          <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#f2908f" strokeWidth="1.75" strokeLinecap="round" strokeLinejoin="round">
+          <polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"></polygon>
         </svg>
       )
     },
@@ -37,9 +37,11 @@ export default function HowItWorks() {
         { bold: 'I ship it, hand it over,', rest: ' and set up hosting and support.' }
       ],
       icon: (
-        <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#f4f4f5" strokeWidth="1.75" strokeLinecap="round" strokeLinejoin="round">
-          <line x1="22" y1="2" x2="11" y2="13"></line>
-          <polygon points="22 2 15 22 11 13 2 9 22 2"></polygon>
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#f2908f" strokeWidth="1.75" strokeLinecap="round" strokeLinejoin="round">
+          <path d="M4.5 16.5c-1.5 1.26-2 5-2 5s3.74-.5 5-2c.71-.84.7-2.13-.09-2.91a2.18 2.18 0 0 0-2.91-.09z"></path>
+          <path d="M12 15l-3-3a22 22 0 0 1 2-3.95A12.88 12.88 0 0 1 22 2c0 2.72-.78 7.5-6 11a22.35 22.35 0 0 1-4 2z"></path>
+          <path d="M9 12H4s.55-3.03 2-4c1.62-1.08 5 0 5 0"></path>
+          <path d="M12 15v5s3.03-.55 4-2c1.08-1.62 0-5 0-5"></path>
         </svg>
       )
     }
@@ -250,9 +252,21 @@ export default function HowItWorks() {
                         borderBottom: '1px solid rgba(215, 222, 232, 0.16)',
                         letterSpacing: '0em',
                         lineHeight: 1.25,
-                        WebkitTextStroke: '0'
+                        WebkitTextStroke: '0',
+                        display: 'flex',
+                        alignItems: 'center',
+                        gap: '0.65rem'
                       }}>
-                        {step.title}
+                        <span style={{ 
+                          display: 'inline-flex', 
+                          alignItems: 'center', 
+                          justifyContent: 'center',
+                          flexShrink: 0,
+                          transform: 'translateY(-0.5px)'
+                        }}>
+                          {step.icon}
+                        </span>
+                        <span>{step.title}</span>
                       </h3>
 
                       <ul style={{
