@@ -39,12 +39,12 @@ export default function Header() {
       <style>{`
         .v2-theme .premium-header .mobile-brand-title,
         .v2-theme .header-spacer-desktop a span:last-child {
-          color: #f2908f !important;
-          -webkit-text-fill-color: #f2908f !important;
+          color: #C9CED6 !important;
+          -webkit-text-fill-color: #C9CED6 !important;
         }
         .mobile-brand-title {
-          color: #f2908f !important;
-          -webkit-text-fill-color: #f2908f !important;
+          color: #C9CED6 !important;
+          -webkit-text-fill-color: #C9CED6 !important;
         }
         .v2-theme .premium-header .header-nav-desktop a[href^="mailto:"] svg,
         .v2-theme .premium-header .drawer-nav-links a[href^="mailto:"] svg,
@@ -82,7 +82,7 @@ export default function Header() {
               fontFamily: 'var(--font-heading), -apple-system, BlinkMacSystemFont, "Helvetica Neue", Arial, sans-serif', 
               fontSize: '13px', 
               fontWeight: 400, 
-              color: 'var(--header-title-color, #f2908f)', 
+              color: 'var(--header-title-color, #C9CED6)', 
               lineHeight: '1.2', 
               letterSpacing: '0.03em' 
             }}>
