@@ -54,16 +54,16 @@ export default function CursorTrail() {
       if (!isInteractive) return;
       
       // Spawn particles only on interactive hover movement
-      const numParticles = 2; // Keep it minimalist, not too dense
+      const numParticles = 3;
       for (let i = 0; i < numParticles; i++) {
         particles.push({
-          x: mouse.x,
-          y: mouse.y,
-          vx: (Math.random() - 0.5) * 1.5, // Slight horizontal drift
-          vy: (Math.random() - 0.5) * 1.5, // Slight vertical drift
-          life: 1, // Opacity starts full
-          maxLife: Math.random() * 40 + 30, // Random lifespan (approx 1-2 seconds at 60fps)
-          size: Math.random() > 0.5 ? 1 : 2, // 1 to 2 pixels max
+          x: mouse.x + (Math.random() - 0.5) * 6,
+          y: mouse.y + (Math.random() - 0.5) * 6,
+          vx: (Math.random() - 0.5) * 1.8,
+          vy: (Math.random() - 0.5) * 1.8 - 0.4, // Slight upward drift like luminous dust
+          life: 1,
+          maxLife: Math.random() * 30 + 25,
+          size: Math.random() * 2 + 2.5, // 2.5px to 4.5px so it is clearly visible
         });
       }
     };
@@ -75,7 +75,7 @@ export default function CursorTrail() {
       // Clear canvas on each frame
       ctx.clearRect(0, 0, canvas.width, canvas.height);
 
-      // Brand peach color (#f2908f) matching bold headline and brand highlights
+      // Brand peach color (#f2908f)
       const baseColor = '242, 144, 143'; 
 
       for (let i = 0; i < particles.length; i++) {
@@ -89,9 +89,9 @@ export default function CursorTrail() {
         p.life -= 1 / p.maxLife;
 
         if (p.life > 0) {
-          // Draw particle with crisp brand peach visibility fading gracefully
-          const opacity = Math.max(0, p.life * 0.85);
-          ctx.fillStyle = `rgba(${baseColor}, ${opacity})`;
+          // Draw particle with clear brand peach color and soft outer glow
+          const alpha = Math.min(1, Math.max(0, p.life * 1.0));
+          ctx.fillStyle = `rgba(${baseColor}, ${alpha})`;
           
           ctx.beginPath();
           ctx.arc(p.x, p.y, p.size / 2, 0, Math.PI * 2);
