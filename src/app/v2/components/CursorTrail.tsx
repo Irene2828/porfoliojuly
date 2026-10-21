@@ -75,8 +75,8 @@ export default function CursorTrail() {
       // Clear canvas on each frame
       ctx.clearRect(0, 0, canvas.width, canvas.height);
 
-      // We use a subtle slate-grey to match the minimalist aesthetic
-      const baseColor = '74, 85, 104'; // #4a5568 (slate charcoal) used in hero
+      // Brand peach color (#f2908f) matching bold headline and brand highlights
+      const baseColor = '242, 144, 143'; 
 
       for (let i = 0; i < particles.length; i++) {
         const p = particles[i];
@@ -89,9 +89,8 @@ export default function CursorTrail() {
         p.life -= 1 / p.maxLife;
 
         if (p.life > 0) {
-          // Draw particle
-          // Start opacity low (e.g. 0.4 max) and fade out
-          const opacity = Math.max(0, p.life * 0.4);
+          // Draw particle with crisp brand peach visibility fading gracefully
+          const opacity = Math.max(0, p.life * 0.85);
           ctx.fillStyle = `rgba(${baseColor}, ${opacity})`;
           
           ctx.beginPath();
