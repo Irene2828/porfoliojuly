@@ -96,8 +96,9 @@ export default function Header() {
 
         {/* Right side (Desktop): Nav links */}
         <nav className="header-nav header-nav-desktop" style={{ marginLeft: 'auto', marginRight: '0', justifyContent: 'flex-end' }}>
-          <a href="#cases" className="nav-link">WORK</a>
-          <a href="#about" className="nav-link">ABOUT ME</a>
+          <a href="#" onClick={(e) => e.preventDefault()} className="nav-link">AI SOLUTIONS</a>
+          <a href="#" onClick={(e) => e.preventDefault()} className="nav-link">WEBSITES</a>
+          <a href="#" onClick={(e) => e.preventDefault()} className="nav-link">CONSULTING</a>
           <a 
             href="mailto:iryna@irynasheremeta.com" 
             className="nav-link"
@@ -157,8 +158,9 @@ export default function Header() {
           <div className="header-drawer-content" onClick={(e) => e.stopPropagation()}>
             <button className="drawer-close-btn" onClick={() => setIsMenuOpen(false)} aria-label="Close menu">&times;</button>
             <div className="drawer-nav-links">
-              <a href="#cases" onClick={() => setIsMenuOpen(false)} className="drawer-link">WORK</a>
-              <a href="#about" onClick={() => setIsMenuOpen(false)} className="drawer-link">ABOUT ME</a>
+              <a href="#" onClick={(e) => { e.preventDefault(); setIsMenuOpen(false); }} className="drawer-link">AI SOLUTIONS</a>
+              <a href="#" onClick={(e) => { e.preventDefault(); setIsMenuOpen(false); }} className="drawer-link">WEBSITES</a>
+              <a href="#" onClick={(e) => { e.preventDefault(); setIsMenuOpen(false); }} className="drawer-link">CONSULTING</a>
               <a 
                 href="mailto:iryna@irynasheremeta.com" 
                 onClick={(e) => { handleCopyEmail(e); setIsMenuOpen(false); }} 
