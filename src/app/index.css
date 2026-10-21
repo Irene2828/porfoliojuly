@@ -1081,8 +1081,8 @@ h1, h2, h3, h4, h5, h6 {
 
 .v2-theme .mobile-brand-title,
 .v2-theme .header-spacer-desktop a span:last-child {
-  color: #a0a6b1 !important;
-  -webkit-text-fill-color: #a0a6b1 !important;
+  color: #f2908f !important;
+  -webkit-text-fill-color: #f2908f !important;
 }
 
 .v2-theme .premium-header svg {
