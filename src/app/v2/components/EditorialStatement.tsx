@@ -79,6 +79,17 @@ export default function EditorialStatement() {
               font-size: clamp(1.48rem, 7.7vw, 2.95rem) !important;
               line-height: 1.35 !important;
             }
+            .prefooter-section .prefooter-btn-primary.face-cta,
+            .prefooter-btn-primary {
+              background: #f2908f !important; /* full color opacity on mobile */
+              height: 3.09rem !important; /* 10% shorter */
+              margin: 0 auto !important;
+            }
+            .prefooter-cta-container {
+              justify-content: center !important;
+              align-items: center !important;
+              width: 100% !important;
+            }
           }
           @media (min-width: 901px) {
             .prefooter-section {

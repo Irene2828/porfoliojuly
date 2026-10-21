@@ -48,21 +48,19 @@ export default function CursorTrail() {
       mouse.y = e.clientY;
       isMoving = true;
 
-      // Only spawn particle trail when hovering over links, buttons, or interactive elements
       const target = e.target as HTMLElement | null;
       const isInteractive = target?.closest('a, button, [role="button"], input[type="submit"], input[type="button"], .btn, .nav-link, .hero-ring-badge');
-      if (!isInteractive) return;
       
-      // Spawn delicate, microscopic dust particles on interactive hover
-      const numParticles = Math.random() > 0.4 ? 1 : 2;
+      // On general cursor movement spawn 1 delicate speck; on interactive elements spawn 2 specks
+      const numParticles = isInteractive ? (Math.random() > 0.4 ? 2 : 1) : (Math.random() > 0.55 ? 1 : 0);
       for (let i = 0; i < numParticles; i++) {
         particles.push({
           x: mouse.x + (Math.random() - 0.5) * 4,
           y: mouse.y + (Math.random() - 0.5) * 4,
-          vx: (Math.random() - 0.5) * 1.0,
-          vy: (Math.random() - 0.5) * 1.0 - 0.2, // Subtle gentle drift
+          vx: (Math.random() - 0.5) * 0.9,
+          vy: (Math.random() - 0.5) * 0.9 - 0.15, // Subtle gentle drift
           life: 1,
-          maxLife: Math.random() * 25 + 20, // Quick graceful fade
+          maxLife: Math.random() * 25 + 18, // Quick graceful fade
           size: Math.random() > 0.5 ? 1.5 : 1.2, // Delicate 1.2px - 1.5px fine dust
         });
       }

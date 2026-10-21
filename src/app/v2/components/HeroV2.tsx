@@ -116,6 +116,15 @@ export default function HeroV2() {
           .v2-theme .hero-ctas-outside {
             margin-top: 1.75rem !important; /* body-buttons spacing +25% */
             gap: 0.85rem !important;
+            justify-content: center !important;
+            align-items: center !important;
+            width: 100% !important;
+          }
+          .v2-theme .hero-ctas-outside .btn-primary-outline.btn-primary,
+          .v2-theme .hero-ctas-outside .btn-primary {
+            background: #f2908f !important; /* full color opacity on mobile */
+            height: 3.09rem !important; /* 10% shorter */
+            margin: 0 auto !important;
           }
           .v2-theme .hero-ring-badge,
           .hero-ring-badge,
