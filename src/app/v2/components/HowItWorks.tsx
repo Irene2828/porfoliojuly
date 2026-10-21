@@ -11,10 +11,14 @@ export default function HowItWorks() {
         { bold: 'A short call or an email.', rest: ' No prep, no tech talk.' }
       ],
       icon: (
-        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#f2908f" strokeWidth="1.75" strokeLinecap="round" strokeLinejoin="round">
-          <circle cx="12" cy="12" r="10"></circle>
-          <line x1="12" y1="8" x2="12" y2="12"></line>
-          <line x1="12" y1="16" x2="12.01" y2="16"></line>
+        /* Refined precision focus / crosshair beacon illustrating diagnosing the problem */
+        <svg width="19" height="19" viewBox="0 0 24 24" fill="none" stroke="#f2908f" strokeWidth="1.35" strokeLinecap="round" strokeLinejoin="round">
+          <circle cx="12" cy="12" r="8"></circle>
+          <line x1="12" y1="2" x2="12" y2="5"></line>
+          <line x1="12" y1="19" x2="12" y2="22"></line>
+          <line x1="2" y1="12" x2="5" y2="12"></line>
+          <line x1="19" y1="12" x2="22" y2="12"></line>
+          <circle cx="12" cy="12" r="2.2" fill="#f2908f" stroke="none"></circle>
         </svg>
       )
     },
@@ -25,8 +29,13 @@ export default function HowItWorks() {
         { bold: 'Something clickable in days,', rest: ' so you react to a real thing.' }
       ],
       icon: (
-        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#f2908f" strokeWidth="1.75" strokeLinecap="round" strokeLinejoin="round">
-          <polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"></polygon>
+        /* Architectural prototype viewport with interactive cursor */
+        <svg width="19" height="19" viewBox="0 0 24 24" fill="none" stroke="#f2908f" strokeWidth="1.35" strokeLinecap="round" strokeLinejoin="round">
+          <rect x="3" y="3.5" width="18" height="14" rx="1.5"></rect>
+          <line x1="3" y1="7.5" x2="21" y2="7.5"></line>
+          <circle cx="5.5" cy="5.5" r="0.75" fill="#f2908f" stroke="none"></circle>
+          <circle cx="8" cy="5.5" r="0.75" fill="#f2908f" stroke="none"></circle>
+          <path d="M12.5 11l4.5 4.5m0-3v3h-3"></path>
         </svg>
       )
     },
@@ -37,11 +46,11 @@ export default function HowItWorks() {
         { bold: 'I ship it, hand it over,', rest: ' and set up hosting and support.' }
       ],
       icon: (
-        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#f2908f" strokeWidth="1.75" strokeLinecap="round" strokeLinejoin="round">
-          <path d="M4.5 16.5c-1.5 1.26-2 5-2 5s3.74-.5 5-2c.71-.84.7-2.13-.09-2.91a2.18 2.18 0 0 0-2.91-.09z"></path>
-          <path d="M12 15l-3-3a22 22 0 0 1 2-3.95A12.88 12.88 0 0 1 22 2c0 2.72-.78 7.5-6 11a22.35 22.35 0 0 1-4 2z"></path>
-          <path d="M9 12H4s.55-3.03 2-4c1.62-1.08 5 0 5 0"></path>
-          <path d="M12 15v5s3.03-.55 4-2c1.08-1.62 0-5 0-5"></path>
+        /* Minimalist editorial release arrow with compass precision ring */
+        <svg width="19" height="19" viewBox="0 0 24 24" fill="none" stroke="#f2908f" strokeWidth="1.35" strokeLinecap="round" strokeLinejoin="round">
+          <circle cx="12" cy="12" r="8.5" strokeDasharray="2 3"></circle>
+          <line x1="8" y1="16" x2="16" y2="8"></line>
+          <polyline points="10 8 16 8 16 14"></polyline>
         </svg>
       )
     }

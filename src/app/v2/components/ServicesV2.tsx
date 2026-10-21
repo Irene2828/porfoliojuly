@@ -445,10 +445,10 @@ export default function ServicesV2() {
                       alignItems: 'center', 
                       gap: '16px', 
                       lineHeight: 1.55,
-                      background: 'rgba(255, 255, 255, 0.9)',
+                      background: 'rgba(255, 255, 255, 0.75)',
                       borderRadius: '0px',
                       boxShadow: '0 1px 6px rgba(0, 0, 0, 0.03)',
-                      border: '1px solid #ffffff',
+                      border: '1px solid rgba(0, 0, 0, 0.08)',
                       padding: '8px 24px 8px 8px'
                     }}>
                       <div style={{ 
@@ -461,7 +461,7 @@ export default function ServicesV2() {
                         justifyContent: 'center',
                         boxShadow: '0 1px 4px rgba(0,0,0,0.025)',
                         flexShrink: 0,
-                        border: 'none'
+                        border: '1px solid rgba(0, 0, 0, 0.08)'
                       }}>
                         {bullet.icon}
                       </div>
@@ -473,7 +473,7 @@ export default function ServicesV2() {
                 </ul>
                 <div style={{ display: 'flex', justifyContent: 'flex-end', marginTop: '64px' }}>
                   <a href="#cases" className="see-example-link-light-bg" style={{ position: 'relative', display: 'inline-flex', alignItems: 'center', fontFamily: 'var(--font-label), sans-serif', fontSize: '11px', fontWeight: 600, letterSpacing: '0.1em', opacity: 0.9, textDecoration: 'none', color: '#5C6672', paddingBottom: '4px', transition: 'opacity 0.2s' }} onMouseEnter={(e) => e.currentTarget.style.opacity = '1'} onMouseLeave={(e) => e.currentTarget.style.opacity = '0.9'}>
-                    <span>SEE TOOL EXAMPLES <span style={{ color: '#f7d6d0', marginLeft: '4px' }}>&darr;</span></span>
+                    <span>SEE TOOL EXAMPLES <span style={{ color: '#8a94a0', marginLeft: '4px' }}>&darr;</span></span>
                   </a>
                 </div>
               </div>
