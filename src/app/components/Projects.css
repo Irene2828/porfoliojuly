@@ -866,9 +866,17 @@
 
 .page-section-divider.preview-view .project-chip,
 .v2-theme .page-section-divider.preview-view .project-chip {
-  background: #f1f3f5 !important;
-  color: #4b5563 !important;
-  border-color: #d1d5db !important;
+  background: #fdf0ee !important;
+  color: #b84341 !important;
+  border: 1px solid #f2908f !important;
+  font-family: var(--font-heading), 'Outfit', sans-serif !important;
+  font-size: 0.68rem !important;
+  font-weight: 700 !important;
+  text-transform: uppercase !important;
+  letter-spacing: 0.07em !important;
+  padding: 0.2rem 0.55rem !important;
+  border-radius: 3px !important;
+  display: inline-block !important;
 }
 
 /* --- Modal Overlay & Expanded View (Apple Tahoe Frosted Glass Style, Clean Single Scrollbar) --- */
@@ -1044,16 +1052,37 @@
   box-sizing: border-box !important;
 }
 
+.page-section-divider.modal-view .section-divider-subline,
+.v2-theme .page-section-divider.modal-view .section-divider-subline {
+  font-family: var(--font-body), 'Plus Jakarta Sans', sans-serif !important;
+  font-size: 0.85rem !important; /* 20% smaller text on zoom in */
+  line-height: 1.5 !important;
+  color: #4b5563 !important;
+}
+
 .page-section-divider.modal-view .annotation-stat-label,
 .v2-theme .page-section-divider.modal-view .annotation-stat-label {
-  color: #363636 !important;
+  color: #55606a !important;
+  font-family: var(--font-label), 'Plus Jakarta Sans', sans-serif !important;
+  font-size: 0.72rem !important;
+  text-transform: uppercase !important;
+  letter-spacing: 0.08em !important;
+  font-weight: 600 !important;
 }
 
 .page-section-divider.modal-view .project-chip,
 .v2-theme .page-section-divider.modal-view .project-chip {
-  background: #f1f3f5 !important;
-  color: #4b5563 !important;
-  border-color: #d1d5db !important;
+  background: #fdf0ee !important;
+  color: #b84341 !important;
+  border: 1px solid #f2908f !important;
+  font-family: var(--font-heading), 'Outfit', sans-serif !important;
+  font-size: 0.68rem !important;
+  font-weight: 700 !important;
+  text-transform: uppercase !important;
+  letter-spacing: 0.07em !important;
+  padding: 0.2rem 0.55rem !important;
+  border-radius: 3px !important;
+  display: inline-block !important;
 }
 
 /* Sidebar captions are brand blue via .sidebar-col global rule */

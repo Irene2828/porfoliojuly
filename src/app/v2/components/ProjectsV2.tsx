@@ -46,18 +46,18 @@ export default function ProjectsV2({ initialProjects = [] }: ProjectsV2Props) {
           sub: 'Every poster made by hand, one at a time. Local teams waited days for a single poster.' 
         },
         { 
-          chip: 'Build time', 
-          text: 'Locked template poster tool', 
+          chip: 'Impact', 
+          text: 'Minutes instead of days', 
           stat: 'Minutes', 
-          statLabel: 'build time',
-          sub: 'Pick a template, fill in the fields, download a print-ready file (PNG, JPEG or PDF).' 
+          statLabel: 'impact',
+          sub: 'Work that took days now takes minutes, done by local teams without designers in the loop.' 
         },
         { 
-          chip: 'Result', 
-          text: 'On-brand posters in minutes, with owner review', 
+          chip: 'Architecture', 
+          text: 'Agent-ready architecture', 
           stat: '5 formats', 
           statLabel: 'result',
-          sub: 'One set of details generates the full poster set for any city — no designer in the loop.' 
+          sub: 'One set of details fills all 5 formats at once. Clean structure allows AI agents to populate fields directly.' 
         }
       ],
       image: '/assets/poster-tool/01-details-and-download.png'
@@ -74,9 +74,9 @@ export default function ProjectsV2({ initialProjects = [] }: ProjectsV2Props) {
         { markerNumber: 3, title: 'Easy Booking', text: 'Makes scheduling a consultation straightforward and quick.' }
       ],
       stats: [
-        { chip: 'Before', text: 'Outdated online presence failing to show expertise', stat: 'outdated presence', statLabel: 'before' },
-        { chip: 'Built with', text: 'Modern Next.js web architecture', stat: 'Fast', statLabel: 'performance' },
-        { chip: 'Result', text: 'Trust-first presence with seamless consultation booking', stat: '[add after launch]', statLabel: 'result' }
+        { chip: 'Before', text: 'Outdated online presence failing to show expertise', stat: 'Outdated', statLabel: 'before', sub: 'An expert whose old website didn’t show it.' },
+        { chip: 'Built with', text: 'Fast Next.js architecture with instant loading', stat: 'Fast', statLabel: 'performance', sub: 'I built a site that earns trust first, then makes booking easy.' },
+        { chip: 'Result', text: 'Turned expertise into booked consultations', stat: 'Booked', statLabel: 'result', sub: 'Turns expertise into client inquiries and scheduled consultations.' }
       ],
       image: initialProjects[1]?.screens?.[0]?.originalUrl || '/skills.png'
     },
@@ -92,9 +92,9 @@ export default function ProjectsV2({ initialProjects = [] }: ProjectsV2Props) {
         { markerNumber: 3, title: 'Offline Access', text: 'Reliable access in field zones with poor connectivity.' }
       ],
       stats: [
-        { chip: 'Before', text: 'Aid requests scattered across chat channels', stat: '6+ apps', statLabel: 'before' },
-        { chip: 'Built with', text: 'Live map platform with roles & offline support', stat: '1 map', statLabel: 'unified' },
-        { chip: 'Result', text: 'Coordinated mutual aid response across regions', stat: '[real number]', statLabel: 'result' }
+        { chip: 'Before', text: 'Aid requests scattered across chat channels', stat: '6+ apps', statLabel: 'before', sub: 'Requests were lost in group chats and direct messages.' },
+        { chip: 'Built with', text: 'Live map platform with roles & offline support', stat: '1 map', statLabel: 'unified', sub: 'Single source of truth with real-time status updates.' },
+        { chip: 'Result', text: 'Coordinated mutual aid response across regions', stat: 'Instant', statLabel: 'result', sub: 'Field coordinators and volunteers aligned in real time.' }
       ],
       image: initialProjects[0]?.screens?.[0]?.originalUrl || '/skills.png'
     }
@@ -243,20 +243,25 @@ export default function ProjectsV2({ initialProjects = [] }: ProjectsV2Props) {
                   }}
                 >
                   <div className="narrative-block">
-                    <div style={{
-                      fontFamily: 'var(--font-mono), monospace',
+                    <span style={{
+                      display: 'inline-block',
+                      fontFamily: "var(--font-heading), 'Outfit', -apple-system, sans-serif",
                       fontSize: '11px',
-                      fontWeight: 600,
+                      fontWeight: 700,
                       letterSpacing: '0.08em',
                       textTransform: 'uppercase',
-                      color: 'var(--accent, #3ba3b8)',
-                      marginBottom: '10px'
+                      color: '#b84341',
+                      backgroundColor: '#fdf0ee',
+                      border: '1px solid #f2908f',
+                      padding: '3px 9px',
+                      borderRadius: '3px',
+                      marginBottom: '14px'
                     }}>
                       BRIEF
-                    </div>
+                    </span>
                     <p style={{
-                      fontFamily: 'var(--font-body), sans-serif',
-                      fontSize: '14px',
+                      fontFamily: 'var(--font-body), "Plus Jakarta Sans", sans-serif',
+                      fontSize: '14.5px',
                       lineHeight: '1.65',
                       color: 'var(--color-body-dark, #2b3038)',
                       margin: 0
@@ -266,59 +271,69 @@ export default function ProjectsV2({ initialProjects = [] }: ProjectsV2Props) {
                   </div>
 
                   <div className="narrative-block">
-                    <div style={{
-                      fontFamily: 'var(--font-mono), monospace',
+                    <span style={{
+                      display: 'inline-block',
+                      fontFamily: "var(--font-heading), 'Outfit', -apple-system, sans-serif",
                       fontSize: '11px',
-                      fontWeight: 600,
+                      fontWeight: 700,
                       letterSpacing: '0.08em',
                       textTransform: 'uppercase',
-                      color: 'var(--accent, #3ba3b8)',
-                      marginBottom: '10px'
+                      color: '#b84341',
+                      backgroundColor: '#fdf0ee',
+                      border: '1px solid #f2908f',
+                      padding: '3px 9px',
+                      borderRadius: '3px',
+                      marginBottom: '14px'
                     }}>
                       DECISIONS
-                    </div>
+                    </span>
                     <div style={{
-                      fontFamily: 'var(--font-body), sans-serif',
-                      fontSize: '14px',
+                      fontFamily: 'var(--font-body), "Plus Jakarta Sans", sans-serif',
+                      fontSize: '14.5px',
                       lineHeight: '1.65',
                       color: 'var(--color-body-dark, #2b3038)',
                       margin: 0,
                       display: 'flex',
                       flexDirection: 'column',
-                      gap: '8px'
+                      gap: '9px'
                     }}>
-                      <div>• <strong>Locked templates</strong> — layout, fonts and brand are fixed; only the text can change, so a poster cannot go off-brand.</div>
-                      <div>• <strong>Type once, update everywhere</strong> — one set of fields (city, date, location, schedule, QR link) fills all five formats at once.</div>
-                      <div>• <strong>Smart QR built in</strong> — the registration link is typed once and the QR code is generated on the poster, ready to test before download.</div>
-                      <div>• <strong>Simple by default, deep on demand</strong> — the 3-step flow covers most posters; the full editor with placement controls is one click away, not in the way.</div>
-                      <div>• <strong>Human in control</strong> — drafts, undo and restore; the owner reviews and approves the final poster. Nothing goes out automatically.</div>
+                      <div>• <strong style={{ color: '#121316', fontWeight: 600 }}>Locked templates</strong> — layout, fonts and brand are fixed; only the text can change, so a poster cannot go off-brand.</div>
+                      <div>• <strong style={{ color: '#121316', fontWeight: 600 }}>Type once, update everywhere</strong> — one set of fields (city, date, location, schedule, QR link) fills all five formats at once.</div>
+                      <div>• <strong style={{ color: '#121316', fontWeight: 600 }}>Smart QR built in</strong> — the registration link is typed once and the QR code is generated on the poster, ready to test before download.</div>
+                      <div>• <strong style={{ color: '#121316', fontWeight: 600 }}>Simple by default, deep on demand</strong> — the 3-step flow covers most posters; the full editor with placement controls is one click away, not in the way.</div>
+                      <div>• <strong style={{ color: '#121316', fontWeight: 600 }}>Human in control</strong> — drafts, undo and restore; the owner reviews and approves the final poster. Nothing goes out automatically.</div>
                     </div>
                   </div>
 
                   <div className="narrative-block">
-                    <div style={{
-                      fontFamily: 'var(--font-mono), monospace',
+                    <span style={{
+                      display: 'inline-block',
+                      fontFamily: "var(--font-heading), 'Outfit', -apple-system, sans-serif",
                       fontSize: '11px',
-                      fontWeight: 600,
+                      fontWeight: 700,
                       letterSpacing: '0.08em',
                       textTransform: 'uppercase',
-                      color: 'var(--accent, #3ba3b8)',
-                      marginBottom: '10px'
+                      color: '#b84341',
+                      backgroundColor: '#fdf0ee',
+                      border: '1px solid #f2908f',
+                      padding: '3px 9px',
+                      borderRadius: '3px',
+                      marginBottom: '14px'
                     }}>
                       IMPACT
-                    </div>
+                    </span>
                     <div style={{
-                      fontFamily: 'var(--font-body), sans-serif',
-                      fontSize: '14px',
+                      fontFamily: 'var(--font-body), "Plus Jakarta Sans", sans-serif',
+                      fontSize: '14.5px',
                       lineHeight: '1.65',
                       color: 'var(--color-body-dark, #2b3038)',
                       margin: 0,
                       display: 'flex',
                       flexDirection: 'column',
-                      gap: '8px'
+                      gap: '9px'
                     }}>
-                      <div>• <strong>Minutes instead of days</strong> — work that took days of back-and-forth now takes minutes, done by local teams themselves without designers in the loop.</div>
-                      <div>• <strong>Agent-ready architecture</strong> — the clean underlying structure allows modern AI agents to operate the tool and populate fields directly, speeding up the workflow even further when batches of posters need to be generated.</div>
+                      <div>• <strong style={{ color: '#121316', fontWeight: 600 }}>Minutes instead of days</strong> — work that took days of back-and-forth now takes minutes, done by local teams themselves without designers in the loop.</div>
+                      <div>• <strong style={{ color: '#121316', fontWeight: 600 }}>Agent-ready architecture</strong> — the clean underlying structure allows modern AI agents to operate the tool and populate fields directly, speeding up the workflow even further when batches of posters need to be generated.</div>
                     </div>
                   </div>
                 </div>

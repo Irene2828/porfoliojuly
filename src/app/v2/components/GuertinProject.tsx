@@ -182,10 +182,10 @@ export default function GuertinProject({ kicker, subline, browserTitle, cardsTit
               style={{ backgroundColor: 'rgba(255,255,255,0.06)', border: '1px solid rgba(255,255,255,0.1)' }}
             >
               <h4 className="guertin-card-title" style={{ color: 'rgba(255,255,255,0.8)' }}>
-                <span className="guertin-card-icon">⚡</span> Result: [add after launch]
+                <span className="guertin-card-icon">⚡</span> Result: Booked consultations
               </h4>
               <p className="guertin-card-desc" style={{ color: 'rgba(255,255,255,0.8)' }}>
-                Measurable business outcomes to be added post-launch.
+                Turns expertise into client inquiries and scheduled consultations.
               </p>
             </motion.div>
           </div>

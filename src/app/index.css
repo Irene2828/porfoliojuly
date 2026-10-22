@@ -319,9 +319,17 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 .v2-theme .page-section-divider.modal-view .section-divider-stats-row .project-chip {
-  background: #1a1a1a !important;
-  color: #ffffff !important;
-  border-color: #1a1a1a !important;
+  background: #fdf0ee !important;
+  color: #b84341 !important;
+  border: 1px solid #f2908f !important;
+  font-family: var(--font-heading), 'Outfit', sans-serif !important;
+  font-size: 0.68rem !important;
+  font-weight: 700 !important;
+  text-transform: uppercase !important;
+  letter-spacing: 0.07em !important;
+  padding: 0.2rem 0.55rem !important;
+  border-radius: 3px !important;
+  display: inline-block !important;
 }
 
 /* Version 2 Preview Cards: White Heading & Impact Row */
@@ -359,9 +367,17 @@ h1, h2, h3, h4, h5, h6 {
 
 .v2-theme .page-section-divider.cinematic-section.preview-view .project-chip,
 .page-section-divider.cinematic-section.preview-view .project-chip {
-  background: #363636 !important;
-  color: #ffffff !important;
-  border-color: #363636 !important;
+  background: #fdf0ee !important;
+  color: #b84341 !important;
+  border: 1px solid #f2908f !important;
+  font-family: var(--font-heading), 'Outfit', sans-serif !important;
+  font-size: 0.68rem !important;
+  font-weight: 700 !important;
+  text-transform: uppercase !important;
+  letter-spacing: 0.07em !important;
+  padding: 0.2rem 0.55rem !important;
+  border-radius: 3px !important;
+  display: inline-block !important;
 }
 
 /* V2 Specific Hero H1 Override (Calm, highly professional editorial serif — no girly swashes or delicate hairlines) */

@@ -115,8 +115,8 @@ export default function GenericWhiteCard({ title, subline, annotations, stats, i
 
         {/* 3 Light Cards Below */}
         <div className="guertin-cards-area">
-          <h3 className="guertin-cards-title" style={{ color: 'var(--color-matte-black, #25282e)', fontWeight: 500 }}>
-            {stats?.[0]?.stat ? `From ${stats[0].stat} down to automated workflows.` : 'Designed for high efficiency and clarity.'}
+          <h3 className="guertin-cards-title" style={{ fontFamily: 'var(--font-heading)', color: 'var(--color-matte-black, #25282e)', fontWeight: 500 }}>
+            Real outcomes and measurable impact.
           </h3>
           
           <div className="guertin-cards-grid">
@@ -129,11 +129,24 @@ export default function GenericWhiteCard({ title, subline, annotations, stats, i
                 className="guertin-card"
                 style={{ backgroundColor: '#ffffff', border: '1px solid rgba(0,0,0,0.1)', boxShadow: '0 4px 12px rgba(0,0,0,0.04)' }}
               >
-                <h4 className="guertin-card-title" style={{ color: 'var(--color-matte-black, #25282e)' }}>
-                  <span className="guertin-card-icon" style={{ color: '#717885' }}>⚡</span> <span style={{ color: '#4B5565' }}>{statItem.chip}</span>: <strong style={{ color: 'var(--color-matte-black, #25282e)' }}>{statItem.stat}</strong>
+                <h4 className="guertin-card-title" style={{ color: 'var(--color-matte-black, #25282e)', display: 'flex', alignItems: 'center', gap: '8px' }}>
+                  <span style={{ 
+                    backgroundColor: '#fdf0ee', 
+                    color: '#b84341', 
+                    border: '1px solid #f2908f', 
+                    padding: '2px 6px', 
+                    borderRadius: '3px', 
+                    fontSize: '9.5px', 
+                    fontWeight: 700, 
+                    textTransform: 'uppercase',
+                    letterSpacing: '0.06em'
+                  }}>
+                    {statItem.chip}
+                  </span>
+                  <strong style={{ color: 'var(--color-matte-black, #25282e)' }}>{statItem.stat}</strong>
                 </h4>
                 <p className="guertin-card-desc" style={{ color: '#555555' }}>
-                  {statItem.text}
+                  {(statItem as any).sub || statItem.text}
                 </p>
               </motion.div>
             ))}
