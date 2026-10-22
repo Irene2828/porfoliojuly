@@ -364,31 +364,32 @@ export default function ProjectsV2({ initialProjects = [] }: ProjectsV2Props) {
                   role="region"
                   aria-label={`${project.title} case preview`}
                 >
-                  <div className="preview-card-wrapper">
+                  <div 
+                    className="preview-card-wrapper"
+                    onClick={() => setSelectedProjectId(project.id)}
+                    style={{ cursor: 'pointer' }}
+                  >
                     {/* Normal scaled card layout */}
                     <div className="preview-card-scaler">
-                      {renderProjectContent(project, false)}
+                      {project.id === 'v2-2' ? (
+                        <GuertinProject 
+                          kicker="· Isabelle Guertin // rguertin.ca ·"
+                          subline="— A 20-year claims expert, hidden behind an outdated WordPress site."
+                          browserTitle="rguertin.ca"
+                          cardsTitle="Impact"
+                        />
+                      ) : (
+                        renderProjectContent(project, false)
+                      )}
                     </div>
 
-                    {/* Full-bleed hover zoom visual */}
-                    <div className="preview-card-hover-visual">
+                    {/* Clean full case image on hover (large size, no zoom-in crop, no chip) */}
+                    <div className={`preview-card-hover-visual ${project.id === 'v2-2' ? 'navy-bg' : ''}`}>
                       <img 
                         src={project.image} 
                         alt={project.title} 
                         className="preview-card-hover-img"
                       />
-                      <div className="preview-card-hover-overlay-gradient" />
-                      <button 
-                        type="button"
-                        className="preview-card-hover-zoom-btn"
-                        onClick={(e) => {
-                          e.stopPropagation();
-                          setSelectedProjectId(project.id);
-                        }}
-                        aria-label={`Tap to zoom ${project.title}`}
-                      >
-                        Tap to Zoom &rarr;
-                      </button>
                     </div>
                   </div>
                   <div className="preview-card-caption">

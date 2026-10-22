@@ -665,24 +665,18 @@
   box-sizing: border-box;
 }
 
-/* 1. Global Card Scale & Lift on hover & keyboard focus-within */
+/* 1. Global Card Hover & focus-within: smooth subtle lift, no springy jump */
 .preview-item-container:hover .preview-card-wrapper,
 .preview-item-container:focus-within .preview-card-wrapper {
-  transform: scale(1.02) translateY(-4px) translateZ(0) !important;
-  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.05) !important;
-  outline: 2px solid #5a9ad4 !important;
-  outline-offset: -2px !important;
+  box-shadow: 0 12px 32px rgba(0, 0, 0, 0.08) !important;
+  outline: 1px solid rgba(90, 154, 212, 0.5) !important;
+  outline-offset: -1px !important;
 }
 
-/* 2. Inner Visual Floating Lift (Lifts the UI frame gracefully without top corner cropping) */
+/* 2. Inner Visual Floating Lift */
 .preview-view .project-visual {
-  transition: transform 0.5s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.5s cubic-bezier(0.16, 1, 0.3, 1);
+  transition: opacity 0.4s ease;
   transform-origin: center center;
-}
-
-.preview-item-container:hover .preview-view .project-visual,
-.preview-item-container:focus-within .preview-view .project-visual {
-  transform: scale(1.01);
 }
 
 .preview-card-scaler {
@@ -691,13 +685,12 @@
   transform: scale(0.4);
   transform-origin: top left;
   pointer-events: none; /* Let clicks pass to wrapper */
-  transition: opacity 0.4s cubic-bezier(0.16, 1, 0.3, 1), transform 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+  transition: opacity 0.4s ease;
 }
 
 .preview-item-container:hover .preview-card-scaler,
 .preview-item-container:focus-within .preview-card-scaler {
   opacity: 0;
-  transform: scale(0.39);
 }
 
 .preview-card-scaler > div {
@@ -706,97 +699,48 @@
   min-height: 100%;
 }
 
-/* --- Full-bleed case image zoom on hover --- */
+/* --- Large Case Image on Hover (No zoom-in crop, no springy motion, no chip) --- */
 .preview-card-hover-visual {
   position: absolute;
   inset: 0;
   width: 100%;
   height: 100%;
-  background: #ffffff;
+  background: #fbfbfd;
   opacity: 0;
   pointer-events: none;
   overflow: hidden;
   z-index: 10;
   display: flex;
-  flex-direction: column;
   align-items: center;
-  justify-content: flex-end;
-  padding-bottom: 1.75rem;
+  justify-content: center;
+  padding: 0.75rem;
   box-sizing: border-box;
-  transition: opacity 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+  transition: opacity 0.4s ease;
+}
+
+.preview-card-hover-visual.navy-bg {
+  background-color: #081A33;
+  background-image: 
+    radial-gradient(800px circle at 15% 85%, rgba(74,120,180,0.35), transparent),
+    radial-gradient(700px circle at 85% 15%, rgba(120,170,220,0.18), transparent),
+    radial-gradient(1200px circle at center, transparent 0%, rgba(5,15,30,0.6) 100%),
+    radial-gradient(circle, rgba(255, 255, 255, 0.18) 1px, transparent 1px);
+  background-size: 100% 100%, 100% 100%, 100% 100%, 28px 28px;
 }
 
 .preview-card-hover-img {
-  position: absolute;
-  inset: 0;
   width: 100%;
   height: 100%;
-  object-fit: cover;
-  object-position: top center;
-  transform: scale(1.06);
-  transition: transform 0.6s cubic-bezier(0.16, 1, 0.3, 1);
-}
-
-.preview-card-hover-overlay-gradient {
-  position: absolute;
-  inset: 0;
-  background: linear-gradient(
-    to bottom,
-    rgba(0, 0, 0, 0) 0%,
-    rgba(0, 0, 0, 0.04) 55%,
-    rgba(14, 18, 24, 0.44) 100%
-  );
-  pointer-events: none;
+  object-fit: contain;
+  object-position: center center;
+  display: block;
+  border-radius: 6px;
+  filter: drop-shadow(0 8px 24px rgba(0, 0, 0, 0.08));
 }
 
 .preview-item-container:hover .preview-card-hover-visual,
 .preview-item-container:focus-within .preview-card-hover-visual {
   opacity: 1;
-  pointer-events: auto;
-}
-
-.preview-item-container:hover .preview-card-hover-img,
-.preview-item-container:focus-within .preview-card-hover-img {
-  transform: scale(1);
-}
-
-.preview-card-hover-zoom-btn {
-  position: relative;
-  z-index: 3;
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  gap: 0.5rem;
-  padding: 0.55rem 1.35rem;
-  background: rgba(255, 255, 255, 0.95);
-  backdrop-filter: blur(8px);
-  -webkit-backdrop-filter: blur(8px);
-  border: 1px solid rgba(18, 18, 18, 0.16);
-  border-radius: 9999px;
-  font-family: var(--font-heading), 'Outfit', sans-serif;
-  font-size: 0.88rem;
-  font-weight: 500;
-  color: #121212;
-  cursor: pointer;
-  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.18);
-  transform: translateY(8px);
-  opacity: 0;
-  transition: transform 0.35s cubic-bezier(0.16, 1, 0.3, 1),
-              opacity 0.35s cubic-bezier(0.16, 1, 0.3, 1),
-              background 0.2s ease,
-              box-shadow 0.2s ease;
-}
-
-.preview-item-container:hover .preview-card-hover-zoom-btn,
-.preview-item-container:focus-within .preview-card-hover-zoom-btn {
-  transform: translateY(0);
-  opacity: 1;
-}
-
-.preview-card-hover-zoom-btn:hover {
-  background: #ffffff;
-  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.26);
-  transform: translateY(-2px);
 }
 
 .preview-card-caption-btn {

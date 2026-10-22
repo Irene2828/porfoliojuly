@@ -76,7 +76,7 @@ export default function GuertinProject({ kicker, subline, browserTitle, cardsTit
           >
             <span className="guertin-pill-num">01</span>
             <span className="guertin-pill-sep">|</span>
-            <span>NARRATIVE FLOW<br/>TRUST-FIRST HERO</span>
+            <span>CREDIBILITY UP FRONT<br/>20 YEARS OF EXPERIENCE</span>
           </motion.div>
 
           {/* Browser Mockup (Left 67%) */}
@@ -93,7 +93,7 @@ export default function GuertinProject({ kicker, subline, browserTitle, cardsTit
                 <div className="guertin-browser-dot" />
                 <div className="guertin-browser-dot" />
               </div>
-              <div className="guertin-browser-title">{browserTitle || 'Guertin Isabelle'}</div>
+              <div className="guertin-browser-title">{browserTitle || 'rguertin.ca'}</div>
               <div style={{ width: '40px' }}></div>
             </div>
             {/* Browser Content Image */}
@@ -123,7 +123,7 @@ export default function GuertinProject({ kicker, subline, browserTitle, cardsTit
           >
             <span className="guertin-pill-num">02</span>
             <span className="guertin-pill-sep">|</span>
-            <span>MODULAR SECTIONS<br/>CLEAR HIERARCHY</span>
+            <span>PLAIN WORDS<br/>REWRITTEN FOR CLIENTS</span>
           </motion.div>
 
           {/* Pill 03: Bottom Right */}
@@ -135,13 +135,13 @@ export default function GuertinProject({ kicker, subline, browserTitle, cardsTit
           >
             <span className="guertin-pill-num">03</span>
             <span className="guertin-pill-sep">|</span>
-            <span>RESPONSIVE IA<br/>ONE FILE AT A TIME</span>
+            <span>ONE STEP IN<br/>SHORT FORM & DIRECT CALL</span>
           </motion.div>
         </div>
 
-        {/* 3 Dark Cards Below */}
+        {/* 2 Dark Impact Cards Below */}
         <div className="guertin-cards-area">
-          <h3 className="guertin-cards-title">{cardsTitle || 'Designed to turn expertise into booked consultations.'}</h3>
+          <h3 className="guertin-cards-title">{cardsTitle || 'Impact'}</h3>
           
           <div className="guertin-cards-grid">
             <motion.div 
@@ -151,11 +151,11 @@ export default function GuertinProject({ kicker, subline, browserTitle, cardsTit
               className="guertin-card"
               style={{ backgroundColor: 'rgba(255,255,255,0.06)', border: '1px solid rgba(255,255,255,0.1)' }}
             >
-              <h4 className="guertin-card-title" style={{ color: 'rgba(255,255,255,0.8)' }}>
-                <span className="guertin-card-icon">⚡</span> Before: outdated online presence
+              <h4 className="guertin-card-title" style={{ color: 'rgba(255,255,255,0.85)' }}>
+                <span className="guertin-card-icon">⚡</span> Before: Outdated WordPress
               </h4>
-              <p className="guertin-card-desc" style={{ color: 'rgba(255,255,255,0.8)' }}>
-                An expert whose old website didn’t show it.
+              <p className="guertin-card-desc" style={{ color: 'rgba(255,255,255,0.75)' }}>
+                It didn&apos;t carry her credibility: a 20-year expert behind a generic site, services in insider language, and no clear way for a client in trouble to reach her.
               </p>
             </motion.div>
 
@@ -166,26 +166,11 @@ export default function GuertinProject({ kicker, subline, browserTitle, cardsTit
               className="guertin-card"
               style={{ backgroundColor: 'rgba(255,255,255,0.06)', border: '1px solid rgba(255,255,255,0.1)' }}
             >
-              <h4 className="guertin-card-title" style={{ color: 'rgba(255,255,255,0.8)' }}>
-                <span className="guertin-card-icon">⚡</span> Solution: Trust first
+              <h4 className="guertin-card-title" style={{ color: 'rgba(255,255,255,0.85)' }}>
+                <span className="guertin-card-icon">⚡</span> After: Live at rguertin.ca
               </h4>
-              <p className="guertin-card-desc" style={{ color: 'rgba(255,255,255,0.8)' }}>
-                I built a site that earns trust first, then makes booking easy.
-              </p>
-            </motion.div>
-
-            <motion.div 
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              transition={{ delay: 0.4 }}
-              className="guertin-card"
-              style={{ backgroundColor: 'rgba(255,255,255,0.06)', border: '1px solid rgba(255,255,255,0.1)' }}
-            >
-              <h4 className="guertin-card-title" style={{ color: 'rgba(255,255,255,0.8)' }}>
-                <span className="guertin-card-icon">⚡</span> Result: Booked consultations
-              </h4>
-              <p className="guertin-card-desc" style={{ color: 'rgba(255,255,255,0.8)' }}>
-                Turns expertise into client inquiries and scheduled consultations.
+              <p className="guertin-card-desc" style={{ color: 'rgba(255,255,255,0.75)' }}>
+                The site now presents her at the level she works at. A client in trouble can understand what she does, see proof that it works, and reach her in one step — and a municipality sees a specialist, not a generalist. Live at rguertin.ca.
               </p>
             </motion.div>
           </div>
