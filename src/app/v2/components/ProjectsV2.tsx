@@ -122,7 +122,7 @@ export default function ProjectsV2({ initialProjects = [] }: ProjectsV2Props) {
 
   const renderProjectContent = (project: any, isModal = false) => (
     <div 
-      className={`page-section-divider page-section-divider-work cinematic-section ${isModal ? 'modal-view' : 'preview-view'}`}
+      className={`page-section-divider page-section-divider-work cinematic-section ${isModal ? 'modal-view' : 'preview-view'} ${project.id === 'v2-2' && !isModal ? 'guertin-theme' : ''}`}
       style={{ marginTop: 0, marginBottom: isModal ? '4rem' : 0 }}
     >
       <SectionDivider 
@@ -188,7 +188,7 @@ export default function ProjectsV2({ initialProjects = [] }: ProjectsV2Props) {
                           }
                         ]}
                       />
-                    ) : (
+                    ) : isModal ? (
                       <PosterGallery 
                         images={[
                           {
@@ -203,6 +203,31 @@ export default function ProjectsV2({ initialProjects = [] }: ProjectsV2Props) {
                           }
                         ]}
                       />
+                    ) : (
+                      <div className="guertin-preview-mockup-wrapper">
+                        {/* Desktop Browser Window */}
+                        <div className="guertin-preview-browser">
+                          <div className="guertin-browser-header">
+                            <div className="guertin-browser-dots">
+                              <div className="guertin-browser-dot" />
+                              <div className="guertin-browser-dot" />
+                              <div className="guertin-browser-dot" />
+                            </div>
+                            <div className="guertin-browser-title">rguertin.ca</div>
+                            <div style={{ width: '36px' }} />
+                          </div>
+                          <div className="guertin-browser-img-wrapper">
+                            <img src="/assets/guertin-desktop.png" alt="Desktop Homepage" className="guertin-img" />
+                          </div>
+                        </div>
+
+                        {/* Overlapping Phone Mockup */}
+                        <div className="guertin-preview-phone">
+                          <div className="guertin-phone-inner">
+                            <img src="/assets/guertin-mobile.png" alt="Mobile Homepage" className="guertin-img" />
+                          </div>
+                        </div>
+                      </div>
                     )}
                   </div>
                 </div>
@@ -365,22 +390,13 @@ export default function ProjectsV2({ initialProjects = [] }: ProjectsV2Props) {
                   aria-label={`${project.title} case preview`}
                 >
                   <div 
-                    className="preview-card-wrapper"
+                    className={`preview-card-wrapper ${project.id === 'v2-2' ? 'guertin-card-bg' : ''}`}
                     onClick={() => setSelectedProjectId(project.id)}
                     style={{ cursor: 'pointer' }}
                   >
                     {/* Normal scaled card layout */}
                     <div className="preview-card-scaler">
-                      {project.id === 'v2-2' ? (
-                        <GuertinProject 
-                          kicker="· Isabelle Guertin // rguertin.ca ·"
-                          subline="— A 20-year claims expert, hidden behind an outdated WordPress site."
-                          browserTitle="rguertin.ca"
-                          cardsTitle="Impact"
-                        />
-                      ) : (
-                        renderProjectContent(project, false)
-                      )}
+                      {renderProjectContent(project, false)}
                     </div>
 
                     {/* Clean full case image on hover (large size, no zoom-in crop, no chip) */}

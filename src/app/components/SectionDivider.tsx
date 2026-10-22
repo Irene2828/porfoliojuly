@@ -135,7 +135,7 @@ export default function SectionDivider({
                   className="annotation-sub" 
                   style={{ 
                     fontFamily: 'var(--font-body), "Plus Jakarta Sans", sans-serif',
-                    fontSize: '13.5px', 
+                    fontSize: '15.5px', 
                     color: '#4b5563', 
                     marginTop: '8px', 
                     lineHeight: '1.55',

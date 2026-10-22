@@ -735,7 +735,8 @@
   object-position: center center;
   display: block;
   border-radius: 6px;
-  filter: drop-shadow(0 8px 24px rgba(0, 0, 0, 0.08));
+  filter: none !important;
+  box-shadow: none !important;
 }
 
 .preview-item-container:hover .preview-card-hover-visual,
@@ -852,25 +853,25 @@
 .page-section-divider.cinematic-section.preview-view .section-divider-stats-row,
 .page-section-divider.preview-view .section-divider-stats-row {
   display: flex !important;
-  justify-content: space-between !important;
+  justify-content: center !important;
   align-items: flex-start !important;
-  width: 100% !important;
-  max-width: 100% !important;
-  margin-left: 0 !important;
-  margin-right: 0 !important;
+  width: 80% !important;
+  max-width: 80% !important;
+  margin-left: auto !important;
+  margin-right: auto !important;
   margin-top: 2.25rem !important; /* double spacing between image and impact on preview mode */
   padding-left: 0 !important;
   padding-right: 0 !important;
   box-sizing: border-box !important;
-  gap: 1.5rem !important;
+  gap: 3.5rem !important;
 }
 
 .preview-view .section-divider-stat-item,
 .v2-theme .page-section-divider.preview-view .section-divider-stat-item,
 .page-section-divider.preview-view .section-divider-stat-item {
   flex: 1 1 0 !important;
-  max-width: none !important;
-  width: auto !important;
+  max-width: 460px !important;
+  width: 100% !important;
   box-sizing: border-box !important;
   text-align: left !important;
   display: flex !important;
@@ -901,6 +902,133 @@
   border: none !important;
 }
 
+/* --- Guertin Isabelle Navy Theme in Preview View --- */
+.preview-card-wrapper.guertin-card-bg,
+.page-section-divider.preview-view.guertin-theme,
+.v2-theme .page-section-divider.preview-view.guertin-theme {
+  background-color: #081A33 !important;
+  background-image: 
+    radial-gradient(800px circle at 15% 85%, rgba(74,120,180,0.35), transparent),
+    radial-gradient(700px circle at 85% 15%, rgba(120,170,220,0.18), transparent),
+    radial-gradient(1200px circle at center, transparent 0%, rgba(5,15,30,0.6) 100%),
+    radial-gradient(circle, rgba(255, 255, 255, 0.18) 1px, transparent 1px) !important;
+  background-size: 100% 100%, 100% 100%, 100% 100%, 28px 28px !important;
+  border: none !important;
+}
+
+.page-section-divider.preview-view.guertin-theme .section-divider-tag-row,
+.v2-theme .page-section-divider.preview-view.guertin-theme .section-divider-tag-row,
+.page-section-divider.preview-view.guertin-theme .section-divider-stats-row,
+.v2-theme .page-section-divider.preview-view.guertin-theme .section-divider-stats-row,
+.page-section-divider.preview-view.guertin-theme .project-section-block,
+.v2-theme .page-section-divider.preview-view.guertin-theme .project-section-block {
+  background: transparent !important;
+  border: none !important;
+}
+
+.page-section-divider.preview-view.guertin-theme .section-divider-tag-text,
+.v2-theme .page-section-divider.preview-view.guertin-theme .section-divider-tag-text {
+  color: #ffffff !important;
+}
+
+.page-section-divider.preview-view.guertin-theme .section-divider-side-line,
+.v2-theme .page-section-divider.preview-view.guertin-theme .section-divider-side-line {
+  background-color: rgba(255, 255, 255, 0.22) !important;
+}
+
+.page-section-divider.preview-view.guertin-theme .section-divider-subline,
+.v2-theme .page-section-divider.preview-view.guertin-theme .section-divider-subline {
+  color: rgba(255, 255, 255, 0.8) !important;
+}
+
+.page-section-divider.preview-view.guertin-theme .annotation-title,
+.v2-theme .page-section-divider.preview-view.guertin-theme .annotation-title {
+  color: #ffffff !important;
+}
+
+.page-section-divider.preview-view.guertin-theme .annotation-desc,
+.v2-theme .page-section-divider.preview-view.guertin-theme .annotation-desc {
+  color: rgba(255, 255, 255, 0.72) !important;
+}
+
+.page-section-divider.preview-view.guertin-theme .project-arrow,
+.v2-theme .page-section-divider.preview-view.guertin-theme .project-arrow {
+  border-color: rgba(255, 255, 255, 0.4) !important;
+}
+
+.page-section-divider.preview-view.guertin-theme .section-divider-stats-decor-line,
+.v2-theme .page-section-divider.preview-view.guertin-theme .section-divider-stats-decor-line {
+  background-color: rgba(255, 255, 255, 0.25) !important;
+}
+
+.page-section-divider.preview-view.guertin-theme .section-divider-stats-heading,
+.v2-theme .page-section-divider.preview-view.guertin-theme .section-divider-stats-heading {
+  color: #ffffff !important;
+}
+
+.page-section-divider.preview-view.guertin-theme .project-chip,
+.v2-theme .page-section-divider.preview-view.guertin-theme .project-chip {
+  background: rgba(255, 255, 255, 0.14) !important;
+  color: #ffffff !important;
+  border: 1px solid rgba(255, 255, 255, 0.28) !important;
+}
+
+.page-section-divider.preview-view.guertin-theme .annotation-chip-row,
+.v2-theme .page-section-divider.preview-view.guertin-theme .annotation-chip-row {
+  color: #ffffff !important;
+}
+
+.page-section-divider.preview-view.guertin-theme .annotation-sub,
+.v2-theme .page-section-divider.preview-view.guertin-theme .annotation-sub {
+  color: rgba(255, 255, 255, 0.75) !important;
+}
+
+/* --- Guertin Preview Center Visual: Browser + Phone Mockup --- */
+.guertin-preview-mockup-wrapper {
+  position: relative;
+  width: 100%;
+  aspect-ratio: 16 / 9.6;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  overflow: visible;
+}
+
+.guertin-preview-browser {
+  width: 80%;
+  height: 94%;
+  background-color: #ffffff;
+  border-radius: 8px;
+  box-shadow: 0 16px 48px rgba(0, 0, 0, 0.45);
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+}
+
+.guertin-preview-phone {
+  position: absolute;
+  right: 0%;
+  bottom: -4%;
+  width: 27%;
+  aspect-ratio: 1 / 2.05;
+  background-color: #000000;
+  border-radius: 20px;
+  padding: 5px;
+  box-shadow: 0 20px 50px rgba(0, 0, 0, 0.55);
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  z-index: 10;
+  box-sizing: border-box;
+}
+
+.guertin-preview-phone .guertin-phone-inner {
+  width: 100%;
+  height: 100%;
+  background-color: #ffffff;
+  border-radius: 16px;
+  overflow: hidden;
+}
+
 .page-section-divider.preview-view .section-divider-tag-text,
 .v2-theme .page-section-divider.preview-view .section-divider-tag-text {
   font-family: var(--font-heading) !important;
@@ -922,7 +1050,7 @@
 
 .page-section-divider.preview-view .section-divider-title-group,
 .v2-theme .page-section-divider.preview-view .section-divider-title-group {
-  gap: 0.35rem !important;
+  gap: 0.39rem !important; /* +10% spacing between heading and subline */
 }
 
 .page-section-divider.preview-view .section-divider-subline,
@@ -1167,45 +1295,56 @@
   align-items: flex-start !important;
 }
 
+.page-section-divider.modal-view .section-divider-stats-row,
+.v2-theme .page-section-divider.modal-view .section-divider-stats-row {
+  width: 80% !important;
+  max-width: 80% !important;
+  margin-left: auto !important;
+  margin-right: auto !important;
+  box-sizing: border-box !important;
+}
+
 .page-section-divider.modal-view .section-divider-stats-row.metrics-count-2,
 .v2-theme .page-section-divider.modal-view .section-divider-stats-row.metrics-count-2 {
   display: flex !important;
-  justify-content: space-between !important;
-  gap: 4rem !important;
+  justify-content: center !important;
+  align-items: flex-start !important;
+  width: 80% !important;
+  max-width: 80% !important;
+  margin-left: auto !important;
+  margin-right: auto !important;
+  gap: 4.5rem !important;
 }
 
 .page-section-divider.modal-view .section-divider-stats-row.metrics-count-2 .section-divider-stat-item,
 .v2-theme .page-section-divider.modal-view .section-divider-stats-row.metrics-count-2 .section-divider-stat-item {
-  max-width: 600px !important;
   flex: 1 1 0 !important;
-}
-
-/* Body text measure (25% shorter line width for comfortable editorial reading) */
-.annotation-sub,
-.page-section-divider .annotation-sub {
-  max-width: 75% !important;
+  max-width: 480px !important;
   box-sizing: border-box !important;
+  text-align: left !important;
+  display: flex !important;
+  flex-direction: column !important;
+  align-items: flex-start !important;
 }
 
-.page-section-divider.modal-view .annotation-sub,
-.v2-theme .page-section-divider.modal-view .annotation-sub {
-  max-width: 450px !important; /* 25% shorter than the 600px max-width column */
+.section-divider-stat-item .annotation-chip-row {
+  justify-content: flex-start !important;
+  text-align: left !important;
   width: 100% !important;
 }
 
+/* Body text in impact columns: 2px larger font size (15.5px) */
+.annotation-sub,
+.page-section-divider .annotation-sub,
+.page-section-divider.modal-view .annotation-sub,
+.v2-theme .page-section-divider.modal-view .annotation-sub,
 .page-section-divider.preview-view .annotation-sub,
 .v2-theme .page-section-divider.preview-view .annotation-sub {
-  max-width: 75% !important; /* 25% shorter line width in preview card */
+  font-size: 15.5px !important;
+  line-height: 1.55 !important;
   width: 100% !important;
-}
-
-@media (max-width: 640px) {
-  .page-section-divider.modal-view .annotation-sub,
-  .v2-theme .page-section-divider.modal-view .annotation-sub,
-  .page-section-divider.preview-view .annotation-sub,
-  .v2-theme .page-section-divider.preview-view .annotation-sub {
-    max-width: 100% !important;
-  }
+  max-width: 100% !important;
+  box-sizing: border-box !important;
 }
 
 /* Impact Section Centered Heading */
