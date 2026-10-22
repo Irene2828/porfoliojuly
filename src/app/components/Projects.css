@@ -1092,14 +1092,6 @@
   align-items: flex-start !important;
 }
 
-.page-section-divider.modal-view .poster-tool-narrative-blocks,
-.v2-theme .page-section-divider.modal-view .poster-tool-narrative-blocks {
-  max-width: 1380px !important;
-  margin-left: auto !important;
-  margin-right: auto !important;
-  width: 100% !important;
-  box-sizing: border-box !important;
-}
 
 .page-section-divider.modal-view .section-divider-subline,
 .v2-theme .page-section-divider.modal-view .section-divider-subline {
