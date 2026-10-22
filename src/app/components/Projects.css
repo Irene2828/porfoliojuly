@@ -851,11 +851,11 @@
   text-stroke: 0px !important;
 }
 
-/* Cut spacing between case image and its subline in cases section preview (not the modal view) */
+/* Spacing between case image and its subline in cases section preview (not the modal view) */
 .page-section-divider.preview-view .section-divider-tag-row,
 .v2-theme .page-section-divider.preview-view .section-divider-tag-row {
   padding-top: 0.25rem !important;
-  padding-bottom: 0 !important;
+  padding-bottom: 0.25rem !important;
   margin-bottom: 0 !important;
 }
 
@@ -866,7 +866,7 @@
 
 .page-section-divider.preview-view .section-divider-subline,
 .v2-theme .page-section-divider.preview-view .section-divider-subline {
-  margin-bottom: 0 !important;
+  margin-bottom: 0.4rem !important;
   padding-bottom: 0 !important;
   font-family: var(--font-body), 'Plus Jakarta Sans', sans-serif !important;
   font-size: 0.78rem !important;
@@ -878,14 +878,14 @@
 
 .page-section-divider.preview-view .section-divider-wrap,
 .v2-theme .page-section-divider.preview-view .section-divider-wrap {
-  gap: 0.15rem !important;
+  gap: 0.35rem !important;
 }
 
 .page-section-divider.preview-view .project-section-block,
 .v2-theme .page-section-divider.preview-view .project-section-block,
 .section-divider-wrap .page-section-divider.preview-view .project-section-block,
 .section-divider-wrap .preview-view .project-section-block {
-  margin-top: 0.35rem !important;
+  margin-top: 0.85rem !important; /* Doubled space over image under subline */
   margin-bottom: 0.6rem !important;
   padding-top: 0 !important;
   padding-bottom: 0 !important;
@@ -899,7 +899,7 @@
 
 .page-section-divider.preview-view .project-body-grid,
 .v2-theme .page-section-divider.preview-view .project-body-grid {
-  margin-top: 0.2rem !important;
+  margin-top: 0.4rem !important;
   margin-bottom: 0.5rem !important;
 }
 
