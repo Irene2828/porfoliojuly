@@ -54,39 +54,41 @@ export default function ProjectsV2({ initialProjects = [] }: ProjectsV2Props) {
     },
     {
       id: 'v2-2',
-      title: 'Guertin Isabelle // Claims adjuster website',
+      title: 'Isabelle Guertin // rguertin.ca',
       slug: 'guertin-isabelle',
-      subline: 'An expert whose old website didn’t show it.',
+      subline: 'A 20-year claims expert, hidden behind an outdated WordPress site.',
       hoverLabel: 'Tap to Zoom',
+      statsTitle: 'Impact',
       annotations: [
-        { markerNumber: 1, title: 'Trust First', text: 'Earns credibility and authority immediately on landing.' },
-        { markerNumber: 2, title: 'Clear Value', text: 'Presents expertise clearly so visitors understand the offer.' },
-        { markerNumber: 3, title: 'Easy Booking', text: 'Makes scheduling a consultation straightforward and quick.' }
+        { 
+          markerNumber: 1, 
+          title: 'Credibility Up Front', 
+          text: '20 years of experience, stated in the first line — not buried in an About page.' 
+        },
+        { 
+          markerNumber: 2, 
+          title: 'Plain Words', 
+          text: 'Claims expertise rewritten so a stressed homeowner understands it in one read.' 
+        },
+        { 
+          markerNumber: 3, 
+          title: 'One Step In', 
+          text: 'A short form and a phone number. The person you hire is the person who handles your file.' 
+        }
       ],
       stats: [
-        { chip: 'Before', text: 'Outdated online presence failing to show expertise', stat: 'Outdated', statLabel: 'before', sub: 'An expert whose old website didn’t show it.' },
-        { chip: 'Built with', text: 'Fast Next.js architecture with instant loading', stat: 'Fast', statLabel: 'performance', sub: 'I built a site that earns trust first, then makes booking easy.' },
-        { chip: 'Result', text: 'Turned expertise into booked consultations', stat: 'Booked', statLabel: 'result', sub: 'Turns expertise into client inquiries and scheduled consultations.' }
+        { 
+          chip: 'Before', 
+          text: 'Outdated WordPress', 
+          sub: "It didn't carry her credibility: a 20-year expert behind a generic site, services in insider language, and no clear way for a client in trouble to reach her." 
+        },
+        { 
+          chip: 'After', 
+          text: 'Live at rguertin.ca', 
+          sub: "The site now presents her at the level she works at. A client in trouble can understand what she does, see proof that it works, and reach her in one step — and a municipality sees a specialist, not a generalist. Live at rguertin.ca." 
+        }
       ],
-      image: initialProjects[1]?.screens?.[0]?.originalUrl || '/skills.png'
-    },
-    {
-      id: 'v2-3',
-      title: 'Community map // Volunteer coordination',
-      slug: 'community-map-project',
-      subline: 'Aid requests were scattered across six chat apps.',
-      hoverLabel: 'Tap to Zoom',
-      annotations: [
-        { markerNumber: 1, title: 'One Live Map', text: 'Puts all mutual aid requests onto a single coordinated map.' },
-        { markerNumber: 2, title: 'Role Access', text: 'Assigned roles keep coordinators and volunteers aligned.' },
-        { markerNumber: 3, title: 'Offline Access', text: 'Reliable access in field zones with poor connectivity.' }
-      ],
-      stats: [
-        { chip: 'Before', text: 'Aid requests scattered across chat channels', stat: '6+ apps', statLabel: 'before', sub: 'Requests were lost in group chats and direct messages.' },
-        { chip: 'Built with', text: 'Live map platform with roles & offline support', stat: '1 map', statLabel: 'unified', sub: 'Single source of truth with real-time status updates.' },
-        { chip: 'Result', text: 'Coordinated mutual aid response across regions', stat: 'Instant', statLabel: 'result', sub: 'Field coordinators and volunteers aligned in real time.' }
-      ],
-      image: initialProjects[0]?.screens?.[0]?.originalUrl || '/skills.png'
+      image: '/assets/guertin-desktop.png'
     }
   ];
 
@@ -187,9 +189,20 @@ export default function ProjectsV2({ initialProjects = [] }: ProjectsV2Props) {
                         ]}
                       />
                     ) : (
-                      <div className="flat-screen">
-                        <img src={project.image} alt={project.title} />
-                      </div>
+                      <PosterGallery 
+                        images={[
+                          {
+                            src: '/assets/guertin-desktop.png',
+                            stepLabel: 'Desktop homepage — Credibility first & clear booking',
+                            caption: 'Desktop homepage — 20 years of expertise stated up front with clear claims services and direct consultation booking.'
+                          },
+                          {
+                            src: '/assets/guertin-mobile.png',
+                            stepLabel: 'Mobile homepage — Responsive access for clients in trouble',
+                            caption: 'Mobile homepage — Plain-language expertise and one-tap calling optimized for stressed homeowners on any phone.'
+                          }
+                        ]}
+                      />
                     )}
                   </div>
                 </div>
@@ -338,7 +351,6 @@ export default function ProjectsV2({ initialProjects = [] }: ProjectsV2Props) {
       >
         <div className="cases-grid-container">
           {projectsList.map((project, idx) => {
-            const isNavyCard = project.id === 'v2-2' || project.id === 'v2-4';
             return (
               <div 
                 key={`${project.id}-${idx}`}
@@ -349,43 +361,48 @@ export default function ProjectsV2({ initialProjects = [] }: ProjectsV2Props) {
               >
                 <div 
                   className="preview-item-container"
-                  tabIndex={0}
-                  role="button"
-                  aria-label={`View ${project.title} case study`}
-                  onClick={() => setSelectedProjectId(project.id)}
-                  onKeyDown={(e) => {
-                    if (e.key === 'Enter' || e.key === ' ') {
-                      e.preventDefault();
-                      setSelectedProjectId(project.id);
-                    }
-                  }}
-                  style={{ cursor: 'pointer' }}
+                  role="region"
+                  aria-label={`${project.title} case preview`}
                 >
                   <div className="preview-card-wrapper">
+                    {/* Normal scaled card layout */}
                     <div className="preview-card-scaler">
-                      {isNavyCard ? (
-                        <GuertinProject 
-                          title={project.title}
-                          subline={project.subline}
-                          kicker="GUERTIN ISABELLE // Claims adjuster website"
-                          browserTitle="Guertin Isabelle"
-                          cardsTitle="An expert whose old website didn’t show it."
-                        />
-                      ) : project.id === 'v2-1' ? (
-                        renderProjectContent(project, false)
-                      ) : (
-                        <GenericWhiteCard 
-                          title={project.title}
-                          subline={project.subline}
-                          annotations={project.annotations}
-                          stats={project.stats}
-                          image={project.image}
-                        />
-                      )}
+                      {renderProjectContent(project, false)}
+                    </div>
+
+                    {/* Full-bleed hover zoom visual */}
+                    <div className="preview-card-hover-visual">
+                      <img 
+                        src={project.image} 
+                        alt={project.title} 
+                        className="preview-card-hover-img"
+                      />
+                      <div className="preview-card-hover-overlay-gradient" />
+                      <button 
+                        type="button"
+                        className="preview-card-hover-zoom-btn"
+                        onClick={(e) => {
+                          e.stopPropagation();
+                          setSelectedProjectId(project.id);
+                        }}
+                        aria-label={`Tap to zoom ${project.title}`}
+                      >
+                        Tap to Zoom &rarr;
+                      </button>
                     </div>
                   </div>
                   <div className="preview-card-caption">
-                    Tap to Zoom <span style={{ color: '#717885', marginLeft: '4px' }}>&rarr;</span>
+                    <button 
+                      type="button"
+                      className="preview-card-caption-btn"
+                      onClick={(e) => {
+                        e.stopPropagation();
+                        setSelectedProjectId(project.id);
+                      }}
+                      aria-label={`Tap to zoom ${project.title}`}
+                    >
+                      Tap to Zoom <span style={{ color: '#717885', marginLeft: '4px' }}>&rarr;</span>
+                    </button>
                   </div>
                 </div>
               </div>
