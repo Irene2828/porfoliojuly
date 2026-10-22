@@ -834,7 +834,7 @@
 
 .page-section-divider.preview-view .section-divider-tag-text,
 .v2-theme .page-section-divider.preview-view .section-divider-tag-text {
-  font-family: var(--font-heading), 'Outfit', sans-serif !important;
+  font-family: var(--font-heading) !important;
   font-size: clamp(24px, 3.2vw, 28px) !important;
   font-weight: 500 !important;
   letter-spacing: -0.02em !important;
@@ -843,11 +843,56 @@
   text-stroke: 0px !important;
 }
 
+/* Cut spacing between case image and its subline in cases section preview (not the modal view) */
+.page-section-divider.preview-view .section-divider-tag-row,
+.v2-theme .page-section-divider.preview-view .section-divider-tag-row {
+  padding-top: 0.25rem !important;
+  padding-bottom: 0 !important;
+  margin-bottom: 0 !important;
+}
+
+.page-section-divider.preview-view .section-divider-title-group,
+.v2-theme .page-section-divider.preview-view .section-divider-title-group {
+  gap: 0.35rem !important;
+}
+
 .page-section-divider.preview-view .section-divider-subline,
 .v2-theme .page-section-divider.preview-view .section-divider-subline {
+  margin-bottom: 0 !important;
+  padding-bottom: 0 !important;
+  font-family: var(--font-body), 'Plus Jakarta Sans', sans-serif !important;
+  font-size: 0.78rem !important;
+  line-height: 1.35 !important;
   color: #121212 !important;
   -webkit-text-stroke: 0px !important;
   text-stroke: 0px !important;
+}
+
+.page-section-divider.preview-view .section-divider-wrap,
+.v2-theme .page-section-divider.preview-view .section-divider-wrap {
+  gap: 0.15rem !important;
+}
+
+.page-section-divider.preview-view .project-section-block,
+.v2-theme .page-section-divider.preview-view .project-section-block,
+.section-divider-wrap .page-section-divider.preview-view .project-section-block,
+.section-divider-wrap .preview-view .project-section-block {
+  margin-top: 0.35rem !important;
+  margin-bottom: 0.6rem !important;
+  padding-top: 0 !important;
+  padding-bottom: 0 !important;
+}
+
+.page-section-divider.preview-view .project-row,
+.v2-theme .page-section-divider.preview-view .project-row {
+  margin-top: 0 !important;
+  padding-top: 0 !important;
+}
+
+.page-section-divider.preview-view .project-body-grid,
+.v2-theme .page-section-divider.preview-view .project-body-grid {
+  margin-top: 0.2rem !important;
+  margin-bottom: 0.5rem !important;
 }
 
 .page-section-divider.preview-view .annotation-stat,

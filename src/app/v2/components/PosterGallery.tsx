@@ -94,48 +94,54 @@ export default function PosterGallery({ images }: { images: PosterGalleryImage[]
             opacity: 0.85;
           }
         }
-        .poster-gallery-thumbs {
+        .poster-gallery-controls-wrap {
           display: flex;
           justify-content: center;
           align-items: center;
-          gap: 8px;
-          margin-top: 16px;
-          padding: 4px 8px;
+          width: 100%;
+          margin-top: 10px;
         }
-        .poster-gallery-thumb-btn {
-          display: flex;
+        .poster-gallery-controls {
+          display: inline-flex;
           align-items: center;
-          gap: 6px;
-          padding: 6px 14px;
-          border-radius: 9999px;
-          border: 1px solid #1a1a1a;
+          justify-content: center;
+          gap: 8px;
+          padding: 3px 10px;
           background: #ffffff;
+          border: 1px solid rgba(18, 18, 18, 0.16);
+          border-radius: 9999px;
+          box-shadow: 0 1px 3px rgba(0, 0, 0, 0.04);
+        }
+        .poster-gallery-ctrl-btn {
+          width: 22px;
+          height: 22px;
+          border-radius: 50%;
+          border: none;
+          background: transparent;
           color: #121212;
           font-family: var(--font-body), 'Plus Jakarta Sans', sans-serif !important;
-          font-size: 12px;
+          font-size: 16px;
           font-weight: 500;
-          letter-spacing: -0.01em;
+          line-height: 1;
+          display: flex;
+          align-items: center;
+          justify-content: center;
           cursor: pointer;
-          transition: all 0.2s ease;
-          box-shadow: 0 1px 2px rgba(0, 0, 0, 0.04);
+          transition: background 0.15s ease, color 0.15s ease;
+          padding: 0;
         }
-        .poster-gallery-thumb-btn:hover {
-          background: #f4f4f4;
-          border-color: #1a1a1a;
+        .poster-gallery-ctrl-btn:hover {
+          background: #f0f0f2;
           color: #000000;
         }
-        .poster-gallery-thumb-btn.active {
-          background: #121212;
-          color: #ffffff;
-          border-color: #121212;
+        .poster-gallery-counter {
+          font-family: var(--font-body), 'Plus Jakarta Sans', sans-serif !important;
+          font-size: 11.5px;
           font-weight: 600;
-          box-shadow: 0 2px 6px rgba(0, 0, 0, 0.15);
-        }
-        .poster-gallery-thumb-dot {
-          width: 5px;
-          height: 5px;
-          border-radius: 50%;
-          background: currentColor;
+          letter-spacing: 0.06em;
+          color: #4b5563;
+          user-select: none;
+          padding: 0 4px;
         }
       `}</style>
 
@@ -181,22 +187,31 @@ export default function PosterGallery({ images }: { images: PosterGalleryImage[]
         </div>
       </div>
 
-      {/* Thumbnails / Indicators */}
-      <div className="poster-gallery-thumbs">
-        {images.map((img, idx) => (
+      {/* Navigation Controls: Arrows + Counter (e.g. 1 / 3) */}
+      <div className="poster-gallery-controls-wrap">
+        <div className="poster-gallery-controls">
           <button
-            key={idx}
             type="button"
-            className={`poster-gallery-thumb-btn ${currentIdx === idx ? 'active' : ''}`}
-            onClick={(e) => {
-              e.stopPropagation();
-              setCurrentIdx(idx);
-            }}
+            className="poster-gallery-ctrl-btn"
+            onClick={handlePrev}
+            aria-label="Previous snapshot"
+            title="Previous snapshot"
           >
-            <span className="poster-gallery-thumb-dot" />
-            <span>Snapshot {idx + 1}</span>
+            ‹
           </button>
-        ))}
+          <span className="poster-gallery-counter">
+            {currentIdx + 1} / {images.length}
+          </span>
+          <button
+            type="button"
+            className="poster-gallery-ctrl-btn"
+            onClick={handleNext}
+            aria-label="Next snapshot"
+            title="Next snapshot"
+          >
+            ›
+          </button>
+        </div>
       </div>
     </div>
   );
