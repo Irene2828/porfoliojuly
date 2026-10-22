@@ -1010,7 +1010,7 @@
 .page-section-divider.modal-view .project-section-block,
 .v2-theme .page-section-divider.modal-view .project-section-block {
   padding-top: 0.5rem !important;
-  padding-bottom: 1.5rem !important;
+  padding-bottom: 0.5rem !important;
 }
 
 .page-section-divider.modal-view .section-divider-tag-text,
@@ -1057,13 +1057,14 @@
   width: 100% !important;
   margin-left: auto !important;
   margin-right: auto !important;
+  margin-bottom: 0.75rem !important;
   grid-template-columns: 240px 1fr 260px !important;
   gap: 3.5rem !important;
   align-items: center !important;
   box-sizing: border-box !important;
 }
 
-/* Spread modal stats row and narrative to match width of image + captions (1380px) */
+/* Spread modal stats row to match width of image + captions (1380px) with spacing cut in half */
 .page-section-divider.modal-view .section-divider-stats-row,
 .v2-theme .page-section-divider.modal-view .section-divider-stats-row,
 .page-section-divider.cinematic-section.modal-view .section-divider-stats-row,
@@ -1071,7 +1072,7 @@
   max-width: 1380px !important;
   margin-left: auto !important;
   margin-right: auto !important;
-  margin-top: 3rem !important;
+  margin-top: 1.5rem !important;
   padding-left: 2rem !important;
   padding-right: 2rem !important;
   width: 100% !important;
