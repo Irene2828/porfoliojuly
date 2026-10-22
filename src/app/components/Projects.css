@@ -767,16 +767,25 @@
   padding-bottom: 0rem;
 }
 
-/* --- Preview Card Custom Colors (Silver Grey) --- */
+/* --- Preview Card Custom Colors: Clean pure white matching on-click case view --- */
 .v2-theme .page-section-divider.preview-view .section-divider-tag-row,
 .v2-theme .page-section-divider.preview-view .section-divider-stats-row,
 .page-section-divider.preview-view .section-divider-tag-row,
-.page-section-divider.preview-view .section-divider-stats-row {
-  background: #ececec !important;
+.page-section-divider.preview-view .section-divider-stats-row,
+.page-section-divider.preview-view .project-section-block,
+.v2-theme .page-section-divider.preview-view .project-section-block,
+.page-section-divider.preview-view,
+.v2-theme .page-section-divider.preview-view {
+  background: #ffffff !important;
+  border: none !important;
 }
 
 .page-section-divider.preview-view .section-divider-tag-text,
 .v2-theme .page-section-divider.preview-view .section-divider-tag-text {
+  font-family: var(--font-heading), 'Outfit', sans-serif !important;
+  font-size: clamp(24px, 3.2vw, 28px) !important;
+  font-weight: 500 !important;
+  letter-spacing: -0.02em !important;
   color: #121212 !important;
   -webkit-text-stroke: 0px !important;
   text-stroke: 0px !important;

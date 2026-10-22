@@ -467,6 +467,8 @@ export default function ProjectsV2({ initialProjects = [] }: ProjectsV2Props) {
                           browserTitle="Guertin Isabelle"
                           cardsTitle="An expert whose old website didn’t show it."
                         />
+                      ) : project.id === 'v2-1' ? (
+                        renderProjectContent(project, false)
                       ) : (
                         <GenericWhiteCard 
                           title={project.title}
