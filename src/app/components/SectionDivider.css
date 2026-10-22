@@ -527,13 +527,14 @@
 }
 
 .section-divider-stats-row .annotation-stat {
-  font-family: var(--font-heading), 'Outfit', sans-serif;
-  font-size: 2.6rem;
+  font-family: var(--font-heading) !important;
+  font-size: clamp(1.8rem, 2.5vw, 2.6rem);
   font-weight: 500;
   letter-spacing: -0.025em;
   color: #121212;
-  line-height: 1;
+  line-height: 1.15;
   margin-bottom: 0.25rem;
+  word-break: break-word;
 }
 
 .section-divider-stats-row .annotation-stat-label {

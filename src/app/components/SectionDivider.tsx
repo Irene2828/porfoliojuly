@@ -98,7 +98,16 @@ export default function SectionDivider({ label, theme = 'dark', liveLink, sublin
                 <span className="project-chip">{item.chip}</span> {item.text}
               </div>
               {(item as any).sub && (
-                <div className="annotation-sub" style={{ fontSize: '13px', color: '#8b949e', marginTop: '6px', lineHeight: '1.4' }}>
+                <div 
+                  className="annotation-sub" 
+                  style={{ 
+                    fontFamily: 'var(--font-body), "Plus Jakarta Sans", sans-serif',
+                    fontSize: '13.5px', 
+                    color: '#4b5563', 
+                    marginTop: '8px', 
+                    lineHeight: '1.55' 
+                  }}
+                >
                   {(item as any).sub}
                 </div>
               )}
