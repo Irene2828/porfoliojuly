@@ -36,59 +36,6 @@ export default function PosterGallery({ images }: { images: PosterGalleryImage[]
           box-shadow: 0 16px 40px rgba(0, 0, 0, 0.08);
           position: relative;
         }
-        .poster-gallery-browser-bar {
-          height: 38px;
-          background: #1A2639;
-          display: flex;
-          align-items: center;
-          justify-content: space-between;
-          padding: 0 14px;
-          user-select: none;
-        }
-        .poster-gallery-dots {
-          display: flex;
-          gap: 6px;
-        }
-        .poster-gallery-dot {
-          width: 9px;
-          height: 9px;
-          border-radius: 50%;
-          background: rgba(255, 255, 255, 0.25);
-        }
-        .poster-gallery-title {
-          font-family: var(--font-mono), monospace;
-          font-size: 11px;
-          letter-spacing: 0.08em;
-          color: rgba(255, 255, 255, 0.85);
-          text-transform: uppercase;
-          display: flex;
-          align-items: center;
-          gap: 8px;
-        }
-        .poster-gallery-controls {
-          display: flex;
-          align-items: center;
-          gap: 6px;
-        }
-        .poster-gallery-btn {
-          background: rgba(255, 255, 255, 0.12);
-          border: 1px solid rgba(255, 255, 255, 0.15);
-          color: #ffffff;
-          width: 24px;
-          height: 24px;
-          border-radius: 4px;
-          display: flex;
-          align-items: center;
-          justify-content: center;
-          cursor: pointer;
-          font-size: 14px;
-          line-height: 1;
-          transition: background 0.2s ease, transform 0.15s ease;
-        }
-        .poster-gallery-btn:hover {
-          background: rgba(255, 255, 255, 0.25);
-          transform: scale(1.05);
-        }
         .poster-gallery-main-view {
           width: 100%;
           aspect-ratio: 16 / 9.6;
@@ -106,6 +53,46 @@ export default function PosterGallery({ images }: { images: PosterGalleryImage[]
           object-fit: contain;
           object-position: top center;
           display: block;
+        }
+        .poster-gallery-nav-btn {
+          position: absolute;
+          top: 50%;
+          transform: translateY(-50%);
+          width: 36px;
+          height: 36px;
+          border-radius: 50%;
+          background: rgba(26, 38, 57, 0.75);
+          backdrop-filter: blur(4px);
+          border: 1px solid rgba(255, 255, 255, 0.25);
+          color: #ffffff;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          cursor: pointer;
+          font-size: 20px;
+          line-height: 1;
+          opacity: 0;
+          transition: opacity 0.2s ease, background 0.2s ease, transform 0.2s ease;
+          z-index: 10;
+        }
+        .poster-gallery-card:hover .poster-gallery-nav-btn {
+          opacity: 0.9;
+        }
+        .poster-gallery-nav-btn:hover {
+          background: rgba(26, 38, 57, 0.95);
+          opacity: 1 !important;
+          transform: translateY(-50%) scale(1.08);
+        }
+        .poster-gallery-nav-prev {
+          left: 14px;
+        }
+        .poster-gallery-nav-next {
+          right: 14px;
+        }
+        @media (max-width: 900px), (hover: none) {
+          .poster-gallery-nav-btn {
+            opacity: 0.85;
+          }
         }
         .poster-gallery-caption-box {
           padding: 14px 18px;
@@ -151,63 +138,14 @@ export default function PosterGallery({ images }: { images: PosterGalleryImage[]
           border-radius: 50%;
           background: currentColor;
         }
-        .poster-gallery-click-hint {
-          position: absolute;
-          bottom: 12px;
-          right: 14px;
-          background: rgba(26, 38, 57, 0.78);
-          backdrop-filter: blur(4px);
-          color: #ffffff;
-          font-size: 10.5px;
-          font-family: var(--font-mono), monospace;
-          padding: 4px 9px;
-          border-radius: 12px;
-          letter-spacing: 0.04em;
-          pointer-events: none;
-        }
       `}</style>
 
       <div className="poster-gallery-card">
-        {/* Browser Top Bar */}
-        <div className="poster-gallery-browser-bar">
-          <div className="poster-gallery-dots">
-            <div className="poster-gallery-dot" />
-            <div className="poster-gallery-dot" />
-            <div className="poster-gallery-dot" />
-          </div>
-
-          <div className="poster-gallery-title">
-            <span>{currentImage.stepLabel}</span>
-            <span style={{ opacity: 0.45 }}>({currentIdx + 1} of {images.length})</span>
-          </div>
-
-          <div className="poster-gallery-controls">
-            <button 
-              type="button" 
-              className="poster-gallery-btn" 
-              onClick={handlePrev} 
-              aria-label="Previous screenshot"
-              title="Previous screenshot (or swipe)"
-            >
-              ‹
-            </button>
-            <button 
-              type="button" 
-              className="poster-gallery-btn" 
-              onClick={handleNext} 
-              aria-label="Next screenshot"
-              title="Next screenshot (or click image)"
-            >
-              ›
-            </button>
-          </div>
-        </div>
-
         {/* Clickable Image View */}
         <div 
           className="poster-gallery-main-view"
           onClick={() => handleNext()}
-          title="Click to advance to next screenshot"
+          title="Click to advance to next snapshot"
         >
           <AnimatePresence mode="wait">
             <motion.img
@@ -222,9 +160,25 @@ export default function PosterGallery({ images }: { images: PosterGalleryImage[]
             />
           </AnimatePresence>
 
-          <div className="poster-gallery-click-hint">
-            Click image to advance ↻
-          </div>
+          {/* Prev / Next arrows */}
+          <button 
+            type="button" 
+            className="poster-gallery-nav-btn poster-gallery-nav-prev" 
+            onClick={handlePrev} 
+            aria-label="Previous snapshot"
+            title="Previous snapshot"
+          >
+            ‹
+          </button>
+          <button 
+            type="button" 
+            className="poster-gallery-nav-btn poster-gallery-nav-next" 
+            onClick={handleNext} 
+            aria-label="Next snapshot"
+            title="Next snapshot"
+          >
+            ›
+          </button>
         </div>
 
         {/* Caption */}
@@ -246,7 +200,7 @@ export default function PosterGallery({ images }: { images: PosterGalleryImage[]
             }}
           >
             <span className="poster-gallery-thumb-dot" />
-            <span>Picture {idx + 1}</span>
+            <span>Snapshot {idx + 1}</span>
           </button>
         ))}
       </div>
