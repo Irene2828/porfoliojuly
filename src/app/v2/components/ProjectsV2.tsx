@@ -245,17 +245,18 @@ export default function ProjectsV2({ initialProjects = [] }: ProjectsV2Props) {
                   <div className="narrative-block">
                     <span style={{
                       display: 'inline-block',
-                      fontFamily: "var(--font-heading), 'Outfit', -apple-system, sans-serif",
+                      fontFamily: 'var(--font-body), "Plus Jakarta Sans", sans-serif',
                       fontSize: '11px',
-                      fontWeight: 700,
-                      letterSpacing: '0.08em',
+                      fontWeight: 600,
+                      letterSpacing: '0.07em',
                       textTransform: 'uppercase',
-                      color: '#b84341',
-                      backgroundColor: '#fdf0ee',
-                      border: '1px solid #f2908f',
-                      padding: '3px 9px',
-                      borderRadius: '3px',
-                      marginBottom: '14px'
+                      color: '#121212',
+                      backgroundColor: '#ffffff',
+                      border: '1px solid #1a1a1a',
+                      padding: '3px 10px',
+                      borderRadius: '9999px',
+                      marginBottom: '14px',
+                      boxShadow: '0 1px 2px rgba(0, 0, 0, 0.04)'
                     }}>
                       BRIEF
                     </span>
@@ -273,17 +274,18 @@ export default function ProjectsV2({ initialProjects = [] }: ProjectsV2Props) {
                   <div className="narrative-block">
                     <span style={{
                       display: 'inline-block',
-                      fontFamily: "var(--font-heading), 'Outfit', -apple-system, sans-serif",
+                      fontFamily: 'var(--font-body), "Plus Jakarta Sans", sans-serif',
                       fontSize: '11px',
-                      fontWeight: 700,
-                      letterSpacing: '0.08em',
+                      fontWeight: 600,
+                      letterSpacing: '0.07em',
                       textTransform: 'uppercase',
-                      color: '#b84341',
-                      backgroundColor: '#fdf0ee',
-                      border: '1px solid #f2908f',
-                      padding: '3px 9px',
-                      borderRadius: '3px',
-                      marginBottom: '14px'
+                      color: '#121212',
+                      backgroundColor: '#ffffff',
+                      border: '1px solid #1a1a1a',
+                      padding: '3px 10px',
+                      borderRadius: '9999px',
+                      marginBottom: '14px',
+                      boxShadow: '0 1px 2px rgba(0, 0, 0, 0.04)'
                     }}>
                       DECISIONS
                     </span>
@@ -308,17 +310,18 @@ export default function ProjectsV2({ initialProjects = [] }: ProjectsV2Props) {
                   <div className="narrative-block">
                     <span style={{
                       display: 'inline-block',
-                      fontFamily: "var(--font-heading), 'Outfit', -apple-system, sans-serif",
+                      fontFamily: 'var(--font-body), "Plus Jakarta Sans", sans-serif',
                       fontSize: '11px',
-                      fontWeight: 700,
-                      letterSpacing: '0.08em',
+                      fontWeight: 600,
+                      letterSpacing: '0.07em',
                       textTransform: 'uppercase',
-                      color: '#b84341',
-                      backgroundColor: '#fdf0ee',
-                      border: '1px solid #f2908f',
-                      padding: '3px 9px',
-                      borderRadius: '3px',
-                      marginBottom: '14px'
+                      color: '#121212',
+                      backgroundColor: '#ffffff',
+                      border: '1px solid #1a1a1a',
+                      padding: '3px 10px',
+                      borderRadius: '9999px',
+                      marginBottom: '14px',
+                      boxShadow: '0 1px 2px rgba(0, 0, 0, 0.04)'
                     }}>
                       IMPACT
                     </span>

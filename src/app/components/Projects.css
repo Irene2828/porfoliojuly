@@ -866,16 +866,17 @@
 
 .page-section-divider.preview-view .project-chip,
 .v2-theme .page-section-divider.preview-view .project-chip {
-  background: #fdf0ee !important;
-  color: #b84341 !important;
-  border: 1px solid #f2908f !important;
-  font-family: var(--font-heading), 'Outfit', sans-serif !important;
-  font-size: 0.68rem !important;
-  font-weight: 700 !important;
+  background: #ffffff !important;
+  color: #121212 !important;
+  border: 1px solid #1a1a1a !important;
+  font-family: var(--font-body), 'Plus Jakarta Sans', sans-serif !important;
+  font-size: 0.65rem !important;
+  font-weight: 600 !important;
   text-transform: uppercase !important;
-  letter-spacing: 0.07em !important;
-  padding: 0.2rem 0.55rem !important;
-  border-radius: 3px !important;
+  letter-spacing: 0.06em !important;
+  padding: 0.22rem 0.75rem !important;
+  border-radius: 9999px !important;
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.04) !important;
   display: inline-block !important;
 }
 
@@ -969,7 +970,7 @@
 
 .page-section-divider.modal-view .section-divider-tag-text,
 .v2-theme .page-section-divider.modal-view .section-divider-tag-text {
-  font-family: var(--font-heading), 'Outfit', sans-serif !important;
+  font-family: var(--font-heading) !important;
   font-size: clamp(24px, 3.2vw, 28px) !important;
   font-weight: 500 !important;
   letter-spacing: -0.02em !important;
@@ -994,61 +995,64 @@
   text-stroke: 0px !important;
 }
 
-/* Modal View: Centered content constrained to ~920px frame matching visual + annotations */
+/* Modal View: Generous 1380px frame with +25-30% larger image */
 .page-section-divider.modal-view .project-row,
 .v2-theme .page-section-divider.modal-view .project-row {
-  max-width: 1100px !important;
+  max-width: 1380px !important;
   width: 100% !important;
   margin-left: auto !important;
   margin-right: auto !important;
-  padding: 0 1.5rem !important;
+  padding: 0 2rem !important;
   box-sizing: border-box !important;
 }
 
 .page-section-divider.modal-view .project-body-grid,
 .v2-theme .page-section-divider.modal-view .project-body-grid {
-  max-width: 1100px !important;
+  max-width: 1380px !important;
   width: 100% !important;
   margin-left: auto !important;
   margin-right: auto !important;
-  grid-template-columns: 1fr 2.6fr 1.1fr !important;
-  gap: 2.5rem !important;
+  grid-template-columns: 240px 1fr 260px !important;
+  gap: 3.5rem !important;
+  align-items: center !important;
   box-sizing: border-box !important;
 }
 
-/* Constrain modal stats row and narrative to the visual width (~920px) instead of relative full width */
+/* Spread modal stats row and narrative to match width of image + captions (1380px) */
 .page-section-divider.modal-view .section-divider-stats-row,
 .v2-theme .page-section-divider.modal-view .section-divider-stats-row,
 .page-section-divider.cinematic-section.modal-view .section-divider-stats-row,
 .v2-theme .page-section-divider.cinematic-section.modal-view .section-divider-stats-row {
-  max-width: 920px !important;
+  max-width: 1380px !important;
   margin-left: auto !important;
   margin-right: auto !important;
-  margin-top: 1.5rem !important;
-  padding-left: 1rem !important;
-  padding-right: 1rem !important;
+  margin-top: 3rem !important;
+  padding-left: 2rem !important;
+  padding-right: 2rem !important;
   width: 100% !important;
   box-sizing: border-box !important;
   display: flex !important;
   justify-content: space-between !important;
-  align-items: baseline !important;
+  align-items: flex-start !important;
 }
 
 .page-section-divider.modal-view .section-divider-stat-item,
 .v2-theme .page-section-divider.modal-view .section-divider-stat-item {
-  max-width: 270px !important;
+  max-width: 380px !important;
+  flex: 1 1 0 !important;
   box-sizing: border-box !important;
-  text-align: center !important;
+  text-align: left !important;
   display: flex !important;
   flex-direction: column !important;
-  align-items: center !important;
+  align-items: flex-start !important;
 }
 
 .page-section-divider.modal-view .poster-tool-narrative-blocks,
 .v2-theme .page-section-divider.modal-view .poster-tool-narrative-blocks {
-  max-width: 920px !important;
+  max-width: 1380px !important;
   margin-left: auto !important;
   margin-right: auto !important;
+  width: 100% !important;
   box-sizing: border-box !important;
 }
 
@@ -1072,16 +1076,17 @@
 
 .page-section-divider.modal-view .project-chip,
 .v2-theme .page-section-divider.modal-view .project-chip {
-  background: #fdf0ee !important;
-  color: #b84341 !important;
-  border: 1px solid #f2908f !important;
-  font-family: var(--font-heading), 'Outfit', sans-serif !important;
-  font-size: 0.68rem !important;
-  font-weight: 700 !important;
+  background: #ffffff !important;
+  color: #121212 !important;
+  border: 1px solid #1a1a1a !important;
+  font-family: var(--font-body), 'Plus Jakarta Sans', sans-serif !important;
+  font-size: 0.65rem !important;
+  font-weight: 600 !important;
   text-transform: uppercase !important;
-  letter-spacing: 0.07em !important;
-  padding: 0.2rem 0.55rem !important;
-  border-radius: 3px !important;
+  letter-spacing: 0.06em !important;
+  padding: 0.22rem 0.75rem !important;
+  border-radius: 9999px !important;
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.04) !important;
   display: inline-block !important;
 }
 

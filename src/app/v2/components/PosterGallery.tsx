@@ -94,51 +94,46 @@ export default function PosterGallery({ images }: { images: PosterGalleryImage[]
             opacity: 0.85;
           }
         }
-        .poster-gallery-caption-box {
-          padding: 14px 18px;
-          background: #fafbfc;
-          border-top: 1px solid rgba(18, 18, 18, 0.08);
-          font-family: var(--font-body), -apple-system, sans-serif;
-          font-size: 13.5px;
-          line-height: 1.55;
-          color: var(--color-body-dark, #2b3038);
-          text-align: left;
-        }
         .poster-gallery-thumbs {
           display: flex;
           justify-content: center;
           align-items: center;
-          gap: 10px;
-          margin-top: 14px;
+          gap: 8px;
+          margin-top: 16px;
           padding: 4px 8px;
         }
         .poster-gallery-thumb-btn {
           display: flex;
           align-items: center;
           gap: 6px;
-          padding: 6px 12px;
-          border-radius: 20px;
-          border: 1px solid #d1d5db;
-          background: #f9fafb;
-          color: var(--color-heading-silver, #4a5461);
-          font-family: var(--font-mono), monospace;
-          font-size: 11px;
+          padding: 6px 14px;
+          border-radius: 9999px;
+          border: 1px solid #1a1a1a;
+          background: #ffffff;
+          color: #121212;
+          font-family: var(--font-body), 'Plus Jakarta Sans', sans-serif !important;
+          font-size: 12px;
+          font-weight: 500;
+          letter-spacing: -0.01em;
           cursor: pointer;
           transition: all 0.2s ease;
+          box-shadow: 0 1px 2px rgba(0, 0, 0, 0.04);
         }
         .poster-gallery-thumb-btn:hover {
-          border-color: var(--accent, #3ba3b8);
-          color: var(--color-matte-black, #1c1e23);
+          background: #f4f4f4;
+          border-color: #1a1a1a;
+          color: #000000;
         }
         .poster-gallery-thumb-btn.active {
-          background: var(--color-matte-black, #1c1e23);
+          background: #121212;
           color: #ffffff;
-          border-color: var(--color-matte-black, #1c1e23);
+          border-color: #121212;
           font-weight: 600;
+          box-shadow: 0 2px 6px rgba(0, 0, 0, 0.15);
         }
         .poster-gallery-thumb-dot {
-          width: 6px;
-          height: 6px;
+          width: 5px;
+          height: 5px;
           border-radius: 50%;
           background: currentColor;
         }
@@ -183,11 +178,6 @@ export default function PosterGallery({ images }: { images: PosterGalleryImage[]
           >
             ›
           </button>
-        </div>
-
-        {/* Caption */}
-        <div className="poster-gallery-caption-box">
-          {currentImage.caption}
         </div>
       </div>
 

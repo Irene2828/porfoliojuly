@@ -95,11 +95,18 @@
   border-bottom: 1px solid rgba(18, 18, 18, 0.15); /* subtle dark hairline */
 }
 
-.page-section-divider.cinematic-section.modal-view .section-divider-stats-row,
 .page-section-divider.cinematic-section.preview-view .section-divider-stats-row,
-.page-section-divider.modal-view .section-divider-stats-row,
 .page-section-divider.preview-view .section-divider-stats-row {
   max-width: 920px !important;
+  margin-left: auto !important;
+  margin-right: auto !important;
+  width: 100% !important;
+  box-sizing: border-box !important;
+}
+
+.page-section-divider.cinematic-section.modal-view .section-divider-stats-row,
+.page-section-divider.modal-view .section-divider-stats-row {
+  max-width: 1380px !important;
   margin-left: auto !important;
   margin-right: auto !important;
   width: 100% !important;
@@ -119,9 +126,14 @@
 }
 
 .page-section-divider.cinematic-section .section-divider-stats-row .project-chip {
-  background: #008b8b !important;
-  color: #ffffff !important;
-  border-color: #008b8b !important;
+  background: #ffffff !important;
+  color: #121212 !important;
+  border: 1px solid #1a1a1a !important;
+  font-family: var(--font-body), 'Plus Jakarta Sans', sans-serif !important;
+  font-size: 0.65rem !important;
+  font-weight: 600 !important;
+  border-radius: 9999px !important;
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.04) !important;
 }
 
 .page-section-divider::before,
@@ -320,7 +332,10 @@
 }
 
 .page-section-divider.modal-view .section-divider-subline {
-  font-size: clamp(1.1rem, 1.5vw, 1.3rem) !important;
+  font-family: var(--font-body), 'Plus Jakarta Sans', sans-serif !important;
+  font-size: 0.85rem !important; /* 20% smaller text on zoom in */
+  line-height: 1.5 !important;
+  color: #4b5563 !important;
   font-weight: 400 !important;
   margin-bottom: 0.5rem !important;
   -webkit-text-stroke: 0 !important;
@@ -543,16 +558,17 @@
 
 .project-chip {
   display: inline-block;
-  background: #121212; 
-  color: #ffffff; /* white text */
-  border: 1px solid #121212;
-  font-size: 0.62rem;
-  font-family: var(--font-sans);
-  font-weight: 600;
-  text-transform: uppercase;
-  letter-spacing: 0.06em;
-  padding: 0.15rem 0.5rem; /* small padding */
-  border-radius: 0px !important; /* rectangular with no radius */
+  background: #ffffff !important; 
+  color: #121212 !important;
+  border: 1px solid #1a1a1a !important;
+  font-size: 0.65rem !important;
+  font-family: var(--font-body), 'Plus Jakarta Sans', sans-serif !important;
+  font-weight: 600 !important;
+  text-transform: uppercase !important;
+  letter-spacing: 0.06em !important;
+  padding: 0.22rem 0.75rem !important;
+  border-radius: 9999px !important;
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.04) !important;
   vertical-align: middle;
 }
 

@@ -298,8 +298,8 @@ h1, h2, h3, h4, h5, h6 {
 .v2-theme .page-section-divider.modal-view .section-divider-stats-row {
   background: #ffffff !important;
   border-top: none !important;
-  margin-top: 0 !important;
-  max-width: 920px !important;
+  margin-top: 3rem !important;
+  max-width: 1380px !important;
   margin-left: auto !important;
   margin-right: auto !important;
   width: 100% !important;
@@ -319,16 +319,17 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 .v2-theme .page-section-divider.modal-view .section-divider-stats-row .project-chip {
-  background: #fdf0ee !important;
-  color: #b84341 !important;
-  border: 1px solid #f2908f !important;
-  font-family: var(--font-heading), 'Outfit', sans-serif !important;
-  font-size: 0.68rem !important;
-  font-weight: 700 !important;
+  background: #ffffff !important;
+  color: #121212 !important;
+  border: 1px solid #1a1a1a !important;
+  font-family: var(--font-body), 'Plus Jakarta Sans', sans-serif !important;
+  font-size: 0.65rem !important;
+  font-weight: 600 !important;
   text-transform: uppercase !important;
-  letter-spacing: 0.07em !important;
-  padding: 0.2rem 0.55rem !important;
-  border-radius: 3px !important;
+  letter-spacing: 0.06em !important;
+  padding: 0.22rem 0.75rem !important;
+  border-radius: 9999px !important;
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.04) !important;
   display: inline-block !important;
 }
 
@@ -367,16 +368,17 @@ h1, h2, h3, h4, h5, h6 {
 
 .v2-theme .page-section-divider.cinematic-section.preview-view .project-chip,
 .page-section-divider.cinematic-section.preview-view .project-chip {
-  background: #fdf0ee !important;
-  color: #b84341 !important;
-  border: 1px solid #f2908f !important;
-  font-family: var(--font-heading), 'Outfit', sans-serif !important;
-  font-size: 0.68rem !important;
-  font-weight: 700 !important;
+  background: #ffffff !important;
+  color: #121212 !important;
+  border: 1px solid #1a1a1a !important;
+  font-family: var(--font-body), 'Plus Jakarta Sans', sans-serif !important;
+  font-size: 0.65rem !important;
+  font-weight: 600 !important;
   text-transform: uppercase !important;
-  letter-spacing: 0.07em !important;
-  padding: 0.2rem 0.55rem !important;
-  border-radius: 3px !important;
+  letter-spacing: 0.06em !important;
+  padding: 0.22rem 0.75rem !important;
+  border-radius: 9999px !important;
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.04) !important;
   display: inline-block !important;
 }
 
