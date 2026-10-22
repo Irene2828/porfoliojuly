@@ -1144,7 +1144,7 @@
 .page-section-divider.modal-view .section-divider-stats-heading-wrap,
 .v2-theme .page-section-divider.modal-view .section-divider-stats-heading-wrap {
   max-width: 1380px !important;
-  margin: 1.5rem auto 0.75rem auto !important;
+  margin: 2.25rem auto 0.375rem auto !important;
   padding: 0 2rem !important;
 }
 
@@ -1165,7 +1165,7 @@
 .v2-theme .page-section-divider.preview-view .section-divider-stats-heading-wrap {
   width: 100% !important;
   max-width: 100% !important;
-  margin: 1.75rem 0 0.6rem 0 !important;
+  margin: 2.5rem 0 0.3rem 0 !important;
   padding: 0 !important;
 }
 
