@@ -95,6 +95,17 @@
   border-bottom: 1px solid rgba(18, 18, 18, 0.15); /* subtle dark hairline */
 }
 
+.page-section-divider.cinematic-section.modal-view .section-divider-stats-row,
+.page-section-divider.cinematic-section.preview-view .section-divider-stats-row,
+.page-section-divider.modal-view .section-divider-stats-row,
+.page-section-divider.preview-view .section-divider-stats-row {
+  max-width: 920px !important;
+  margin-left: auto !important;
+  margin-right: auto !important;
+  width: 100% !important;
+  box-sizing: border-box !important;
+}
+
 .page-section-divider.cinematic-section .section-divider-stats-row .annotation-stat {
   color: #121212 !important;
 }

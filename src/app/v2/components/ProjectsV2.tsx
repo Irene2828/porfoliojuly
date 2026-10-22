@@ -363,12 +363,13 @@ export default function ProjectsV2({ initialProjects = [] }: ProjectsV2Props) {
       <style>{`
         .cases-grid-container {
           display: grid;
-          grid-template-columns: repeat(2, 1fr);
-          gap: 3.5rem 2.5rem;
-          width: 100%;
-          max-width: 1400px;
-          margin: 0 auto;
-          padding: 0 2rem;
+          grid-template-columns: repeat(2, minmax(0, 1fr)) !important;
+          gap: 3.5rem 2.5rem !important;
+          width: 100% !important;
+          max-width: 1400px !important;
+          margin: 0 auto !important;
+          padding: 0 2rem !important;
+          box-sizing: border-box !important;
         }
         @media (max-width: 900px) {
           .cases-grid-container {
@@ -376,6 +377,13 @@ export default function ProjectsV2({ initialProjects = [] }: ProjectsV2Props) {
             gap: 5rem !important; /* doubled spacing between cases on mobile */
             padding: 0 1.5rem !important;
           }
+        }
+        .cases-grid-item {
+          width: 100% !important;
+          min-width: 0 !important;
+          max-width: 100% !important;
+          overflow: hidden !important;
+          box-sizing: border-box !important;
         }
       `}</style>
       

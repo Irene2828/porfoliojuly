@@ -299,6 +299,11 @@ h1, h2, h3, h4, h5, h6 {
   background: #ffffff !important;
   border-top: none !important;
   margin-top: 0 !important;
+  max-width: 920px !important;
+  margin-left: auto !important;
+  margin-right: auto !important;
+  width: 100% !important;
+  box-sizing: border-box !important;
 }
 
 .v2-theme .page-section-divider.modal-view .section-divider-stats-row .annotation-stat {
