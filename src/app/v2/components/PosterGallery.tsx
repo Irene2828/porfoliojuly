@@ -33,7 +33,7 @@ export default function PosterGallery({ images }: { images: PosterGalleryImage[]
           border: 1px solid rgba(18, 18, 18, 0.12);
           border-radius: 8px;
           overflow: hidden;
-          box-shadow: 0 16px 40px rgba(0, 0, 0, 0.08);
+          box-shadow: 0 8px 20px rgba(0, 0, 0, 0.04);
           position: relative;
         }
         .poster-gallery-main-view {

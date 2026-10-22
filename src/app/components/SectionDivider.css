@@ -81,7 +81,7 @@
 .page-section-divider.cinematic-section .section-divider-stats-row {
   background: #f4f4f6; /* silver grey */
   border-top: 4px solid #008b8b !important; /* thick ocean teal divider line above grey stats */
-  padding-top: 2.25rem !important;
+  padding-top: 1.68rem !important;
   padding-bottom: 2.25rem !important;
   width: 100%;
   margin-left: 0 !important;
@@ -97,22 +97,32 @@
 
 .page-section-divider.cinematic-section.preview-view .section-divider-stats-row,
 .page-section-divider.preview-view .section-divider-stats-row {
-  max-width: 100% !important;
-  margin-left: 0 !important;
-  margin-right: 0 !important;
+  max-width: 80% !important;
+  margin-left: auto !important;
+  margin-right: auto !important;
   padding-left: 0 !important;
   padding-right: 0 !important;
-  width: 100% !important;
+  width: 80% !important;
   box-sizing: border-box !important;
 }
 
 .page-section-divider.cinematic-section.modal-view .section-divider-stats-row,
 .page-section-divider.modal-view .section-divider-stats-row {
-  max-width: 1380px !important;
+  max-width: 80% !important;
   margin-left: auto !important;
   margin-right: auto !important;
-  width: 100% !important;
+  width: 80% !important;
   box-sizing: border-box !important;
+}
+
+@media (max-width: 768px) {
+  .page-section-divider.cinematic-section.preview-view .section-divider-stats-row,
+  .page-section-divider.preview-view .section-divider-stats-row,
+  .page-section-divider.cinematic-section.modal-view .section-divider-stats-row,
+  .page-section-divider.modal-view .section-divider-stats-row {
+    max-width: 100% !important;
+    width: 100% !important;
+  }
 }
 
 .page-section-divider.cinematic-section .section-divider-stats-row .annotation-stat {
