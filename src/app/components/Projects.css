@@ -969,10 +969,10 @@
   border: none !important;
   box-shadow: 0 30px 80px rgba(0, 0, 0, 0.12), 0 0 0 1px rgba(255, 255, 255, 0.6);
   scrollbar-width: thin;
-  scrollbar-color: rgba(0, 139, 139, 0.3) transparent;
+  scrollbar-color: rgba(242, 144, 143, 0.65) transparent;
 }
 
-/* Elegant thin custom scrollbar for modal content */
+/* Elegant thin custom scrollbar for modal content (Brand Peach) */
 .project-modal-content::-webkit-scrollbar {
   width: 6px;
 }
@@ -982,12 +982,12 @@
 }
 
 .project-modal-content::-webkit-scrollbar-thumb {
-  background-color: rgba(0, 139, 139, 0.3);
+  background-color: rgba(242, 144, 143, 0.65);
   border-radius: 10px;
 }
 
 .project-modal-content::-webkit-scrollbar-thumb:hover {
-  background-color: rgba(0, 139, 139, 0.6);
+  background-color: #f2908f;
 }
 
 /* Expanded Modal View (Pure white, NO BORDERS, Off-black headings/labels matching preview) */
@@ -1030,6 +1030,11 @@
   color: #121212 !important;
   -webkit-text-stroke: 0px !important;
   text-stroke: 0px !important;
+}
+
+.page-section-divider.modal-view .section-divider-title-group,
+.v2-theme .page-section-divider.modal-view .section-divider-title-group {
+  gap: 1.2rem !important; /* 25% closer to case heading on clicked modal state */
 }
 
 .page-section-divider.modal-view .section-divider-subline,
@@ -1139,12 +1144,20 @@
 .page-section-divider.modal-view .section-divider-stats-heading-wrap,
 .v2-theme .page-section-divider.modal-view .section-divider-stats-heading-wrap {
   max-width: 1380px !important;
-  margin: 1.5rem auto 1.5rem auto !important;
+  margin: 1.5rem auto 0.75rem auto !important;
   padding: 0 2rem !important;
 }
 
+.section-divider-stats-heading-wrap + .section-divider-stats-row,
+.page-section-divider .section-divider-stats-heading-wrap + .section-divider-stats-row,
 .page-section-divider.modal-view .section-divider-stats-heading-wrap + .section-divider-stats-row,
-.v2-theme .page-section-divider.modal-view .section-divider-stats-heading-wrap + .section-divider-stats-row {
+.v2-theme .page-section-divider.modal-view .section-divider-stats-heading-wrap + .section-divider-stats-row,
+.page-section-divider.cinematic-section.modal-view .section-divider-stats-heading-wrap + .section-divider-stats-row,
+.v2-theme .page-section-divider.cinematic-section.modal-view .section-divider-stats-heading-wrap + .section-divider-stats-row,
+.page-section-divider.preview-view .section-divider-stats-heading-wrap + .section-divider-stats-row,
+.v2-theme .page-section-divider.preview-view .section-divider-stats-heading-wrap + .section-divider-stats-row,
+.page-section-divider.cinematic-section.preview-view .section-divider-stats-heading-wrap + .section-divider-stats-row,
+.v2-theme .page-section-divider.cinematic-section.preview-view .section-divider-stats-heading-wrap + .section-divider-stats-row {
   margin-top: 0 !important;
 }
 
@@ -1152,13 +1165,8 @@
 .v2-theme .page-section-divider.preview-view .section-divider-stats-heading-wrap {
   width: 100% !important;
   max-width: 100% !important;
-  margin: 1.75rem 0 1.25rem 0 !important;
+  margin: 1.75rem 0 0.6rem 0 !important;
   padding: 0 !important;
-}
-
-.page-section-divider.preview-view .section-divider-stats-heading-wrap + .section-divider-stats-row,
-.v2-theme .page-section-divider.preview-view .section-divider-stats-heading-wrap + .section-divider-stats-row {
-  margin-top: 0 !important;
 }
 
 .page-section-divider.preview-view .section-divider-stats-heading,
