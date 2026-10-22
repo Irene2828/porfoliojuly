@@ -60,7 +60,7 @@ export default function ProjectsV2({ initialProjects = [] }: ProjectsV2Props) {
           sub: 'One set of details generates the full poster set for any city — no designer in the loop.' 
         }
       ],
-      image: '/assets/poster-tool/03-templates.png'
+      image: '/assets/poster-tool/01-details-and-download.png'
     },
     {
       id: 'v2-2',
@@ -179,11 +179,6 @@ export default function ProjectsV2({ initialProjects = [] }: ProjectsV2Props) {
                       <PosterGallery 
                         images={[
                           {
-                            src: '/assets/poster-tool/03-templates.png',
-                            stepLabel: 'Step 1 — Five locked templates',
-                            caption: 'Step 1 — Five locked templates: print sizes 11×17, 8.5×11, A3, A4 and a Facebook format. Same design for every city.'
-                          },
-                          {
                             src: '/assets/poster-tool/01-details-and-download.png',
                             stepLabel: 'Step 2–3 — One form drives the poster',
                             caption: 'Step 2–3 — One form drives the poster: city, date, location, schedule and the QR link. The preview updates live; download is one click.'
@@ -192,6 +187,11 @@ export default function ProjectsV2({ initialProjects = [] }: ProjectsV2Props) {
                             src: '/assets/poster-tool/02-full-editor.png',
                             stepLabel: 'Advanced editor',
                             caption: 'Advanced editor — move any block, tune the text. It stays behind one click, so the default flow stays simple.'
+                          },
+                          {
+                            src: '/assets/poster-tool/03-templates.png',
+                            stepLabel: 'Step 1 — Five locked templates',
+                            caption: 'Step 1 — Five locked templates: print sizes 11×17, 8.5×11, A3, A4 and a Facebook format. Same design for every city.'
                           }
                         ]}
                       />
