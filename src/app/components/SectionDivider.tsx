@@ -68,7 +68,11 @@ export default function SectionDivider({ label, theme = 'dark', liveLink, sublin
             <div className="section-divider-heading-row">
               <span className="section-divider-tag-text">· {label} ·</span>
             </div>
-            {subline && <span className="section-divider-subline">&mdash; {subline}</span>}
+            {subline && (
+              <span className="section-divider-subline" style={{ whiteSpace: 'pre-line' }}>
+                &mdash; {subline}
+              </span>
+            )}
           </div>
           <span className="section-divider-tag-dots section-divider-tag-dots-right" />
         </motion.div>

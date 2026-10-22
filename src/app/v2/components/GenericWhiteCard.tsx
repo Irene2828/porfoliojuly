@@ -29,7 +29,7 @@ export default function GenericWhiteCard({ title, subline, annotations, stats, i
         {/* Mockup Area */}
         <div style={{ fontFamily: 'var(--font-mono), monospace', fontSize: '11px', marginBottom: '16px', width: '100%', textAlign: 'left' }}>
           <span style={{ color: '#4B5565', fontWeight: 600 }}>{title.toUpperCase()}</span><br/>
-          <span style={{ color: '#555555' }}>{subline || 'Interactive Digital Tool'}</span>
+          <span style={{ color: '#555555', whiteSpace: 'pre-line' }}>{subline || 'Interactive Digital Tool'}</span>
         </div>
         <div className="guertin-mockup-area">
           

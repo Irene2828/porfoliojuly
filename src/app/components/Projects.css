@@ -889,12 +889,12 @@
 .page-section-divider.modal-view .section-divider-tag-row,
 .v2-theme .page-section-divider.modal-view .section-divider-tag-row {
   padding-top: 1.25rem !important;
-  padding-bottom: 0.75rem !important;
+  padding-bottom: 0.35rem !important;
 }
 
 .page-section-divider.modal-view .project-section-block,
 .v2-theme .page-section-divider.modal-view .project-section-block {
-  padding-top: 1.25rem !important;
+  padding-top: 0.5rem !important;
   padding-bottom: 1.5rem !important;
 }
 

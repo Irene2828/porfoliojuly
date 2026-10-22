@@ -30,7 +30,7 @@ export default function ProjectsV2({ initialProjects = [] }: ProjectsV2Props) {
       id: 'v2-1',
       title: 'Terry Fox Foundation / Internal Poster tool',
       slug: 'terry-fox-run',
-      subline: 'Volunteers in every city need on brand customized posters. Team designers - too busy with big tasks.',
+      subline: 'Volunteers in every city need on brand customized posters.\nTeam designers - too busy with big tasks.',
       hoverLabel: 'Tap to Zoom',
       annotations: [
         { markerNumber: 1, title: 'Locked Template', text: 'Anyone can make an on-brand poster in minutes.' },
