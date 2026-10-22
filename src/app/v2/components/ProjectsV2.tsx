@@ -6,6 +6,7 @@ import '@/app/components/Projects.css';
 import SectionDivider from '@/app/components/SectionDivider';
 import GuertinProject from './GuertinProject';
 import GenericWhiteCard from './GenericWhiteCard';
+import PosterGallery from './PosterGallery';
 
 const textVariant = {
   hidden: { y: 25, opacity: 0 },
@@ -29,7 +30,7 @@ export default function ProjectsV2({ initialProjects = [] }: ProjectsV2Props) {
       id: 'v2-1',
       title: 'Terry Fox Run // Poster tool',
       slug: 'terry-fox-run',
-      subline: 'Volunteers needed posters. Designers were the bottleneck.',
+      subline: 'Volunteers in every city needed posters. Designers were the bottleneck.',
       hoverLabel: 'Tap to Zoom',
       annotations: [
         { markerNumber: 1, title: 'Locked Template', text: 'Anyone can make an on-brand poster in minutes.' },
@@ -37,11 +38,29 @@ export default function ProjectsV2({ initialProjects = [] }: ProjectsV2Props) {
         { markerNumber: 3, title: 'Human in Control', text: 'The poster’s owner reviews and approves everything.' }
       ],
       stats: [
-        { chip: 'Before', text: 'Designers were the bottleneck', stat: '[X hours per poster]', statLabel: 'before' },
-        { chip: 'Built with', text: 'Locked template poster tool', stat: 'Minutes', statLabel: 'build time' },
-        { chip: 'Result', text: 'On-brand posters in minutes with owner review', stat: '[real outcome]', statLabel: 'result' }
+        { 
+          chip: 'Before', 
+          text: 'Designers were the bottleneck', 
+          stat: 'Days', 
+          statLabel: 'before',
+          sub: 'Every poster made by hand, one at a time. Local teams waited days for a single poster.' 
+        },
+        { 
+          chip: 'Build time', 
+          text: 'Locked template poster tool', 
+          stat: 'Minutes', 
+          statLabel: 'build time',
+          sub: 'Pick a template, fill in the fields, download a print-ready file (PNG, JPEG or PDF).' 
+        },
+        { 
+          chip: 'Result', 
+          text: 'On-brand posters in minutes, with owner review', 
+          stat: '5 formats', 
+          statLabel: 'result',
+          sub: 'One set of details generates the full poster set for any city — no designer in the loop.' 
+        }
       ],
-      image: initialProjects[0]?.screens?.[0]?.originalUrl || '/skills.png'
+      image: '/assets/poster-tool/03-templates.png'
     },
     {
       id: 'v2-2',
@@ -156,9 +175,31 @@ export default function ProjectsV2({ initialProjects = [] }: ProjectsV2Props) {
                 {/* Center Column: Visual */}
                 <div className="project-visual">
                   <div className="visual-frame">
-                    <div className="flat-screen">
-                      <img src={project.image} alt={project.title} />
-                    </div>
+                    {project.id === 'v2-1' ? (
+                      <PosterGallery 
+                        images={[
+                          {
+                            src: '/assets/poster-tool/03-templates.png',
+                            stepLabel: 'Step 1 — Five locked templates',
+                            caption: 'Step 1 — Five locked templates: print sizes 11×17, 8.5×11, A3, A4 and a Facebook format. Same design for every city.'
+                          },
+                          {
+                            src: '/assets/poster-tool/01-details-and-download.png',
+                            stepLabel: 'Step 2–3 — One form drives the poster',
+                            caption: 'Step 2–3 — One form drives the poster: city, date, location, schedule and the QR link. The preview updates live; download is one click.'
+                          },
+                          {
+                            src: '/assets/poster-tool/02-full-editor.png',
+                            stepLabel: 'Advanced editor',
+                            caption: 'Advanced editor — move any block, tune the text. It stays behind one click, so the default flow stays simple.'
+                          }
+                        ]}
+                      />
+                    ) : (
+                      <div className="flat-screen">
+                        <img src={project.image} alt={project.title} />
+                      </div>
+                    )}
                   </div>
                 </div>
 
@@ -186,6 +227,98 @@ export default function ProjectsV2({ initialProjects = [] }: ProjectsV2Props) {
                   ))}
                 </div>
               </div>
+
+              {/* Three Text Blocks under gallery in Modal: BRIEF / DECISIONS / IMPACT */}
+              {isModal && project.id === 'v2-1' && (
+                <div 
+                  className="poster-tool-narrative-blocks"
+                  style={{
+                    marginTop: '3.5rem',
+                    paddingTop: '2.5rem',
+                    borderTop: '1px solid rgba(0, 0, 0, 0.08)',
+                    display: 'grid',
+                    gridTemplateColumns: 'repeat(auto-fit, minmax(280px, 1fr))',
+                    gap: '2.5rem',
+                    textAlign: 'left'
+                  }}
+                >
+                  <div className="narrative-block">
+                    <div style={{
+                      fontFamily: 'var(--font-mono), monospace',
+                      fontSize: '12px',
+                      fontWeight: 600,
+                      letterSpacing: '0.08em',
+                      textTransform: 'uppercase',
+                      color: 'var(--color-primary-cyan, #008b8b)',
+                      marginBottom: '10px'
+                    }}>
+                      BRIEF
+                    </div>
+                    <p style={{
+                      fontFamily: 'var(--font-body), sans-serif',
+                      fontSize: '14px',
+                      lineHeight: '1.65',
+                      color: '#4b5563',
+                      margin: 0
+                    }}>
+                      The Terry Fox Run happens in many cities at once. Every local team needs posters with its own city, date, location and registration link — and every poster used to be designed by hand. Designers became the bottleneck, teams waited days, and keeping every poster on-brand depended on whoever made it.
+                    </p>
+                  </div>
+
+                  <div className="narrative-block">
+                    <div style={{
+                      fontFamily: 'var(--font-mono), monospace',
+                      fontSize: '12px',
+                      fontWeight: 600,
+                      letterSpacing: '0.08em',
+                      textTransform: 'uppercase',
+                      color: 'var(--color-primary-cyan, #008b8b)',
+                      marginBottom: '10px'
+                    }}>
+                      DECISIONS
+                    </div>
+                    <div style={{
+                      fontFamily: 'var(--font-body), sans-serif',
+                      fontSize: '14px',
+                      lineHeight: '1.65',
+                      color: '#4b5563',
+                      margin: 0,
+                      display: 'flex',
+                      flexDirection: 'column',
+                      gap: '8px'
+                    }}>
+                      <div>• <strong>Locked templates</strong> — layout, fonts and brand are fixed; only the text can change, so a poster cannot go off-brand.</div>
+                      <div>• <strong>Type once, update everywhere</strong> — one set of fields (city, date, location, schedule, QR link) fills all five formats at once.</div>
+                      <div>• <strong>Smart QR built in</strong> — the registration link is typed once and the QR code is generated on the poster, ready to test before download.</div>
+                      <div>• <strong>Simple by default, deep on demand</strong> — the 3-step flow covers most posters; the full editor with placement controls is one click away, not in the way.</div>
+                      <div>• <strong>Human in control</strong> — drafts, undo and restore; the owner reviews and approves the final poster. Nothing goes out automatically.</div>
+                    </div>
+                  </div>
+
+                  <div className="narrative-block">
+                    <div style={{
+                      fontFamily: 'var(--font-mono), monospace',
+                      fontSize: '12px',
+                      fontWeight: 600,
+                      letterSpacing: '0.08em',
+                      textTransform: 'uppercase',
+                      color: 'var(--color-primary-cyan, #008b8b)',
+                      marginBottom: '10px'
+                    }}>
+                      IMPACT
+                    </div>
+                    <p style={{
+                      fontFamily: 'var(--font-body), sans-serif',
+                      fontSize: '14px',
+                      lineHeight: '1.65',
+                      color: '#4b5563',
+                      margin: 0
+                    }}>
+                      Work that took days of back-and-forth now takes minutes, done by the local teams themselves. Every city gets the same on-brand poster set in all five formats, and designers are out of the loop for routine posters entirely.
+                    </p>
+                  </div>
+                </div>
+              )}
             </div>
           </motion.div>
         </div>

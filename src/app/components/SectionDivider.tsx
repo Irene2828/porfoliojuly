@@ -93,6 +93,11 @@ export default function SectionDivider({ label, theme = 'dark', liveLink, sublin
               <div className="annotation-chip-row">
                 <span className="project-chip">{item.chip}</span> {item.text}
               </div>
+              {(item as any).sub && (
+                <div className="annotation-sub" style={{ fontSize: '13px', color: '#8b949e', marginTop: '6px', lineHeight: '1.4' }}>
+                  {(item as any).sub}
+                </div>
+              )}
             </motion.div>
           ))}
         </div>
