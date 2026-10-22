@@ -1101,6 +1101,19 @@
   align-items: flex-start !important;
 }
 
+.page-section-divider.modal-view .section-divider-stats-row.metrics-count-2,
+.v2-theme .page-section-divider.modal-view .section-divider-stats-row.metrics-count-2 {
+  display: flex !important;
+  justify-content: space-between !important;
+  gap: 4rem !important;
+}
+
+.page-section-divider.modal-view .section-divider-stats-row.metrics-count-2 .section-divider-stat-item,
+.v2-theme .page-section-divider.modal-view .section-divider-stats-row.metrics-count-2 .section-divider-stat-item {
+  max-width: 600px !important;
+  flex: 1 1 0 !important;
+}
+
 
 .page-section-divider.modal-view .section-divider-subline,
 .v2-theme .page-section-divider.modal-view .section-divider-subline {

@@ -46,18 +46,11 @@ export default function ProjectsV2({ initialProjects = [] }: ProjectsV2Props) {
           sub: "Every poster had to be made by hand, in Figma, one at a time. Volunteers worldwide had to wait days for a single poster. They don't use Figma, managers too. Posters need to be on-brand, so no random AI generation allowed. Solution I offered? An internal tool to make them fast, always on brand, for both non-tech or tech-savvy users." 
         },
         { 
-          chip: 'Impact', 
+          chip: 'After', 
           text: 'Minutes instead of days', 
           stat: 'Minutes', 
-          statLabel: 'impact',
-          sub: "Work that took days now takes minutes, done by volunteers or Foundation's managers without designers in the loop." 
-        },
-        { 
-          chip: 'Architecture', 
-          text: 'Agent-ready architecture', 
-          stat: '5 formats to start &...', 
-          statLabel: 'result',
-          sub: "One set of details fills all 5 formats at once. Clean structure allows AI agents to populate fields directly. But it's still human who previews, edits or approves a poster for the event." 
+          statLabel: 'after',
+          sub: "Work that took days now takes minutes, done by volunteers or Foundation's managers without designers in the loop.\n\n5 formats to start & agent-ready: One set of details fills all 5 formats at once. Clean structure allows AI agents to populate fields directly. But it's still human who previews, edits or approves a poster for the event." 
         }
       ],
       image: '/assets/poster-tool/01-details-and-download.png'

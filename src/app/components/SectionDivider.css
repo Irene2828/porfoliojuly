@@ -616,16 +616,23 @@
   }
 
   .section-divider-stats-row.metrics-count-2 {
-    display: grid !important;
-    grid-template-columns: 1fr 1fr !important;
-    gap: 1rem !important;
-    text-align: center !important;
+    display: flex !important;
+    flex-direction: column !important;
+    gap: 1.25rem !important;
+    text-align: left !important;
   }
 
   .section-divider-stats-row.metrics-count-2 .section-divider-stat-item {
-    padding: 1.25rem 0 !important;
+    width: 100% !important;
+    padding: 1rem 0 !important;
     display: flex !important;
     flex-direction: column !important;
-    align-items: center !important;
+    align-items: flex-start !important;
+    text-align: left !important;
+    border-bottom: 1px solid rgba(18, 18, 18, 0.1) !important;
+  }
+
+  .section-divider-stats-row.metrics-count-2 .section-divider-stat-item:last-child {
+    border-bottom: none !important;
   }
 }

@@ -9,7 +9,7 @@ type SectionDividerProps = {
   liveLink?: string;
   subline?: string;
   align?: 'center' | 'right';
-  annotations?: { chip: string; text: string; stat: string; statLabel: string }[];
+  annotations?: { chip: string; text: string; stat: string; statLabel: string; sub?: React.ReactNode }[];
   children?: React.ReactNode;
 };
 
@@ -105,7 +105,8 @@ export default function SectionDivider({ label, theme = 'dark', liveLink, sublin
                     fontSize: '13.5px', 
                     color: '#4b5563', 
                     marginTop: '8px', 
-                    lineHeight: '1.55' 
+                    lineHeight: '1.55',
+                    whiteSpace: 'pre-line'
                   }}
                 >
                   {(item as any).sub}
