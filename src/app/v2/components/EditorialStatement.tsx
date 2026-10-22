@@ -82,7 +82,8 @@ export default function EditorialStatement() {
             .prefooter-section .prefooter-btn-primary.face-cta,
             .prefooter-btn-primary {
               background: #f2908f !important; /* full color opacity on mobile */
-              height: 3.09rem !important; /* 10% shorter */
+              height: 3.09rem !important; /* 10% shorter height */
+              padding: 0 1.25rem !important; /* 20% shorter width (padding reduced from 1.98rem/1.78rem) */
               margin: 0 auto !important;
             }
             .prefooter-cta-container {

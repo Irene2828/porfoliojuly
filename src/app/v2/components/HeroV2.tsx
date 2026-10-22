@@ -123,7 +123,8 @@ export default function HeroV2() {
           .v2-theme .hero-ctas-outside .btn-primary-outline.btn-primary,
           .v2-theme .hero-ctas-outside .btn-primary {
             background: #f2908f !important; /* full color opacity on mobile */
-            height: 3.09rem !important; /* 10% shorter */
+            height: 3.09rem !important; /* 10% shorter height */
+            padding: 0 1.25rem !important; /* 20% shorter width (padding reduced from 1.98rem/1.78rem) */
             margin: 0 auto !important;
           }
           .v2-theme .hero-ring-badge,
