@@ -37,19 +37,16 @@ export default function ProjectsV2({ initialProjects = [] }: ProjectsV2Props) {
         { markerNumber: 2, title: 'Simple by default, deep on demand', text: 'The 3-step flow covers most posters; the full editor with placement controls is one click away, not in the way.' },
         { markerNumber: 3, title: 'Human in Control', text: 'The poster’s owner reviews and approves everything.' }
       ],
+      statsTitle: 'Impact',
       stats: [
         { 
           chip: 'Before', 
           text: 'Designers were the bottleneck.', 
-          stat: 'Days', 
-          statLabel: 'before',
           sub: "Every poster had to be made by hand, in Figma, one at a time. Volunteers worldwide had to wait days for a single poster. They don't use Figma, managers too. Posters need to be on-brand, so no random AI generation allowed. Solution I offered? An internal tool to make them fast, always on brand, for both non-tech or tech-savvy users." 
         },
         { 
           chip: 'After', 
           text: 'Minutes instead of days', 
-          stat: 'Minutes', 
-          statLabel: 'after',
           sub: "Work that took days now takes minutes, done by volunteers or Foundation's managers without designers in the loop.\n\n5 formats to start & agent-ready: One set of details fills all 5 formats at once. Clean structure allows AI agents to populate fields directly. But it's still human who previews, edits or approves a poster for the event." 
         }
       ],
@@ -129,6 +126,7 @@ export default function ProjectsV2({ initialProjects = [] }: ProjectsV2Props) {
       <SectionDivider 
         label={project.title} 
         subline={project.subline}
+        statsTitle={project.statsTitle}
         annotations={project.stats}
       >
         <div 

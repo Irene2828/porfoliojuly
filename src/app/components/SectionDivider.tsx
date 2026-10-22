@@ -9,11 +9,23 @@ type SectionDividerProps = {
   liveLink?: string;
   subline?: string;
   align?: 'center' | 'right';
-  annotations?: { chip: string; text: string; stat: string; statLabel: string; sub?: React.ReactNode }[];
+  statsTitle?: string;
+  annotations?: { chip: string; text: string; stat?: string; statLabel?: string; sub?: React.ReactNode }[];
   children?: React.ReactNode;
+  className?: string;
 };
 
-export default function SectionDivider({ label, theme = 'dark', liveLink, subline, align = 'right', annotations, children }: SectionDividerProps) {
+export default function SectionDivider({ 
+  label, 
+  theme = 'dark', 
+  liveLink, 
+  subline, 
+  align = 'right', 
+  statsTitle,
+  annotations, 
+  children,
+  className = ''
+}: SectionDividerProps) {
   if (theme === 'light') {
     const isCenter = align === 'center';
     return (
@@ -53,7 +65,7 @@ export default function SectionDivider({ label, theme = 'dark', liveLink, sublin
   }
 
   return (
-    <div className="section-divider-wrap section-divider-with-tag">
+    <div className={`section-divider-wrap section-divider-with-tag ${className}`.trim()}>
       <div className="section-divider-tag-row">
         <div className="section-divider-side-line" />
         <motion.div 
@@ -81,6 +93,20 @@ export default function SectionDivider({ label, theme = 'dark', liveLink, sublin
 
       {children}
 
+      {statsTitle && (
+        <div className="section-divider-stats-heading-wrap">
+          <motion.h3 
+            initial={{ y: 15, opacity: 0 }}
+            whileInView={{ y: 0, opacity: 1 }}
+            viewport={{ once: true, amount: 0.5 }}
+            transition={{ duration: 0.7, ease: [0.16, 1, 0.3, 1] }}
+            className="section-divider-stats-heading"
+          >
+            {statsTitle}
+          </motion.h3>
+        </div>
+      )}
+
       {annotations && annotations.length > 0 && (
         <div className={`section-divider-stats-row metrics-count-${annotations.length}`}>
           {annotations.map((item, idx) => (
@@ -92,8 +118,8 @@ export default function SectionDivider({ label, theme = 'dark', liveLink, sublin
               transition={{ duration: 0.7, ease: [0.16, 1, 0.3, 1], delay: idx * 0.08 }}
               className="section-divider-stat-item"
             >
-              <div className="annotation-stat">{item.stat}</div>
-              <div className="annotation-stat-label">{item.statLabel}</div>
+              {item.stat && <div className="annotation-stat">{item.stat}</div>}
+              {item.statLabel && <div className="annotation-stat-label">{item.statLabel}</div>}
               <div className="annotation-chip-row">
                 <span className="project-chip">{item.chip}</span> {item.text}
               </div>

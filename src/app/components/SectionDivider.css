@@ -308,7 +308,7 @@
   font-weight: 500 !important;
   color: #008b8b !important;
   line-height: 1.25 !important;
-  letter-spacing: -0.02em !important;
+  letter-spacing: 0.02em !important;
   -webkit-text-stroke: 0 !important;
   text-stroke: 0 !important;
   text-transform: none;
@@ -328,7 +328,7 @@
 
 .page-section-divider.modal-view .section-divider-tag-text {
   font-size: clamp(28px, 3.5vw, 32px) !important;
-  letter-spacing: -0.02em !important;
+  letter-spacing: 0.02em !important;
   -webkit-text-stroke: 0 !important;
   text-stroke: 0 !important;
 }

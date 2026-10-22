@@ -845,7 +845,7 @@
   font-family: var(--font-heading) !important;
   font-size: clamp(24px, 3.2vw, 28px) !important;
   font-weight: 500 !important;
-  letter-spacing: -0.02em !important;
+  letter-spacing: 0.02em !important;
   color: #121212 !important;
   -webkit-text-stroke: 0px !important;
   text-stroke: 0px !important;
@@ -1026,7 +1026,7 @@
   font-family: var(--font-heading) !important;
   font-size: clamp(24px, 3.2vw, 28px) !important;
   font-weight: 500 !important;
-  letter-spacing: -0.02em !important;
+  letter-spacing: 0.02em !important;
   color: #121212 !important;
   -webkit-text-stroke: 0px !important;
   text-stroke: 0px !important;
@@ -1112,6 +1112,62 @@
 .v2-theme .page-section-divider.modal-view .section-divider-stats-row.metrics-count-2 .section-divider-stat-item {
   max-width: 600px !important;
   flex: 1 1 0 !important;
+}
+
+/* Impact Section Centered Heading */
+.section-divider-stats-heading-wrap {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  box-sizing: border-box;
+}
+
+.section-divider-stats-heading {
+  font-family: var(--font-heading), 'Plus Jakarta Sans', sans-serif !important;
+  font-size: clamp(28px, 3.2vw, 38px);
+  font-weight: 500;
+  letter-spacing: -0.02em;
+  color: #121212;
+  margin: 0;
+  padding: 0;
+  text-align: center;
+  line-height: 1.15;
+}
+
+.page-section-divider.modal-view .section-divider-stats-heading-wrap,
+.v2-theme .page-section-divider.modal-view .section-divider-stats-heading-wrap {
+  max-width: 1380px !important;
+  margin: 1.5rem auto 1.5rem auto !important;
+  padding: 0 2rem !important;
+}
+
+.page-section-divider.modal-view .section-divider-stats-heading-wrap + .section-divider-stats-row,
+.v2-theme .page-section-divider.modal-view .section-divider-stats-heading-wrap + .section-divider-stats-row {
+  margin-top: 0 !important;
+}
+
+.page-section-divider.preview-view .section-divider-stats-heading-wrap,
+.v2-theme .page-section-divider.preview-view .section-divider-stats-heading-wrap {
+  width: 100% !important;
+  max-width: 100% !important;
+  margin: 1.75rem 0 1.25rem 0 !important;
+  padding: 0 !important;
+}
+
+.page-section-divider.preview-view .section-divider-stats-heading-wrap + .section-divider-stats-row,
+.v2-theme .page-section-divider.preview-view .section-divider-stats-heading-wrap + .section-divider-stats-row {
+  margin-top: 0 !important;
+}
+
+.page-section-divider.preview-view .section-divider-stats-heading,
+.v2-theme .page-section-divider.preview-view .section-divider-stats-heading {
+  font-size: clamp(22px, 2.5vw, 28px);
+}
+
+.section-divider-stat-item > .annotation-chip-row:first-child {
+  margin-top: 0 !important;
 }
 
 

@@ -7,7 +7,7 @@ interface GenericWhiteCardProps {
   title: string;
   subline?: string;
   annotations: { markerNumber: number; title: string; text: string }[];
-  stats: { chip: string; text: string; stat: string; statLabel: string }[];
+  stats: { chip: string; text: string; stat?: string; statLabel?: string; sub?: React.ReactNode }[];
   image: string;
 }
 
@@ -143,7 +143,7 @@ export default function GenericWhiteCard({ title, subline, annotations, stats, i
                   }}>
                     {statItem.chip}
                   </span>
-                  <strong style={{ color: 'var(--color-matte-black, #25282e)' }}>{statItem.stat}</strong>
+                  {statItem.stat && <strong style={{ color: 'var(--color-matte-black, #25282e)' }}>{statItem.stat}</strong>}
                 </h4>
                 <p className="guertin-card-desc" style={{ color: '#555555' }}>
                   {(statItem as any).sub || statItem.text}
