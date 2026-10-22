@@ -555,7 +555,7 @@ h1, h2, h3, h4, h5, h6 {
   letter-spacing: 0.08em !important;
   height: 3.43rem !important; /* +5% taller */
   padding: 0 1.98rem !important; /* +5% padding */
-  background: rgba(242, 144, 143, 0.8) !important; /* bold headline color #f2908f at 0.8 opacity */
+  background: rgba(245, 173, 173, 0.8) !important; /* 15% brighter peach color #f5adad at 0.8 opacity */
   color: #000000 !important;
   -webkit-text-fill-color: #000000 !important;
   border: none !important;
@@ -586,7 +586,7 @@ h1, h2, h3, h4, h5, h6 {
 .v2-theme .hero-ctas-outside .btn-primary-outline:hover,
 .hire-btn-primary:hover,
 .v2-theme .face-cta:hover {
-  background: rgba(242, 144, 143, 0.95) !important;
+  background: rgba(245, 173, 173, 0.95) !important;
   border: none !important;
   border-color: transparent !important;
   color: #000000 !important;
@@ -1351,7 +1351,7 @@ h1, h2, h3, h4, h5, h6 {
   .v2-theme .hero-ctas-outside .btn-primary-outline,
   .v2-theme .face-cta,
   .hire-btn-primary {
-    background: #f2908f !important; /* full color opacity on mobile */
+    background: #f5adad !important; /* 15% brighter brand peach (#f5adad) full color opacity on mobile */
     height: 3.09rem !important; /* 10% shorter height */
     width: 80% !important; /* 20% shorter in width than full container/headline width */
     max-width: 80% !important;

@@ -57,9 +57,9 @@ export default function EditorialStatement() {
           .prefooter-btn-primary:hover svg {
             stroke: #000000 !important;
           }
-          /* Primary CTA: bold headline color #f2908f with 20% less opacity (0.80), no shadow */
+          /* Primary CTA: 15% brighter peach color #f5adad with 20% less opacity (0.80), no shadow */
           .prefooter-section .prefooter-btn-primary.face-cta {
-            background: rgba(242, 144, 143, 0.8) !important;
+            background: rgba(245, 173, 173, 0.8) !important;
             border: none !important;
             border-color: transparent !important;
             color: #000000 !important;
@@ -67,7 +67,7 @@ export default function EditorialStatement() {
             box-shadow: none !important;
           }
           .prefooter-section .prefooter-btn-primary.face-cta:hover {
-            background: rgba(242, 144, 143, 0.95) !important;
+            background: rgba(245, 173, 173, 0.95) !important;
             border: none !important;
             border-color: transparent !important;
             color: #000000 !important;
@@ -81,7 +81,7 @@ export default function EditorialStatement() {
             }
             .prefooter-section .prefooter-btn-primary.face-cta,
             .prefooter-btn-primary {
-              background: #f2908f !important; /* full color opacity on mobile */
+              background: #f5adad !important; /* 15% brighter brand peach (#f5adad) full color opacity on mobile */
               height: 3.09rem !important; /* 10% shorter height */
               width: 80% !important; /* 20% shorter width than full container */
               max-width: 80% !important;

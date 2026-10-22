@@ -123,7 +123,7 @@ export default function HeroV2() {
           .v2-theme .hero-ctas-outside .btn-primary-outline.btn-primary,
           .v2-theme .hero-ctas-outside .btn-primary,
           .v2-theme .hero-ctas-outside .btn-primary-outline {
-            background: #f2908f !important; /* full color opacity on mobile */
+            background: #f5adad !important; /* 15% brighter brand peach (#f5adad) full color opacity on mobile */
             height: 3.09rem !important; /* 10% shorter height */
             width: 80% !important; /* 20% shorter in width than full container/headline width */
             max-width: 80% !important;
@@ -147,9 +147,9 @@ export default function HeroV2() {
             letter-spacing: 0.02em !important;
           }
         }
-        /* Primary CTA: bold headline color #f2908f with 20% less opacity (0.80), no white stroke */
+        /* Primary CTA: 15% brighter peach color #f5adad with 20% less opacity (0.80), no white stroke */
         .v2-theme .hero-ctas-outside .btn-primary-outline.btn-primary {
-          background: rgba(242, 144, 143, 0.8) !important;
+          background: rgba(245, 173, 173, 0.8) !important;
           border: none !important;
           border-color: transparent !important;
           color: #000000 !important;
@@ -157,7 +157,7 @@ export default function HeroV2() {
           font-weight: 700 !important;
         }
         .v2-theme .hero-ctas-outside .btn-primary-outline.btn-primary:hover {
-          background: rgba(242, 144, 143, 0.95) !important;
+          background: rgba(245, 173, 173, 0.95) !important;
           border: none !important;
           border-color: transparent !important;
           color: #000000 !important;
