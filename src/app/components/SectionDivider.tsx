@@ -95,6 +95,13 @@ export default function SectionDivider({
 
       {statsTitle && (
         <div className="section-divider-stats-heading-wrap">
+          <motion.div 
+            initial={{ opacity: 0, scaleX: 0.8 }}
+            whileInView={{ opacity: 0.85, scaleX: 1 }}
+            viewport={{ once: true, amount: 0.5 }}
+            transition={{ duration: 0.6, ease: [0.16, 1, 0.3, 1] }}
+            className="section-divider-stats-decor-line" 
+          />
           <motion.h3 
             initial={{ y: 15, opacity: 0 }}
             whileInView={{ y: 0, opacity: 1 }}

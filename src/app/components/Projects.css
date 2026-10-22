@@ -1123,10 +1123,19 @@
 .section-divider-stats-heading-wrap {
   width: 100%;
   display: flex;
+  flex-direction: column;
   justify-content: center;
   align-items: center;
   text-align: center;
   box-sizing: border-box;
+}
+
+.section-divider-stats-decor-line {
+  width: 60px;
+  height: 1px;
+  background-color: #2d3139;
+  margin: 0 auto 1.1rem auto;
+  opacity: 0.85;
 }
 
 .section-divider-stats-heading {
