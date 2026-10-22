@@ -34,7 +34,7 @@ export default function ProjectsV2({ initialProjects = [] }: ProjectsV2Props) {
       hoverLabel: 'Tap to Zoom',
       annotations: [
         { markerNumber: 1, title: 'Locked Template', text: 'Anyone can make an on-brand poster in minutes.' },
-        { markerNumber: 2, title: 'AI Assistant', text: 'An AI agent can also fill in the fields for you, faster still.' },
+        { markerNumber: 2, title: 'Simple by default, deep on demand', text: 'The 3-step flow covers most posters; the full editor with placement controls is one click away, not in the way.' },
         { markerNumber: 3, title: 'Human in Control', text: 'The poster’s owner reviews and approves everything.' }
       ],
       stats: [
@@ -245,11 +245,11 @@ export default function ProjectsV2({ initialProjects = [] }: ProjectsV2Props) {
                   <div className="narrative-block">
                     <div style={{
                       fontFamily: 'var(--font-mono), monospace',
-                      fontSize: '12px',
+                      fontSize: '11px',
                       fontWeight: 600,
                       letterSpacing: '0.08em',
                       textTransform: 'uppercase',
-                      color: 'var(--color-primary-cyan, #008b8b)',
+                      color: 'var(--accent, #3ba3b8)',
                       marginBottom: '10px'
                     }}>
                       BRIEF
@@ -258,7 +258,7 @@ export default function ProjectsV2({ initialProjects = [] }: ProjectsV2Props) {
                       fontFamily: 'var(--font-body), sans-serif',
                       fontSize: '14px',
                       lineHeight: '1.65',
-                      color: '#4b5563',
+                      color: 'var(--color-body-dark, #2b3038)',
                       margin: 0
                     }}>
                       The Terry Fox Run happens in many cities at once. Every local team needs posters with its own city, date, location and registration link — and every poster used to be designed by hand. Designers became the bottleneck, teams waited days, and keeping every poster on-brand depended on whoever made it.
@@ -268,11 +268,11 @@ export default function ProjectsV2({ initialProjects = [] }: ProjectsV2Props) {
                   <div className="narrative-block">
                     <div style={{
                       fontFamily: 'var(--font-mono), monospace',
-                      fontSize: '12px',
+                      fontSize: '11px',
                       fontWeight: 600,
                       letterSpacing: '0.08em',
                       textTransform: 'uppercase',
-                      color: 'var(--color-primary-cyan, #008b8b)',
+                      color: 'var(--accent, #3ba3b8)',
                       marginBottom: '10px'
                     }}>
                       DECISIONS
@@ -281,7 +281,7 @@ export default function ProjectsV2({ initialProjects = [] }: ProjectsV2Props) {
                       fontFamily: 'var(--font-body), sans-serif',
                       fontSize: '14px',
                       lineHeight: '1.65',
-                      color: '#4b5563',
+                      color: 'var(--color-body-dark, #2b3038)',
                       margin: 0,
                       display: 'flex',
                       flexDirection: 'column',
@@ -298,24 +298,28 @@ export default function ProjectsV2({ initialProjects = [] }: ProjectsV2Props) {
                   <div className="narrative-block">
                     <div style={{
                       fontFamily: 'var(--font-mono), monospace',
-                      fontSize: '12px',
+                      fontSize: '11px',
                       fontWeight: 600,
                       letterSpacing: '0.08em',
                       textTransform: 'uppercase',
-                      color: 'var(--color-primary-cyan, #008b8b)',
+                      color: 'var(--accent, #3ba3b8)',
                       marginBottom: '10px'
                     }}>
                       IMPACT
                     </div>
-                    <p style={{
+                    <div style={{
                       fontFamily: 'var(--font-body), sans-serif',
                       fontSize: '14px',
                       lineHeight: '1.65',
-                      color: '#4b5563',
-                      margin: 0
+                      color: 'var(--color-body-dark, #2b3038)',
+                      margin: 0,
+                      display: 'flex',
+                      flexDirection: 'column',
+                      gap: '8px'
                     }}>
-                      Work that took days of back-and-forth now takes minutes, done by the local teams themselves. Every city gets the same on-brand poster set in all five formats, and designers are out of the loop for routine posters entirely.
-                    </p>
+                      <div>• <strong>Minutes instead of days</strong> — work that took days of back-and-forth now takes minutes, done by local teams themselves without designers in the loop.</div>
+                      <div>• <strong>Agent-ready architecture</strong> — the clean underlying structure allows modern AI agents to operate the tool and populate fields directly, speeding up the workflow even further when batches of posters need to be generated.</div>
+                    </div>
                   </div>
                 </div>
               )}

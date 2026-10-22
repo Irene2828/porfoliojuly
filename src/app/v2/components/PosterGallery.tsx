@@ -98,17 +98,17 @@ export default function PosterGallery({ images }: { images: PosterGalleryImage[]
           padding: 14px 18px;
           background: #fafbfc;
           border-top: 1px solid rgba(18, 18, 18, 0.08);
-          font-family: var(--font-body), 'Plus Jakarta Sans', sans-serif;
+          font-family: var(--font-body), -apple-system, sans-serif;
           font-size: 13.5px;
-          line-height: 1.5;
-          color: #374151;
+          line-height: 1.55;
+          color: var(--color-body-dark, #2b3038);
           text-align: left;
         }
         .poster-gallery-thumbs {
           display: flex;
           justify-content: center;
           align-items: center;
-          gap: 12px;
+          gap: 10px;
           margin-top: 14px;
           padding: 4px 8px;
         }
@@ -120,16 +120,20 @@ export default function PosterGallery({ images }: { images: PosterGalleryImage[]
           border-radius: 20px;
           border: 1px solid #d1d5db;
           background: #f9fafb;
-          color: #4b5563;
+          color: var(--color-heading-silver, #4a5461);
           font-family: var(--font-mono), monospace;
           font-size: 11px;
           cursor: pointer;
           transition: all 0.2s ease;
         }
+        .poster-gallery-thumb-btn:hover {
+          border-color: var(--accent, #3ba3b8);
+          color: var(--color-matte-black, #1c1e23);
+        }
         .poster-gallery-thumb-btn.active {
-          background: #1A2639;
+          background: var(--color-matte-black, #1c1e23);
           color: #ffffff;
-          border-color: #1A2639;
+          border-color: var(--color-matte-black, #1c1e23);
           font-weight: 600;
         }
         .poster-gallery-thumb-dot {
