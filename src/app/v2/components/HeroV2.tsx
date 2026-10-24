@@ -77,7 +77,8 @@ export default function HeroV2() {
             text-align: left !important;
             margin-left: 0 !important;
             margin-right: 0 !important;
-            margin-top: 1.4rem !important; /* headline-body spacing, tightened 30% */
+            margin-top: 1.26rem !important; /* headline-body spacing, tightened 10% from 1.4rem */
+            line-height: 1.705 !important; /* body text lines, increased 10% from 1.55 */
           }
           .v2-theme .hero-image-wrapper,
           .hero-image-wrapper {
@@ -87,12 +88,12 @@ export default function HeroV2() {
           }
           .v2-theme .hero-image-container,
           .hero-image-container {
-            transform: scale(0.75) !important;
+            transform: scale(0.6375) !important; /* circled image 15% smaller */
             transform-origin: center center !important;
           }
           .v2-theme .hero-content,
           .hero-content {
-            margin-top: 0rem !important;
+            margin-top: 1.8rem !important; /* headline lowered 20% down in mobile hero */
           }
           .v2-theme .hero-container,
           .hero-container {
@@ -100,22 +101,22 @@ export default function HeroV2() {
           }
           .v2-theme .headline-mobile,
           .headline-mobile {
-            line-height: 1.17 !important;
+            line-height: 0.995 !important; /* tightened 15% from 1.17 */
             gap: 0px !important;
           }
           .v2-theme .headline-line,
           .headline-line {
             display: block !important;
-            line-height: 1.17 !important;
+            line-height: 0.995 !important; /* tightened 15% from 1.17 */
           }
           .v2-theme .headline-pair-gap,
           .headline-pair-gap {
-            margin-top: 0.45rem !important;
+            margin-top: 0rem !important; /* same spacing between 2 & 3 as between 1 & 2 */
           }
           .v2-theme .hero-ctas,
           .v2-theme .hero-ctas-outside {
-            margin-top: 1.75rem !important; /* body-buttons spacing +25% */
-            gap: 0.85rem !important;
+            margin-top: 1.575rem !important; /* body-buttons spacing tightened 10% from 1.75rem */
+            gap: 0.765rem !important; /* button-button spacing tightened 10% from 0.85rem */
             justify-content: center !important;
             align-items: center !important;
             width: 100% !important;
@@ -130,6 +131,7 @@ export default function HeroV2() {
             margin: 0 auto !important;
             justify-content: center !important;
             white-space: nowrap !important;
+            border-radius: 0px !important;
           }
           .v2-theme .hero-ring-badge,
           .hero-ring-badge,
@@ -148,23 +150,38 @@ export default function HeroV2() {
           }
         }
         /* Primary CTA: vibrant high-contrast peach #f39999 at 0.85 opacity for rich contrast against dark bg */
-        .v2-theme .hero-ctas-outside .btn-primary-outline.btn-primary {
+        .v2-theme .hero-ctas-outside .btn-primary-outline.btn-primary,
+        .v2-theme .hero-ctas-outside .btn-primary,
+        .v2-theme .hero-ctas-outside .btn-primary-outline,
+        .hero-ctas-outside .btn-primary-outline {
           background: rgba(243, 153, 153, 0.85) !important;
           border: none !important;
           border-color: transparent !important;
           color: #000000 !important;
           -webkit-text-fill-color: #000000 !important;
           font-weight: 700 !important;
+          border-radius: 0px !important;
         }
-        .v2-theme .hero-ctas-outside .btn-primary-outline.btn-primary:hover {
+        .v2-theme .hero-ctas-outside .btn-primary-outline.btn-primary:hover,
+        .v2-theme .hero-ctas-outside .btn-primary:hover,
+        .v2-theme .hero-ctas-outside .btn-primary-outline:hover,
+        .hero-ctas-outside .btn-primary-outline:hover {
           background: rgba(243, 153, 153, 0.98) !important;
           border: none !important;
           border-color: transparent !important;
           color: #000000 !important;
           -webkit-text-fill-color: #000000 !important;
+          border-radius: 0px !important;
         }
-        .v2-theme .hero-ctas-outside .btn-primary-outline.btn-primary:hover svg {
+        .v2-theme .hero-ctas-outside .btn-primary-outline.btn-primary:hover svg,
+        .v2-theme .hero-ctas-outside .btn-primary-outline:hover svg {
           stroke: #000000 !important;
+        }
+        /* Secondary CTA in hero: slightly increased letter spacing on all screens */
+        .v2-theme .hero-ctas-outside .btn-secondary-stacked,
+        .hero-ctas-outside .btn-secondary-stacked,
+        .btn-secondary-stacked {
+          letter-spacing: 0.12em !important;
         }
       `}</style>
 
@@ -191,15 +208,15 @@ export default function HeroV2() {
                   </span>
 
                   {/* Mobile Headline (3 lines, left-aligned) */}
-                  <span className="headline-mobile" style={{ gap: '0px', lineHeight: 1.17, color: '#f7d6d0' }}>
-                    <span className="headline-line" style={{ lineHeight: 1.17, color: '#f7d6d0', WebkitTextFillColor: '#f7d6d0' }}>
+                  <span className="headline-mobile" style={{ gap: '0px', lineHeight: 0.995, color: '#f7d6d0' }}>
+                    <span className="headline-line" style={{ lineHeight: 0.995, color: '#f7d6d0', WebkitTextFillColor: '#f7d6d0' }}>
                       <strong className="headline-mockup-bold" style={{ fontWeight: 700, letterSpacing: '0.025em', color: '#f2908f', WebkitTextFillColor: '#f2908f' }}>Websites</strong>{' '}
                       <span className="headline-mockup-light" style={{ fontWeight: 300, color: '#f7d6d0', WebkitTextFillColor: '#f7d6d0' }}>that work</span>
                     </span>
-                    <span className="headline-line" style={{ lineHeight: 1.17, color: '#f7d6d0', WebkitTextFillColor: '#f7d6d0' }}>
+                    <span className="headline-line" style={{ lineHeight: 0.995, color: '#f7d6d0', WebkitTextFillColor: '#f7d6d0' }}>
                       <span className="headline-mockup-light" style={{ fontWeight: 300, color: '#f7d6d0', WebkitTextFillColor: '#f7d6d0' }}>harder.</span>
                     </span>
-                    <span className="headline-line headline-pair-gap" style={{ lineHeight: 1.17, marginTop: '0.45rem', color: '#f7d6d0', WebkitTextFillColor: '#f7d6d0' }}>
+                    <span className="headline-line headline-pair-gap" style={{ lineHeight: 0.995, marginTop: '0rem', color: '#f7d6d0', WebkitTextFillColor: '#f7d6d0' }}>
                       <strong className="headline-mockup-bold" style={{ fontWeight: 700, letterSpacing: '0.025em', color: '#f2908f', WebkitTextFillColor: '#f2908f' }}>Tools</strong>{' '}
                       <span className="headline-mockup-light" style={{ fontWeight: 300, color: '#f7d6d0', WebkitTextFillColor: '#f7d6d0' }}>that save hours.</span>
                     </span>

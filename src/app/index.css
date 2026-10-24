@@ -501,7 +501,7 @@ h1, h2, h3, h4, h5, h6 {
     font-size: clamp(1.85rem, 9.35vw, 3.46rem) !important; /* 10% smaller on mobile */
     font-weight: 400 !important;
     letter-spacing: -0.02em !important;
-    line-height: 1.17 !important; /* +15% line spacing from baseline 1.0175 */
+    line-height: 0.995 !important; /* tightened 15% from 1.17 */
     max-width: 100% !important;
     color: #f7d6d0 !important;
     -webkit-text-fill-color: #f7d6d0 !important;
@@ -531,13 +531,13 @@ h1, h2, h3, h4, h5, h6 {
     white-space: nowrap !important;
     max-width: 100% !important;
     font-size: inherit !important;
-    line-height: 1.17 !important;
+    line-height: 0.995 !important; /* tightened 15% from 1.17 */
     text-align: left !important;
     align-self: flex-start !important;
   }
 
   .v2-theme .headline-pair-gap {
-    margin-top: 0.45rem !important;
+    margin-top: 0rem !important; /* same spacing between 2 & 3 as between 1 & 2 */
   }
 
   .v2-theme .headline-mockup-bold {
@@ -668,7 +668,7 @@ h1, h2, h3, h4, h5, h6 {
   font-size: 12.47px !important;
   font-weight: 500 !important; /* Lighter weight than primary CTA 1 */
   text-transform: uppercase !important;
-  letter-spacing: 0.08em !important;
+  letter-spacing: 0.12em !important; /* slightly increased letter-spacing */
   background: transparent !important;
   color: #e5e7eb !important;
   -webkit-text-fill-color: #e5e7eb !important;
@@ -1315,7 +1315,7 @@ h1, h2, h3, h4, h5, h6 {
   /* Lower headline, body, and CTAs - centered on mobile */
   .v2-theme .hero-content {
     order: 1 !important;
-    margin-top: 0rem !important;
+    margin-top: 1.8rem !important; /* lowered headline 20% down in mobile hero */
     width: 100% !important;
     display: flex !important;
     flex-direction: column !important;
@@ -1350,9 +1350,9 @@ h1, h2, h3, h4, h5, h6 {
 
   .v2-theme .hero-frame-paragraph {
     text-align: left !important;
-    margin-top: 2rem !important; /* Doubled spacing between headline and body */
+    margin-top: 1.26rem !important; /* headline-body spacing tightened 10% from 1.4rem */
     font-size: clamp(0.98rem, 2.7vw, 1.1rem) !important;
-    line-height: 1.55 !important;
+    line-height: 1.705 !important; /* body text lines, increased 10% from 1.55 */
     max-width: 100% !important;
     margin-left: 0 !important;
     margin-right: 0 !important;
@@ -1361,14 +1361,14 @@ h1, h2, h3, h4, h5, h6 {
 
   .v2-theme .hero-ctas,
   .v2-theme .hero-ctas-outside {
-    margin-top: 2rem !important; /* Doubled spacing between body and buttons */
+    margin-top: 1.575rem !important; /* body-buttons spacing tightened 10% from 1.75rem */
     margin-bottom: 0 !important;
     width: 100% !important;
     display: flex !important;
     flex-direction: column !important;
     align-items: center !important;
     justify-content: center !important;
-    gap: 0.85rem !important;
+    gap: 0.765rem !important; /* button-button spacing tightened 10% from 0.85rem */
   }
 
   .v2-theme .hero-ctas-outside .btn-primary-outline,
@@ -1382,6 +1382,7 @@ h1, h2, h3, h4, h5, h6 {
     margin-right: auto !important;
     justify-content: center !important;
     white-space: nowrap !important;
+    border-radius: 0px !important;
   }
 
   /* On mobile: shapes shrunk 25% with image to fit neatly within bounds */

@@ -88,6 +88,7 @@ export default function EditorialStatement() {
               margin: 0 auto !important;
               justify-content: center !important;
               white-space: nowrap !important;
+              border-radius: 0px !important;
             }
             .prefooter-cta-container {
               justify-content: center !important;
