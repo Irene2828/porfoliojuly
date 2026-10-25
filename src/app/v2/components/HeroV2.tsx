@@ -115,7 +115,7 @@ export default function HeroV2() {
           }
           .v2-theme .hero-ctas,
           .v2-theme .hero-ctas-outside {
-            margin-top: 1.575rem !important; /* body-buttons spacing tightened 10% from 1.75rem */
+            margin-top: 1.81125rem !important; /* body-buttons spacing +15% from 1.575rem */
             gap: 0.765rem !important; /* button-button spacing tightened 10% from 0.85rem */
             justify-content: center !important;
             align-items: center !important;

@@ -1361,7 +1361,7 @@ h1, h2, h3, h4, h5, h6 {
 
   .v2-theme .hero-ctas,
   .v2-theme .hero-ctas-outside {
-    margin-top: 1.575rem !important; /* body-buttons spacing tightened 10% from 1.75rem */
+    margin-top: 1.81125rem !important; /* body-buttons spacing +15% from 1.575rem */
     margin-bottom: 0 !important;
     width: 100% !important;
     display: flex !important;
