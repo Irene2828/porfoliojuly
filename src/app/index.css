@@ -998,7 +998,7 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 /* Prefooter closing headline: matching hero unbolded text color */
-.v2-theme .prefooter-section h2,
+.v2-theme .prefooter-section:not(.about-cta-section) h2,
 .v2-theme .prefooter-closing-line,
 .v2-theme .prefooter-closing-subtext {
   color: rgba(255, 255, 255, 0.8) !important;
