@@ -25,9 +25,9 @@ export default function AboutPage() {
               <a
                 href="mailto:iryna@irynasheremeta.com"
                 className="btn btn-primary btn-primary-outline"
-                style={{ display: 'inline-flex', alignItems: 'center', gap: '0.5rem' }}
+                style={{ display: 'inline-flex', alignItems: 'center', gap: '0.5rem', backgroundColor: '#EC9177', borderColor: '#EC9177', color: '#000000' }}
               >
-                <span>SEND YOUR PROBLEM MY WAY</span>
+                <span style={{ color: '#000000' }}>SEND YOUR PROBLEM MY WAY</span>
                 <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round" style={{ transform: 'translateY(-0.5px)' }}>
                   <line x1="7" y1="17" x2="17" y2="7"></line>
                   <polyline points="7 7 17 7 17 17"></polyline>
