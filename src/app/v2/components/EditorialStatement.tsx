@@ -21,6 +21,14 @@ export default function EditorialStatement() {
           .prefooter-section {
             background-color: #121316 !important;
           }
+          .prefooter-closing-line {
+            color: rgba(255, 255, 255, 0.8) !important;
+            -webkit-text-fill-color: rgba(255, 255, 255, 0.8) !important;
+          }
+          .prefooter-closing-subtext {
+            color: rgba(255, 255, 255, 0.8) !important;
+            -webkit-text-fill-color: rgba(255, 255, 255, 0.8) !important;
+          }
           .prefooter-btn-primary {
             font-family: var(--font-label), sans-serif !important;
             font-size: 0.803rem !important;
@@ -146,8 +154,8 @@ export default function EditorialStatement() {
               fontWeight: 400,
               letterSpacing: '-0.02em',
               lineHeight: 1.35,
-              color: '#f7d6d0',
-              WebkitTextFillColor: '#f7d6d0',
+              color: 'rgba(255, 255, 255, 0.8)',
+              WebkitTextFillColor: 'rgba(255, 255, 255, 0.8)',
               textAlign: 'center',
               margin: '0 0 3.5rem 0',
               maxWidth: '28ch',
@@ -165,8 +173,8 @@ export default function EditorialStatement() {
               fontWeight: 400,
               letterSpacing: '-0.02em',
               lineHeight: 1.55,
-              color: '#f7d6d0',
-              WebkitTextFillColor: '#f7d6d0',
+              color: 'rgba(255, 255, 255, 0.8)',
+              WebkitTextFillColor: 'rgba(255, 255, 255, 0.8)',
               textAlign: 'center',
               margin: '0 auto 2rem auto', /* 50% closer to button (was 4rem) */
               maxWidth: '46ch',

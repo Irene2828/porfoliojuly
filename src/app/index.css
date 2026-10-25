@@ -997,17 +997,23 @@ h1, h2, h3, h4, h5, h6 {
   -webkit-text-fill-color: rgba(0, 0, 0, 0.70) !important;
 }
 
-/* Prefooter closing headline: matching peach palette */
+/* Prefooter closing headline: matching hero unbolded text color */
 .v2-theme .prefooter-section h2,
-.v2-theme .prefooter-closing-line {
-  color: #f7d6d0 !important;
-  -webkit-text-fill-color: #f7d6d0 !important;
+.v2-theme .prefooter-closing-line,
+.v2-theme .prefooter-closing-subtext {
+  color: rgba(255, 255, 255, 0.8) !important;
+  -webkit-text-fill-color: rgba(255, 255, 255, 0.8) !important;
 }
 
 .v2-theme .prefooter-closing-line span {
   color: #f2908f !important;
   -webkit-text-fill-color: #f2908f !important;
   letter-spacing: 0.025em !important;
+}
+
+.v2-theme .prefooter-closing-subtext strong {
+  color: #f2908f !important;
+  -webkit-text-fill-color: #f2908f !important;
 }
 
 .v2-theme .hero-content {
