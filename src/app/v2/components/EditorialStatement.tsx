@@ -32,55 +32,56 @@ export default function EditorialStatement() {
           .prefooter-btn-primary {
             font-family: var(--font-label), sans-serif !important;
             font-size: 0.803rem !important;
-            font-weight: 700 !important;
+            font-weight: 600 !important;
             text-transform: uppercase !important;
             letter-spacing: 0.08em !important;
             justify-content: center;
             height: 3.43rem !important;
             padding: 0 1.98rem !important;
-            background: #f7d6d0 !important;
+            background: #f0a38d !important;
             color: #000000 !important;
             -webkit-text-fill-color: #000000 !important;
-            border: none !important;
-            border-color: transparent !important;
-            border-radius: 0px !important;
+            border: 1px solid #f0a38d !important;
+            border-radius: 40px !important;
             box-shadow: none !important;
             text-shadow: none !important;
             -webkit-font-smoothing: antialiased !important;
             -moz-osx-font-smoothing: grayscale !important;
-            transition: background 0.22s ease, border-color 0.22s ease, transform 0.2s ease, box-shadow 0.2s ease !important;
+            transition: all 0.25s ease !important;
             -webkit-text-stroke: 0 !important;
           }
           .prefooter-btn-primary svg {
             stroke: #000000 !important;
           }
           .prefooter-btn-primary:hover {
-            background: #fae4e0 !important;
-            border: none !important;
-            border-color: transparent !important;
+            background: #f0a38d !important;
+            border-color: #f0a38d !important;
             color: #000000 !important;
             -webkit-text-fill-color: #000000 !important;
-            box-shadow: none !important;
+            border-radius: 40px !important;
+            transform: translateY(-2px) !important;
+            box-shadow: 0 8px 24px rgba(240, 163, 141, 0.35) !important;
           }
           .prefooter-btn-primary:hover svg {
             stroke: #000000 !important;
           }
-          /* Primary CTA: vibrant high-contrast peach #f39999 at 0.85 opacity, no shadow */
+          /* Primary CTA: matching About Me hovered pill button style (#f0a38d, border-radius: 40px) */
           .prefooter-section .prefooter-btn-primary.face-cta {
-            background: rgba(243, 153, 153, 0.85) !important;
-            border: none !important;
-            border-color: transparent !important;
+            background: #f0a38d !important;
+            border: 1px solid #f0a38d !important;
+            border-radius: 40px !important;
             color: #000000 !important;
             -webkit-text-fill-color: #000000 !important;
             box-shadow: none !important;
           }
           .prefooter-section .prefooter-btn-primary.face-cta:hover {
-            background: rgba(243, 153, 153, 0.98) !important;
-            border: none !important;
-            border-color: transparent !important;
+            background: #f0a38d !important;
+            border-color: #f0a38d !important;
+            border-radius: 40px !important;
             color: #000000 !important;
             -webkit-text-fill-color: #000000 !important;
-            box-shadow: none !important;
+            transform: translateY(-2px) !important;
+            box-shadow: 0 8px 24px rgba(240, 163, 141, 0.35) !important;
           }
           @media (max-width: 767px) {
             .prefooter-closing-line {
@@ -89,14 +90,16 @@ export default function EditorialStatement() {
             }
             .prefooter-section .prefooter-btn-primary.face-cta,
             .prefooter-btn-primary {
-              background: #f39999 !important; /* vibrant high-contrast peach (#f39999) full color opacity on mobile */
+              background: #f0a38d !important;
               height: 3.09rem !important; /* 10% shorter height */
               width: 80% !important; /* 20% shorter width than full container */
               max-width: 80% !important;
               margin: 0 auto !important;
               justify-content: center !important;
               white-space: nowrap !important;
-              border-radius: 0px !important;
+              border-radius: 40px !important;
+              border: 1px solid #f0a38d !important;
+              box-shadow: none !important;
             }
             .prefooter-cta-container {
               justify-content: center !important;

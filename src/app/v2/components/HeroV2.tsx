@@ -124,14 +124,16 @@ export default function HeroV2() {
           .v2-theme .hero-ctas-outside .btn-primary-outline.btn-primary,
           .v2-theme .hero-ctas-outside .btn-primary,
           .v2-theme .hero-ctas-outside .btn-primary-outline {
-            background: #f39999 !important; /* vibrant high-contrast peach (#f39999) full color opacity on mobile */
+            background: #f0a38d !important;
             height: 3.09rem !important; /* 10% shorter height */
             width: 80% !important; /* 20% shorter in width than full container/headline width */
             max-width: 80% !important;
             margin: 0 auto !important;
             justify-content: center !important;
             white-space: nowrap !important;
-            border-radius: 0px !important;
+            border-radius: 40px !important;
+            border: 1px solid #f0a38d !important;
+            box-shadow: none !important;
           }
           .v2-theme .hero-ring-badge,
           .hero-ring-badge,
@@ -149,29 +151,32 @@ export default function HeroV2() {
             letter-spacing: 0.02em !important;
           }
         }
-        /* Primary CTA: vibrant high-contrast peach #f39999 at 0.85 opacity for rich contrast against dark bg */
+        /* Primary CTA: matching About Me hovered pill button style (#f0a38d, border-radius: 40px) */
         .v2-theme .hero-ctas-outside .btn-primary-outline.btn-primary,
         .v2-theme .hero-ctas-outside .btn-primary,
         .v2-theme .hero-ctas-outside .btn-primary-outline,
         .hero-ctas-outside .btn-primary-outline {
-          background: rgba(243, 153, 153, 0.85) !important;
-          border: none !important;
-          border-color: transparent !important;
+          background: #f0a38d !important;
+          border: 1px solid #f0a38d !important;
           color: #000000 !important;
           -webkit-text-fill-color: #000000 !important;
-          font-weight: 700 !important;
-          border-radius: 0px !important;
+          font-weight: 600 !important;
+          border-radius: 40px !important;
+          box-shadow: none !important;
+          padding: 12px 26px !important;
+          transition: all 0.25s ease !important;
         }
         .v2-theme .hero-ctas-outside .btn-primary-outline.btn-primary:hover,
         .v2-theme .hero-ctas-outside .btn-primary:hover,
         .v2-theme .hero-ctas-outside .btn-primary-outline:hover,
         .hero-ctas-outside .btn-primary-outline:hover {
-          background: rgba(243, 153, 153, 0.98) !important;
-          border: none !important;
-          border-color: transparent !important;
+          background: #f0a38d !important;
+          border-color: #f0a38d !important;
           color: #000000 !important;
           -webkit-text-fill-color: #000000 !important;
-          border-radius: 0px !important;
+          border-radius: 40px !important;
+          transform: translateY(-2px) !important;
+          box-shadow: 0 8px 24px rgba(240, 163, 141, 0.35) !important;
         }
         .v2-theme .hero-ctas-outside .btn-primary-outline.btn-primary:hover svg,
         .v2-theme .hero-ctas-outside .btn-primary-outline:hover svg {

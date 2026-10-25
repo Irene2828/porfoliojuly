@@ -37,6 +37,25 @@ export default function Header() {
   return (
     <header className={`premium-header ${isScrolled ? 'header-scrolled' : ''}`}>
       <style>{`
+        .premium-header,
+        .v2-theme .premium-header {
+          background: #121316 !important;
+          background-color: #121316 !important;
+          border-bottom: 1px solid rgba(242, 144, 143, 0.18) !important;
+          box-shadow: none !important;
+          backdrop-filter: none !important;
+          -webkit-backdrop-filter: none !important;
+          transition: background 0.25s ease, backdrop-filter 0.25s ease, -webkit-backdrop-filter 0.25s ease, box-shadow 0.25s ease, border-bottom 0.25s ease !important;
+        }
+        .premium-header.header-scrolled,
+        .v2-theme .premium-header.header-scrolled {
+          background: rgba(18, 19, 22, 0.80) !important;
+          background-color: rgba(18, 19, 22, 0.80) !important;
+          border-bottom: 1px solid rgba(242, 144, 143, 0.22) !important;
+          box-shadow: 0 4px 24px rgba(0, 0, 0, 0.25) !important;
+          backdrop-filter: blur(20px) saturate(180%) !important;
+          -webkit-backdrop-filter: blur(20px) saturate(180%) !important;
+        }
         .v2-theme .premium-header .mobile-brand-title,
         .v2-theme .header-spacer-desktop a span:last-child {
           color: rgba(201, 206, 214, 0.7) !important;

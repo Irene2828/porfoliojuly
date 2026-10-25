@@ -573,17 +573,16 @@ h1, h2, h3, h4, h5, h6 {
 .v2-theme .face-cta {
   font-family: var(--font-label), sans-serif !important;
   font-size: 0.803rem !important; /* +5% larger */
-  font-weight: 700 !important; /* more bold weight than CTA 2 */
+  font-weight: 600 !important;
   text-transform: uppercase !important;
   letter-spacing: 0.08em !important;
   height: 3.43rem !important; /* +5% taller */
   padding: 0 1.98rem !important; /* +5% padding */
-  background: rgba(243, 153, 153, 0.85) !important; /* vibrant high-contrast peach #f39999 at 0.85 opacity */
+  background: #f0a38d !important;
   color: #000000 !important;
   -webkit-text-fill-color: #000000 !important;
-  border: none !important;
-  border-color: transparent !important;
-  border-radius: 0px !important;
+  border: 1px solid #f0a38d !important;
+  border-radius: 40px !important;
   box-shadow: none !important;
   text-shadow: none !important;
   -webkit-font-smoothing: antialiased !important;
@@ -609,14 +608,14 @@ h1, h2, h3, h4, h5, h6 {
 .v2-theme .hero-ctas-outside .btn-primary-outline:hover,
 .hire-btn-primary:hover,
 .v2-theme .face-cta:hover {
-  background: rgba(243, 153, 153, 0.98) !important;
-  border: none !important;
-  border-color: transparent !important;
+  background: #f0a38d !important;
+  border-color: #f0a38d !important;
+  border-radius: 40px !important;
   color: #000000 !important;
   -webkit-text-fill-color: #000000 !important;
-  box-shadow: none !important;
+  box-shadow: 0 8px 24px rgba(240, 163, 141, 0.35) !important;
   text-shadow: none !important;
-  transform: scale(1.03) !important;
+  transform: translateY(-2px) !important;
 }
 
 .v2-theme .hero-ctas-outside .btn-primary-outline:hover svg {
@@ -1088,15 +1087,13 @@ h1, h2, h3, h4, h5, h6 {
 
 /* Seamless Center Vignette & Frame-free Headline */
 .v2-theme .premium-header {
-  background: transparent !important;
+  background: #121316 !important;
+  background-color: #121316 !important;
   backdrop-filter: none !important;
   -webkit-backdrop-filter: none !important;
-  border-bottom: 1px solid rgba(255, 255, 255, 0.08) !important;
-  transition: background 0.3s cubic-bezier(0.16, 1, 0.3, 1),
-              backdrop-filter 0.3s cubic-bezier(0.16, 1, 0.3, 1),
-              -webkit-backdrop-filter 0.3s cubic-bezier(0.16, 1, 0.3, 1),
-              box-shadow 0.3s cubic-bezier(0.16, 1, 0.3, 1),
-              border-bottom-color 0.3s cubic-bezier(0.16, 1, 0.3, 1) !important;
+  border-bottom: 1px solid rgba(242, 144, 143, 0.18) !important;
+  box-shadow: none !important;
+  transition: none !important;
 }
 
 /* Off-white header elements (soft, not blinding full white) */
@@ -1152,11 +1149,12 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 .v2-theme .premium-header.header-scrolled {
-  background: rgba(18, 19, 22, 0.88) !important;
+  background: rgba(18, 19, 22, 0.80) !important;
+  background-color: rgba(18, 19, 22, 0.80) !important;
   backdrop-filter: blur(20px) saturate(180%) !important;
   -webkit-backdrop-filter: blur(20px) saturate(180%) !important;
   border-bottom: 1px solid rgba(242, 144, 143, 0.22) !important;
-  box-shadow: 0 4px 24px rgba(0, 0, 0, 0.3) !important;
+  box-shadow: 0 4px 24px rgba(0, 0, 0, 0.25) !important;
 }
 
 .v2-theme .header-drawer-content {
@@ -1206,10 +1204,12 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 @media (max-width: 900px) {
-  /* Header stroke bottom and doubled inner bottom padding on mobile */
   .v2-theme .premium-header,
   .premium-header {
+    background: #121316 !important;
+    background-color: #121316 !important;
     border-bottom: 1px solid rgba(242, 144, 143, 0.2) !important;
+    box-shadow: none !important;
     padding-top: 0.65rem !important;
     padding-bottom: 1.3rem !important; /* Doubled header inner bottom padding */
     height: auto !important;
@@ -1217,7 +1217,12 @@ h1, h2, h3, h4, h5, h6 {
   }
   .v2-theme .premium-header.header-scrolled,
   .premium-header.header-scrolled {
+    background: rgba(18, 19, 22, 0.80) !important;
+    background-color: rgba(18, 19, 22, 0.80) !important;
     border-bottom: 1px solid rgba(242, 144, 143, 0.22) !important;
+    box-shadow: 0 4px 24px rgba(0, 0, 0, 0.25) !important;
+    backdrop-filter: blur(20px) saturate(180%) !important;
+    -webkit-backdrop-filter: blur(20px) saturate(180%) !important;
     padding-top: 0.65rem !important;
     padding-bottom: 1.3rem !important;
   }
@@ -1380,7 +1385,7 @@ h1, h2, h3, h4, h5, h6 {
   .v2-theme .hero-ctas-outside .btn-primary-outline,
   .v2-theme .face-cta,
   .hire-btn-primary {
-    background: #f39999 !important; /* vibrant high-contrast peach (#f39999) full color opacity on mobile */
+    background: #f0a38d !important;
     height: 3.09rem !important; /* 10% shorter height */
     width: 80% !important; /* 20% shorter in width than full container/headline width */
     max-width: 80% !important;
@@ -1388,7 +1393,9 @@ h1, h2, h3, h4, h5, h6 {
     margin-right: auto !important;
     justify-content: center !important;
     white-space: nowrap !important;
-    border-radius: 0px !important;
+    border-radius: 40px !important;
+    border: 1px solid #f0a38d !important;
+    box-shadow: none !important;
   }
 
   /* On mobile: shapes shrunk 25% with image to fit neatly within bounds */
