@@ -418,8 +418,8 @@ h1, h2, h3, h4, h5, h6 {
   .v2-theme .headline-mockup-light,
   .v2-theme .headline-light {
     font-weight: 300 !important;
-    color: #f7d6d0 !important;
-    -webkit-text-fill-color: #f7d6d0 !important;
+    color: rgba(255, 255, 255, 0.8) !important;
+    -webkit-text-fill-color: rgba(255, 255, 255, 0.8) !important;
   }
 }
 
@@ -503,8 +503,8 @@ h1, h2, h3, h4, h5, h6 {
     letter-spacing: -0.02em !important;
     line-height: 0.995 !important; /* tightened 15% from 1.17 */
     max-width: 100% !important;
-    color: #f7d6d0 !important;
-    -webkit-text-fill-color: #f7d6d0 !important;
+    color: rgba(255, 255, 255, 0.8) !important;
+    -webkit-text-fill-color: rgba(255, 255, 255, 0.8) !important;
     -webkit-text-stroke: 0px transparent !important;
     -webkit-text-stroke-width: 0px !important;
     text-stroke: 0px transparent !important;
@@ -549,8 +549,8 @@ h1, h2, h3, h4, h5, h6 {
 
   .v2-theme .headline-mockup-light {
     font-weight: 300 !important;
-    color: #f7d6d0 !important;
-    -webkit-text-fill-color: #f7d6d0 !important;
+    color: rgba(255, 255, 255, 0.8) !important;
+    -webkit-text-fill-color: rgba(255, 255, 255, 0.8) !important;
   }
 
   .v2-theme .hero-teal-concentric-rings {
@@ -624,21 +624,21 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 .v2-theme .hero-frame-paragraph {
-  color: #f7d6d0 !important;
-  -webkit-text-fill-color: #f7d6d0 !important;
+  color: rgba(201, 206, 214, 0.7) !important;
+  -webkit-text-fill-color: rgba(201, 206, 214, 0.7) !important;
   opacity: 1 !important;
 }
 
 .v2-theme .hero-frame-paragraph .hero-body-bold {
-  color: #f7d6d0 !important;
-  -webkit-text-fill-color: #f7d6d0 !important;
+  color: rgba(201, 206, 214, 0.7) !important;
+  -webkit-text-fill-color: rgba(201, 206, 214, 0.7) !important;
   font-weight: 700 !important;
 }
 
 .v2-theme .hero-frame-paragraph em {
   font-style: italic !important;
-  color: #f7d6d0 !important;
-  -webkit-text-fill-color: #f7d6d0 !important;
+  color: rgba(201, 206, 214, 0.7) !important;
+  -webkit-text-fill-color: rgba(201, 206, 214, 0.7) !important;
 }
 
 .hero-offer-item {
@@ -653,7 +653,7 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 .hero-offer-item:hover {
-  text-decoration-color: #f7d6d0 !important;
+  text-decoration-color: #fed5b8 !important;
 }
 
 @media (min-width: 901px) {
@@ -670,8 +670,8 @@ h1, h2, h3, h4, h5, h6 {
   text-transform: uppercase !important;
   letter-spacing: 0.12em !important; /* slightly increased letter-spacing */
   background: transparent !important;
-  color: #e5e7eb !important;
-  -webkit-text-fill-color: #e5e7eb !important;
+  color: rgba(255, 255, 255, 0.8) !important;
+  -webkit-text-fill-color: rgba(255, 255, 255, 0.8) !important;
   border: 0 !important;
   padding: 0.5rem !important;
   height: auto !important;
@@ -683,7 +683,7 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 .v2-theme .hero-ctas-outside .btn-secondary-stacked .arrow {
-  color: #e5e7eb !important;
+  color: rgba(255, 255, 255, 0.8) !important;
   transition: color 0.22s ease, transform 0.22s ease !important;
 }
 
@@ -694,13 +694,13 @@ h1, h2, h3, h4, h5, h6 {
   left: 0;
   width: 0%;
   height: 1.5px;
-  background-color: #e5e7eb !important;
+  background-color: rgba(255, 255, 255, 0.8) !important;
   transition: width 0.25s cubic-bezier(0.16, 1, 0.3, 1), background-color 0.22s ease;
 }
 
 .v2-theme .hero-ctas-outside .btn-secondary-stacked:hover::after {
   width: 100%;
-  background-color: #ffffff !important;
+  background-color: #f2908f !important;
 }
 
 .v2-theme .hero-ctas-outside .btn-secondary-stacked:hover {
@@ -1065,7 +1065,7 @@ h1, h2, h3, h4, h5, h6 {
   max-height: 200px !important;
   margin-top: 0 !important;
   border-radius: 50% !important;
-  box-shadow: -8px -8px 0px 0px #1e2026, -8px -8px 0px 1.5px rgba(242, 144, 143, 0.25) !important;
+  box-shadow: -8px -8px 0px 0px #1e2026 !important;
   background: #181a1f !important;
   position: relative !important;
   overflow: visible !important;
@@ -1105,8 +1105,8 @@ h1, h2, h3, h4, h5, h6 {
 
 .v2-theme .mobile-brand-title,
 .v2-theme .header-spacer-desktop a span:last-child {
-  color: #C9CED6 !important;
-  -webkit-text-fill-color: #C9CED6 !important;
+  color: rgba(201, 206, 214, 0.7) !important;
+  -webkit-text-fill-color: rgba(201, 206, 214, 0.7) !important;
 }
 
 .v2-theme .premium-header svg {

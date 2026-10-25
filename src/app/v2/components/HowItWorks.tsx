@@ -12,13 +12,13 @@ export default function HowItWorks() {
       ],
       icon: (
         /* Refined precision focus / crosshair beacon illustrating diagnosing the problem */
-        <svg width="19" height="19" viewBox="0 0 24 24" fill="none" stroke="#f2908f" strokeWidth="1.35" strokeLinecap="round" strokeLinejoin="round">
+        <svg width="19" height="19" viewBox="0 0 24 24" fill="none" stroke="rgba(247, 214, 208, 0.5)" strokeWidth="1.35" strokeLinecap="round" strokeLinejoin="round">
           <circle cx="12" cy="12" r="8"></circle>
           <line x1="12" y1="2" x2="12" y2="5"></line>
           <line x1="12" y1="19" x2="12" y2="22"></line>
           <line x1="2" y1="12" x2="5" y2="12"></line>
           <line x1="19" y1="12" x2="22" y2="12"></line>
-          <circle cx="12" cy="12" r="2.2" fill="#f2908f" stroke="none"></circle>
+          <circle cx="12" cy="12" r="2.2" fill="rgba(247, 214, 208, 0.5)" stroke="none"></circle>
         </svg>
       )
     },
@@ -30,11 +30,11 @@ export default function HowItWorks() {
       ],
       icon: (
         /* Architectural prototype viewport with interactive cursor */
-        <svg width="19" height="19" viewBox="0 0 24 24" fill="none" stroke="#f2908f" strokeWidth="1.35" strokeLinecap="round" strokeLinejoin="round">
+        <svg width="19" height="19" viewBox="0 0 24 24" fill="none" stroke="rgba(247, 214, 208, 0.5)" strokeWidth="1.35" strokeLinecap="round" strokeLinejoin="round">
           <rect x="3" y="3.5" width="18" height="14" rx="1.5"></rect>
           <line x1="3" y1="7.5" x2="21" y2="7.5"></line>
-          <circle cx="5.5" cy="5.5" r="0.75" fill="#f2908f" stroke="none"></circle>
-          <circle cx="8" cy="5.5" r="0.75" fill="#f2908f" stroke="none"></circle>
+          <circle cx="5.5" cy="5.5" r="0.75" fill="rgba(247, 214, 208, 0.5)" stroke="none"></circle>
+          <circle cx="8" cy="5.5" r="0.75" fill="rgba(247, 214, 208, 0.5)" stroke="none"></circle>
           <path d="M12.5 11l4.5 4.5m0-3v3h-3"></path>
         </svg>
       )
@@ -47,7 +47,7 @@ export default function HowItWorks() {
       ],
       icon: (
         /* Minimalist editorial release arrow with compass precision ring */
-        <svg width="19" height="19" viewBox="0 0 24 24" fill="none" stroke="#f2908f" strokeWidth="1.35" strokeLinecap="round" strokeLinejoin="round">
+        <svg width="19" height="19" viewBox="0 0 24 24" fill="none" stroke="rgba(247, 214, 208, 0.5)" strokeWidth="1.35" strokeLinecap="round" strokeLinejoin="round">
           <circle cx="12" cy="12" r="8.5" strokeDasharray="2 3"></circle>
           <line x1="8" y1="16" x2="16" y2="8"></line>
           <polyline points="10 8 16 8 16 14"></polyline>
@@ -81,6 +81,13 @@ export default function HowItWorks() {
           .process-decor-top-right-squares,
           .process-decor-bottom-circle {
             display: none !important;
+          }
+          .process-card-title {
+            align-items: flex-start !important;
+          }
+          .process-card-icon {
+            margin-top: 4px !important;
+            transform: none !important;
           }
         }
         @media (min-width: 861px) {
@@ -251,28 +258,34 @@ export default function HowItWorks() {
                         boxShadow: '0 4px 16px rgba(0, 0, 0, 0.1), inset 0 1px 0 rgba(255, 255, 255, 0.06)'
                       }}
                     >
-                      <h3 style={{ 
-                        fontFamily: "var(--font-heading)",
-                        fontSize: '22px', 
-                        color: '#f8fafc',
-                        fontWeight: 400,
-                        margin: '0 0 0.95rem 0',
-                        paddingBottom: '0.75rem',
-                        borderBottom: '1px solid rgba(215, 222, 232, 0.16)',
-                        letterSpacing: '0em',
-                        lineHeight: 1.25,
-                        WebkitTextStroke: '0',
-                        display: 'flex',
-                        alignItems: 'center',
-                        gap: '0.65rem'
-                      }}>
-                        <span style={{ 
-                          display: 'inline-flex', 
-                          alignItems: 'center', 
-                          justifyContent: 'center',
-                          flexShrink: 0,
-                          transform: 'translateY(-0.5px)'
-                        }}>
+                      <h3 
+                        className="process-card-title"
+                        style={{ 
+                          fontFamily: "var(--font-heading)",
+                          fontSize: '22px', 
+                          color: '#f8fafc',
+                          fontWeight: 400,
+                          margin: '0 0 0.95rem 0',
+                          paddingBottom: '0.75rem',
+                          borderBottom: '1px solid rgba(215, 222, 232, 0.16)',
+                          letterSpacing: '0em',
+                          lineHeight: 1.25,
+                          WebkitTextStroke: '0',
+                          display: 'flex',
+                          alignItems: 'center',
+                          gap: '0.65rem'
+                        }}
+                      >
+                        <span 
+                          className="process-card-icon"
+                          style={{ 
+                            display: 'inline-flex', 
+                            alignItems: 'center', 
+                            justifyContent: 'center',
+                            flexShrink: 0,
+                            transform: 'translateY(-0.5px)'
+                          }}
+                        >
                           {step.icon}
                         </span>
                         <span>{step.title}</span>

@@ -18,8 +18,8 @@ export default function HeroV2() {
         }
         .v2-theme .hero-statement,
         .hero-statement {
-          color: #f7d6d0 !important;
-          -webkit-text-fill-color: #f7d6d0 !important;
+          color: rgba(255, 255, 255, 0.8) !important;
+          -webkit-text-fill-color: rgba(255, 255, 255, 0.8) !important;
         }
         .v2-theme .headline-mockup-bold,
         .headline-mockup-bold {
@@ -32,31 +32,31 @@ export default function HeroV2() {
         .headline-mockup-light {
           font-weight: 300 !important;
           letter-spacing: normal !important;
-          color: #f7d6d0 !important;
-          -webkit-text-fill-color: #f7d6d0 !important;
+          color: rgba(255, 255, 255, 0.8) !important;
+          -webkit-text-fill-color: rgba(255, 255, 255, 0.8) !important;
         }
         .v2-theme .headline-light,
         .headline-light {
           font-weight: 400 !important;
-          color: #f7d6d0 !important;
-          -webkit-text-fill-color: #f7d6d0 !important;
+          color: rgba(255, 255, 255, 0.8) !important;
+          -webkit-text-fill-color: rgba(255, 255, 255, 0.8) !important;
         }
         .v2-theme .hero-frame-paragraph,
         .hero-frame-paragraph {
-          color: #e2e4e9 !important;
-          -webkit-text-fill-color: #e2e4e9 !important;
+          color: rgba(201, 206, 214, 0.7) !important;
+          -webkit-text-fill-color: rgba(201, 206, 214, 0.7) !important;
         }
         .v2-theme .hero-frame-paragraph .hero-body-bold,
         .hero-frame-paragraph .hero-body-bold,
         .hero-body-bold {
-          color: #e2e4e9 !important;
-          -webkit-text-fill-color: #e2e4e9 !important;
+          color: rgba(201, 206, 214, 0.7) !important;
+          -webkit-text-fill-color: rgba(201, 206, 214, 0.7) !important;
           font-weight: 400 !important;
         }
         .v2-theme .hero-frame-paragraph em,
         .hero-frame-paragraph em {
-          color: #e2e4e9 !important;
-          -webkit-text-fill-color: #e2e4e9 !important;
+          color: rgba(201, 206, 214, 0.7) !important;
+          -webkit-text-fill-color: rgba(201, 206, 214, 0.7) !important;
           font-style: normal !important;
         }
         .hero-offer-item {
@@ -70,7 +70,7 @@ export default function HeroV2() {
           transition: text-decoration-color 0.22s ease;
         }
         .hero-offer-item:hover {
-          text-decoration-color: #f7d6d0 !important;
+          text-decoration-color: #fed5b8 !important;
         }
         @media (max-width: 900px) {
           .hero-text .hero-frame-paragraph {
@@ -177,11 +177,26 @@ export default function HeroV2() {
         .v2-theme .hero-ctas-outside .btn-primary-outline:hover svg {
           stroke: #000000 !important;
         }
-        /* Secondary CTA in hero: slightly increased letter spacing on all screens */
+        /* Secondary CTA in hero: match headline unbolded text rgba(255, 255, 255, 0.8) */
         .v2-theme .hero-ctas-outside .btn-secondary-stacked,
         .hero-ctas-outside .btn-secondary-stacked,
         .btn-secondary-stacked {
+          color: rgba(255, 255, 255, 0.8) !important;
+          -webkit-text-fill-color: rgba(255, 255, 255, 0.8) !important;
           letter-spacing: 0.12em !important;
+        }
+        .v2-theme .hero-ctas-outside .btn-secondary-stacked .arrow,
+        .hero-ctas-outside .btn-secondary-stacked .arrow {
+          color: rgba(255, 255, 255, 0.8) !important;
+        }
+        .v2-theme .hero-ctas-outside .btn-secondary-stacked::after {
+          background-color: rgba(255, 255, 255, 0.8) !important;
+        }
+        @media (min-width: 901px) {
+          .v2-theme .hero-image-container,
+          .hero-image-container {
+            box-shadow: -8px -8px 0px 0px #1e2026 !important;
+          }
         }
       `}</style>
 
@@ -194,36 +209,36 @@ export default function HeroV2() {
                 className="hero-text"
                 style={{ transform: 'translateY(-0.4rem)' }}
               >
-                <h1 className="hero-statement hero-statement-anim" style={{ display: 'flex', flexDirection: 'column', gap: '0px', lineHeight: '1.22', color: '#f7d6d0', WebkitTextFillColor: '#f7d6d0' }}>
+                <h1 className="hero-statement hero-statement-anim" style={{ display: 'flex', flexDirection: 'column', gap: '0px', lineHeight: '1.22', color: 'rgba(255, 255, 255, 0.8)', WebkitTextFillColor: 'rgba(255, 255, 255, 0.8)' }}>
                   {/* Desktop Headline (2 lines) */}
-                  <span className="headline-desktop" style={{ color: '#f7d6d0' }}>
-                    <span className="headline-line headline-light" style={{ color: '#f7d6d0', WebkitTextFillColor: '#f7d6d0' }}>
+                  <span className="headline-desktop" style={{ color: 'rgba(255, 255, 255, 0.8)' }}>
+                    <span className="headline-line headline-light" style={{ color: 'rgba(255, 255, 255, 0.8)', WebkitTextFillColor: 'rgba(255, 255, 255, 0.8)' }}>
                       <strong className="headline-mockup-bold" style={{ fontWeight: 700, letterSpacing: '0.025em', color: '#f2908f', WebkitTextFillColor: '#f2908f' }}>Websites</strong>{' '}
-                      <span className="headline-mockup-light" style={{ fontWeight: 300, color: '#f7d6d0', WebkitTextFillColor: '#f7d6d0' }}>that work harder.</span>
+                      <span className="headline-mockup-light" style={{ fontWeight: 300, color: 'rgba(255, 255, 255, 0.8)', WebkitTextFillColor: 'rgba(255, 255, 255, 0.8)' }}>that work harder.</span>
                     </span>
-                    <span className="headline-line headline-light" style={{ color: '#f7d6d0', WebkitTextFillColor: '#f7d6d0' }}>
+                    <span className="headline-line headline-light" style={{ color: 'rgba(255, 255, 255, 0.8)', WebkitTextFillColor: 'rgba(255, 255, 255, 0.8)' }}>
                       <strong className="headline-mockup-bold" style={{ fontWeight: 700, letterSpacing: '0.025em', color: '#f2908f', WebkitTextFillColor: '#f2908f' }}>Tools</strong>{' '}
-                      <span className="headline-mockup-light" style={{ fontWeight: 300, color: '#f7d6d0', WebkitTextFillColor: '#f7d6d0' }}>that save hours.</span>
+                      <span className="headline-mockup-light" style={{ fontWeight: 300, color: 'rgba(255, 255, 255, 0.8)', WebkitTextFillColor: 'rgba(255, 255, 255, 0.8)' }}>that save hours.</span>
                     </span>
                   </span>
 
                   {/* Mobile Headline (3 lines, left-aligned) */}
-                  <span className="headline-mobile" style={{ gap: '0px', lineHeight: 0.995, color: '#f7d6d0' }}>
-                    <span className="headline-line" style={{ lineHeight: 0.995, color: '#f7d6d0', WebkitTextFillColor: '#f7d6d0' }}>
+                  <span className="headline-mobile" style={{ gap: '0px', lineHeight: 0.995, color: 'rgba(255, 255, 255, 0.8)' }}>
+                    <span className="headline-line" style={{ lineHeight: 0.995, color: 'rgba(255, 255, 255, 0.8)', WebkitTextFillColor: 'rgba(255, 255, 255, 0.8)' }}>
                       <strong className="headline-mockup-bold" style={{ fontWeight: 700, letterSpacing: '0.025em', color: '#f2908f', WebkitTextFillColor: '#f2908f' }}>Websites</strong>{' '}
-                      <span className="headline-mockup-light" style={{ fontWeight: 300, color: '#f7d6d0', WebkitTextFillColor: '#f7d6d0' }}>that work</span>
+                      <span className="headline-mockup-light" style={{ fontWeight: 300, color: 'rgba(255, 255, 255, 0.8)', WebkitTextFillColor: 'rgba(255, 255, 255, 0.8)' }}>that work</span>
                     </span>
-                    <span className="headline-line" style={{ lineHeight: 0.995, color: '#f7d6d0', WebkitTextFillColor: '#f7d6d0' }}>
-                      <span className="headline-mockup-light" style={{ fontWeight: 300, color: '#f7d6d0', WebkitTextFillColor: '#f7d6d0' }}>harder.</span>
+                    <span className="headline-line" style={{ lineHeight: 0.995, color: 'rgba(255, 255, 255, 0.8)', WebkitTextFillColor: 'rgba(255, 255, 255, 0.8)' }}>
+                      <span className="headline-mockup-light" style={{ fontWeight: 300, color: 'rgba(255, 255, 255, 0.8)', WebkitTextFillColor: 'rgba(255, 255, 255, 0.8)' }}>harder.</span>
                     </span>
-                    <span className="headline-line headline-pair-gap" style={{ lineHeight: 0.995, marginTop: '0rem', color: '#f7d6d0', WebkitTextFillColor: '#f7d6d0' }}>
+                    <span className="headline-line headline-pair-gap" style={{ lineHeight: 0.995, marginTop: '0rem', color: 'rgba(255, 255, 255, 0.8)', WebkitTextFillColor: 'rgba(255, 255, 255, 0.8)' }}>
                       <strong className="headline-mockup-bold" style={{ fontWeight: 700, letterSpacing: '0.025em', color: '#f2908f', WebkitTextFillColor: '#f2908f' }}>Tools</strong>{' '}
-                      <span className="headline-mockup-light" style={{ fontWeight: 300, color: '#f7d6d0', WebkitTextFillColor: '#f7d6d0' }}>that save hours.</span>
+                      <span className="headline-mockup-light" style={{ fontWeight: 300, color: 'rgba(255, 255, 255, 0.8)', WebkitTextFillColor: 'rgba(255, 255, 255, 0.8)' }}>that save hours.</span>
                     </span>
                   </span>
                 </h1>
-                <p className="hero-frame-paragraph hero-paragraph-anim" style={{ marginTop: '1.7rem', fontSize: '1.213rem', lineHeight: '1.75', color: '#e2e4e9', WebkitTextFillColor: '#e2e4e9', maxWidth: '100%', fontWeight: 400, opacity: 1, textWrap: 'pretty' }}>
-                  <span className="hero-body-intro" style={{ fontWeight: 400, color: '#e2e4e9', WebkitTextFillColor: '#e2e4e9' }}>You tell me what&apos;s not working. I take it from there</span>{' '}&mdash;{' '}
+                <p className="hero-frame-paragraph hero-paragraph-anim" style={{ marginTop: '1.7rem', fontSize: '1.213rem', lineHeight: '1.75', color: 'rgba(201, 206, 214, 0.7)', WebkitTextFillColor: 'rgba(201, 206, 214, 0.7)', maxWidth: '100%', fontWeight: 400, opacity: 1, textWrap: 'pretty' }}>
+                  <span className="hero-body-intro" style={{ fontWeight: 400, color: 'rgba(201, 206, 214, 0.7)', WebkitTextFillColor: 'rgba(201, 206, 214, 0.7)' }}>You tell me what&apos;s not working. I take it from there</span>{' '}&mdash;{' '}
                   <strong className="hero-offer-item" style={{ fontWeight: 700, letterSpacing: '0.025em', whiteSpace: 'nowrap' }}>a modern website</strong>,{' '}
                   <strong className="hero-offer-item" style={{ fontWeight: 700, letterSpacing: '0.025em', whiteSpace: 'nowrap' }}>a custom tool</strong>, or{' '}
                   <strong className="hero-offer-item" style={{ fontWeight: 700, letterSpacing: '0.025em', whiteSpace: 'nowrap' }}>a smarter workflow</strong>,{' '}
@@ -251,8 +266,8 @@ export default function HeroV2() {
                     <polyline points="7 7 17 7 17 17"></polyline>
                   </svg>
                 </a>
-                <a href="#cases" className="btn btn-secondary btn-secondary-stacked">
-                  SEE WHAT I’VE BUILT <span className="arrow" style={{ color: '#e5e7eb' }}>↓</span>
+                <a href="#cases" className="btn btn-secondary btn-secondary-stacked" style={{ color: 'rgba(255, 255, 255, 0.8)' }}>
+                  SEE WHAT I’VE BUILT <span className="arrow" style={{ color: 'rgba(255, 255, 255, 0.8)' }}>↓</span>
                 </a>
               </div>
             </div>
