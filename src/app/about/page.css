@@ -471,10 +471,10 @@
 }
 
 .about-cta-text {
-  font-family: var(--font-heading), -apple-system, BlinkMacSystemFont, "Helvetica Neue", Arial, sans-serif !important;
+  font-family: -apple-system, BlinkMacSystemFont, "Helvetica Neue", Arial, sans-serif !important;
   font-size: clamp(1.48rem, 7.7vw, 2.08rem) !important;
-  font-weight: 400 !important;
-  letter-spacing: -0.02em !important;
+  font-weight: 300 !important;
+  letter-spacing: -0.015em !important;
   line-height: 1.35 !important;
   color: rgba(255, 255, 255, 0.8) !important;
   -webkit-text-fill-color: rgba(255, 255, 255, 0.8) !important;
@@ -493,8 +493,8 @@
 .about-cta-highlight {
   color: #f2908f !important;
   -webkit-text-fill-color: #f2908f !important;
-  font-weight: 400 !important;
-  letter-spacing: -0.02em !important;
+  font-weight: 600 !important;
+  letter-spacing: 0.025em !important;
   font-size: inherit !important;
   line-height: inherit !important;
 }
@@ -513,16 +513,16 @@
     display: block !important;
     white-space: nowrap !important;
     font-size: inherit !important;
-    font-weight: 400 !important;
-    letter-spacing: -0.02em !important;
+    font-weight: 300 !important;
+    letter-spacing: -0.015em !important;
     line-height: inherit !important;
   }
   .about-cta-highlight {
     display: block !important;
     white-space: nowrap !important;
     font-size: inherit !important;
-    font-weight: 400 !important;
-    letter-spacing: -0.02em !important;
+    font-weight: 600 !important;
+    letter-spacing: 0.025em !important;
     line-height: inherit !important;
     margin-top: 0.2rem !important;
   }
@@ -567,7 +567,7 @@
   background-color: #f0a38d !important;
   border-color: #f0a38d !important;
   transform: translateY(-2px) scale(1.05) !important;
-  box-shadow: 0 8px 24px rgba(240, 163, 141, 0.35) !important;
+  box-shadow: 0 8px 24px rgba(240, 163, 141, 0.175) !important;
 }
 
 .about-cta-btn span {

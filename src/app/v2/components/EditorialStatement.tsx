@@ -22,10 +22,16 @@ export default function EditorialStatement() {
             background-color: #121316 !important;
           }
           .prefooter-closing-line {
+            font-family: -apple-system, BlinkMacSystemFont, "Helvetica Neue", Helvetica, Arial, sans-serif !important;
+            font-weight: 300 !important;
+            letter-spacing: -0.015em !important;
             color: rgba(255, 255, 255, 0.8) !important;
             -webkit-text-fill-color: rgba(255, 255, 255, 0.8) !important;
           }
           .prefooter-closing-subtext {
+            font-family: -apple-system, BlinkMacSystemFont, "Helvetica Neue", Helvetica, Arial, sans-serif !important;
+            font-weight: 300 !important;
+            letter-spacing: -0.015em !important;
             color: rgba(255, 255, 255, 0.8) !important;
             -webkit-text-fill-color: rgba(255, 255, 255, 0.8) !important;
           }
@@ -60,7 +66,7 @@ export default function EditorialStatement() {
             -webkit-text-fill-color: #000000 !important;
             border-radius: 40px !important;
             transform: translateY(-2px) scale(1.05) !important;
-            box-shadow: 0 8px 24px rgba(240, 163, 141, 0.35) !important;
+            box-shadow: 0 8px 24px rgba(240, 163, 141, 0.175) !important;
           }
           .prefooter-btn-primary:hover svg {
             stroke: #000000 !important;
@@ -82,7 +88,7 @@ export default function EditorialStatement() {
             color: #000000 !important;
             -webkit-text-fill-color: #000000 !important;
             transform: translateY(-2px) scale(1.05) !important;
-            box-shadow: 0 8px 24px rgba(240, 163, 141, 0.35) !important;
+            box-shadow: 0 8px 24px rgba(240, 163, 141, 0.175) !important;
           }
           @media (max-width: 900px) {
             .prefooter-closing-line {
@@ -164,10 +170,10 @@ export default function EditorialStatement() {
           <h2
             className="prefooter-closing-line"
             style={{
-              fontFamily: 'var(--font-heading)',
+              fontFamily: '-apple-system, BlinkMacSystemFont, "Helvetica Neue", Helvetica, Arial, sans-serif',
               fontSize: 'clamp(1.48rem, 7.7vw, 2.08rem)',
-              fontWeight: 400,
-              letterSpacing: '-0.02em',
+              fontWeight: 300,
+              letterSpacing: '-0.015em',
               lineHeight: 1.35,
               color: 'rgba(255, 255, 255, 0.8)',
               WebkitTextFillColor: 'rgba(255, 255, 255, 0.8)',
@@ -176,17 +182,17 @@ export default function EditorialStatement() {
               maxWidth: '28ch',
             }}
           >
-            An <span style={{ fontWeight: 700, letterSpacing: '0.025em', color: '#f2908f', WebkitTextFillColor: '#f2908f' }}>outdated</span> website or <span style={{ fontWeight: 700, letterSpacing: '0.025em', color: '#f2908f', WebkitTextFillColor: '#f2908f' }}>repetitive</span> work is slowing your business down.
+            An <span style={{ fontWeight: 600, letterSpacing: '0.025em', color: '#f2908f', WebkitTextFillColor: '#f2908f' }}>outdated</span> website or <span style={{ fontWeight: 600, letterSpacing: '0.025em', color: '#f2908f', WebkitTextFillColor: '#f2908f' }}>repetitive</span> work is slowing your business down.
           </h2>
 
           {/* Text under closing headline */}
           <div
             className="prefooter-closing-subtext"
             style={{
-              fontFamily: 'var(--font-heading)',
+              fontFamily: '-apple-system, BlinkMacSystemFont, "Helvetica Neue", Helvetica, Arial, sans-serif',
               fontSize: 'clamp(1.15rem, 2.8vw, 1.23rem)',
-              fontWeight: 400,
-              letterSpacing: '-0.02em',
+              fontWeight: 300,
+              letterSpacing: '-0.015em',
               lineHeight: 1.55,
               color: 'rgba(255, 255, 255, 0.8)',
               WebkitTextFillColor: 'rgba(255, 255, 255, 0.8)',
@@ -197,7 +203,7 @@ export default function EditorialStatement() {
             }}
           >
             <p style={{ margin: 0 }}>
-              <strong style={{ fontWeight: 700, letterSpacing: '0.005em', color: '#f2908f', WebkitTextFillColor: '#f2908f' }}>Let’s solve this.</strong> I’ll build the fix.
+              <strong style={{ fontWeight: 600, letterSpacing: '0.005em', color: '#f2908f', WebkitTextFillColor: '#f2908f' }}>Let’s solve this.</strong> I’ll build the fix.
             </p>
           </div>
 

@@ -346,7 +346,7 @@ export default function ProjectsV2({ initialProjects = [] }: ProjectsV2Props) {
           WebkitTextStroke: '0',
           textWrap: 'balance'
         }}>
-          <span style={{ fontWeight: 400, color: 'var(--color-heading-silver, #4a5461)' }}>Recent problems. </span><span style={{ fontWeight: 700, color: '#3ba3b8', WebkitTextFillColor: '#3ba3b8' }}>Solved.</span>
+          <span style={{ fontWeight: 400, color: 'var(--color-heading-silver, #4a5461)' }}>Recent cases</span>
         </h2>
         <p style={{
           fontFamily: "var(--font-body)",

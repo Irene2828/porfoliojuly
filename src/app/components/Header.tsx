@@ -114,7 +114,7 @@ export default function Header() {
         }
       `}</style>
       <div className="header-inner-wrapper">
-        {/* Left side (Desktop): Name and Title */}
+        {/* Left side (Desktop): Name */}
         <div className="header-spacer-desktop">
           <a href="/" aria-label="Home" style={{ textDecoration: 'none', display: 'flex', flexDirection: 'row', alignItems: 'center', gap: '0.5rem' }}>
             <span style={{ 
@@ -127,47 +127,23 @@ export default function Header() {
             }}>
               IRYNA SHEREMETA
             </span>
-            <span style={{ 
-              fontFamily: 'var(--font-heading), -apple-system, BlinkMacSystemFont, "Helvetica Neue", Arial, sans-serif', 
-              fontSize: '13px', 
-              fontWeight: 400, 
-              color: 'var(--header-title-color, rgba(201, 206, 214, 0.7))', 
-              lineHeight: '1.2', 
-              letterSpacing: '0.03em' 
-            }}>
-              / Custom websites, tools and workflows /
-            </span>
           </a>
         </div>
 
         {/* Center (Desktop): Empty */}
         <div className="header-center-empty"></div>
 
-        {/* Right side (Desktop): Nav links + Hamburger */}
+        {/* Right side (Desktop): Nav links */}
         <nav className="header-nav header-nav-desktop" style={{ marginLeft: 'auto', marginRight: '0', justifyContent: 'flex-end', alignItems: 'center' }}>
-          <a href="/about" className="nav-link">ABOUT</a>
-          <a href="#" onClick={(e) => e.preventDefault()} className="nav-link">AI SOLUTIONS</a>
-          <a href="#" onClick={(e) => e.preventDefault()} className="nav-link">WEBSITES</a>
-          <a href="#" onClick={(e) => e.preventDefault()} className="nav-link">CONSULTING</a>
-          <button
-            className={`hamburger-btn ${isMenuOpen ? 'open' : ''}`}
-            onClick={() => setIsMenuOpen(!isMenuOpen)}
-            aria-label="Menu"
-            aria-expanded={isMenuOpen}
-            style={{ marginLeft: '0.4rem', cursor: 'pointer' }}
-          >
-            <span className="hamburger-bar"></span>
-            <span className="hamburger-bar"></span>
-            <span className="hamburger-bar"></span>
-          </button>
+          <a href="/#cases" className="nav-link">PORTFOLIO</a>
+          <a href="/about" className="nav-link">ABOUT ME</a>
         </nav>
       </div>
 
-      {/* Mobile Header Elements: Name and Title on Left, ABOUT ME on Right */}
+      {/* Mobile Header Elements: Name on Left, Menu on Right */}
       <div className="mobile-header-left">
         <a href="/" aria-label="Home" className="mobile-brand-link">
           <span className="mobile-brand-name">IRYNA SHEREMETA</span>
-          <span className="mobile-brand-title">/ Custom websites, tools and workflows /</span>
         </a>
       </div>
 
@@ -190,10 +166,8 @@ export default function Header() {
           <div className="header-drawer-content" onClick={(e) => e.stopPropagation()}>
             <button className="drawer-close-btn" onClick={() => setIsMenuOpen(false)} aria-label="Close menu">&times;</button>
             <div className="drawer-nav-links">
-              <a href="/about" onClick={() => setIsMenuOpen(false)} className="drawer-link">ABOUT</a>
-              <a href="#" onClick={(e) => { e.preventDefault(); setIsMenuOpen(false); }} className="drawer-link">AI SOLUTIONS</a>
-              <a href="#" onClick={(e) => { e.preventDefault(); setIsMenuOpen(false); }} className="drawer-link">WEBSITES</a>
-              <a href="#" onClick={(e) => { e.preventDefault(); setIsMenuOpen(false); }} className="drawer-link">CONSULTING</a>
+              <a href="/#cases" onClick={() => setIsMenuOpen(false)} className="drawer-link">PORTFOLIO</a>
+              <a href="/about" onClick={() => setIsMenuOpen(false)} className="drawer-link">ABOUT ME</a>
               <a 
                 href="mailto:iryna@irynasheremeta.com" 
                 onClick={(e) => { handleCopyEmail(e); setIsMenuOpen(false); }} 
@@ -205,7 +179,7 @@ export default function Header() {
                   gap: '8px'
                 }}
               >
-                <span>{copied ? 'COPIED ✓' : 'EMAIL'}</span>
+                <span>{copied ? 'COPIED ✓' : 'CONTACT'}</span>
                 <svg 
                   width="17" 
                   height="12" 

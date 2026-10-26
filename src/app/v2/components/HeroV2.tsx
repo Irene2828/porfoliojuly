@@ -16,6 +16,11 @@ export default function HeroV2() {
         .hero-bg-split {
           display: none !important;
         }
+        /* Headline scaled down 20% on all screens */
+        .v2-theme .hero-statement,
+        .hero-statement {
+          zoom: 0.8;
+        }
         .v2-theme .hero-statement,
         .hero-statement {
           color: rgba(255, 255, 255, 0.8) !important;
@@ -23,7 +28,7 @@ export default function HeroV2() {
         }
         .v2-theme .headline-mockup-bold,
         .headline-mockup-bold {
-          font-weight: 700 !important;
+          font-weight: 600 !important;
           letter-spacing: 0.025em !important;
           color: #f2908f !important;
           -webkit-text-fill-color: #f2908f !important;
@@ -73,6 +78,10 @@ export default function HeroV2() {
           text-decoration-color: #fed5b8 !important;
         }
         @media (max-width: 900px) {
+          .v2-theme .hero-statement,
+          .hero-statement {
+            zoom: 0.845 !important; /* +5% headline size on mobile */
+          }
           .hero-text .hero-frame-paragraph {
             text-align: left !important;
             margin-left: 0 !important;
@@ -101,13 +110,32 @@ export default function HeroV2() {
           }
           .v2-theme .headline-mobile,
           .headline-mobile {
-            line-height: 0.995 !important; /* tightened 15% from 1.17 */
+            line-height: 1.205 !important; /* +10% larger line spacing */
             gap: 0px !important;
           }
-          .v2-theme .headline-line,
-          .headline-line {
+          .v2-theme .headline-mobile .headline-line,
+          .headline-mobile .headline-line {
             display: block !important;
-            line-height: 0.995 !important; /* tightened 15% from 1.17 */
+            line-height: 1.205 !important; /* +10% larger line spacing */
+            font-size: 1em !important;
+            margin: 0 !important;
+            padding: 0 !important;
+          }
+          .v2-theme .headline-mobile .headline-line *,
+          .headline-mobile .headline-line * {
+            display: inline !important;
+            line-height: 1.205 !important;
+            font-size: 1em !important;
+            margin: 0 !important;
+            padding: 0 !important;
+            vertical-align: baseline !important;
+          }
+          .v2-theme .headline-mobile .headline-mockup-light,
+          .v2-theme .headline-mobile .headline-mockup-bold,
+          .headline-mobile .headline-mockup-light,
+          .headline-mobile .headline-mockup-bold {
+            font-size: 1em !important;
+            line-height: 1.205 !important;
           }
           .v2-theme .headline-pair-gap,
           .headline-pair-gap {
@@ -203,7 +231,7 @@ export default function HeroV2() {
           -webkit-text-fill-color: #000000 !important;
           border-radius: 40px !important;
           transform: translateY(-2px) scale(1.05) !important;
-          box-shadow: 0 8px 24px rgba(240, 163, 141, 0.35) !important;
+          box-shadow: 0 8px 24px rgba(240, 163, 141, 0.175) !important;
         }
         .v2-theme .hero-ctas-outside .btn-primary-outline.btn-primary:hover svg,
         .v2-theme .hero-ctas-outside .btn-primary-outline:hover svg {
@@ -245,40 +273,34 @@ export default function HeroV2() {
                   {/* Desktop Headline (2 lines) */}
                   <span className="headline-desktop" style={{ color: 'rgba(255, 255, 255, 0.8)' }}>
                     <span className="headline-line headline-light" style={{ color: 'rgba(255, 255, 255, 0.8)', WebkitTextFillColor: 'rgba(255, 255, 255, 0.8)' }}>
-                      <strong className="headline-mockup-bold" style={{ fontWeight: 700, letterSpacing: '0.025em', color: '#f2908f', WebkitTextFillColor: '#f2908f' }}>Websites</strong>{' '}
-                      <span className="headline-mockup-light" style={{ fontWeight: 300, color: 'rgba(255, 255, 255, 0.8)', WebkitTextFillColor: 'rgba(255, 255, 255, 0.8)' }}>that work harder.</span>
+                      <span className="headline-mockup-light" style={{ fontWeight: 300, color: 'rgba(255, 255, 255, 0.8)', WebkitTextFillColor: 'rgba(255, 255, 255, 0.8)' }}>Custom</span>{' '}
+                      <strong className="headline-mockup-bold" style={{ fontWeight: 600, letterSpacing: '0.025em', color: '#f2908f', WebkitTextFillColor: '#f2908f' }}>websites, tools, workflows.</strong>
                     </span>
                     <span className="headline-line headline-light" style={{ color: 'rgba(255, 255, 255, 0.8)', WebkitTextFillColor: 'rgba(255, 255, 255, 0.8)' }}>
-                      <strong className="headline-mockup-bold" style={{ fontWeight: 700, letterSpacing: '0.025em', color: '#f2908f', WebkitTextFillColor: '#f2908f' }}>Tools</strong>{' '}
-                      <span className="headline-mockup-light" style={{ fontWeight: 300, color: 'rgba(255, 255, 255, 0.8)', WebkitTextFillColor: 'rgba(255, 255, 255, 0.8)' }}>that save hours.</span>
+                      <span className="headline-mockup-light" style={{ fontWeight: 300, color: 'rgba(255, 255, 255, 0.8)', WebkitTextFillColor: 'rgba(255, 255, 255, 0.8)' }}>Built for one business: <em style={{ fontStyle: 'italic' }}>yours.</em></span>
                     </span>
                   </span>
 
                   {/* Mobile Headline (3 lines, left-aligned) */}
-                  <span className="headline-mobile" style={{ gap: '0px', lineHeight: 0.995, color: 'rgba(255, 255, 255, 0.8)' }}>
-                    <span className="headline-line" style={{ lineHeight: 0.995, color: 'rgba(255, 255, 255, 0.8)', WebkitTextFillColor: 'rgba(255, 255, 255, 0.8)' }}>
-                      <strong className="headline-mockup-bold" style={{ fontWeight: 700, letterSpacing: '0.025em', color: '#f2908f', WebkitTextFillColor: '#f2908f' }}>Websites</strong>{' '}
-                      <span className="headline-mockup-light" style={{ fontWeight: 300, color: 'rgba(255, 255, 255, 0.8)', WebkitTextFillColor: 'rgba(255, 255, 255, 0.8)' }}>that work</span>
+                  <span className="headline-mobile" style={{ gap: '0px', lineHeight: 1.205, color: 'rgba(255, 255, 255, 0.8)' }}>
+                    <span className="headline-line" style={{ lineHeight: 1.205, fontSize: '1em', margin: 0, padding: 0, color: 'rgba(255, 255, 255, 0.8)', WebkitTextFillColor: 'rgba(255, 255, 255, 0.8)' }}>
+                      <span className="headline-mockup-light" style={{ fontWeight: 300, fontSize: '1em', lineHeight: 1.205, color: 'rgba(255, 255, 255, 0.8)', WebkitTextFillColor: 'rgba(255, 255, 255, 0.8)' }}>Custom</span>{' '}
+                      <strong className="headline-mockup-bold" style={{ fontWeight: 600, fontSize: '1em', lineHeight: 1.205, letterSpacing: '0.025em', color: '#f2908f', WebkitTextFillColor: '#f2908f' }}>websites, tools</strong>
                     </span>
-                    <span className="headline-line" style={{ lineHeight: 0.995, color: 'rgba(255, 255, 255, 0.8)', WebkitTextFillColor: 'rgba(255, 255, 255, 0.8)' }}>
-                      <span className="headline-mockup-light" style={{ fontWeight: 300, color: 'rgba(255, 255, 255, 0.8)', WebkitTextFillColor: 'rgba(255, 255, 255, 0.8)' }}>harder.</span>
+                    <span className="headline-line" style={{ lineHeight: 1.205, fontSize: '1em', margin: 0, padding: 0, color: 'rgba(255, 255, 255, 0.8)', WebkitTextFillColor: 'rgba(255, 255, 255, 0.8)' }}>
+                      <strong className="headline-mockup-bold" style={{ fontWeight: 600, fontSize: '1em', lineHeight: 1.205, letterSpacing: '0.025em', color: '#f2908f', WebkitTextFillColor: '#f2908f' }}>&amp; workflows.</strong>
                     </span>
-                    <span className="headline-line headline-pair-gap" style={{ lineHeight: 0.995, marginTop: '0rem', color: 'rgba(255, 255, 255, 0.8)', WebkitTextFillColor: 'rgba(255, 255, 255, 0.8)' }}>
-                      <strong className="headline-mockup-bold" style={{ fontWeight: 700, letterSpacing: '0.025em', color: '#f2908f', WebkitTextFillColor: '#f2908f' }}>Tools</strong>{' '}
-                      <span className="headline-mockup-light" style={{ fontWeight: 300, color: 'rgba(255, 255, 255, 0.8)', WebkitTextFillColor: 'rgba(255, 255, 255, 0.8)' }}>that save hours.</span>
+                    <span className="headline-line" style={{ lineHeight: 1.205, fontSize: '1em', margin: 0, padding: 0, color: 'rgba(255, 255, 255, 0.8)', WebkitTextFillColor: 'rgba(255, 255, 255, 0.8)' }}>
+                      <span className="headline-mockup-light" style={{ fontWeight: 300, fontSize: '1em', lineHeight: 1.205, color: 'rgba(255, 255, 255, 0.8)', WebkitTextFillColor: 'rgba(255, 255, 255, 0.8)' }}>Built for one business: <em style={{ fontStyle: 'italic', fontSize: '1em', lineHeight: 1.205 }}>yours.</em></span>
                     </span>
                   </span>
                 </h1>
                 <p className="hero-frame-paragraph hero-paragraph-anim" style={{ marginTop: '1.7rem', fontSize: '1.213rem', lineHeight: '1.75', color: 'rgba(201, 206, 214, 0.7)', WebkitTextFillColor: 'rgba(201, 206, 214, 0.7)', maxWidth: '100%', fontWeight: 400, opacity: 1, textWrap: 'pretty' }}>
-                  <span className="hero-body-intro" style={{ fontWeight: 400, color: 'rgba(201, 206, 214, 0.7)', WebkitTextFillColor: 'rgba(201, 206, 214, 0.7)' }}>You tell me what&apos;s not working. I take it from there</span>{' '}&mdash;{' '}
-                  <strong className="hero-offer-item" style={{ fontWeight: 700, letterSpacing: '0.025em', whiteSpace: 'nowrap' }}>a modern website</strong>,{' '}
-                  <strong className="hero-offer-item" style={{ fontWeight: 700, letterSpacing: '0.025em', whiteSpace: 'nowrap' }}>a custom tool</strong>, or{' '}
-                  <strong className="hero-offer-item" style={{ fontWeight: 700, letterSpacing: '0.025em', whiteSpace: 'nowrap' }}>a smarter workflow</strong>,{' '}
-                  <span>built around your business&nbsp;needs.</span>
+                  You tell me what&rsquo;s not working: a site that undersells you, a task that eats your week, a process held together by spreadsheets. I take it from there and build the solution.
                 </p>
               </div>
 
-              {/* CTAs: right-aligned flush with the content block */}
+              {/* CTAs: right-aligned flush with content block */}
               <div
                 className="hero-ctas hero-ctas-outside hero-ctas-anim"
                 style={{ 

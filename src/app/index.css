@@ -409,7 +409,7 @@ h1, h2, h3, h4, h5, h6 {
   }
 
   .v2-theme .headline-mockup-bold {
-    font-weight: 700 !important;
+    font-weight: 600 !important;
     letter-spacing: 0.025em !important; /* subtly increased spacing in bold words */
     color: #f2908f !important;
     -webkit-text-fill-color: #f2908f !important;
@@ -498,10 +498,10 @@ h1, h2, h3, h4, h5, h6 {
   .v2-theme .headline-mobile,
   .v2-theme .hero-text .headline-mobile {
     font-family: -apple-system, BlinkMacSystemFont, "Helvetica Neue", Helvetica, Arial, sans-serif !important;
-    font-size: clamp(1.85rem, 9.35vw, 3.46rem) !important; /* 10% smaller on mobile */
+    font-size: clamp(1.85rem, 9.32vw, 3.45rem) !important; /* +5% headline size on mobile */
     font-weight: 400 !important;
     letter-spacing: -0.02em !important;
-    line-height: 0.995 !important; /* tightened 15% from 1.17 */
+    line-height: 1.205 !important; /* +10% larger line spacing */
     max-width: 100% !important;
     color: rgba(255, 255, 255, 0.8) !important;
     -webkit-text-fill-color: rgba(255, 255, 255, 0.8) !important;
@@ -531,9 +531,18 @@ h1, h2, h3, h4, h5, h6 {
     white-space: nowrap !important;
     max-width: 100% !important;
     font-size: inherit !important;
-    line-height: 0.995 !important; /* tightened 15% from 1.17 */
+    line-height: 1.205 !important; /* +10% larger line spacing */
     text-align: left !important;
     align-self: flex-start !important;
+    margin: 0 !important;
+    padding: 0 !important;
+  }
+
+  .v2-theme .headline-line * {
+    line-height: 1.205 !important;
+    font-size: 1em !important;
+    margin: 0 !important;
+    padding: 0 !important;
   }
 
   .v2-theme .headline-pair-gap {
@@ -541,7 +550,7 @@ h1, h2, h3, h4, h5, h6 {
   }
 
   .v2-theme .headline-mockup-bold {
-    font-weight: 700 !important;
+    font-weight: 600 !important;
     letter-spacing: 0.025em !important; /* subtly increased spacing in bold words */
     color: #f2908f !important;
     -webkit-text-fill-color: #f2908f !important;
@@ -628,7 +637,7 @@ h1, h2, h3, h4, h5, h6 {
   border-radius: 40px !important;
   color: #000000 !important;
   -webkit-text-fill-color: #000000 !important;
-  box-shadow: 0 8px 24px rgba(240, 163, 141, 0.35) !important;
+  box-shadow: 0 8px 24px rgba(240, 163, 141, 0.175) !important;
   text-shadow: none !important;
   transform: translateY(-2px) scale(1.05) !important;
 }
@@ -1011,10 +1020,13 @@ h1, h2, h3, h4, h5, h6 {
   -webkit-text-fill-color: rgba(0, 0, 0, 0.70) !important;
 }
 
-/* Prefooter closing headline: matching hero unbolded text color */
+/* Prefooter closing headline: matching hero unbolded text color and font weight */
 .v2-theme .prefooter-section:not(.about-cta-section) h2,
 .v2-theme .prefooter-closing-line,
 .v2-theme .prefooter-closing-subtext {
+  font-family: -apple-system, BlinkMacSystemFont, "Helvetica Neue", Helvetica, Arial, sans-serif !important;
+  font-weight: 300 !important;
+  letter-spacing: -0.015em !important;
   color: rgba(255, 255, 255, 0.8) !important;
   -webkit-text-fill-color: rgba(255, 255, 255, 0.8) !important;
 }
@@ -1022,12 +1034,14 @@ h1, h2, h3, h4, h5, h6 {
 .v2-theme .prefooter-closing-line span {
   color: #f2908f !important;
   -webkit-text-fill-color: #f2908f !important;
+  font-weight: 600 !important;
   letter-spacing: 0.025em !important;
 }
 
 .v2-theme .prefooter-closing-subtext strong {
   color: #f2908f !important;
   -webkit-text-fill-color: #f2908f !important;
+  font-weight: 600 !important;
 }
 
 .v2-theme .hero-content {

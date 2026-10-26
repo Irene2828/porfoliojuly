@@ -284,24 +284,53 @@
 .drawer-nav-links {
   display: flex;
   flex-direction: column;
-  gap: 1.5rem;
+  gap: 1.25rem;
   margin-top: 3.5rem;
 }
 
 .drawer-link {
-  font-family: var(--font-heading), -apple-system, BlinkMacSystemFont, "Helvetica Neue", Arial, sans-serif !important;
-  font-size: 1.15rem;
-  font-weight: 600 !important;
-  letter-spacing: 0.12em !important;
+  font-family: var(--font-label), 'Plus Jakarta Sans', sans-serif !important;
+  font-size: 15px !important;
+  font-weight: 500 !important;
   text-transform: uppercase !important;
-  color: var(--color-heading-silver, #5c6574) !important;
+  letter-spacing: 0.12em !important;
+  color: #e2e4e9 !important;
+  -webkit-text-fill-color: #e2e4e9 !important;
   text-decoration: none;
-  transition: color 0.2s ease, transform 0.2s ease;
+  position: relative;
+  overflow: visible !important;
+  padding: 0.45rem 0.2rem !important;
+  line-height: 1.35;
+  width: fit-content;
+  display: inline-flex;
+  align-items: center;
+  transition: color 0.2s ease;
+  pointer-events: auto;
 }
 
-.drawer-link:hover {
-  color: var(--color-body-dark, #2b3038) !important;
-  transform: translateX(4px);
+.drawer-link::after {
+  content: '';
+  position: absolute;
+  bottom: 0.2rem;
+  left: 0.2rem;
+  right: 0.2rem;
+  height: 1.5px;
+  background-color: #f2908f !important;
+  transform: scaleX(0);
+  transform-origin: bottom left;
+  transition: transform 0.25s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.drawer-link:hover,
+.drawer-link:active {
+  color: #ffffff !important;
+  -webkit-text-fill-color: #ffffff !important;
+  transform: none !important;
+}
+
+.drawer-link:hover::after,
+.drawer-link:active::after {
+  transform: scaleX(1);
 }
 
 @keyframes fadeIn {

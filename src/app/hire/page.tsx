@@ -809,7 +809,7 @@ export default function HirePage() {
                   href="mailto:iryna@irynasheremeta.com"
                   className="btn prefooter-btn-primary face-cta hire-btn-prefooter"
                 >
-                  <span>EMAIL ME</span>
+                  <span>CONTACT ME</span>
                   <svg
                     width="12"
                     height="12"
