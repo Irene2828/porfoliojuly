@@ -22,14 +22,21 @@ export default function EditorialStatement() {
             background-color: #121316 !important;
           }
           .prefooter-closing-line {
-            font-family: -apple-system, BlinkMacSystemFont, "Helvetica Neue", Helvetica, Arial, sans-serif !important;
+            font-family: var(--font-body), 'Plus Jakarta Sans', sans-serif !important;
             font-weight: 300 !important;
             letter-spacing: -0.015em !important;
             color: rgba(255, 255, 255, 0.8) !important;
             -webkit-text-fill-color: rgba(255, 255, 255, 0.8) !important;
           }
+          .prefooter-closing-line strong,
+          .prefooter-closing-line .headline-mockup-bold {
+            font-weight: 600 !important;
+            letter-spacing: 0.025em !important;
+            color: #f2908f !important;
+            -webkit-text-fill-color: #f2908f !important;
+          }
           .prefooter-closing-subtext {
-            font-family: -apple-system, BlinkMacSystemFont, "Helvetica Neue", Helvetica, Arial, sans-serif !important;
+            font-family: var(--font-body), 'Plus Jakarta Sans', sans-serif !important;
             font-weight: 300 !important;
             letter-spacing: -0.015em !important;
             color: rgba(255, 255, 255, 0.8) !important;
@@ -37,17 +44,17 @@ export default function EditorialStatement() {
           }
           .prefooter-btn-primary {
             font-family: var(--font-label), sans-serif !important;
-            font-size: 0.803rem !important;
+            font-size: 0.72rem !important;
             font-weight: 600 !important;
             text-transform: uppercase !important;
             letter-spacing: 0.08em !important;
             justify-content: center;
-            height: 3.43rem !important;
-            padding: 0 1.98rem !important;
-            background: #f0a38d !important;
+            height: 3.01rem !important;
+            padding: 0 1.74rem !important;
+            background: #d6b792 !important;
             color: #000000 !important;
             -webkit-text-fill-color: #000000 !important;
-            border: 1px solid #f0a38d !important;
+            border: 1px solid #d6b792 !important;
             border-radius: 40px !important;
             box-shadow: none !important;
             text-shadow: none !important;
@@ -56,39 +63,47 @@ export default function EditorialStatement() {
             transition: all 0.25s ease !important;
             -webkit-text-stroke: 0 !important;
           }
+          .prefooter-btn-primary span {
+            font-size: 0.72rem !important;
+            font-weight: 600 !important;
+            letter-spacing: 0.08em !important;
+          }
           .prefooter-btn-primary svg {
             stroke: #000000 !important;
           }
           .prefooter-btn-primary:hover {
-            background: #f0a38d !important;
-            border-color: #f0a38d !important;
+            background: #d6b792 !important;
+            border-color: #d6b792 !important;
             color: #000000 !important;
             -webkit-text-fill-color: #000000 !important;
             border-radius: 40px !important;
-            transform: translateY(-2px) scale(1.05) !important;
-            box-shadow: 0 8px 24px rgba(240, 163, 141, 0.175) !important;
+            transform: translateY(-2px) !important;
+            box-shadow: 0 8px 24px rgba(214, 183, 146, 0.28) !important;
           }
           .prefooter-btn-primary:hover svg {
             stroke: #000000 !important;
           }
-          /* Primary CTA: matching About Me hovered pill button style (#f0a38d, border-radius: 40px) */
+          /* Primary CTA: matching About Me hovered pill button style (#d6b792, border-radius: 40px) */
           .prefooter-section .prefooter-btn-primary.face-cta {
-            background: #f0a38d !important;
-            border: 1px solid #f0a38d !important;
+            background: #d6b792 !important;
+            border: 1px solid #d6b792 !important;
             border-radius: 40px !important;
             color: #000000 !important;
             -webkit-text-fill-color: #000000 !important;
+            height: 3.01rem !important;
+            padding: 0 1.74rem !important;
+            font-size: 0.72rem !important;
             box-shadow: none !important;
-            transform: scale(1.05) !important;
+            transform: none !important;
           }
           .prefooter-section .prefooter-btn-primary.face-cta:hover {
-            background: #f0a38d !important;
-            border-color: #f0a38d !important;
+            background: #d6b792 !important;
+            border-color: #d6b792 !important;
             border-radius: 40px !important;
             color: #000000 !important;
             -webkit-text-fill-color: #000000 !important;
-            transform: translateY(-2px) scale(1.05) !important;
-            box-shadow: 0 8px 24px rgba(240, 163, 141, 0.175) !important;
+            transform: translateY(-2px) !important;
+            box-shadow: 0 8px 24px rgba(214, 183, 146, 0.28) !important;
           }
           @media (max-width: 900px) {
             .prefooter-closing-line {
@@ -97,24 +112,24 @@ export default function EditorialStatement() {
             }
             .prefooter-section .prefooter-btn-primary.face-cta,
             .prefooter-btn-primary {
-              background: #f0a38d !important;
-              height: 3.09rem !important;
+              background: #d6b792 !important;
+              height: 2.72rem !important;
               width: auto !important;
-              min-width: min(84%, 280px) !important;
+              min-width: min(75%, 246px) !important;
               max-width: 92% !important;
-              padding: 0 1.35rem !important;
+              padding: 0 1.19rem !important;
               margin: 0 auto !important;
               justify-content: center !important;
               white-space: nowrap !important;
               border-radius: 40px !important;
-              border: 1px solid #f0a38d !important;
+              border: 1px solid #d6b792 !important;
               box-shadow: none !important;
               transform: none !important;
               box-sizing: border-box !important;
             }
             .prefooter-section .prefooter-btn-primary.face-cta span,
             .prefooter-btn-primary span {
-              font-size: 0.76rem !important;
+              font-size: 0.67rem !important;
               letter-spacing: 0.05em !important;
               white-space: nowrap !important;
               display: inline-block !important;
@@ -170,7 +185,7 @@ export default function EditorialStatement() {
           <h2
             className="prefooter-closing-line"
             style={{
-              fontFamily: '-apple-system, BlinkMacSystemFont, "Helvetica Neue", Helvetica, Arial, sans-serif',
+              fontFamily: 'var(--font-body), "Plus Jakarta Sans", sans-serif',
               fontSize: 'clamp(1.48rem, 7.7vw, 2.08rem)',
               fontWeight: 300,
               letterSpacing: '-0.015em',
@@ -182,14 +197,14 @@ export default function EditorialStatement() {
               maxWidth: '28ch',
             }}
           >
-            An <span style={{ fontWeight: 600, letterSpacing: '0.025em', color: '#f2908f', WebkitTextFillColor: '#f2908f' }}>outdated</span> website or <span style={{ fontWeight: 600, letterSpacing: '0.025em', color: '#f2908f', WebkitTextFillColor: '#f2908f' }}>repetitive</span> work is slowing your business down.
+            An <strong className="headline-mockup-bold" style={{ fontWeight: 600, letterSpacing: '0.025em', color: '#f2908f', WebkitTextFillColor: '#f2908f' }}>outdated</strong> website or <strong className="headline-mockup-bold" style={{ fontWeight: 600, letterSpacing: '0.025em', color: '#f2908f', WebkitTextFillColor: '#f2908f' }}>repetitive</strong> work is slowing your business down.
           </h2>
 
           {/* Text under closing headline */}
           <div
             className="prefooter-closing-subtext"
             style={{
-              fontFamily: '-apple-system, BlinkMacSystemFont, "Helvetica Neue", Helvetica, Arial, sans-serif',
+              fontFamily: 'var(--font-body), "Plus Jakarta Sans", sans-serif',
               fontSize: 'clamp(1.15rem, 2.8vw, 1.23rem)',
               fontWeight: 300,
               letterSpacing: '-0.015em',
@@ -203,7 +218,7 @@ export default function EditorialStatement() {
             }}
           >
             <p style={{ margin: 0 }}>
-              <strong style={{ fontWeight: 600, letterSpacing: '0.005em', color: '#f2908f', WebkitTextFillColor: '#f2908f' }}>Let’s solve this.</strong> I’ll build the fix.
+              <strong className="headline-mockup-bold" style={{ fontWeight: 600, letterSpacing: '0.01em', color: '#f2908f', WebkitTextFillColor: '#f2908f' }}>Let’s solve this.</strong> I’ll build the fix.
             </p>
           </div>
 
@@ -212,10 +227,10 @@ export default function EditorialStatement() {
             <a 
               href="mailto:iryna@irynasheremeta.com" 
               className="btn prefooter-btn-primary face-cta"
-              style={{ display: 'inline-flex', alignItems: 'center', gap: '0.45rem', transform: 'scale(1.05)' }}
+              style={{ display: 'inline-flex', alignItems: 'center', gap: '0.45rem' }}
             >
               <span>SEND YOUR PROBLEM MY WAY</span>
-              <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round" style={{ transform: 'translateY(-0.5px)' }}>
+              <svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round" style={{ transform: 'translateY(-0.5px)' }}>
                 <line x1="7" y1="17" x2="17" y2="7"></line>
                 <polyline points="7 7 17 7 17 17"></polyline>
               </svg>

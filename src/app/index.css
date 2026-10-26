@@ -582,22 +582,22 @@ h1, h2, h3, h4, h5, h6 {
 .hire-btn-primary,
 .v2-theme .face-cta {
   font-family: var(--font-label), sans-serif !important;
-  font-size: 0.803rem !important; /* +5% larger */
+  font-size: 0.72rem !important;
   font-weight: 600 !important;
   text-transform: uppercase !important;
   letter-spacing: 0.08em !important;
-  height: 3.43rem !important; /* +5% taller */
-  padding: 0 1.98rem !important; /* +5% padding */
-  background: #f0a38d !important;
+  height: 3.01rem !important;
+  padding: 0 1.74rem !important;
+  background: #d6b792 !important;
   color: #000000 !important;
   -webkit-text-fill-color: #000000 !important;
-  border: 1px solid #f0a38d !important;
+  border: 1px solid #d6b792 !important;
   border-radius: 40px !important;
   box-shadow: none !important;
   text-shadow: none !important;
   -webkit-font-smoothing: antialiased !important;
   -moz-osx-font-smoothing: grayscale !important;
-  transform: scale(1.05) !important;
+  transform: none !important;
   transition: transform 0.22s cubic-bezier(0.16, 1, 0.3, 1), background 0.22s ease, border-color 0.22s ease, box-shadow 0.2s ease, color 0.22s ease !important;
   display: inline-flex !important;
   align-items: center !important;
@@ -610,7 +610,7 @@ h1, h2, h3, h4, h5, h6 {
 .v2-theme .hero-ctas-outside .btn-primary-outline span,
 .v2-theme .face-cta span {
   font-family: var(--font-label), sans-serif !important;
-  font-size: 0.803rem !important;
+  font-size: 0.72rem !important;
   font-weight: 600 !important;
   letter-spacing: 0.08em !important;
   text-transform: uppercase !important;
@@ -632,14 +632,14 @@ h1, h2, h3, h4, h5, h6 {
 .v2-theme .hero-ctas-outside .btn-primary-outline:hover,
 .hire-btn-primary:hover,
 .v2-theme .face-cta:hover {
-  background: #f0a38d !important;
-  border-color: #f0a38d !important;
+  background: #d6b792 !important;
+  border-color: #d6b792 !important;
   border-radius: 40px !important;
   color: #000000 !important;
   -webkit-text-fill-color: #000000 !important;
-  box-shadow: 0 8px 24px rgba(240, 163, 141, 0.175) !important;
+  box-shadow: 0 8px 24px rgba(214, 183, 146, 0.28) !important;
   text-shadow: none !important;
-  transform: translateY(-2px) scale(1.05) !important;
+  transform: translateY(-2px) !important;
 }
 
 .v2-theme .hero-ctas-outside .btn-primary-outline:hover svg {
@@ -650,18 +650,34 @@ h1, h2, h3, h4, h5, h6 {
   color: rgba(201, 206, 214, 0.7) !important;
   -webkit-text-fill-color: rgba(201, 206, 214, 0.7) !important;
   opacity: 1 !important;
+  font-weight: 300 !important;
 }
 
-.v2-theme .hero-frame-paragraph .hero-body-bold {
+.v2-theme .hero-frame-paragraph .hero-body-light,
+.hero-body-light {
+  font-weight: 300 !important;
+}
+
+.v2-theme .hero-frame-paragraph .hero-body-bold,
+.v2-theme .hero-frame-paragraph strong,
+.hero-frame-paragraph strong {
   color: rgba(201, 206, 214, 0.7) !important;
   -webkit-text-fill-color: rgba(201, 206, 214, 0.7) !important;
-  font-weight: 700 !important;
+  font-weight: 600 !important;
 }
 
 .v2-theme .hero-frame-paragraph em {
   font-style: italic !important;
   color: rgba(201, 206, 214, 0.7) !important;
   -webkit-text-fill-color: rgba(201, 206, 214, 0.7) !important;
+}
+
+.hero-body-desktop {
+  display: inline;
+}
+
+.hero-body-mobile {
+  display: none;
 }
 
 .hero-offer-item {
@@ -1120,7 +1136,7 @@ h1, h2, h3, h4, h5, h6 {
   background-color: #121316 !important;
   backdrop-filter: none !important;
   -webkit-backdrop-filter: none !important;
-  border-bottom: 1px solid rgba(242, 144, 143, 0.18) !important;
+  border-bottom: 1px solid rgba(209, 213, 219, 0.2) !important;
   box-shadow: none !important;
   transition: none !important;
 }
@@ -1174,7 +1190,7 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 .v2-theme .premium-header {
-  border-bottom: 1px solid rgba(242, 144, 143, 0.18) !important;
+  border-bottom: 1px solid rgba(209, 213, 219, 0.2) !important;
 }
 
 .v2-theme .premium-header.header-scrolled {
@@ -1182,7 +1198,7 @@ h1, h2, h3, h4, h5, h6 {
   background-color: rgba(18, 19, 22, 0.80) !important;
   backdrop-filter: blur(20px) saturate(180%) !important;
   -webkit-backdrop-filter: blur(20px) saturate(180%) !important;
-  border-bottom: 1px solid rgba(242, 144, 143, 0.22) !important;
+  border-bottom: 1px solid rgba(209, 213, 219, 0.25) !important;
   box-shadow: 0 4px 24px rgba(0, 0, 0, 0.25) !important;
 }
 
@@ -1237,7 +1253,7 @@ h1, h2, h3, h4, h5, h6 {
   .premium-header {
     background: #121316 !important;
     background-color: #121316 !important;
-    border-bottom: 1px solid rgba(242, 144, 143, 0.2) !important;
+    border-bottom: 1px solid rgba(209, 213, 219, 0.2) !important;
     box-shadow: none !important;
     padding-top: 0.85rem !important;
     padding-bottom: 0.85rem !important;
@@ -1248,7 +1264,7 @@ h1, h2, h3, h4, h5, h6 {
   .premium-header.header-scrolled {
     background: rgba(18, 19, 22, 0.80) !important;
     background-color: rgba(18, 19, 22, 0.80) !important;
-    border-bottom: 1px solid rgba(242, 144, 143, 0.22) !important;
+    border-bottom: 1px solid rgba(209, 213, 219, 0.25) !important;
     box-shadow: 0 4px 24px rgba(0, 0, 0, 0.25) !important;
     backdrop-filter: blur(20px) saturate(180%) !important;
     -webkit-backdrop-filter: blur(20px) saturate(180%) !important;
@@ -1371,13 +1387,13 @@ h1, h2, h3, h4, h5, h6 {
     width: 100% !important;
     display: flex !important;
     flex-direction: column !important;
-    align-items: center !important;
-    text-align: center !important;
+    align-items: flex-start !important;
+    text-align: left !important;
   }
 
   .v2-theme .hero-name-group .hero-text {
-    align-items: center !important;
-    text-align: center !important;
+    align-items: flex-start !important;
+    text-align: left !important;
     transform: none !important;
     width: 100% !important;
   }
@@ -1392,13 +1408,27 @@ h1, h2, h3, h4, h5, h6 {
 
   .v2-theme .hero-frame-paragraph {
     text-align: left !important;
+    align-self: flex-start !important;
     margin-top: 1.26rem !important; /* headline-body spacing tightened 10% from 1.4rem */
-    font-size: clamp(0.98rem, 2.7vw, 1.1rem) !important;
+    font-size: clamp(0.86rem, 3.7vw, 1.05rem) !important;
     line-height: 1.705 !important; /* body text lines, increased 10% from 1.55 */
     max-width: 100% !important;
+    width: 100% !important;
     margin-left: 0 !important;
-    margin-right: 0 !important;
+    margin-right: auto !important;
     text-wrap: pretty !important;
+  }
+
+  .hero-body-desktop {
+    display: none !important;
+  }
+
+  .hero-body-mobile {
+    display: block !important;
+  }
+
+  .hero-body-row {
+    display: block !important;
   }
 
   .v2-theme .hero-ctas,
@@ -1417,18 +1447,18 @@ h1, h2, h3, h4, h5, h6 {
   .v2-theme .hero-ctas-outside .btn-primary-outline,
   .v2-theme .face-cta,
   .hire-btn-primary {
-    background: #f0a38d !important;
-    height: 3.09rem !important;
+    background: #d6b792 !important;
+    height: 2.72rem !important;
     width: auto !important;
-    min-width: min(84%, 280px) !important;
+    min-width: min(75%, 246px) !important;
     max-width: 92% !important;
-    padding: 0 1.35rem !important;
+    padding: 0 1.19rem !important;
     margin-left: auto !important;
     margin-right: auto !important;
     justify-content: center !important;
     white-space: nowrap !important;
     border-radius: 40px !important;
-    border: 1px solid #f0a38d !important;
+    border: 1px solid #d6b792 !important;
     box-shadow: none !important;
     transform: none !important;
     box-sizing: border-box !important;
@@ -1441,7 +1471,7 @@ h1, h2, h3, h4, h5, h6 {
   .v2-theme .prefooter-btn-primary span,
   .v2-theme .hero-ctas-outside .btn-primary-outline span,
   .v2-theme .face-cta span {
-    font-size: 0.76rem !important;
+    font-size: 0.67rem !important;
     letter-spacing: 0.05em !important;
     white-space: nowrap !important;
     display: inline-block !important;
@@ -1501,7 +1531,7 @@ h1, h2, h3, h4, h5, h6 {
     justify-content: center !important;
     text-align: center !important;
     box-sizing: border-box !important;
-    transform: scale(1.20) !important;
+    transform: scale(1.44) !important;
     transform-origin: bottom left !important;
   }
 

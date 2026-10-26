@@ -2017,9 +2017,11 @@
 @media (max-width: 900px) {
   .hero-frame-paragraph {
     max-width: 100% !important;
+    width: 100% !important;
+    align-self: flex-start !important;
     text-align: left !important;
     margin-left: 0 !important;
-    margin-right: 0 !important;
+    margin-right: auto !important;
   }
 
   /* Keep italic body copy on the same line as the em dash (no forced desktop break) */

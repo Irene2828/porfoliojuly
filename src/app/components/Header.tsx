@@ -41,7 +41,7 @@ export default function Header() {
         .v2-theme .premium-header {
           background: #121316 !important;
           background-color: #121316 !important;
-          border-bottom: 1px solid rgba(242, 144, 143, 0.18) !important;
+          border-bottom: 1px solid rgba(209, 213, 219, 0.2) !important;
           box-shadow: none !important;
           backdrop-filter: none !important;
           -webkit-backdrop-filter: none !important;
@@ -51,7 +51,7 @@ export default function Header() {
         .v2-theme .premium-header.header-scrolled {
           background: rgba(18, 19, 22, 0.80) !important;
           background-color: rgba(18, 19, 22, 0.80) !important;
-          border-bottom: 1px solid rgba(242, 144, 143, 0.22) !important;
+          border-bottom: 1px solid rgba(209, 213, 219, 0.25) !important;
           box-shadow: 0 4px 24px rgba(0, 0, 0, 0.25) !important;
           backdrop-filter: blur(20px) saturate(180%) !important;
           -webkit-backdrop-filter: blur(20px) saturate(180%) !important;
@@ -137,6 +137,19 @@ export default function Header() {
         <nav className="header-nav header-nav-desktop" style={{ marginLeft: 'auto', marginRight: '0', justifyContent: 'flex-end', alignItems: 'center' }}>
           <a href="/#cases" className="nav-link">PORTFOLIO</a>
           <a href="/about" className="nav-link">ABOUT ME</a>
+          <a 
+            href="mailto:iryna@irynasheremeta.com" 
+            onClick={handleCopyEmail} 
+            className="nav-link"
+            style={{ 
+              color: copied ? '#f2908f' : undefined,
+              display: 'inline-flex',
+              alignItems: 'center',
+              cursor: 'pointer'
+            }}
+          >
+            <span>{copied ? 'COPIED ✓' : 'CONTACT'}</span>
+          </a>
         </nav>
       </div>
 

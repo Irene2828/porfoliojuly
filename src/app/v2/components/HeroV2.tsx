@@ -50,13 +50,21 @@ export default function HeroV2() {
         .hero-frame-paragraph {
           color: rgba(201, 206, 214, 0.7) !important;
           -webkit-text-fill-color: rgba(201, 206, 214, 0.7) !important;
+          font-weight: 300 !important;
+        }
+        .v2-theme .hero-frame-paragraph .hero-body-light,
+        .hero-frame-paragraph .hero-body-light,
+        .hero-body-light {
+          font-weight: 300 !important;
         }
         .v2-theme .hero-frame-paragraph .hero-body-bold,
         .hero-frame-paragraph .hero-body-bold,
-        .hero-body-bold {
+        .hero-body-bold,
+        .v2-theme .hero-frame-paragraph strong,
+        .hero-frame-paragraph strong {
           color: rgba(201, 206, 214, 0.7) !important;
           -webkit-text-fill-color: rgba(201, 206, 214, 0.7) !important;
-          font-weight: 400 !important;
+          font-weight: 600 !important;
         }
         .v2-theme .hero-frame-paragraph em,
         .hero-frame-paragraph em {
@@ -77,17 +85,45 @@ export default function HeroV2() {
         .hero-offer-item:hover {
           text-decoration-color: #fed5b8 !important;
         }
+        .hero-body-desktop {
+          display: inline;
+        }
+        .hero-body-mobile {
+          display: none;
+        }
         @media (max-width: 900px) {
           .v2-theme .hero-statement,
           .hero-statement {
             zoom: 0.845 !important; /* +5% headline size on mobile */
           }
-          .hero-text .hero-frame-paragraph {
+          .v2-theme .hero-name-group .hero-text,
+          .hero-name-group .hero-text,
+          .hero-text {
+            align-items: flex-start !important;
             text-align: left !important;
+          }
+          .v2-theme .hero-text .hero-frame-paragraph,
+          .hero-text .hero-frame-paragraph,
+          .v2-theme .hero-frame-paragraph,
+          .hero-frame-paragraph {
+            text-align: left !important;
+            align-self: flex-start !important;
             margin-left: 0 !important;
-            margin-right: 0 !important;
+            margin-right: auto !important;
             margin-top: 1.26rem !important; /* headline-body spacing, tightened 10% from 1.4rem */
             line-height: 1.705 !important; /* body text lines, increased 10% from 1.55 */
+            font-size: clamp(0.86rem, 3.7vw, 1.05rem) !important;
+            max-width: 100% !important;
+            width: 100% !important;
+          }
+          .hero-body-desktop {
+            display: none !important;
+          }
+          .hero-body-mobile {
+            display: block !important;
+          }
+          .hero-body-row {
+            display: block !important;
           }
           .v2-theme .hero-image-wrapper,
           .hero-image-wrapper {
@@ -154,17 +190,17 @@ export default function HeroV2() {
           .v2-theme .hero-ctas-outside .btn-primary-outline.btn-primary,
           .v2-theme .hero-ctas-outside .btn-primary,
           .v2-theme .hero-ctas-outside .btn-primary-outline {
-            background: #f0a38d !important;
-            height: 3.09rem !important;
+            background: #d6b792 !important;
+            height: 2.72rem !important;
             width: auto !important;
-            min-width: min(84%, 280px) !important;
+            min-width: min(75%, 246px) !important;
             max-width: 92% !important;
-            padding: 0 1.35rem !important;
+            padding: 0 1.19rem !important;
             margin: 0 auto !important;
             justify-content: center !important;
             white-space: nowrap !important;
             border-radius: 40px !important;
-            border: 1px solid #f0a38d !important;
+            border: 1px solid #d6b792 !important;
             box-shadow: none !important;
             transform: none !important;
             box-sizing: border-box !important;
@@ -172,7 +208,7 @@ export default function HeroV2() {
           .v2-theme .hero-ctas-outside .prefooter-btn-primary span,
           .v2-theme .hero-ctas-outside .face-cta span,
           .v2-theme .hero-ctas-outside .btn-primary-outline span {
-            font-size: 0.76rem !important;
+            font-size: 0.67rem !important;
             letter-spacing: 0.05em !important;
             white-space: nowrap !important;
             display: inline-block !important;
@@ -196,43 +232,56 @@ export default function HeroV2() {
             box-sizing: border-box !important;
             white-space: nowrap !important;
             letter-spacing: 0.02em !important;
-            transform: scale(1.20) !important;
+            transform: scale(1.44) !important;
             transform-origin: bottom left !important;
           }
         }
-        /* Primary CTA: matching prefooter pill button style (#f0a38d, border-radius: 40px) */
+        /* Primary CTA: matching prefooter pill button style (#d6b792, border-radius: 40px, increased 10%) */
+        .v2-theme .hero-ctas-outside .prefooter-btn-primary,
+        .v2-theme .hero-ctas-outside .face-cta,
         .v2-theme .hero-ctas-outside .btn-primary-outline.btn-primary,
         .v2-theme .hero-ctas-outside .btn-primary,
         .v2-theme .hero-ctas-outside .btn-primary-outline,
         .hero-ctas-outside .btn-primary-outline {
           font-family: var(--font-label), sans-serif !important;
-          font-size: 0.803rem !important;
+          font-size: 0.72rem !important;
           font-weight: 600 !important;
           text-transform: uppercase !important;
           letter-spacing: 0.08em !important;
-          height: 3.43rem !important;
-          padding: 0 1.98rem !important;
-          background: #f0a38d !important;
-          border: 1px solid #f0a38d !important;
+          height: 3.01rem !important;
+          padding: 0 1.74rem !important;
+          background: #d6b792 !important;
+          border: 1px solid #d6b792 !important;
           color: #000000 !important;
           -webkit-text-fill-color: #000000 !important;
           border-radius: 40px !important;
           box-shadow: none !important;
-          transform: scale(1.05) !important;
+          transform: none !important;
           transition: all 0.25s ease !important;
         }
+        .v2-theme .hero-ctas-outside .prefooter-btn-primary span,
+        .v2-theme .hero-ctas-outside .face-cta span,
+        .v2-theme .hero-ctas-outside .btn-primary-outline span {
+          font-size: 0.72rem !important;
+          font-weight: 600 !important;
+          letter-spacing: 0.08em !important;
+        }
+        .v2-theme .hero-ctas-outside .prefooter-btn-primary:hover,
+        .v2-theme .hero-ctas-outside .face-cta:hover,
         .v2-theme .hero-ctas-outside .btn-primary-outline.btn-primary:hover,
         .v2-theme .hero-ctas-outside .btn-primary:hover,
         .v2-theme .hero-ctas-outside .btn-primary-outline:hover,
         .hero-ctas-outside .btn-primary-outline:hover {
-          background: #f0a38d !important;
-          border-color: #f0a38d !important;
+          background: #d6b792 !important;
+          border-color: #d6b792 !important;
           color: #000000 !important;
           -webkit-text-fill-color: #000000 !important;
           border-radius: 40px !important;
-          transform: translateY(-2px) scale(1.05) !important;
-          box-shadow: 0 8px 24px rgba(240, 163, 141, 0.175) !important;
+          transform: translateY(-2px) !important;
+          box-shadow: 0 8px 24px rgba(214, 183, 146, 0.28) !important;
         }
+        .v2-theme .hero-ctas-outside .prefooter-btn-primary:hover svg,
+        .v2-theme .hero-ctas-outside .face-cta:hover svg,
         .v2-theme .hero-ctas-outside .btn-primary-outline.btn-primary:hover svg,
         .v2-theme .hero-ctas-outside .btn-primary-outline:hover svg {
           stroke: #000000 !important;
@@ -295,8 +344,16 @@ export default function HeroV2() {
                     </span>
                   </span>
                 </h1>
-                <p className="hero-frame-paragraph hero-paragraph-anim" style={{ marginTop: '1.7rem', fontSize: '1.213rem', lineHeight: '1.75', color: 'rgba(201, 206, 214, 0.7)', WebkitTextFillColor: 'rgba(201, 206, 214, 0.7)', maxWidth: '100%', fontWeight: 400, opacity: 1, textWrap: 'pretty' }}>
-                  You tell me what&rsquo;s not working: a site that undersells you, a task that eats your week, a process held together by spreadsheets. I take it from there and build the solution.
+                <p className="hero-frame-paragraph hero-paragraph-anim" style={{ marginTop: '1.7rem', fontSize: '1.213rem', lineHeight: '1.75', color: 'rgba(201, 206, 214, 0.7)', WebkitTextFillColor: 'rgba(201, 206, 214, 0.7)', maxWidth: '100%', fontWeight: 300, opacity: 1, textWrap: 'pretty' }}>
+                  <span className="hero-body-desktop">
+                    <strong className="hero-body-bold">You tell me what&rsquo;s not working</strong> &ndash; <span className="hero-body-light" style={{ fontWeight: 300 }}>a site that undersells you, a task that eats your week, a process held together by spreadsheets.</span> <strong className="hero-body-bold">I take it from there and build the solution.</strong>
+                  </span>
+                  <span className="hero-body-mobile">
+                    <span className="hero-body-row"><strong className="hero-body-bold">You tell me what&rsquo;s not working</strong> -</span>
+                    <span className="hero-body-row hero-body-light" style={{ fontWeight: 300 }}>a site that undersells you, a task that eats your</span>
+                    <span className="hero-body-row hero-body-light" style={{ fontWeight: 300 }}>week, a process held together by spreadsheets.</span>
+                    <span className="hero-body-row"><strong className="hero-body-bold">I take it from there and build the solution.</strong></span>
+                  </span>
                 </p>
               </div>
 
@@ -316,10 +373,10 @@ export default function HeroV2() {
                 <a 
                   href="#contact" 
                   className="btn prefooter-btn-primary face-cta" 
-                  style={{ display: 'inline-flex', alignItems: 'center', gap: '0.45rem', transform: 'scale(1.05)' }}
+                  style={{ display: 'inline-flex', alignItems: 'center', gap: '0.45rem' }}
                 >
                   <span>SEND YOUR PROBLEM MY WAY</span>
-                  <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round" style={{ transform: 'translateY(-0.5px)' }}>
+                  <svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round" style={{ transform: 'translateY(-0.5px)' }}>
                     <line x1="7" y1="17" x2="17" y2="7"></line>
                     <polyline points="7 7 17 7 17 17"></polyline>
                   </svg>

@@ -19,7 +19,7 @@
   justify-content: center;
   align-items: center;
   height: 3.5rem;
-  border-bottom: 1px solid rgba(242, 144, 143, 0.18) !important;
+  border-bottom: 1px solid rgba(209, 213, 219, 0.2) !important;
   box-shadow: none !important;
   z-index: 1000;
   pointer-events: auto;
