@@ -685,12 +685,13 @@
   transform: scale(0.4);
   transform-origin: top left;
   pointer-events: none; /* Let clicks pass to wrapper */
+  opacity: 0;
   transition: opacity 0.4s ease;
 }
 
 .preview-item-container:hover .preview-card-scaler,
 .preview-item-container:focus-within .preview-card-scaler {
-  opacity: 0;
+  opacity: 1;
 }
 
 .preview-card-scaler > div {
@@ -699,14 +700,14 @@
   min-height: 100%;
 }
 
-/* --- Large Case Image on Hover (No zoom-in crop, no springy motion, no chip) --- */
+/* --- Large Case Image on Static (Swapped with scaler), hides on hover --- */
 .preview-card-hover-visual {
   position: absolute;
   inset: 0;
   width: 100%;
   height: 100%;
-  background: #fbfbfd;
-  opacity: 0;
+  background: #ffffff;
+  opacity: 1;
   pointer-events: none;
   overflow: hidden;
   z-index: 10;
@@ -719,13 +720,13 @@
 }
 
 .preview-card-hover-visual.navy-bg {
-  background-color: #081A33;
+  background-color: #081A33 !important;
   background-image: 
     radial-gradient(800px circle at 15% 85%, rgba(74,120,180,0.35), transparent),
     radial-gradient(700px circle at 85% 15%, rgba(120,170,220,0.18), transparent),
     radial-gradient(1200px circle at center, transparent 0%, rgba(5,15,30,0.6) 100%),
-    radial-gradient(circle, rgba(255, 255, 255, 0.18) 1px, transparent 1px);
-  background-size: 100% 100%, 100% 100%, 100% 100%, 28px 28px;
+    radial-gradient(circle, rgba(255, 255, 255, 0.18) 1px, transparent 1px) !important;
+  background-size: 100% 100%, 100% 100%, 100% 100%, 28px 28px !important;
 }
 
 .preview-card-hover-img {
@@ -741,7 +742,7 @@
 
 .preview-item-container:hover .preview-card-hover-visual,
 .preview-item-container:focus-within .preview-card-hover-visual {
-  opacity: 1;
+  opacity: 0;
 }
 
 .preview-card-caption-btn {
