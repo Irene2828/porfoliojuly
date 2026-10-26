@@ -1051,12 +1051,18 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 /* Prefooter closing headline: matching hero unbolded text color and font weight */
-/* Prefooter closing headline: swapped - closing headline is peach pink & weight 600 */
 .v2-theme .prefooter-section:not(.about-cta-section) h2,
 .v2-theme .prefooter-closing-line {
   font-family: var(--font-body), 'Plus Jakarta Sans', sans-serif !important;
-  font-weight: 600 !important;
+  font-weight: 300 !important;
   letter-spacing: 0.01em !important;
+  color: rgba(255, 255, 255, 0.8) !important;
+  -webkit-text-fill-color: rgba(255, 255, 255, 0.8) !important;
+}
+
+.v2-theme .prefooter-closing-line strong {
+  font-weight: 600 !important;
+  letter-spacing: 0.025em !important;
   color: #f2908f !important;
   -webkit-text-fill-color: #f2908f !important;
 }

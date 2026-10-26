@@ -23,12 +23,18 @@ export default function EditorialStatement() {
           }
           .prefooter-closing-line {
             font-family: var(--font-body), 'Plus Jakarta Sans', sans-serif !important;
-            font-weight: 600 !important;
+            font-weight: 300 !important;
             letter-spacing: 0.01em !important;
-            color: #f2908f !important;
-            -webkit-text-fill-color: #f2908f !important;
+            color: rgba(255, 255, 255, 0.8) !important;
+            -webkit-text-fill-color: rgba(255, 255, 255, 0.8) !important;
             -webkit-font-smoothing: antialiased !important;
             -moz-osx-font-smoothing: grayscale !important;
+          }
+          .prefooter-closing-line strong {
+            font-weight: 600 !important;
+            letter-spacing: 0.025em !important;
+            color: #f2908f !important;
+            -webkit-text-fill-color: #f2908f !important;
           }
           .prefooter-closing-subtext,
           .prefooter-closing-subtext p {
@@ -152,13 +158,25 @@ export default function EditorialStatement() {
               font-size: 2.08rem !important; /* 20% smaller on desktop (was 2.6rem) */
               max-width: 44ch !important;
             }
-            .prefooter-closing-line .br-desktop {
+            .prefooter-closing-desktop {
               display: inline !important;
+            }
+            .prefooter-closing-mobile {
+              display: none !important;
             }
           }
           @media (max-width: 900px) {
-            .prefooter-closing-line .br-desktop {
+            .prefooter-closing-desktop {
               display: none !important;
+            }
+            .prefooter-closing-mobile {
+              display: flex !important;
+              flex-direction: column !important;
+              align-items: center !important;
+              gap: 0px !important;
+            }
+            .prefooter-closing-row {
+              display: block !important;
             }
           }
         `}</style>
@@ -194,19 +212,33 @@ export default function EditorialStatement() {
             style={{
               fontFamily: 'var(--font-body), "Plus Jakarta Sans", sans-serif',
               fontSize: 'clamp(1.48rem, 7.7vw, 2.08rem)',
-              fontWeight: 600,
+              fontWeight: 300,
               letterSpacing: '0.01em',
               lineHeight: 1.35,
-              color: '#f2908f',
-              WebkitTextFillColor: '#f2908f',
+              color: 'rgba(255, 255, 255, 0.8)',
+              WebkitTextFillColor: 'rgba(255, 255, 255, 0.8)',
               textAlign: 'center',
               margin: '0 0 3.5rem 0',
               maxWidth: '44ch',
             }}
           >
-            An outdated website or repetitive work{' '}
-            <br className="br-desktop" />
-            is slowing your business down.
+            <span className="prefooter-closing-desktop">
+              An outdated website or repetitive work{' '}
+              <br />
+              <strong style={{ fontWeight: 600, letterSpacing: '0.025em', color: '#f2908f', WebkitTextFillColor: '#f2908f' }}>
+                is slowing your business down.
+              </strong>
+            </span>
+            <span className="prefooter-closing-mobile">
+              <span className="prefooter-closing-row">An outdated website</span>
+              <span className="prefooter-closing-row">or repetitive work</span>
+              <strong className="prefooter-closing-row" style={{ fontWeight: 600, letterSpacing: '0.025em', color: '#f2908f', WebkitTextFillColor: '#f2908f' }}>
+                is slowing your
+              </strong>
+              <strong className="prefooter-closing-row" style={{ fontWeight: 600, letterSpacing: '0.025em', color: '#f2908f', WebkitTextFillColor: '#f2908f' }}>
+                business down.
+              </strong>
+            </span>
           </h2>
 
           {/* Text under closing headline */}
