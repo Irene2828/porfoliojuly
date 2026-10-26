@@ -339,39 +339,45 @@ export default function HeroV2() {
                 style={{ transform: 'translateY(-0.4rem)' }}
               >
                 <h1 className="hero-statement hero-statement-anim" style={{ display: 'flex', flexDirection: 'column', gap: '0px', lineHeight: '1.22', color: 'rgba(255, 255, 255, 0.8)', WebkitTextFillColor: 'rgba(255, 255, 255, 0.8)' }}>
-                  {/* Desktop Headline (2 lines) */}
+                  {/* Desktop Headline (3 lines) */}
                   <span className="headline-desktop" style={{ color: 'rgba(255, 255, 255, 0.8)' }}>
                     <span className="headline-line headline-light" style={{ color: 'rgba(255, 255, 255, 0.8)', WebkitTextFillColor: 'rgba(255, 255, 255, 0.8)' }}>
                       <span className="headline-mockup-light" style={{ fontWeight: 300, color: 'rgba(255, 255, 255, 0.8)', WebkitTextFillColor: 'rgba(255, 255, 255, 0.8)' }}>Custom</span>{' '}
                       <strong className="headline-mockup-bold" style={{ fontWeight: 600, letterSpacing: '0.025em', color: '#f2908f', WebkitTextFillColor: '#f2908f' }}>websites, tools, workflows.</strong>
                     </span>
                     <span className="headline-line headline-light" style={{ color: 'rgba(255, 255, 255, 0.8)', WebkitTextFillColor: 'rgba(255, 255, 255, 0.8)' }}>
-                      <span className="headline-mockup-light" style={{ fontWeight: 300, color: 'rgba(255, 255, 255, 0.8)', WebkitTextFillColor: 'rgba(255, 255, 255, 0.8)' }}>Built for one business: <em style={{ fontStyle: 'italic' }}>yours.</em></span>
+                      <span className="headline-mockup-light" style={{ fontWeight: 300, color: 'rgba(255, 255, 255, 0.8)', WebkitTextFillColor: 'rgba(255, 255, 255, 0.8)' }}>Designed and built</span>
+                    </span>
+                    <span className="headline-line headline-light" style={{ color: 'rgba(255, 255, 255, 0.8)', WebkitTextFillColor: 'rgba(255, 255, 255, 0.8)' }}>
+                      <span className="headline-mockup-light" style={{ fontWeight: 300, color: 'rgba(255, 255, 255, 0.8)', WebkitTextFillColor: 'rgba(255, 255, 255, 0.8)' }}>for one business &mdash; <em style={{ fontStyle: 'italic' }}>yours.</em></span>
                     </span>
                   </span>
 
-                  {/* Mobile Headline (3 lines, left-aligned) */}
+                  {/* Mobile Headline (4 lines, left-aligned) */}
                   <span className="headline-mobile" style={{ gap: '0px', lineHeight: 1.205, color: 'rgba(255, 255, 255, 0.8)' }}>
                     <span className="headline-line" style={{ lineHeight: 1.205, fontSize: '1em', margin: 0, padding: 0, color: 'rgba(255, 255, 255, 0.8)', WebkitTextFillColor: 'rgba(255, 255, 255, 0.8)' }}>
                       <span className="headline-mockup-light" style={{ fontWeight: 300, fontSize: '1em', lineHeight: 1.205, color: 'rgba(255, 255, 255, 0.8)', WebkitTextFillColor: 'rgba(255, 255, 255, 0.8)' }}>Custom</span>{' '}
-                      <strong className="headline-mockup-bold" style={{ fontWeight: 600, fontSize: '1em', lineHeight: 1.205, letterSpacing: '0.025em', color: '#f2908f', WebkitTextFillColor: '#f2908f' }}>websites, tools</strong>
+                      <strong className="headline-mockup-bold" style={{ fontWeight: 600, fontSize: '1em', lineHeight: 1.205, letterSpacing: '0.025em', color: '#f2908f', WebkitTextFillColor: '#f2908f' }}>websites, tools,</strong>
                     </span>
                     <span className="headline-line" style={{ lineHeight: 1.205, fontSize: '1em', margin: 0, padding: 0, color: 'rgba(255, 255, 255, 0.8)', WebkitTextFillColor: 'rgba(255, 255, 255, 0.8)' }}>
-                      <strong className="headline-mockup-bold" style={{ fontWeight: 600, fontSize: '1em', lineHeight: 1.205, letterSpacing: '0.025em', color: '#f2908f', WebkitTextFillColor: '#f2908f' }}>&amp; workflows.</strong>
+                      <strong className="headline-mockup-bold" style={{ fontWeight: 600, fontSize: '1em', lineHeight: 1.205, letterSpacing: '0.025em', color: '#f2908f', WebkitTextFillColor: '#f2908f' }}>workflows.</strong>
                     </span>
                     <span className="headline-line" style={{ lineHeight: 1.205, fontSize: '1em', margin: 0, padding: 0, color: 'rgba(255, 255, 255, 0.8)', WebkitTextFillColor: 'rgba(255, 255, 255, 0.8)' }}>
-                      <span className="headline-mockup-light" style={{ fontWeight: 300, fontSize: '1em', lineHeight: 1.205, color: 'rgba(255, 255, 255, 0.8)', WebkitTextFillColor: 'rgba(255, 255, 255, 0.8)' }}>Built for one business: <em style={{ fontStyle: 'italic', fontSize: '1em', lineHeight: 1.205 }}>yours.</em></span>
+                      <span className="headline-mockup-light" style={{ fontWeight: 300, fontSize: '1em', lineHeight: 1.205, color: 'rgba(255, 255, 255, 0.8)', WebkitTextFillColor: 'rgba(255, 255, 255, 0.8)' }}>Designed and built</span>
+                    </span>
+                    <span className="headline-line" style={{ lineHeight: 1.205, fontSize: '1em', margin: 0, padding: 0, color: 'rgba(255, 255, 255, 0.8)', WebkitTextFillColor: 'rgba(255, 255, 255, 0.8)' }}>
+                      <span className="headline-mockup-light" style={{ fontWeight: 300, fontSize: '1em', lineHeight: 1.205, color: 'rgba(255, 255, 255, 0.8)', WebkitTextFillColor: 'rgba(255, 255, 255, 0.8)' }}>for one business &mdash; <em style={{ fontStyle: 'italic', fontSize: '1em', lineHeight: 1.205 }}>yours.</em></span>
                     </span>
                   </span>
                 </h1>
                 <p className="hero-frame-paragraph hero-paragraph-anim" style={{ marginTop: '1.7rem', fontSize: '1.213rem', lineHeight: '1.75', color: '#b8c5d4', WebkitTextFillColor: '#b8c5d4', maxWidth: '100%', fontWeight: 300, opacity: 1, textWrap: 'pretty' }}>
                   <span className="hero-body-desktop">
-                    <strong className="hero-body-bold">You tell me what&rsquo;s not working</strong> &ndash; <span className="hero-body-light" style={{ fontWeight: 300 }}>a site that undersells you, a task that eats your week, a process held together by spreadsheets.</span> <strong className="hero-body-bold">I take it from there and build the solution.</strong>
+                    <span className="hero-body-light" style={{ fontWeight: 300 }}>You tell me what&rsquo;s not working &ndash; a site that undersells you, a task that eats your week, a process held together by spreadsheets. I take it from there and build the solution.</span>
                   </span>
                   <span className="hero-body-mobile">
-                    <span className="hero-body-row"><strong className="hero-body-bold">You tell me what&rsquo;s not working</strong> -</span>
+                    <span className="hero-body-row hero-body-light" style={{ fontWeight: 300 }}>You tell me what&rsquo;s not working -</span>
                     <span className="hero-body-row hero-body-light" style={{ fontWeight: 300 }}>a site that undersells you, a task that eats your</span>
-                    <span className="hero-body-row"><span className="hero-body-light" style={{ fontWeight: 300 }}>week, a process held together by spreadsheets.</span> <strong className="hero-body-bold">I take it from there and build the&nbsp;solution.</strong></span>
+                    <span className="hero-body-row hero-body-light" style={{ fontWeight: 300 }}>week, a process held together by spreadsheets. I take it from there and build the&nbsp;solution.</span>
                   </span>
                 </p>
               </div>
