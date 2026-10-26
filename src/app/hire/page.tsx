@@ -269,7 +269,7 @@ export default function HirePage() {
                       <a
                         href="mailto:iryna@irynasheremeta.com"
                         className="btn btn-primary btn-primary-outline hire-btn-primary"
-                        style={{ display: 'inline-flex', alignItems: 'center', gap: '0.55rem', borderRadius: '0px' }}
+                        style={{ display: 'inline-flex', alignItems: 'center', gap: '0.55rem', borderRadius: '40px' }}
                       >
                         <span>Let’s work on the next build together</span>
                         <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round" style={{ transform: 'translateY(-0.5px)' }}>

@@ -59,7 +59,7 @@ export default function EditorialStatement() {
             color: #000000 !important;
             -webkit-text-fill-color: #000000 !important;
             border-radius: 40px !important;
-            transform: translateY(-2px) !important;
+            transform: translateY(-2px) scale(1.05) !important;
             box-shadow: 0 8px 24px rgba(240, 163, 141, 0.35) !important;
           }
           .prefooter-btn-primary:hover svg {
@@ -73,6 +73,7 @@ export default function EditorialStatement() {
             color: #000000 !important;
             -webkit-text-fill-color: #000000 !important;
             box-shadow: none !important;
+            transform: scale(1.05) !important;
           }
           .prefooter-section .prefooter-btn-primary.face-cta:hover {
             background: #f0a38d !important;
@@ -80,26 +81,37 @@ export default function EditorialStatement() {
             border-radius: 40px !important;
             color: #000000 !important;
             -webkit-text-fill-color: #000000 !important;
-            transform: translateY(-2px) !important;
+            transform: translateY(-2px) scale(1.05) !important;
             box-shadow: 0 8px 24px rgba(240, 163, 141, 0.35) !important;
           }
-          @media (max-width: 767px) {
+          @media (max-width: 900px) {
             .prefooter-closing-line {
-              font-size: clamp(1.48rem, 7.7vw, 2.95rem) !important;
+              font-size: clamp(1.48rem, 7.7vw, 2.08rem) !important;
               line-height: 1.35 !important;
             }
             .prefooter-section .prefooter-btn-primary.face-cta,
             .prefooter-btn-primary {
               background: #f0a38d !important;
-              height: 3.09rem !important; /* 10% shorter height */
-              width: 80% !important; /* 20% shorter width than full container */
-              max-width: 80% !important;
+              height: 3.09rem !important;
+              width: auto !important;
+              min-width: min(84%, 280px) !important;
+              max-width: 92% !important;
+              padding: 0 1.35rem !important;
               margin: 0 auto !important;
               justify-content: center !important;
               white-space: nowrap !important;
               border-radius: 40px !important;
               border: 1px solid #f0a38d !important;
               box-shadow: none !important;
+              transform: none !important;
+              box-sizing: border-box !important;
+            }
+            .prefooter-section .prefooter-btn-primary.face-cta span,
+            .prefooter-btn-primary span {
+              font-size: 0.76rem !important;
+              letter-spacing: 0.05em !important;
+              white-space: nowrap !important;
+              display: inline-block !important;
             }
             .prefooter-cta-container {
               justify-content: center !important;

@@ -76,14 +76,40 @@ export default function Header() {
         }
         @media (max-width: 900px) {
           .premium-header {
-            padding-left: 0.1rem !important;
+            padding-left: 1rem !important;
             padding-right: 1rem !important;
-          }
-          .mobile-header-left {
-            right: 1rem !important;
+            padding-top: 0.85rem !important;
+            padding-bottom: 0.85rem !important;
+            height: 4rem !important;
+            min-height: 4rem !important;
+            display: flex !important;
+            align-items: center !important;
+            justify-content: space-between !important;
           }
           .mobile-header-right {
-            transform: translateY(0.9rem) !important;
+            order: -1 !important;
+            position: absolute !important;
+            left: 1.25rem !important;
+            top: 50% !important;
+            transform: translateY(-50%) !important;
+            margin: 0 !important;
+            display: flex !important;
+            align-items: center !important;
+            justify-content: center !important;
+            z-index: 10 !important;
+          }
+          .mobile-header-right .hamburger-btn {
+            transform: scale(1.2) !important;
+            transform-origin: center center !important;
+            padding: 0.35rem !important;
+            margin: 0 !important;
+          }
+          .mobile-header-left {
+            position: absolute !important;
+            right: 1.25rem !important;
+            left: auto !important;
+            top: 50% !important;
+            transform: translateY(-50%) !important;
           }
         }
       `}</style>

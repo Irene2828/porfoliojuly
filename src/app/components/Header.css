@@ -314,6 +314,11 @@
   to { transform: translateX(0); }
 }
 
+@keyframes slideInLeft {
+  from { transform: translateX(-100%); }
+  to { transform: translateX(0); }
+}
+
 .header-bottom-hairline {
   display: none;
 }
@@ -493,12 +498,25 @@
 @media (max-width: 900px) {
   .mobile-header-right {
     order: -1 !important;
-    margin-left: 0 !important;
-    margin-right: 0 !important;
+    position: absolute !important;
+    left: 1.25rem !important;
+    top: 50% !important;
+    transform: translateY(-50%) !important;
+    margin: 0 !important;
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    z-index: 10 !important;
+  }
+  .mobile-header-right .hamburger-btn {
+    transform: scale(1.2) !important;
+    transform-origin: center center !important;
+    padding: 0.35rem !important;
+    margin: 0 !important;
   }
   .mobile-header-left {
     position: absolute !important;
-    right: 1.5rem !important;
+    right: 1.25rem !important;
     left: auto !important;
     top: 50% !important;
     transform: translateY(-50%) !important;
@@ -512,6 +530,19 @@
   .mobile-header-left .mobile-brand-title {
     text-align: right !important;
     align-self: flex-end !important;
+  }
+
+  /* Mobile menu drawer: opens from the LEFT to match the hamburger button position */
+  .header-drawer-overlay {
+    justify-content: flex-start !important;
+  }
+  .header-drawer-content {
+    animation: slideInLeft 0.25s cubic-bezier(0.16, 1, 0.3, 1) forwards !important;
+    box-shadow: 4px 0 24px rgba(0, 0, 0, 0.25) !important;
+  }
+  .v2-theme .header-drawer-content {
+    border-right: 1px solid rgba(255, 255, 255, 0.1) !important;
+    border-left: none !important;
   }
 }
 

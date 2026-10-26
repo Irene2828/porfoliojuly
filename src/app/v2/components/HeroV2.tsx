@@ -121,19 +121,38 @@ export default function HeroV2() {
             align-items: center !important;
             width: 100% !important;
           }
+          .v2-theme .hero-ctas-outside .prefooter-btn-primary,
+          .v2-theme .hero-ctas-outside .face-cta,
           .v2-theme .hero-ctas-outside .btn-primary-outline.btn-primary,
           .v2-theme .hero-ctas-outside .btn-primary,
           .v2-theme .hero-ctas-outside .btn-primary-outline {
             background: #f0a38d !important;
-            height: 3.09rem !important; /* 10% shorter height */
-            width: 80% !important; /* 20% shorter in width than full container/headline width */
-            max-width: 80% !important;
+            height: 3.09rem !important;
+            width: auto !important;
+            min-width: min(84%, 280px) !important;
+            max-width: 92% !important;
+            padding: 0 1.35rem !important;
             margin: 0 auto !important;
             justify-content: center !important;
             white-space: nowrap !important;
             border-radius: 40px !important;
             border: 1px solid #f0a38d !important;
             box-shadow: none !important;
+            transform: none !important;
+            box-sizing: border-box !important;
+          }
+          .v2-theme .hero-ctas-outside .prefooter-btn-primary span,
+          .v2-theme .hero-ctas-outside .face-cta span,
+          .v2-theme .hero-ctas-outside .btn-primary-outline span {
+            font-size: 0.76rem !important;
+            letter-spacing: 0.05em !important;
+            white-space: nowrap !important;
+            display: inline-block !important;
+          }
+          .v2-theme .badge-anchor-websites,
+          .badge-anchor-websites {
+            bottom: -51px !important;
+            left: -12px !important;
           }
           .v2-theme .hero-ring-badge,
           .hero-ring-badge,
@@ -149,21 +168,29 @@ export default function HeroV2() {
             box-sizing: border-box !important;
             white-space: nowrap !important;
             letter-spacing: 0.02em !important;
+            transform: scale(1.20) !important;
+            transform-origin: bottom left !important;
           }
         }
-        /* Primary CTA: matching About Me hovered pill button style (#f0a38d, border-radius: 40px) */
+        /* Primary CTA: matching prefooter pill button style (#f0a38d, border-radius: 40px) */
         .v2-theme .hero-ctas-outside .btn-primary-outline.btn-primary,
         .v2-theme .hero-ctas-outside .btn-primary,
         .v2-theme .hero-ctas-outside .btn-primary-outline,
         .hero-ctas-outside .btn-primary-outline {
+          font-family: var(--font-label), sans-serif !important;
+          font-size: 0.803rem !important;
+          font-weight: 600 !important;
+          text-transform: uppercase !important;
+          letter-spacing: 0.08em !important;
+          height: 3.43rem !important;
+          padding: 0 1.98rem !important;
           background: #f0a38d !important;
           border: 1px solid #f0a38d !important;
           color: #000000 !important;
           -webkit-text-fill-color: #000000 !important;
-          font-weight: 600 !important;
           border-radius: 40px !important;
           box-shadow: none !important;
-          padding: 12px 26px !important;
+          transform: scale(1.05) !important;
           transition: all 0.25s ease !important;
         }
         .v2-theme .hero-ctas-outside .btn-primary-outline.btn-primary:hover,
@@ -175,7 +202,7 @@ export default function HeroV2() {
           color: #000000 !important;
           -webkit-text-fill-color: #000000 !important;
           border-radius: 40px !important;
-          transform: translateY(-2px) !important;
+          transform: translateY(-2px) scale(1.05) !important;
           box-shadow: 0 8px 24px rgba(240, 163, 141, 0.35) !important;
         }
         .v2-theme .hero-ctas-outside .btn-primary-outline.btn-primary:hover svg,
@@ -264,9 +291,13 @@ export default function HeroV2() {
                   marginTop: '3.9rem' 
                 }}
               >
-                <a href="#contact" className="btn btn-primary btn-primary-outline" style={{ display: 'inline-flex', alignItems: 'center', gap: '0.5rem' }}>
+                <a 
+                  href="#contact" 
+                  className="btn prefooter-btn-primary face-cta" 
+                  style={{ display: 'inline-flex', alignItems: 'center', gap: '0.45rem', transform: 'scale(1.05)' }}
+                >
                   <span>SEND YOUR PROBLEM MY WAY</span>
-                  <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round" style={{ transform: 'translateY(-0.5px)' }}>
+                  <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round" style={{ transform: 'translateY(-0.5px)' }}>
                     <line x1="7" y1="17" x2="17" y2="7"></line>
                     <polyline points="7 7 17 7 17 17"></polyline>
                   </svg>

@@ -568,6 +568,7 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 /* V2 Specific Button Overrides */
+.v2-theme .prefooter-btn-primary,
 .v2-theme .hero-ctas-outside .btn-primary-outline,
 .hire-btn-primary,
 .v2-theme .face-cta {
@@ -587,22 +588,36 @@ h1, h2, h3, h4, h5, h6 {
   text-shadow: none !important;
   -webkit-font-smoothing: antialiased !important;
   -moz-osx-font-smoothing: grayscale !important;
-  transform: scale(1) !important;
+  transform: scale(1.05) !important;
   transition: transform 0.22s cubic-bezier(0.16, 1, 0.3, 1), background 0.22s ease, border-color 0.22s ease, box-shadow 0.2s ease, color 0.22s ease !important;
   display: inline-flex !important;
   align-items: center !important;
   justify-content: center !important;
+  white-space: nowrap !important;
+  box-sizing: border-box !important;
 }
 
-.v2-theme .hero-ctas-outside .btn-primary-outline svg {
+.v2-theme .prefooter-btn-primary span,
+.v2-theme .hero-ctas-outside .btn-primary-outline span,
+.v2-theme .face-cta span {
+  font-family: var(--font-label), sans-serif !important;
+  font-size: 0.803rem !important;
+  font-weight: 600 !important;
+  letter-spacing: 0.08em !important;
+  text-transform: uppercase !important;
+  white-space: nowrap !important;
+  display: inline-block !important;
+  line-height: 1 !important;
+  color: #000000 !important;
+  -webkit-text-fill-color: #000000 !important;
+}
+
+.v2-theme .prefooter-btn-primary svg,
+.v2-theme .hero-ctas-outside .btn-primary-outline svg,
+.v2-theme .face-cta svg {
   stroke: #000000 !important;
+  flex-shrink: 0 !important;
   transition: stroke 0.22s ease !important;
-}
-
-.v2-theme .face-cta {
-  font-size: 0.72rem !important; /* 10% smaller */
-  height: 3.08rem !important; /* 10% smaller */
-  padding: 0 1.78rem !important; /* 10% smaller */
 }
 
 .v2-theme .hero-ctas-outside .btn-primary-outline:hover,
@@ -615,7 +630,7 @@ h1, h2, h3, h4, h5, h6 {
   -webkit-text-fill-color: #000000 !important;
   box-shadow: 0 8px 24px rgba(240, 163, 141, 0.35) !important;
   text-shadow: none !important;
-  transform: translateY(-2px) !important;
+  transform: translateY(-2px) scale(1.05) !important;
 }
 
 .v2-theme .hero-ctas-outside .btn-primary-outline:hover svg {
@@ -1210,10 +1225,10 @@ h1, h2, h3, h4, h5, h6 {
     background-color: #121316 !important;
     border-bottom: 1px solid rgba(242, 144, 143, 0.2) !important;
     box-shadow: none !important;
-    padding-top: 0.65rem !important;
-    padding-bottom: 1.3rem !important; /* Doubled header inner bottom padding */
-    height: auto !important;
-    min-height: 4.2rem !important;
+    padding-top: 0.85rem !important;
+    padding-bottom: 0.85rem !important;
+    height: 4rem !important;
+    min-height: 4rem !important;
   }
   .v2-theme .premium-header.header-scrolled,
   .premium-header.header-scrolled {
@@ -1223,8 +1238,10 @@ h1, h2, h3, h4, h5, h6 {
     box-shadow: 0 4px 24px rgba(0, 0, 0, 0.25) !important;
     backdrop-filter: blur(20px) saturate(180%) !important;
     -webkit-backdrop-filter: blur(20px) saturate(180%) !important;
-    padding-top: 0.65rem !important;
-    padding-bottom: 1.3rem !important;
+    padding-top: 0.85rem !important;
+    padding-bottom: 0.85rem !important;
+    height: 4rem !important;
+    min-height: 4rem !important;
   }
 
   /* No dashed frame or white container on mobile hero */
@@ -1382,13 +1399,16 @@ h1, h2, h3, h4, h5, h6 {
     gap: 0.765rem !important; /* button-button spacing tightened 10% from 0.85rem */
   }
 
+  .v2-theme .prefooter-btn-primary,
   .v2-theme .hero-ctas-outside .btn-primary-outline,
   .v2-theme .face-cta,
   .hire-btn-primary {
     background: #f0a38d !important;
-    height: 3.09rem !important; /* 10% shorter height */
-    width: 80% !important; /* 20% shorter in width than full container/headline width */
-    max-width: 80% !important;
+    height: 3.09rem !important;
+    width: auto !important;
+    min-width: min(84%, 280px) !important;
+    max-width: 92% !important;
+    padding: 0 1.35rem !important;
     margin-left: auto !important;
     margin-right: auto !important;
     justify-content: center !important;
@@ -1396,6 +1416,21 @@ h1, h2, h3, h4, h5, h6 {
     border-radius: 40px !important;
     border: 1px solid #f0a38d !important;
     box-shadow: none !important;
+    transform: none !important;
+    box-sizing: border-box !important;
+  }
+  .v2-theme .prefooter-btn-primary:hover,
+  .v2-theme .hero-ctas-outside .btn-primary-outline:hover,
+  .v2-theme .face-cta:hover {
+    transform: translateY(-2px) !important;
+  }
+  .v2-theme .prefooter-btn-primary span,
+  .v2-theme .hero-ctas-outside .btn-primary-outline span,
+  .v2-theme .face-cta span {
+    font-size: 0.76rem !important;
+    letter-spacing: 0.05em !important;
+    white-space: nowrap !important;
+    display: inline-block !important;
   }
 
   /* On mobile: shapes shrunk 25% with image to fit neatly within bounds */
@@ -1432,8 +1467,8 @@ h1, h2, h3, h4, h5, h6 {
   }
 
   .v2-theme .badge-anchor-websites {
-    bottom: -36px !important;
-    left: -10px !important;
+    bottom: -51px !important;
+    left: -12px !important;
   }
 
   .v2-theme .badge-anchor-products {
@@ -1441,7 +1476,8 @@ h1, h2, h3, h4, h5, h6 {
     right: -10px !important;
   }
 
-  .v2-theme .hero-ring-badge {
+  .v2-theme .hero-ring-badge,
+  .v2-theme .badge-designer {
     font-size: 11.5px !important;
     padding: 5px 20px !important; /* equal side margins for balanced text fit */
     width: fit-content !important;
@@ -1451,6 +1487,8 @@ h1, h2, h3, h4, h5, h6 {
     justify-content: center !important;
     text-align: center !important;
     box-sizing: border-box !important;
+    transform: scale(1.20) !important;
+    transform-origin: bottom left !important;
   }
 
   @media (max-width: 360px) {
