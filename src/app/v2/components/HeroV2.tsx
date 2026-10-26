@@ -373,12 +373,12 @@ export default function HeroV2() {
                 </h1>
                 <p className="hero-frame-paragraph hero-paragraph-anim" style={{ marginTop: '1.7rem', fontSize: '1.213rem', lineHeight: '1.75', color: '#b8c5d4', WebkitTextFillColor: '#b8c5d4', maxWidth: '100%', fontWeight: 300, opacity: 1, textWrap: 'pretty' }}>
                   <span className="hero-body-desktop">
-                    <span className="hero-body-light" style={{ fontWeight: 300 }}>You tell me what&rsquo;s not working: a site that undersells you, a task that eats your week, a process held together by spreadsheets. I take it from there and build the solution.</span>
+                    <span className="hero-body-light" style={{ fontWeight: 300 }}>Got a site that undersells you, a task that eats your week, a process held together by spreadsheets? I&rsquo;ll build what fixes it.</span>
                   </span>
                   <span className="hero-body-mobile">
-                    <span className="hero-body-row hero-body-light" style={{ fontWeight: 300 }}>You tell me what&rsquo;s not working:</span>
-                    <span className="hero-body-row hero-body-light" style={{ fontWeight: 300 }}>a site that undersells you, a task that eats your</span>
-                    <span className="hero-body-row hero-body-light" style={{ fontWeight: 300 }}>week, a process held together by spreadsheets. I take it from there and build the&nbsp;solution.</span>
+                    <span className="hero-body-row hero-body-light" style={{ fontWeight: 300 }}>Got a site that undersells you, a task that</span>
+                    <span className="hero-body-row hero-body-light" style={{ fontWeight: 300 }}>eats your week, a process held together</span>
+                    <span className="hero-body-row hero-body-light" style={{ fontWeight: 300 }}>by spreadsheets? I&rsquo;ll build what fixes it.</span>
                   </span>
                 </p>
               </div>
