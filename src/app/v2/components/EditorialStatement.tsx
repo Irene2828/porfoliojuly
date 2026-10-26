@@ -61,7 +61,7 @@ export default function EditorialStatement() {
           }
           .prefooter-btn-primary span {
             font-size: 0.72rem !important;
-            font-weight: 600 !important;
+            font-weight: 700 !important;
             letter-spacing: 0.08em !important;
           }
           .prefooter-btn-primary svg {
@@ -89,6 +89,7 @@ export default function EditorialStatement() {
             height: 3.01rem !important;
             padding: 0 1.74rem !important;
             font-size: 0.72rem !important;
+            font-weight: 700 !important;
             box-shadow: none !important;
             transform: none !important;
           }
@@ -126,6 +127,7 @@ export default function EditorialStatement() {
             .prefooter-section .prefooter-btn-primary.face-cta span,
             .prefooter-btn-primary span {
               font-size: 0.67rem !important;
+              font-weight: 700 !important;
               letter-spacing: 0.05em !important;
               white-space: nowrap !important;
               display: inline-block !important;

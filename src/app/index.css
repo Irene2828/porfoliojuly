@@ -583,7 +583,7 @@ h1, h2, h3, h4, h5, h6 {
 .v2-theme .face-cta {
   font-family: var(--font-label), sans-serif !important;
   font-size: 0.72rem !important;
-  font-weight: 600 !important;
+  font-weight: 700 !important;
   text-transform: uppercase !important;
   letter-spacing: 0.08em !important;
   height: 3.01rem !important;
@@ -611,7 +611,7 @@ h1, h2, h3, h4, h5, h6 {
 .v2-theme .face-cta span {
   font-family: var(--font-label), sans-serif !important;
   font-size: 0.72rem !important;
-  font-weight: 600 !important;
+  font-weight: 700 !important;
   letter-spacing: 0.08em !important;
   text-transform: uppercase !important;
   white-space: nowrap !important;
@@ -1484,6 +1484,7 @@ h1, h2, h3, h4, h5, h6 {
   .v2-theme .hero-ctas-outside .btn-primary-outline span,
   .v2-theme .face-cta span {
     font-size: 0.67rem !important;
+    font-weight: 700 !important;
     letter-spacing: 0.05em !important;
     white-space: nowrap !important;
     display: inline-block !important;

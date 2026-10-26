@@ -112,7 +112,7 @@ export default function HeroV2() {
             margin-right: auto !important;
             margin-top: 1.26rem !important; /* headline-body spacing, tightened 10% from 1.4rem */
             line-height: 1.705 !important; /* body text lines, increased 10% from 1.55 */
-            font-size: clamp(0.86rem, 3.7vw, 1.05rem) !important;
+            font-size: clamp(0.99rem, 4.25vw, 1.21rem) !important; /* +15% mobile body text */
             max-width: 100% !important;
             width: 100% !important;
           }
@@ -133,7 +133,7 @@ export default function HeroV2() {
           }
           .v2-theme .hero-image-container,
           .hero-image-container {
-            transform: scale(0.6375) !important; /* circled image 15% smaller */
+            transform: scale(0.733) !important; /* circled image +15% larger on mobile */
             transform-origin: center center !important;
           }
           .v2-theme .hero-content,
@@ -209,6 +209,7 @@ export default function HeroV2() {
           .v2-theme .hero-ctas-outside .face-cta span,
           .v2-theme .hero-ctas-outside .btn-primary-outline span {
             font-size: 0.67rem !important;
+            font-weight: 700 !important;
             letter-spacing: 0.05em !important;
             white-space: nowrap !important;
             display: inline-block !important;
@@ -245,7 +246,7 @@ export default function HeroV2() {
         .hero-ctas-outside .btn-primary-outline {
           font-family: var(--font-label), sans-serif !important;
           font-size: 0.72rem !important;
-          font-weight: 600 !important;
+          font-weight: 700 !important;
           text-transform: uppercase !important;
           letter-spacing: 0.08em !important;
           height: 3.01rem !important;
@@ -263,7 +264,7 @@ export default function HeroV2() {
         .v2-theme .hero-ctas-outside .face-cta span,
         .v2-theme .hero-ctas-outside .btn-primary-outline span {
           font-size: 0.72rem !important;
-          font-weight: 600 !important;
+          font-weight: 700 !important;
           letter-spacing: 0.08em !important;
         }
         .v2-theme .hero-ctas-outside .prefooter-btn-primary:hover,
@@ -370,8 +371,7 @@ export default function HeroV2() {
                   <span className="hero-body-mobile">
                     <span className="hero-body-row"><strong className="hero-body-bold">You tell me what&rsquo;s not working</strong> -</span>
                     <span className="hero-body-row hero-body-light" style={{ fontWeight: 300 }}>a site that undersells you, a task that eats your</span>
-                    <span className="hero-body-row hero-body-light" style={{ fontWeight: 300 }}>week, a process held together by spreadsheets.</span>
-                    <span className="hero-body-row"><strong className="hero-body-bold">I take it from there and build the solution.</strong></span>
+                    <span className="hero-body-row"><span className="hero-body-light" style={{ fontWeight: 300 }}>week, a process held together by spreadsheets.</span> <strong className="hero-body-bold">I take it from there and build the&nbsp;solution.</strong></span>
                   </span>
                 </p>
               </div>

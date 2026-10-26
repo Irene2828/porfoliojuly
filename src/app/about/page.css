@@ -550,7 +550,7 @@
   color: #000000 !important;
   -webkit-text-fill-color: #000000 !important;
   font-family: var(--font-label), sans-serif !important;
-  font-weight: 600 !important;
+  font-weight: 700 !important;
   font-size: 0.72rem !important;
   letter-spacing: 0.08em !important;
   text-transform: uppercase !important;
@@ -581,7 +581,7 @@
   -webkit-text-fill-color: #000000 !important;
   font-family: var(--font-label), sans-serif !important;
   font-size: 0.72rem !important;
-  font-weight: 600 !important;
+  font-weight: 700 !important;
   letter-spacing: 0.08em !important;
   text-transform: uppercase !important;
   white-space: nowrap !important;
@@ -605,6 +605,7 @@
     max-width: 92% !important;
     padding: 0 1.19rem !important;
     font-size: 0.67rem !important;
+    font-weight: 700 !important;
     letter-spacing: 0.05em !important;
     transform: none !important;
     white-space: nowrap !important;
@@ -618,6 +619,7 @@
   .about-cta-section .prefooter-btn-primary.face-cta span,
   .about-cta-section .prefooter-btn-primary span {
     font-size: 0.67rem !important;
+    font-weight: 700 !important;
     letter-spacing: 0.05em !important;
     white-space: nowrap !important;
     display: inline-block !important;
