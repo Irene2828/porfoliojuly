@@ -545,8 +545,8 @@
   align-items: center !important;
   justify-content: center !important;
   gap: 0.45rem !important;
-  background-color: #d6b792 !important;
-  border: 1px solid #d6b792 !important;
+  background: linear-gradient(315deg, #d6b792 0%, #f2908f 100%) !important;
+  border: 1px solid #e2a792 !important;
   color: #000000 !important;
   -webkit-text-fill-color: #000000 !important;
   font-family: var(--font-label), sans-serif !important;
@@ -568,10 +568,10 @@
 .about-cta-btn:hover,
 .about-cta-section .prefooter-btn-primary.face-cta:hover,
 .about-cta-section .prefooter-btn-primary:hover {
-  background-color: #d6b792 !important;
-  border-color: #d6b792 !important;
+  background: linear-gradient(315deg, #ddc19e 0%, #f49c9b 100%) !important;
+  border-color: #e2a792 !important;
   transform: translateY(-2px) !important;
-  box-shadow: 0 8px 24px rgba(214, 183, 146, 0.28) !important;
+  box-shadow: 0 8px 24px rgba(242, 144, 143, 0.28) !important;
 }
 
 .about-cta-btn span,
@@ -610,8 +610,8 @@
     white-space: nowrap !important;
     margin: 0 auto !important;
     border-radius: 40px !important;
-    background-color: #d6b792 !important;
-    border: 1px solid #d6b792 !important;
+    background: linear-gradient(315deg, #d6b792 0%, #f2908f 100%) !important;
+    border: 1px solid #e2a792 !important;
     box-sizing: border-box !important;
   }
   .about-cta-btn span,

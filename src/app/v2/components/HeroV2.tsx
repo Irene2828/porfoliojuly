@@ -16,10 +16,10 @@ export default function HeroV2() {
         .hero-bg-split {
           display: none !important;
         }
-        /* Headline scaled down 20% on all screens */
+        /* Headline scaled down (now +5% larger on desktops: 0.84) */
         .v2-theme .hero-statement,
         .hero-statement {
-          zoom: 0.8;
+          zoom: 0.84;
         }
         .v2-theme .hero-statement,
         .hero-statement {
@@ -48,8 +48,8 @@ export default function HeroV2() {
         }
         .v2-theme .hero-frame-paragraph,
         .hero-frame-paragraph {
-          color: rgba(201, 206, 214, 0.7) !important;
-          -webkit-text-fill-color: rgba(201, 206, 214, 0.7) !important;
+          color: #b8c5d4 !important;
+          -webkit-text-fill-color: #b8c5d4 !important;
           font-weight: 300 !important;
         }
         .v2-theme .hero-frame-paragraph .hero-body-light,
@@ -62,14 +62,14 @@ export default function HeroV2() {
         .hero-body-bold,
         .v2-theme .hero-frame-paragraph strong,
         .hero-frame-paragraph strong {
-          color: rgba(201, 206, 214, 0.7) !important;
-          -webkit-text-fill-color: rgba(201, 206, 214, 0.7) !important;
+          color: #b8c5d4 !important;
+          -webkit-text-fill-color: #b8c5d4 !important;
           font-weight: 600 !important;
         }
         .v2-theme .hero-frame-paragraph em,
         .hero-frame-paragraph em {
-          color: rgba(201, 206, 214, 0.7) !important;
-          -webkit-text-fill-color: rgba(201, 206, 214, 0.7) !important;
+          color: #b8c5d4 !important;
+          -webkit-text-fill-color: #b8c5d4 !important;
           font-style: normal !important;
         }
         .hero-offer-item {
@@ -190,7 +190,7 @@ export default function HeroV2() {
           .v2-theme .hero-ctas-outside .btn-primary-outline.btn-primary,
           .v2-theme .hero-ctas-outside .btn-primary,
           .v2-theme .hero-ctas-outside .btn-primary-outline {
-            background: #d6b792 !important;
+            background: linear-gradient(315deg, #d6b792 0%, #f2908f 100%) !important;
             height: 2.72rem !important;
             width: auto !important;
             min-width: min(75%, 246px) !important;
@@ -200,7 +200,7 @@ export default function HeroV2() {
             justify-content: center !important;
             white-space: nowrap !important;
             border-radius: 40px !important;
-            border: 1px solid #d6b792 !important;
+            border: 1px solid #e2a792 !important;
             box-shadow: none !important;
             transform: none !important;
             box-sizing: border-box !important;
@@ -236,7 +236,7 @@ export default function HeroV2() {
             transform-origin: bottom left !important;
           }
         }
-        /* Primary CTA: matching prefooter pill button style (#d6b792, border-radius: 40px, increased 10%) */
+        /* Primary CTA: matching prefooter pill button style (mixed beige & peach gradient, border-radius: 40px) */
         .v2-theme .hero-ctas-outside .prefooter-btn-primary,
         .v2-theme .hero-ctas-outside .face-cta,
         .v2-theme .hero-ctas-outside .btn-primary-outline.btn-primary,
@@ -250,8 +250,8 @@ export default function HeroV2() {
           letter-spacing: 0.08em !important;
           height: 3.01rem !important;
           padding: 0 1.74rem !important;
-          background: #d6b792 !important;
-          border: 1px solid #d6b792 !important;
+          background: linear-gradient(315deg, #d6b792 0%, #f2908f 100%) !important;
+          border: 1px solid #e2a792 !important;
           color: #000000 !important;
           -webkit-text-fill-color: #000000 !important;
           border-radius: 40px !important;
@@ -272,19 +272,38 @@ export default function HeroV2() {
         .v2-theme .hero-ctas-outside .btn-primary:hover,
         .v2-theme .hero-ctas-outside .btn-primary-outline:hover,
         .hero-ctas-outside .btn-primary-outline:hover {
-          background: #d6b792 !important;
-          border-color: #d6b792 !important;
+          background: linear-gradient(315deg, #ddc19e 0%, #f49c9b 100%) !important;
+          border-color: #e2a792 !important;
           color: #000000 !important;
           -webkit-text-fill-color: #000000 !important;
           border-radius: 40px !important;
           transform: translateY(-2px) !important;
-          box-shadow: 0 8px 24px rgba(214, 183, 146, 0.28) !important;
+          box-shadow: 0 8px 24px rgba(242, 144, 143, 0.28) !important;
         }
         .v2-theme .hero-ctas-outside .prefooter-btn-primary:hover svg,
         .v2-theme .hero-ctas-outside .face-cta:hover svg,
         .v2-theme .hero-ctas-outside .btn-primary-outline.btn-primary:hover svg,
         .v2-theme .hero-ctas-outside .btn-primary-outline:hover svg {
           stroke: #000000 !important;
+        }
+        /* Desktop size matching: .hero-container has transform: scale(0.88) at min-width: 1200px.
+           Counter-scale by 1 / 0.88 = 1.13636 so the rendered button dimensions match prefooter CTA exactly. */
+        @media (min-width: 1200px) {
+          .v2-theme .hero-ctas-outside .prefooter-btn-primary,
+          .v2-theme .hero-ctas-outside .face-cta,
+          .v2-theme .hero-ctas-outside .btn-primary-outline.btn-primary,
+          .v2-theme .hero-ctas-outside .btn-primary,
+          .v2-theme .hero-ctas-outside .btn-primary-outline {
+            transform: scale(1.13636) !important;
+            transform-origin: right center !important;
+          }
+          .v2-theme .hero-ctas-outside .prefooter-btn-primary:hover,
+          .v2-theme .hero-ctas-outside .face-cta:hover,
+          .v2-theme .hero-ctas-outside .btn-primary-outline.btn-primary:hover,
+          .v2-theme .hero-ctas-outside .btn-primary:hover,
+          .v2-theme .hero-ctas-outside .btn-primary-outline:hover {
+            transform: translateY(-2px) scale(1.13636) !important;
+          }
         }
         /* Secondary CTA in hero: match headline unbolded text rgba(255, 255, 255, 0.8) */
         .v2-theme .hero-ctas-outside .btn-secondary-stacked,
@@ -344,7 +363,7 @@ export default function HeroV2() {
                     </span>
                   </span>
                 </h1>
-                <p className="hero-frame-paragraph hero-paragraph-anim" style={{ marginTop: '1.7rem', fontSize: '1.213rem', lineHeight: '1.75', color: 'rgba(201, 206, 214, 0.7)', WebkitTextFillColor: 'rgba(201, 206, 214, 0.7)', maxWidth: '100%', fontWeight: 300, opacity: 1, textWrap: 'pretty' }}>
+                <p className="hero-frame-paragraph hero-paragraph-anim" style={{ marginTop: '1.7rem', fontSize: '1.213rem', lineHeight: '1.75', color: '#b8c5d4', WebkitTextFillColor: '#b8c5d4', maxWidth: '100%', fontWeight: 300, opacity: 1, textWrap: 'pretty' }}>
                   <span className="hero-body-desktop">
                     <strong className="hero-body-bold">You tell me what&rsquo;s not working</strong> &ndash; <span className="hero-body-light" style={{ fontWeight: 300 }}>a site that undersells you, a task that eats your week, a process held together by spreadsheets.</span> <strong className="hero-body-bold">I take it from there and build the solution.</strong>
                   </span>
@@ -470,48 +489,6 @@ export default function HeroV2() {
             </div>
 
 
-            {/* Label 1: Bottom badge "Product Designer & Builder" at bottom of bottom-left shape */}
-            <div className="hero-badge-anchor badge-anchor-websites" style={{ position: 'absolute', bottom: '-46px', left: '-15px', zIndex: 10 }}>
-              <div className="hero-ring-badge badge-designer" style={{
-                transform: 'none',
-                padding: '6px 20px',
-                borderRadius: '20px',
-                background: 'rgba(24, 26, 32, 0.94)',
-                backdropFilter: 'blur(10px)',
-                border: '1px solid rgba(247, 214, 208, 0.45)',
-                boxShadow: '0 4px 14px rgba(0, 0, 0, 0.35)',
-                fontFamily: 'var(--font-heading)',
-                fontSize: '13px',
-                fontWeight: 500,
-                letterSpacing: '0.04em',
-                color: '#f1f5f9',
-                display: 'inline-flex',
-                alignItems: 'center',
-                justifyContent: 'center',
-                textAlign: 'center',
-                gap: '8px',
-                whiteSpace: 'nowrap',
-                width: 'fit-content',
-                maxWidth: 'none',
-                boxSizing: 'border-box',
-                pointerEvents: 'auto'
-              }}>
-                {/* Builder Icons: Wrench / Tool + Lightbulb */}
-                <div style={{ display: 'inline-flex', alignItems: 'center', gap: '4px', flexShrink: 0 }}>
-                  <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="#f7d6d0" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-                    <path d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94l-3.76 3.76z" />
-                  </svg>
-                  <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="#f7d6d0" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-                    <path d="M9 18h6" />
-                    <path d="M10 22h4" />
-                    <path d="M12 2a7 7 0 0 0-7 7c0 2.5 1.5 4.5 3 6h8c1.5-1.5 3-3.5 3-6a7 7 0 0 0-7-7z" />
-                  </svg>
-                </div>
-                <span style={{ display: 'inline-block', fontSize: 'inherit', letterSpacing: 'normal' }}>
-                  Product Designer &amp; Builder
-                </span>
-              </div>
-            </div>
           </div>
 
           <span className="hero-hover-surface" aria-hidden="true"></span>

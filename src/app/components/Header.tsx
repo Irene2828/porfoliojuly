@@ -58,12 +58,12 @@ export default function Header() {
         }
         .v2-theme .premium-header .mobile-brand-title,
         .v2-theme .header-spacer-desktop a span:last-child {
-          color: rgba(201, 206, 214, 0.7) !important;
-          -webkit-text-fill-color: rgba(201, 206, 214, 0.7) !important;
+          color: rgba(201, 206, 214, 0.77) !important;
+          -webkit-text-fill-color: rgba(201, 206, 214, 0.77) !important;
         }
         .mobile-brand-title {
-          color: rgba(201, 206, 214, 0.7) !important;
-          -webkit-text-fill-color: rgba(201, 206, 214, 0.7) !important;
+          color: rgba(201, 206, 214, 0.77) !important;
+          -webkit-text-fill-color: rgba(201, 206, 214, 0.77) !important;
         }
         .v2-theme .header-nav-desktop,
         .header-nav-desktop {
@@ -114,7 +114,7 @@ export default function Header() {
         }
       `}</style>
       <div className="header-inner-wrapper">
-        {/* Left side (Desktop): Name */}
+        {/* Left side (Desktop): Name and Title */}
         <div className="header-spacer-desktop">
           <a href="/" aria-label="Home" style={{ textDecoration: 'none', display: 'flex', flexDirection: 'row', alignItems: 'center', gap: '0.5rem' }}>
             <span style={{ 
@@ -126,6 +126,16 @@ export default function Header() {
               lineHeight: '1.2'
             }}>
               IRYNA SHEREMETA
+            </span>
+            <span className="header-brand-title" style={{ 
+              fontFamily: 'var(--font-heading), -apple-system, BlinkMacSystemFont, "Helvetica Neue", Arial, sans-serif', 
+              fontSize: '13px', 
+              fontWeight: 400, 
+              color: 'var(--header-title-color, rgba(201, 206, 214, 0.77))', 
+              lineHeight: '1.2', 
+              letterSpacing: '0.03em' 
+            }}>
+              / Product Designer &amp; Builder /
             </span>
           </a>
         </div>
@@ -153,10 +163,11 @@ export default function Header() {
         </nav>
       </div>
 
-      {/* Mobile Header Elements: Name on Left, Menu on Right */}
+      {/* Mobile Header Elements: Name and Title on Left, Menu on Right */}
       <div className="mobile-header-left">
         <a href="/" aria-label="Home" className="mobile-brand-link">
           <span className="mobile-brand-name">IRYNA SHEREMETA</span>
+          <span className="mobile-brand-title">/ Product Designer &amp; Builder /</span>
         </a>
       </div>
 

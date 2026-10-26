@@ -47,11 +47,10 @@ export default function Footer() {
           font-size: 14px !important;
           font-weight: 400;
           letter-spacing: 0.02em;
-          color: #ffffff !important;
-          -webkit-text-fill-color: #ffffff !important;
+          color: rgba(201, 206, 214, 0.77) !important;
+          -webkit-text-fill-color: rgba(201, 206, 214, 0.77) !important;
           margin: 0;
           text-align: left;
-          opacity: 0.95;
         }
         .footer-hire-link {
           font-family: var(--font-label), -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
@@ -87,7 +86,7 @@ export default function Footer() {
       `}</style>
       <div className="footer-inner-container">
         <p className="footer-copy-text">
-          &copy; 2026 Iryna Sheremeta &middot; Websites &amp; tools
+          &copy; 2026 Iryna Sheremeta
         </p>
         <a href="/hire" className="footer-hire-link">
           Hiring? &rarr;

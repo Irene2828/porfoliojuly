@@ -28,7 +28,7 @@ export default function FaceDivider() {
         letterSpacing: '0.02em',
         textAlign: 'right'
       }}>
-        &copy; {new Date().getFullYear()} Iryna Sheremeta &middot; Web &amp; AI Product Builder
+        &copy; {new Date().getFullYear()} Iryna Sheremeta
       </div>
     </footer>
   );

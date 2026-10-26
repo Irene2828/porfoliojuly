@@ -23,19 +23,15 @@ export default function EditorialStatement() {
           }
           .prefooter-closing-line {
             font-family: var(--font-body), 'Plus Jakarta Sans', sans-serif !important;
-            font-weight: 300 !important;
-            letter-spacing: -0.015em !important;
-            color: rgba(255, 255, 255, 0.8) !important;
-            -webkit-text-fill-color: rgba(255, 255, 255, 0.8) !important;
-          }
-          .prefooter-closing-line strong,
-          .prefooter-closing-line .headline-mockup-bold {
             font-weight: 600 !important;
-            letter-spacing: 0.025em !important;
+            letter-spacing: 0.01em !important;
             color: #f2908f !important;
             -webkit-text-fill-color: #f2908f !important;
+            -webkit-font-smoothing: antialiased !important;
+            -moz-osx-font-smoothing: grayscale !important;
           }
-          .prefooter-closing-subtext {
+          .prefooter-closing-subtext,
+          .prefooter-closing-subtext p {
             font-family: var(--font-body), 'Plus Jakarta Sans', sans-serif !important;
             font-weight: 300 !important;
             letter-spacing: -0.015em !important;
@@ -51,10 +47,10 @@ export default function EditorialStatement() {
             justify-content: center;
             height: 3.01rem !important;
             padding: 0 1.74rem !important;
-            background: #d6b792 !important;
+            background: linear-gradient(315deg, #d6b792 0%, #f2908f 100%) !important;
             color: #000000 !important;
             -webkit-text-fill-color: #000000 !important;
-            border: 1px solid #d6b792 !important;
+            border: 1px solid #e2a792 !important;
             border-radius: 40px !important;
             box-shadow: none !important;
             text-shadow: none !important;
@@ -72,21 +68,21 @@ export default function EditorialStatement() {
             stroke: #000000 !important;
           }
           .prefooter-btn-primary:hover {
-            background: #d6b792 !important;
-            border-color: #d6b792 !important;
+            background: linear-gradient(315deg, #ddc19e 0%, #f49c9b 100%) !important;
+            border-color: #e2a792 !important;
             color: #000000 !important;
             -webkit-text-fill-color: #000000 !important;
             border-radius: 40px !important;
             transform: translateY(-2px) !important;
-            box-shadow: 0 8px 24px rgba(214, 183, 146, 0.28) !important;
+            box-shadow: 0 8px 24px rgba(242, 144, 143, 0.28) !important;
           }
           .prefooter-btn-primary:hover svg {
             stroke: #000000 !important;
           }
           /* Primary CTA: matching About Me hovered pill button style (#d6b792, border-radius: 40px) */
           .prefooter-section .prefooter-btn-primary.face-cta {
-            background: #d6b792 !important;
-            border: 1px solid #d6b792 !important;
+            background: linear-gradient(315deg, #d6b792 0%, #f2908f 100%) !important;
+            border: 1px solid #e2a792 !important;
             border-radius: 40px !important;
             color: #000000 !important;
             -webkit-text-fill-color: #000000 !important;
@@ -97,13 +93,13 @@ export default function EditorialStatement() {
             transform: none !important;
           }
           .prefooter-section .prefooter-btn-primary.face-cta:hover {
-            background: #d6b792 !important;
-            border-color: #d6b792 !important;
+            background: linear-gradient(315deg, #ddc19e 0%, #f49c9b 100%) !important;
+            border-color: #e2a792 !important;
             border-radius: 40px !important;
             color: #000000 !important;
             -webkit-text-fill-color: #000000 !important;
             transform: translateY(-2px) !important;
-            box-shadow: 0 8px 24px rgba(214, 183, 146, 0.28) !important;
+            box-shadow: 0 8px 24px rgba(242, 144, 143, 0.28) !important;
           }
           @media (max-width: 900px) {
             .prefooter-closing-line {
@@ -112,7 +108,7 @@ export default function EditorialStatement() {
             }
             .prefooter-section .prefooter-btn-primary.face-cta,
             .prefooter-btn-primary {
-              background: #d6b792 !important;
+              background: linear-gradient(315deg, #d6b792 0%, #f2908f 100%) !important;
               height: 2.72rem !important;
               width: auto !important;
               min-width: min(75%, 246px) !important;
@@ -122,7 +118,7 @@ export default function EditorialStatement() {
               justify-content: center !important;
               white-space: nowrap !important;
               border-radius: 40px !important;
-              border: 1px solid #d6b792 !important;
+              border: 1px solid #e2a792 !important;
               box-shadow: none !important;
               transform: none !important;
               box-sizing: border-box !important;
@@ -152,6 +148,15 @@ export default function EditorialStatement() {
             }
             .prefooter-closing-line {
               font-size: 2.08rem !important; /* 20% smaller on desktop (was 2.6rem) */
+              max-width: 44ch !important;
+            }
+            .prefooter-closing-line .br-desktop {
+              display: inline !important;
+            }
+          }
+          @media (max-width: 900px) {
+            .prefooter-closing-line .br-desktop {
+              display: none !important;
             }
           }
         `}</style>
@@ -187,17 +192,19 @@ export default function EditorialStatement() {
             style={{
               fontFamily: 'var(--font-body), "Plus Jakarta Sans", sans-serif',
               fontSize: 'clamp(1.48rem, 7.7vw, 2.08rem)',
-              fontWeight: 300,
-              letterSpacing: '-0.015em',
+              fontWeight: 600,
+              letterSpacing: '0.01em',
               lineHeight: 1.35,
-              color: 'rgba(255, 255, 255, 0.8)',
-              WebkitTextFillColor: 'rgba(255, 255, 255, 0.8)',
+              color: '#f2908f',
+              WebkitTextFillColor: '#f2908f',
               textAlign: 'center',
               margin: '0 0 3.5rem 0',
-              maxWidth: '28ch',
+              maxWidth: '44ch',
             }}
           >
-            An <strong className="headline-mockup-bold" style={{ fontWeight: 600, letterSpacing: '0.025em', color: '#f2908f', WebkitTextFillColor: '#f2908f' }}>outdated</strong> website or <strong className="headline-mockup-bold" style={{ fontWeight: 600, letterSpacing: '0.025em', color: '#f2908f', WebkitTextFillColor: '#f2908f' }}>repetitive</strong> work is slowing your business down.
+            An outdated website or repetitive work{' '}
+            <br className="br-desktop" />
+            is slowing your business down.
           </h2>
 
           {/* Text under closing headline */}
@@ -217,9 +224,7 @@ export default function EditorialStatement() {
               textWrap: 'balance'
             }}
           >
-            <p style={{ margin: 0 }}>
-              <strong className="headline-mockup-bold" style={{ fontWeight: 600, letterSpacing: '0.01em', color: '#f2908f', WebkitTextFillColor: '#f2908f' }}>Let’s solve this.</strong> I’ll build the fix.
-            </p>
+            <p style={{ margin: 0 }}>Let’s solve this.</p>
           </div>
 
           {/* Action CTAs */}

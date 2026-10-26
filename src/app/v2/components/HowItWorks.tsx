@@ -137,7 +137,7 @@ export default function HowItWorks() {
           letterSpacing: '-0.01em',
           fontStyle: 'italic'
         }}>
-          Fast first. Better second.
+          Clarity. Logic. Care.
         </p>
       </div>
 
