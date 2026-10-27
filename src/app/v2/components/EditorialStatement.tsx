@@ -40,7 +40,7 @@ export default function EditorialStatement() {
           .prefooter-closing-subtext p {
             font-family: var(--font-body), 'Plus Jakarta Sans', sans-serif !important;
             font-weight: 300 !important;
-            letter-spacing: -0.015em !important;
+            letter-spacing: -0.011em !important;
             color: rgba(255, 255, 255, 0.8) !important;
             -webkit-text-fill-color: rgba(255, 255, 255, 0.8) !important;
           }
@@ -248,7 +248,7 @@ export default function EditorialStatement() {
               fontFamily: 'var(--font-body), "Plus Jakarta Sans", sans-serif',
               fontSize: 'clamp(1.15rem, 2.8vw, 1.23rem)',
               fontWeight: 300,
-              letterSpacing: '0.015em',
+              letterSpacing: '-0.011em',
               lineHeight: 1.55,
               color: 'rgba(255, 255, 255, 0.8)',
               WebkitTextFillColor: 'rgba(255, 255, 255, 0.8)',

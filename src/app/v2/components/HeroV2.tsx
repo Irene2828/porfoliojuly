@@ -1,7 +1,7 @@
 'use client';
 
 import '@/app/components/Hero.css';
-import heroImage from '@/app/assets/test.webp';
+import heroImage from '@/app/assets/new_me.jpg';
 
 export default function HeroV2() {
   return (
@@ -20,6 +20,51 @@ export default function HeroV2() {
         .v2-theme .hero-statement,
         .hero-statement {
           zoom: 0.84;
+        }
+        @media (min-width: 901px) {
+          .v2-theme .hero-statement,
+          .hero-statement,
+          .hero-name-group .hero-text h1.hero-statement {
+            zoom: 1 !important;
+            font-size: clamp(50px, 4.5vw, 64px) !important;
+            line-height: 1.15 !important;
+            letter-spacing: -0.018em !important;
+          }
+          .headline-desktop {
+            display: flex !important;
+            flex-direction: column !important;
+            gap: 0px !important;
+          }
+          .headline-desktop .headline-line {
+            display: block !important;
+            line-height: 1.15 !important;
+            white-space: nowrap !important;
+          }
+        }
+        .headline-desktop-light,
+        .headline-mobile-light {
+          font-family: -apple-system, BlinkMacSystemFont, "Helvetica Neue", Helvetica, Arial, sans-serif !important;
+          font-weight: 400 !important;
+          color: #ffffff !important;
+          -webkit-text-fill-color: #ffffff !important;
+          letter-spacing: -0.018em !important;
+        }
+        .headline-desktop-accent,
+        .headline-mobile-accent {
+          font-family: -apple-system, BlinkMacSystemFont, "Helvetica Neue", Helvetica, Arial, sans-serif !important;
+          font-weight: 600 !important;
+          color: #f2908f !important;
+          -webkit-text-fill-color: #f2908f !important;
+          letter-spacing: -0.018em !important;
+        }
+        .headline-desktop-serif,
+        .headline-mobile-serif {
+          font-family: 'Newsreader', 'Source Serif 4', Georgia, serif !important;
+          font-style: italic !important;
+          font-weight: 400 !important;
+          color: #ffffff !important;
+          -webkit-text-fill-color: #ffffff !important;
+          letter-spacing: -0.01em !important;
         }
         .v2-theme .hero-statement,
         .hero-statement {
@@ -48,8 +93,8 @@ export default function HeroV2() {
         }
         .v2-theme .hero-frame-paragraph,
         .hero-frame-paragraph {
-          color: #b8c5d4 !important;
-          -webkit-text-fill-color: #b8c5d4 !important;
+          color: #dfe6ee !important;
+          -webkit-text-fill-color: #dfe6ee !important;
           font-weight: 300 !important;
         }
         .v2-theme .hero-frame-paragraph .hero-body-light,
@@ -62,14 +107,14 @@ export default function HeroV2() {
         .hero-body-bold,
         .v2-theme .hero-frame-paragraph strong,
         .hero-frame-paragraph strong {
-          color: #b8c5d4 !important;
-          -webkit-text-fill-color: #b8c5d4 !important;
+          color: #dfe6ee !important;
+          -webkit-text-fill-color: #dfe6ee !important;
           font-weight: 600 !important;
         }
         .v2-theme .hero-frame-paragraph em,
         .hero-frame-paragraph em {
-          color: #b8c5d4 !important;
-          -webkit-text-fill-color: #b8c5d4 !important;
+          color: #dfe6ee !important;
+          -webkit-text-fill-color: #dfe6ee !important;
           font-style: normal !important;
         }
         .hero-offer-item {
@@ -86,7 +131,10 @@ export default function HeroV2() {
           text-decoration-color: #fed5b8 !important;
         }
         .hero-body-desktop {
-          display: inline;
+          display: block;
+        }
+        .hero-body-desktop .hero-body-row {
+          display: block !important;
         }
         .hero-body-mobile {
           display: none;
@@ -135,6 +183,17 @@ export default function HeroV2() {
           .hero-image-container {
             transform: scale(0.733) !important; /* circled image +15% larger on mobile */
             transform-origin: center center !important;
+            box-shadow: none !important;
+            -webkit-box-shadow: none !important;
+          }
+          .v2-theme .hero-image,
+          .hero-image {
+            box-shadow: none !important;
+            -webkit-box-shadow: none !important;
+          }
+          .v2-theme .hero-dot-overlay,
+          .hero-dot-overlay {
+            display: none !important;
           }
           .v2-theme .hero-content,
           .hero-content {
@@ -144,34 +203,33 @@ export default function HeroV2() {
           .hero-container {
             gap: 0.5rem !important;
           }
+          .v2-theme .hero-statement,
+          .hero-statement {
+            font-size: clamp(2.35rem, 10.64vw, 3.48rem) !important;
+            line-height: 1.15 !important;
+          }
           .v2-theme .headline-mobile,
           .headline-mobile {
-            line-height: 1.205 !important; /* +10% larger line spacing */
+            line-height: 1.18 !important;
             gap: 0px !important;
           }
           .v2-theme .headline-mobile .headline-line,
           .headline-mobile .headline-line {
             display: block !important;
-            line-height: 1.205 !important; /* +10% larger line spacing */
+            line-height: 1.18 !important;
             font-size: 1em !important;
             margin: 0 !important;
             padding: 0 !important;
+            white-space: nowrap !important;
           }
           .v2-theme .headline-mobile .headline-line *,
           .headline-mobile .headline-line * {
             display: inline !important;
-            line-height: 1.205 !important;
+            line-height: 1.18 !important;
             font-size: 1em !important;
             margin: 0 !important;
             padding: 0 !important;
             vertical-align: baseline !important;
-          }
-          .v2-theme .headline-mobile .headline-mockup-light,
-          .v2-theme .headline-mobile .headline-mockup-bold,
-          .headline-mobile .headline-mockup-light,
-          .headline-mobile .headline-mockup-bold {
-            font-size: 1em !important;
-            line-height: 1.205 !important;
           }
           .v2-theme .headline-pair-gap,
           .headline-pair-gap {
@@ -340,45 +398,48 @@ export default function HeroV2() {
               >
                 <h1 className="hero-statement hero-statement-anim" style={{ display: 'flex', flexDirection: 'column', gap: '0px', lineHeight: '1.22', color: 'rgba(255, 255, 255, 0.8)', WebkitTextFillColor: 'rgba(255, 255, 255, 0.8)' }}>
                   {/* Desktop Headline (3 lines) */}
-                  <span className="headline-desktop" style={{ color: 'rgba(255, 255, 255, 0.8)' }}>
-                    <span className="headline-line headline-light" style={{ color: 'rgba(255, 255, 255, 0.8)', WebkitTextFillColor: 'rgba(255, 255, 255, 0.8)' }}>
-                      <span className="headline-mockup-light" style={{ fontWeight: 300, color: 'rgba(255, 255, 255, 0.8)', WebkitTextFillColor: 'rgba(255, 255, 255, 0.8)' }}>Custom</span>{' '}
-                      <strong className="headline-mockup-bold" style={{ fontWeight: 600, letterSpacing: '0.025em', color: '#f2908f', WebkitTextFillColor: '#f2908f' }}>websites, tools, workflows.</strong>
+                  <span className="headline-desktop">
+                    <span className="headline-line">
+                      <span className="headline-desktop-light">Custom</span>{' '}
+                      <strong className="headline-desktop-accent">websites,</strong>
                     </span>
-                    <span className="headline-line headline-light" style={{ color: 'rgba(255, 255, 255, 0.8)', WebkitTextFillColor: 'rgba(255, 255, 255, 0.8)' }}>
-                      <span className="headline-mockup-light" style={{ fontWeight: 300, color: 'rgba(255, 255, 255, 0.8)', WebkitTextFillColor: 'rgba(255, 255, 255, 0.8)' }}>Designed and built</span>
+                    <span className="headline-line">
+                      <strong className="headline-desktop-accent">tools, and workflows.</strong>
                     </span>
-                    <span className="headline-line headline-light" style={{ color: 'rgba(255, 255, 255, 0.8)', WebkitTextFillColor: 'rgba(255, 255, 255, 0.8)' }}>
-                      <span className="headline-mockup-light" style={{ fontWeight: 300, color: 'rgba(255, 255, 255, 0.8)', WebkitTextFillColor: 'rgba(255, 255, 255, 0.8)' }}>for one business &mdash; <em style={{ fontStyle: 'italic' }}>yours.</em></span>
+                    <span className="headline-line">
+                      <span className="headline-desktop-light">Built for one business &mdash;</span>{' '}
+                      <em className="headline-desktop-serif">yours.</em>
                     </span>
                   </span>
 
                   {/* Mobile Headline (4 lines, left-aligned) */}
-                  <span className="headline-mobile" style={{ gap: '0px', lineHeight: 1.205, color: 'rgba(255, 255, 255, 0.8)' }}>
-                    <span className="headline-line" style={{ lineHeight: 1.205, fontSize: '1em', margin: 0, padding: 0, color: 'rgba(255, 255, 255, 0.8)', WebkitTextFillColor: 'rgba(255, 255, 255, 0.8)' }}>
-                      <span className="headline-mockup-light" style={{ fontWeight: 300, fontSize: '1em', lineHeight: 1.205, color: 'rgba(255, 255, 255, 0.8)', WebkitTextFillColor: 'rgba(255, 255, 255, 0.8)' }}>Custom</span>{' '}
-                      <strong className="headline-mockup-bold" style={{ fontWeight: 600, fontSize: '1em', lineHeight: 1.205, letterSpacing: '0.025em', color: '#f2908f', WebkitTextFillColor: '#f2908f' }}>websites, tools,</strong>
+                  <span className="headline-mobile" style={{ gap: '0px', lineHeight: 1.18 }}>
+                    <span className="headline-line">
+                      <span className="headline-mobile-light">Custom</span>{' '}
+                      <strong className="headline-mobile-accent">websites,</strong>
                     </span>
-                    <span className="headline-line" style={{ lineHeight: 1.205, fontSize: '1em', margin: 0, padding: 0, color: 'rgba(255, 255, 255, 0.8)', WebkitTextFillColor: 'rgba(255, 255, 255, 0.8)' }}>
-                      <span className="headline-mockup-light" style={{ fontWeight: 300, fontSize: '1em', lineHeight: 1.205, color: 'rgba(255, 255, 255, 0.8)', WebkitTextFillColor: 'rgba(255, 255, 255, 0.8)' }}>&amp;</span>{' '}
-                      <strong className="headline-mockup-bold" style={{ fontWeight: 600, fontSize: '1em', lineHeight: 1.205, letterSpacing: '0.025em', color: '#f2908f', WebkitTextFillColor: '#f2908f' }}>workflows.</strong>
+                    <span className="headline-line">
+                      <strong className="headline-mobile-accent">tools, and workflows.</strong>
                     </span>
-                    <span className="headline-line" style={{ lineHeight: 1.205, fontSize: '1em', margin: 0, padding: 0, color: 'rgba(255, 255, 255, 0.8)', WebkitTextFillColor: 'rgba(255, 255, 255, 0.8)' }}>
-                      <span className="headline-mockup-light" style={{ fontWeight: 300, fontSize: '1em', lineHeight: 1.205, color: 'rgba(255, 255, 255, 0.8)', WebkitTextFillColor: 'rgba(255, 255, 255, 0.8)' }}>Designed and built</span>
+                    <span className="headline-line">
+                      <span className="headline-mobile-light">Built for one</span>
                     </span>
-                    <span className="headline-line" style={{ lineHeight: 1.205, fontSize: '1em', margin: 0, padding: 0, color: 'rgba(255, 255, 255, 0.8)', WebkitTextFillColor: 'rgba(255, 255, 255, 0.8)' }}>
-                      <span className="headline-mockup-light" style={{ fontWeight: 300, fontSize: '1em', lineHeight: 1.205, color: 'rgba(255, 255, 255, 0.8)', WebkitTextFillColor: 'rgba(255, 255, 255, 0.8)' }}>for one business &mdash; <em style={{ fontStyle: 'italic', fontSize: '1em', lineHeight: 1.205 }}>yours.</em></span>
+                    <span className="headline-line">
+                      <span className="headline-mobile-light">business &mdash;</span>{' '}
+                      <em className="headline-mobile-serif">yours.</em>
                     </span>
                   </span>
                 </h1>
-                <p className="hero-frame-paragraph hero-paragraph-anim" style={{ marginTop: '1.7rem', fontSize: '1.213rem', lineHeight: '1.75', color: '#b8c5d4', WebkitTextFillColor: '#b8c5d4', maxWidth: '100%', fontWeight: 300, opacity: 1, textWrap: 'pretty' }}>
+                <p className="hero-frame-paragraph hero-paragraph-anim" style={{ marginTop: '1.7rem', fontSize: '1.213rem', lineHeight: '1.75', color: '#dfe6ee', WebkitTextFillColor: '#dfe6ee', maxWidth: '100%', fontWeight: 300, opacity: 1, textWrap: 'pretty' }}>
                   <span className="hero-body-desktop">
-                    <span className="hero-body-light" style={{ fontWeight: 300 }}>Got a site that undersells you, a task that eats your week, a process held together by spreadsheets? I&rsquo;ll build what fixes it.</span>
+                    <span className="hero-body-row hero-body-light" style={{ fontWeight: 300 }}>Got a site that undersells you, a task that eats your week, a process held together</span>
+                    <span className="hero-body-row hero-body-light" style={{ fontWeight: 300 }}>by spreadsheets? I build what fixes it, so you don&rsquo;t have to.</span>
                   </span>
                   <span className="hero-body-mobile">
-                    <span className="hero-body-row hero-body-light" style={{ fontWeight: 300 }}>Got a site that undersells you, a task that</span>
-                    <span className="hero-body-row hero-body-light" style={{ fontWeight: 300 }}>eats your week, a process held together</span>
-                    <span className="hero-body-row hero-body-light" style={{ fontWeight: 300 }}>by spreadsheets? I&rsquo;ll build what fixes it.</span>
+                    <span className="hero-body-row hero-body-light" style={{ fontWeight: 300 }}>Got a site that undersells you, a task that eats</span>
+                    <span className="hero-body-row hero-body-light" style={{ fontWeight: 300 }}>your week, a process held together by</span>
+                    <span className="hero-body-row hero-body-light" style={{ fontWeight: 300 }}>spreadsheets? I build what fixes it,</span>
+                    <span className="hero-body-row hero-body-light" style={{ fontWeight: 300 }}>so you don&rsquo;t have to.</span>
                   </span>
                 </p>
               </div>
@@ -423,7 +484,7 @@ export default function HeroV2() {
             <img src={heroImage.src} alt="Iryna Sheremeta" className="hero-image" style={{ position: 'relative', zIndex: 2 }} />
             <div className="hero-dot-overlay"></div>
 
-            {/* Geometric square shapes: Bottom-Left of Image */}
+            {/* Geometric square shapes: Bottom-Left of Image (Dashed square only) */}
             <div 
               className="hero-shape-bottom-left" 
               aria-hidden="true" 
@@ -450,12 +511,8 @@ export default function HeroV2() {
                   WebkitMaskImage: 'linear-gradient(135deg, rgba(0, 0, 0, 0.95) 0%, rgba(0, 0, 0, 0.6) 60%, rgba(0, 0, 0, 0.15) 100%)'
                 }}
               >
-                {/* Outer Rectangle - Lined (solid), Pale subtle stroke */}
-                <rect x="6" y="6" width="188" height="188" stroke="rgba(247, 214, 208, 0.45)" strokeWidth="1.2" strokeOpacity="0.4" />
                 {/* Middle Rectangle - Dashed, Pale subtle stroke */}
                 <rect x="36" y="36" width="128" height="128" stroke="rgba(255, 255, 255, 0.45)" strokeWidth="1.2" strokeDasharray="4 4" strokeOpacity="0.35" />
-                {/* Inner Rectangle - Lined (solid), Pale subtle stroke */}
-                <rect x="66" y="66" width="68" height="68" stroke="rgba(247, 214, 208, 0.35)" strokeWidth="1.2" strokeOpacity="0.3" />
               </svg>
             </div>
 

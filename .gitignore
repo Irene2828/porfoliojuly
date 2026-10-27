@@ -37,4 +37,5 @@ build/
 # OS Files
 .DS_Store
 ._*
+*.tsbuildinfo
 

@@ -662,8 +662,8 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 .v2-theme .hero-frame-paragraph {
-  color: #b8c5d4 !important;
-  -webkit-text-fill-color: #b8c5d4 !important;
+  color: #dfe6ee !important;
+  -webkit-text-fill-color: #dfe6ee !important;
   opacity: 1 !important;
   font-weight: 300 !important;
 }
@@ -676,15 +676,15 @@ h1, h2, h3, h4, h5, h6 {
 .v2-theme .hero-frame-paragraph .hero-body-bold,
 .v2-theme .hero-frame-paragraph strong,
 .hero-frame-paragraph strong {
-  color: #b8c5d4 !important;
-  -webkit-text-fill-color: #b8c5d4 !important;
+  color: #dfe6ee !important;
+  -webkit-text-fill-color: #dfe6ee !important;
   font-weight: 600 !important;
 }
 
 .v2-theme .hero-frame-paragraph em {
   font-style: italic !important;
-  color: #b8c5d4 !important;
-  -webkit-text-fill-color: #b8c5d4 !important;
+  color: #dfe6ee !important;
+  -webkit-text-fill-color: #dfe6ee !important;
 }
 
 .hero-body-desktop {
@@ -1080,7 +1080,7 @@ h1, h2, h3, h4, h5, h6 {
 .v2-theme .prefooter-closing-subtext strong {
   font-family: var(--font-body), 'Plus Jakarta Sans', sans-serif !important;
   font-weight: 300 !important;
-  letter-spacing: -0.015em !important;
+  letter-spacing: -0.011em !important;
   color: rgba(255, 255, 255, 0.8) !important;
   -webkit-text-fill-color: rgba(255, 255, 255, 0.8) !important;
 }
@@ -1373,8 +1373,8 @@ h1, h2, h3, h4, h5, h6 {
     overflow: visible !important;
     position: relative !important;
     z-index: 2 !important;
-    background: #181a1f !important;
-    box-shadow: -6px -6px 0px 0px #1e2026, -6px -6px 0px 1.5px rgba(242, 144, 143, 0.25) !important;
+    box-shadow: none !important;
+    -webkit-box-shadow: none !important;
     border: none !important;
   }
 
