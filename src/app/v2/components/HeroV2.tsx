@@ -440,9 +440,11 @@ export default function HeroV2() {
                     <span className="hero-body-row hero-body-light" style={{ fontWeight: 300 }}>by spreadsheets? I build what fixes it, so you don&rsquo;t have to.</span>
                   </span>
                   <span className="hero-body-mobile">
-                    <span className="hero-body-row hero-body-light" style={{ fontWeight: 300 }}>Got a dated site that undersells you, a task that eats your week,</span>
-                    <span className="hero-body-row hero-body-light" style={{ fontWeight: 300 }}>a process held together by spreadsheets?</span>
-                    <span className="hero-body-row hero-body-light" style={{ fontWeight: 300 }}>I build what fixes it, so you don&rsquo;t have to.</span>
+                    <span className="hero-body-row hero-body-light" style={{ fontWeight: 300 }}>Got a dated site that undersells you,</span>
+                    <span className="hero-body-row hero-body-light" style={{ fontWeight: 300 }}>a task that eats your week,</span>
+                    <span className="hero-body-row hero-body-light" style={{ fontWeight: 300 }}>a process held together by</span>
+                    <span className="hero-body-row hero-body-light" style={{ fontWeight: 300 }}>spreadsheets? I build what fixes it,</span>
+                    <span className="hero-body-row hero-body-light" style={{ fontWeight: 300 }}>so you don&rsquo;t have to.</span>
                   </span>
                 </p>
               </div>
