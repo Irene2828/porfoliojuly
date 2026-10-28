@@ -160,7 +160,7 @@ export default function HeroV2() {
             margin-right: auto !important;
             margin-top: 1.26rem !important; /* headline-body spacing, tightened 10% from 1.4rem */
             line-height: 1.705 !important; /* body text lines, increased 10% from 1.55 */
-            font-size: clamp(0.99rem, 4.25vw, 1.21rem) !important; /* +15% mobile body text */
+            font-size: clamp(1.11rem, 4.76vw, 1.36rem) !important; /* +12% mobile body text */
             max-width: 100% !important;
             width: 100% !important;
           }
@@ -204,8 +204,10 @@ export default function HeroV2() {
             gap: 0.5rem !important;
           }
           .v2-theme .hero-statement,
-          .hero-statement {
-            font-size: clamp(2.35rem, 10.64vw, 3.48rem) !important;
+          .hero-statement,
+          .v2-theme .headline-mobile,
+          .headline-mobile {
+            font-size: clamp(2.82rem, 12.77vw, 4.18rem) !important; /* +20% mobile hero headline */
             line-height: 1.15 !important;
           }
           .v2-theme .headline-mobile,
@@ -249,11 +251,9 @@ export default function HeroV2() {
           .v2-theme .hero-ctas-outside .btn-primary,
           .v2-theme .hero-ctas-outside .btn-primary-outline {
             background: linear-gradient(315deg, #d6b792 0%, #f2908f 100%) !important;
-            height: 2.72rem !important;
+            height: 3.01rem !important;
             width: auto !important;
-            min-width: min(75%, 246px) !important;
-            max-width: 92% !important;
-            padding: 0 1.19rem !important;
+            padding: 0 1.74rem !important;
             margin: 0 auto !important;
             justify-content: center !important;
             white-space: nowrap !important;
@@ -266,9 +266,9 @@ export default function HeroV2() {
           .v2-theme .hero-ctas-outside .prefooter-btn-primary span,
           .v2-theme .hero-ctas-outside .face-cta span,
           .v2-theme .hero-ctas-outside .btn-primary-outline span {
-            font-size: 0.67rem !important;
+            font-size: 0.72rem !important;
             font-weight: 700 !important;
-            letter-spacing: 0.05em !important;
+            letter-spacing: 0.08em !important;
             white-space: nowrap !important;
             display: inline-block !important;
           }
@@ -404,7 +404,9 @@ export default function HeroV2() {
                       <strong className="headline-desktop-accent">websites,</strong>
                     </span>
                     <span className="headline-line">
-                      <strong className="headline-desktop-accent">tools, and workflows.</strong>
+                      <strong className="headline-desktop-accent">tools,</strong>{' '}
+                      <span className="headline-desktop-light">&amp;</span>{' '}
+                      <strong className="headline-desktop-accent">workflows.</strong>
                     </span>
                     <span className="headline-line">
                       <span className="headline-desktop-light">Built for one business &mdash;</span>{' '}
@@ -419,7 +421,9 @@ export default function HeroV2() {
                       <strong className="headline-mobile-accent">websites,</strong>
                     </span>
                     <span className="headline-line">
-                      <strong className="headline-mobile-accent">tools, and workflows.</strong>
+                      <strong className="headline-mobile-accent">tools,</strong>{' '}
+                      <span className="headline-mobile-light">&amp;</span>{' '}
+                      <strong className="headline-mobile-accent">workflows.</strong>
                     </span>
                     <span className="headline-line">
                       <span className="headline-mobile-light">Built for one</span>
@@ -432,14 +436,13 @@ export default function HeroV2() {
                 </h1>
                 <p className="hero-frame-paragraph hero-paragraph-anim" style={{ marginTop: '1.7rem', fontSize: '1.213rem', lineHeight: '1.75', color: '#dfe6ee', WebkitTextFillColor: '#dfe6ee', maxWidth: '100%', fontWeight: 300, opacity: 1, textWrap: 'pretty' }}>
                   <span className="hero-body-desktop">
-                    <span className="hero-body-row hero-body-light" style={{ fontWeight: 300 }}>Got a site that undersells you, a task that eats your week, a process held together</span>
+                    <span className="hero-body-row hero-body-light" style={{ fontWeight: 300 }}>Got a dated site that undersells you, a task that eats your week, a process held together</span>
                     <span className="hero-body-row hero-body-light" style={{ fontWeight: 300 }}>by spreadsheets? I build what fixes it, so you don&rsquo;t have to.</span>
                   </span>
                   <span className="hero-body-mobile">
-                    <span className="hero-body-row hero-body-light" style={{ fontWeight: 300 }}>Got a site that undersells you, a task that eats</span>
-                    <span className="hero-body-row hero-body-light" style={{ fontWeight: 300 }}>your week, a process held together by</span>
-                    <span className="hero-body-row hero-body-light" style={{ fontWeight: 300 }}>spreadsheets? I build what fixes it,</span>
-                    <span className="hero-body-row hero-body-light" style={{ fontWeight: 300 }}>so you don&rsquo;t have to.</span>
+                    <span className="hero-body-row hero-body-light" style={{ fontWeight: 300 }}>Got a dated site that undersells you, a task that eats your week,</span>
+                    <span className="hero-body-row hero-body-light" style={{ fontWeight: 300 }}>a process held together by spreadsheets?</span>
+                    <span className="hero-body-row hero-body-light" style={{ fontWeight: 300 }}>I build what fixes it, so you don&rsquo;t have to.</span>
                   </span>
                 </p>
               </div>

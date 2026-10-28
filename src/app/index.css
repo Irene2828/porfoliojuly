@@ -499,7 +499,7 @@ h1, h2, h3, h4, h5, h6 {
   .v2-theme .headline-mobile,
   .v2-theme .hero-text .headline-mobile {
     font-family: -apple-system, BlinkMacSystemFont, "Helvetica Neue", Helvetica, Arial, sans-serif !important;
-    font-size: clamp(1.85rem, 9.32vw, 3.45rem) !important; /* +5% headline size on mobile */
+    font-size: clamp(2.22rem, 11.18vw, 4.14rem) !important; /* +20% headline size on mobile */
     font-weight: 400 !important;
     letter-spacing: -0.02em !important;
     line-height: 1.205 !important; /* +10% larger line spacing */
@@ -1435,7 +1435,7 @@ h1, h2, h3, h4, h5, h6 {
     text-align: left !important;
     align-self: flex-start !important;
     margin-top: 1.26rem !important; /* headline-body spacing tightened 10% from 1.4rem */
-    font-size: clamp(0.86rem, 3.7vw, 1.05rem) !important;
+    font-size: clamp(1.11rem, 4.76vw, 1.36rem) !important; /* +12% mobile body text */
     line-height: 1.705 !important; /* body text lines, increased 10% from 1.55 */
     max-width: 100% !important;
     width: 100% !important;
@@ -1473,11 +1473,9 @@ h1, h2, h3, h4, h5, h6 {
   .v2-theme .face-cta,
   .hire-btn-primary {
     background: linear-gradient(315deg, #d6b792 0%, #f2908f 100%) !important;
-    height: 2.72rem !important;
+    height: 3.01rem !important;
     width: auto !important;
-    min-width: min(75%, 246px) !important;
-    max-width: 92% !important;
-    padding: 0 1.19rem !important;
+    padding: 0 1.74rem !important;
     margin-left: auto !important;
     margin-right: auto !important;
     justify-content: center !important;
@@ -1496,9 +1494,9 @@ h1, h2, h3, h4, h5, h6 {
   .v2-theme .prefooter-btn-primary span,
   .v2-theme .hero-ctas-outside .btn-primary-outline span,
   .v2-theme .face-cta span {
-    font-size: 0.67rem !important;
+    font-size: 0.72rem !important;
     font-weight: 700 !important;
-    letter-spacing: 0.05em !important;
+    letter-spacing: 0.08em !important;
     white-space: nowrap !important;
     display: inline-block !important;
   }

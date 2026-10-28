@@ -116,11 +116,9 @@ export default function EditorialStatement() {
             .prefooter-section .prefooter-btn-primary.face-cta,
             .prefooter-btn-primary {
               background: linear-gradient(315deg, #d6b792 0%, #f2908f 100%) !important;
-              height: 2.72rem !important;
+              height: 3.01rem !important;
               width: auto !important;
-              min-width: min(75%, 246px) !important;
-              max-width: 92% !important;
-              padding: 0 1.19rem !important;
+              padding: 0 1.74rem !important;
               margin: 0 auto !important;
               justify-content: center !important;
               white-space: nowrap !important;
@@ -132,9 +130,9 @@ export default function EditorialStatement() {
             }
             .prefooter-section .prefooter-btn-primary.face-cta span,
             .prefooter-btn-primary span {
-              font-size: 0.67rem !important;
+              font-size: 0.72rem !important;
               font-weight: 700 !important;
-              letter-spacing: 0.05em !important;
+              letter-spacing: 0.08em !important;
               white-space: nowrap !important;
               display: inline-block !important;
             }
