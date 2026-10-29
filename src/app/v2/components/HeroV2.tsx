@@ -163,7 +163,7 @@ export default function HeroV2() {
           .v2-theme .hero-frame-paragraph,
           .hero-frame-paragraph {
             font-family: var(--font-body) !important;
-            font-size: 15px !important;
+            font-size: 15.75px !important; /* +5% from 15px */
             font-weight: 400 !important;
             color: #a0abb8 !important;
             -webkit-text-fill-color: #a0abb8 !important;
@@ -172,7 +172,7 @@ export default function HeroV2() {
             margin-left: 0 !important;
             margin-right: auto !important;
             margin-top: 1.26rem !important; /* headline-body spacing, tightened 10% from 1.4rem */
-            line-height: 1.45 !important; /* cut by 15% from 1.705 */
+            line-height: 1.5225 !important; /* +5% from 1.45 */
             max-width: 100% !important;
             width: 100% !important;
           }
@@ -181,11 +181,11 @@ export default function HeroV2() {
           .hero-body-mobile .hero-body-row,
           .hero-body-mobile {
             font-family: var(--font-body) !important;
-            font-size: 15px !important;
+            font-size: 15.75px !important; /* +5% from 15px */
             font-weight: 400 !important;
             color: #a0abb8 !important;
             -webkit-text-fill-color: #a0abb8 !important;
-            line-height: 1.45 !important;
+            line-height: 1.5225 !important; /* +5% from 1.45 */
           }
           .v2-theme .hero-frame-paragraph .hero-body-bold,
           .hero-frame-paragraph .hero-body-bold,
@@ -473,9 +473,7 @@ export default function HeroV2() {
                     <span className="hero-body-row hero-body-light" style={{ fontWeight: 300 }}>by spreadsheets? <strong className="hero-body-bold">I build what fixes it, so you don&rsquo;t have to.</strong></span>
                   </span>
                   <span className="hero-body-mobile">
-                    <span className="hero-body-row hero-body-light">Got a dated site that undersells you, a task that eats</span>
-                    <span className="hero-body-row hero-body-light">your week, a process held together by spreadsheets?</span>
-                    <span className="hero-body-row hero-body-bold"><strong className="hero-body-bold">I build what fixes it, so you don&rsquo;t have to.</strong></span>
+                    Got a dated site that undersells you, a task that eats your week, a process held together by spreadsheets? <strong className="hero-body-bold">I build what fixes it, so you don&rsquo;t have to.</strong>
                   </span>
                 </p>
               </div>

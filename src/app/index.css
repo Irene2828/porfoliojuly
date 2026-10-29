@@ -1433,14 +1433,14 @@ h1, h2, h3, h4, h5, h6 {
 
   .v2-theme .hero-frame-paragraph {
     font-family: var(--font-body) !important;
-    font-size: 15px !important;
+    font-size: 15.75px !important; /* +5% from 15px */
     font-weight: 400 !important;
     color: #a0abb8 !important;
     -webkit-text-fill-color: #a0abb8 !important;
     text-align: left !important;
     align-self: flex-start !important;
     margin-top: 1.26rem !important; /* headline-body spacing tightened 10% from 1.4rem */
-    line-height: 1.45 !important; /* cut by 15% from 1.705 */
+    line-height: 1.5225 !important; /* +5% from 1.45 */
     max-width: 100% !important;
     width: 100% !important;
     margin-left: 0 !important;
@@ -1452,11 +1452,11 @@ h1, h2, h3, h4, h5, h6 {
   .hero-body-mobile .hero-body-row,
   .hero-body-mobile {
     font-family: var(--font-body) !important;
-    font-size: 15px !important;
+    font-size: 15.75px !important; /* +5% from 15px */
     font-weight: 400 !important;
     color: #a0abb8 !important;
     -webkit-text-fill-color: #a0abb8 !important;
-    line-height: 1.45 !important;
+    line-height: 1.5225 !important; /* +5% from 1.45 */
   }
 
   .v2-theme .hero-frame-paragraph .hero-body-bold,
