@@ -163,7 +163,7 @@ export default function HeroV2() {
           .v2-theme .hero-frame-paragraph,
           .hero-frame-paragraph {
             font-family: var(--font-body) !important;
-            font-size: 15.75px !important; /* +5% from 15px */
+            font-size: 13.7px !important; /* ~15% more text/words fit per line */
             font-weight: 400 !important;
             color: #a0abb8 !important;
             -webkit-text-fill-color: #a0abb8 !important;
@@ -172,7 +172,7 @@ export default function HeroV2() {
             margin-left: 0 !important;
             margin-right: auto !important;
             margin-top: 1.26rem !important; /* headline-body spacing, tightened 10% from 1.4rem */
-            line-height: 1.5225 !important; /* +5% from 1.45 */
+            line-height: 1.5225 !important;
             max-width: 100% !important;
             width: 100% !important;
           }
@@ -181,11 +181,11 @@ export default function HeroV2() {
           .hero-body-mobile .hero-body-row,
           .hero-body-mobile {
             font-family: var(--font-body) !important;
-            font-size: 15.75px !important; /* +5% from 15px */
+            font-size: 13.7px !important; /* ~15% more text/words fit per line */
             font-weight: 400 !important;
             color: #a0abb8 !important;
             -webkit-text-fill-color: #a0abb8 !important;
-            line-height: 1.5225 !important; /* +5% from 1.45 */
+            line-height: 1.5225 !important;
           }
           .v2-theme .hero-frame-paragraph .hero-body-bold,
           .hero-frame-paragraph .hero-body-bold,
