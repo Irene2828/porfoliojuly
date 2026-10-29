@@ -139,6 +139,14 @@ export default function HeroV2() {
         .hero-body-mobile {
           display: none;
         }
+        @media (min-width: 901px) {
+          .hero-body-mobile {
+            display: none !important;
+          }
+          .hero-body-desktop {
+            display: block !important;
+          }
+        }
         @media (max-width: 900px) {
           .v2-theme .hero-statement,
           .hero-statement {
@@ -154,21 +162,46 @@ export default function HeroV2() {
           .hero-text .hero-frame-paragraph,
           .v2-theme .hero-frame-paragraph,
           .hero-frame-paragraph {
+            font-family: var(--font-body) !important;
+            font-size: 15px !important;
+            font-weight: 400 !important;
+            color: #a0abb8 !important;
+            -webkit-text-fill-color: #a0abb8 !important;
             text-align: left !important;
             align-self: flex-start !important;
             margin-left: 0 !important;
             margin-right: auto !important;
             margin-top: 1.26rem !important; /* headline-body spacing, tightened 10% from 1.4rem */
-            line-height: 1.705 !important; /* body text lines, increased 10% from 1.55 */
-            font-size: clamp(1.11rem, 4.76vw, 1.36rem) !important; /* +12% mobile body text */
+            line-height: 1.45 !important; /* cut by 15% from 1.705 */
             max-width: 100% !important;
             width: 100% !important;
+          }
+          .v2-theme .hero-frame-paragraph .hero-body-light,
+          .hero-frame-paragraph .hero-body-light,
+          .hero-body-mobile .hero-body-row,
+          .hero-body-mobile {
+            font-family: var(--font-body) !important;
+            font-size: 15px !important;
+            font-weight: 400 !important;
+            color: #a0abb8 !important;
+            -webkit-text-fill-color: #a0abb8 !important;
+            line-height: 1.45 !important;
+          }
+          .v2-theme .hero-frame-paragraph .hero-body-bold,
+          .hero-frame-paragraph .hero-body-bold,
+          .hero-body-mobile .hero-body-bold,
+          .hero-body-mobile strong {
+            font-weight: 600 !important;
+            color: #dfe6ee !important;
+            -webkit-text-fill-color: #dfe6ee !important;
           }
           .hero-body-desktop {
             display: none !important;
           }
           .hero-body-mobile {
             display: block !important;
+            max-width: 100% !important;
+            width: 100% !important;
           }
           .hero-body-row {
             display: block !important;
@@ -401,7 +434,7 @@ export default function HeroV2() {
                   <span className="headline-desktop">
                     <span className="headline-line">
                       <span className="headline-desktop-light">Custom</span>{' '}
-                      <strong className="headline-desktop-accent">websites,</strong>
+                      <strong className="headline-desktop-accent">websites, work</strong>
                     </span>
                     <span className="headline-line">
                       <strong className="headline-desktop-accent">tools,</strong>{' '}
@@ -437,14 +470,12 @@ export default function HeroV2() {
                 <p className="hero-frame-paragraph hero-paragraph-anim" style={{ marginTop: '1.7rem', fontSize: '1.213rem', lineHeight: '1.75', color: '#dfe6ee', WebkitTextFillColor: '#dfe6ee', maxWidth: '100%', fontWeight: 300, opacity: 1, textWrap: 'pretty' }}>
                   <span className="hero-body-desktop">
                     <span className="hero-body-row hero-body-light" style={{ fontWeight: 300 }}>Got a dated site that undersells you, a task that eats your week, a process held together</span>
-                    <span className="hero-body-row hero-body-light" style={{ fontWeight: 300 }}>by spreadsheets? I build what fixes it, so you don&rsquo;t have to.</span>
+                    <span className="hero-body-row hero-body-light" style={{ fontWeight: 300 }}>by spreadsheets? <strong className="hero-body-bold">I build what fixes it, so you don&rsquo;t have to.</strong></span>
                   </span>
                   <span className="hero-body-mobile">
-                    <span className="hero-body-row hero-body-light" style={{ fontWeight: 300 }}>Got a dated site that undersells you,</span>
-                    <span className="hero-body-row hero-body-light" style={{ fontWeight: 300 }}>a task that eats your week,</span>
-                    <span className="hero-body-row hero-body-light" style={{ fontWeight: 300 }}>a process held together by</span>
-                    <span className="hero-body-row hero-body-light" style={{ fontWeight: 300 }}>spreadsheets? I build what fixes it,</span>
-                    <span className="hero-body-row hero-body-light" style={{ fontWeight: 300 }}>so you don&rsquo;t have to.</span>
+                    <span className="hero-body-row hero-body-light">Got a dated site that undersells you, a task that eats</span>
+                    <span className="hero-body-row hero-body-light">your week, a process held together by spreadsheets?</span>
+                    <span className="hero-body-row hero-body-bold"><strong className="hero-body-bold">I build what fixes it, so you don&rsquo;t have to.</strong></span>
                   </span>
                 </p>
               </div>
