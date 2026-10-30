@@ -431,9 +431,9 @@ export default function HeroV2() {
           .hero-text .hero-frame-paragraph,
           .v2-theme .hero-frame-paragraph,
           .hero-frame-paragraph {
-            width: calc(100% + 2rem) !important;
+            width: calc(100% + 0.85rem) !important;
             max-width: 520px !important;
-            margin-right: -2rem !important;
+            margin-right: -0.85rem !important;
           }
           .hero-body-mobile {
             width: 100% !important;
