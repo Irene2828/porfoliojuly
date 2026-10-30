@@ -191,6 +191,7 @@ export default function HeroV2() {
           .hero-frame-paragraph .hero-body-bold,
           .hero-body-mobile .hero-body-bold,
           .hero-body-mobile strong {
+            display: block !important;
             font-weight: 600 !important;
             font-style: normal !important;
             color: #dfe6ee !important;
