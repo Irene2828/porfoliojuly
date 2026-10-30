@@ -163,7 +163,7 @@ export default function HeroV2() {
           .v2-theme .hero-frame-paragraph,
           .hero-frame-paragraph {
             font-family: var(--font-body) !important;
-            font-size: 13.7px !important; /* ~15% more text/words fit per line */
+            font-size: 15.75px !important; /* +15% text size */
             font-weight: 400 !important;
             color: #a0abb8 !important;
             -webkit-text-fill-color: #a0abb8 !important;
@@ -181,7 +181,7 @@ export default function HeroV2() {
           .hero-body-mobile .hero-body-row,
           .hero-body-mobile {
             font-family: var(--font-body) !important;
-            font-size: 13.7px !important; /* ~15% more text/words fit per line */
+            font-size: 15.75px !important; /* +15% text size */
             font-weight: 400 !important;
             color: #a0abb8 !important;
             -webkit-text-fill-color: #a0abb8 !important;
