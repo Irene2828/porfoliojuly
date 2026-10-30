@@ -418,9 +418,8 @@ export default function HeroV2() {
             box-shadow: -8px -8px 0px 0px #1e2026 !important;
           }
         }
-        /* Top-level media queries for mobile hero body line width */
-        /* Larger phones (iPhone 12, 13, 14, 15 and alike, 390px to 900px): line width grown by 15% */
-        @media (min-width: 390px) and (max-width: 900px) {
+        /* Mobile hero body line width (350px to 900px, covers iPhone 13, 13 mini, display zoom, 12, 14, 15) */
+        @media (max-width: 900px) {
           .v2-theme .hero-name-group,
           .hero-name-group {
             width: 100% !important;
@@ -442,8 +441,8 @@ export default function HeroV2() {
             max-width: 100% !important;
           }
         }
-        /* Smaller screens (iPhone 8 and alike, <= 389px) */
-        @media (max-width: 389px) {
+        /* Very small screens (<= 349px, e.g. iPhone 5 / SE 1st gen) */
+        @media (max-width: 349px) {
           .v2-theme .hero-frame-paragraph,
           .hero-frame-paragraph {
             width: 100% !important;
@@ -461,7 +460,7 @@ export default function HeroV2() {
         {/* Left side (now visually Left): Content, Headline frame, and CTAs */}
         <div className="hero-content" style={{ position: 'relative' }}>
           <div className="hero-copy-motion" style={{ position: 'relative', zIndex: 1 }}>
-            <div className="hero-name-group" style={{ position: 'relative', width: 'fit-content', maxWidth: '100%' }}>
+            <div className="hero-name-group" style={{ position: 'relative', maxWidth: '100%' }}>
               <div
                 className="hero-text"
                 style={{ transform: 'translateY(-0.4rem)' }}

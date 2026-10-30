@@ -1592,9 +1592,8 @@ h1, h2, h3, h4, h5, h6 {
   }
 }
 
-/* Top-level media queries for mobile hero body line width */
-/* Larger phones (iPhone 12, 13, 14, 15 and alike, 390px to 900px): line width grown by 15% */
-@media (min-width: 390px) and (max-width: 900px) {
+/* Mobile hero body line width (350px to 900px, covers iPhone 13, 13 mini, display zoom, 12, 14, 15) */
+@media (max-width: 900px) {
   .v2-theme .hero-name-group,
   .hero-name-group {
     width: 100% !important;
@@ -1616,8 +1615,8 @@ h1, h2, h3, h4, h5, h6 {
   }
 }
 
-/* Smaller screens (iPhone 8 and alike, <= 389px) */
-@media (max-width: 389px) {
+/* Very small screens (<= 349px, e.g. iPhone 5 / SE 1st gen) */
+@media (max-width: 349px) {
   .v2-theme .hero-frame-paragraph {
     width: 100% !important;
     max-width: 100% !important;
