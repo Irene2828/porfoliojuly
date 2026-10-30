@@ -101,6 +101,7 @@ export default function HeroV2() {
         .hero-frame-paragraph .hero-body-light,
         .hero-body-light {
           font-weight: 300 !important;
+          font-style: italic !important;
         }
         .v2-theme .hero-frame-paragraph .hero-body-bold,
         .hero-frame-paragraph .hero-body-bold,
@@ -176,10 +177,12 @@ export default function HeroV2() {
           .v2-theme .hero-frame-paragraph .hero-body-light,
           .hero-frame-paragraph .hero-body-light,
           .hero-body-mobile .hero-body-row,
-          .hero-body-mobile {
+          .hero-body-mobile,
+          .hero-body-mobile-text {
             font-family: var(--font-body) !important;
             font-size: 17.33px !important; /* +10% text size */
             font-weight: 400 !important;
+            font-style: italic !important;
             color: #a0abb8 !important;
             -webkit-text-fill-color: #a0abb8 !important;
             line-height: 1.5225 !important;
@@ -189,6 +192,7 @@ export default function HeroV2() {
           .hero-body-mobile .hero-body-bold,
           .hero-body-mobile strong {
             font-weight: 600 !important;
+            font-style: normal !important;
             color: #dfe6ee !important;
             -webkit-text-fill-color: #dfe6ee !important;
             letter-spacing: 0.02em !important;
@@ -509,7 +513,8 @@ export default function HeroV2() {
                     <span className="hero-body-row hero-body-light" style={{ fontWeight: 300 }}>by spreadsheets? <strong className="hero-body-bold">I build what fixes it, so you don&rsquo;t have to.</strong></span>
                   </span>
                   <span className="hero-body-mobile">
-                    Got a dated site that undersells you, a task that eats your week, a process held together by spreadsheets? <strong className="hero-body-bold">I build what fixes it, so you don&rsquo;t have to.</strong>
+                    <span className="hero-body-mobile-text hero-body-light">Got a dated site that undersells you, a task that eats your week, a process held together by spreadsheets?</span>{' '}
+                    <strong className="hero-body-bold">I build what fixes it, so you don&rsquo;t have to.</strong>
                   </span>
                 </p>
               </div>
