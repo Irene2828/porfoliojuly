@@ -1482,32 +1482,6 @@ h1, h2, h3, h4, h5, h6 {
     display: block !important;
   }
 
-  /* Larger phones (iPhone 12 and alike, 390px to 900px): line width grown by 15% */
-  @media (min-width: 390px) and (max-width: 900px) {
-    .v2-theme .hero-frame-paragraph {
-      width: calc(100% + 1.25rem) !important;
-      max-width: 480px !important;
-      margin-right: -1.25rem !important;
-    }
-    .hero-body-mobile {
-      width: 100% !important;
-      max-width: 100% !important;
-    }
-  }
-
-  /* Smaller screens (iPhone 8 and alike, <= 389px) */
-  @media (max-width: 389px) {
-    .v2-theme .hero-frame-paragraph {
-      width: 100% !important;
-      max-width: 100% !important;
-      margin-right: auto !important;
-    }
-    .hero-body-mobile {
-      width: 100% !important;
-      max-width: 100% !important;
-    }
-  }
-
   .v2-theme .hero-ctas,
   .v2-theme .hero-ctas-outside {
     margin-top: 1.81125rem !important; /* body-buttons spacing +15% from 1.575rem */
@@ -1615,6 +1589,43 @@ h1, h2, h3, h4, h5, h6 {
     .v2-theme .hero-image-wrapper {
       transform: scale(0.9) !important;
     }
+  }
+}
+
+/* Top-level media queries for mobile hero body line width */
+/* Larger phones (iPhone 12, 13, 14, 15 and alike, 390px to 900px): line width grown by 15% */
+@media (min-width: 390px) and (max-width: 900px) {
+  .v2-theme .hero-name-group,
+  .hero-name-group {
+    width: 100% !important;
+    max-width: 100% !important;
+  }
+  .v2-theme .hero-text,
+  .hero-text {
+    width: 100% !important;
+    max-width: 100% !important;
+  }
+  .v2-theme .hero-frame-paragraph {
+    width: calc(100% + 1.25rem) !important;
+    max-width: 480px !important;
+    margin-right: -1.25rem !important;
+  }
+  .hero-body-mobile {
+    width: 100% !important;
+    max-width: 100% !important;
+  }
+}
+
+/* Smaller screens (iPhone 8 and alike, <= 389px) */
+@media (max-width: 389px) {
+  .v2-theme .hero-frame-paragraph {
+    width: 100% !important;
+    max-width: 100% !important;
+    margin-right: auto !important;
+  }
+  .hero-body-mobile {
+    width: 100% !important;
+    max-width: 100% !important;
   }
 }
 

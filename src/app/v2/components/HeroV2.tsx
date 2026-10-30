@@ -206,32 +206,6 @@ export default function HeroV2() {
           .hero-body-row {
             display: block !important;
           }
-          /* Larger phones (iPhone 12 and alike, 390px to 900px): line width grown by 15% */
-          @media (min-width: 390px) and (max-width: 900px) {
-            .v2-theme .hero-frame-paragraph,
-            .hero-frame-paragraph {
-              width: calc(100% + 1.25rem) !important;
-              max-width: 480px !important;
-              margin-right: -1.25rem !important;
-            }
-            .hero-body-mobile {
-              width: 100% !important;
-              max-width: 100% !important;
-            }
-          }
-          /* Smaller screens (iPhone 8 and alike, <= 389px) */
-          @media (max-width: 389px) {
-            .v2-theme .hero-frame-paragraph,
-            .hero-frame-paragraph {
-              width: 100% !important;
-              max-width: 100% !important;
-              margin-right: auto !important;
-            }
-            .hero-body-mobile {
-              width: 100% !important;
-              max-width: 100% !important;
-            }
-          }
           .v2-theme .hero-image-wrapper,
           .hero-image-wrapper {
             padding-top: 1.2rem !important;
@@ -442,6 +416,43 @@ export default function HeroV2() {
           .v2-theme .hero-image-container,
           .hero-image-container {
             box-shadow: -8px -8px 0px 0px #1e2026 !important;
+          }
+        }
+        /* Top-level media queries for mobile hero body line width */
+        /* Larger phones (iPhone 12, 13, 14, 15 and alike, 390px to 900px): line width grown by 15% */
+        @media (min-width: 390px) and (max-width: 900px) {
+          .v2-theme .hero-name-group,
+          .hero-name-group {
+            width: 100% !important;
+            max-width: 100% !important;
+          }
+          .v2-theme .hero-text,
+          .hero-text {
+            width: 100% !important;
+            max-width: 100% !important;
+          }
+          .v2-theme .hero-frame-paragraph,
+          .hero-frame-paragraph {
+            width: calc(100% + 1.25rem) !important;
+            max-width: 480px !important;
+            margin-right: -1.25rem !important;
+          }
+          .hero-body-mobile {
+            width: 100% !important;
+            max-width: 100% !important;
+          }
+        }
+        /* Smaller screens (iPhone 8 and alike, <= 389px) */
+        @media (max-width: 389px) {
+          .v2-theme .hero-frame-paragraph,
+          .hero-frame-paragraph {
+            width: 100% !important;
+            max-width: 100% !important;
+            margin-right: auto !important;
+          }
+          .hero-body-mobile {
+            width: 100% !important;
+            max-width: 100% !important;
           }
         }
       `}</style>
