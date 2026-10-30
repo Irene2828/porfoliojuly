@@ -1441,10 +1441,7 @@ h1, h2, h3, h4, h5, h6 {
     align-self: flex-start !important;
     margin-top: 1.26rem !important; /* headline-body spacing tightened 10% from 1.4rem */
     line-height: 1.5225 !important;
-    max-width: 100% !important;
-    width: 100% !important;
     margin-left: 0 !important;
-    margin-right: auto !important;
     text-wrap: pretty !important;
   }
 
@@ -1604,10 +1601,13 @@ h1, h2, h3, h4, h5, h6 {
     width: 100% !important;
     max-width: 100% !important;
   }
-  .v2-theme .hero-frame-paragraph {
-    width: calc(100% + 1.25rem) !important;
-    max-width: 480px !important;
-    margin-right: -1.25rem !important;
+  .v2-theme .hero-text .hero-frame-paragraph,
+  .hero-text .hero-frame-paragraph,
+  .v2-theme .hero-frame-paragraph,
+  .hero-frame-paragraph {
+    width: calc(100% + 2rem) !important;
+    max-width: 520px !important;
+    margin-right: -2rem !important;
   }
   .hero-body-mobile {
     width: 100% !important;

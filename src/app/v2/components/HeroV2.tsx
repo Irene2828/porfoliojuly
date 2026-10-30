@@ -170,11 +170,8 @@ export default function HeroV2() {
             text-align: left !important;
             align-self: flex-start !important;
             margin-left: 0 !important;
-            margin-right: auto !important;
             margin-top: 1.26rem !important; /* headline-body spacing, tightened 10% from 1.4rem */
             line-height: 1.5225 !important;
-            max-width: 100% !important;
-            width: 100% !important;
           }
           .v2-theme .hero-frame-paragraph .hero-body-light,
           .hero-frame-paragraph .hero-body-light,
@@ -430,11 +427,13 @@ export default function HeroV2() {
             width: 100% !important;
             max-width: 100% !important;
           }
+          .v2-theme .hero-text .hero-frame-paragraph,
+          .hero-text .hero-frame-paragraph,
           .v2-theme .hero-frame-paragraph,
           .hero-frame-paragraph {
-            width: calc(100% + 1.25rem) !important;
-            max-width: 480px !important;
-            margin-right: -1.25rem !important;
+            width: calc(100% + 2rem) !important;
+            max-width: 520px !important;
+            margin-right: -2rem !important;
           }
           .hero-body-mobile {
             width: 100% !important;
@@ -503,7 +502,7 @@ export default function HeroV2() {
                     </span>
                   </span>
                 </h1>
-                <p className="hero-frame-paragraph hero-paragraph-anim" style={{ marginTop: '1.7rem', fontSize: '1.213rem', lineHeight: '1.75', color: '#dfe6ee', WebkitTextFillColor: '#dfe6ee', maxWidth: '100%', fontWeight: 300, opacity: 1, textWrap: 'pretty' }}>
+                <p className="hero-frame-paragraph hero-paragraph-anim" style={{ marginTop: '1.7rem', fontSize: '1.213rem', lineHeight: '1.75', color: '#dfe6ee', WebkitTextFillColor: '#dfe6ee', fontWeight: 300, opacity: 1, textWrap: 'pretty' }}>
                   <span className="hero-body-desktop">
                     <span className="hero-body-row hero-body-light" style={{ fontWeight: 300 }}>Got a dated site that undersells you, a task that eats your week, a process held together</span>
                     <span className="hero-body-row hero-body-light" style={{ fontWeight: 300 }}>by spreadsheets? <strong className="hero-body-bold">I build what fixes it, so you don&rsquo;t have to.</strong></span>
