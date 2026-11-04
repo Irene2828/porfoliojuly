@@ -1482,11 +1482,14 @@ h1, h2, h3, h4, h5, h6 {
   .hero-body-mobile strong {
     display: block !important;
     margin-top: 0.65rem !important; /* increased spacing between bold and unbold text */
-    font-weight: 600 !important;
-    font-style: normal !important;
+    font-family: var(--font-body) !important;
+    font-size: 15.6px !important;
+    font-weight: 400 !important; /* unbolded: same 400 weight as unbolded text */
+    font-style: normal !important; /* not italic */
     color: #dfe6ee !important;
     -webkit-text-fill-color: #dfe6ee !important;
-    letter-spacing: 0.02em !important;
+    line-height: 1.5225 !important;
+    letter-spacing: normal !important;
   }
 
   .hero-body-desktop {
@@ -1520,18 +1523,19 @@ h1, h2, h3, h4, h5, h6 {
   .v2-theme .face-cta,
   .hire-btn-primary {
     background: linear-gradient(315deg, #d6b792 0%, #f2908f 100%) !important;
-    height: 3.01rem !important;
+    height: 3.612rem !important; /* +20% larger on mobile */
     width: auto !important;
-    padding: 0 1.74rem !important;
+    padding: 0 2.088rem !important; /* +20% larger on mobile */
     margin-left: auto !important;
     margin-right: auto !important;
     justify-content: center !important;
     white-space: nowrap !important;
-    border-radius: 40px !important;
+    border-radius: 48px !important;
     border: 1px solid #e2a792 !important;
     box-shadow: none !important;
     transform: none !important;
     box-sizing: border-box !important;
+    gap: 0.54rem !important;
   }
   .v2-theme .prefooter-btn-primary:hover,
   .v2-theme .hero-ctas-outside .btn-primary-outline:hover,
@@ -1541,11 +1545,17 @@ h1, h2, h3, h4, h5, h6 {
   .v2-theme .prefooter-btn-primary span,
   .v2-theme .hero-ctas-outside .btn-primary-outline span,
   .v2-theme .face-cta span {
-    font-size: 0.72rem !important;
+    font-size: 0.864rem !important; /* +20% larger on mobile */
     font-weight: 700 !important;
     letter-spacing: 0.08em !important;
     white-space: nowrap !important;
     display: inline-block !important;
+  }
+  .v2-theme .prefooter-btn-primary svg,
+  .v2-theme .hero-ctas-outside .btn-primary-outline svg,
+  .v2-theme .face-cta svg {
+    width: 12px !important;
+    height: 12px !important;
   }
 
   /* On mobile: shapes shrunk 25% with image to fit neatly within bounds */

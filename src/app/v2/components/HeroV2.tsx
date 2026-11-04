@@ -197,11 +197,14 @@ export default function HeroV2() {
           .hero-body-mobile strong {
             display: block !important;
             margin-top: 0.65rem !important; /* increased spacing between bold and unbold text */
-            font-weight: 600 !important;
-            font-style: normal !important;
+            font-family: var(--font-body) !important;
+            font-size: 15.6px !important;
+            font-weight: 400 !important; /* unbolded: same 400 weight as unbolded text */
+            font-style: normal !important; /* not italic */
             color: #dfe6ee !important;
             -webkit-text-fill-color: #dfe6ee !important;
-            letter-spacing: 0.02em !important;
+            line-height: 1.5225 !important;
+            letter-spacing: normal !important;
           }
           .hero-body-desktop {
             display: none !important;
@@ -292,26 +295,33 @@ export default function HeroV2() {
           .v2-theme .hero-ctas-outside .btn-primary,
           .v2-theme .hero-ctas-outside .btn-primary-outline {
             background: linear-gradient(315deg, #d6b792 0%, #f2908f 100%) !important;
-            height: 3.01rem !important;
+            height: 3.612rem !important; /* +20% larger on mobile */
             width: auto !important;
-            padding: 0 1.74rem !important;
+            padding: 0 2.088rem !important; /* +20% larger on mobile */
             margin: 0 auto !important;
             justify-content: center !important;
             white-space: nowrap !important;
-            border-radius: 40px !important;
+            border-radius: 48px !important;
             border: 1px solid #e2a792 !important;
             box-shadow: none !important;
             transform: none !important;
             box-sizing: border-box !important;
+            gap: 0.54rem !important;
           }
           .v2-theme .hero-ctas-outside .prefooter-btn-primary span,
           .v2-theme .hero-ctas-outside .face-cta span,
           .v2-theme .hero-ctas-outside .btn-primary-outline span {
-            font-size: 0.72rem !important;
+            font-size: 0.864rem !important; /* +20% larger on mobile */
             font-weight: 700 !important;
             letter-spacing: 0.08em !important;
             white-space: nowrap !important;
             display: inline-block !important;
+          }
+          .v2-theme .hero-ctas-outside .prefooter-btn-primary svg,
+          .v2-theme .hero-ctas-outside .face-cta svg,
+          .v2-theme .hero-ctas-outside .btn-primary-outline svg {
+            width: 12px !important;
+            height: 12px !important;
           }
           .v2-theme .badge-anchor-websites,
           .badge-anchor-websites {
@@ -337,54 +347,56 @@ export default function HeroV2() {
           }
         }
         /* Primary CTA: matching prefooter pill button style (mixed beige & peach gradient, border-radius: 40px) */
-        .v2-theme .hero-ctas-outside .prefooter-btn-primary,
-        .v2-theme .hero-ctas-outside .face-cta,
-        .v2-theme .hero-ctas-outside .btn-primary-outline.btn-primary,
-        .v2-theme .hero-ctas-outside .btn-primary,
-        .v2-theme .hero-ctas-outside .btn-primary-outline,
-        .hero-ctas-outside .btn-primary-outline {
-          font-family: var(--font-label), sans-serif !important;
-          font-size: 0.72rem !important;
-          font-weight: 700 !important;
-          text-transform: uppercase !important;
-          letter-spacing: 0.08em !important;
-          height: 3.01rem !important;
-          padding: 0 1.74rem !important;
-          background: linear-gradient(315deg, #d6b792 0%, #f2908f 100%) !important;
-          border: 1px solid #e2a792 !important;
-          color: #000000 !important;
-          -webkit-text-fill-color: #000000 !important;
-          border-radius: 40px !important;
-          box-shadow: none !important;
-          transform: none !important;
-          transition: all 0.25s ease !important;
-        }
-        .v2-theme .hero-ctas-outside .prefooter-btn-primary span,
-        .v2-theme .hero-ctas-outside .face-cta span,
-        .v2-theme .hero-ctas-outside .btn-primary-outline span {
-          font-size: 0.72rem !important;
-          font-weight: 700 !important;
-          letter-spacing: 0.08em !important;
-        }
-        .v2-theme .hero-ctas-outside .prefooter-btn-primary:hover,
-        .v2-theme .hero-ctas-outside .face-cta:hover,
-        .v2-theme .hero-ctas-outside .btn-primary-outline.btn-primary:hover,
-        .v2-theme .hero-ctas-outside .btn-primary:hover,
-        .v2-theme .hero-ctas-outside .btn-primary-outline:hover,
-        .hero-ctas-outside .btn-primary-outline:hover {
-          background: linear-gradient(315deg, #ddc19e 0%, #f49c9b 100%) !important;
-          border-color: #e2a792 !important;
-          color: #000000 !important;
-          -webkit-text-fill-color: #000000 !important;
-          border-radius: 40px !important;
-          transform: translateY(-2px) !important;
-          box-shadow: 0 8px 24px rgba(242, 144, 143, 0.28) !important;
-        }
-        .v2-theme .hero-ctas-outside .prefooter-btn-primary:hover svg,
-        .v2-theme .hero-ctas-outside .face-cta:hover svg,
-        .v2-theme .hero-ctas-outside .btn-primary-outline.btn-primary:hover svg,
-        .v2-theme .hero-ctas-outside .btn-primary-outline:hover svg {
-          stroke: #000000 !important;
+        @media (min-width: 901px) {
+          .v2-theme .hero-ctas-outside .prefooter-btn-primary,
+          .v2-theme .hero-ctas-outside .face-cta,
+          .v2-theme .hero-ctas-outside .btn-primary-outline.btn-primary,
+          .v2-theme .hero-ctas-outside .btn-primary,
+          .v2-theme .hero-ctas-outside .btn-primary-outline,
+          .hero-ctas-outside .btn-primary-outline {
+            font-family: var(--font-label), sans-serif !important;
+            font-size: 0.72rem !important;
+            font-weight: 700 !important;
+            text-transform: uppercase !important;
+            letter-spacing: 0.08em !important;
+            height: 3.01rem !important;
+            padding: 0 1.74rem !important;
+            background: linear-gradient(315deg, #d6b792 0%, #f2908f 100%) !important;
+            border: 1px solid #e2a792 !important;
+            color: #000000 !important;
+            -webkit-text-fill-color: #000000 !important;
+            border-radius: 40px !important;
+            box-shadow: none !important;
+            transform: none !important;
+            transition: all 0.25s ease !important;
+          }
+          .v2-theme .hero-ctas-outside .prefooter-btn-primary span,
+          .v2-theme .hero-ctas-outside .face-cta span,
+          .v2-theme .hero-ctas-outside .btn-primary-outline span {
+            font-size: 0.72rem !important;
+            font-weight: 700 !important;
+            letter-spacing: 0.08em !important;
+          }
+          .v2-theme .hero-ctas-outside .prefooter-btn-primary:hover,
+          .v2-theme .hero-ctas-outside .face-cta:hover,
+          .v2-theme .hero-ctas-outside .btn-primary-outline.btn-primary:hover,
+          .v2-theme .hero-ctas-outside .btn-primary:hover,
+          .v2-theme .hero-ctas-outside .btn-primary-outline:hover,
+          .hero-ctas-outside .btn-primary-outline:hover {
+            background: linear-gradient(315deg, #ddc19e 0%, #f49c9b 100%) !important;
+            border-color: #e2a792 !important;
+            color: #000000 !important;
+            -webkit-text-fill-color: #000000 !important;
+            border-radius: 40px !important;
+            transform: translateY(-2px) !important;
+            box-shadow: 0 8px 24px rgba(242, 144, 143, 0.28) !important;
+          }
+          .v2-theme .hero-ctas-outside .prefooter-btn-primary:hover svg,
+          .v2-theme .hero-ctas-outside .face-cta:hover svg,
+          .v2-theme .hero-ctas-outside .btn-primary-outline.btn-primary:hover svg,
+          .v2-theme .hero-ctas-outside .btn-primary-outline:hover svg {
+            stroke: #000000 !important;
+          }
         }
         /* Desktop size matching: .hero-container has transform: scale(0.88) at min-width: 1200px.
            Counter-scale by 1 / 0.88 = 1.13636 so the rendered button dimensions match prefooter CTA exactly. */
