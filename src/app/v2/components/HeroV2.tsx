@@ -512,7 +512,7 @@ font-weight: 400 !important;
                   {/* Desktop Headline (3 lines) */}
                   <span className="headline-desktop">
                     <span className="headline-line">
-                      <em className="headline-desktop-serif">Custom</em>{' '}
+                      <span className="headline-desktop-serif-normal">Custom</span>{' '}
                       <strong className="headline-desktop-accent">websites,</strong>
                     </span>
                     <span className="headline-line">
@@ -529,7 +529,7 @@ font-weight: 400 !important;
                   {/* Mobile Headline (4 lines, left-aligned) */}
                   <span className="headline-mobile" style={{ gap: '0px', lineHeight: 1.02 }}>
                     <span className="headline-line">
-                      <em className="headline-mobile-serif">Custom</em>{' '}
+                      <span className="headline-mobile-serif-normal">Custom</span>{' '}
                       <strong className="headline-mobile-accent">websites,</strong>
                     </span>
                     <span className="headline-line">
