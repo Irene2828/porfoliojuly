@@ -413,7 +413,7 @@ h1, h2, h3, h4, h5, h6 {
   .v2-theme .headline-mobile-accent,
   .headline-desktop-accent,
   .headline-mobile-accent {
-    font-weight: 600 !important;
+    font-weight: 500 !important;
     letter-spacing: 0.025em !important; /* subtly increased spacing in bold words */
     background: linear-gradient(315deg, #d6b792 0%, #f2908f 100%) !important;
     -webkit-background-clip: text !important;
@@ -563,7 +563,7 @@ h1, h2, h3, h4, h5, h6 {
   .v2-theme .headline-mobile-accent,
   .headline-desktop-accent,
   .headline-mobile-accent {
-    font-weight: 600 !important;
+    font-weight: 500 !important;
     letter-spacing: 0.025em !important; /* subtly increased spacing in bold words */
     background: linear-gradient(315deg, #d6b792 0%, #f2908f 100%) !important;
     -webkit-background-clip: text !important;
@@ -688,6 +688,14 @@ h1, h2, h3, h4, h5, h6 {
 .hero-body-light {
   font-weight: 300 !important;
   font-style: italic !important;
+}
+
+.v2-theme .hero-frame-paragraph .hero-body-normal,
+.hero-body-normal {
+  font-weight: 300 !important;
+  font-style: normal !important;
+  color: #dfe6ee !important;
+  -webkit-text-fill-color: #dfe6ee !important;
 }
 
 .v2-theme .hero-frame-paragraph .hero-body-bold,

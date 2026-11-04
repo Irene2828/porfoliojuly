@@ -52,7 +52,7 @@ export default function HeroV2() {
         .headline-desktop-accent,
         .headline-mobile-accent {
           font-family: -apple-system, BlinkMacSystemFont, "Helvetica Neue", Helvetica, Arial, sans-serif !important;
-          font-weight: 600 !important;
+          font-weight: 500 !important;
           background: linear-gradient(315deg, #d6b792 0%, #f2908f 100%) !important;
           -webkit-background-clip: text !important;
           background-clip: text !important;
@@ -70,6 +70,15 @@ export default function HeroV2() {
           -webkit-text-fill-color: #ffffff !important;
           letter-spacing: -0.01em !important;
         }
+        .headline-desktop-serif-normal,
+        .headline-mobile-serif-normal {
+          font-family: 'Newsreader', 'Source Serif 4', Georgia, serif !important;
+          font-style: normal !important;
+          font-weight: 400 !important;
+          color: #ffffff !important;
+          -webkit-text-fill-color: #ffffff !important;
+          letter-spacing: -0.01em !important;
+        }
         .v2-theme .hero-statement,
         .hero-statement {
           color: rgba(255, 255, 255, 0.8) !important;
@@ -77,7 +86,7 @@ export default function HeroV2() {
         }
         .v2-theme .headline-mockup-bold,
         .headline-mockup-bold {
-          font-weight: 600 !important;
+          font-weight: 500 !important;
           letter-spacing: 0.025em !important;
           color: #f2908f !important;
           -webkit-text-fill-color: #f2908f !important;
@@ -106,6 +115,14 @@ export default function HeroV2() {
         .hero-body-light {
           font-weight: 300 !important;
           font-style: italic !important;
+        }
+        .v2-theme .hero-frame-paragraph .hero-body-normal,
+        .hero-frame-paragraph .hero-body-normal,
+        .hero-body-normal {
+          font-weight: 300 !important;
+          font-style: normal !important;
+          color: #dfe6ee !important;
+          -webkit-text-fill-color: #dfe6ee !important;
         }
         .v2-theme .hero-frame-paragraph .hero-body-bold,
         .hero-frame-paragraph .hero-body-bold,
@@ -495,16 +512,16 @@ export default function HeroV2() {
                   {/* Desktop Headline (3 lines) */}
                   <span className="headline-desktop">
                     <span className="headline-line">
-                      <span className="headline-desktop-light">Custom</span>{' '}
-                      <strong className="headline-desktop-accent">websites, work</strong>
+                      <em className="headline-desktop-serif">Custom</em>{' '}
+                      <strong className="headline-desktop-accent">websites,</strong>
                     </span>
                     <span className="headline-line">
                       <strong className="headline-desktop-accent">tools,</strong>{' '}
-                      <span className="headline-desktop-light">&amp;</span>{' '}
+                      <strong className="headline-desktop-accent">and</strong>{' '}
                       <strong className="headline-desktop-accent">workflows.</strong>
                     </span>
                     <span className="headline-line">
-                      <span className="headline-desktop-light">Built for one business &mdash;</span>{' '}
+                      <span className="headline-desktop-serif-normal">Built for one business &mdash;</span>{' '}
                       <em className="headline-desktop-serif">yours.</em>
                     </span>
                   </span>
@@ -512,19 +529,19 @@ export default function HeroV2() {
                   {/* Mobile Headline (4 lines, left-aligned) */}
                   <span className="headline-mobile" style={{ gap: '0px', lineHeight: 1.02 }}>
                     <span className="headline-line">
-                      <span className="headline-mobile-light">Custom</span>{' '}
+                      <em className="headline-mobile-serif">Custom</em>{' '}
                       <strong className="headline-mobile-accent">websites,</strong>
                     </span>
                     <span className="headline-line">
                       <strong className="headline-mobile-accent">tools,</strong>{' '}
-                      <span className="headline-mobile-light">&amp;</span>{' '}
+                      <strong className="headline-mobile-accent">and</strong>{' '}
                       <strong className="headline-mobile-accent">workflows.</strong>
                     </span>
                     <span className="headline-line">
-                      <span className="headline-mobile-light">Built for one</span>
+                      <span className="headline-mobile-serif-normal">Built for one</span>
                     </span>
                     <span className="headline-line">
-                      <span className="headline-mobile-light">business &mdash;</span>{' '}
+                      <span className="headline-mobile-serif-normal">business &mdash;</span>{' '}
                       <em className="headline-mobile-serif">yours.</em>
                     </span>
                   </span>
@@ -532,7 +549,8 @@ export default function HeroV2() {
                 <p className="hero-frame-paragraph hero-paragraph-anim" style={{ marginTop: '1.7rem', fontSize: '1.213rem', lineHeight: '1.75', color: '#dfe6ee', WebkitTextFillColor: '#dfe6ee', fontWeight: 300, opacity: 1, textWrap: 'pretty' }}>
                   <span className="hero-body-desktop">
                     <span className="hero-body-row hero-body-light" style={{ fontWeight: 300 }}>Got a dated site that undersells you, a task that eats your week, a process held together</span>
-                    <span className="hero-body-row hero-body-light" style={{ fontWeight: 300 }}>by spreadsheets? <strong className="hero-body-bold">I build what fixes it, so you don&rsquo;t have to.</strong></span>
+                    <span className="hero-body-row hero-body-light" style={{ fontWeight: 300 }}>by spreadsheets?</span>
+                    <span className="hero-body-row hero-body-normal" style={{ fontWeight: 300, fontStyle: 'normal' }}>I build what fixes it, so you don&rsquo;t have to.</span>
                   </span>
                   <span className="hero-body-mobile">
                     <span className="hero-body-mobile-text hero-body-light">Got a dated site that undersells you, a task that eats your week, a process held together by spreadsheets?</span>{' '}
