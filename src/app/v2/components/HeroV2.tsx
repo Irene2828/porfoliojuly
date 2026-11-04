@@ -5,23 +5,27 @@ import '@/app/components/Hero.css';
 import heroImage from '@/app/assets/new_me.jpg';
 
 export default function HeroV2() {
-    const [arriveStep, setArriveStep] = useState<number | null>(null);
+    const [arriveStep, setArriveStep] = useState<number | null>(0);
 
     useEffect(() => {
         if (typeof window === 'undefined') return;
         const isMobile = window.matchMedia('(max-width: 900px)').matches;
         const reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
-        if (!isMobile || reduceMotion) return;
+        if (!isMobile || reduceMotion) { setArriveStep(3); return; }
         setArriveStep(0);
         const firstId = setTimeout(() => {
             setArriveStep(1);
         }, 300);
         const secondId = setTimeout(() => {
             setArriveStep(2);
-        }, 700);
+        }, 800);
+        const thirdId = setTimeout(() => {
+            setArriveStep(3);
+        }, 1300);
         return () => {
             clearTimeout(firstId);
             clearTimeout(secondId);
+            clearTimeout(thirdId);
         };
     }, []);
   
@@ -587,7 +591,7 @@ font-weight: 400 !important;
                     <span className="hero-body-row hero-body-normal" style={{ fontWeight: 300, fontStyle: 'normal' }}>I build what fixes it, so you don&rsquo;t have to.</span>
                   </span>
               <span className="hero-body-mobile">
-                    <span className={arriveStep === null ? 'hero-body-mobile-text hero-body-light' : `hero-body-mobile-text hero-body-light hero-typewriter-rest${arriveStep >= 1 ? ' is-visible' : ''}`}>Got a dated site that undersells you, a task that eats your week, a process held together by spreadsheets?</span>s{' '}
+                    <span className={arriveStep === null ? 'hero-body-mobile-text hero-body-light' : `hero-body-mobile-text hero-body-light hero-typewriter-rest${arriveStep >= 1 ? ' is-visible' : ''}`}>Got a dated site that undersells you, a task that eats your week, a process held together by spreadsheets?</span>{' '}
                     <strong className={arriveStep === null ? 'hero-body-bold' : `hero-body-bold hero-typewriter-rest${arriveStep >= 2 ? ' is-visible' : ''}`}>I build what fixes it, so you don’t have to.</strong>
                   </span>
                 </p>
@@ -595,7 +599,7 @@ font-weight: 400 !important;
 
               {/* CTAs: right-aligned flush with content block */}
               <div
-                className={arriveStep === null ? 'hero-ctas hero-ctas-outside hero-ctas-anim' : `hero-ctas hero-ctas-outside hero-ctas-anim hero-typewriter-rest${arriveStep >= 2 ? ' is-visible' : ''}`}
+                className={arriveStep === null ? 'hero-ctas hero-ctas-outside hero-ctas-anim' : `hero-ctas hero-ctas-outside hero-ctas-anim hero-typewriter-rest${arriveStep >= 3 ? ' is-visible' : ''}`}
                 style={{ 
                   width: '100%', 
                   maxWidth: '100%',
