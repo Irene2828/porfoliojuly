@@ -186,7 +186,7 @@ export default function HeroV2() {
             font-family: var(--font-body) !important;
             font-size: 15.6px !important; /* -10% text size from 17.33px */
             font-weight: 400 !important;
-            font-style: italic !important;
+            font-style: normal !important; /* not italic on mobile */
             color: #dfe6ee !important;
             -webkit-text-fill-color: #dfe6ee !important;
             line-height: 1.5225 !important;
@@ -295,23 +295,23 @@ export default function HeroV2() {
           .v2-theme .hero-ctas-outside .btn-primary,
           .v2-theme .hero-ctas-outside .btn-primary-outline {
             background: linear-gradient(315deg, #d6b792 0%, #f2908f 100%) !important;
-            height: 3.612rem !important; /* +20% larger on mobile */
+            height: 3.25rem !important; /* -10% from 3.612rem */
             width: auto !important;
-            padding: 0 2.088rem !important; /* +20% larger on mobile */
+            padding: 0 1.88rem !important; /* -10% from 2.088rem */
             margin: 0 auto !important;
             justify-content: center !important;
             white-space: nowrap !important;
-            border-radius: 48px !important;
+            border-radius: 44px !important;
             border: 1px solid #e2a792 !important;
             box-shadow: none !important;
             transform: none !important;
             box-sizing: border-box !important;
-            gap: 0.54rem !important;
+            gap: 0.49rem !important;
           }
           .v2-theme .hero-ctas-outside .prefooter-btn-primary span,
           .v2-theme .hero-ctas-outside .face-cta span,
           .v2-theme .hero-ctas-outside .btn-primary-outline span {
-            font-size: 0.864rem !important; /* +20% larger on mobile */
+            font-size: 0.78rem !important; /* -10% from 0.864rem */
             font-weight: 700 !important;
             letter-spacing: 0.08em !important;
             white-space: nowrap !important;
@@ -320,8 +320,8 @@ export default function HeroV2() {
           .v2-theme .hero-ctas-outside .prefooter-btn-primary svg,
           .v2-theme .hero-ctas-outside .face-cta svg,
           .v2-theme .hero-ctas-outside .btn-primary-outline svg {
-            width: 12px !important;
-            height: 12px !important;
+            width: 11px !important;
+            height: 11px !important;
           }
           .v2-theme .badge-anchor-websites,
           .badge-anchor-websites {

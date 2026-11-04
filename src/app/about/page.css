@@ -599,25 +599,25 @@
   .about-cta-btn,
   .about-cta-section .prefooter-btn-primary.face-cta,
   .about-cta-section .prefooter-btn-primary {
-    height: 3.612rem !important;
+    height: 3.25rem !important;
     width: auto !important;
-    padding: 0 2.088rem !important;
-    font-size: 0.864rem !important;
+    padding: 0 1.88rem !important;
+    font-size: 0.78rem !important;
     font-weight: 700 !important;
     letter-spacing: 0.08em !important;
     transform: none !important;
     white-space: nowrap !important;
     margin: 0 auto !important;
-    border-radius: 48px !important;
+    border-radius: 44px !important;
     background: linear-gradient(315deg, #d6b792 0%, #f2908f 100%) !important;
     border: 1px solid #e2a792 !important;
     box-sizing: border-box !important;
-    gap: 0.54rem !important;
+    gap: 0.49rem !important;
   }
   .about-cta-btn span,
   .about-cta-section .prefooter-btn-primary.face-cta span,
   .about-cta-section .prefooter-btn-primary span {
-    font-size: 0.864rem !important;
+    font-size: 0.78rem !important;
     font-weight: 700 !important;
     letter-spacing: 0.08em !important;
     white-space: nowrap !important;
@@ -626,8 +626,8 @@
   .about-cta-btn svg,
   .about-cta-section .prefooter-btn-primary.face-cta svg,
   .about-cta-section .prefooter-btn-primary svg {
-    width: 12px !important;
-    height: 12px !important;
+    width: 11px !important;
+    height: 11px !important;
   }
 }
 
