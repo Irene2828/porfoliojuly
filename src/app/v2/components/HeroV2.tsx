@@ -1,9 +1,38 @@
 'use client';
 
+import { useState, useEffect } from 'react';
 import '@/app/components/Hero.css';
 import heroImage from '@/app/assets/new_me.jpg';
 
 export default function HeroV2() {
+    const TYPEWRITER_TEXT = 'Got a dated site that undersells you, a task that eats your week, a process held together by spreadsheets?';
+    const [typedCount, setTypedCount] = useState<number | null>(null);
+    const [showRest, setShowRest] = useState(false);
+
+    useEffect(() => {
+          if (typeof window === 'undefined') return;
+          const isMobile = window.matchMedia('(max-width: 900px)').matches;
+          const reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+          if (!isMobile || reduceMotion) return;
+          setTypedCount(0);
+          let intervalId: ReturnType<typeof setInterval> | null = null;
+          const startId = setTimeout(() => {
+                  let i = 0;
+                  intervalId = setInterval(() => {
+                            i += 1;
+                            setTypedCount(i);
+                            if (i >= TYPEWRITER_TEXT.length) {
+                                        if (intervalId) clearInterval(intervalId);
+                                        setShowRest(true);
+                            }
+                  }, 30);
+          }, 400);
+          return () => {
+                  clearTimeout(startId);
+                  if (intervalId) clearInterval(intervalId);
+          };
+    }, []);
+  
   return (
     <section className="section hero-section" id="home" style={{ backgroundColor: '#121316', background: '#121316' }}>
       {/* Off-black matte theme rules */}
@@ -497,7 +526,20 @@ font-weight: 400 !important;
             max-width: 100% !important;
           }
         }
+                /* Mobile typewriter sequence: last sentence + CTAs wait until typing finishes */
+                        @media (max-width: 900px) {
+                                  .hero-typewriter-rest {
+                                              opacity: 0 !important;
+                                                          transform: translate3d(0, 14px, 0) !important;
+                                                                      transition: opacity 0.6s ease, transform 0.6s ease !important;
+                                                                                }
+                                                                                          .hero-typewriter-rest.is-visible {
+                                                                                                      opacity: 1 !important;
+                                                                                                                  transform: translate3d(0, 0, 0) !important;
+                                                                                                                            }
+                                                                                                                                    }
       `}</style>
+    
 
       <div className="container hero-container" style={{ position: 'relative' }}>
         {/* Left side (now visually Left): Content, Headline frame, and CTAs */}
@@ -553,15 +595,15 @@ font-weight: 400 !important;
                     <span className="hero-body-row hero-body-normal" style={{ fontWeight: 300, fontStyle: 'normal' }}>I build what fixes it, so you don&rsquo;t have to.</span>
                   </span>
                   <span className="hero-body-mobile">
-                    <span className="hero-body-mobile-text hero-body-light">Got a dated site that undersells you, a task that eats your week, a process held together by spreadsheets?</span>{' '}
-                    <strong className="hero-body-bold">I build what fixes it, so you don&rsquo;t have to.</strong>
+                    <span className="hero-body-mobile-text hero-body-light">{typedCount === null ? TYPEWRITER_TEXT : TYPEWRITER_TEXT.slice(0, typedCount)}</span>{' '}
+                    <strong className={typedCount === null ? 'hero-body-bold' : `hero-body-bold hero-typewriter-rest${showRest ? ' is-visible' : ''}`}>I build what fixes it, so you don’t have to.</strong>
                   </span>
                 </p>
               </div>
 
               {/* CTAs: right-aligned flush with content block */}
               <div
-                className="hero-ctas hero-ctas-outside hero-ctas-anim"
+                className={typedCount === null ? 'hero-ctas hero-ctas-outside hero-ctas-anim' : `hero-ctas hero-ctas-outside hero-ctas-anim hero-typewriter-rest${showRest ? ' is-visible' : ''}`}
                 style={{ 
                   width: '100%', 
                   maxWidth: '100%',
