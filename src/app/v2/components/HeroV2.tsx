@@ -6,8 +6,8 @@ import heroImage from '@/app/assets/new_me.jpg';
 
 export default function HeroV2() {
     const TYPEWRITER_ROWS = [
-        'Got a dated site that undersells you,'
-        'a task that eats your week,'
+        'Got a dated site that undersells you,',
+        'a task that eats your week,',
     'a process held together by spreadsheets?'
     ];
     const [visibleRows, setVisibleRows] = useState<number | null>(null);
