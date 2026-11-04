@@ -5,32 +5,36 @@ import '@/app/components/Hero.css';
 import heroImage from '@/app/assets/new_me.jpg';
 
 export default function HeroV2() {
-    const TYPEWRITER_TEXT = 'Got a dated site that undersells you, a task that eats your week, a process held together by spreadsheets?';
-    const [typedCount, setTypedCount] = useState<number | null>(null);
+    const TYPEWRITER_ROWS = [
+        'Got a dated site that undersells you,'
+        'a task that eats your week,'
+    'a process held together by spreadsheets?'
+    ];
+    const [visibleRows, setVisibleRows] = useState<number | null>(null);
     const [showRest, setShowRest] = useState(false);
 
     useEffect(() => {
-          if (typeof window === 'undefined') return;
-          const isMobile = window.matchMedia('(max-width: 900px)').matches;
-          const reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
-          if (!isMobile || reduceMotion) return;
-          setTypedCount(0);
-          let intervalId: ReturnType<typeof setInterval> | null = null;
-          const startId = setTimeout(() => {
-                  let i = 0;
-                  intervalId = setInterval(() => {
-                            i += 1;
-                            setTypedCount(i);
-                            if (i >= TYPEWRITER_TEXT.length) {
-                                        if (intervalId) clearInterval(intervalId);
-                                        setShowRest(true);
-                            }
-                  }, 30);
-          }, 400);
-          return () => {
-                  clearTimeout(startId);
-                  if (intervalId) clearInterval(intervalId);
-          };
+        if (typeof window === 'undefined') return;
+        const isMobile = window.matchMedia('(max-width: 900px)').matches;
+        const reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+        if (!isMobile || reduceMotion) return;
+        setVisibleRows(0);
+        let intervalId: ReturnType<typeof setInterval> | null = null;
+        const startId = setTimeout(() => {
+            let n = 0;
+            intervalId = setInterval(() => {
+                n += 1;
+                setVisibleRows(n);
+                if (n >= TYPEWRITER_ROWS.length) {
+                    if (intervalId) clearInterval(intervalId);
+                    setShowRest(true);
+                }
+            }, 350);
+        }, 300);
+        return () => {
+            clearTimeout(startId);
+            if (intervalId) clearInterval(intervalId);
+        };
     }, []);
   
   return (
@@ -594,16 +598,16 @@ font-weight: 400 !important;
                     <span className="hero-body-row hero-body-light" style={{ fontWeight: 300 }}>by spreadsheets?</span>
                     <span className="hero-body-row hero-body-normal" style={{ fontWeight: 300, fontStyle: 'normal' }}>I build what fixes it, so you don&rsquo;t have to.</span>
                   </span>
-                  <span className="hero-body-mobile">
-                    <span className="hero-body-mobile-text hero-body-light">{typedCount === null ? TYPEWRITER_TEXT : TYPEWRITER_TEXT.slice(0, typedCount)}</span>{' '}
-                    <strong className={typedCount === null ? 'hero-body-bold' : `hero-body-bold hero-typewriter-rest${showRest ? ' is-visible' : ''}`}>I build what fixes it, so you don’t have to.</strong>
+              <span className="hero-body-mobile">
+                    <span className="hero-body-mobile-text hero-body-light">{visibleRows === null ? TYPEWRITER_ROWS.join(' ') : TYPEWRITER_ROWS.slice(0, visibleRows).join(' ')}</span>s{' '}
+                    <strong className={visibleRows === null ? 'hero-body-bold' : `hero-body-bold hero-typewriter-rest${showRest ? ' is-visible' : ''}`}>I build what fixes it, so you don’t have to.</strong>
                   </span>
                 </p>
               </div>
 
               {/* CTAs: right-aligned flush with content block */}
               <div
-                className={typedCount === null ? 'hero-ctas hero-ctas-outside hero-ctas-anim' : `hero-ctas hero-ctas-outside hero-ctas-anim hero-typewriter-rest${showRest ? ' is-visible' : ''}`}
+                className={visibleRows === null ? 'hero-ctas hero-ctas-outside hero-ctas-anim' : `hero-ctas hero-ctas-outside hero-ctas-anim hero-typewriter-rest${showRest ? ' is-visible' : ''}`}
                 style={{ 
                   width: '100%', 
                   maxWidth: '100%',
