@@ -51,7 +51,7 @@ export default function HeroV2() {
         }
         .headline-desktop-accent,
         .headline-mobile-accent {
-          font-family: -apple-system, BlinkMacSystemFont, "Helvetica Neue", Helvetica, Arial, sans-serif !important;
+          font-family: 'Newsreader', 'Source Serif 4', Georgia, serif !important;
           font-weight: 500 !important;
           background: linear-gradient(315deg, #d6b792 0%, #f2908f 100%) !important;
           -webkit-background-clip: text !important;
@@ -59,7 +59,7 @@ export default function HeroV2() {
           -webkit-text-fill-color: transparent !important;
           color: transparent !important;
           display: inline-block !important;
-          letter-spacing: -0.018em !important;
+          letter-spacing: -0.01em !important;
         }
         .headline-desktop-serif,
         .headline-mobile-serif {
@@ -106,8 +106,8 @@ export default function HeroV2() {
         }
         .v2-theme .hero-frame-paragraph,
         .hero-frame-paragraph {
-          color: #dfe6ee !important;
-          -webkit-text-fill-color: #dfe6ee !important;
+          color: #d9d9d9 !important;
+          -webkit-text-fill-color: #d9d9d9 !important;
           font-weight: 300 !important;
         }
         .v2-theme .hero-frame-paragraph .hero-body-light,
@@ -121,22 +121,22 @@ export default function HeroV2() {
         .hero-body-normal {
           font-weight: 300 !important;
           font-style: normal !important;
-          color: #dfe6ee !important;
-          -webkit-text-fill-color: #dfe6ee !important;
+          color: #d9d9d9 !important;
+          -webkit-text-fill-color: #d9d9d9 !important;
         }
         .v2-theme .hero-frame-paragraph .hero-body-bold,
         .hero-frame-paragraph .hero-body-bold,
         .hero-body-bold,
         .v2-theme .hero-frame-paragraph strong,
         .hero-frame-paragraph strong {
-          color: #dfe6ee !important;
-          -webkit-text-fill-color: #dfe6ee !important;
+          color: #d9d9d9 !important;
+          -webkit-text-fill-color: #d9d9d9 !important;
           font-weight: 600 !important;
         }
         .v2-theme .hero-frame-paragraph em,
         .hero-frame-paragraph em {
-          color: #dfe6ee !important;
-          -webkit-text-fill-color: #dfe6ee !important;
+          color: #d9d9d9 !important;
+          -webkit-text-fill-color: #d9d9d9 !important;
           font-style: normal !important;
         }
         .hero-offer-item {
@@ -187,8 +187,8 @@ export default function HeroV2() {
             font-family: var(--font-body) !important;
             font-size: 17.33px !important; /* +10% text size */
             font-weight: 400 !important;
-            color: #a0abb8 !important;
-            -webkit-text-fill-color: #a0abb8 !important;
+            color: #d9d9d9 !important;
+            -webkit-text-fill-color: #d9d9d9 !important;
             text-align: left !important;
             align-self: flex-start !important;
             margin-left: 0 !important;
@@ -204,8 +204,8 @@ export default function HeroV2() {
             font-size: 15.6px !important; /* -10% text size from 17.33px */
             font-weight: 400 !important;
             font-style: normal !important; /* not italic on mobile */
-            color: #dfe6ee !important;
-            -webkit-text-fill-color: #dfe6ee !important;
+            color: #d9d9d9 !important;
+            -webkit-text-fill-color: #d9d9d9 !important;
             line-height: 1.5225 !important;
           }
           .v2-theme .hero-frame-paragraph .hero-body-bold,
@@ -218,8 +218,8 @@ export default function HeroV2() {
             font-size: 15.6px !important;
             font-weight: 400 !important; /* unbolded: same 400 weight as unbolded text */
             font-style: normal !important; /* not italic */
-            color: #dfe6ee !important;
-            -webkit-text-fill-color: #dfe6ee !important;
+            color: #d9d9d9 !important;
+            -webkit-text-fill-color: #d9d9d9 !important;
             line-height: 1.5225 !important;
             letter-spacing: normal !important;
           }
@@ -546,7 +546,7 @@ export default function HeroV2() {
                     </span>
                   </span>
                 </h1>
-                <p className="hero-frame-paragraph hero-paragraph-anim" style={{ marginTop: '1.7rem', fontSize: '1.213rem', lineHeight: '1.75', color: '#dfe6ee', WebkitTextFillColor: '#dfe6ee', fontWeight: 300, opacity: 1, textWrap: 'pretty' }}>
+                <p className="hero-frame-paragraph hero-paragraph-anim" style={{ marginTop: '1.7rem', fontSize: '1.213rem', lineHeight: '1.75', color: '#d9d9d9', WebkitTextFillColor: '#d9d9d9', fontWeight: 300, opacity: 1, textWrap: 'pretty' }}>
                   <span className="hero-body-desktop">
                     <span className="hero-body-row hero-body-light" style={{ fontWeight: 300 }}>Got a dated site that undersells you, a task that eats your week, a process held together</span>
                     <span className="hero-body-row hero-body-light" style={{ fontWeight: 300 }}>by spreadsheets?</span>
