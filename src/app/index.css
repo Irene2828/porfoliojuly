@@ -408,11 +408,19 @@ h1, h2, h3, h4, h5, h6 {
     white-space: nowrap !important;
   }
 
-  .v2-theme .headline-mockup-bold {
+  .v2-theme .headline-mockup-bold,
+  .v2-theme .headline-desktop-accent,
+  .v2-theme .headline-mobile-accent,
+  .headline-desktop-accent,
+  .headline-mobile-accent {
     font-weight: 600 !important;
     letter-spacing: 0.025em !important; /* subtly increased spacing in bold words */
-    color: #f2908f !important;
-    -webkit-text-fill-color: #f2908f !important;
+    background: linear-gradient(315deg, #d6b792 0%, #f2908f 100%) !important;
+    -webkit-background-clip: text !important;
+    background-clip: text !important;
+    -webkit-text-fill-color: transparent !important;
+    color: transparent !important;
+    display: inline-block !important;
   }
 
   .v2-theme .headline-mockup-light,
@@ -550,11 +558,19 @@ h1, h2, h3, h4, h5, h6 {
     margin-top: 0rem !important; /* same spacing between 2 & 3 as between 1 & 2 */
   }
 
-  .v2-theme .headline-mockup-bold {
+  .v2-theme .headline-mockup-bold,
+  .v2-theme .headline-desktop-accent,
+  .v2-theme .headline-mobile-accent,
+  .headline-desktop-accent,
+  .headline-mobile-accent {
     font-weight: 600 !important;
     letter-spacing: 0.025em !important; /* subtly increased spacing in bold words */
-    color: #f2908f !important;
-    -webkit-text-fill-color: #f2908f !important;
+    background: linear-gradient(315deg, #d6b792 0%, #f2908f 100%) !important;
+    -webkit-background-clip: text !important;
+    background-clip: text !important;
+    -webkit-text-fill-color: transparent !important;
+    color: transparent !important;
+    display: inline-block !important;
   }
 
   .v2-theme .headline-mockup-light {
@@ -1118,11 +1134,12 @@ h1, h2, h3, h4, h5, h6 {
     margin: 0 auto !important;
   }
 
-  /* Shift circle decor and image 5% more to the left on desktop */
-  .v2-theme .hero-image-wrapper {
+  /* Shift circle decor and image 5% more to the left on desktop, lifted ~10% higher */
+  .v2-theme .hero-image-wrapper,
+  .hero-image-wrapper {
     position: relative !important;
     right: clamp(2.5rem, 8.5vw, 9rem) !important;
-    top: -2.8rem !important;
+    top: -5.4rem !important;
     margin-right: 0 !important;
     animation: none !important;
   }
@@ -1454,8 +1471,8 @@ h1, h2, h3, h4, h5, h6 {
     font-size: 17.33px !important; /* +10% text size */
     font-weight: 400 !important;
     font-style: italic !important;
-    color: #a0abb8 !important;
-    -webkit-text-fill-color: #a0abb8 !important;
+    color: #dfe6ee !important;
+    -webkit-text-fill-color: #dfe6ee !important;
     line-height: 1.5225 !important;
   }
 

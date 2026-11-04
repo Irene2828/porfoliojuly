@@ -53,8 +53,12 @@ export default function HeroV2() {
         .headline-mobile-accent {
           font-family: -apple-system, BlinkMacSystemFont, "Helvetica Neue", Helvetica, Arial, sans-serif !important;
           font-weight: 600 !important;
-          color: #f2908f !important;
-          -webkit-text-fill-color: #f2908f !important;
+          background: linear-gradient(315deg, #d6b792 0%, #f2908f 100%) !important;
+          -webkit-background-clip: text !important;
+          background-clip: text !important;
+          -webkit-text-fill-color: transparent !important;
+          color: transparent !important;
+          display: inline-block !important;
           letter-spacing: -0.018em !important;
         }
         .headline-desktop-serif,
@@ -183,8 +187,8 @@ export default function HeroV2() {
             font-size: 17.33px !important; /* +10% text size */
             font-weight: 400 !important;
             font-style: italic !important;
-            color: #a0abb8 !important;
-            -webkit-text-fill-color: #a0abb8 !important;
+            color: #dfe6ee !important;
+            -webkit-text-fill-color: #dfe6ee !important;
             line-height: 1.5225 !important;
           }
           .v2-theme .hero-frame-paragraph .hero-body-bold,
@@ -420,6 +424,10 @@ export default function HeroV2() {
           .hero-image-container {
             box-shadow: -8px -8px 0px 0px #1e2026 !important;
           }
+          .v2-theme .hero-image-wrapper,
+          .hero-image-wrapper {
+            top: -5.4rem !important;
+          }
         }
         /* Mobile hero body line width (350px to 900px, covers iPhone 13, 13 mini, display zoom, 12, 14, 15) */
         @media (max-width: 900px) {
@@ -560,7 +568,7 @@ export default function HeroV2() {
             <img src={heroImage.src} alt="Iryna Sheremeta" className="hero-image" style={{ position: 'relative', zIndex: 2 }} />
             <div className="hero-dot-overlay"></div>
 
-            {/* Geometric square shapes: Bottom-Left of Image (Dashed square only) */}
+            {/* Geometric square shapes: Bottom-Left of Image */}
             <div 
               className="hero-shape-bottom-left" 
               aria-hidden="true" 
@@ -583,12 +591,14 @@ export default function HeroV2() {
                 style={{ 
                   width: '100%', 
                   height: '100%',
-                  maskImage: 'linear-gradient(135deg, rgba(0, 0, 0, 0.95) 0%, rgba(0, 0, 0, 0.6) 60%, rgba(0, 0, 0, 0.15) 100%)',
-                  WebkitMaskImage: 'linear-gradient(135deg, rgba(0, 0, 0, 0.95) 0%, rgba(0, 0, 0, 0.6) 60%, rgba(0, 0, 0, 0.15) 100%)'
+                  maskImage: 'linear-gradient(135deg, rgba(0, 0, 0, 0.95) 0%, rgba(0, 0, 0, 0.7) 60%, rgba(0, 0, 0, 0.35) 100%)',
+                  WebkitMaskImage: 'linear-gradient(135deg, rgba(0, 0, 0, 0.95) 0%, rgba(0, 0, 0, 0.7) 60%, rgba(0, 0, 0, 0.35) 100%)'
                 }}
               >
-                {/* Middle Rectangle - Dashed, Pale subtle stroke */}
-                <rect x="36" y="36" width="128" height="128" stroke="rgba(255, 255, 255, 0.45)" strokeWidth="1.2" strokeDasharray="4 4" strokeOpacity="0.35" />
+                {/* Outer Rectangle - Dashed lower line under image */}
+                <rect x="6" y="6" width="188" height="188" stroke="rgba(255, 255, 255, 0.45)" strokeWidth="1.2" strokeDasharray="4 4" strokeOpacity="0.35" />
+                {/* Inner Rectangle - Solid, Pale subtle stroke matching top solid line */}
+                <rect x="36" y="36" width="128" height="128" stroke="rgba(247, 214, 208, 0.45)" strokeWidth="1.2" strokeOpacity="0.4" />
               </svg>
             </div>
 
