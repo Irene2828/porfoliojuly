@@ -224,7 +224,15 @@ export default function ProjectsV2({ initialProjects = [] }: ProjectsV2Props) {
                         {/* Overlapping Phone Mockup */}
                         <div className="guertin-preview-phone">
                           <div className="guertin-phone-inner">
-                            <img src="/assets/guertin-mobile.png" alt="Mobile Homepage" className="guertin-img" />
+                            <video 
+                              src="/assets/guertin-mobile-preview.mp4"
+                              autoPlay
+                              loop
+                              muted
+                              playsInline
+                              className="guertin-img"
+                              style={{ width: '100%', height: '100%', objectFit: 'cover', display: 'block' }}
+                            />
                           </div>
                         </div>
                       </div>
@@ -316,8 +324,183 @@ export default function ProjectsV2({ initialProjects = [] }: ProjectsV2Props) {
           width: 100% !important;
           min-width: 0 !important;
           max-width: 100% !important;
-          overflow: hidden !important;
+          overflow: visible !important;
           box-sizing: border-box !important;
+        }
+
+        .preview-item-container {
+          position: relative;
+          z-index: 1;
+        }
+        .preview-item-container:hover,
+        .preview-item-container:focus-within {
+          z-index: 20;
+        }
+
+        /* --- Clean Recording Cards with Silver Device Bezels (zoom larger on hover) --- */
+        .preview-card-wrapper.recording-card-wrapper {
+          background: transparent !important;
+          border: none !important;
+          outline: none !important;
+          box-shadow: none !important;
+          display: flex !important;
+          align-items: center !important;
+          justify-content: center !important;
+          overflow: visible !important;
+          height: 282px !important;
+          aspect-ratio: auto !important;
+          padding: 6px !important;
+        }
+        .preview-item-container:hover .preview-card-wrapper.recording-card-wrapper,
+        .preview-item-container:focus-within .preview-card-wrapper.recording-card-wrapper {
+          box-shadow: none !important;
+          outline: none !important;
+        }
+
+        /* Desktop Bezel (Case 1) - Silver Finish */
+        .case-desktop-bezel {
+          position: relative;
+          width: 468px !important;
+          max-width: 95% !important;
+          aspect-ratio: 16 / 8.8 !important;
+          height: auto !important;
+          background: linear-gradient(145deg, #f2f4f7 0%, #dfe2e8 45%, #cfd4dc 100%);
+          border-radius: 13px;
+          padding: 5px;
+          border: 1px solid rgba(0, 0, 0, 0.14);
+          box-shadow: 0 14px 34px -8px rgba(28, 32, 40, 0.16), 0 0 0 1px rgba(255, 255, 255, 0.8) inset, 0 1px 2px rgba(0, 0, 0, 0.06);
+          box-sizing: border-box;
+          display: flex;
+          flex-direction: column;
+          overflow: hidden;
+          transform-origin: center center;
+          transition: transform 0.45s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.45s cubic-bezier(0.16, 1, 0.3, 1);
+        }
+        .preview-item-container:hover .case-desktop-bezel {
+          transform: scale(1.09) translateY(-4px);
+          box-shadow: 0 28px 56px -10px rgba(20, 24, 34, 0.28), 0 0 0 1px rgba(0, 0, 0, 0.14), inset 0 1px 0 rgba(255, 255, 255, 0.9);
+        }
+        .case-desktop-topbar {
+          height: 18px;
+          background: linear-gradient(180deg, #f6f8fb 0%, #e6e9ef 100%);
+          border-radius: 8px 8px 0 0;
+          border-bottom: 1px solid rgba(0, 0, 0, 0.08);
+          display: flex;
+          align-items: center;
+          padding: 0 10px;
+          gap: 5.5px;
+          flex-shrink: 0;
+        }
+        .case-desktop-dot {
+          width: 6.5px;
+          height: 6.5px;
+          border-radius: 50%;
+          box-shadow: inset 0 0.5px 0.5px rgba(0, 0, 0, 0.2);
+        }
+        .case-desktop-dot:nth-child(1) { background: #ff5f56; border: 0.5px solid #e0443e; }
+        .case-desktop-dot:nth-child(2) { background: #ffbd2e; border: 0.5px solid #dea123; }
+        .case-desktop-dot:nth-child(3) { background: #27c93f; border: 0.5px solid #1aab29; }
+        .case-desktop-screen {
+          position: relative;
+          width: 100%;
+          flex: 1 1 auto;
+          min-height: 0;
+          border-radius: 0 0 7px 7px;
+          overflow: hidden;
+          background: #000;
+          border: 1px solid rgba(0, 0, 0, 0.1);
+          border-top: none;
+        }
+        .case-desktop-video {
+          width: 100%;
+          height: 100%;
+          object-fit: cover;
+          object-position: top center;
+          display: block;
+        }
+
+        /* Mobile Phone Bezel (Case 2) - Silver Finish */
+        .case-phone-bezel {
+          position: relative;
+          height: 269px !important;
+          max-height: 100% !important;
+          aspect-ratio: 292 / 640 !important;
+          width: auto !important;
+          background: linear-gradient(145deg, #f7f9fc 0%, #e1e5ec 45%, #c8cfd9 100%);
+          border-radius: 23px;
+          padding: 4.5px;
+          border: 1px solid rgba(0, 0, 0, 0.15);
+          box-shadow: 0 14px 34px -8px rgba(28, 32, 40, 0.18), inset 0 1px 1px rgba(255, 255, 255, 0.9), inset 0 -1px 1px rgba(0, 0, 0, 0.1);
+          box-sizing: border-box;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          overflow: hidden;
+          transform-origin: center center;
+          transition: transform 0.45s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.45s cubic-bezier(0.16, 1, 0.3, 1);
+        }
+        .preview-item-container:hover .case-phone-bezel {
+          transform: scale(1.10) translateY(-5px);
+          box-shadow: 0 28px 56px -10px rgba(20, 24, 34, 0.3), 0 0 0 1px rgba(0, 0, 0, 0.15), inset 0 1px 0 rgba(255, 255, 255, 0.95);
+        }
+        .case-phone-screen {
+          position: relative;
+          width: 100%;
+          height: 100%;
+          border-radius: 18px;
+          overflow: hidden;
+          background: #000;
+          border: 2px solid #14171d;
+          box-sizing: border-box;
+        }
+        .case-phone-island {
+          position: absolute;
+          top: 4px;
+          left: 50%;
+          transform: translateX(-50%);
+          width: 30%;
+          height: 6px;
+          background: #000000;
+          border-radius: 5px;
+          z-index: 10;
+        }
+        .case-phone-home-bar {
+          position: absolute;
+          bottom: 2.5px;
+          left: 50%;
+          transform: translateX(-50%);
+          width: 32%;
+          height: 2.5px;
+          background: rgba(255, 255, 255, 0.6);
+          border-radius: 1.5px;
+          z-index: 10;
+        }
+        .case-phone-video {
+          width: 100%;
+          height: 100%;
+          object-fit: cover;
+          display: block;
+        }
+
+        @media (max-width: 900px) {
+          .cases-grid-item {
+            overflow: visible !important;
+          }
+          .preview-card-wrapper.recording-card-wrapper {
+            aspect-ratio: auto !important;
+            height: auto !important;
+            padding: 0.5rem 0 !important;
+          }
+          .case-desktop-bezel {
+            width: min(70vw, 252px) !important;
+            aspect-ratio: 16 / 8.8 !important;
+            height: auto !important;
+          }
+          .case-phone-bezel {
+            width: min(46vw, 173px) !important;
+            height: auto !important;
+            aspect-ratio: 292 / 640 !important;
+          }
         }
       `}</style>
       
@@ -390,23 +573,44 @@ export default function ProjectsV2({ initialProjects = [] }: ProjectsV2Props) {
                   aria-label={`${project.title} case preview`}
                 >
                   <div 
-                    className={`preview-card-wrapper ${project.id === 'v2-2' ? 'guertin-card-bg' : ''}`}
+                    className="preview-card-wrapper recording-card-wrapper"
                     onClick={() => setSelectedProjectId(project.id)}
                     style={{ cursor: 'pointer' }}
                   >
-                    {/* Normal scaled card layout */}
-                    <div className="preview-card-scaler">
-                      {renderProjectContent(project, false)}
-                    </div>
-
-                    {/* Clean full case image on hover (large size, no zoom-in crop, no chip) */}
-                    <div className={`preview-card-hover-visual ${project.id === 'v2-2' ? 'navy-bg' : ''}`}>
-                      <img 
-                        src={project.image} 
-                        alt={project.title} 
-                        className="preview-card-hover-img"
-                      />
-                    </div>
+                    {project.id === 'v2-2' ? (
+                      <div className="case-phone-bezel">
+                        <div className="case-phone-screen">
+                          <div className="case-phone-island" />
+                          <video
+                            autoPlay
+                            loop
+                            muted
+                            playsInline
+                            src="/assets/guertin-mobile-preview.mp4"
+                            className="case-phone-video"
+                          />
+                          <div className="case-phone-home-bar" />
+                        </div>
+                      </div>
+                    ) : (
+                      <div className="case-desktop-bezel">
+                        <div className="case-desktop-topbar">
+                          <span className="case-desktop-dot" />
+                          <span className="case-desktop-dot" />
+                          <span className="case-desktop-dot" />
+                        </div>
+                        <div className="case-desktop-screen">
+                          <video
+                            autoPlay
+                            loop
+                            muted
+                            playsInline
+                            src="/assets/terry-fox-preview.mp4"
+                            className="case-desktop-video"
+                          />
+                        </div>
+                      </div>
+                    )}
                   </div>
                   <div className="preview-card-caption">
                     <button 
