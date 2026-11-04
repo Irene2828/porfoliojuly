@@ -184,7 +184,7 @@ export default function HeroV2() {
           .hero-body-mobile,
           .hero-body-mobile-text {
             font-family: var(--font-body) !important;
-            font-size: 17.33px !important; /* +10% text size */
+            font-size: 15.6px !important; /* -10% text size from 17.33px */
             font-weight: 400 !important;
             font-style: italic !important;
             color: #dfe6ee !important;
@@ -238,28 +238,28 @@ export default function HeroV2() {
           }
           .v2-theme .hero-content,
           .hero-content {
-            margin-top: 1.4rem !important; /* spacing cut further from 1.62rem */
+            margin-top: 1.26rem !important; /* lifted 10% closer to image from 1.4rem */
           }
           .v2-theme .hero-container,
           .hero-container {
-            gap: 0.35rem !important; /* spacing cut further from 0.45rem */
+            gap: 0.315rem !important; /* lifted 10% closer to image from 0.35rem */
           }
           .v2-theme .hero-statement,
           .hero-statement,
           .v2-theme .headline-mobile,
           .headline-mobile {
             font-size: clamp(2.82rem, 12.77vw, 4.18rem) !important; /* +20% mobile hero headline */
-            line-height: 1.15 !important;
+            line-height: 1.02 !important; /* line spacing 20% less */
           }
           .v2-theme .headline-mobile,
           .headline-mobile {
-            line-height: 1.18 !important;
+            line-height: 1.02 !important;
             gap: 0px !important;
           }
           .v2-theme .headline-mobile .headline-line,
           .headline-mobile .headline-line {
             display: block !important;
-            line-height: 1.18 !important;
+            line-height: 1.02 !important;
             font-size: 1em !important;
             margin: 0 !important;
             padding: 0 !important;
@@ -268,7 +268,7 @@ export default function HeroV2() {
           .v2-theme .headline-mobile .headline-line *,
           .headline-mobile .headline-line * {
             display: inline !important;
-            line-height: 1.18 !important;
+            line-height: 1.02 !important;
             font-size: 1em !important;
             margin: 0 !important;
             padding: 0 !important;
@@ -498,7 +498,7 @@ export default function HeroV2() {
                   </span>
 
                   {/* Mobile Headline (4 lines, left-aligned) */}
-                  <span className="headline-mobile" style={{ gap: '0px', lineHeight: 1.18 }}>
+                  <span className="headline-mobile" style={{ gap: '0px', lineHeight: 1.02 }}>
                     <span className="headline-line">
                       <span className="headline-mobile-light">Custom</span>{' '}
                       <strong className="headline-mobile-accent">websites,</strong>

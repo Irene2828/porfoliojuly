@@ -510,7 +510,7 @@ h1, h2, h3, h4, h5, h6 {
     font-size: clamp(2.22rem, 11.18vw, 4.14rem) !important; /* +20% headline size on mobile */
     font-weight: 400 !important;
     letter-spacing: -0.02em !important;
-    line-height: 1.205 !important; /* +10% larger line spacing */
+    line-height: 1.02 !important; /* line spacing 20% less */
     max-width: 100% !important;
     color: rgba(255, 255, 255, 0.8) !important;
     -webkit-text-fill-color: rgba(255, 255, 255, 0.8) !important;
@@ -540,7 +540,7 @@ h1, h2, h3, h4, h5, h6 {
     white-space: nowrap !important;
     max-width: 100% !important;
     font-size: inherit !important;
-    line-height: 1.205 !important; /* +10% larger line spacing */
+    line-height: 1.02 !important; /* line spacing 20% less */
     text-align: left !important;
     align-self: flex-start !important;
     margin: 0 !important;
@@ -1416,7 +1416,7 @@ h1, h2, h3, h4, h5, h6 {
   /* Lower headline, body, and CTAs - centered on mobile */
   .v2-theme .hero-content {
     order: 1 !important;
-    margin-top: 1.4rem !important; /* spacing cut further from 1.62rem */
+    margin-top: 1.26rem !important; /* lifted 10% closer to image from 1.4rem */
     width: 100% !important;
     display: flex !important;
     flex-direction: column !important;
@@ -1451,7 +1451,7 @@ h1, h2, h3, h4, h5, h6 {
 
   .v2-theme .hero-frame-paragraph {
     font-family: var(--font-body) !important;
-    font-size: 17.33px !important; /* +10% text size */
+    font-size: 15.6px !important; /* -10% text size from 17.33px */
     font-weight: 400 !important;
     color: #dfe6ee !important;
     -webkit-text-fill-color: #dfe6ee !important;
@@ -1468,7 +1468,7 @@ h1, h2, h3, h4, h5, h6 {
   .hero-body-mobile,
   .hero-body-mobile-text {
     font-family: var(--font-body) !important;
-    font-size: 17.33px !important; /* +10% text size */
+    font-size: 15.6px !important; /* -10% text size from 17.33px */
     font-weight: 400 !important;
     font-style: italic !important;
     color: #dfe6ee !important;
