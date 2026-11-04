@@ -5,35 +5,23 @@ import '@/app/components/Hero.css';
 import heroImage from '@/app/assets/new_me.jpg';
 
 export default function HeroV2() {
-    const TYPEWRITER_ROWS = [
-        'Got a dated site that undersells you,',
-        'a task that eats your week,',
-    'a process held together by spreadsheets?'
-    ];
-    const [visibleRows, setVisibleRows] = useState<number | null>(null);
-    const [showRest, setShowRest] = useState(false);
+    const [arriveStep, setArriveStep] = useState<number | null>(null);
 
     useEffect(() => {
         if (typeof window === 'undefined') return;
         const isMobile = window.matchMedia('(max-width: 900px)').matches;
         const reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
         if (!isMobile || reduceMotion) return;
-        setVisibleRows(0);
-        let intervalId: ReturnType<typeof setInterval> | null = null;
-        const startId = setTimeout(() => {
-            let n = 0;
-            intervalId = setInterval(() => {
-                n += 1;
-                setVisibleRows(n);
-                if (n >= TYPEWRITER_ROWS.length) {
-                    if (intervalId) clearInterval(intervalId);
-                    setShowRest(true);
-                }
-            }, 350);
+        setArriveStep(0);
+        const firstId = setTimeout(() => {
+            setArriveStep(1);
         }, 300);
+        const secondId = setTimeout(() => {
+            setArriveStep(2);
+        }, 700);
         return () => {
-            clearTimeout(startId);
-            if (intervalId) clearInterval(intervalId);
+            clearTimeout(firstId);
+            clearTimeout(secondId);
         };
     }, []);
   
@@ -599,15 +587,15 @@ font-weight: 400 !important;
                     <span className="hero-body-row hero-body-normal" style={{ fontWeight: 300, fontStyle: 'normal' }}>I build what fixes it, so you don&rsquo;t have to.</span>
                   </span>
               <span className="hero-body-mobile">
-                    <span className="hero-body-mobile-text hero-body-light">{visibleRows === null ? TYPEWRITER_ROWS.join(' ') : TYPEWRITER_ROWS.slice(0, visibleRows).join(' ')}</span>s{' '}
-                    <strong className={visibleRows === null ? 'hero-body-bold' : `hero-body-bold hero-typewriter-rest${showRest ? ' is-visible' : ''}`}>I build what fixes it, so you don’t have to.</strong>
+                    <span className={arriveStep === null ? 'hero-body-mobile-text hero-body-light' : `hero-body-mobile-text hero-body-light hero-typewriter-rest${arriveStep >= 1 ? ' is-visible' : ''}`}>Got a dated site that undersells you, a task that eats your week, a process held together by spreadsheets?</span>s{' '}
+                    <strong className={arriveStep === null ? 'hero-body-bold' : `hero-body-bold hero-typewriter-rest${arriveStep >= 2 ? ' is-visible' : ''}`}>I build what fixes it, so you don’t have to.</strong>
                   </span>
                 </p>
               </div>
 
               {/* CTAs: right-aligned flush with content block */}
               <div
-                className={visibleRows === null ? 'hero-ctas hero-ctas-outside hero-ctas-anim' : `hero-ctas hero-ctas-outside hero-ctas-anim hero-typewriter-rest${showRest ? ' is-visible' : ''}`}
+                className={arriveStep === null ? 'hero-ctas hero-ctas-outside hero-ctas-anim' : `hero-ctas hero-ctas-outside hero-ctas-anim hero-typewriter-rest${arriveStep >= 2 ? ' is-visible' : ''}`}
                 style={{ 
                   width: '100%', 
                   maxWidth: '100%',
