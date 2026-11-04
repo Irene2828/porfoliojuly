@@ -196,6 +196,7 @@ export default function HeroV2() {
           .hero-body-mobile .hero-body-bold,
           .hero-body-mobile strong {
             display: block !important;
+            margin-top: 0.65rem !important; /* increased spacing between bold and unbold text */
             font-weight: 600 !important;
             font-style: normal !important;
             color: #dfe6ee !important;
@@ -237,11 +238,11 @@ export default function HeroV2() {
           }
           .v2-theme .hero-content,
           .hero-content {
-            margin-top: 1.8rem !important; /* headline lowered 20% down in mobile hero */
+            margin-top: 1.4rem !important; /* spacing cut further from 1.62rem */
           }
           .v2-theme .hero-container,
           .hero-container {
-            gap: 0.5rem !important;
+            gap: 0.35rem !important; /* spacing cut further from 0.45rem */
           }
           .v2-theme .hero-statement,
           .hero-statement,

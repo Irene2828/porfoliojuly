@@ -1362,7 +1362,7 @@ h1, h2, h3, h4, h5, h6 {
     flex-direction: row !important;
     align-items: center !important;
     justify-content: center !important;
-    padding: 1.2rem 0 0.5rem 0 !important; /* 50% closer to headline below */
+    padding: 1.2rem 0 0rem 0 !important; /* tight clearance */
     margin-top: 0 !important;
     margin-bottom: 0rem !important;
     box-sizing: border-box !important;
@@ -1416,7 +1416,7 @@ h1, h2, h3, h4, h5, h6 {
   /* Lower headline, body, and CTAs - centered on mobile */
   .v2-theme .hero-content {
     order: 1 !important;
-    margin-top: 1.8rem !important; /* lowered headline 20% down in mobile hero */
+    margin-top: 1.4rem !important; /* spacing cut further from 1.62rem */
     width: 100% !important;
     display: flex !important;
     flex-direction: column !important;
@@ -1453,8 +1453,8 @@ h1, h2, h3, h4, h5, h6 {
     font-family: var(--font-body) !important;
     font-size: 17.33px !important; /* +10% text size */
     font-weight: 400 !important;
-    color: #a0abb8 !important;
-    -webkit-text-fill-color: #a0abb8 !important;
+    color: #dfe6ee !important;
+    -webkit-text-fill-color: #dfe6ee !important;
     text-align: left !important;
     align-self: flex-start !important;
     margin-top: 1.26rem !important; /* headline-body spacing tightened 10% from 1.4rem */
@@ -1481,6 +1481,7 @@ h1, h2, h3, h4, h5, h6 {
   .hero-body-mobile .hero-body-bold,
   .hero-body-mobile strong {
     display: block !important;
+    margin-top: 0.65rem !important; /* increased spacing between bold and unbold text */
     font-weight: 600 !important;
     font-style: normal !important;
     color: #dfe6ee !important;
