@@ -52,8 +52,8 @@ export default function HeroV2() {
         .headline-desktop-accent,
         .headline-mobile-accent {
           font-family: 'Newsreader', 'Source Serif 4', Georgia, serif !important;
-          font-weight: 500 !important;
-          background: linear-gradient(315deg, #d6b792 0%, #f2908f 100%) !important;
+font-weight: 400 !important;
+background: linear-gradient(315deg, #d6b792 0%, #f2908f 100%) !important;
           -webkit-background-clip: text !important;
           background-clip: text !important;
           -webkit-text-fill-color: transparent !important;
