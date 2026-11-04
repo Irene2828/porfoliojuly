@@ -1416,7 +1416,7 @@ h1, h2, h3, h4, h5, h6 {
   /* Lower headline, body, and CTAs - centered on mobile */
   .v2-theme .hero-content {
     order: 1 !important;
-    margin-top: 1.26rem !important; /* lifted 10% closer to image from 1.4rem */
+    margin-top: 0.325rem !important; /* equal spacing: space below shapes matches space above (46px) */
     width: 100% !important;
     display: flex !important;
     flex-direction: column !important;

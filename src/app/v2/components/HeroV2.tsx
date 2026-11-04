@@ -238,11 +238,11 @@ export default function HeroV2() {
           }
           .v2-theme .hero-content,
           .hero-content {
-            margin-top: 1.26rem !important; /* lifted 10% closer to image from 1.4rem */
+            margin-top: 0.325rem !important; /* equal spacing: space below shapes matches space above (46px) */
           }
           .v2-theme .hero-container,
           .hero-container {
-            gap: 0.315rem !important; /* lifted 10% closer to image from 0.35rem */
+            gap: 0rem !important; /* equal spacing: space below shapes matches space above (46px) */
           }
           .v2-theme .hero-statement,
           .hero-statement,
