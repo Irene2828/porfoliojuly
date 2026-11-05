@@ -1,31 +1,10 @@
 'use client';
 
-import { useState, useEffect } from 'react';
 import '@/app/components/Hero.css';
 import heroImage from '@/app/assets/new_me.jpg';
 
 export default function HeroV2() {
-    const [arriveStep, setArriveStep] = useState<number | null>(0);
-
-    useEffect(() => {
-        if (typeof window === 'undefined') return;
-        const isMobile = window.matchMedia('(max-width: 900px)').matches;
-        const reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
-        if (!isMobile || reduceMotion) { setArriveStep(4); return; }
-        setArriveStep(0);
-        const firstId = setTimeout(() => {
-            setArriveStep(1);
-        }, 300);
-        const secondId = setTimeout(() => {
-            setArriveStep(2);
-        }, 800);
-        
-           return () => {
-            clearTimeout(firstId);
-            clearTimeout(secondId); 
-           };
-           }, []);
-  
+    
   return (
     <section className="section hero-section" id="home" style={{ backgroundColor: '#121316', background: '#121316' }}>
       {/* Off-black matte theme rules */}
@@ -519,29 +498,17 @@ font-weight: 400 !important;
             max-width: 100% !important;
           }
         }
-                /* Mobile typewriter sequence: last sentence + CTAs wait until typing finishes */
-                        @media (max-width: 900px) {
-                                  .hero-typewriter-rest {
-                                              opacity: 0 !important;
-                                                          transform: translate3d(0, 14px, 0) !important;
-                                                                      transition: opacity 0.6s ease, transform 0.6s ease !important;
-                                                                                }
-                                                                                          .hero-typewriter-rest.is-visible {
-                                                                                                      opacity: 1 !important;
-                                                                                                                  transform: translate3d(0, 0, 0) !important;
-                                                                                                                            }
-                                                                                                                                    }
-      `}</style>
+/* Mobile entrance: two moments, site curve */ @media (max-width: 900px) { @keyframes hero-enter { from { opacity: 0;  transform: translate3d(0, 8px, 0); } to { opacity: 1; transform: translate3d(0, 0, 0); } }  .hero-enter-1 { animation: hero-enter 0.8s cubic-bezier(0.16, 1, 0.3, 1) 0.1s backwards; } .hero-enter-2 { animation: hero-enter 0.8s cubic-bezier(0.16, 1, 0.3, 1) 1.0s backwards; } }  @media (prefers-reduced-motion: reduce) { .hero-enter-1, .hero-enter-2 { animation: none; } }      `}</style>
     
 
       <div className="container hero-container" style={{ position: 'relative' }}>
         {/* Left side (now visually Left): Content, Headline frame, and CTAs */}
         <div className="hero-content" style={{ position: 'relative' }}>
           <div className="hero-copy-motion" style={{ position: 'relative', zIndex: 1 }}>
-            <div className={arriveStep === null ? 'hero-name-group' : `hero-name-group hero-typewriter-rest${arriveStep >= 1 ? ' is-visible' : ''}`} style={{ position: 'relative', maxWidth: '100%' }}>
+            <div className={"hero-name-group hero-enter-1"} style={{ position: 'relative', maxWidth: '100%' }}>
               <div
-                className={arriveStep === null ? 'hero-text' : `hero-text hero-typewriter-rest${arriveStep >= 1 ? ' is-visible' : ''}`}
-                style={{ transform: 'translateY(-0.4rem)' }}
+                className={"hero-text"}
+               
               >
                 <h1 className="hero-statement hero-statement-anim" style={{ display: 'flex', flexDirection: 'column', gap: '0px', lineHeight: '1.22', color: 'rgba(255, 255, 255, 0.8)', WebkitTextFillColor: 'rgba(255, 255, 255, 0.8)' }}>
                   {/* Desktop Headline (3 lines) */}
@@ -588,15 +555,15 @@ font-weight: 400 !important;
                     <span className="hero-body-row hero-body-normal" style={{ fontWeight: 300, fontStyle: 'normal' }}>I build what fixes it, so you don&rsquo;t have to.</span>
                   </span>
               <span className="hero-body-mobile">
-                    <span className={arriveStep === null ? 'hero-body-mobile-text hero-body-light' : `hero-body-mobile-text hero-body-light hero-typewriter-rest${arriveStep >= 1 ? ' is-visible' : ''}`}>Got a dated site that undersells you, a task that eats your week, a process held together by spreadsheets?</span>{' '}
-                    <strong className={arriveStep === null ? 'hero-body-bold' : `hero-body-bold hero-typewriter-rest${arriveStep >= 2 ? ' is-visible' : ''}`}>I build what fixes it, so you don’t have to.</strong>
+                    <span className={"hero-body-mobile-text hero-body-light hero-enter-1"}>Got a dated site that undersells you, a task that eats your week, a process held together by spreadsheets?</span>{' '}
+                    <strong className={"hero-body-bold hero-enter-2"}>I build what fixes it, so you don’t have to.</strong>
                   </span>
                 </p>
               </div>
 
               {/* CTAs: right-aligned flush with content block */}
               <div
-                className={arriveStep === null ? 'hero-ctas hero-ctas-outside hero-ctas-anim' : `hero-ctas hero-ctas-outside hero-ctas-anim hero-typewriter-rest${arriveStep >= 2 ? ' is-visible' : ''}`}
+                className={"hero-ctas hero-ctas-outside hero-ctas-anim hero-enter-2"}
                 style={{ 
                   width: '100%', 
                   maxWidth: '100%',
@@ -627,7 +594,7 @@ font-weight: 400 !important;
         </div>
 
         {/* Right side (now visually Right): Image with Concentric Geometric Rings & Hugging Labels */}
-        <div className={arriveStep === null ? 'hero-image-wrapper' : `hero-image-wrapper hero-typewriter-rest${arriveStep >= 1 ? ' is-visible' : ''}`}>
+        <div className={"hero-image-wrapper hero-enter-1"}>
           <div className="hero-image-container" style={{ position: 'relative', zIndex: 2 }}>
             <div className="hero-image-brackets"></div>
             <div className="hero-image-brackets-left"></div>
