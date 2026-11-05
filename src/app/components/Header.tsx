@@ -112,7 +112,45 @@ export default function Header() {
             transform: translateY(-50%) !important;
           }
         }
-      @media (max-width:900px) { .premium-header { animation: header-fade-up 0.8s cubic-bezier(0.16, 1, 0.3, 1) 0.1s backwards; } @keyframes header-fade-up { from { opacity: 0; transform: translateY(8px); } to { opacity: 1; transform: translateY(0); } } } @media (max-width:900px) and (prefers-reduced-motion: reduce) { .premium-header { animation: none; opacity: 1; transform: none; } } `}</style>
+        @media (max-width: 900px) {
+          @keyframes mobileHeaderReveal {
+            from {
+              opacity: 0;
+            }
+            to {
+              opacity: 1;
+            }
+          }
+          @keyframes mobileHeaderLineReveal {
+            from {
+              border-bottom-color: rgba(209, 213, 219, 0);
+            }
+            to {
+              border-bottom-color: rgba(209, 213, 219, 0.2);
+            }
+          }
+          .premium-header {
+            opacity: 1 !important;
+            transform: none !important;
+            animation: mobileHeaderLineReveal 0.6s cubic-bezier(0.16, 1, 0.3, 1) 0.02s both !important;
+          }
+          .mobile-header-right .hamburger-btn {
+            animation: mobileHeaderReveal 0.5s cubic-bezier(0.16, 1, 0.3, 1) 0.02s both !important;
+          }
+          .mobile-header-left .mobile-brand-link {
+            animation: mobileHeaderReveal 0.55s cubic-bezier(0.16, 1, 0.3, 1) 0.06s both !important;
+          }
+        }
+        @media (max-width: 900px) and (prefers-reduced-motion: reduce) {
+          .premium-header,
+          .mobile-header-right .hamburger-btn,
+          .mobile-header-left .mobile-brand-link {
+            animation: none !important;
+            opacity: 1 !important;
+            filter: none !important;
+          }
+        }
+      `}</style>
       <div className="header-inner-wrapper">
         {/* Left side (Desktop): Name and Title */}
         <div className="header-spacer-desktop">

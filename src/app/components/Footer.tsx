@@ -1,5 +1,7 @@
 'use client';
 
+import { motion } from 'framer-motion';
+
 export default function Footer() {
   return (
     <footer 
@@ -84,14 +86,20 @@ export default function Footer() {
           }
         }
       `}</style>
-      <div className="footer-inner-container">
+      <motion.div
+        className="footer-inner-container"
+        initial={{ opacity: 0, y: 10 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        viewport={{ once: true, amount: 0.5 }}
+        transition={{ duration: 0.65, ease: [0.16, 1, 0.3, 1] }}
+      >
         <p className="footer-copy-text">
           &copy; 2026 Iryna Sheremeta
         </p>
         <a href="/hire" className="footer-hire-link">
           Hiring? &rarr;
         </a>
-      </div>
+      </motion.div>
     </footer>
   );
 }

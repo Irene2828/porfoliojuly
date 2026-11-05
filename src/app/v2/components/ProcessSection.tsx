@@ -56,57 +56,79 @@ export default function ProcessSection() {
           overflow: 'hidden'
         }}
       >
-        {/* Section Header */}
-        <motion.div className="testimonials-header-block"
-          initial={{ opacity: 0, y: 30 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true, amount: 0.2 }}
-          transition={{ duration: 0.8, ease: [0.16, 1, 0.3, 1] }}
+        {/* Section Header — Narrative Left-Aligned Scroll-Arrival */}
+        <div
+          className="testimonials-header-block"
           style={{ width: '100%', maxWidth: '1440px', paddingLeft: '5%', marginBottom: '1.25rem', zIndex: 2, position: 'relative', textAlign: 'left' }}
         >
-          <div style={{ 
-            width: '60px', 
-            height: '1px', 
-            backgroundColor: '#2d3139', 
-            margin: '0 0 2.5rem 0', 
-            opacity: 0.9 
-          }} />
+          {/* 1. Architectural hairline draws from left edge */}
+          <motion.div
+            initial={{ scaleX: 0, opacity: 0 }}
+            whileInView={{ scaleX: 1, opacity: 0.9 }}
+            viewport={{ once: true, amount: 0.5 }}
+            transition={{ duration: 0.65, ease: [0.16, 1, 0.3, 1] }}
+            style={{ 
+              width: '60px', 
+              height: '1px', 
+              backgroundColor: '#2d3139', 
+              margin: '0 0 2.5rem 0',
+              transformOrigin: 'left center'
+            }}
+          />
 
-          <h2 style={{ 
-            fontFamily: "var(--font-heading)",
-            fontSize: 'clamp(28px, 4.4vw, 42px)', 
-            color: 'var(--color-heading-silver)', 
-            fontWeight: 400,
-            lineHeight: 1.2,
-            letterSpacing: '-0.02em',
-            textAlign: 'left',
-            width: '100%',
-            margin: '0',
-            WebkitTextStroke: '0',
-            textWrap: 'balance'
-          }}>
+          {/* 2. Section Heading rises */}
+          <motion.h2
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true, amount: 0.5 }}
+            transition={{ duration: 0.72, delay: 0.08, ease: [0.16, 1, 0.3, 1] }}
+            style={{ 
+              fontFamily: "var(--font-heading)",
+              fontSize: 'clamp(28px, 4.4vw, 42px)', 
+              color: 'var(--color-heading-silver)', 
+              fontWeight: 400,
+              lineHeight: 1.2,
+              letterSpacing: '-0.02em',
+              textAlign: 'left',
+              width: '100%',
+              margin: '0',
+              WebkitTextStroke: '0',
+              textWrap: 'balance'
+            }}
+          >
             <span style={{ fontWeight: 400, color: 'var(--color-heading-silver, #4a5461)' }}>Clients’ </span><span style={{ fontWeight: 700, color: '#3ba3b8', WebkitTextFillColor: '#3ba3b8' }}>feedback</span>
-          </h2>
-          <p style={{
-            fontFamily: "var(--font-body)",
-            fontSize: '17px',
-            fontWeight: 400,
-            lineHeight: 1.6,
-            color: 'var(--color-body-dark, #2b3038)',
-            opacity: 0.9,
-            maxWidth: '640px',
-            margin: '14px 0 0 0',
-            textAlign: 'left',
-            letterSpacing: '-0.01em',
-            fontStyle: 'italic'
-          }}>
+          </motion.h2>
+
+          {/* 3. Candid question subline glides in */}
+          <motion.p
+            initial={{ opacity: 0, y: 14 }}
+            whileInView={{ opacity: 0.9, y: 0 }}
+            viewport={{ once: true, amount: 0.5 }}
+            transition={{ duration: 0.7, delay: 0.18, ease: [0.16, 1, 0.3, 1] }}
+            style={{
+              fontFamily: "var(--font-body)",
+              fontSize: '17px',
+              fontWeight: 400,
+              lineHeight: 1.6,
+              color: 'var(--color-body-dark, #2b3038)',
+              maxWidth: '640px',
+              margin: '14px 0 0 0',
+              textAlign: 'left',
+              letterSpacing: '-0.01em',
+              fontStyle: 'italic'
+            }}
+          >
             I didn’t ask for flattery. I asked: “Why me?”
-          </p>
-        </motion.div>
+          </motion.p>
+        </div>
 
 
-        {/* Testimonials 3-Card Carousel Track */}
-        <div 
+        {/* Testimonials 3-Card Carousel Track — Spotlight & Fan-Out Reveal */}
+        <motion.div 
+          initial={{ opacity: 0, y: 30, scale: 0.97 }}
+          whileInView={{ opacity: 1, y: 0, scale: 1 }}
+          viewport={{ once: true, amount: 0.2 }}
+          transition={{ duration: 0.85, delay: 0.16, ease: [0.16, 1, 0.3, 1] }}
           style={{ position: 'relative', zIndex: 2, width: '100%' }}
         >
           <div className="testimonials-track">
@@ -302,18 +324,21 @@ export default function ProcessSection() {
               }
             }
           `}</style>
-        </div>
+        </motion.div>
 
-        {/* Premium Scroll Arrow */}
-        <div 
+        {/* Premium Scroll Arrow — Horizontal Vector Reveal */}
+        <motion.div 
           onClick={handleNext}
+          initial={{ opacity: 0, x: -16 }}
+          whileInView={{ opacity: 0.85, x: 0 }}
+          viewport={{ once: true, amount: 0.3 }}
+          transition={{ duration: 0.65, delay: 0.36, ease: [0.16, 1, 0.3, 1] }}
           style={{ 
             marginTop: '2.5rem', 
             display: 'flex', 
             alignItems: 'center', 
             gap: '12px',
             cursor: 'pointer',
-            opacity: 0.85,
             transition: 'opacity 0.2s ease, transform 0.2s ease',
             zIndex: 10
           }}
@@ -336,7 +361,7 @@ export default function ProcessSection() {
           <svg width="65" height="12" viewBox="0 0 65 12" fill="none" xmlns="http://www.w3.org/2000/svg">
             <path d="M0 6H63.5M63.5 6L58.5 1M63.5 6L58.5 11" stroke="var(--color-heading-silver)" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"/>
           </svg>
-        </div>
+        </motion.div>
       </div>
     </section>
   );

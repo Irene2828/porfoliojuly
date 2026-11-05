@@ -170,55 +170,71 @@ export default function ServicesV2() {
         }
       `}</style>
 
-      {/* Section 1 Heading: How I Can Help Your Business */}
-      <motion.div 
+      {/* Section 1 Heading: How I Can Help Your Business — Narrative Scroll-Arrival */}
+      <div 
         className="services-heading-block"
-        initial={{ opacity: 0, y: 30 }}
-        whileInView={{ opacity: 1, y: 0 }}
-        viewport={{ once: true, amount: 0.2 }}
-        transition={{ duration: 0.8, ease: [0.16, 1, 0.3, 1] }}
         style={{ marginBottom: '1.75rem', textAlign: 'center', padding: '0 1.5rem' }}
       >
-        {/* Short decor line */}
-        <div style={{ 
-          width: '60px', 
-          height: '1px',
-          backgroundColor: '#2d3139', 
-          margin: '0 auto 2.5rem auto', 
-          opacity: 0.9 
-        }} />
+        {/* 1. Short architectural decor line draws from center */}
+        <motion.div
+          initial={{ scaleX: 0, opacity: 0 }}
+          whileInView={{ scaleX: 1, opacity: 0.9 }}
+          viewport={{ once: true, amount: 0.5 }}
+          transition={{ duration: 0.65, ease: [0.16, 1, 0.3, 1] }}
+          style={{ 
+            width: '60px', 
+            height: '1px',
+            backgroundColor: '#2d3139', 
+            margin: '0 auto 2.5rem auto',
+            transformOrigin: 'center'
+          }}
+        />
 
-        <h2 style={{ 
-          fontFamily: "var(--font-heading)", 
-          fontSize: 'clamp(28px, 4.4vw, 42px)', 
-          color: 'var(--color-heading-silver)', 
-          fontWeight: 400,
-          lineHeight: 1.2,
-          letterSpacing: '-0.02em',
-          textAlign: 'center',
-          width: '100%',
-          margin: '0 auto 14px auto',
-          WebkitTextStroke: '0',
-          textWrap: 'balance'
-        }}>
+        {/* 2. Section Heading rises into view */}
+        <motion.h2
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true, amount: 0.5 }}
+          transition={{ duration: 0.72, delay: 0.08, ease: [0.16, 1, 0.3, 1] }}
+          style={{ 
+            fontFamily: "var(--font-heading)", 
+            fontSize: 'clamp(28px, 4.4vw, 42px)', 
+            color: 'var(--color-heading-silver)', 
+            fontWeight: 400,
+            lineHeight: 1.2,
+            letterSpacing: '-0.02em',
+            textAlign: 'center',
+            width: '100%',
+            margin: '0 auto 14px auto',
+            WebkitTextStroke: '0',
+            textWrap: 'balance'
+          }}
+        >
           <span style={{ fontWeight: 400, color: 'var(--color-heading-silver, #4a5461)' }}>How I can help</span>
-        </h2>
-        <p style={{
-          fontFamily: "var(--font-body)",
-          fontSize: '17px',
-          fontWeight: 400,
-          lineHeight: 1.6,
-          color: 'var(--color-body-dark, #2b3038)',
-          opacity: 0.9,
-          maxWidth: '640px',
-          margin: '0 auto',
-          textAlign: 'center',
-          letterSpacing: '-0.01em',
-          fontStyle: 'italic'
-        }}>
+        </motion.h2>
+
+        {/* 3. Italic subline follows */}
+        <motion.p
+          initial={{ opacity: 0, y: 14 }}
+          whileInView={{ opacity: 0.9, y: 0 }}
+          viewport={{ once: true, amount: 0.5 }}
+          transition={{ duration: 0.7, delay: 0.18, ease: [0.16, 1, 0.3, 1] }}
+          style={{
+            fontFamily: "var(--font-body)",
+            fontSize: '17px',
+            fontWeight: 400,
+            lineHeight: 1.6,
+            color: 'var(--color-body-dark, #2b3038)',
+            maxWidth: '640px',
+            margin: '0 auto',
+            textAlign: 'center',
+            letterSpacing: '-0.01em',
+            fontStyle: 'italic'
+          }}
+        >
           A website, a tool, or both.
-        </p>
-      </motion.div>
+        </motion.p>
+      </div>
 
       {/* Matte Charcoal Container for 2 Columns of Services */}
       <div className="services-cards-outer-container"
@@ -278,11 +294,7 @@ export default function ServicesV2() {
             zIndex: 5
           }}
         >
-          <motion.div 
-            initial={{ opacity: 0, y: 35 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true, amount: 0.15 }}
-            transition={{ duration: 0.9, ease: [0.16, 1, 0.3, 1] }}
+          <div 
             className="services-grid"
             style={{
               display: 'grid',
@@ -292,8 +304,12 @@ export default function ServicesV2() {
             }}
           >
             {/* Column 1: Custom Websites (Left Card - #25282e Matte Black) */}
-            <div 
+            <motion.div 
               className="services-col-left"
+              initial={{ opacity: 0, y: 28, x: -16 }}
+              whileInView={{ opacity: 1, y: 0, x: 0 }}
+              viewport={{ once: true, amount: 0.18 }}
+              transition={{ duration: 0.85, ease: [0.16, 1, 0.3, 1] }}
               style={{
                 backgroundColor: 'var(--color-matte-black, #25282e)',
                 borderRadius: '0px',
@@ -314,83 +330,125 @@ export default function ServicesV2() {
                 <div style={{ position: 'absolute', width: '70px', height: '70px', border: '1px dashed rgba(242, 144, 143, 0.32)', bottom: '10%', right: '-20px', transform: 'rotate(15deg)' }} />
               </div>
 
-              {/* Premium Ghost Geometry (Replacing 01) */}
-              <div className="ghost-circles-dark" style={{ position: 'absolute', inset: 0, overflow: 'hidden', borderRadius: '0px', pointerEvents: 'none' }}>
+              {/* Premium Ghost Geometry (Replacing 01) — Orbital Expansion on View */}
+              <motion.div
+                className="ghost-circles-dark"
+                initial={{ opacity: 0, scale: 0.86 }}
+                whileInView={{ opacity: 1, scale: 1 }}
+                viewport={{ once: true, amount: 0.25 }}
+                transition={{ duration: 1.1, delay: 0.15, ease: [0.16, 1, 0.3, 1] }}
+                style={{ position: 'absolute', inset: 0, overflow: 'hidden', borderRadius: '0px', pointerEvents: 'none', transformOrigin: 'top right' }}
+              >
                 <div style={{ position: 'absolute', width: '320px', height: '320px', borderRadius: '50%', border: '1px solid rgba(242, 144, 143, 0.24)', top: '-60px', right: '-40px' }} />
                 <div style={{ position: 'absolute', width: '240px', height: '240px', borderRadius: '50%', border: '1px dashed rgba(242, 144, 143, 0.26)', top: '-20px', right: '0px' }} />
                 <div style={{ position: 'absolute', width: '160px', height: '160px', borderRadius: '50%', border: '1px solid rgba(242, 144, 143, 0.22)', top: '20px', right: '40px' }} />
-              </div>
+              </motion.div>
 
               {/* Real Card Content (zIndex: 1) */}
               <div style={{ position: 'relative', zIndex: 1, paddingTop: '1.25rem' }}>
-                <h3 style={{
-                  fontFamily: "var(--font-heading)",
-                  fontSize: 'clamp(1.48rem, 2.4vw, 1.95rem)',
-                  fontWeight: 400,
-                  color: '#FFFFFF',
-                  margin: '0 0 0.5rem 0',
-                  letterSpacing: '-0.02em',
-                  lineHeight: 1.2,
-                  WebkitTextStroke: '0'
-                }}>
+                <motion.h3
+                  initial={{ opacity: 0, y: 16 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  viewport={{ once: true, amount: 0.3 }}
+                  transition={{ duration: 0.65, delay: 0.1, ease: [0.16, 1, 0.3, 1] }}
+                  style={{
+                    fontFamily: "var(--font-heading)",
+                    fontSize: 'clamp(1.48rem, 2.4vw, 1.95rem)',
+                    fontWeight: 400,
+                    color: '#FFFFFF',
+                    margin: '0 0 0.5rem 0',
+                    letterSpacing: '-0.02em',
+                    lineHeight: 1.2,
+                    WebkitTextStroke: '0'
+                  }}
+                >
                   Custom website
-                </h3>
-                <p style={{
-                  fontFamily: "var(--font-body)",
-                  fontSize: '15px',
-                  color: '#a0abb8',
-                  margin: '0 0 2.5rem 0',
-                  lineHeight: 1.5
-                }}>
+                </motion.h3>
+                <motion.p
+                  initial={{ opacity: 0, y: 12 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  viewport={{ once: true, amount: 0.3 }}
+                  transition={{ duration: 0.65, delay: 0.18, ease: [0.16, 1, 0.3, 1] }}
+                  style={{
+                    fontFamily: "var(--font-body)",
+                    fontSize: '15px',
+                    color: '#a0abb8',
+                    margin: '0 0 2.5rem 0',
+                    lineHeight: 1.5
+                  }}
+                >
                   New or outdated? Make it work harder.
-                </p>
+                </motion.p>
                 
                 <ul style={{ listStyle: 'none', padding: 0, margin: 0, display: 'flex', flexDirection: 'column', gap: '16px' }}>
                   {websitesBullets.map((bullet, idx) => (
-                    <li key={idx} style={{ 
-                      fontSize: '1.02rem', 
-                      color: '#e8ebee', 
-                      display: 'flex', 
-                      alignItems: 'center', 
-                      gap: '16px', 
-                      lineHeight: 1.55,
-                      background: 'rgba(255, 255, 255, 0.04)',
-                      borderRadius: '0px',
-                      boxShadow: '0 1px 6px rgba(0, 0, 0, 0.1)',
-                      border: '1px solid rgba(255, 255, 255, 0.08)',
-                      padding: '8px 24px 8px 8px'
-                    }}>
-                      <div style={{ 
-                        width: '40px', 
-                        height: '40px', 
-                        borderRadius: '0px', 
-                        backgroundColor: 'var(--color-matte-black, #25282e)',
+                    <motion.li
+                      key={idx}
+                      initial={{ opacity: 0, x: -16, y: 10 }}
+                      whileInView={{ opacity: 1, x: 0, y: 0 }}
+                      viewport={{ once: true, amount: 0.25 }}
+                      transition={{ duration: 0.65, delay: 0.24 + idx * 0.11, ease: [0.16, 1, 0.3, 1] }}
+                      style={{ 
+                        fontSize: '1.02rem', 
+                        color: '#e8ebee', 
                         display: 'flex', 
                         alignItems: 'center', 
-                        justifyContent: 'center',
-                        boxShadow: '0 1px 4px rgba(0,0,0,0.1)',
-                        flexShrink: 0,
-                        border: 'none'
-                      }}>
+                        gap: '16px', 
+                        lineHeight: 1.55,
+                        background: 'rgba(255, 255, 255, 0.04)',
+                        borderRadius: '0px',
+                        boxShadow: '0 1px 6px rgba(0, 0, 0, 0.1)',
+                        border: '1px solid rgba(255, 255, 255, 0.08)',
+                        padding: '8px 24px 8px 8px'
+                      }}
+                    >
+                      <motion.div
+                        initial={{ scale: 0.82, opacity: 0 }}
+                        whileInView={{ scale: 1, opacity: 1 }}
+                        viewport={{ once: true, amount: 0.25 }}
+                        transition={{ duration: 0.5, delay: 0.3 + idx * 0.11, ease: [0.16, 1, 0.3, 1] }}
+                        style={{ 
+                          width: '40px', 
+                          height: '40px', 
+                          borderRadius: '0px', 
+                          backgroundColor: 'var(--color-matte-black, #25282e)',
+                          display: 'flex', 
+                          alignItems: 'center', 
+                          justifyContent: 'center',
+                          boxShadow: '0 1px 4px rgba(0,0,0,0.1)',
+                          flexShrink: 0,
+                          border: 'none'
+                        }}
+                      >
                         {bullet.icon}
-                      </div>
+                      </motion.div>
                       <div style={{ color: '#e8ebee' }}>
                         {bullet.text}
                       </div>
-                    </li>
+                    </motion.li>
                   ))}
                 </ul>
-                <div style={{ display: 'flex', justifyContent: 'flex-end', marginTop: '64px' }}>
+                <motion.div
+                  initial={{ opacity: 0, y: 10 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  viewport={{ once: true, amount: 0.2 }}
+                  transition={{ duration: 0.6, delay: 0.58, ease: [0.16, 1, 0.3, 1] }}
+                  style={{ display: 'flex', justifyContent: 'flex-end', marginTop: '64px' }}
+                >
                   <a href="#cases" className="see-example-link-dark" style={{ position: 'relative', display: 'inline-flex', alignItems: 'center', fontFamily: 'var(--font-label), sans-serif', fontSize: '11px', fontWeight: 600, letterSpacing: '0.1em', opacity: 0.9, textDecoration: 'none', color: '#A9B4C0', paddingBottom: '4px', transition: 'opacity 0.2s' }} onMouseEnter={(e) => e.currentTarget.style.opacity = '1'} onMouseLeave={(e) => e.currentTarget.style.opacity = '0.9'}>
                     <span>SEE WEBSITE EXAMPLES <span style={{ color: '#f7d6d0', marginLeft: '4px' }}>&darr;</span></span>
                   </a>
-                </div>
+                </motion.div>
               </div>
-            </div>
+            </motion.div>
 
             {/* Column 2: Custom AI Tools (Right Card - Pure White) */}
-            <div 
+            <motion.div 
               className="services-col-right"
+              initial={{ opacity: 0, y: 28, x: 16 }}
+              whileInView={{ opacity: 1, y: 0, x: 0 }}
+              viewport={{ once: true, amount: 0.18 }}
+              transition={{ duration: 0.85, delay: 0.14, ease: [0.16, 1, 0.3, 1] }}
               style={{
                 backgroundColor: '#ffffff',
                 borderRadius: '0px',
@@ -405,80 +463,118 @@ export default function ServicesV2() {
                 zIndex: 2
               }}
             >
-              {/* Premium Ghost Geometry (Replacing 02) */}
-                            <div className="ghost-circles-light" style={{ position: 'absolute', inset: 0, overflow: 'hidden', borderRadius: '0px', pointerEvents: 'none' }}>
+              {/* Premium Ghost Geometry (Replacing 02) — Orbital Expansion on View */}
+              <motion.div
+                className="ghost-circles-light"
+                initial={{ opacity: 0, scale: 0.86 }}
+                whileInView={{ opacity: 1, scale: 1 }}
+                viewport={{ once: true, amount: 0.25 }}
+                transition={{ duration: 1.1, delay: 0.28, ease: [0.16, 1, 0.3, 1] }}
+                style={{ position: 'absolute', inset: 0, overflow: 'hidden', borderRadius: '0px', pointerEvents: 'none', transformOrigin: 'top right' }}
+              >
                 <div style={{ position: 'absolute', width: '320px', height: '320px', borderRadius: '50%', border: '1px solid rgba(29, 78, 91, 0.12)', top: '-60px', right: '-40px' }} />
                 <div style={{ position: 'absolute', width: '240px', height: '240px', borderRadius: '50%', border: '1px dashed rgba(29, 78, 91, 0.14)', top: '-20px', right: '0px' }} />
                 <div style={{ position: 'absolute', width: '160px', height: '160px', borderRadius: '50%', border: '1px solid rgba(29, 78, 91, 0.10)', top: '20px', right: '40px' }} />
-              </div>
+              </motion.div>
 
               {/* Real Card Content (zIndex: 1) */}
               <div style={{ position: 'relative', zIndex: 1, paddingTop: '1.25rem' }}>
-                <h3 style={{
-                  fontFamily: "var(--font-heading)",
-                  fontSize: 'clamp(1.48rem, 2.4vw, 1.95rem)',
-                  fontWeight: 400,
-                  color: 'var(--color-headline-matte, #31343c)',
-                  margin: '0 0 0.5rem 0',
-                  letterSpacing: '-0.02em',
-                  lineHeight: 1.2,
-                  WebkitTextStroke: '0'
-                }}>
+                <motion.h3
+                  initial={{ opacity: 0, y: 16 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  viewport={{ once: true, amount: 0.3 }}
+                  transition={{ duration: 0.65, delay: 0.22, ease: [0.16, 1, 0.3, 1] }}
+                  style={{
+                    fontFamily: "var(--font-heading)",
+                    fontSize: 'clamp(1.48rem, 2.4vw, 1.95rem)',
+                    fontWeight: 400,
+                    color: 'var(--color-headline-matte, #31343c)',
+                    margin: '0 0 0.5rem 0',
+                    letterSpacing: '-0.02em',
+                    lineHeight: 1.2,
+                    WebkitTextStroke: '0'
+                  }}
+                >
                   Custom tools, built to work with AI
-                </h3>
-                <p style={{
-                  fontFamily: "var(--font-body)",
-                  fontSize: '15px',
-                  color: '#65707e',
-                  margin: '0 0 2.5rem 0',
-                  lineHeight: 1.5
-                }}>
+                </motion.h3>
+                <motion.p
+                  initial={{ opacity: 0, y: 12 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  viewport={{ once: true, amount: 0.3 }}
+                  transition={{ duration: 0.65, delay: 0.3, ease: [0.16, 1, 0.3, 1] }}
+                  style={{
+                    fontFamily: "var(--font-body)",
+                    fontSize: '15px',
+                    color: '#65707e',
+                    margin: '0 0 2.5rem 0',
+                    lineHeight: 1.5
+                  }}
+                >
                   Stop doing it by hand.
-                </p>
+                </motion.p>
                 
                 <ul style={{ listStyle: 'none', padding: 0, margin: 0, display: 'flex', flexDirection: 'column', gap: '16px' }}>
                   {aiToolsBullets.map((bullet, idx) => (
-                    <li key={idx} style={{ 
-                      fontSize: '1.02rem', 
-                      color: '#1A1F2B', 
-                      display: 'flex', 
-                      alignItems: 'center', 
-                      gap: '16px', 
-                      lineHeight: 1.55,
-                      background: 'rgba(255, 255, 255, 0.75)',
-                      borderRadius: '0px',
-                      boxShadow: '0 1px 6px rgba(0, 0, 0, 0.03)',
-                      border: '1px solid rgba(0, 0, 0, 0.08)',
-                      padding: '8px 24px 8px 8px'
-                    }}>
-                      <div style={{ 
-                        width: '40px', 
-                        height: '40px', 
-                        borderRadius: '0px', 
-                        backgroundColor: '#FFFFFF',
+                    <motion.li
+                      key={idx}
+                      initial={{ opacity: 0, x: -16, y: 10 }}
+                      whileInView={{ opacity: 1, x: 0, y: 0 }}
+                      viewport={{ once: true, amount: 0.25 }}
+                      transition={{ duration: 0.65, delay: 0.36 + idx * 0.11, ease: [0.16, 1, 0.3, 1] }}
+                      style={{ 
+                        fontSize: '1.02rem', 
+                        color: '#1A1F2B', 
                         display: 'flex', 
                         alignItems: 'center', 
-                        justifyContent: 'center',
-                        boxShadow: '0 1px 4px rgba(0,0,0,0.025)',
-                        flexShrink: 0,
-                        border: '1px solid rgba(0, 0, 0, 0.08)'
-                      }}>
+                        gap: '16px', 
+                        lineHeight: 1.55,
+                        background: 'rgba(255, 255, 255, 0.75)',
+                        borderRadius: '0px',
+                        boxShadow: '0 1px 6px rgba(0, 0, 0, 0.03)',
+                        border: '1px solid rgba(0, 0, 0, 0.08)',
+                        padding: '8px 24px 8px 8px'
+                      }}
+                    >
+                      <motion.div
+                        initial={{ scale: 0.82, opacity: 0 }}
+                        whileInView={{ scale: 1, opacity: 1 }}
+                        viewport={{ once: true, amount: 0.25 }}
+                        transition={{ duration: 0.5, delay: 0.42 + idx * 0.11, ease: [0.16, 1, 0.3, 1] }}
+                        style={{ 
+                          width: '40px', 
+                          height: '40px', 
+                          borderRadius: '0px', 
+                          backgroundColor: '#FFFFFF',
+                          display: 'flex', 
+                          alignItems: 'center', 
+                          justifyContent: 'center',
+                          boxShadow: '0 1px 4px rgba(0,0,0,0.025)',
+                          flexShrink: 0,
+                          border: '1px solid rgba(0, 0, 0, 0.08)'
+                        }}
+                      >
                         {bullet.icon}
-                      </div>
+                      </motion.div>
                       <div style={{ color: '#1A1F2B' }}>
                         {bullet.text}
                       </div>
-                    </li>
+                    </motion.li>
                   ))}
                 </ul>
-                <div style={{ display: 'flex', justifyContent: 'flex-end', marginTop: '64px' }}>
+                <motion.div
+                  initial={{ opacity: 0, y: 10 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  viewport={{ once: true, amount: 0.2 }}
+                  transition={{ duration: 0.6, delay: 0.68, ease: [0.16, 1, 0.3, 1] }}
+                  style={{ display: 'flex', justifyContent: 'flex-end', marginTop: '64px' }}
+                >
                   <a href="#cases" className="see-example-link-light-bg" style={{ position: 'relative', display: 'inline-flex', alignItems: 'center', fontFamily: 'var(--font-label), sans-serif', fontSize: '11px', fontWeight: 600, letterSpacing: '0.1em', opacity: 0.9, textDecoration: 'none', color: '#5C6672', paddingBottom: '4px', transition: 'opacity 0.2s' }} onMouseEnter={(e) => e.currentTarget.style.opacity = '1'} onMouseLeave={(e) => e.currentTarget.style.opacity = '0.9'}>
                     <span>SEE TOOL EXAMPLES <span style={{ color: '#8a94a0', marginLeft: '4px' }}>&darr;</span></span>
                   </a>
-                </div>
+                </motion.div>
               </div>
-            </div>
-          </motion.div>
+            </motion.div>
+          </div>
         </div>
 
         {/* Bottom Edge-to-Edge 1px Subtle Grey Divider Bar */}

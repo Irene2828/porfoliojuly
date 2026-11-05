@@ -97,48 +97,68 @@ export default function HowItWorks() {
         }
       `}</style>
 
-      {/* Section Heading: How the Process Looks / How it works */}
+      {/* Section Heading: How I work — Narrative Scroll-Arrival Choreography */}
       <div className="how-it-works-heading container" style={{ textAlign: 'center', marginBottom: '1.75rem' }}>
-        {/* Short decor line above section heading */}
-        <div className="how-it-works-decor-line" style={{ 
-          width: '60px', 
-          height: '1px', 
-          backgroundColor: '#2d3139', 
-          margin: '0 auto 2.5rem auto', 
-          opacity: 0.9 
-        }} />
+        {/* 1. Short architectural decor line draws from center */}
+        <motion.div
+          className="how-it-works-decor-line"
+          initial={{ scaleX: 0, opacity: 0 }}
+          whileInView={{ scaleX: 1, opacity: 0.9 }}
+          viewport={{ once: true, amount: 0.5 }}
+          transition={{ duration: 0.65, ease: [0.16, 1, 0.3, 1] }}
+          style={{ 
+            width: '60px', 
+            height: '1px', 
+            backgroundColor: '#2d3139', 
+            margin: '0 auto 2.5rem auto',
+            transformOrigin: 'center'
+          }}
+        />
 
-        {/* Intro Section Heading */}
-        <h2 style={{ 
-          fontFamily: "var(--font-heading)",
-          fontSize: 'clamp(28px, 4.4vw, 42px)', 
-          color: 'var(--color-heading-silver)', 
-          fontWeight: 400,
-          lineHeight: 1.2,
-          letterSpacing: '-0.02em',
-          textAlign: 'center',
-          width: '100%',
-          margin: '0 auto 0.75rem auto',
-          WebkitTextStroke: '0',
-          textWrap: 'balance'
-        }}>
+        {/* 2. Section Heading rises */}
+        <motion.h2
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true, amount: 0.5 }}
+          transition={{ duration: 0.72, delay: 0.08, ease: [0.16, 1, 0.3, 1] }}
+          style={{ 
+            fontFamily: "var(--font-heading)",
+            fontSize: 'clamp(28px, 4.4vw, 42px)', 
+            color: 'var(--color-heading-silver)', 
+            fontWeight: 400,
+            lineHeight: 1.2,
+            letterSpacing: '-0.02em',
+            textAlign: 'center',
+            width: '100%',
+            margin: '0 auto 0.75rem auto',
+            WebkitTextStroke: '0',
+            textWrap: 'balance'
+          }}
+        >
           <span style={{ fontWeight: 400, color: 'var(--color-heading-silver, #4a5461)' }}>How I </span><span style={{ fontWeight: 700, color: '#3ba3b8', WebkitTextFillColor: '#3ba3b8' }}>work</span>
-        </h2>
-        <p style={{
-          fontFamily: "var(--font-body)",
-          fontSize: '17px',
-          fontWeight: 400,
-          lineHeight: 1.6,
-          color: 'var(--color-body-dark, #2b3038)',
-          opacity: 0.9,
-          maxWidth: '640px',
-          margin: '0 auto',
-          textAlign: 'center',
-          letterSpacing: '-0.01em',
-          fontStyle: 'italic'
-        }}>
+        </motion.h2>
+
+        {/* 3. Three-word cadence subline settles in */}
+        <motion.p
+          initial={{ opacity: 0, y: 14 }}
+          whileInView={{ opacity: 0.9, y: 0 }}
+          viewport={{ once: true, amount: 0.5 }}
+          transition={{ duration: 0.7, delay: 0.18, ease: [0.16, 1, 0.3, 1] }}
+          style={{
+            fontFamily: "var(--font-body)",
+            fontSize: '17px',
+            fontWeight: 400,
+            lineHeight: 1.6,
+            color: 'var(--color-body-dark, #2b3038)',
+            maxWidth: '640px',
+            margin: '0 auto',
+            textAlign: 'center',
+            letterSpacing: '-0.01em',
+            fontStyle: 'italic'
+          }}
+        >
           Clarity. Logic. Care.
-        </p>
+        </motion.p>
       </div>
 
       {/* Edge-to-Edge Matte Black Frame for 3-Step Process Flow */}
@@ -154,14 +174,17 @@ export default function HowItWorks() {
           overflow: 'hidden'
         }}
       >
-        {/* Premium Geometric Abstract Decor Layer (Process) */}
-        <div 
+        {/* Premium Geometric Abstract Decor Layer (Process) — Subtle Architectural Expansion */}
+        <motion.div 
+          initial={{ opacity: 0, scale: 0.93 }}
+          whileInView={{ opacity: 0.8, scale: 1 }}
+          viewport={{ once: true, amount: 0.15 }}
+          transition={{ duration: 1.2, ease: [0.16, 1, 0.3, 1] }}
           style={{
             position: 'absolute',
             inset: 0,
             pointerEvents: 'none',
-            zIndex: 2,
-            opacity: 0.8
+            zIndex: 2
           }}
         >
           {/* Top-Left Cluster (Circle) */}
@@ -177,15 +200,11 @@ export default function HowItWorks() {
 
           {/* Bottom-Right Cluster (Circle - Hidden on Mobile) */}
           <div className="process-decor-bottom-circle" style={{ position: 'absolute', width: '160px', height: '160px', border: '1px dashed rgba(247, 214, 208, 0.45)', borderRadius: '50%', bottom: '10%', right: '8%' }} />
-        </div>
+        </motion.div>
 
         <div className="container" style={{ position: 'relative', zIndex: 3, paddingTop: '4rem', paddingBottom: '5rem', paddingLeft: '1.5rem', paddingRight: '1.5rem' }}>
           {/* Zigzag Process Flow */}
-          <motion.div 
-            initial={{ opacity: 0, y: 25 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.8, ease: [0.16, 1, 0.3, 1] }}
+          <div 
             style={{ 
               maxWidth: '960px', 
               margin: '0 auto', 
@@ -196,14 +215,15 @@ export default function HowItWorks() {
             <div style={{ display: 'flex', flexDirection: 'column', gap: '4.5rem', position: 'relative', zIndex: 3 }}>
               {steps.map((step, i) => {
                 const isOdd = i % 2 === 1; // Step 2 shifted to right side
+                const stepBaseDelay = i * 0.18;
                 return (
                   <motion.div
                     key={step.num}
                     className="process-step-container"
-                    initial={{ opacity: 0, y: 35, scale: 0.96 }}
-                    whileInView={{ opacity: 1, y: 0, scale: 1 }}
-                    viewport={{ once: true, amount: 0.3 }}
-                    transition={{ duration: 0.75, delay: i * 0.25, ease: [0.16, 1, 0.3, 1] }}
+                    initial={{ opacity: 0, y: 28 }}
+                    whileInView={{ opacity: 1, y: 0 }}
+                    viewport={{ once: true, amount: 0.35 }}
+                    transition={{ duration: 0.75, delay: stepBaseDelay, ease: [0.16, 1, 0.3, 1] }}
                     style={{
                       display: 'flex',
                       flexDirection: 'row',
@@ -216,12 +236,12 @@ export default function HowItWorks() {
                       paddingRight: isOdd ? '0%' : '20%'
                     }}
                   >
-                    {/* Step Number */}
+                    {/* Step Number — Sequential Milestone Arrival */}
                     <motion.div 
-                      initial={{ scale: 0.9, opacity: 0 }}
-                      whileInView={{ scale: 1, opacity: 1 }}
-                      viewport={{ once: true, margin: '-10%' }}
-                      transition={{ duration: 0.5, delay: i * 0.25 + 0.15, ease: [0.16, 1, 0.3, 1] }}
+                      initial={{ scale: 0.86, y: 16, opacity: 0 }}
+                      whileInView={{ scale: 1, y: 0, opacity: 1 }}
+                      viewport={{ once: true, amount: 0.35 }}
+                      transition={{ duration: 0.65, delay: stepBaseDelay + 0.06, ease: [0.16, 1, 0.3, 1] }}
                       style={{
                         flexShrink: 0,
                         width: '60px',
@@ -240,12 +260,12 @@ export default function HowItWorks() {
                       {step.num}
                     </motion.div>
 
-                    {/* Step Content Frame with Reveal Arrival */}
+                    {/* Step Content Frame with Alternating Lateral Reveal */}
                     <motion.div 
-                      initial={{ opacity: 0, x: isOdd ? 20 : -20 }}
-                      whileInView={{ opacity: 1, x: 0 }}
-                      viewport={{ once: true }}
-                      transition={{ duration: 0.65, delay: i * 0.25 + 0.2, ease: [0.16, 1, 0.3, 1] }}
+                      initial={{ opacity: 0, x: isOdd ? 26 : -26, y: 12 }}
+                      whileInView={{ opacity: 1, x: 0, y: 0 }}
+                      viewport={{ once: true, amount: 0.35 }}
+                      transition={{ duration: 0.72, delay: stepBaseDelay + 0.14, ease: [0.16, 1, 0.3, 1] }}
                       style={{ 
                         flex: 1, 
                         textAlign: 'left',
@@ -276,8 +296,12 @@ export default function HowItWorks() {
                           gap: '0.65rem'
                         }}
                       >
-                        <span 
+                        <motion.span 
                           className="process-card-icon"
+                          initial={{ scale: 0.75, rotate: -10, opacity: 0 }}
+                          whileInView={{ scale: 1, rotate: 0, opacity: 1 }}
+                          viewport={{ once: true, amount: 0.35 }}
+                          transition={{ duration: 0.55, delay: stepBaseDelay + 0.24, ease: [0.16, 1, 0.3, 1] }}
                           style={{ 
                             display: 'inline-flex', 
                             alignItems: 'center', 
@@ -287,7 +311,7 @@ export default function HowItWorks() {
                           }}
                         >
                           {step.icon}
-                        </span>
+                        </motion.span>
                         <span>{step.title}</span>
                       </h3>
 
@@ -301,8 +325,12 @@ export default function HowItWorks() {
                         maxWidth: '520px'
                       }}>
                         {step.bullets.map((bullet, bIdx) => (
-                          <li 
+                          <motion.li 
                             key={bIdx}
+                            initial={{ opacity: 0, x: -12 }}
+                            whileInView={{ opacity: 1, x: 0 }}
+                            viewport={{ once: true, amount: 0.35 }}
+                            transition={{ duration: 0.6, delay: stepBaseDelay + 0.3, ease: [0.16, 1, 0.3, 1] }}
                             style={{
                               display: 'flex',
                               alignItems: 'baseline',
@@ -329,7 +357,7 @@ export default function HowItWorks() {
                               <strong style={{ fontWeight: 600, color: '#f8fafc', letterSpacing: '0.025em' }}>{bullet.bold}</strong>
                               {bullet.rest}
                             </span>
-                          </li>
+                          </motion.li>
                         ))}
                       </ul>
                     </motion.div>
@@ -337,7 +365,7 @@ export default function HowItWorks() {
                 );
               })}
             </div>
-          </motion.div>
+          </div>
         </div>
       </div>
     </section>

@@ -184,11 +184,7 @@ export default function EditorialStatement() {
             }
           }
         `}</style>
-        <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true, amount: 0.5 }}
-          transition={{ duration: 0.7, ease: [0.16, 1, 0.3, 1] }}
+        <div
           style={{
             maxWidth: '820px',
             width: '100%',
@@ -201,18 +197,29 @@ export default function EditorialStatement() {
             zIndex: 2
           }}
         >
-          {/* Short decor line above closing headline */}
-          <div className="prefooter-decor-line" style={{ 
-            width: '48px', 
-            height: '1px', 
-            backgroundColor: '#2d3139', 
-            margin: '4rem auto 2rem auto', 
-            opacity: 0.9 
-          }} />
+          {/* 1. Short architectural decor line draws from center */}
+          <motion.div
+            className="prefooter-decor-line"
+            initial={{ scaleX: 0, opacity: 0 }}
+            whileInView={{ scaleX: 1, opacity: 0.9 }}
+            viewport={{ once: true, amount: 0.5 }}
+            transition={{ duration: 0.65, ease: [0.16, 1, 0.3, 1] }}
+            style={{ 
+              width: '48px', 
+              height: '1px', 
+              backgroundColor: '#2d3139', 
+              margin: '4rem auto 2rem auto',
+              transformOrigin: 'center'
+            }}
+          />
 
-          {/* Closing headline — moved above image */}
-          <h2
+          {/* 2. Closing headline — Two-Beat Conviction Reveal (Setup -> Coral Punchline) */}
+          <motion.h2
             className="prefooter-closing-line"
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true, amount: 0.45 }}
+            transition={{ duration: 0.78, delay: 0.08, ease: [0.16, 1, 0.3, 1] }}
             style={{
               fontFamily: 'var(--font-body), "Plus Jakarta Sans", sans-serif',
               fontSize: 'clamp(1.48rem, 7.7vw, 2.08rem)',
@@ -229,9 +236,15 @@ export default function EditorialStatement() {
             <span className="prefooter-closing-desktop">
               An outdated website or repetitive work{' '}
               <br />
-              <strong style={{ fontWeight: 600, letterSpacing: '0.025em', color: '#f2908f', WebkitTextFillColor: '#f2908f' }}>
+              <motion.strong
+                initial={{ opacity: 0, y: 12 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true, amount: 0.45 }}
+                transition={{ duration: 0.72, delay: 0.22, ease: [0.16, 1, 0.3, 1] }}
+                style={{ display: 'inline-block', fontWeight: 600, letterSpacing: '0.025em', color: '#f2908f', WebkitTextFillColor: '#f2908f' }}
+              >
                 is slowing your business down.
-              </strong>
+              </motion.strong>
             </span>
             <span className="prefooter-closing-mobile">
               <span className="prefooter-closing-row">An outdated website</span>
@@ -243,11 +256,15 @@ export default function EditorialStatement() {
                 business down.
               </strong>
             </span>
-          </h2>
+          </motion.h2>
 
-          {/* Text under closing headline */}
-          <div
+          {/* 3. Resolution Subtext ("Let's solve this.") */}
+          <motion.div
             className="prefooter-closing-subtext"
+            initial={{ opacity: 0, y: 14 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true, amount: 0.45 }}
+            transition={{ duration: 0.68, delay: 0.32, ease: [0.16, 1, 0.3, 1] }}
             style={{
               fontFamily: 'var(--font-body), "Plus Jakarta Sans", sans-serif',
               fontSize: 'clamp(1.15rem, 2.8vw, 1.23rem)',
@@ -263,10 +280,17 @@ export default function EditorialStatement() {
             }}
           >
             <p style={{ margin: 0 }}>Let’s solve this.</p>
-          </div>
+          </motion.div>
 
-          {/* Action CTAs */}
-          <div className="prefooter-cta-container" style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', gap: '1rem', marginTop: '0rem', marginBottom: '2.5rem', justifyContent: 'center' }}>
+          {/* 4. Action CTA Pill Arrival */}
+          <motion.div
+            className="prefooter-cta-container"
+            initial={{ opacity: 0, y: 16, scale: 0.96 }}
+            whileInView={{ opacity: 1, y: 0, scale: 1 }}
+            viewport={{ once: true, amount: 0.45 }}
+            transition={{ duration: 0.72, delay: 0.42, ease: [0.16, 1, 0.3, 1] }}
+            style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', gap: '1rem', marginTop: '0rem', marginBottom: '2.5rem', justifyContent: 'center' }}
+          >
             <a 
               href="mailto:iryna@irynasheremeta.com" 
               className="btn prefooter-btn-primary face-cta"
@@ -278,8 +302,8 @@ export default function EditorialStatement() {
                 <polyline points="7 7 17 7 17 17"></polyline>
               </svg>
             </a>
-          </div>
-        </motion.div>
+          </motion.div>
+        </div>
       </section>
 
 

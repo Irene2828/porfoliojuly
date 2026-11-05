@@ -53,12 +53,12 @@ export default function HeroV2() {
         .headline-desktop-accent,
         .headline-mobile-accent {
           font-family: 'Newsreader', 'Source Serif 4', Georgia, serif !important;
-font-weight: 400 !important;
-          background: linear-gradient(315deg, #d6b792 0%, #f2908f 100%) !important;
-          -webkit-background-clip: text !important;
-          background-clip: text !important;
-          -webkit-text-fill-color: transparent !important;
-          color: transparent !important;
+          font-weight: 400 !important;
+          background: none !important;
+          -webkit-background-clip: border-box !important;
+          background-clip: border-box !important;
+          color: #f2908f !important;
+          -webkit-text-fill-color: #f2908f !important;
           display: inline-block !important;
           letter-spacing: -0.01em !important;
         }
@@ -120,7 +120,7 @@ font-weight: 400 !important;
         .v2-theme .hero-frame-paragraph .hero-body-normal,
         .hero-frame-paragraph .hero-body-normal,
         .hero-body-normal {
-          font-weight: 300 !important;
+          font-weight: 500 !important; /* one touch bolder on desktop hero */
           font-style: normal !important;
           color: #d9d9d9 !important;
           -webkit-text-fill-color: #d9d9d9 !important;
@@ -301,7 +301,7 @@ font-weight: 400 !important;
           }
           .v2-theme .hero-ctas,
           .v2-theme .hero-ctas-outside {
-            margin-top: 1.81125rem !important; /* body-buttons spacing +15% from 1.575rem */
+            margin-top: 2.1735rem !important; /* body-buttons spacing +20% from 1.81125rem */
             gap: 0.765rem !important; /* button-button spacing tightened 10% from 0.85rem */
             justify-content: center !important;
             align-items: center !important;
@@ -322,7 +322,7 @@ font-weight: 400 !important;
             border-radius: 44px !important;
             border: 1px solid #e2a792 !important;
             box-shadow: none !important;
-            transform: none !important;
+            transform: none;
             box-sizing: border-box !important;
             gap: 0.49rem !important;
           }
@@ -498,17 +498,370 @@ font-weight: 400 !important;
             max-width: 100% !important;
           }
         }
-/* Mobile entrance: two moments, site curve */ @media (max-width: 900px) { @keyframes hero-enter { from { opacity: 0;  transform: translate3d(0, 8px, 0); } to { opacity: 1; transform: translate3d(0, 0, 0); } }  .hero-enter-1 { animation: hero-enter 0.8s cubic-bezier(0.16, 1, 0.3, 1) 0.1s backwards; } .hero-enter-2 { animation: hero-enter 0.8s cubic-bezier(0.16, 1, 0.3, 1) 1.0s backwards; } }  @media (prefers-reduced-motion: reduce) { .hero-enter-1, .hero-enter-2 { animation: none; } }      `}</style>
+
+        /* ─────────────────────────────────────────────────────────────────────────
+           MOBILE HERO CHOREOGRAPHY — Designer-Builder Precision Load (<= 900px)
+           ───────────────────────────────────────────────────────────────────────── */
+        @media (max-width: 900px) {
+          /* 1. Portrait Crisp Scale & Rise (no blur so face is razor-sharp) */
+          @keyframes mobilePortraitReveal {
+            0% {
+              opacity: 0;
+              transform: scale(0.91) translate3d(0, 10px, 0);
+            }
+            100% {
+              opacity: 1;
+              transform: scale(1) translate3d(0, 0, 0);
+            }
+          }
+
+          /* Subtle orbital calibration pulse around the circular portrait */
+          @keyframes mobileOrbitalPulse {
+            0% {
+              opacity: 0;
+              transform: scale(0.88);
+            }
+            35% {
+              opacity: 0.7;
+            }
+            100% {
+              opacity: 0;
+              transform: scale(1.08);
+            }
+          }
+
+          /* 2. Architectural CAD Wireframe Expansion & Stroke Drawing */
+          @keyframes mobileWireframeTopRight {
+            0% {
+              opacity: 0;
+              transform: translate3d(-20px, 20px, 0) scale(0.86);
+            }
+            100% {
+              opacity: 1;
+              transform: translate3d(0, 0, 0) scale(1);
+            }
+          }
+
+          @keyframes mobileWireframeBottomLeft {
+            0% {
+              opacity: 0;
+              transform: translate3d(20px, -20px, 0) scale(0.86);
+            }
+            100% {
+              opacity: 1;
+              transform: translate3d(0, 0, 0) scale(1);
+            }
+          }
+
+          @keyframes mobileWireframeStrokeDraw {
+            0% {
+              stroke-dashoffset: 760;
+              stroke-opacity: 0.85;
+            }
+            60% {
+              stroke-opacity: 0.65;
+            }
+            100% {
+              stroke-dashoffset: 0;
+              stroke-opacity: 0.4;
+            }
+          }
+
+          @keyframes mobileWireframeDashSettle {
+            0% {
+              stroke-dashoffset: 36;
+              stroke-opacity: 0.75;
+            }
+            100% {
+              stroke-dashoffset: 0;
+              stroke-opacity: 0.35;
+            }
+          }
+
+          /* 3. Editorial 4-Line Headline Staggered Rise (no filter on parent so background-clip:text stays vibrant from frame 1) */
+          @keyframes mobileHeadlineLineReveal {
+            0% {
+              opacity: 0;
+              transform: translate3d(0, 16px, 0);
+            }
+            100% {
+              opacity: 1;
+              transform: translate3d(0, 0, 0);
+            }
+          }
+
+          /* Warm champagne-coral catchlight sweep on accent nouns */
+          @keyframes mobileAccentLuster {
+            0% {
+              background-position: 100% 50%;
+            }
+            100% {
+              background-position: 0% 50%;
+            }
+          }
+
+          /* Signature editorial warm bloom on "yours." */
+          @keyframes mobileYoursSignature {
+            0% {
+              opacity: 0;
+              text-shadow: 0 0 22px rgba(242, 144, 143, 0.75);
+            }
+            55% {
+              opacity: 1;
+              text-shadow: 0 0 14px rgba(214, 183, 146, 0.42);
+            }
+            100% {
+              opacity: 1;
+              text-shadow: 0 0 0px rgba(242, 144, 143, 0);
+            }
+          }
+
+          /* 4. Two-Beat Body Copy Glide */
+          @keyframes mobileBodyBlockReveal {
+            0% {
+              opacity: 0;
+              transform: translate3d(0, 14px, 0);
+            }
+            100% {
+              opacity: 1;
+              transform: translate3d(0, 0, 0);
+            }
+          }
+
+          /* 5. Primary CTA Pill Rise, Specular Silk Sheen & Arrow Vector Lock */
+          @keyframes mobilePrimaryCtaReveal {
+            0% {
+              opacity: 0;
+              transform: translate3d(0, 14px, 0) scale(0.96);
+            }
+            100% {
+              opacity: 1;
+              transform: translate3d(0, 0, 0) scale(1);
+            }
+          }
+
+          @keyframes mobileCtaSpecularSweep {
+            0% {
+              transform: translate3d(-140%, 0, 0) skewX(-22deg);
+              opacity: 0;
+            }
+            20% {
+              opacity: 0.9;
+            }
+            100% {
+              transform: translate3d(240%, 0, 0) skewX(-22deg);
+              opacity: 0;
+            }
+          }
+
+          @keyframes mobileCtaArrowLaunch {
+            0% {
+              opacity: 0;
+              transform: translate3d(-5px, 5px, 0) scale(0.8);
+            }
+            65% {
+              opacity: 1;
+              transform: translate3d(1px, -1.5px, 0) scale(1.06);
+            }
+            100% {
+              opacity: 1;
+              transform: translate3d(0, -0.5px, 0) scale(1);
+            }
+          }
+
+          @keyframes mobileSecondaryCtaReveal {
+            0% {
+              opacity: 0;
+              transform: translate3d(0, 10px, 0);
+            }
+            100% {
+              opacity: 1;
+              transform: translate3d(0, 0, 0);
+            }
+          }
+
+          @keyframes mobileSecondaryArrowNudge {
+            0% {
+              transform: translate3d(0, -4px, 0);
+              opacity: 0;
+            }
+            60% {
+              transform: translate3d(0, 2px, 0);
+              opacity: 1;
+            }
+            100% {
+              transform: translate3d(0, 0, 0);
+              opacity: 1;
+            }
+          }
+
+          /* Apply Portrait & Wireframe Choreography */
+          .v2-theme .hero-image-container {
+            position: relative !important;
+          }
+          .v2-theme .hero-image-container::after {
+            content: '';
+            position: absolute;
+            inset: -2px;
+            border-radius: 50%;
+            border: 1.2px solid rgba(242, 144, 143, 0.45);
+            pointer-events: none;
+            z-index: 3;
+            animation: mobileOrbitalPulse 1.05s cubic-bezier(0.16, 1, 0.3, 1) 0.06s both;
+          }
+          .v2-theme .hero-image-container .hero-image,
+          .hero-image-container .hero-image {
+            will-change: transform, opacity;
+            animation: mobilePortraitReveal 0.78s cubic-bezier(0.16, 1, 0.3, 1) 0.02s both !important;
+          }
+          .v2-theme .hero-shape-top-right,
+          .hero-shape-top-right {
+            will-change: transform, opacity;
+            animation: mobileWireframeTopRight 0.9s cubic-bezier(0.16, 1, 0.3, 1) 0.1s both !important;
+          }
+          .v2-theme .hero-shape-bottom-left,
+          .hero-shape-bottom-left {
+            will-change: transform, opacity;
+            animation: mobileWireframeBottomLeft 0.9s cubic-bezier(0.16, 1, 0.3, 1) 0.16s both !important;
+          }
+          .hero-shape-top-right svg rect:not([stroke-dasharray]),
+          .hero-shape-bottom-left svg rect:not([stroke-dasharray]) {
+            stroke-dasharray: 760;
+            animation: mobileWireframeStrokeDraw 1.1s cubic-bezier(0.16, 1, 0.3, 1) 0.12s both;
+          }
+          .hero-shape-top-right svg rect[stroke-dasharray],
+          .hero-shape-bottom-left svg rect[stroke-dasharray] {
+            animation: mobileWireframeDashSettle 1.15s cubic-bezier(0.16, 1, 0.3, 1) 0.16s both;
+          }
+
+          /* Apply 4-Line Editorial Headline Cascade */
+          .v2-theme .headline-mobile > .headline-line,
+          .headline-mobile > .headline-line {
+            will-change: transform, opacity;
+            animation: mobileHeadlineLineReveal 0.72s cubic-bezier(0.16, 1, 0.3, 1) both !important;
+          }
+          .v2-theme .headline-mobile > .headline-line:nth-child(1),
+          .headline-mobile > .headline-line:nth-child(1) {
+            animation-delay: 0.08s !important;
+          }
+          .v2-theme .headline-mobile > .headline-line:nth-child(2),
+          .headline-mobile > .headline-line:nth-child(2) {
+            animation-delay: 0.15s !important;
+          }
+          .v2-theme .headline-mobile > .headline-line:nth-child(3),
+          .headline-mobile > .headline-line:nth-child(3) {
+            animation-delay: 0.22s !important;
+          }
+          .v2-theme .headline-mobile > .headline-line:nth-child(4),
+          .headline-mobile > .headline-line:nth-child(4) {
+            animation-delay: 0.29s !important;
+          }
+
+          /* Accent Words Solid Peach Brand Color & "yours." Signature */
+          .v2-theme .headline-mobile .headline-mobile-accent,
+          .headline-mobile .headline-mobile-accent {
+            background: none !important;
+            -webkit-background-clip: border-box !important;
+            background-clip: border-box !important;
+            color: #f2908f !important;
+            -webkit-text-fill-color: #f2908f !important;
+          }
+          .v2-theme .headline-mobile .headline-mobile-serif,
+          .headline-mobile .headline-mobile-serif {
+            animation: mobileYoursSignature 0.85s cubic-bezier(0.16, 1, 0.3, 1) 0.38s both !important;
+          }
+
+          /* Apply Two-Beat Body Copy Glide */
+          .v2-theme .hero-body-mobile .hero-body-mobile-text,
+          .hero-body-mobile .hero-body-mobile-text {
+            display: block !important;
+            will-change: transform, opacity;
+            animation: mobileBodyBlockReveal 0.72s cubic-bezier(0.16, 1, 0.3, 1) 0.38s both !important;
+          }
+          .v2-theme .hero-body-mobile .hero-body-bold,
+          .hero-body-mobile .hero-body-bold {
+            will-change: transform, opacity;
+            animation: mobileBodyBlockReveal 0.72s cubic-bezier(0.16, 1, 0.3, 1) 0.46s both !important;
+          }
+
+          /* Apply CTA Entrance, Specular Sheen & Arrow Vectors */
+          .v2-theme .hero-ctas-outside .face-cta,
+          .hero-ctas-outside .face-cta {
+            position: relative !important;
+            overflow: hidden !important;
+            will-change: transform, opacity;
+            animation: mobilePrimaryCtaReveal 0.76s cubic-bezier(0.16, 1, 0.3, 1) 0.54s both !important;
+          }
+          .v2-theme .hero-ctas-outside .face-cta::after,
+          .hero-ctas-outside .face-cta::after {
+            content: '';
+            position: absolute;
+            top: -10%;
+            left: 0;
+            width: 36%;
+            height: 120%;
+            background: linear-gradient(
+              90deg,
+              rgba(255, 255, 255, 0) 0%,
+              rgba(255, 255, 255, 0.48) 50%,
+              rgba(255, 255, 255, 0) 100%
+            );
+            pointer-events: none;
+            animation: mobileCtaSpecularSweep 0.8s cubic-bezier(0.22, 1, 0.36, 1) 0.82s both;
+          }
+          .v2-theme .hero-ctas-outside .face-cta svg,
+          .hero-ctas-outside .face-cta svg {
+            animation: mobileCtaArrowLaunch 0.7s cubic-bezier(0.16, 1, 0.3, 1) 0.68s both !important;
+          }
+          .v2-theme .hero-ctas-outside .btn-secondary-stacked,
+          .hero-ctas-outside .btn-secondary-stacked {
+            will-change: transform, opacity;
+            animation: mobileSecondaryCtaReveal 0.72s cubic-bezier(0.16, 1, 0.3, 1) 0.62s both !important;
+          }
+          .v2-theme .hero-ctas-outside .btn-secondary-stacked .arrow,
+          .hero-ctas-outside .btn-secondary-stacked .arrow {
+            display: inline-block !important;
+            animation: mobileSecondaryArrowNudge 0.7s cubic-bezier(0.16, 1, 0.3, 1) 0.78s both !important;
+          }
+        }
+
+        /* Respect Reduced Motion Preferences on Mobile */
+        @media (max-width: 900px) and (prefers-reduced-motion: reduce) {
+          .v2-theme .hero-image-container::after,
+          .v2-theme .hero-ctas-outside .face-cta::after {
+            display: none !important;
+            animation: none !important;
+          }
+          .v2-theme .hero-image-container .hero-image,
+          .v2-theme .hero-shape-top-right,
+          .v2-theme .hero-shape-bottom-left,
+          .hero-shape-top-right svg rect,
+          .hero-shape-bottom-left svg rect,
+          .v2-theme .headline-mobile > .headline-line,
+          .v2-theme .headline-mobile .headline-mobile-accent,
+          .v2-theme .headline-mobile .headline-mobile-serif,
+          .v2-theme .hero-body-mobile .hero-body-mobile-text,
+          .v2-theme .hero-body-mobile .hero-body-bold,
+          .v2-theme .hero-ctas-outside .face-cta,
+          .v2-theme .hero-ctas-outside .face-cta svg,
+          .v2-theme .hero-ctas-outside .btn-secondary-stacked,
+          .v2-theme .hero-ctas-outside .btn-secondary-stacked .arrow {
+            animation: none !important;
+            opacity: 1 !important;
+            transform: none !important;
+            filter: none !important;
+          }
+        }
+      `}</style>
     
 
       <div className="container hero-container" style={{ position: 'relative' }}>
         {/* Left side (now visually Left): Content, Headline frame, and CTAs */}
         <div className="hero-content" style={{ position: 'relative' }}>
           <div className="hero-copy-motion" style={{ position: 'relative', zIndex: 1 }}>
-            <div className={"hero-name-group hero-enter-1"} style={{ position: 'relative', maxWidth: '100%' }}>
+            <div className="hero-name-group" style={{ position: 'relative', maxWidth: '100%' }}>
               <div
-                className={"hero-text"}
-               
+                className="hero-text"
               >
                 <h1 className="hero-statement hero-statement-anim" style={{ display: 'flex', flexDirection: 'column', gap: '0px', lineHeight: '1.22', color: 'rgba(255, 255, 255, 0.8)', WebkitTextFillColor: 'rgba(255, 255, 255, 0.8)' }}>
                   {/* Desktop Headline (3 lines) */}
@@ -551,19 +904,18 @@ font-weight: 400 !important;
                 <p className="hero-frame-paragraph hero-paragraph-anim" style={{ marginTop: '1.7rem', fontSize: '1.213rem', lineHeight: '1.75', color: '#d9d9d9', WebkitTextFillColor: '#d9d9d9', fontWeight: 300, opacity: 1, textWrap: 'pretty' }}>
                   <span className="hero-body-desktop">
                     <span className="hero-body-row hero-body-light" style={{ fontWeight: 300 }}>Got a dated site that undersells you, a task that eats your week, a process held together</span>
-                    <span className="hero-body-row hero-body-light" style={{ fontWeight: 300 }}>by spreadsheets?</span>
-                    <span className="hero-body-row hero-body-normal" style={{ fontWeight: 300, fontStyle: 'normal' }}>I build what fixes it, so you don&rsquo;t have to.</span>
+                    <span className="hero-body-row hero-body-light" style={{ fontWeight: 300 }}>by spreadsheets? <span className="hero-body-normal" style={{ fontWeight: 500, fontStyle: 'normal' }}>I build what fixes it, so you don&rsquo;t have to.</span></span>
                   </span>
-              <span className="hero-body-mobile">
-                    <span className={"hero-body-mobile-text hero-body-light hero-enter-1"}>Got a dated site that undersells you, a task that eats your week, a process held together by spreadsheets?</span>{' '}
-                    <strong className={"hero-body-bold hero-enter-2"}>I build what fixes it, so you don’t have to.</strong>
+                  <span className="hero-body-mobile">
+                    <span className="hero-body-mobile-text hero-body-light">Got a dated site that undersells you, a task that eats your week, a process held together by spreadsheets?</span>{' '}
+                    <strong className="hero-body-bold">I build what fixes it, so you don’t have to.</strong>
                   </span>
                 </p>
               </div>
 
               {/* CTAs: right-aligned flush with content block */}
               <div
-                className={"hero-ctas hero-ctas-outside hero-ctas-anim hero-enter-2"}
+                className="hero-ctas hero-ctas-outside hero-ctas-anim"
                 style={{ 
                   width: '100%', 
                   maxWidth: '100%',
@@ -594,7 +946,7 @@ font-weight: 400 !important;
         </div>
 
         {/* Right side (now visually Right): Image with Concentric Geometric Rings & Hugging Labels */}
-        <div className={"hero-image-wrapper hero-enter-1"}>
+        <div className="hero-image-wrapper">
           <div className="hero-image-container" style={{ position: 'relative', zIndex: 2 }}>
             <div className="hero-image-brackets"></div>
             <div className="hero-image-brackets-left"></div>

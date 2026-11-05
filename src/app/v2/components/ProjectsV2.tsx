@@ -230,6 +230,12 @@ export default function ProjectsV2({ initialProjects = [] }: ProjectsV2Props) {
                               loop
                               muted
                               playsInline
+                              onTimeUpdate={(e) => {
+                                if (e.currentTarget.currentTime >= 3) {
+                                  e.currentTarget.currentTime = 0;
+                                  e.currentTarget.play().catch(() => {});
+                                }
+                              }}
                               className="guertin-img"
                               style={{ width: '100%', height: '100%', objectFit: 'cover', display: 'block' }}
                             />
@@ -304,28 +310,43 @@ export default function ProjectsV2({ initialProjects = [] }: ProjectsV2Props) {
     <section className="projects-section" id="cases" style={{ position: 'relative', width: '100%', margin: '0 auto', padding: '1rem 0 2rem 0' }}>
       <style>{`
         .cases-grid-container {
-          display: grid;
-          grid-template-columns: repeat(2, minmax(0, 1fr)) !important;
-          gap: 3.5rem 2.5rem !important;
+          display: flex !important;
+          flex-direction: row !important;
+          justify-content: space-between !important;
+          align-items: center !important;
+          gap: 2.5rem !important;
           width: 100% !important;
-          max-width: 1400px !important;
           margin: 0 auto !important;
-          padding: 0 2rem !important;
+          padding: 0 var(--space-md, 2rem) !important;
           box-sizing: border-box !important;
+        }
+        @media (min-width: 1200px) {
+          .cases-grid-container {
+            /* Match .header-inner-wrapper (1440 * 0.88 = 1267.2px, padding 1.76rem) so left & right edges align with Header */
+            max-width: 1267.2px !important;
+            padding: 0 1.76rem !important;
+          }
         }
         @media (max-width: 900px) {
           .cases-grid-container {
+            display: grid !important;
             grid-template-columns: 1fr !important;
             gap: 5rem !important; /* doubled spacing between cases on mobile */
             padding: 0 1.5rem !important;
           }
         }
         .cases-grid-item {
-          width: 100% !important;
+          width: fit-content !important;
+          flex: 0 0 auto !important;
           min-width: 0 !important;
           max-width: 100% !important;
           overflow: visible !important;
           box-sizing: border-box !important;
+        }
+        @media (max-width: 900px) {
+          .cases-grid-item {
+            width: 100% !important;
+          }
         }
 
         .preview-item-container {
@@ -337,7 +358,7 @@ export default function ProjectsV2({ initialProjects = [] }: ProjectsV2Props) {
           z-index: 20;
         }
 
-        /* --- Clean Recording Cards with Rounded Shadows --- */
+        /* --- Clean Recording Cards: Zero Shadow, Less Corner Radius, Silver-Grey Hairline Border, +30% Desktop Size --- */
         .preview-card-wrapper.recording-card-wrapper {
           background: transparent !important;
           border: none !important;
@@ -347,9 +368,15 @@ export default function ProjectsV2({ initialProjects = [] }: ProjectsV2Props) {
           align-items: center !important;
           justify-content: center !important;
           overflow: visible !important;
-          height: 340px !important; /* +20% larger on desktop from 282px */
+          height: 442px !important; /* +30% larger on desktop from 340px */
           aspect-ratio: auto !important;
-          padding: 6px !important;
+          padding: 0 !important;
+          width: fit-content !important;
+        }
+        @media (max-width: 900px) {
+          .preview-card-wrapper.recording-card-wrapper {
+            width: 100% !important;
+          }
         }
         .preview-item-container:hover .preview-card-wrapper.recording-card-wrapper,
         .preview-item-container:focus-within .preview-card-wrapper.recording-card-wrapper {
@@ -357,52 +384,64 @@ export default function ProjectsV2({ initialProjects = [] }: ProjectsV2Props) {
           outline: none !important;
         }
 
-        /* Desktop Case Frame - +20% larger with rounded shadow */
+        /* Desktop Case Frame - +30% larger, zero shadow, zero corner radius, Apple-style hairline thin light grey border */
         .case-desktop-frame {
           position: relative;
-          width: 562px !important; /* +20% larger on desktop from 468px */
-          max-width: 95% !important;
+          width: min(56vw, 731px) !important; /* +30% larger on desktop from 562px */
+          max-width: 100% !important;
           aspect-ratio: 16 / 8.8 !important;
           height: auto !important;
-          background: #000;
-          border-radius: 16px;
+          background: #ffffff;
+          border-radius: 0px !important;
           padding: 0 !important;
-          border: 1px solid rgba(18, 22, 32, 0.09) !important;
-          box-shadow: 0 18px 44px -10px rgba(18, 22, 32, 0.2), 0 4px 12px -2px rgba(18, 22, 32, 0.08);
+          border: 1px solid #dcdce0 !important;
+          outline: none !important;
+          box-shadow: none !important;
           box-sizing: border-box;
           display: flex;
           overflow: hidden;
-          transform-origin: center center;
-          transition: transform 0.45s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.45s cubic-bezier(0.16, 1, 0.3, 1);
+          transform-origin: left center;
+          transition: transform 0.45s cubic-bezier(0.16, 1, 0.3, 1), border-color 0.35s ease;
         }
         .preview-item-container:hover .case-desktop-frame {
-          transform: scale(1.08) translateY(-4px);
-          box-shadow: 0 28px 60px -12px rgba(18, 22, 32, 0.28), 0 8px 20px -4px rgba(18, 22, 32, 0.12);
+          transform: scale(1.04) translateY(-3px);
+          border-color: #c8c8cd !important;
+          box-shadow: none !important;
         }
 
-        /* Phone Case Frame - +20% larger with rounded shadow */
+        /* Phone Case Frame - +30% larger, zero shadow, zero corner radius, Apple-style hairline thin light grey border */
         .case-phone-frame {
           position: relative;
-          height: 323px !important; /* +20% larger on desktop from 269px */
+          height: min(32vw, 420px) !important; /* +30% larger on desktop from 323px */
           max-height: 100% !important;
           aspect-ratio: 292 / 640 !important;
           width: auto !important;
-          background: #000;
-          border-radius: 28px;
+          background: #ffffff;
+          border-radius: 0px !important;
           padding: 0 !important;
-          border: 1px solid rgba(18, 22, 32, 0.09) !important;
-          box-shadow: 0 18px 44px -10px rgba(18, 22, 32, 0.2), 0 4px 12px -2px rgba(18, 22, 32, 0.08);
+          border: 1px solid #dcdce0 !important;
+          outline: none !important;
+          box-shadow: none !important;
           box-sizing: border-box;
           display: flex;
           align-items: center;
           justify-content: center;
           overflow: hidden;
-          transform-origin: center center;
-          transition: transform 0.45s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.45s cubic-bezier(0.16, 1, 0.3, 1);
+          transform-origin: right center;
+          transition: transform 0.45s cubic-bezier(0.16, 1, 0.3, 1), border-color 0.35s ease;
         }
         .preview-item-container:hover .case-phone-frame {
-          transform: scale(1.08) translateY(-4px);
-          box-shadow: 0 28px 60px -12px rgba(18, 22, 32, 0.28), 0 8px 20px -4px rgba(18, 22, 32, 0.12);
+          transform: scale(1.04) translateY(-3px);
+          border-color: #c8c8cd !important;
+          box-shadow: none !important;
+        }
+
+        @media (-webkit-min-device-pixel-ratio: 2), (min-resolution: 192dpi) {
+          .case-desktop-frame,
+          .case-phone-frame {
+            border-width: 0.5px !important;
+            border-color: #d2d2d7 !important;
+          }
         }
 
         .case-recording-video {
@@ -410,7 +449,7 @@ export default function ProjectsV2({ initialProjects = [] }: ProjectsV2Props) {
           height: 100%;
           object-fit: cover;
           display: block;
-          border-radius: inherit;
+          border-radius: 0px !important;
           border: none !important;
           outline: none !important;
         }
@@ -428,66 +467,96 @@ export default function ProjectsV2({ initialProjects = [] }: ProjectsV2Props) {
             width: min(70vw, 252px) !important;
             aspect-ratio: 16 / 8.8 !important;
             height: auto !important;
-            border-radius: 12px;
-            box-shadow: 0 12px 28px -8px rgba(18, 22, 32, 0.18), 0 3px 8px -2px rgba(18, 22, 32, 0.08) !important;
-            border: 1px solid rgba(18, 22, 32, 0.09) !important;
+            border-radius: 0px !important;
+            box-shadow: none !important;
+            border: 1px solid #dcdce0 !important;
+            transform-origin: center center;
           }
           .case-phone-frame {
             width: min(46vw, 173px) !important;
             height: auto !important;
             aspect-ratio: 292 / 640 !important;
-            border-radius: 20px;
-            box-shadow: 0 12px 28px -8px rgba(18, 22, 32, 0.18), 0 3px 8px -2px rgba(18, 22, 32, 0.08) !important;
-            border: 1px solid rgba(18, 22, 32, 0.09) !important;
+            border-radius: 0px !important;
+            box-shadow: none !important;
+            border: 1px solid #dcdce0 !important;
+            transform-origin: center center;
+          }
+          @media (-webkit-min-device-pixel-ratio: 2), (min-resolution: 192dpi) {
+            .case-desktop-frame,
+            .case-phone-frame {
+              border-width: 0.5px !important;
+              border-color: #d2d2d7 !important;
+            }
           }
         }
       `}</style>
       
       
-      {/* Section Heading: For Every Problem There is a Solution. */}
+      {/* Section Heading: Recent cases — Narrative Scroll-Arrival Choreography */}
       <div className="cases-header-block" style={{ marginBottom: '1.75rem', textAlign: 'center', padding: '0 1.5rem' }}>
-        {/* Short decor line */}
-        <div className="cases-decor-line" style={{
-          width: '60px',
-          height: '1px',
-          backgroundColor: '#2d3139',
-          margin: '0 auto 2.5rem auto',
-          opacity: 0.9
-        }} />
+        {/* 1. Architectural hairline draws outward from center */}
+        <motion.div
+          className="cases-decor-line"
+          initial={{ scaleX: 0, opacity: 0 }}
+          whileInView={{ scaleX: 1, opacity: 0.9 }}
+          viewport={{ once: true, amount: 0.5 }}
+          transition={{ duration: 0.65, ease: [0.16, 1, 0.3, 1] }}
+          style={{
+            width: '60px',
+            height: '1px',
+            backgroundColor: '#2d3139',
+            margin: '0 auto 2.5rem auto',
+            transformOrigin: 'center'
+          }}
+        />
 
-        <h2 style={{
-          fontFamily: "var(--font-heading)",
-          fontSize: 'clamp(28px, 4.4vw, 42px)',
-          color: 'var(--color-heading-silver)',
-          fontWeight: 400,
-          lineHeight: 1.2,
-          letterSpacing: '-0.02em',
-          textAlign: 'center',
-          width: '100%',
-          margin: '0 auto 14px auto',
-          WebkitTextStroke: '0',
-          textWrap: 'balance'
-        }}>
+        {/* 2. Section title rises with editorial authority */}
+        <motion.h2
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true, amount: 0.5 }}
+          transition={{ duration: 0.72, delay: 0.08, ease: [0.16, 1, 0.3, 1] }}
+          style={{
+            fontFamily: "var(--font-heading)",
+            fontSize: 'clamp(28px, 4.4vw, 42px)',
+            color: 'var(--color-heading-silver)',
+            fontWeight: 400,
+            lineHeight: 1.2,
+            letterSpacing: '-0.02em',
+            textAlign: 'center',
+            width: '100%',
+            margin: '0 auto 14px auto',
+            WebkitTextStroke: '0',
+            textWrap: 'balance'
+          }}
+        >
           <span style={{ fontWeight: 400, color: 'var(--color-heading-silver, #4a5461)' }}>Recent </span><span style={{ fontWeight: 700, color: 'var(--color-heading-silver, #4a5461)' }}>cases</span>
-        </h2>
-        <p style={{
-          fontFamily: "var(--font-body)",
-          fontSize: '17px',
-          fontWeight: 400,
-          lineHeight: 1.6,
-          color: 'var(--color-body-dark, #2b3038)',
-          opacity: 0.9,
-          maxWidth: '640px',
-          margin: '0 auto',
-          textAlign: 'center',
-          letterSpacing: '-0.01em',
-          fontStyle: 'italic'
-        }}>
+        </motion.h2>
+
+        {/* 3. Italic narrative subline settles in */}
+        <motion.p
+          initial={{ opacity: 0, y: 14 }}
+          whileInView={{ opacity: 0.9, y: 0 }}
+          viewport={{ once: true, amount: 0.5 }}
+          transition={{ duration: 0.7, delay: 0.18, ease: [0.16, 1, 0.3, 1] }}
+          style={{
+            fontFamily: "var(--font-body)",
+            fontSize: '17px',
+            fontWeight: 400,
+            lineHeight: 1.6,
+            color: 'var(--color-body-dark, #2b3038)',
+            maxWidth: '640px',
+            margin: '0 auto',
+            textAlign: 'center',
+            letterSpacing: '-0.01em',
+            fontStyle: 'italic'
+          }}
+        >
           What I designed, built, and why.
-        </p>
+        </motion.p>
       </div>
       
-      {/* 2x2 Grid Wrapper */}
+      {/* 2x2 Grid Wrapper — Gallery Reveal Motion */}
       <div 
         className="cases-grid-wrapper"
         style={{ 
@@ -499,9 +568,17 @@ export default function ProjectsV2({ initialProjects = [] }: ProjectsV2Props) {
         <div className="cases-grid-container">
           {projectsList.map((project, idx) => {
             return (
-              <div 
+              <motion.div 
                 key={`${project.id}-${idx}`}
                 className="cases-grid-item"
+                initial={{ opacity: 0, y: 36, scale: 0.965 }}
+                whileInView={{ opacity: 1, y: 0, scale: 1 }}
+                viewport={{ once: true, amount: 0.2 }}
+                transition={{
+                  duration: 0.85,
+                  delay: 0.12 + idx * 0.16,
+                  ease: [0.16, 1, 0.3, 1]
+                }}
                 style={{ 
                   width: '100%'
                 }}
@@ -523,6 +600,12 @@ export default function ProjectsV2({ initialProjects = [] }: ProjectsV2Props) {
                           loop
                           muted
                           playsInline
+                          onTimeUpdate={(e) => {
+                            if (e.currentTarget.currentTime >= 3) {
+                              e.currentTarget.currentTime = 0;
+                              e.currentTarget.play().catch(() => {});
+                            }
+                          }}
                           src="/assets/guertin-mobile-preview.mp4"
                           className="case-recording-video"
                         />
@@ -534,6 +617,12 @@ export default function ProjectsV2({ initialProjects = [] }: ProjectsV2Props) {
                           loop
                           muted
                           playsInline
+                          onTimeUpdate={(e) => {
+                            if (e.currentTarget.currentTime >= 3) {
+                              e.currentTarget.currentTime = 0;
+                              e.currentTarget.play().catch(() => {});
+                            }
+                          }}
                           src="/assets/terry-fox-preview.mp4"
                           className="case-recording-video"
                         />
@@ -554,7 +643,7 @@ export default function ProjectsV2({ initialProjects = [] }: ProjectsV2Props) {
                     </button>
                   </div>
                 </div>
-              </div>
+              </motion.div>
             );
           })}
         </div>

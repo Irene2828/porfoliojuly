@@ -665,12 +665,11 @@
   box-sizing: border-box;
 }
 
-/* 1. Global Card Hover & focus-within: smooth subtle lift, no springy jump */
+/* 1. Global Card Hover & focus-within: clean neutral state, no shadow or blue outline */
 .preview-item-container:hover .preview-card-wrapper,
 .preview-item-container:focus-within .preview-card-wrapper {
-  box-shadow: 0 12px 32px rgba(0, 0, 0, 0.08) !important;
-  outline: 1px solid rgba(90, 154, 212, 0.5) !important;
-  outline-offset: -1px !important;
+  box-shadow: none !important;
+  outline: none !important;
 }
 
 /* 2. Inner Visual Floating Lift */

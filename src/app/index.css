@@ -415,11 +415,11 @@ h1, h2, h3, h4, h5, h6 {
   .headline-mobile-accent {
     font-weight: 500 !important;
     letter-spacing: 0.025em !important; /* subtly increased spacing in bold words */
-    background: linear-gradient(315deg, #d6b792 0%, #f2908f 100%) !important;
-    -webkit-background-clip: text !important;
-    background-clip: text !important;
-    -webkit-text-fill-color: transparent !important;
-    color: transparent !important;
+    background: none !important;
+    -webkit-background-clip: border-box !important;
+    background-clip: border-box !important;
+    color: #f2908f !important;
+    -webkit-text-fill-color: #f2908f !important;
     display: inline-block !important;
   }
 
@@ -565,11 +565,11 @@ h1, h2, h3, h4, h5, h6 {
   .headline-mobile-accent {
     font-weight: 500 !important;
     letter-spacing: 0.025em !important; /* subtly increased spacing in bold words */
-    background: linear-gradient(315deg, #d6b792 0%, #f2908f 100%) !important;
-    -webkit-background-clip: text !important;
-    background-clip: text !important;
-    -webkit-text-fill-color: transparent !important;
-    color: transparent !important;
+    background: none !important;
+    -webkit-background-clip: border-box !important;
+    background-clip: border-box !important;
+    color: #f2908f !important;
+    -webkit-text-fill-color: #f2908f !important;
     display: inline-block !important;
   }
 
@@ -692,7 +692,7 @@ h1, h2, h3, h4, h5, h6 {
 
 .v2-theme .hero-frame-paragraph .hero-body-normal,
 .hero-body-normal {
-  font-weight: 300 !important;
+  font-weight: 500 !important; /* one touch bolder on desktop hero */
   font-style: normal !important;
   color: #dfe6ee !important;
   -webkit-text-fill-color: #dfe6ee !important;
@@ -1516,7 +1516,7 @@ h1, h2, h3, h4, h5, h6 {
 
   .v2-theme .hero-ctas,
   .v2-theme .hero-ctas-outside {
-    margin-top: 1.81125rem !important; /* body-buttons spacing +15% from 1.575rem */
+    margin-top: 2.1735rem !important; /* body-buttons spacing +20% from 1.81125rem */
     margin-bottom: 0 !important;
     width: 100% !important;
     display: flex !important;
@@ -1541,7 +1541,7 @@ h1, h2, h3, h4, h5, h6 {
     border-radius: 44px !important;
     border: 1px solid #e2a792 !important;
     box-shadow: none !important;
-    transform: none !important;
+    transform: none;
     box-sizing: border-box !important;
     gap: 0.49rem !important;
   }
