@@ -19,14 +19,10 @@ export default function HeroV2() {
         const secondId = setTimeout(() => {
             setArriveStep(2);
         }, 800);
-        const thirdId = setTimeout(() => {
-            setArriveStep(3);
-        }, 1300);
         return () => {
             clearTimeout(firstId);
             clearTimeout(secondId);
-            clearTimeout(thirdId);
-        };
+            
     }, []);
   
   return (
@@ -599,7 +595,7 @@ font-weight: 400 !important;
 
               {/* CTAs: right-aligned flush with content block */}
               <div
-                className={arriveStep === null ? 'hero-ctas hero-ctas-outside hero-ctas-anim' : `hero-ctas hero-ctas-outside hero-ctas-anim hero-typewriter-rest${arriveStep >= 3 ? ' is-visible' : ''}`}
+                className={arriveStep === null ? 'hero-ctas hero-ctas-outside hero-ctas-anim' : `hero-ctas hero-ctas-outside hero-ctas-anim hero-typewriter-rest${arriveStep >= 2 ? ' is-visible' : ''}`}
                 style={{ 
                   width: '100%', 
                   maxWidth: '100%',
