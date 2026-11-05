@@ -112,7 +112,7 @@ export default function Header() {
             transform: translateY(-50%) !important;
           }
         }
-      @media (max-width:900px) { .premium-header { animation: header-fade-up 0.8s ease 300ms backwards; } @keyframes header-fade-up { from { opacity: 0; transform: translateY(12px); } to { opacity: 1; transform: translateY(0); } } } @media (max-width:900px) and (prefers-reduced-motion: reduce) { .premium-header { animation: none; opacity: 1; transform: none; } } `}</style>
+      @media (max-width:900px) { .premium-header { animation: header-fade-up 0.8s cubic-bezier(0.16, 1, 0.3, 1) 0.1s backwards; } @keyframes header-fade-up { from { opacity: 0; transform: translateY(8px); } to { opacity: 1; transform: translateY(0); } } } @media (max-width:900px) and (prefers-reduced-motion: reduce) { .premium-header { animation: none; opacity: 1; transform: none; } } `}</style>
       <div className="header-inner-wrapper">
         {/* Left side (Desktop): Name and Title */}
         <div className="header-spacer-desktop">
