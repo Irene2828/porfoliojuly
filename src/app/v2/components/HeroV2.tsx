@@ -15,14 +15,14 @@ export default function HeroV2() {
         setArriveStep(0);
         const firstId = setTimeout(() => {
             setArriveStep(1);
-        }, 150);
+        }, 300);
         const secondId = setTimeout(() => {
             setArriveStep(2);
-        }, 400);
+        }, 800);
         
-           const thirdId = setTimeout(() => { setArriveStep(3); }, 650); const fourthId = setTimeout(() => { setArriveStep(4); }, 950); return () => {
+           return () => {
             clearTimeout(firstId);
-            clearTimeout(secondId); clearTimeout(thirdId); clearTimeout(fourthId); 
+            clearTimeout(secondId); 
            };
            }, []);
   
@@ -538,9 +538,9 @@ font-weight: 400 !important;
         {/* Left side (now visually Left): Content, Headline frame, and CTAs */}
         <div className="hero-content" style={{ position: 'relative' }}>
           <div className="hero-copy-motion" style={{ position: 'relative', zIndex: 1 }}>
-            <div className={arriveStep === null ? 'hero-name-group' : `hero-name-group hero-typewriter-rest${arriveStep >= 2 ? ' is-visible' : ''}`} style={{ position: 'relative', maxWidth: '100%' }}>
+            <div className={arriveStep === null ? 'hero-name-group' : `hero-name-group hero-typewriter-rest${arriveStep >= 1 ? ' is-visible' : ''}`} style={{ position: 'relative', maxWidth: '100%' }}>
               <div
-                className={arriveStep === null ? 'hero-text' : `hero-text hero-typewriter-rest${arriveStep >= 2 ? ' is-visible' : ''}`}
+                className={arriveStep === null ? 'hero-text' : `hero-text hero-typewriter-rest${arriveStep >= 1 ? ' is-visible' : ''}`}
                 style={{ transform: 'translateY(-0.4rem)' }}
               >
                 <h1 className="hero-statement hero-statement-anim" style={{ display: 'flex', flexDirection: 'column', gap: '0px', lineHeight: '1.22', color: 'rgba(255, 255, 255, 0.8)', WebkitTextFillColor: 'rgba(255, 255, 255, 0.8)' }}>
@@ -588,15 +588,15 @@ font-weight: 400 !important;
                     <span className="hero-body-row hero-body-normal" style={{ fontWeight: 300, fontStyle: 'normal' }}>I build what fixes it, so you don&rsquo;t have to.</span>
                   </span>
               <span className="hero-body-mobile">
-                    <span className={arriveStep === null ? 'hero-body-mobile-text hero-body-light' : `hero-body-mobile-text hero-body-light hero-typewriter-rest${arriveStep >= 3 ? ' is-visible' : ''}`}>Got a dated site that undersells you, a task that eats your week, a process held together by spreadsheets?</span>{' '}
-                    <strong className={arriveStep === null ? 'hero-body-bold' : `hero-body-bold hero-typewriter-rest${arriveStep >= 4 ? ' is-visible' : ''}`}>I build what fixes it, so you don’t have to.</strong>
+                    <span className={arriveStep === null ? 'hero-body-mobile-text hero-body-light' : `hero-body-mobile-text hero-body-light hero-typewriter-rest${arriveStep >= 1 ? ' is-visible' : ''}`}>Got a dated site that undersells you, a task that eats your week, a process held together by spreadsheets?</span>{' '}
+                    <strong className={arriveStep === null ? 'hero-body-bold' : `hero-body-bold hero-typewriter-rest${arriveStep >= 2 ? ' is-visible' : ''}`}>I build what fixes it, so you don’t have to.</strong>
                   </span>
                 </p>
               </div>
 
               {/* CTAs: right-aligned flush with content block */}
               <div
-                className={arriveStep === null ? 'hero-ctas hero-ctas-outside hero-ctas-anim' : `hero-ctas hero-ctas-outside hero-ctas-anim hero-typewriter-rest${arriveStep >= 4 ? ' is-visible' : ''}`}
+                className={arriveStep === null ? 'hero-ctas hero-ctas-outside hero-ctas-anim' : `hero-ctas hero-ctas-outside hero-ctas-anim hero-typewriter-rest${arriveStep >= 2 ? ' is-visible' : ''}`}
                 style={{ 
                   width: '100%', 
                   maxWidth: '100%',
