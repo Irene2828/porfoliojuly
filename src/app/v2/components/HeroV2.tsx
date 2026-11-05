@@ -19,11 +19,11 @@ export default function HeroV2() {
         const secondId = setTimeout(() => {
             setArriveStep(2);
         }, 800);
-        return () => {
+           return () => {
             clearTimeout(firstId);
-            clearTimeout(secondId);
-            
-    }, []);
+            clearTimeout(secondId); 
+           };
+           }, []);
   
   return (
     <section className="section hero-section" id="home" style={{ backgroundColor: '#121316', background: '#121316' }}>
