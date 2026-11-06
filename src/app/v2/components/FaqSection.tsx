@@ -1,6 +1,6 @@
 'use client';
 
-import { useState } from 'react';
+import { useEffect, useRef, useState } from 'react';
 import { AnimatePresence, motion } from 'framer-motion';
 
 const faqs = [
@@ -28,39 +28,34 @@ const faqs = [
       "Some drafts need a firm hand. Some need rebuilding. I'll say which one yours is.",
     ],
   },
-  {
-    question: 'My business is small. Can it live with a simple website?',
-    answers: [
-      "Maybe — and I'll tell you so if that's the case.",
-      "If your site doesn't need to bring clients, a simple page is fine.",
-      "If it's your storefront, generic costs you work. One client started getting calls from new clients within days of launch.",
-    ],
-  },
-  {
-    question: "We don't use AI in our business yet. Can you help with that?",
-    answers: [
-      "Yes. That's half of what I do.",
-      "I'll show you where AI actually helps — the tasks that eat your week, not hype.",
-      'I build you a simple tool for that task, or set up AI with the tools you already have.',
-      'You stay in control. The tool does the filling-in.',
-    ],
-  },
-  {
-    question: 'How fast is this, and what happens after launch?',
-    answers: [
-      'First clickable version in days — you react to a real thing.',
-      'We fix it together. I ship it, hand it over, set up hosting and support.',
-      "After launch I'm still there: edits, updates, new features — monthly care plan, or per request.",
-    ],
-  },
 ];
 
 export default function FaqSection() {
-  const [openIndex, setOpenIndex] = useState<number>(0);
+  const [openIndex, setOpenIndex] = useState<number>(-1);
+  const sectionRef = useRef<HTMLElement | null>(null);
+  const autoOpenedRef = useRef(false);
+
+  useEffect(() => {
+    const section = sectionRef.current;
+    if (!section) return;
+    const observer = new IntersectionObserver(
+      (entries) => {
+        if (entries[0].isIntersecting && !autoOpenedRef.current) {
+          autoOpenedRef.current = true;
+          setOpenIndex(0);
+          observer.disconnect();
+        }
+      },
+      { threshold: 0.3 }
+    );
+    observer.observe(section);
+    return () => observer.disconnect();
+  }, []);
 
   return (
     <section
       id="faq-section"
+      ref={sectionRef}
       className="faq-section"
       style={{
         backgroundColor: '#ffffff',
@@ -107,14 +102,14 @@ export default function FaqSection() {
         .faq-toggle {
           display: flex !important;
           align-items: center !important;
-          justify-content: center !important;
+          justify-content: flex-start !important;
           width: 100% !important;
           background: none !important;
           border: none !important;
           cursor: pointer !important;
-          padding: 1.7rem 2.5rem !important;
+          padding: 1.7rem 2.5rem 1.7rem 0 !important;
           position: relative !important;
-          text-align: center !important;
+          text-align: left !important;
         }
         .faq-question {
           font-family: 'Newsreader', Georgia, serif !important;
@@ -176,7 +171,7 @@ export default function FaqSection() {
             font-size: 1.45rem !important;
           }
           .faq-toggle {
-            padding: 1.4rem 2.25rem !important;
+            padding: 1.4rem 2.25rem 1.4rem 0 !important;
           }
         }
       `}</style>
@@ -186,7 +181,7 @@ export default function FaqSection() {
           width: '100%',
           margin: '0 auto',
           padding: '0 1.5rem',
-          textAlign: 'center',
+          textAlign: 'left',
         }}
       >
         <motion.p
@@ -225,7 +220,7 @@ export default function FaqSection() {
           style={{
             fontSize: 'clamp(1.05rem, 2.4vw, 1.2rem)',
             lineHeight: 1.55,
-            margin: '0 auto 3.5rem auto',
+            margin: '0 0 3.5rem 0',
             maxWidth: '52ch',
           }}
         >
@@ -301,7 +296,7 @@ export default function FaqSection() {
             fontSize: 'clamp(1.35rem, 3vw, 1.6rem)',
             lineHeight: 1.4,
             margin: '3.5rem 0 0 0',
-            textAlign: 'center',
+            textAlign: 'left',
           }}
         >
           Anything else? Ask me directly — a short call or an email.
