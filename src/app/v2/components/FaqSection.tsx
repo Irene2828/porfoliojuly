@@ -1,6 +1,6 @@
 'use client';
 
-import { useEffect, useRef, useState } from 'react';
+import { useRef, useState } from 'react';
 import { AnimatePresence, motion } from 'framer-motion';
 
 const faqs = [
@@ -33,24 +33,6 @@ const faqs = [
 export default function FaqSection() {
   const [openIndex, setOpenIndex] = useState<number>(-1);
   const sectionRef = useRef<HTMLElement | null>(null);
-  const autoOpenedRef = useRef(false);
-
-  useEffect(() => {
-    const section = sectionRef.current;
-    if (!section) return;
-    const observer = new IntersectionObserver(
-      (entries) => {
-        if (entries[0].isIntersecting && !autoOpenedRef.current) {
-          autoOpenedRef.current = true;
-          setOpenIndex(0);
-          observer.disconnect();
-        }
-      },
-      { threshold: 0.3 }
-    );
-    observer.observe(section);
-    return () => observer.disconnect();
-  }, []);
 
   return (
     <section
@@ -163,6 +145,37 @@ export default function FaqSection() {
           color: #000000 !important;
           -webkit-text-fill-color: #000000 !important;
         }
+        .faq-case-media {
+          display: grid !important;
+          grid-template-columns: 1fr 1fr !important;
+          gap: 1.5rem !important;
+          align-items: start !important;
+          margin: 0 0 3.5rem 0 !important;
+        }
+        .faq-case-video {
+          display: block !important;
+          width: 100% !important;
+          height: auto !important;
+          border-radius: 0 !important;
+          box-shadow: none !important;
+        }
+        .faq-case-image {
+          display: block !important;
+          width: 100% !important;
+          height: auto !important;
+          border-radius: 0 !important;
+          box-shadow: none !important;
+        }
+        .faq-case-caption {
+          font-family: var(--font-body), 'Plus Jakarta Sans', sans-serif !important;
+          font-size: 1rem !important;
+          font-weight: 300 !important;
+          letter-spacing: -0.011em !important;
+          line-height: 1.55 !important;
+          color: rgba(0, 0, 0, 0.72) !important;
+          -webkit-text-fill-color: rgba(0, 0, 0, 0.72) !important;
+          margin: 0.85rem 0 0 0 !important;
+        }
         @media (max-width: 900px) {
           .faq-headline {
             font-size: clamp(1.9rem, 8vw, 2.4rem) !important;
@@ -172,6 +185,9 @@ export default function FaqSection() {
           }
           .faq-toggle {
             padding: 1.4rem 2.25rem 1.4rem 0 !important;
+          }
+          .faq-case-media {
+            grid-template-columns: 1fr !important;
           }
         }
       `}</style>
@@ -226,6 +242,40 @@ export default function FaqSection() {
         >
           The questions every business owner asks me before we start — answered straight.
         </motion.p>
+        <div className="faq-case-media">
+          <video
+            className="faq-case-video"
+            src="/bridal-ai-video.mp4"
+            autoPlay
+            muted
+            loop
+            playsInline
+            style={{
+              display: 'block',
+              width: '100%',
+              height: 'auto',
+              borderRadius: 0,
+              boxShadow: 'none',
+            }}
+          />
+          <figure style={{ margin: 0 }}>
+            <img
+              className="faq-case-image"
+              src="/bridal-editorial-hero.png"
+              alt="Editorial bridal website designed and built by Iryna Sheremeta"
+              style={{
+                display: 'block',
+                width: '100%',
+                height: 'auto',
+                borderRadius: 0,
+                boxShadow: 'none',
+              }}
+            />
+            <figcaption className="faq-case-caption">
+              Made by someone who uses AI, design, business and tech judgement and cares about your business as it impacts their own reputation.
+            </figcaption>
+          </figure>
+        </div>
         <div>
           {faqs.map((faq, index) => {
             const isOpen = openIndex === index;
