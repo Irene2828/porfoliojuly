@@ -1,47 +1,63 @@
 'use client';
 
-import { motion } from 'framer-motion';
+import { useState } from 'react';
+import { AnimatePresence, motion } from 'framer-motion';
 
 const faqs = [
   {
-    num: '01',
     question: "Can't I just generate a website with AI for free?",
-    answer:
-      "You can. And if your website doesn't need to do anything — bring in clients, explain what you do, take bookings — that might be enough. AI generates; it doesn't direct. Without direction you get a generic site: the same structure, the same words, the same feeling as everyone else's. I use AI every day. The difference is direction — I know what to ask for, what to keep, and what to throw out. That's the work.",
+    answers: [
+      "You can — and if your site doesn't need to bring clients, that might be enough.",
+      "AI generates. It doesn't direct. Without direction you get a generic site.",
+      'I use AI every day. The difference is direction: what to ask for, what to keep, what to throw out.',
+    ],
   },
   {
-    num: '02',
     question: 'What am I actually paying for?',
-    answer:
-      "Not hours, and not typing. You're paying for taste, judgment, and a finished thing that works: the problem understood first, a structure that says what you do in five seconds, copy that sounds like you, a site that works on a phone, forms that reach you, domain and hosting set up — and someone who answers when something breaks. AI can draft. It can't take responsibility for the result. I can.",
+    answers: [
+      'Not hours, not typing. Taste, judgment, and a finished thing that works.',
+      'Problem first. Copy that sounds like you. Phone, forms, domain, hosting — done.',
+      "AI can draft. It can't take responsibility for the result. I can.",
+    ],
   },
   {
-    num: '03',
     question: 'I already generated a draft. Can you fix it and launch it?',
-    answer:
-      "Yes — that's a real service, and it's often the smartest way to start. Bring the draft and I'll tell you honestly whether a polish is enough or the structure needs redoing, and the price follows that. Polish covers structure, copy, images, mobile, forms, domain, and launch. Some drafts just need a firm hand. Some need rebuilding. I'll say which one yours is.",
+    answers: [
+      "Yes. Bring it — I'll tell you honestly if a polish is enough or it needs rebuilding.",
+      'Polish covers structure, copy, images, mobile, forms, domain, launch.',
+      "Some drafts need a firm hand. Some need rebuilding. I'll say which one yours is.",
+    ],
   },
   {
-    num: '04',
     question: 'My business is small. Can it live with a simple website?',
-    answer:
-      "Maybe — and I'll tell you so if that's the case. If your site doesn't need to bring you clients, a simple generated page is fine. But if your site is your storefront — if people judge you by it before they call — then generic costs you work. One of my clients, an insurance claims expert, started getting calls from new clients within days of her new site going live. That's the difference between a site that exists and a site that works.",
+    answers: [
+      "Maybe — and I'll tell you so if that's the case.",
+      "If your site doesn't need to bring clients, a simple page is fine.",
+      "If it's your storefront, generic costs you work. One client started getting calls from new clients within days of launch.",
+    ],
   },
   {
-    num: '05',
     question: "We don't use AI in our business yet. Can you help with that?",
-    answer:
-      "Yes. That's half of what I do. If your team isn't working with AI yet, I'll show you where it actually helps — not hype, just the tasks that eat your week — and build you a simple tool for that task, or set up AI to work with the tools you already have. You stay in control. The tool does the filling-in.",
+    answers: [
+      "Yes. That's half of what I do.",
+      "I'll show you where AI actually helps — the tasks that eat your week, not hype.",
+      'I build you a simple tool for that task, or set up AI with the tools you already have.',
+      'You stay in control. The tool does the filling-in.',
+    ],
   },
   {
-    num: '06',
     question: 'How fast is this, and what happens after launch?',
-    answer:
-      "You get a first clickable version in days, so you react to a real thing instead of a document. We fix it together, then I ship it, hand it over, and set up hosting and support. After launch I'm still there — small edits, updates, new features — on a simple monthly care plan, or per request.",
+    answers: [
+      'First clickable version in days — you react to a real thing.',
+      'We fix it together. I ship it, hand it over, set up hosting and support.',
+      "After launch I'm still there: edits, updates, new features — monthly care plan, or per request.",
+    ],
   },
 ];
 
 export default function FaqSection() {
+  const [openIndex, setOpenIndex] = useState<number>(0);
+
   return (
     <section
       id="faq-section"
@@ -88,13 +104,17 @@ export default function FaqSection() {
         .faq-item:last-child {
           border-bottom: 1px solid rgba(0, 0, 0, 0.12) !important;
         }
-        .faq-number {
-          font-family: var(--font-body), 'Plus Jakarta Sans', sans-serif !important;
-          font-size: 0.78rem !important;
-          font-weight: 600 !important;
-          letter-spacing: 0.12em !important;
-          color: #f2908f !important;
-          -webkit-text-fill-color: #f2908f !important;
+        .faq-toggle {
+          display: flex !important;
+          align-items: center !important;
+          justify-content: center !important;
+          width: 100% !important;
+          background: none !important;
+          border: none !important;
+          cursor: pointer !important;
+          padding: 1.7rem 2.5rem !important;
+          position: relative !important;
+          text-align: center !important;
         }
         .faq-question {
           font-family: 'Newsreader', Georgia, serif !important;
@@ -103,12 +123,43 @@ export default function FaqSection() {
           color: #000000 !important;
           -webkit-text-fill-color: #000000 !important;
         }
-        .faq-answer {
+        .faq-indicator {
+          position: absolute !important;
+          right: 0.25rem !important;
+          top: 50% !important;
+          transform: translateY(-50%) !important;
           font-family: var(--font-body), 'Plus Jakarta Sans', sans-serif !important;
+          font-size: 1.6rem !important;
+          font-weight: 300 !important;
+          line-height: 1 !important;
+          color: #f2908f !important;
+          -webkit-text-fill-color: #f2908f !important;
+          width: 2rem !important;
+          text-align: center !important;
+          flex-shrink: 0 !important;
+        }
+        .faq-answer-list {
+          list-style: disc !important;
+          padding: 0 0.5rem 1.9rem 1.4rem !important;
+          margin: 0 !important;
+          text-align: left !important;
+        }
+        .faq-answer-list li {
+          font-family: var(--font-body), 'Plus Jakarta Sans', sans-serif !important;
+          font-size: 1.02rem !important;
           font-weight: 300 !important;
           letter-spacing: -0.011em !important;
+          line-height: 1.65 !important;
           color: rgba(0, 0, 0, 0.78) !important;
           -webkit-text-fill-color: rgba(0, 0, 0, 0.78) !important;
+          margin-bottom: 0.55rem !important;
+          padding-left: 0.25rem !important;
+        }
+        .faq-answer-list li:last-child {
+          margin-bottom: 0 !important;
+        }
+        .faq-answer-list li::marker {
+          color: #f2908f !important;
         }
         .faq-closing {
           font-family: 'Newsreader', Georgia, serif !important;
@@ -124,14 +175,18 @@ export default function FaqSection() {
           .faq-question {
             font-size: 1.45rem !important;
           }
+          .faq-toggle {
+            padding: 1.4rem 2.25rem !important;
+          }
         }
       `}</style>
       <div
         style={{
-          maxWidth: '820px',
+          maxWidth: '720px',
           width: '100%',
           margin: '0 auto',
           padding: '0 1.5rem',
+          textAlign: 'center',
         }}
       >
         <motion.p
@@ -170,49 +225,71 @@ export default function FaqSection() {
           style={{
             fontSize: 'clamp(1.05rem, 2.4vw, 1.2rem)',
             lineHeight: 1.55,
-            margin: '0 0 3.5rem 0',
+            margin: '0 auto 3.5rem auto',
             maxWidth: '52ch',
           }}
         >
           The questions every business owner asks me before we start — answered straight.
         </motion.p>
         <div>
-          {faqs.map((faq, index) => (
-            <motion.article
-              key={faq.num}
-              className="faq-item"
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true, amount: 0.3 }}
-              transition={{ duration: 0.68, delay: index * 0.04, ease: [0.16, 1, 0.3, 1] }}
-              style={{ padding: '2.5rem 0' }}
-            >
-              <p className="faq-number" style={{ margin: '0 0 0.9rem 0' }}>
-                {faq.num}
-              </p>
-              <h3
-                className="faq-question"
-                style={{
-                  fontSize: 'clamp(1.5rem, 3.4vw, 1.85rem)',
-                  lineHeight: 1.3,
-                  margin: '0 0 1rem 0',
-                }}
+          {faqs.map((faq, index) => {
+            const isOpen = openIndex === index;
+            return (
+              <motion.article
+                key={faq.question}
+                className="faq-item"
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true, amount: 0.3 }}
+                transition={{ duration: 0.68, delay: index * 0.04, ease: [0.16, 1, 0.3, 1] }}
               >
-                {faq.question}
-              </h3>
-              <p
-                className="faq-answer"
-                style={{
-                  fontSize: '1.05rem',
-                  lineHeight: 1.7,
-                  margin: 0,
-                  maxWidth: '62ch',
-                }}
-              >
-                {faq.answer}
-              </p>
-            </motion.article>
-          ))}
+                <h3 style={{ margin: 0 }}>
+                  <button
+                    type="button"
+                    className="faq-toggle"
+                    aria-expanded={isOpen}
+                    aria-controls={`faq-panel-${index}`}
+                    id={`faq-button-${index}`}
+                    onClick={() => setOpenIndex(isOpen ? -1 : index)}
+                  >
+                    <span
+                      className="faq-question"
+                      style={{
+                        fontSize: 'clamp(1.5rem, 3.4vw, 1.85rem)',
+                        lineHeight: 1.3,
+                      }}
+                    >
+                      {faq.question}
+                    </span>
+                    <span className="faq-indicator" aria-hidden="true">
+                      {isOpen ? '–' : '+'}
+                    </span>
+                  </button>
+                </h3>
+                <AnimatePresence initial={false}>
+                  {isOpen && (
+                    <motion.div
+                      key="content"
+                      id={`faq-panel-${index}`}
+                      role="region"
+                      aria-labelledby={`faq-button-${index}`}
+                      initial={{ height: 0, opacity: 0 }}
+                      animate={{ height: 'auto', opacity: 1 }}
+                      exit={{ height: 0, opacity: 0 }}
+                      transition={{ duration: 0.35, ease: [0.16, 1, 0.3, 1] }}
+                      style={{ overflow: 'hidden' }}
+                    >
+                      <ul className="faq-answer-list">
+                        {faq.answers.map((bullet) => (
+                          <li key={bullet}>{bullet}</li>
+                        ))}
+                      </ul>
+                    </motion.div>
+                  )}
+                </AnimatePresence>
+              </motion.article>
+            );
+          })}
         </div>
         <motion.p
           className="faq-closing"
