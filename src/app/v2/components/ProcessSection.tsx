@@ -90,8 +90,11 @@ export default function ProcessSection() {
             viewport={{ once: true, amount: 0.5 }}
             transition={{ duration: 0.72, delay: 0.08, ease: [0.16, 1, 0.3, 1] }}
             style={{
+              fontFamily: "'Newsreader', Georgia, serif",
               fontSize: 'clamp(28px, 4.4vw, 42px)',
               lineHeight: 1.2,
+              color: '#000000',
+              letterSpacing: '-0.02em',
               margin: '0 0 3rem 0',
             }}
           >
