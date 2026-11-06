@@ -57,315 +57,253 @@ export default function HowItWorks() {
   ];
 
   return (
-    <section 
+    <section
       id="how-it-works"
-      style={{ 
+      style={{
         backgroundColor: '#ffffff',
         padding: '5.1rem 0 5.1rem 0',
+        width: '100%',
         position: 'relative',
         overflow: 'hidden'
       }}
     >
       <style>{`
-        @media (max-width: 860px) {
-          .process-step-container {
-            padding-left: 0 !important;
-            padding-right: 0 !important;
-          }
-          .process-svg-desktop {
-            display: none !important;
-          }
-          .process-svg-mobile {
-            display: block !important;
-          }
-          .process-decor-top-right-squares,
-          .process-decor-bottom-circle {
-            display: none !important;
-          }
-          .process-card-title {
-            align-items: flex-start !important;
-          }
-          .process-card-icon {
-            margin-top: 4px !important;
-            transform: none !important;
-          }
+        .how-title {
+          font-family: 'Newsreader', Georgia, serif !important;
+          font-weight: 400 !important;
+          letter-spacing: -0.02em !important;
+          color: #000000 !important;
+          background: none !important;
+          -webkit-text-fill-color: #000000 !important;
         }
-        @media (min-width: 861px) {
-          .process-svg-mobile {
-            display: none !important;
+        .how-kicker {
+          font-family: var(--font-body), 'Plus Jakarta Sans', sans-serif !important;
+          font-size: 0.72rem !important;
+          font-weight: 600 !important;
+          text-transform: uppercase !important;
+          letter-spacing: 0.14em !important;
+          color: #f2908f !important;
+          background: none !important;
+          -webkit-text-fill-color: #f2908f !important;
+        }
+        .how-subcopy {
+          font-family: var(--font-body), 'Plus Jakarta Sans', sans-serif !important;
+          color: rgba(0, 0, 0, 0.72) !important;
+          -webkit-text-fill-color: rgba(0, 0, 0, 0.72) !important;
+        }
+        .how-num {
+          font-family: 'Newsreader', Georgia, serif !important;
+          font-weight: 400 !important;
+          color: #f2908f !important;
+          -webkit-text-fill-color: #f2908f !important;
+          font-size: 2.8rem !important;
+        }
+        .how-step-title {
+          font-family: 'Newsreader', Georgia, serif !important;
+          font-weight: 400 !important;
+          color: #ffffff !important;
+          -webkit-text-fill-color: #ffffff !important;
+        }
+        .how-step-sub {
+          font-family: var(--font-body), 'Plus Jakarta Sans', sans-serif !important;
+          color: rgba(255, 255, 255, 0.82) !important;
+          -webkit-text-fill-color: rgba(255, 255, 255, 0.82) !important;
+        }
+        .how-step-sub strong {
+          font-weight: 600 !important;
+          color: #ffffff !important;
+          -webkit-text-fill-color: #ffffff !important;
+        }
+        .how-step-card {
+          transition: transform 0.25s ease, border-color 0.25s ease, background-color 0.25s ease !important;
+        }
+        .how-step-card:hover {
+          transform: translateY(-4px) !important;
+          border-color: rgba(255, 255, 255, 0.18) !important;
+        }
+        @media (max-width: 900px) {
+          #how-it-works {
+            padding: 3.5rem 0 3.5rem 0 !important;
+          }
+          .how-title {
+            font-size: 2.1rem !important;
+          }
+          .how-num {
+            font-size: 2.65rem !important;
+          }
+          .how-step-title {
+            font-size: 1.5rem !important;
           }
         }
       `}</style>
-
-      {/* Section Heading: How I work — Narrative Scroll-Arrival Choreography */}
-      <div className="how-it-works-heading container" style={{ textAlign: 'center', marginBottom: '1.75rem' }}>
-        {/* 1. Short architectural decor line draws from center */}
-        <motion.div
-          className="how-it-works-decor-line"
-          initial={{ scaleX: 0, opacity: 0 }}
-          whileInView={{ scaleX: 1, opacity: 0.9 }}
-          viewport={{ once: true, amount: 0.5 }}
-          transition={{ duration: 0.65, ease: [0.16, 1, 0.3, 1] }}
-          style={{ 
-            width: '60px', 
-            height: '1px', 
-            backgroundColor: '#2d3139', 
-            margin: '0 auto 2.5rem auto',
-            transformOrigin: 'center'
-          }}
-        />
-
-        {/* 2. Section Heading rises */}
-        <motion.h2
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true, amount: 0.5 }}
-          transition={{ duration: 0.72, delay: 0.08, ease: [0.16, 1, 0.3, 1] }}
-          style={{ 
-            fontFamily: "var(--font-heading)",
-            fontSize: 'clamp(28px, 4.4vw, 42px)', 
-            color: 'var(--color-heading-silver)', 
-            fontWeight: 400,
-            lineHeight: 1.2,
-            letterSpacing: '-0.02em',
-            textAlign: 'center',
-            width: '100%',
-            margin: '0 auto 0.75rem auto',
-            WebkitTextStroke: '0',
-            textWrap: 'balance'
-          }}
-        >
-          <span style={{ fontWeight: 400, color: 'var(--color-heading-silver, #4a5461)' }}>How I </span><span style={{ fontWeight: 700, color: '#3ba3b8', WebkitTextFillColor: '#3ba3b8' }}>work</span>
-        </motion.h2>
-
-        {/* 3. Three-word cadence subline settles in */}
-        <motion.p
-          initial={{ opacity: 0, y: 14 }}
-          whileInView={{ opacity: 0.9, y: 0 }}
-          viewport={{ once: true, amount: 0.5 }}
-          transition={{ duration: 0.7, delay: 0.18, ease: [0.16, 1, 0.3, 1] }}
-          style={{
-            fontFamily: "var(--font-body)",
-            fontSize: '17px',
-            fontWeight: 400,
-            lineHeight: 1.6,
-            color: 'var(--color-body-dark, #2b3038)',
-            maxWidth: '640px',
-            margin: '0 auto',
-            textAlign: 'center',
-            letterSpacing: '-0.01em',
-            fontStyle: 'italic'
-          }}
-        >
-          Clarity. Logic. Care.
-        </motion.p>
-      </div>
-
-      {/* Edge-to-Edge Matte Black Frame for 3-Step Process Flow */}
       <div
-        className="services-black-frame-wrapper"
         style={{
-          position: 'relative',
-          width: '100%',
-          backgroundColor: 'var(--color-matte-black, #25282e)',
-          borderTop: '1px solid rgba(255, 255, 255, 0.08)',
-          borderBottom: '1px solid rgba(255, 255, 255, 0.08)',
-          boxShadow: '0 20px 48px rgba(0, 0, 0, 0.03)',
-          overflow: 'hidden'
+          maxWidth: '1200px',
+          margin: '0 auto',
+          padding: '0 1.9rem',
+          textAlign: 'center'
         }}
       >
-        {/* Premium Geometric Abstract Decor Layer (Process) — Subtle Architectural Expansion */}
-        <motion.div 
-          initial={{ opacity: 0, scale: 0.93 }}
-          whileInView={{ opacity: 0.8, scale: 1 }}
-          viewport={{ once: true, amount: 0.15 }}
-          transition={{ duration: 1.2, ease: [0.16, 1, 0.3, 1] }}
+        <motion.p
+          className="how-kicker"
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true, amount: 0.45 }}
+          transition={{ duration: 0.68, ease: [0.16, 1, 0.3, 1] }}
+          style={{ margin: '0 0 1.05rem 0', textAlign: 'left' }}
+        >
+          How I work
+        </motion.p>
+        <motion.h2
+          className="how-title"
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true, amount: 0.45 }}
+          transition={{ duration: 0.78, delay: 0.08, ease: [0.16, 1, 0.3, 1] }}
           style={{
-            position: 'absolute',
-            inset: 0,
-            pointerEvents: 'none',
-            zIndex: 2
+            fontFamily: "'Newsreader', Georgia, serif",
+            fontSize: 'clamp(2rem, 4.5vw, 2.9rem)',
+            lineHeight: 1.15,
+            color: '#000000',
+            letterSpacing: '-0.02em',
+            margin: '0 0 1.1rem 0',
+            textAlign: 'left'
           }}
         >
-          {/* Top-Left Cluster (Circle) */}
-          <div style={{ position: 'absolute', width: '200px', height: '200px', border: '1px solid rgba(247, 214, 208, 0.45)', borderRadius: '50%', top: '-5%', left: '-2%' }} />
-          
-          {/* Top-Right Cluster (Square Shapes - Hidden on Mobile) */}
-          <div className="process-decor-top-right-squares" style={{ position: 'absolute', width: '120px', height: '180px', border: '1px dashed rgba(247, 214, 208, 0.45)', top: '10%', right: '5%' }} />
-          <div className="process-decor-top-right-squares" style={{ position: 'absolute', width: '80px', height: '80px', border: '1px solid rgba(247, 214, 208, 0.5)', top: '25%', right: '12%' }} />
-
-          {/* Center-Left subtle lines */}
-          <div style={{ position: 'absolute', top: '50%', left: '0', width: '8%', height: '1px', backgroundColor: 'rgba(247, 214, 208, 0.45)' }} />
-          <div style={{ position: 'absolute', top: '52%', left: '0', width: '5%', height: '1px', backgroundColor: 'rgba(247, 214, 208, 0.5)' }} />
-
-          {/* Bottom-Right Cluster (Circle - Hidden on Mobile) */}
-          <div className="process-decor-bottom-circle" style={{ position: 'absolute', width: '160px', height: '160px', border: '1px dashed rgba(247, 214, 208, 0.45)', borderRadius: '50%', bottom: '10%', right: '8%' }} />
-        </motion.div>
-
-        <div className="container" style={{ position: 'relative', zIndex: 3, paddingTop: '4rem', paddingBottom: '5rem', paddingLeft: '1.5rem', paddingRight: '1.5rem' }}>
-          {/* Zigzag Process Flow */}
-          <div 
-            style={{ 
-              maxWidth: '960px', 
-              margin: '0 auto', 
-              position: 'relative', 
-              padding: '1.5rem 0'
-            }}
-          >
-            <div style={{ display: 'flex', flexDirection: 'column', gap: '4.5rem', position: 'relative', zIndex: 3 }}>
-              {steps.map((step, i) => {
-                const isOdd = i % 2 === 1; // Step 2 shifted to right side
-                const stepBaseDelay = i * 0.18;
-                return (
-                  <motion.div
-                    key={step.num}
-                    className="process-step-container"
-                    initial={{ opacity: 0, y: 28 }}
-                    whileInView={{ opacity: 1, y: 0 }}
-                    viewport={{ once: true, amount: 0.35 }}
-                    transition={{ duration: 0.75, delay: stepBaseDelay, ease: [0.16, 1, 0.3, 1] }}
+          Simple, honest, fast.
+        </motion.h2>
+        <motion.p
+          className="how-subcopy"
+          initial={{ opacity: 0, y: 14 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true, amount: 0.45 }}
+          transition={{ duration: 0.68, delay: 0.16, ease: [0.16, 1, 0.3, 1] }}
+          style={{
+            fontFamily: "'Plus Jakarta Sans', sans-serif",
+            fontSize: 'clamp(1.05rem, 2.4vw, 1.2rem)',
+            fontWeight: 300,
+            lineHeight: 1.55,
+            letterSpacing: '-0.011em',
+            margin: '0 0 3.15rem 0',
+            maxWidth: '52ch',
+            textAlign: 'left'
+          }}
+        >
+          Three steps, no mystery. You always know what happens next.
+        </motion.p>
+        <div
+          style={{
+            display: 'flex',
+            flexDirection: 'row',
+            flexWrap: 'wrap',
+            gap: '1.2rem',
+            backgroundColor: '#000000',
+            borderRadius: '16px',
+            padding: '1.4rem',
+            maxWidth: '1120px',
+            margin: '0 auto',
+            boxShadow: '0 20px 48px rgba(0,0,0,0.03)'
+          }}
+        >
+          {steps.map((step, index) => (
+            <motion.div
+              key={step.num}
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true, amount: 0.12 }}
+              transition={{ duration: 0.68, delay: index * 0.09, ease: [0.16, 1, 0.3, 1] }}
+              style={{
+                display: 'flex',
+                flexDirection: 'column',
+                flex: '1 1 0',
+                minWidth: '175px',
+                alignItems: 'flex-start',
+                textAlign: 'left',
+                gap: '1rem',
+                background: 'linear-gradient(180deg, rgba(255,255,255,0.06), rgba(255, 255, 255, 0.025))',
+                border: '1px solid rgba(255, 255, 255, 0.1)',
+                borderRadius: '16px',
+                padding: '1.35rem 1.35rem 1.25rem 1.35rem',
+                boxShadow: 'none',
+              }}
+              className="how-step-card"
+            >
+              <span
+                style={{
+                  display: 'flex',
+                  alignItems: 'center',
+                  justifyContent: 'center',
+                  width: '2.8rem',
+                  height: '2.8rem',
+                  borderRadius: '50%',
+                  backgroundColor: 'rgba(242, 144, 143, 0.25)',
+                  border: '1px solid rgba(242, 144, 143, 0.55)',
+                  color: 'rgba(255, 255, 255, 0.85)',
+                  flexShrink: 0
+                }}
+              >
+                {step.icon}
+              </span>
+              <span
+                className="how-num"
+                style={{
+                  fontFamily: "'Newsreader', Georgia, serif",
+                  fontSize: '2.6rem',
+                  lineHeight: 1,
+                  margin: '0.1rem 0 0 0',
+                  display: 'block'
+                }}
+              >
+                {step.num}
+              </span>
+              <h3
+                className="how-step-title"
+                style={{
+                  fontFamily: "'Newsreader', Georgia, serif",
+                  fontWeight: 400,
+                  fontSize: '1.65rem',
+                  lineHeight: 1.2,
+                  margin: 0
+                }}
+              >
+                {step.title}
+              </h3>
+              <ul
+                style={{
+                  listStyle: 'none',
+                  padding: 0,
+                  margin: '0 0 0.2rem 0',
+                  display: 'flex',
+                  flexDirection: 'column',
+                  gap: '0.65rem'
+                }}
+              >
+                {step.bullets.map((bullet, bulletIndex) => (
+                  <li
+                    key={bulletIndex}
+                    className="how-step-sub"
                     style={{
+                      fontFamily: "'Plus Jakarta Sans', sans-serif",
+                      fontSize: '0.98rem',
+                      fontWeight: 300,
+                      lineHeight: 1.6,
+                      color: 'rgba(255, 255, 255, 0.82)',
+                      margin: 0,
                       display: 'flex',
-                      flexDirection: 'row',
                       alignItems: 'flex-start',
-                      justifyContent: 'flex-start',
-                      gap: '1.35rem',
-                      position: 'relative',
-                      width: '100%',
-                      paddingLeft: isOdd ? '40%' : '0%',
-                      paddingRight: isOdd ? '0%' : '20%'
+                      gap: '0.65rem'
                     }}
                   >
-                    {/* Step Number — Sequential Milestone Arrival */}
-                    <motion.div 
-                      initial={{ scale: 0.86, y: 16, opacity: 0 }}
-                      whileInView={{ scale: 1, y: 0, opacity: 1 }}
-                      viewport={{ once: true, amount: 0.35 }}
-                      transition={{ duration: 0.65, delay: stepBaseDelay + 0.06, ease: [0.16, 1, 0.3, 1] }}
-                      style={{
-                        flexShrink: 0,
-                        width: '60px',
-                        display: 'flex',
-                        alignItems: 'flex-start',
-                        justifyContent: 'flex-start',
-                        zIndex: 4,
-                        marginTop: '-0.2rem',
-                        fontFamily: "var(--font-heading)",
-                        fontSize: '3.2rem',
-                        fontWeight: 300,
-                        color: 'rgba(215, 222, 232, 0.38)',
-                        lineHeight: 1
-                      }}
-                    >
-                      {step.num}
-                    </motion.div>
-
-                    {/* Step Content Frame with Alternating Lateral Reveal */}
-                    <motion.div 
-                      initial={{ opacity: 0, x: isOdd ? 26 : -26, y: 12 }}
-                      whileInView={{ opacity: 1, x: 0, y: 0 }}
-                      viewport={{ once: true, amount: 0.35 }}
-                      transition={{ duration: 0.72, delay: stepBaseDelay + 0.14, ease: [0.16, 1, 0.3, 1] }}
-                      style={{ 
-                        flex: 1, 
-                        textAlign: 'left',
-                        padding: '1.35rem 1.75rem',
-                        backgroundColor: 'rgba(255, 255, 255, 0.05)',
-                        backdropFilter: 'blur(16px)',
-                        WebkitBackdropFilter: 'blur(16px)',
-                        border: '1px solid rgba(255, 255, 255, 0.14)',
-                        borderRadius: '2px',
-                        boxShadow: '0 4px 16px rgba(0, 0, 0, 0.1), inset 0 1px 0 rgba(255, 255, 255, 0.06)'
-                      }}
-                    >
-                      <h3 
-                        className="process-card-title"
-                        style={{ 
-                          fontFamily: "var(--font-heading)",
-                          fontSize: '22px', 
-                          color: '#f8fafc',
-                          fontWeight: 400,
-                          margin: '0 0 0.95rem 0',
-                          paddingBottom: '0.75rem',
-                          borderBottom: '1px solid rgba(215, 222, 232, 0.16)',
-                          letterSpacing: '0em',
-                          lineHeight: 1.25,
-                          WebkitTextStroke: '0',
-                          display: 'flex',
-                          alignItems: 'center',
-                          gap: '0.65rem'
-                        }}
-                      >
-                        <motion.span 
-                          className="process-card-icon"
-                          initial={{ scale: 0.75, rotate: -10, opacity: 0 }}
-                          whileInView={{ scale: 1, rotate: 0, opacity: 1 }}
-                          viewport={{ once: true, amount: 0.35 }}
-                          transition={{ duration: 0.55, delay: stepBaseDelay + 0.24, ease: [0.16, 1, 0.3, 1] }}
-                          style={{ 
-                            display: 'inline-flex', 
-                            alignItems: 'center', 
-                            justifyContent: 'center',
-                            flexShrink: 0,
-                            transform: 'translateY(-0.5px)'
-                          }}
-                        >
-                          {step.icon}
-                        </motion.span>
-                        <span>{step.title}</span>
-                      </h3>
-
-                      <ul style={{
-                        listStyle: 'none',
-                        padding: 0,
-                        margin: 0,
-                        display: 'flex',
-                        flexDirection: 'column',
-                        gap: '0.45rem',
-                        maxWidth: '520px'
-                      }}>
-                        {step.bullets.map((bullet, bIdx) => (
-                          <motion.li 
-                            key={bIdx}
-                            initial={{ opacity: 0, x: -12 }}
-                            whileInView={{ opacity: 1, x: 0 }}
-                            viewport={{ once: true, amount: 0.35 }}
-                            transition={{ duration: 0.6, delay: stepBaseDelay + 0.3, ease: [0.16, 1, 0.3, 1] }}
-                            style={{
-                              display: 'flex',
-                              alignItems: 'baseline',
-                              gap: '0.65rem',
-                              fontFamily: "var(--font-body)",
-                              fontSize: '0.94rem',
-                              lineHeight: 1.5,
-                              color: '#cbd5e1',
-                              fontWeight: 400
-                            }}
-                          >
-                            <span 
-                              style={{
-                                display: 'inline-block',
-                                width: '4px',
-                                height: '4px',
-                                borderRadius: '50%',
-                                backgroundColor: 'rgba(215, 222, 232, 0.75)',
-                                flexShrink: 0,
-                                transform: 'translateY(-2px)'
-                              }} 
-                            />
-                            <span>
-                              <strong style={{ fontWeight: 600, color: '#f8fafc', letterSpacing: '0.025em' }}>{bullet.bold}</strong>
-                              {bullet.rest}
-                            </span>
-                          </motion.li>
-                        ))}
-                      </ul>
-                    </motion.div>
-                  </motion.div>
-                );
-              })}
-            </div>
-          </div>
+                    <span style={{ color: '#f2908f', fontSize: '1.05rem', lineHeight: 1.6, flexShrink: 0 }}>•</span>
+                    <span>
+                      <strong style={{ fontWeight: 600, color: '#ffffff' }}>{bullet.bold}</strong>
+                      {bullet.rest}
+                    </span>
+                  </li>
+                ))}
+              </ul>
+            </motion.div>
+          ))}
         </div>
       </div>
     </section>
