@@ -10,7 +10,7 @@
 .about-hero-interactive {
   position: relative;
   width: 100%;
-  max-width: 1240px;
+  max-width: none;
   margin: 0 auto;
   padding: 120px 24px 60px;
   min-height: calc(100vh - 140px);
@@ -33,7 +33,7 @@
   font-size: clamp(32px, 3.8vw, 44px);
   font-weight: 500;
   letter-spacing: -0.02em;
-  color: #ffffff;
+  color: #f2908f; -webkit-text-fill-color: #f2908f;
   margin-bottom: 16px;
   line-height: 1.2;
 }
