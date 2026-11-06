@@ -60,7 +60,7 @@ export default function HowItWorks() {
     <section
       id="how-it-works"
       style={{
-        backgroundColor: '#ffffff',
+        backgroundColor: 'var(--color-matte-black, #25282e)',
         padding: '5.1rem 0 5.1rem 0',
         width: '100%',
         position: 'relative',
@@ -72,9 +72,9 @@ export default function HowItWorks() {
           font-family: 'Newsreader', Georgia, serif !important;
           font-weight: 400 !important;
           letter-spacing: -0.02em !important;
-          color: #000000 !important;
+          color: #ffffff !important;
           background: none !important;
-          -webkit-text-fill-color: #000000 !important;
+          -webkit-text-fill-color: #ffffff !important;
         }
         .how-kicker {
           font-family: var(--font-body), 'Plus Jakarta Sans', sans-serif !important;
@@ -88,8 +88,8 @@ export default function HowItWorks() {
         }
         .how-subcopy {
           font-family: var(--font-body), 'Plus Jakarta Sans', sans-serif !important;
-          color: rgba(0, 0, 0, 0.72) !important;
-          -webkit-text-fill-color: rgba(0, 0, 0, 0.72) !important;
+          color: rgba(255, 255, 255, 0.72) !important;
+          -webkit-text-fill-color: rgba(255, 255, 255, 0.72) !important;
         }
         .how-num {
           font-family: 'Newsreader', Georgia, serif !important;
@@ -164,7 +164,7 @@ export default function HowItWorks() {
             fontFamily: "'Newsreader', Georgia, serif",
             fontSize: 'clamp(2rem, 4.5vw, 2.9rem)',
             lineHeight: 1.15,
-            color: '#000000',
+            color: '#ffffff',
             letterSpacing: '-0.02em',
             margin: '0 0 1.1rem 0',
             textAlign: 'left'
@@ -197,12 +197,12 @@ export default function HowItWorks() {
             flexDirection: 'row',
             flexWrap: 'wrap',
             gap: '1.2rem',
-            backgroundColor: '#000000',
+            backgroundColor: 'transparent',
             borderRadius: '16px',
             padding: '1.4rem',
             maxWidth: '1120px',
             margin: '0 auto',
-            boxShadow: '0 20px 48px rgba(0,0,0,0.03)'
+            boxShadow: 'none'
           }}
         >
           {steps.map((step, index) => (
