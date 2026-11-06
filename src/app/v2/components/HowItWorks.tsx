@@ -115,11 +115,11 @@ export default function HowItWorks() {
           -webkit-text-fill-color: #ffffff !important;
         }
         .how-step-card {
-          transition: transform 0.25s ease, border-color 0.25s ease, background-color 0.25s ease !important;
+          transition: transform 0.25s ease !important;
         }
         .how-step-card:hover {
           transform: translateY(-4px) !important;
-          border-color: rgba(255, 255, 255, 0.18) !important;
+          border: none !important;
         }
         @media (max-width: 900px) {
           #how-it-works {
@@ -220,8 +220,8 @@ export default function HowItWorks() {
                 alignItems: 'flex-start',
                 textAlign: 'left',
                 gap: '1rem',
-                background: 'linear-gradient(180deg, rgba(255,255,255,0.06), rgba(255, 255, 255, 0.025))',
-                border: '1px solid rgba(255, 255, 255, 0.1)',
+                background: 'transparent',
+                border: 'none',
                 borderRadius: '16px',
                 padding: '1.35rem 1.35rem 1.25rem 1.35rem',
                 boxShadow: 'none',
