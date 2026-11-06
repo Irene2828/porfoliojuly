@@ -151,8 +151,11 @@ export default function FaqSection() {
           viewport={{ once: true, amount: 0.45 }}
           transition={{ duration: 0.78, delay: 0.08, ease: [0.16, 1, 0.3, 1] }}
           style={{
+            fontFamily: "'Newsreader', Georgia, serif",
             fontSize: 'clamp(2rem, 4.5vw, 2.9rem)',
             lineHeight: 1.15,
+            color: '#000000',
+            letterSpacing: '-0.02em',
             margin: '0 0 1.25rem 0',
           }}
         >
