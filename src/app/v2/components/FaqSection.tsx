@@ -241,6 +241,11 @@ export default function FaqSection() {
         <img className="faq-case-image" src="/bridal-full-site-long.png" alt="Full custom bridal atelier website designed and built by Iryna Sheremeta" style={{ display: 'block', width: '100%', height: 'auto', borderRadius: 0, boxShadow: 'none' }} />
         <video className="faq-case-video" src="/bridal-mobile-tour.mp4" autoPlay muted loop playsInline style={{ display: 'block', width: '100%', height: 'auto', borderRadius: 0, boxShadow: 'none' }} />
       </div>
+      {/* Case 04 — BuyUkrainian */}
+      <div style={{ margin: '0 0 3.5rem 0', maxWidth: '324px' }}>
+        <p className="faq-kicker" style={{ margin: '0 0 1rem 0' }}>Case 04 · BuyUkrainian</p>
+        <video className="faq-case-video" src="/buyukrainian-mobile-case4.mp4" autoPlay muted loop playsInline style={{ display: 'block', width: '100%', height: 'auto', borderRadius: 0, boxShadow: 'none' }} />
+      </div>
       <motion.h2 className="faq-headline" initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true, amount: 0.45 }} transition={{ duration: 0.78, delay: 0.08, ease: [0.16, 1, 0.3, 1] }} style={{ fontFamily: "'Newsreader', Georgia, serif", fontSize: 'clamp(1.6rem, 3.6vw, 2.1rem)', lineHeight: 1.2, color: '#000000', letterSpacing: '-0.02em', margin: '0 0 1rem 0' }}>Still have questions? Let me answer them:</motion.h2>
       <motion.p className="faq-subline" initial={{ opacity: 0, y: 14 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true, amount: 0.45 }} transition={{ duration: 0.68, delay: 0.16, ease: [0.16, 1, 0.3, 1] }} style={{ fontSize: 'clamp(1.05rem, 2.4vw, 1.2rem)', lineHeight: 1.55, margin: '0 0 2.5rem 0', maxWidth: '52ch' }}>The questions every business owner asks me before we start — answered straight.</motion.p>
       <div>
