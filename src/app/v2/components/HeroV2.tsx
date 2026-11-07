@@ -320,7 +320,7 @@ export default function HeroV2() {
             justify-content: center !important;
             white-space: nowrap !important;
             border-radius: 44px !important;
-            border: 1px solid #e2a792 !important;
+            border: 1px solid #ffffff !important;
             box-shadow: none !important;
             transform: none;
             box-sizing: border-box !important;
@@ -380,7 +380,7 @@ export default function HeroV2() {
             height: 3.01rem !important;
             padding: 0 1.74rem !important;
             background: linear-gradient(315deg, #d6b792 0%, #f2908f 100%) !important;
-            border: 1px solid #e2a792 !important;
+            border: 1px solid #ffffff !important;
             color: #000000 !important;
             -webkit-text-fill-color: #000000 !important;
             border-radius: 40px !important;
@@ -402,7 +402,7 @@ export default function HeroV2() {
           .v2-theme .hero-ctas-outside .btn-primary-outline:hover,
           .hero-ctas-outside .btn-primary-outline:hover {
             background: linear-gradient(315deg, #ddc19e 0%, #f49c9b 100%) !important;
-            border-color: #e2a792 !important;
+            border-color: #ffffff !important;
             color: #000000 !important;
             -webkit-text-fill-color: #000000 !important;
             border-radius: 40px !important;
