@@ -92,7 +92,7 @@
 .face-cta {
   font-family: var(--font-label), sans-serif !important;
   background: linear-gradient(315deg, #d6b792 0%, #f2908f 100%) !important;
-  border-color: #e2a792 !important;
+  border-color: #ffffff !important;
   color: #000000 !important;
   -webkit-text-fill-color: #000000 !important;
   margin-top: 0.75rem;
@@ -109,7 +109,7 @@
 
 .face-cta:hover {
   background: linear-gradient(315deg, #ddc19e 0%, #f49c9b 100%) !important;
-  border-color: #e2a792 !important;
+  border-color: #ffffff !important;
   color: #000000 !important;
   -webkit-text-fill-color: #000000 !important;
   box-shadow: 0 8px 24px rgba(242, 144, 143, 0.28) !important;
