@@ -1076,7 +1076,7 @@ h1, h2, h3, h4, h5, h6 {
   -webkit-text-fill-color: rgba(0, 0, 0, 0.70) !important;
 }
 
-/* Prefooter closing headline: matching hero headline letter spacing, color and font weight */
+/* How I work heading: pure white on the matte-black section */ .v2-theme #how-it-works h2.how-title { color: #ffffff !important; -webkit-text-fill-color: #ffffff !important; } /* Prefooter closing headline: matching hero headline letter spacing, color and font weight */
 .v2-theme .prefooter-section:not(.about-cta-section) h2,
 .v2-theme .prefooter-closing-line {
   font-family: var(--font-body), 'Plus Jakarta Sans', sans-serif !important;
