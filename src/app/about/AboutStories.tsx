@@ -33,12 +33,7 @@ const stories = [
     lead: "This Halloween,",
     text: "we pulled last Halloween's spider web out of storage: one giant knot. We were ready to buy a new one. Then my kid said: \"Mom, please fix it.\" Logic. Patience. Knot by knot — done. From \"let's just buy a new one\" to \"what if I try?\" That's the whole story, really.",
   },
-  {
-    chipLabel: "What's next",
-    lead: "Looking ahead,",
-    text: "I want to keep creating. Keep solving business problems. Keep growing in AI. There is so much to build. To improve. To fix.",
-  },
-];
+  ];
 
 export default function AboutStories() {
   const [openIndex, setOpenIndex] = useState<number | null>(null);
