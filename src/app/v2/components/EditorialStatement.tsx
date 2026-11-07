@@ -221,11 +221,11 @@ export default function EditorialStatement() {
             viewport={{ once: true, amount: 0.45 }}
             transition={{ duration: 0.78, delay: 0.08, ease: [0.16, 1, 0.3, 1] }}
             style={{
-              fontFamily: 'var(--font-body), "Plus Jakarta Sans", sans-serif',
-              fontSize: 'clamp(1.48rem, 7.7vw, 2.08rem)',
-              fontWeight: 300,
-              letterSpacing: '-0.035em',
-              lineHeight: 1.35,
+              fontFamily: 'var(--font-heading)',
+              fontSize: 'clamp(28px, 4.4vw, 42px)',
+              fontWeight: 400,
+    letterSpacing: '-0.02em',
+              lineHeight: 1.2,
               color: 'rgba(255, 255, 255, 0.8)',
               WebkitTextFillColor: 'rgba(255, 255, 255, 0.8)',
               textAlign: 'center',
@@ -267,7 +267,7 @@ export default function EditorialStatement() {
             transition={{ duration: 0.68, delay: 0.32, ease: [0.16, 1, 0.3, 1] }}
             style={{
               fontFamily: 'var(--font-body), "Plus Jakarta Sans", sans-serif',
-              fontSize: 'clamp(1.15rem, 2.8vw, 1.23rem)',
+    fontSize: 'clamp(1.15rem, 2.8vw, 1.23rem)',
               fontWeight: 300,
               letterSpacing: '-0.011em',
               lineHeight: 1.55,

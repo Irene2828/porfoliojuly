@@ -28,7 +28,7 @@ export default function HeroV2() {
           .hero-name-group .hero-text h1.hero-statement {
             zoom: 1 !important;
             font-size: clamp(50px, 4.5vw, 64px) !important;
-            line-height: 0.805 !important;
+            line-height: 0.886 !important;
             letter-spacing: -0.018em !important;
           }
           .headline-desktop {
@@ -36,11 +36,12 @@ export default function HeroV2() {
             flex-direction: column !important;
             gap: 0px !important;
           }
-          .headline-desktop .headline-line {
-            display: block !important;
-            line-height: 0.805 !important;
-            white-space: nowrap !important;
-          }
+            .headline-desktop .headline-line {
+    display: block !important;
+    line-height: 0.886 !important;
+    white-space: nowrap !important;
+  }
+  .hero-frame-paragraph { font-size: 1.2555rem !important; }
         }
         .headline-desktop-light,
         .headline-mobile-light {

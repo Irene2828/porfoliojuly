@@ -62,7 +62,7 @@ export default function FaqSection() {
           -webkit-text-fill-color: #f2908f !important;
         }
         .faq-headline { text-align: center;
-          font-family: 'Newsreader', Georgia, serif !important;
+  font-family: var(--font-heading) !important;
           font-weight: 400 !important;
           letter-spacing: -0.02em !important;
           color: #000000 !important;
@@ -207,9 +207,9 @@ export default function FaqSection() {
           viewport={{ once: true, amount: 0.45 }}
           transition={{ duration: 0.78, delay: 0.08, ease: [0.16, 1, 0.3, 1] }}
           style={{
-            fontFamily: "'Newsreader', Georgia, serif",
-            fontSize: 'clamp(2rem, 4.5vw, 2.9rem)',
-            lineHeight: 1.15,
+            fontFamily: 'var(--font-heading)',
+            fontSize: 'clamp(28px, 4.4vw, 42px)',
+            lineHeight: 1.2,
             color: '#000000',
             letterSpacing: '-0.02em',
             margin: '0 -90px 1.25rem -90px',
@@ -242,7 +242,7 @@ export default function FaqSection() {
         <img className="faq-case-image" src="/bridal-full-site-long.png" alt="Full custom bridal atelier website designed and built by Iryna Sheremeta" style={{ display: 'block', width: '100%', height: 'auto', borderRadius: 0, boxShadow: 'none' }} />
       </div>
       
-      <motion.h2 className="faq-headline" initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true, amount: 0.45 }} transition={{ duration: 0.78, delay: 0.08, ease: [0.16, 1, 0.3, 1] }} style={{ fontFamily: "'Newsreader', Georgia, serif", fontSize: 'clamp(1.6rem, 3.6vw, 2.1rem)', lineHeight: 1.2, color: '#000000', letterSpacing: '-0.02em', margin: '10.5rem 0 2.5rem 0', textAlign: 'center' }}>Still have questions? <br /> Let me answer them:</motion.h2>
+      <motion.h2 className="faq-headline" initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true, amount: 0.45 }} transition={{ duration: 0.78, delay: 0.08, ease: [0.16, 1, 0.3, 1] }} style={{ fontFamily: 'var(--font-heading)', fontSize: 'clamp(28px, 4.4vw, 42px)', lineHeight: 1.2, color: '#000000', letterSpacing: '-0.02em', margin: '10.5rem 0 2.5rem 0', textAlign: 'center' }}>Still have questions? <br /> Let me answer them:</motion.h2>
       <div>
         {faqs.map((faq, index) => {
             const isOpen = openIndex === index;

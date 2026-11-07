@@ -17,7 +17,7 @@ export default function ProcessSection() {
           box-shadow: none !important;
         }
         .testimonial-heading {
-          font-family: 'Newsreader', Georgia, serif !important;
+  font-family: var(--font-heading) !important;
           font-weight: 400 !important;
           letter-spacing: -0.02em !important;
           color: #000000 !important;
@@ -27,7 +27,7 @@ export default function ProcessSection() {
           font-family: 'Newsreader', Georgia, serif !important;
           font-style: italic !important;
           font-weight: 400 !important;
-          letter-spacing: -0.015em !important;
+          letter-spacing: -0.005em !important;
           color: #000000 !important;
           -webkit-text-fill-color: #000000 !important;
         }
@@ -85,8 +85,8 @@ export default function ProcessSection() {
             viewport={{ once: true, margin: '-80px' }}
             transition={{ duration: 0.7, ease: 'easeOut' }}
             style={{
-              fontSize: 'clamp(28px, 4vw, 42px)',
-              lineHeight: 1.15,
+              fontSize: 'clamp(28px, 4.4vw, 42px)',
+              lineHeight: 1.2,
               margin: '0 0 2.5rem 0',
               color: '#000000',
             }}
@@ -105,7 +105,7 @@ export default function ProcessSection() {
               border: '1px dashed #000000',
               borderRadius: 0,
               boxShadow: 'none',
-              padding: '4.5rem 4rem',
+              padding: '9rem 4rem',
               display: 'flex',
               flexDirection: 'column',
               alignItems: 'flex-start',

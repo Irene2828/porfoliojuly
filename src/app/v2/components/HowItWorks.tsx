@@ -35,7 +35,7 @@ export default function HowItWorks() {
       id="how-it-works"
       style={{
         backgroundColor: 'var(--color-matte-black, #25282e)',
-        padding: '5.1rem 0 15.3rem 0',
+        padding: '10.2rem 0 10.71rem 0',
         width: '100%',
         position: 'relative',
         overflow: 'hidden'
@@ -43,7 +43,7 @@ export default function HowItWorks() {
     >
       <style>{`
         .how-title {
-          font-family: 'Newsreader', Georgia, serif !important;
+          font-family: var(--font-heading) !important;
           font-weight: 400 !important;
           letter-spacing: -0.02em !important;
           color: #ffffff !important;
@@ -66,14 +66,14 @@ export default function HowItWorks() {
           -webkit-text-fill-color: rgba(255, 255, 255, 0.72) !important;
         }
         .how-num {
-          font-family: 'Newsreader', Georgia, serif !important;
+          font-family: var(--font-heading) !important;
           font-weight: 400 !important;
           color: #f2908f !important;
           -webkit-text-fill-color: #f2908f !important;
           font-size: 2.8rem !important;
         }
         .how-step-title {
-          font-family: 'Newsreader', Georgia, serif !important;
+          font-family: var(--font-heading) !important;
           font-weight: 400 !important;
           color: #ffffff !important;
           -webkit-text-fill-color: #ffffff !important;
@@ -135,9 +135,9 @@ export default function HowItWorks() {
           viewport={{ once: true, amount: 0.45 }}
           transition={{ duration: 0.78, delay: 0.08, ease: [0.16, 1, 0.3, 1] }}
           style={{
-            fontFamily: "'Newsreader', Georgia, serif",
-            fontSize: 'clamp(2rem, 4.5vw, 2.9rem)', WebkitTextFillColor: '#ffffff',
-            lineHeight: 1.15,
+            fontFamily: 'var(--font-heading)',
+            fontSize: 'clamp(28px, 4.4vw, 42px)', WebkitTextFillColor: '#ffffff',
+            lineHeight: 1.2,
             color: '#ffffff',
             letterSpacing: '-0.02em',
             margin: '0 0 1.1rem 0',
@@ -206,7 +206,7 @@ export default function HowItWorks() {
               <span
                 className="how-num"
                 style={{
-                  fontFamily: "'Newsreader', Georgia, serif",
+                  fontFamily: 'var(--font-heading)',
                   fontSize: '2.6rem',
                   lineHeight: 1,
                   margin: '0.1rem 0 0 0',
@@ -218,7 +218,7 @@ export default function HowItWorks() {
               <h3
                 className="how-step-title"
                 style={{
-                  fontFamily: "'Newsreader', Georgia, serif",
+                  fontFamily: 'var(--font-heading)',
                   fontWeight: 400,
                   fontSize: '1.65rem',
                   lineHeight: 1.2,

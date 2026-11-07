@@ -23,6 +23,17 @@ interface ProjectsV2Props {
 
 export default function ProjectsV2({ initialProjects = [] }: ProjectsV2Props) {
   const [selectedProjectId, setSelectedProjectId] = useState<string | null>(null);
+  const [activeTab, setActiveTab] = useState<'internal-tools' | 'websites' | 'mobile-apps'>('internal-tools');
+  const [hoveredProjectId, setHoveredProjectId] = useState<string | null>(null);
+  const HOVER_MEDIA: Record<string, { staticSrc: string; hoverSrc: string }> = {
+    'v2-1': { staticSrc: '/terry-fox-desktop-static.png', hoverSrc: '/terry-fox-desktop-hover.mp4' },
+    'v2-2': { staticSrc: '/isabelle-mobile-static.png', hoverSrc: '/isabelle-desktop-hover.mp4' },
+  };
+  const TAB_CASE_IDS: Record<'internal-tools' | 'websites' | 'mobile-apps', string[]> = {
+    'internal-tools': ['v2-1'],
+    websites: ['v2-2', 'v2-3'],
+    'mobile-apps': ['v2-4'],
+  };
   const scrollTrackRef = useRef<HTMLDivElement>(null);
 
   const initialProjectsData = [
@@ -90,7 +101,14 @@ export default function ProjectsV2({ initialProjects = [] }: ProjectsV2Props) {
       ],
       image: '/assets/guertin-desktop.png',     },     { id: 'v2-3', title: 'BuyUkrainian', slug: 'buyukrainian', subline: 'Case 03 · BuyUkrainian', hoverLabel: 'Tap to Zoom', annotations: [ { markerNumber: 1, title: 'Buy Ukrainian in Canada', text: 'BuyUkrainian.ca makes it easier to find products from Ukraine in Canadian stores.' }, { markerNumber: 2, title: 'A map and a directory', text: 'Products listed, stores on the map — and a way to add a store that is missing.' }, { markerNumber: 3, title: '105 products listed', text: 'The recording shows the directory as it stood when it was filmed.' }, ], statsTitle: 'At a glance', stats: [ { chip: '01', text: 'Find Ukrainian products in Canada.', sub: 'A grassroots directory and map, made to support Ukraine’s economy.' }, { chip: '02', text: 'A video walkthrough.', sub: 'The case is shown as a mobile recording of the site in use.' }, ], image: '/buyukrainian-mobile-case4.mp4', }, { id: 'v2-4', title: 'Dorion Driving Academy', slug: 'dorion-driving-academy', subline: 'Case 04 · Dorion', hoverLabel: 'Tap to Zoom', annotations: [ { markerNumber: 1, title: 'Your progress at a glance', text: 'The dashboard shows 16 of 25 required lessons done, with an estimated completion date of August 26.' }, { markerNumber: 2, title: 'Pick a date and a time', text: 'May 2026: the 25th and a 90-minute slot at 09:00, chosen in a few taps.' }, { markerNumber: 3, title: 'Reschedule or cancel', text: 'The booked lesson offers Reschedule and Cancel. Cancelling confirms the refund is processed and a receipt is sent by email.' } ], statsTitle: 'At a glance', stats: [ { chip: '01', text: 'Book a lesson in seconds.', sub: 'A mobile MVP for a driving school. Booking a lesson takes seconds instead of days.' }, { chip: '02', text: 'A video walkthrough.', sub: 'The case is shown as a mobile recording of the app in use.' } ], image: '/dorion-driving-case4-framed-v2.mp4' },   ];
 
-  const [projectsList, setProjectsList] = useState(initialProjectsData);  const selectedProject = projectsList.find((p) => p.id === selectedProjectId) ?? null;
+  const [projectsList, setProjectsList] = useState(initialProjectsData);
+  const visibleProjects = projectsList.filter((p) => TAB_CASE_IDS[activeTab].includes(p.id));
+  useEffect(() => {
+    document.querySelectorAll('[data-hover-card="true"] video').forEach((v) => {
+      (v as HTMLVideoElement).pause();
+    });
+  }, [activeTab]);
+    const selectedProject = projectsList.find((p) => p.id === selectedProjectId) ?? null;
 
   useEffect(() => {
     if (selectedProjectId) {
@@ -229,7 +247,7 @@ export default function ProjectsV2({ initialProjects = [] }: ProjectsV2Props) {
                               muted
                               playsInline
                               onTimeUpdate={(e) => {
-                                if (e.currentTarget.currentTime >= (project.id === 'v2-3' || project.id === 'v2-4' ? 9999 : 3)) {
+                                if (e.currentTarget.currentTime >= (9999)) {
                                   e.currentTarget.currentTime = 0;
                                   e.currentTarget.play().catch(() => {});
                                 }
@@ -531,27 +549,18 @@ export default function ProjectsV2({ initialProjects = [] }: ProjectsV2Props) {
           <span style={{ fontWeight: 400, color: 'var(--color-heading-silver, #4a5461)' }}>Examples of </span><span style={{ fontWeight: 700, color: 'var(--color-heading-silver, #4a5461)' }}>My Work</span>
         </motion.h2>
 
-        {/* 3. Italic narrative subline settles in */}
-        <motion.p
-          initial={{ opacity: 0, y: 14 }}
-          whileInView={{ opacity: 0.9, y: 0 }}
-          viewport={{ once: true, amount: 0.5 }}
-          transition={{ duration: 0.7, delay: 0.18, ease: [0.16, 1, 0.3, 1] }}
-          style={{
-            fontFamily: "var(--font-body)",
-            fontSize: '17px',
-            fontWeight: 400,
-            lineHeight: 1.6,
-            color: 'var(--color-body-dark, #2b3038)',
-            maxWidth: '640px',
-            margin: '0 auto',
-            textAlign: 'center',
-            letterSpacing: '-0.01em',
-            fontStyle: 'italic'
-          }}
-        >
-          What I designed, built, and why.
-        </motion.p>
+              <div role="tablist" aria-label="Case categories" style={{ display: 'flex', justifyContent: 'flex-start', gap: '0.5rem', flexWrap: 'wrap', width: '100%', margin: '0', padding: '0 10px', boxSizing: 'border-box' }}>
+        {([
+          { id: 'internal-tools', label: 'Internal Tools' },
+          { id: 'websites', label: 'Websites' },
+          { id: 'mobile-apps', label: 'Mobile Apps' },
+        ] as const).map((tab) => (
+          <button key={tab.id} type="button" role="tab" aria-selected={activeTab === tab.id} onClick={() => setActiveTab(tab.id)} style={{ fontFamily: 'var(--font-body)', fontSize: '17px', fontWeight: activeTab === tab.id ? 600 : 400, lineHeight: 1.6, letterSpacing: '-0.01em', color: activeTab === tab.id ? '#2b3038' : '#989898', backgroundColor: activeTab === tab.id ? '#ffffff' : 'transparent', border: activeTab === tab.id ? '1px solid #d8d8d8' : '1px solid transparent', borderRadius: '999px', padding: '0.4rem 1rem', cursor: 'pointer' }}>
+            {tab.label}
+          </button>
+        ))}
+      </div>
+        
       </div>
       
       {/* 2x2 Grid Wrapper — Gallery Reveal Motion */}
@@ -564,7 +573,7 @@ export default function ProjectsV2({ initialProjects = [] }: ProjectsV2Props) {
         }}
       >
         <div className="cases-grid-container">
-          {projectsList.map((project, idx) => {
+          {visibleProjects.map((project, idx) => {
             return (
               <motion.div 
                 key={`${project.id}-${idx}`}
@@ -589,6 +598,9 @@ export default function ProjectsV2({ initialProjects = [] }: ProjectsV2Props) {
                   <div 
                     className="preview-card-wrapper recording-card-wrapper"
                     onClick={() => setSelectedProjectId(project.id)}
+      data-hover-card={HOVER_MEDIA[project.id] ? 'true' : undefined}
+      onMouseEnter={(e) => { if (HOVER_MEDIA[project.id]) { setHoveredProjectId(project.id); const v = e.currentTarget.querySelector('video') as HTMLVideoElement | null; if (v) { v.currentTime = 0; v.play().catch(() => {}); } } }}
+      onMouseLeave={(e) => { if (HOVER_MEDIA[project.id]) { setHoveredProjectId(null); const v = e.currentTarget.querySelector('video') as HTMLVideoElement | null; if (v) { v.pause(); } } }}
                     style={{ cursor: 'pointer' }}
                   >
                     {project.id === 'v2-2' || project.id === 'v2-3' || project.id === 'v2-4' ? (
@@ -599,14 +611,17 @@ export default function ProjectsV2({ initialProjects = [] }: ProjectsV2Props) {
                           muted
                           playsInline
                           onTimeUpdate={(e) => {
-                            if (e.currentTarget.currentTime >= (project.id === 'v2-3' || project.id === 'v2-4' ? 9999 : 3)) {
+                            if (e.currentTarget.currentTime >= (9999)) {
                               e.currentTarget.currentTime = 0;
                               e.currentTarget.play().catch(() => {});
                             }
                           }}
-                          src={project.id === 'v2-4' ? '/dorion-driving-case4-framed-v2.mp4' : project.id === 'v2-3' ? '/buyukrainian-mobile-case4.mp4' : '/assets/guertin-mobile-preview.mp4'}
+                          src={project.id === 'v2-4' ? '/dorion-driving-case4-framed-v2.mp4' : project.id === 'v2-3' ? '/buyukrainian-mobile-case4.mp4' : '/isabelle-desktop-hover.mp4'}
                           className="case-recording-video" style={project.id === 'v2-4' ? { objectFit: 'contain', backgroundColor: '#000000' } : undefined}
-                        />
+          />
+          {HOVER_MEDIA[project.id] && (
+            <img src={HOVER_MEDIA[project.id].staticSrc} alt="" aria-hidden="true" style={{ position: 'absolute', inset: 0, width: '100%', height: '100%', objectFit: 'cover', opacity: hoveredProjectId === project.id ? 0 : 1, transition: 'opacity 0.25s ease', pointerEvents: 'none', zIndex: 2 }} />
+          )}
                       </div>
                     ) : (
                       <div className="case-desktop-frame">
@@ -616,14 +631,17 @@ export default function ProjectsV2({ initialProjects = [] }: ProjectsV2Props) {
                           muted
                           playsInline
                           onTimeUpdate={(e) => {
-                            if (e.currentTarget.currentTime >= (project.id === 'v2-3' || project.id === 'v2-4' ? 9999 : 3)) {
+                            if (e.currentTarget.currentTime >= (9999)) {
                               e.currentTarget.currentTime = 0;
                               e.currentTarget.play().catch(() => {});
                             }
                           }}
-                          src="/assets/terry-fox-preview.mp4"
+                          src="/terry-fox-desktop-hover.mp4"
                           className="case-recording-video" style={project.id === 'v2-4' ? { objectFit: 'contain', backgroundColor: '#000000' } : undefined}
-                        />
+          />
+          {HOVER_MEDIA[project.id] && (
+            <img src={HOVER_MEDIA[project.id].staticSrc} alt="" aria-hidden="true" style={{ position: 'absolute', inset: 0, width: '100%', height: '100%', objectFit: 'cover', opacity: hoveredProjectId === project.id ? 0 : 1, transition: 'opacity 0.25s ease', pointerEvents: 'none', zIndex: 2 }} />
+          )}
                       </div>
                     )}
                   </div>
