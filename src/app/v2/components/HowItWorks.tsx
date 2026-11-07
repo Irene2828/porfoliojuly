@@ -136,7 +136,7 @@ export default function HowItWorks() {
           transition={{ duration: 0.78, delay: 0.08, ease: [0.16, 1, 0.3, 1] }}
           style={{
             fontFamily: "'Newsreader', Georgia, serif",
-            fontSize: 'clamp(2rem, 4.5vw, 2.9rem)',
+            fontSize: 'clamp(2rem, 4.5vw, 2.9rem)', WebkitTextFillColor: '#ffffff',
             lineHeight: 1.15,
             color: '#ffffff',
             letterSpacing: '-0.02em',
