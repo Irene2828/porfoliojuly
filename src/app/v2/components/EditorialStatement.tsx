@@ -56,7 +56,7 @@ export default function EditorialStatement() {
             background: linear-gradient(315deg, #d6b792 0%, #f2908f 100%) !important;
             color: #000000 !important;
             -webkit-text-fill-color: #000000 !important;
-            border: 1px solid #e2a792 !important;
+            border: 1px solid #ffffff !important;
             border-radius: 40px !important;
             box-shadow: none !important;
             text-shadow: none !important;
@@ -75,7 +75,7 @@ export default function EditorialStatement() {
           }
           .prefooter-btn-primary:hover {
             background: linear-gradient(315deg, #ddc19e 0%, #f49c9b 100%) !important;
-            border-color: #e2a792 !important;
+            border-color: #ffffff !important;
             color: #000000 !important;
             -webkit-text-fill-color: #000000 !important;
             border-radius: 40px !important;
@@ -88,7 +88,7 @@ export default function EditorialStatement() {
           /* Primary CTA: matching About Me hovered pill button style (#d6b792, border-radius: 40px) */
           .prefooter-section .prefooter-btn-primary.face-cta {
             background: linear-gradient(315deg, #d6b792 0%, #f2908f 100%) !important;
-            border: 1px solid #e2a792 !important;
+            border: 1px solid #ffffff !important;
             border-radius: 40px !important;
             color: #000000 !important;
             -webkit-text-fill-color: #000000 !important;
@@ -101,7 +101,7 @@ export default function EditorialStatement() {
           }
           .prefooter-section .prefooter-btn-primary.face-cta:hover {
             background: linear-gradient(315deg, #ddc19e 0%, #f49c9b 100%) !important;
-            border-color: #e2a792 !important;
+            border-color: #ffffff !important;
             border-radius: 40px !important;
             color: #000000 !important;
             -webkit-text-fill-color: #000000 !important;
@@ -123,7 +123,7 @@ export default function EditorialStatement() {
               justify-content: center !important;
               white-space: nowrap !important;
               border-radius: 44px !important;
-              border: 1px solid #e2a792 !important;
+              border: 1px solid #ffffff !important;
               box-shadow: none !important;
               transform: none !important;
               box-sizing: border-box !important;
