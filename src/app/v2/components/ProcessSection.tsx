@@ -42,7 +42,7 @@ export default function ProcessSection() {
         }
         @media (max-width: 900px) {
           .testimonial-quote {
-            font-size: clamp(1.5rem, 7vw, 1.9rem) !important;
+            font-size: clamp(0.98rem, 4.55vw, 1.24rem) !important;
           }
           .testimonial-single {
             padding: 3rem 1.75rem !important;
@@ -116,11 +116,11 @@ export default function ProcessSection() {
             <blockquote
               className="testimonial-quote"
               style={{
-                fontSize: 'clamp(1.6rem, 3.4vw, 2.4rem)',
+                fontSize: 'clamp(1.04rem, 2.21vw, 1.56rem)',
                 lineHeight: 1.35,
                 margin: 0,
                 padding: 0,
-                maxWidth: '880px',
+                maxWidth: '1056px',
                 fontStyle: 'italic',
                 color: '#000000',
               }}
