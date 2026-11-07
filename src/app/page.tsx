@@ -9,27 +9,7 @@ import FaqSection from './v2/components/FaqSection';
 import Footer from './components/Footer';
 import ClientWrapper from './components/ClientWrapper';
 
-import { db } from '@/db';
-import { projects, screens, annotations } from '@/db/schema';
-import { eq, asc } from 'drizzle-orm';
-
-export const dynamic = 'force-dynamic';
-
-export default async function HomePage() {
-  const publishedProjects = await db.query.projects.findMany({
-    where: eq(projects.status, 'published'),
-    orderBy: [asc(projects.displayOrder)],
-    with: {
-      screens: {
-        orderBy: [asc(screens.displayOrder)],
-        with: {
-          annotations: {
-            orderBy: [asc(annotations.displayOrder)],
-          },
-        },
-      },
-    },
-  });
+export default function HomePage() {
 
   return (
     <ClientWrapper>
@@ -51,7 +31,7 @@ export default async function HomePage() {
             }}
           >
             <div style={{ width: '100%', margin: '0', padding: '0' }}>
-              <ProjectsV2 initialProjects={publishedProjects as any} />
+              <ProjectsV2 />
             </div>
           </div>
         </section>
