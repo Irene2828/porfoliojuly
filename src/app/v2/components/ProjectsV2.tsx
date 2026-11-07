@@ -88,7 +88,7 @@ export default function ProjectsV2({ initialProjects = [] }: ProjectsV2Props) {
           sub: "The site now presents her at the level she works at. A client in trouble can understand what she does, see proof that it works, and reach her in one step — and a municipality sees a specialist, not a generalist. Live at rguertin.ca." 
         }
       ],
-      image: '/assets/guertin-desktop.png',     },     { id: 'v2-3', title: 'BuyUkrainian', slug: 'buyukrainian', subline: 'Case 04 · BuyUkrainian', hoverLabel: 'Tap to Zoom', annotations: [ { markerNumber: 1, title: 'Buy Ukrainian in Canada', text: 'BuyUkrainian.ca makes it easier to find products from Ukraine in Canadian stores.' }, { markerNumber: 2, title: 'A map and a directory', text: 'Products listed, stores on the map — and a way to add a store that is missing.' }, { markerNumber: 3, title: '105 products listed', text: 'The recording shows the directory as it stood when it was filmed.' }, ], statsTitle: 'At a glance', stats: [ { chip: '01', text: 'Find Ukrainian products in Canada.', sub: 'A grassroots directory and map, made to support Ukraine’s economy.' }, { chip: '02', text: 'A video walkthrough.', sub: 'The case is shown as a mobile recording of the site in use.' }, ], image: '/buyukrainian-mobile-case4.mp4', },   ];
+      image: '/assets/guertin-desktop.png',     },     { id: 'v2-3', title: 'BuyUkrainian', slug: 'buyukrainian', subline: 'Case 03 · BuyUkrainian', hoverLabel: 'Tap to Zoom', annotations: [ { markerNumber: 1, title: 'Buy Ukrainian in Canada', text: 'BuyUkrainian.ca makes it easier to find products from Ukraine in Canadian stores.' }, { markerNumber: 2, title: 'A map and a directory', text: 'Products listed, stores on the map — and a way to add a store that is missing.' }, { markerNumber: 3, title: '105 products listed', text: 'The recording shows the directory as it stood when it was filmed.' }, ], statsTitle: 'At a glance', stats: [ { chip: '01', text: 'Find Ukrainian products in Canada.', sub: 'A grassroots directory and map, made to support Ukraine’s economy.' }, { chip: '02', text: 'A video walkthrough.', sub: 'The case is shown as a mobile recording of the site in use.' }, ], image: '/buyukrainian-mobile-case4.mp4', }, { id: 'v2-4', title: 'Dorion Driving Academy', slug: 'dorion-driving-academy', subline: 'Case 04 · Dorion', hoverLabel: 'Tap to Zoom', annotations: [ { markerNumber: 1, title: 'Your progress at a glance', text: 'The dashboard shows 16 of 25 required lessons done, with an estimated completion date of August 26.' }, { markerNumber: 2, title: 'Pick a date and a time', text: 'May 2026: the 25th and a 90-minute slot at 09:00, chosen in a few taps.' }, { markerNumber: 3, title: 'Reschedule or cancel', text: 'The booked lesson offers Reschedule and Cancel. Cancelling confirms the refund is processed and a receipt is sent by email.' } ], statsTitle: 'At a glance', stats: [ { chip: '01', text: 'Book a lesson in seconds.', sub: 'A mobile MVP for a driving school. Booking a lesson takes seconds instead of days.' }, { chip: '02', text: 'A video walkthrough.', sub: 'The case is shown as a mobile recording of the app in use.' } ], image: '/dorion-driving-case4-framed-v2.mp4' },   ];
 
   const [projectsList, setProjectsList] = useState(initialProjectsData);  const selectedProject = projectsList.find((p) => p.id === selectedProjectId) ?? null;
 
@@ -204,7 +204,7 @@ export default function ProjectsV2({ initialProjects = [] }: ProjectsV2Props) {
                     ) : (
                       <div className="guertin-preview-mockup-wrapper">
                         {/* Desktop Browser Window */}
-                        <div className="guertin-preview-browser" style={project.id === 'v2-3' ? { display: 'none' } : undefined}>
+                        <div className="guertin-preview-browser" style={(project.id === 'v2-3' || project.id === 'v2-4') ? { display: 'none' } : undefined}>
                           <div className="guertin-browser-header">
                             <div className="guertin-browser-dots">
                               <div className="guertin-browser-dot" />
@@ -220,22 +220,22 @@ export default function ProjectsV2({ initialProjects = [] }: ProjectsV2Props) {
                         </div>
 
                         {/* Overlapping Phone Mockup */}
-                        <div className="guertin-preview-phone" style={project.id === 'v2-3' ? { position: 'static', width: '100%', maxWidth: '324px', margin: '0 auto 0 0' } : undefined}>
-                          <div className="guertin-phone-inner">
+                        <div className="guertin-preview-phone" style={(project.id === 'v2-3' || project.id === 'v2-4') ? { position: 'static', width: '100%', maxWidth: '324px', margin: '0 auto 0 0' } : undefined}>
+                          <div className="guertin-phone-inner" style={project.id === 'v2-4' ? { borderRadius: 0, backgroundColor: '#000000' } : undefined}>
                             <video 
-                              src={project.id === 'v2-3' ? '/buyukrainian-mobile-case4.mp4' : '/assets/guertin-mobile-preview.mp4'}
+                              src={project.id === 'v2-4' ? '/dorion-driving-case4-framed-v2.mp4' : project.id === 'v2-3' ? '/buyukrainian-mobile-case4.mp4' : '/assets/guertin-mobile-preview.mp4'}
                               autoPlay
                               loop
                               muted
                               playsInline
                               onTimeUpdate={(e) => {
-                                if (e.currentTarget.currentTime >= (project.id === 'v2-3' ? 9999 : 3)) {
+                                if (e.currentTarget.currentTime >= (project.id === 'v2-3' || project.id === 'v2-4' ? 9999 : 3)) {
                                   e.currentTarget.currentTime = 0;
                                   e.currentTarget.play().catch(() => {});
                                 }
                               }}
                               className="guertin-img"
-                              style={{ width: '100%', height: '100%', objectFit: 'cover', display: 'block' }}
+                              style={project.id === 'v2-4' ? { width: '100%', height: '100%', objectFit: 'contain', objectPosition: 'center', display: 'block' } : { width: '100%', height: '100%', objectFit: 'cover', display: 'block' }}
                             />
                           </div>
                         </div>
@@ -490,7 +490,7 @@ export default function ProjectsV2({ initialProjects = [] }: ProjectsV2Props) {
       `}</style>
       
       
-      {/* Section Heading: Recent cases — Narrative Scroll-Arrival Choreography */}
+      {/* Section Heading: Examples of My Work — Narrative Scroll-Arrival Choreography */}
       <div className="cases-header-block" style={{ marginBottom: '1.75rem', textAlign: 'center', padding: '0 1.5rem' }}>
         {/* 1. Architectural hairline draws outward from center */}
         <motion.div
@@ -528,7 +528,7 @@ export default function ProjectsV2({ initialProjects = [] }: ProjectsV2Props) {
             textWrap: 'balance'
           }}
         >
-          <span style={{ fontWeight: 400, color: 'var(--color-heading-silver, #4a5461)' }}>Recent </span><span style={{ fontWeight: 700, color: 'var(--color-heading-silver, #4a5461)' }}>cases</span>
+          <span style={{ fontWeight: 400, color: 'var(--color-heading-silver, #4a5461)' }}>Examples of </span><span style={{ fontWeight: 700, color: 'var(--color-heading-silver, #4a5461)' }}>My Work</span>
         </motion.h2>
 
         {/* 3. Italic narrative subline settles in */}
@@ -591,21 +591,21 @@ export default function ProjectsV2({ initialProjects = [] }: ProjectsV2Props) {
                     onClick={() => setSelectedProjectId(project.id)}
                     style={{ cursor: 'pointer' }}
                   >
-                    {project.id === 'v2-2' || project.id === 'v2-3' ? (
-                      <div className="case-phone-frame">
+                    {project.id === 'v2-2' || project.id === 'v2-3' || project.id === 'v2-4' ? (
+                      <div className="case-phone-frame" style={project.id === 'v2-4' ? { border: 'none', backgroundColor: '#000000' } : undefined}>
                         <video
                           autoPlay
                           loop
                           muted
                           playsInline
                           onTimeUpdate={(e) => {
-                            if (e.currentTarget.currentTime >= (project.id === 'v2-3' ? 9999 : 3)) {
+                            if (e.currentTarget.currentTime >= (project.id === 'v2-3' || project.id === 'v2-4' ? 9999 : 3)) {
                               e.currentTarget.currentTime = 0;
                               e.currentTarget.play().catch(() => {});
                             }
                           }}
-                          src={project.id === 'v2-3' ? '/buyukrainian-mobile-case4.mp4' : '/assets/guertin-mobile-preview.mp4'}
-                          className="case-recording-video"
+                          src={project.id === 'v2-4' ? '/dorion-driving-case4-framed-v2.mp4' : project.id === 'v2-3' ? '/buyukrainian-mobile-case4.mp4' : '/assets/guertin-mobile-preview.mp4'}
+                          className="case-recording-video" style={project.id === 'v2-4' ? { objectFit: 'contain', backgroundColor: '#000000' } : undefined}
                         />
                       </div>
                     ) : (
@@ -616,13 +616,13 @@ export default function ProjectsV2({ initialProjects = [] }: ProjectsV2Props) {
                           muted
                           playsInline
                           onTimeUpdate={(e) => {
-                            if (e.currentTarget.currentTime >= (project.id === 'v2-3' ? 9999 : 3)) {
+                            if (e.currentTarget.currentTime >= (project.id === 'v2-3' || project.id === 'v2-4' ? 9999 : 3)) {
                               e.currentTarget.currentTime = 0;
                               e.currentTarget.play().catch(() => {});
                             }
                           }}
                           src="/assets/terry-fox-preview.mp4"
-                          className="case-recording-video"
+                          className="case-recording-video" style={project.id === 'v2-4' ? { objectFit: 'contain', backgroundColor: '#000000' } : undefined}
                         />
                       </div>
                     )}
