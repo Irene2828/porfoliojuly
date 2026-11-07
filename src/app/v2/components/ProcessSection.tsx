@@ -10,9 +10,9 @@ export default function ProcessSection() {
     >
       <style>{`
         .testimonial-single {
-        background-color: #e9ebee !important;          
+  background-color: #ffffff !important;
           color: #000000 !important;
-          border: none !important;
+  border: 1px dashed #000000 !important;
           border-radius: 0 !important;
           box-shadow: none !important;
         }
@@ -101,8 +101,8 @@ export default function ProcessSection() {
             transition={{ duration: 0.7, delay: 0.1, ease: 'easeOut' }}
             style={{
               width: '100%',
-              backgroundColor: '#e9ebee',
-              border: 'none',
+              backgroundColor: '#ffffff',
+              border: '1px dashed #000000',
               borderRadius: 0,
               boxShadow: 'none',
               padding: '4.5rem 4rem',
