@@ -239,7 +239,7 @@ export default function FaqSection() {
         <p style={{ fontFamily: "var(--font-body), 'Plus Jakarta Sans', sans-serif", fontSize: 'clamp(1.05rem, 2.4vw, 1.2rem)', fontWeight: 300, letterSpacing: '-0.011em', lineHeight: 1.65, color: 'rgba(0, 0, 0, 0.78)', margin: 0 }}>Let&apos;s use the same problem and let me design and build it end-to-end. Diving into your unique business, ideal client, strategic goals, then choosing the <u>right</u> AI and other tech tools to build it. With care, judgement, taste and skills used.</p>
       </div>
       <div className="faq-case-media">
-        <img className="faq-case-image" src="/bridal-full-site-long.png" alt="Full custom bridal atelier website designed and built by Iryna Sheremeta" style={{ display: 'block', width: '100%', height: 'auto', borderRadius: 0, boxShadow: 'none' }} />
+        <video className="faq-case-video" src="/bridal-desktop-scroll.mp4" autoPlay muted loop playsInline style={{ display: 'block', width: '100%', height: 'auto', borderRadius: 0, boxShadow: 'none' }} />
       </div>
       
       <motion.h2 className="faq-headline" initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true, amount: 0.45 }} transition={{ duration: 0.78, delay: 0.08, ease: [0.16, 1, 0.3, 1] }} style={{ fontFamily: 'var(--font-heading)', fontSize: 'clamp(28px, 4.4vw, 42px)', lineHeight: 1.2, color: '#000000', letterSpacing: '-0.02em', margin: '10.5rem 0 2.5rem 0', textAlign: 'center' }}>Still have questions? <br /> Let me answer them:</motion.h2>
