@@ -591,7 +591,7 @@ export default function ProjectsV2({ initialProjects = [] }: ProjectsV2Props) {
                     onClick={() => setSelectedProjectId(project.id)}
                     style={{ cursor: 'pointer' }}
                   >
-                    {project.id === 'v2-2' ? (
+                    {project.id === 'v2-2' || project.id === 'v2-3' ? (
                       <div className="case-phone-frame">
                         <video
                           autoPlay
