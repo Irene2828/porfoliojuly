@@ -28,7 +28,7 @@ export default function HeroV2() {
           .hero-name-group .hero-text h1.hero-statement {
             zoom: 1 !important;
             font-size: clamp(50px, 4.5vw, 64px) !important;
-            line-height: 1.15 !important;
+            line-height: 0.805 !important;
             letter-spacing: -0.018em !important;
           }
           .headline-desktop {
@@ -38,7 +38,7 @@ export default function HeroV2() {
           }
           .headline-desktop .headline-line {
             display: block !important;
-            line-height: 1.15 !important;
+            line-height: 0.805 !important;
             white-space: nowrap !important;
           }
         }
@@ -903,8 +903,8 @@ export default function HeroV2() {
                 </h1>
                 <p className="hero-frame-paragraph hero-paragraph-anim" style={{ marginTop: '1.7rem', fontSize: '1.395rem', lineHeight: '1.75', color: '#d9d9d9', WebkitTextFillColor: '#d9d9d9', fontWeight: 300, opacity: 1, textWrap: 'pretty' }}>
                   <span className="hero-body-desktop">
-                    <span className="hero-body-row hero-body-light" style={{ fontWeight: 300 }}>Got a dated site that undersells you, a task that eats your week, a process held together</span>
-                    <span className="hero-body-row hero-body-light" style={{ fontWeight: 300 }}>by spreadsheets? <span className="hero-body-normal" style={{ fontWeight: 500, fontStyle: 'normal' }}>I build what fixes it, so you don&rsquo;t have to.</span></span>
+                    <span className="hero-body-row hero-body-light" style={{ fontWeight: 300 }}>Got a dated site that undersells you, a task that eats your week, a process held together by spreadsheets?</span>
+                    <span className="hero-body-row hero-body-light" style={{ fontWeight: 300 }}><span className="hero-body-normal" style={{ fontWeight: 500, fontStyle: 'normal' }}>I build what fixes it, so you don&rsquo;t have to.</span></span>
                   </span>
                   <span className="hero-body-mobile">
                     <span className="hero-body-mobile-text hero-body-light">Got a dated site that undersells you, a task that eats your week, a process held together by spreadsheets?</span>{' '}
