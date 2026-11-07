@@ -210,7 +210,7 @@ export default function ServicesV2() {
             textWrap: 'balance'
           }}
         >
-          <span style={{ fontWeight: 400, color: 'var(--color-heading-silver, #4a5461)' }}>How I can help</span>
+          <span style={{ fontWeight: 400, color: 'var(--color-heading-silver, #4a5461)' }}>How I Can Help Your Business</span>
         </motion.h2>
 
         {/* 3. Italic subline follows */}
