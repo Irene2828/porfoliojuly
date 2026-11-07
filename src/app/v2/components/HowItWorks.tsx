@@ -10,17 +10,7 @@ export default function HowItWorks() {
       bullets: [
         { bold: 'A short call or an email.', rest: ' No prep, no tech talk.' }
       ],
-      icon: (
-        /* Refined precision focus / crosshair beacon illustrating diagnosing the problem */
-        <svg width="19" height="19" viewBox="0 0 24 24" fill="none" stroke="rgba(255, 255, 255, 0.8)" strokeWidth="1.35" strokeLinecap="round" strokeLinejoin="round">
-          <circle cx="12" cy="12" r="8"></circle>
-          <line x1="12" y1="2" x2="12" y2="5"></line>
-          <line x1="12" y1="19" x2="12" y2="22"></line>
-          <line x1="2" y1="12" x2="5" y2="12"></line>
-          <line x1="19" y1="12" x2="22" y2="12"></line>
-          <circle cx="12" cy="12" r="2.2" fill="rgba(255, 255, 255, 0.8)" stroke="none"></circle>
-        </svg>
-      )
+      
     },
     {
       num: '02',
@@ -28,16 +18,7 @@ export default function HowItWorks() {
       bullets: [
         { bold: 'Something clickable in days,', rest: ' so you react to a real thing.' }
       ],
-      icon: (
-        /* Architectural prototype viewport with interactive cursor */
-        <svg width="19" height="19" viewBox="0 0 24 24" fill="none" stroke="rgba(255, 255, 255, 0.8)" strokeWidth="1.35" strokeLinecap="round" strokeLinejoin="round">
-          <rect x="3" y="3.5" width="18" height="14" rx="1.5"></rect>
-          <line x1="3" y1="7.5" x2="21" y2="7.5"></line>
-          <circle cx="5.5" cy="5.5" r="0.75" fill="rgba(255, 255, 255, 0.8)" stroke="none"></circle>
-          <circle cx="8" cy="5.5" r="0.75" fill="rgba(255, 255, 255, 0.8)" stroke="none"></circle>
-          <path d="M12.5 11l4.5 4.5m0-3v3h-3"></path>
-        </svg>
-      )
+      
     },
     {
       num: '03',
@@ -45,14 +26,7 @@ export default function HowItWorks() {
       bullets: [
         { bold: 'I ship it, hand it over,', rest: ' and set up hosting and support.' }
       ],
-      icon: (
-        /* Minimalist editorial release arrow with compass precision ring */
-        <svg width="19" height="19" viewBox="0 0 24 24" fill="none" stroke="rgba(255, 255, 255, 0.8)" strokeWidth="1.35" strokeLinecap="round" strokeLinejoin="round">
-          <circle cx="12" cy="12" r="8.5" strokeDasharray="2 3"></circle>
-          <line x1="8" y1="16" x2="16" y2="8"></line>
-          <polyline points="10 8 16 8 16 14"></polyline>
-        </svg>
-      )
+      
     }
   ];
 
@@ -228,22 +202,7 @@ export default function HowItWorks() {
               }}
               className="how-step-card"
             >
-              <span
-                style={{
-                  display: 'flex',
-                  alignItems: 'center',
-                  justifyContent: 'center',
-                  width: '2.8rem',
-                  height: '2.8rem',
-                  borderRadius: '50%',
-                  backgroundColor: 'rgba(242, 144, 143, 0.25)',
-                  border: '1px solid rgba(242, 144, 143, 0.55)',
-                  color: 'rgba(255, 255, 255, 0.85)',
-                  flexShrink: 0
-                }}
-              >
-                {step.icon}
-              </span>
+
               <span
                 className="how-num"
                 style={{
