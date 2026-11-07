@@ -88,9 +88,7 @@ export default function ProjectsV2({ initialProjects = [] }: ProjectsV2Props) {
           sub: "The site now presents her at the level she works at. A client in trouble can understand what she does, see proof that it works, and reach her in one step — and a municipality sees a specialist, not a generalist. Live at rguertin.ca." 
         }
       ],
-      image: '/assets/guertin-desktop.png'
-    }
-  ];
+      image: '/assets/guertin-desktop.png',     },     { id: 'v2-3', title: 'BuyUkrainian', slug: 'buyukrainian', subline: 'Case 04 · BuyUkrainian', hoverLabel: 'Tap to Zoom', annotations: [ { markerNumber: 1, title: 'Buy Ukrainian in Canada', text: 'BuyUkrainian.ca makes it easier to find products from Ukraine in Canadian stores.' }, { markerNumber: 2, title: 'A map and a directory', text: 'Products listed, stores on the map — and a way to add a store that is missing.' }, { markerNumber: 3, title: '105 products listed', text: 'The recording shows the directory as it stood when it was filmed.' }, ], statsTitle: 'At a glance', stats: [ { chip: '01', text: 'Find Ukrainian products in Canada.', sub: 'A grassroots directory and map, made to support Ukraine’s economy.' }, { chip: '02', text: 'A video walkthrough.', sub: 'The case is shown as a mobile recording of the site in use.' }, ], image: '/buyukrainian-mobile-case4.mp4', },   ];
 
   const [projectsList, setProjectsList] = useState(initialProjectsData);  const selectedProject = projectsList.find((p) => p.id === selectedProjectId) ?? null;
 
@@ -188,7 +186,7 @@ export default function ProjectsV2({ initialProjects = [] }: ProjectsV2Props) {
                           }
                         ]}
                       />
-                    ) : isModal ? (
+                    ) : isModal && project.id === 'v2-2' ? (
                       <PosterGallery 
                         images={[
                           {
@@ -206,7 +204,7 @@ export default function ProjectsV2({ initialProjects = [] }: ProjectsV2Props) {
                     ) : (
                       <div className="guertin-preview-mockup-wrapper">
                         {/* Desktop Browser Window */}
-                        <div className="guertin-preview-browser">
+                        <div className="guertin-preview-browser" style={project.id === 'v2-3' ? { display: 'none' } : undefined}>
                           <div className="guertin-browser-header">
                             <div className="guertin-browser-dots">
                               <div className="guertin-browser-dot" />
@@ -222,16 +220,16 @@ export default function ProjectsV2({ initialProjects = [] }: ProjectsV2Props) {
                         </div>
 
                         {/* Overlapping Phone Mockup */}
-                        <div className="guertin-preview-phone">
+                        <div className="guertin-preview-phone" style={project.id === 'v2-3' ? { position: 'static', width: '100%', maxWidth: '324px', margin: '0 auto 0 0' } : undefined}>
                           <div className="guertin-phone-inner">
                             <video 
-                              src="/assets/guertin-mobile-preview.mp4"
+                              src={project.id === 'v2-3' ? '/buyukrainian-mobile-case4.mp4' : '/assets/guertin-mobile-preview.mp4'}
                               autoPlay
                               loop
                               muted
                               playsInline
                               onTimeUpdate={(e) => {
-                                if (e.currentTarget.currentTime >= 3) {
+                                if (e.currentTarget.currentTime >= (project.id === 'v2-3' ? 9999 : 3)) {
                                   e.currentTarget.currentTime = 0;
                                   e.currentTarget.play().catch(() => {});
                                 }
@@ -335,7 +333,7 @@ export default function ProjectsV2({ initialProjects = [] }: ProjectsV2Props) {
             padding: 0 1.5rem !important;
           }
         }
-        .cases-grid-item {
+        @media (min-width: 901px) { .cases-grid-container { display: grid !important; grid-template-columns: auto auto !important; } } .cases-grid-item {
           width: fit-content !important;
           flex: 0 0 auto !important;
           min-width: 0 !important;
@@ -344,7 +342,7 @@ export default function ProjectsV2({ initialProjects = [] }: ProjectsV2Props) {
           box-sizing: border-box !important;
         }
         @media (max-width: 900px) {
-          .cases-grid-item {
+                 @media (min-width: 901px) { .cases-grid-container { display: grid !important; grid-template-columns: auto auto !important; } } .cases-grid-item {
             width: 100% !important;
           }
         }
@@ -455,7 +453,7 @@ export default function ProjectsV2({ initialProjects = [] }: ProjectsV2Props) {
         }
 
         @media (max-width: 900px) {
-          .cases-grid-item {
+          @media (min-width: 901px) { .cases-grid-container { display: grid !important; grid-template-columns: auto auto !important; } } .cases-grid-item {
             overflow: visible !important;
           }
           .preview-card-wrapper.recording-card-wrapper {
@@ -601,12 +599,12 @@ export default function ProjectsV2({ initialProjects = [] }: ProjectsV2Props) {
                           muted
                           playsInline
                           onTimeUpdate={(e) => {
-                            if (e.currentTarget.currentTime >= 3) {
+                            if (e.currentTarget.currentTime >= (project.id === 'v2-3' ? 9999 : 3)) {
                               e.currentTarget.currentTime = 0;
                               e.currentTarget.play().catch(() => {});
                             }
                           }}
-                          src="/assets/guertin-mobile-preview.mp4"
+                          src={project.id === 'v2-3' ? '/buyukrainian-mobile-case4.mp4' : '/assets/guertin-mobile-preview.mp4'}
                           className="case-recording-video"
                         />
                       </div>
@@ -618,7 +616,7 @@ export default function ProjectsV2({ initialProjects = [] }: ProjectsV2Props) {
                           muted
                           playsInline
                           onTimeUpdate={(e) => {
-                            if (e.currentTarget.currentTime >= 3) {
+                            if (e.currentTarget.currentTime >= (project.id === 'v2-3' ? 9999 : 3)) {
                               e.currentTarget.currentTime = 0;
                               e.currentTarget.play().catch(() => {});
                             }
