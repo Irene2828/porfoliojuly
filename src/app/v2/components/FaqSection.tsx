@@ -5,11 +5,11 @@ import { AnimatePresence, motion } from 'framer-motion';
 
 const faqs = [
   {
-    question: "Can't I just generate a website with AI for free?",
+    question: 'How fast is this, and what happens after launch?',
     answers: [
-      "You can — and if your site doesn't need to bring clients, that might be enough.",
-      "AI generates. It doesn't direct. Without direction you get a generic site.",
-      'I use AI every day. The difference is direction: what to ask for, what to keep, what to throw out.',
+      'First clickable version in days — you react to a real thing.',
+      'We fix it together. I ship it, hand it over, set up hosting and support.',
+      "After launch I'm still there: edits, updates, new features — monthly care plan, or per request.",
     ],
   },
   {
@@ -41,7 +41,7 @@ export default function FaqSection() {
       className="faq-section"
       style={{
         backgroundColor: '#ffffff',
-        padding: '5.1rem 0',
+        padding: '5.1rem 0 0 0',
         width: '100%',
         position: 'relative',
         overflow: 'hidden',
@@ -142,12 +142,12 @@ export default function FaqSection() {
           font-family: 'Newsreader', Georgia, serif !important;
           font-weight: 400 !important;
           letter-spacing: -0.015em !important;
-          color: #000000 !important;
-          -webkit-text-fill-color: #000000 !important;
+          color: #ffffff !important;
+          -webkit-text-fill-color: #ffffff !important;
         }
         .faq-case-media {
           display: grid !important;
-          grid-template-columns: 1fr 1fr !important;
+          grid-template-columns: 1fr !important;
           gap: 1.5rem !important;
           align-items: start !important;
           margin: 0 0 3.5rem 0 !important;
@@ -239,15 +239,13 @@ export default function FaqSection() {
       </div>
       <div className="faq-case-media">
         <img className="faq-case-image" src="/bridal-full-site-long.png" alt="Full custom bridal atelier website designed and built by Iryna Sheremeta" style={{ display: 'block', width: '100%', height: 'auto', borderRadius: 0, boxShadow: 'none' }} />
-        <video className="faq-case-video" src="/bridal-mobile-tour.mp4" autoPlay muted loop playsInline style={{ display: 'block', width: '100%', height: 'auto', borderRadius: 0, boxShadow: 'none' }} />
       </div>
       {/* Case 04 — BuyUkrainian */}
       <div style={{ margin: '0 0 3.5rem 0', maxWidth: '324px' }}>
         <p className="faq-kicker" style={{ margin: '0 0 1rem 0' }}>Case 04 · BuyUkrainian</p>
         <video className="faq-case-video" src="/buyukrainian-mobile-case4.mp4" autoPlay muted loop playsInline style={{ display: 'block', width: '100%', height: 'auto', borderRadius: 0, boxShadow: 'none' }} />
       </div>
-      <motion.h2 className="faq-headline" initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true, amount: 0.45 }} transition={{ duration: 0.78, delay: 0.08, ease: [0.16, 1, 0.3, 1] }} style={{ fontFamily: "'Newsreader', Georgia, serif", fontSize: 'clamp(1.6rem, 3.6vw, 2.1rem)', lineHeight: 1.2, color: '#000000', letterSpacing: '-0.02em', margin: '0 0 1rem 0' }}>Still have questions? Let me answer them:</motion.h2>
-      <motion.p className="faq-subline" initial={{ opacity: 0, y: 14 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true, amount: 0.45 }} transition={{ duration: 0.68, delay: 0.16, ease: [0.16, 1, 0.3, 1] }} style={{ fontSize: 'clamp(1.05rem, 2.4vw, 1.2rem)', lineHeight: 1.55, margin: '0 0 2.5rem 0', maxWidth: '52ch' }}>The questions every business owner asks me before we start — answered straight.</motion.p>
+      <motion.h2 className="faq-headline" initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true, amount: 0.45 }} transition={{ duration: 0.78, delay: 0.08, ease: [0.16, 1, 0.3, 1] }} style={{ fontFamily: "'Newsreader', Georgia, serif", fontSize: 'clamp(1.6rem, 3.6vw, 2.1rem)', lineHeight: 1.2, color: '#000000', letterSpacing: '-0.02em', margin: '0 0 2.5rem 0', textAlign: 'center' }}>Still have questions? Let me answer them:</motion.h2>
       <div>
         {faqs.map((faq, index) => {
             const isOpen = openIndex === index;
@@ -308,14 +306,18 @@ export default function FaqSection() {
             );
           })}
         </div>
-        <motion.div initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true, amount: 0.45 }} transition={{ duration: 0.72, delay: 0.08, ease: [0.16, 1, 0.3, 1] }} style={{ margin: '3.5rem 0 0 0', textAlign: 'left' }}>
-        <p style={{ fontFamily: "'Newsreader', Georgia, serif", fontSize: 'clamp(1.35rem, 3vw, 1.6rem)', lineHeight: 1.4, color: '#000000', margin: '0 0 1.25rem 0' }}>You need to stand out in the crowded market. Your site should work as hard as you do. Or you need a custom tool for your business to get more automated, simplified or amplified,</p>
-        <p style={{ fontFamily: "'Newsreader', Georgia, serif", fontSize: 'clamp(1.35rem, 3vw, 1.6rem)', lineHeight: 1.4, color: '#000000', margin: '0 0 1.25rem 0' }}>I&apos;m here. One button away.</p>
-        <p style={{ fontFamily: "var(--font-body), 'Plus Jakarta Sans', sans-serif", fontSize: '0.95rem', fontWeight: 300, letterSpacing: '-0.011em', lineHeight: 1.6, color: 'rgba(0, 0, 0, 0.72)', margin: '0' }}>Your creative technologist</p>
-        <p style={{ fontFamily: "var(--font-body), 'Plus Jakarta Sans', sans-serif", fontSize: '0.95rem', fontWeight: 300, letterSpacing: '-0.011em', lineHeight: 1.6, color: 'rgba(0, 0, 0, 0.72)', margin: '0' }}>AI product and website builder</p>
-        <p style={{ fontFamily: "'Newsreader', Georgia, serif", fontSize: '1.25rem', lineHeight: 1.4, color: '#000000', margin: '0.75rem 0 1.5rem 0' }}>Iryna</p>
-        <a href="#contact" style={{ display: 'inline-flex', alignItems: 'center', justifyContent: 'center', gap: '0.55rem', height: '3.01rem', padding: '0 1.74rem', fontFamily: "var(--font-body), 'Plus Jakarta Sans', sans-serif", fontSize: '0.72rem', fontWeight: 700, letterSpacing: '0.08em', textTransform: 'uppercase', textDecoration: 'none', color: '#000000', background: 'linear-gradient(315deg, #d6b792 0%, #f2908f 100%)', border: '1px solid #e2a792', borderRadius: '40px', boxShadow: 'none', cursor: 'pointer' }}>SEND YOUR PROBLEM MY WAY <span aria-hidden="true">↗</span></a>
-      </motion.div>
+      </div>
+      <div style={{ backgroundColor: '#121316', background: '#121316', width: '100%', padding: '3.5rem 0 4rem 0', margin: '3.5rem 0 0 0' }}>
+        <div style={{ maxWidth: '720px', width: '100%', margin: '0 auto', padding: '0 1.5rem', textAlign: 'left' }}>
+          <motion.div initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true, amount: 0.45 }} transition={{ duration: 0.72, delay: 0.08, ease: [0.16, 1, 0.3, 1] }} style={{ margin: 0, textAlign: 'left' }}>
+            <p style={{ fontFamily: "'Newsreader', Georgia, serif", fontSize: 'clamp(1.35rem, 3vw, 1.6rem)', lineHeight: 1.4, color: '#ffffff', margin: '0 0 1.25rem 0' }}>You need to stand out in the crowded market. Your site should work as hard as you do. Or you need a custom tool for your business to get more automated, simplified or amplified,</p>
+            <p style={{ fontFamily: "'Newsreader', Georgia, serif", fontSize: 'clamp(1.35rem, 3vw, 1.6rem)', lineHeight: 1.4, color: '#ffffff', margin: '0 0 1.25rem 0' }}>I&apos;m here. One button away.</p>
+            <p style={{ fontFamily: "var(--font-body), 'Plus Jakarta Sans', sans-serif", fontSize: '0.95rem', fontWeight: 300, letterSpacing: '-0.011em', lineHeight: 1.6, color: 'rgba(255, 255, 255, 0.72)', margin: '0' }}>Your creative technologist</p>
+            <p style={{ fontFamily: "var(--font-body), 'Plus Jakarta Sans', sans-serif", fontSize: '0.95rem', fontWeight: 300, letterSpacing: '-0.011em', lineHeight: 1.6, color: 'rgba(255, 255, 255, 0.72)', margin: '0' }}>AI product and website builder</p>
+            <p style={{ fontFamily: "'Newsreader', Georgia, serif", fontSize: '1.25rem', lineHeight: 1.4, color: '#f2908f', margin: '0.75rem 0 1.5rem 0' }}>Iryna</p>
+            <a href="#contact" style={{ display: 'inline-flex', alignItems: 'center', justifyContent: 'center', gap: '0.55rem', height: '3.01rem', padding: '0 1.74rem', fontFamily: "var(--font-body), 'Plus Jakarta Sans', sans-serif", fontSize: '0.72rem', fontWeight: 700, letterSpacing: '0.08em', textTransform: 'uppercase', textDecoration: 'none', color: '#000000', background: 'linear-gradient(315deg, #d6b792 0%, #f2908f 100%)', border: '1px solid #e2a792', borderRadius: '40px', boxShadow: 'none', cursor: 'pointer' }}>SEND YOUR PROBLEM MY WAY <span aria-hidden="true">↗</span></a>
+          </motion.div>
+        </div>
       </div>
     </section>
   );
