@@ -22,7 +22,7 @@
 .about-hero-intro {
   position: relative;
   width: 100%;
-  max-width: 460px;
+  max-width: 621px;
   margin: 0 auto 2.75rem auto;
   text-align: center;
   z-index: 2;
@@ -44,7 +44,7 @@
   line-height: 1.7;
   color: rgba(201, 206, 214, 0.7) !important;
   -webkit-text-fill-color: rgba(201, 206, 214, 0.7) !important;
-  max-width: 460px;
+  max-width: 621px;
   margin: 0 auto;
   text-align: left;
 }
@@ -264,12 +264,12 @@
 
   .about-hero-intro {
     position: relative;
-    max-width: 608px; /* +10% wider line width on desktop */
+    max-width: 821px; /* +35% wider line width on desktop */
     margin: 0 auto 1.75rem auto;
     flex-shrink: 0;
   }
 
-  .about-hero-desc,
+  .about-hero-desc { max-width: 821px; }
   .about-hero-cta-note {
     max-width: 608px;
   }
@@ -332,7 +332,7 @@
 @media (min-width: 768px) and (max-width: 991px) {
   .about-hero-intro {
     position: relative;
-    max-width: 410px;
+    max-width: 554px;
     margin: 0 auto 2rem auto;
   }
 
@@ -546,7 +546,7 @@
   justify-content: center !important;
   gap: 0.45rem !important;
   background: linear-gradient(315deg, #d6b792 0%, #f2908f 100%) !important;
-  border: 1px solid #e2a792 !important;
+  border: 1px solid #ffffff !important;
   color: #000000 !important;
   -webkit-text-fill-color: #000000 !important;
   font-family: var(--font-label), sans-serif !important;
@@ -569,7 +569,7 @@
 .about-cta-section .prefooter-btn-primary.face-cta:hover,
 .about-cta-section .prefooter-btn-primary:hover {
   background: linear-gradient(315deg, #ddc19e 0%, #f49c9b 100%) !important;
-  border-color: #e2a792 !important;
+  border-color: #ffffff !important;
   transform: translateY(-2px) !important;
   box-shadow: 0 8px 24px rgba(242, 144, 143, 0.28) !important;
 }
@@ -610,7 +610,7 @@
     margin: 0 auto !important;
     border-radius: 44px !important;
     background: linear-gradient(315deg, #d6b792 0%, #f2908f 100%) !important;
-    border: 1px solid #e2a792 !important;
+    border: 1px solid #ffffff !important;
     box-sizing: border-box !important;
     gap: 0.49rem !important;
   }
