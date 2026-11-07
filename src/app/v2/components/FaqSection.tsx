@@ -178,7 +178,7 @@ export default function FaqSection() {
         }
         @media (max-width: 900px) {
           .faq-headline { text-align: center;
-            font-size: clamp(1.9rem, 8vw, 2.4rem) !important;
+            font-size: clamp(1.9rem, 8vw, 2.4rem) !important; margin-left: 0 !important; margin-right: 0 !important;
           }
           .faq-question {
             font-size: 1.45rem !important;
@@ -212,7 +212,7 @@ export default function FaqSection() {
             lineHeight: 1.15,
             color: '#000000',
             letterSpacing: '-0.02em',
-            margin: '0 0 1.25rem 0',
+            margin: '0 -90px 1.25rem -90px',
           }}
         >
           AI exists. Why would you still need someone for design & build projects ?
@@ -226,7 +226,8 @@ export default function FaqSection() {
           style={{
             fontSize: 'clamp(1.05rem, 2.4vw, 1.2rem)',
             lineHeight: 1.55,
-            margin: '0 0 3.5rem 0',
+            margin: '0 auto 3.5rem auto',
+            textAlign: 'center',
             maxWidth: '52ch',
           }}
         >
@@ -234,14 +235,14 @@ export default function FaqSection() {
         </motion.p>
         <video className="faq-case-video" src="/bridal-ai-video.mp4" autoPlay muted loop playsInline style={{ display: 'block', width: '100%', height: 'auto', borderRadius: 0, boxShadow: 'none', margin: '0 0 2rem 0' }} />
       <div style={{ margin: '0 0 2.5rem 0' }}>
-        <p style={{ fontFamily: "var(--font-body), 'Plus Jakarta Sans', sans-serif", fontSize: 'clamp(1.05rem, 2.4vw, 1.2rem)', fontWeight: 300, letterSpacing: '-0.011em', lineHeight: 1.65, color: 'rgba(0, 0, 0, 0.78)', margin: '0 0 1rem 0' }}>If you see a problem there, I see it too.</p>
+        <p style={{ fontFamily: "var(--font-body), 'Plus Jakarta Sans', sans-serif", fontSize: 'clamp(1.05rem, 2.4vw, 1.2rem)', fontWeight: 700, letterSpacing: '-0.011em', lineHeight: 1.65, color: 'rgba(0, 0, 0, 0.78)', textAlign: 'center', margin: '0 0 1rem 0' }}>If you see a problem there, I see it too.</p>
         <p style={{ fontFamily: "var(--font-body), 'Plus Jakarta Sans', sans-serif", fontSize: 'clamp(1.05rem, 2.4vw, 1.2rem)', fontWeight: 300, letterSpacing: '-0.011em', lineHeight: 1.65, color: 'rgba(0, 0, 0, 0.78)', margin: 0 }}>Let&apos;s use the same problem and let me design and build it end-to-end. Diving into your unique business, ideal client, strategic goals, then choosing the <u>right</u> AI and other tech tools to build it. With care, judgement, taste and skills used.</p>
       </div>
       <div className="faq-case-media">
         <img className="faq-case-image" src="/bridal-full-site-long.png" alt="Full custom bridal atelier website designed and built by Iryna Sheremeta" style={{ display: 'block', width: '100%', height: 'auto', borderRadius: 0, boxShadow: 'none' }} />
       </div>
       
-      <motion.h2 className="faq-headline" initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true, amount: 0.45 }} transition={{ duration: 0.78, delay: 0.08, ease: [0.16, 1, 0.3, 1] }} style={{ fontFamily: "'Newsreader', Georgia, serif", fontSize: 'clamp(1.6rem, 3.6vw, 2.1rem)', lineHeight: 1.2, color: '#000000', letterSpacing: '-0.02em', margin: '10.5rem 0 2.5rem 0', textAlign: 'center' }}>Still have questions? Let me answer them:</motion.h2>
+      <motion.h2 className="faq-headline" initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true, amount: 0.45 }} transition={{ duration: 0.78, delay: 0.08, ease: [0.16, 1, 0.3, 1] }} style={{ fontFamily: "'Newsreader', Georgia, serif", fontSize: 'clamp(1.6rem, 3.6vw, 2.1rem)', lineHeight: 1.2, color: '#000000', letterSpacing: '-0.02em', margin: '10.5rem 0 2.5rem 0', textAlign: 'center' }}>Still have questions? <br /> Let me answer them:</motion.h2>
       <div>
         {faqs.map((faq, index) => {
             const isOpen = openIndex === index;
@@ -306,7 +307,7 @@ export default function FaqSection() {
       <div style={{ backgroundColor: '#121316', background: '#121316', width: '100%', padding: '3.5rem 0 4rem 0', margin: '10.5rem 0 0 0' }}>
         <div style={{ maxWidth: '720px', width: '100%', margin: '0 auto', padding: '0 1.5rem', textAlign: 'left' }}>
           <motion.div initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true, amount: 0.45 }} transition={{ duration: 0.72, delay: 0.08, ease: [0.16, 1, 0.3, 1] }} style={{ margin: 0, textAlign: 'center' }}>
-            <p style={{ fontFamily: "'Newsreader', Georgia, serif", fontSize: 'clamp(1.35rem, 3vw, 1.6rem)', lineHeight: 1.4, color: '#ffffff', margin: '0 0 1.25rem 0' }}>You need to stand out in the crowded market. Your site should work as hard as you do. Or you need a custom tool for your business to get more automated, simplified or amplified,</p>
+            <p style={{ fontFamily: "'Newsreader', Georgia, serif", fontSize: 'clamp(1.35rem, 3vw, 1.6rem)', lineHeight: 1.4, color: '#ffffff', margin: '0 0 2.5rem 0' }}>You need to stand out in the crowded market. Your site should work as hard as you do. Or you need a custom tool for your business to get more automated, simplified or amplified,</p>
             <p style={{ fontFamily: "'Newsreader', Georgia, serif", fontSize: 'clamp(1.35rem, 3vw, 1.6rem)', lineHeight: 1.4, color: '#ffffff', margin: '0 0 1.25rem 0' }}>I&apos;m here. One button away.</p>
             
             
