@@ -2205,7 +2205,7 @@
   /* 2. Cases -> Process (How It Works) */
   #how-it-works {
     padding-top: 2.55rem !important;
-    padding-bottom: 0 !important;
+    /* bottom padding: from the section */
   }
   .how-it-works-heading,
   #how-it-works > .container:first-of-type {
@@ -2343,7 +2343,7 @@
   #how-it-works {
     margin-top: 0 !important;
     padding-top: 2.55rem !important;
-    padding-bottom: 0 !important;
+    /* bottom padding: from the section */
     margin-bottom: 0 !important;
   }
 
