@@ -435,7 +435,7 @@ export default function HeroV2() {
             stroke: #000000 !important;
           }
         }
-        /* Desktop size matching: .hero-container has transform: scale(0.88) at min-width: 1200px.
+        /* CTA row alignment: at min-width 1200px the primary button is counter-scaled (1.13636) about its right edge, so its visual left edge sits about 40px left of the row and the headline. Shift the row right by the same amount so the button's left edge lines up with the headline. */ @media (min-width: 1200px) { .v2-theme .hero-ctas-outside, .hero-ctas-outside { margin-left: 45px !important; } } /* Desktop size matching: .hero-container has transform: scale(0.88) at min-width: 1200px.
            Counter-scale by 1 / 0.88 = 1.13636 so the rendered button dimensions match prefooter CTA exactly. */
         @media (min-width: 1200px) {
           .v2-theme .hero-ctas-outside .prefooter-btn-primary,
