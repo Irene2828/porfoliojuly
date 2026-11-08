@@ -213,7 +213,7 @@ export default function ServicesV2() {
           <span style={{ fontWeight: 400, color: 'var(--color-heading-silver, #4a5461)' }}>How I Can Help Your Business</span>
         </motion.h2>
 
-        {/* 3. Italic subline follows */}
+        {/* 3. Subline follows */}
         <motion.p
           initial={{ opacity: 0, y: 14 }}
           whileInView={{ opacity: 0.9, y: 0 }}
@@ -221,15 +221,15 @@ export default function ServicesV2() {
           transition={{ duration: 0.7, delay: 0.18, ease: [0.16, 1, 0.3, 1] }}
           style={{
             fontFamily: "var(--font-body)",
-            fontSize: '17px',
-            fontWeight: 400,
-            lineHeight: 1.6,
+            fontSize: 'clamp(1.05rem, 2.4vw, 1.2rem)',
+            fontWeight: 300,
+            lineHeight: 1.55,
             color: 'var(--color-body-dark, #2b3038)',
             maxWidth: '640px',
             margin: '0 auto',
             textAlign: 'center',
             letterSpacing: '-0.01em',
-            fontStyle: 'italic'
+            fontStyle: 'normal'
           }}
         >
           A website, a tool, or both.
@@ -353,7 +353,7 @@ export default function ServicesV2() {
                   transition={{ duration: 0.65, delay: 0.1, ease: [0.16, 1, 0.3, 1] }}
                   style={{
                     fontFamily: "var(--font-heading)",
-                    fontSize: 'clamp(1.48rem, 2.4vw, 1.95rem)',
+                    fontSize: 'clamp(1.55rem, 2.52vw, 2.05rem)',
                     fontWeight: 400,
                     color: '#FFFFFF',
                     margin: '0 0 0.5rem 0',
@@ -389,7 +389,7 @@ export default function ServicesV2() {
                       viewport={{ once: true, amount: 0.25 }}
                       transition={{ duration: 0.65, delay: 0.24 + idx * 0.11, ease: [0.16, 1, 0.3, 1] }}
                       style={{ 
-                        fontSize: '1.02rem', 
+                        fontSize: '1.071rem',
                         color: '#e8ebee', 
                         display: 'flex', 
                         alignItems: 'center', 
@@ -486,7 +486,7 @@ export default function ServicesV2() {
                   transition={{ duration: 0.65, delay: 0.22, ease: [0.16, 1, 0.3, 1] }}
                   style={{
                     fontFamily: "var(--font-heading)",
-                    fontSize: 'clamp(1.48rem, 2.4vw, 1.95rem)',
+                    fontSize: 'clamp(1.55rem, 2.52vw, 2.05rem)',
                     fontWeight: 400,
                     color: 'var(--color-headline-matte, #31343c)',
                     margin: '0 0 0.5rem 0',
@@ -522,7 +522,7 @@ export default function ServicesV2() {
                       viewport={{ once: true, amount: 0.25 }}
                       transition={{ duration: 0.65, delay: 0.36 + idx * 0.11, ease: [0.16, 1, 0.3, 1] }}
                       style={{ 
-                        fontSize: '1.02rem', 
+                        fontSize: '1.071rem',
                         color: '#1A1F2B', 
                         display: 'flex', 
                         alignItems: 'center', 

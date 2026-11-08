@@ -41,7 +41,24 @@ export default function HeroV2() {
     line-height: 0.886 !important;
     white-space: nowrap !important;
   }
-  .hero-frame-paragraph { font-size: 1.2555rem !important; }
+  .hero-frame-paragraph {
+    font-size: 1.2555rem !important;
+    letter-spacing: 0.012em !important;
+  }
+  .hero-frame-paragraph .hero-body-light,
+  .hero-frame-paragraph .hero-body-normal {
+    letter-spacing: 0.012em !important;
+  }
+        }
+        @media (min-width: 901px) and (max-width: 1200px) {
+          .v2-theme .hero-statement,
+          .hero-statement,
+          .hero-name-group .hero-text h1.hero-statement {
+            font-size: clamp(46px, 4.14vw, 58.9px) !important;
+          }
+          .hero-frame-paragraph {
+            font-size: 1.067rem !important;
+          }
         }
         .headline-desktop-light,
         .headline-mobile-light {
@@ -116,7 +133,7 @@ export default function HeroV2() {
         .hero-frame-paragraph .hero-body-light,
         .hero-body-light {
           font-weight: 300 !important;
-          font-style: italic !important;
+        font-style: normal !important;
         }
         .v2-theme .hero-frame-paragraph .hero-body-normal,
         .hero-frame-paragraph .hero-body-normal,
@@ -205,10 +222,11 @@ export default function HeroV2() {
             font-family: var(--font-body) !important;
             font-size: 15.6px !important; /* -10% text size from 17.33px */
             font-weight: 400 !important;
-            font-style: normal !important; /* not italic on mobile */
+        font-style: normal !important;
             color: #d9d9d9 !important;
             -webkit-text-fill-color: #d9d9d9 !important;
             line-height: 1.5225 !important;
+            letter-spacing: 0.005em !important;
           }
           .v2-theme .hero-frame-paragraph .hero-body-bold,
           .hero-frame-paragraph .hero-body-bold,
@@ -223,7 +241,7 @@ export default function HeroV2() {
             color: #d9d9d9 !important;
             -webkit-text-fill-color: #d9d9d9 !important;
             line-height: 1.5225 !important;
-            letter-spacing: normal !important;
+            letter-spacing: 0.005em !important;
           }
           .hero-body-desktop {
             display: none !important;
@@ -904,8 +922,7 @@ export default function HeroV2() {
                 </h1>
                 <p className="hero-frame-paragraph hero-paragraph-anim" style={{ marginTop: '1.7rem', fontSize: '1.395rem', lineHeight: '1.75', color: '#d9d9d9', WebkitTextFillColor: '#d9d9d9', fontWeight: 300, opacity: 1, textWrap: 'pretty' }}>
                   <span className="hero-body-desktop">
-                    <span className="hero-body-row hero-body-light" style={{ fontWeight: 300 }}>Got a dated site that undersells you, a task that eats your week, a process held together by spreadsheets?</span>
-                    <span className="hero-body-row hero-body-light" style={{ fontWeight: 300 }}><span className="hero-body-normal" style={{ fontWeight: 500, fontStyle: 'normal' }}>I build what fixes it, so you don&rsquo;t have to.</span></span>
+                    <span className="hero-body-row hero-body-light" style={{ fontWeight: 300 }}>Got a dated site that undersells you, a task that eats your week, a process held together by spreadsheets? <span className="hero-body-normal" style={{ fontWeight: 500, fontStyle: 'normal' }}>I build what fixes it, so you don&rsquo;t have to.</span></span>
                   </span>
                   <span className="hero-body-mobile">
                     <span className="hero-body-mobile-text hero-body-light">Got a dated site that undersells you, a task that eats your week, a process held together by spreadsheets?</span>{' '}

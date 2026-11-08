@@ -1,6 +1,6 @@
 'use client';
 
-import { useState, useEffect, useRef } from 'react';
+import { Fragment, useState, useEffect, useRef } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import '@/app/components/Projects.css';
 import SectionDivider from '@/app/components/SectionDivider';
@@ -546,18 +546,21 @@ export default function ProjectsV2({ initialProjects = [] }: ProjectsV2Props) {
             textWrap: 'balance'
           }}
         >
-          <span style={{ fontWeight: 400, color: 'var(--color-heading-silver, #4a5461)' }}>Examples of </span><span style={{ fontWeight: 700, color: 'var(--color-heading-silver, #4a5461)' }}>My Work</span>
+          <span style={{ fontWeight: 400, color: 'var(--color-heading-silver, #4a5461)' }}>Examples of </span><span style={{ fontWeight: 400, color: 'var(--color-heading-silver, #4a5461)' }}>My Work</span>
         </motion.h2>
 
-              <div role="tablist" aria-label="Case categories" style={{ display: 'flex', justifyContent: 'flex-start', gap: '0.5rem', flexWrap: 'wrap', width: '100%', margin: '0', padding: '0 10px', boxSizing: 'border-box' }}>
+              <div role="tablist" aria-label="Case categories" style={{ display: 'flex', justifyContent: 'center', gap: '0.5rem', flexWrap: 'wrap', width: '100%', margin: '0', padding: '0', boxSizing: 'border-box' }}>
         {([
           { id: 'internal-tools', label: 'Internal Tools' },
           { id: 'websites', label: 'Websites' },
           { id: 'mobile-apps', label: 'Mobile Apps' },
-        ] as const).map((tab) => (
-          <button key={tab.id} type="button" role="tab" aria-selected={activeTab === tab.id} onClick={() => setActiveTab(tab.id)} style={{ fontFamily: 'var(--font-body)', fontSize: '17px', fontWeight: activeTab === tab.id ? 600 : 400, lineHeight: 1.6, letterSpacing: '-0.01em', color: activeTab === tab.id ? '#2b3038' : '#989898', backgroundColor: activeTab === tab.id ? '#ffffff' : 'transparent', border: activeTab === tab.id ? '1px solid #d8d8d8' : '1px solid transparent', borderRadius: '999px', padding: '0.4rem 1rem', cursor: 'pointer' }}>
-            {tab.label}
-          </button>
+        ] as const).map((tab, index) => (
+          <Fragment key={tab.id}>
+            {index > 0 && <span aria-hidden="true" style={{ color: '#989898', fontFamily: 'var(--font-body)', fontSize: 'clamp(1.05rem, 2.4vw, 1.2rem)', fontWeight: 300, lineHeight: 1.55, letterSpacing: '-0.011em', padding: '0 0.15rem' }}>/</span>}
+            <button type="button" role="tab" aria-selected={activeTab === tab.id} onClick={() => setActiveTab(tab.id)} style={{ fontFamily: 'var(--font-body)', fontSize: 'clamp(1.05rem, 2.4vw, 1.2rem)', fontWeight: activeTab === tab.id ? 400 : 300, lineHeight: 1.55, letterSpacing: '-0.011em', color: activeTab === tab.id ? '#2b3038' : '#989898', backgroundColor: 'transparent', border: 'none', borderRadius: 0, padding: 0, cursor: 'pointer' }}>
+              {tab.label}
+            </button>
+          </Fragment>
         ))}
       </div>
         

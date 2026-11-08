@@ -40,8 +40,9 @@
 
 .about-hero-desc {
   font-family: var(--font-body), 'Plus Jakarta Sans', sans-serif;
-  font-size: clamp(14.5px, 1.1vw, 16px);
+  font-size: clamp(16px, 1.21vw, 17.6px);
   line-height: 1.7;
+  font-style: italic;
   color: rgba(201, 206, 214, 0.7) !important;
   -webkit-text-fill-color: rgba(201, 206, 214, 0.7) !important;
   max-width: 621px;
@@ -275,10 +276,10 @@
   }
 
   .scattered-chips-container {
-    height: 480px;
+    height: 390px;
     position: relative;
-    width: 100%;
-    margin-top: -95px; /* moved 20% lower on desktop canvas */
+    width: min(100%, 900px);
+    margin: 0 auto;
   }
 
   .story-item {
@@ -290,14 +291,14 @@
     z-index: 60;
   }
 
-  /* Desktop positions - spread evenly & chaotically across the viewport canvas */
-  .story-item-0 { top: 6%; left: 7%; }
-  .story-item-1 { top: 8%; right: 8%; }
-  .story-item-2 { top: 38%; left: 15%; }
-  .story-item-3 { top: 36%; right: 9%; }
-  .story-item-4 { top: 66%; left: 10%; }
-  .story-item-5 { top: 62%; left: 62%; }
-  .story-item-6 { top: 48%; left: 38%; }
+  /* Desktop positions - keep the floating chips in a centered zone under the intro. */
+  .story-item-0 { top: 4%; left: 4%; }
+  .story-item-1 { top: 2%; right: 4%; }
+  .story-item-2 { top: 36%; left: 17%; }
+  .story-item-3 { top: 34%; right: 16%; }
+  .story-item-4 { top: 22%; left: 29%; }
+  .story-item-5 { top: 64%; left: 52%; }
+  .story-item-6 { top: 50%; left: 43%; }
 
   /* Desktop card positioning: under/next to chip */
   .story-popover-card {
@@ -354,8 +355,8 @@
   .story-item-1 { top: 8%; right: 4%; }
   .story-item-2 { top: 38%; left: 14%; }
   .story-item-3 { top: 36%; right: 6%; }
-  .story-item-4 { top: 68%; left: 6%; }
-  .story-item-5 { top: 60%; left: 56%; }
+  .story-item-4 { top: 24%; left: 30%; }
+  .story-item-5 { top: 58%; left: 52%; }
   .story-item-6 { top: 48%; left: 34%; }
 
   .story-popover-card {
@@ -474,7 +475,7 @@
   font-family: -apple-system, BlinkMacSystemFont, "Helvetica Neue", Arial, sans-serif !important;
   font-size: clamp(1.48rem, 7.7vw, 2.08rem) !important;
   font-weight: 300 !important;
-  letter-spacing: -0.015em !important;
+  letter-spacing: 0.01em !important;
   line-height: 1.35 !important;
   color: rgba(255, 255, 255, 0.8) !important;
   -webkit-text-fill-color: rgba(255, 255, 255, 0.8) !important;
@@ -514,7 +515,7 @@
     white-space: nowrap !important;
     font-size: inherit !important;
     font-weight: 300 !important;
-    letter-spacing: -0.015em !important;
+    letter-spacing: 0.01em !important;
     line-height: inherit !important;
   }
   .about-cta-highlight {

@@ -20,14 +20,14 @@ export default function ProcessSection() {
   font-family: var(--font-heading) !important;
           font-weight: 400 !important;
           letter-spacing: -0.02em !important;
-          color: #000000 !important;
-          -webkit-text-fill-color: #000000 !important;
+          color: var(--color-heading-silver) !important;
+          -webkit-text-fill-color: var(--color-heading-silver) !important;
         }
         .testimonial-quote {
-          font-family: 'Newsreader', Georgia, serif !important;
+          font-family: var(--font-body), 'Plus Jakarta Sans', sans-serif !important;
           font-style: italic !important;
           font-weight: 400 !important;
-          letter-spacing: -0.005em !important;
+          letter-spacing: 0.012em !important;
           color: #000000 !important;
           -webkit-text-fill-color: #000000 !important;
         }
@@ -42,10 +42,13 @@ export default function ProcessSection() {
         }
         @media (max-width: 900px) {
           .testimonial-quote {
-            font-size: clamp(0.98rem, 4.55vw, 1.24rem) !important;
+            font-size: clamp(1.13rem, 5.23vw, 1.43rem) !important;
+          }
+          .testimonial-attribution {
+            font-size: 0.72rem !important;
           }
           .testimonial-single {
-            padding: 3rem 1.75rem !important;
+            padding: 1.5rem 1.75rem !important;
           }
         }
       `}</style>
@@ -88,10 +91,10 @@ export default function ProcessSection() {
               fontSize: 'clamp(28px, 4.4vw, 42px)',
               lineHeight: 1.2,
               margin: '0 0 2.5rem 0',
-              color: '#000000',
+              color: 'var(--color-heading-silver)',
             }}
           >
-            How my work helps real businesses:
+            Working with Me is...
           </motion.h2>
           <motion.div
             className="testimonial-single"
@@ -105,7 +108,7 @@ export default function ProcessSection() {
               border: '1px dashed #000000',
               borderRadius: 0,
               boxShadow: 'none',
-              padding: '9rem 4rem',
+              padding: '4.5rem 4rem',
               display: 'flex',
               flexDirection: 'column',
               alignItems: 'flex-start',
@@ -141,7 +144,7 @@ export default function ProcessSection() {
                 color: 'rgba(0, 0, 0, 0.8)',
               }}
             >
-              ISABELLE GUERTIN, INSURANCE CLAIMS EXPERT, R. GUERTIN ET ASSOCI&Eacute;S, MONTREAL
+              ISABELLE GUERTIN, INSURANCE CLAIMS EXPERT, MONTREAL
             </motion.p>
           </motion.div>
         </div>

@@ -35,7 +35,7 @@ export default function HowItWorks() {
       id="how-it-works"
       style={{
         backgroundColor: 'var(--color-matte-black, #25282e)',
-        padding: '10.2rem 0 10.71rem 0',
+        padding: '10.2rem 0 5.36rem 0',
         width: '100%',
         position: 'relative',
         overflow: 'hidden'
@@ -82,6 +82,7 @@ export default function HowItWorks() {
           font-family: var(--font-body), 'Plus Jakarta Sans', sans-serif !important;
           color: rgba(255, 255, 255, 0.82) !important;
           -webkit-text-fill-color: rgba(255, 255, 255, 0.82) !important;
+          letter-spacing: 0.005em !important;
         }
         .how-step-sub strong {
           font-weight: 600 !important;
@@ -97,7 +98,7 @@ export default function HowItWorks() {
         }
         @media (max-width: 900px) {
           #how-it-works {
-            padding: 3.5rem 0 10.5rem 0 !important;
+            padding: 3.5rem 0 5.25rem 0 !important;
           }
           .how-title {
             font-size: 2.1rem !important;
@@ -246,6 +247,7 @@ export default function HowItWorks() {
                       fontSize: '0.98rem',
                       fontWeight: 300,
                       lineHeight: 1.6,
+                      letterSpacing: '0.005em',
                       color: 'rgba(255, 255, 255, 0.82)',
                       margin: 0,
                       display: 'flex',
