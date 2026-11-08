@@ -931,14 +931,14 @@ export default function HeroV2() {
                 </p>
               </div>
 
-              {/* CTAs: right-aligned flush with content block */}
+              {/* CTAs: left-aligned with headline */}
               <div
                 className="hero-ctas hero-ctas-outside hero-ctas-anim"
                 style={{ 
                   width: '100%', 
                   maxWidth: '100%',
                   display: 'flex', 
-                  justifyContent: 'flex-end', 
+                  justifyContent: 'flex-start', 
                   alignItems: 'center', 
                   gap: '1.5rem', 
                   marginTop: '3.9rem' 
