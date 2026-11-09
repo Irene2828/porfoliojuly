@@ -12,10 +12,28 @@ export default function ProcessSection() {
         .testimonial-single {
   background-color: #ffffff !important;
           color: #000000 !important;
-  border: 1px dashed #000000 !important;
+  border: none !important;
           border-radius: 0 !important;
           box-shadow: none !important;
+          position: relative !important;
         }
+        .testimonial-decor {
+          position: absolute;
+          left: 0;
+          display: flex;
+          flex-direction: column;
+          gap: 10px;
+          pointer-events: none;
+        }
+        .testimonial-decor-top { top: 0; }
+        .testimonial-decor-bottom { bottom: 0; left: auto; right: 0; align-items: flex-end; }
+        .testimonial-decor span {
+          display: block;
+          height: 1px;
+          background: rgba(45, 49, 57, 0.8);
+        }
+        .testimonial-decor span:first-child { width: 248px; }
+        .testimonial-decor span:last-child { width: 136px; }
         .testimonial-heading {
   font-family: var(--font-heading) !important;
           font-weight: 400 !important;
@@ -27,9 +45,9 @@ export default function ProcessSection() {
           font-family: var(--font-body), 'Plus Jakarta Sans', sans-serif !important;
           font-style: italic !important;
           font-weight: 400 !important;
-          letter-spacing: 0.012em !important;
-          color: #000000 !important;
-          -webkit-text-fill-color: #000000 !important;
+          letter-spacing: 0.008em !important;
+          color: rgba(0, 0, 0, 0.64) !important;
+          -webkit-text-fill-color: rgba(0, 0, 0, 0.64) !important;
         }
         .testimonial-attribution {
           font-family: var(--font-body), 'Plus Jakarta Sans', sans-serif !important;
@@ -50,6 +68,17 @@ export default function ProcessSection() {
           .testimonial-single {
             padding: 1.5rem 1.75rem !important;
           }
+          .testimonials-grey-container > .container {
+            padding-left: 1.5rem !important;
+            padding-right: 1.5rem !important;
+          }
+        }
+        @media (min-width: 1200px) {
+          .testimonials-grey-container > .container {
+            max-width: 1267.2px !important;
+            padding-left: 1.76rem !important;
+            padding-right: 1.76rem !important;
+          }
         }
       `}</style>
       <div
@@ -69,11 +98,12 @@ export default function ProcessSection() {
         }}
       >
         <div
+          className="container"
           style={{
             width: '100%',
             maxWidth: '1440px',
-            paddingLeft: '5%',
-            paddingRight: '5%',
+            paddingLeft: '6rem',
+            paddingRight: '6rem',
             display: 'flex',
             flexDirection: 'column',
             alignItems: 'flex-start',
@@ -94,7 +124,7 @@ export default function ProcessSection() {
               color: 'var(--color-heading-silver)',
             }}
           >
-            Working with Me is...
+            Working With Me Is...
           </motion.h2>
           <motion.div
             className="testimonial-single"
@@ -116,6 +146,14 @@ export default function ProcessSection() {
               textAlign: 'left',
             }}
           >
+            <div className="testimonial-decor testimonial-decor-top" aria-hidden="true">
+              <span />
+              <span />
+            </div>
+            <div className="testimonial-decor testimonial-decor-bottom" aria-hidden="true">
+              <span />
+              <span />
+            </div>
             <blockquote
               className="testimonial-quote"
               style={{
@@ -123,9 +161,9 @@ export default function ProcessSection() {
                 lineHeight: 1.35,
                 margin: 0,
                 padding: 0,
-                maxWidth: '1056px',
+                maxWidth: '950px',
                 fontStyle: 'italic',
-                color: '#000000',
+                color: 'rgba(0, 0, 0, 0.64)',
               }}
             >
               &ldquo;Iryna built my new website, and it started working right away &mdash; several calls from potential new clients since it went live. She explained everything clearly and patiently, even to someone like me who isn&apos;t tech-savvy at all. Working with her feels personal, not transactional. I recommend her without hesitation.&rdquo;
@@ -144,7 +182,7 @@ export default function ProcessSection() {
                 color: 'rgba(0, 0, 0, 0.8)',
               }}
             >
-              ISABELLE GUERTIN, INSURANCE CLAIMS EXPERT, MONTREAL
+              <strong style={{ fontWeight: 700, color: 'rgba(0, 0, 0, 0.6)' }}>ISABELLE GUERTIN</strong>, INSURANCE CLAIMS EXPERT, <span style={{ color: 'rgba(0, 0, 0, 0.6)' }}>MONTREAL</span>
             </motion.p>
           </motion.div>
         </div>

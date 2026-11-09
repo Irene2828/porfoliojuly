@@ -100,6 +100,10 @@ export default function HowItWorks() {
           #how-it-works {
             padding: 3.5rem 0 5.25rem 0 !important;
           }
+          #how-it-works > .container {
+            padding-left: 1.5rem !important;
+            padding-right: 1.5rem !important;
+          }
           .how-title {
             font-size: 2.1rem !important;
           }
@@ -110,12 +114,20 @@ export default function HowItWorks() {
             font-size: 1.5rem !important;
           }
         }
+        @media (min-width: 1200px) {
+          #how-it-works > .container {
+            max-width: 1267.2px !important;
+            padding-left: 1.76rem !important;
+            padding-right: 1.76rem !important;
+          }
+        }
       `}</style>
       <div
+        className="container"
         style={{
-          maxWidth: '1200px',
+          maxWidth: '1440px',
           margin: '0 auto',
-          padding: '0 1.9rem',
+          padding: '0 6rem',
           textAlign: 'center'
         }}
       >

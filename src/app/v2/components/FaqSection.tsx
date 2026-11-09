@@ -32,7 +32,24 @@ const faqs = [
 
 export default function FaqSection() {
   const [openIndex, setOpenIndex] = useState<number>(-1);
+  const [playingVideo, setPlayingVideo] = useState<number | null>(null);
   const sectionRef = useRef<HTMLElement | null>(null);
+  const videoRefs = [useRef<HTMLVideoElement | null>(null), useRef<HTMLVideoElement | null>(null)];
+
+  const toggleVideo = (index: number) => {
+    const video = videoRefs[index].current;
+    if (!video) return;
+    if (playingVideo === index) {
+      video.pause();
+      setPlayingVideo(null);
+    } else {
+      videoRefs.forEach((ref, refIndex) => {
+        if (refIndex !== index) ref.current?.pause();
+      });
+      void video.play();
+      setPlayingVideo(index);
+    }
+  };
 
   return (
     <section
@@ -232,7 +249,7 @@ export default function FaqSection() {
             margin: '0 auto 1.25rem auto',
           }}
         >
-          Why Hire Someone If There&apos;s AI Tools?
+          Why Hire Someone If There&apos;s AI?
         </motion.h2>
         <motion.p
           className="faq-subline"
@@ -250,16 +267,20 @@ export default function FaqSection() {
         >
           Let&apos;s take a look at a particular case. You need a website for your custom bridal atelier. You go to AI.
         </motion.p>
-        <div className="faq-case-media"><div><video className="faq-case-video" src="/bridal-ai-video.mp4" autoPlay muted loop playsInline style={{ display: 'block', width: '100%', height: 'auto', borderRadius: 0, boxShadow: 'none', margin: '0 0 1rem 0' }} /><p style={{ fontFamily: "var(--font-body), 'Plus Jakarta Sans', sans-serif", fontSize: 'clamp(1.05rem, 2.4vw, 1.2rem)', fontWeight: 700, letterSpacing: '-0.011em', lineHeight: 1.65, color: 'rgba(0, 0, 0, 0.78)', textAlign: 'center', margin: '0' }}>If you see a problem there, I see it too.</p></div><div><video className="faq-case-video" src="/bridal-desktop-scroll-faststart.mp4" poster="/bridal-scroll-poster.jpg" autoPlay muted loop playsInline style={{ display: 'block', width: '100%', height: 'auto', borderRadius: 0, boxShadow: 'none' }} />
-      <div style={{ margin: '1rem 0 0 0' }}>
-        <p style={{ fontFamily: "var(--font-body), 'Plus Jakarta Sans', sans-serif", fontSize: 'clamp(1.05rem, 2.4vw, 1.2rem)', fontWeight: 300, letterSpacing: '-0.011em', lineHeight: 1.65, color: 'rgba(0, 0, 0, 0.78)', textAlign: 'center', margin: 0 }}>Let&apos;s use the same problem and let me design and build it end-to-end.</p>
-        <p style={{ fontFamily: "var(--font-body), 'Plus Jakarta Sans', sans-serif", fontSize: 'clamp(1.05rem, 2.4vw, 1.2rem)', fontWeight: 300, letterSpacing: '-0.011em', lineHeight: 1.65, color: 'rgba(0, 0, 0, 0.78)', textAlign: 'left', margin: '1rem 0 0 0' }}>
-          <span style={{ display: 'block' }}>Diving into your unique business, ideal client, strategic goals, then choosing the <u>right</u> AI and other tech tools to build it.</span>
-          <span style={{ display: 'block', marginTop: '0.75rem' }}>With care, judgement, taste and skills used.</span><span style={{ display: 'block', marginTop: '0.75rem', fontWeight: 700 }}>Made by someone who uses AI, design, business and tech judgement and cares about your business as it impacts their own reputation.</span>
-        </p>
-      </div>
-      
-        </div></div><motion.h2 className="faq-section-heading" initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true, amount: 0.45 }} transition={{ duration: 0.78, delay: 0.08, ease: [0.16, 1, 0.3, 1] }} style={{ fontFamily: 'var(--font-heading)', fontSize: 'clamp(28px, 4.4vw, 42px)', fontWeight: 400, lineHeight: 1.2, color: 'var(--color-heading-silver)', letterSpacing: '-0.02em', margin: '10.5rem 0 0.875rem 0', textAlign: 'center' }}>Get More Answers...</motion.h2>
+        <div className="faq-case-media">
+          {[['/bridal-ai-video.mp4', undefined], ['/bridal-desktop-scroll-faststart.mp4', '/bridal-scroll-poster.jpg']].map(([src, poster], index) => (
+            <div key={src}>
+              <button type="button" onClick={() => toggleVideo(index)} style={{ display: 'block', position: 'relative', width: '100%', padding: 0, border: 0, background: 'none', cursor: 'pointer' }} aria-label={playingVideo === index ? 'Pause recording' : 'Play recording'}>
+                <video ref={videoRefs[index]} className="faq-case-video" src={src} poster={poster} muted loop playsInline />
+                <span aria-hidden="true" style={{ position: 'absolute', left: '50%', top: '50%', transform: 'translate(-50%, -50%)', width: '3rem', height: '3rem', borderRadius: '50%', background: 'rgba(255,255,255,0.88)', color: '#1A1F2B', display: playingVideo === index ? 'none' : 'grid', placeItems: 'center', fontSize: '1.15rem' }}>▶</span>
+              </button>
+              <p style={{ fontFamily: 'var(--font-label), sans-serif', fontSize: '0.68rem', fontWeight: 600, letterSpacing: '0.1em', textTransform: 'uppercase', color: '#5C6672', textAlign: 'center', margin: '0.7rem 0 0' }}>Tap to play</p>
+            </div>
+          ))}
+          <p style={{ gridColumn: '1 / -1', fontFamily: "var(--font-body), 'Plus Jakarta Sans', sans-serif", fontSize: 'clamp(1.05rem, 2.4vw, 1.2rem)', fontWeight: 700, letterSpacing: '-0.011em', lineHeight: 1.65, color: 'rgba(0, 0, 0, 0.78)', textAlign: 'center', margin: '0.5rem auto 0', maxWidth: '52ch' }}>Made by someone who uses AI, design, business and tech judgement and cares about your business as it impacts their own reputation.</p>
+        </div>
+        <motion.div className="cases-decor-line" initial={{ scaleX: 0, opacity: 0 }} whileInView={{ scaleX: 1, opacity: 0.9 }} viewport={{ once: true, amount: 0.45 }} transition={{ duration: 0.65, ease: [0.16, 1, 0.3, 1] }} style={{ width: '60px', height: '1px', backgroundColor: '#2d3139', margin: '10.5rem auto 2.5rem auto', transformOrigin: 'center' }} aria-hidden="true" />
+        <motion.h2 className="faq-section-heading" initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true, amount: 0.45 }} transition={{ duration: 0.78, delay: 0.08, ease: [0.16, 1, 0.3, 1] }} style={{ fontFamily: 'var(--font-heading)', fontSize: 'clamp(28px, 4.4vw, 42px)', fontWeight: 400, lineHeight: 1.2, color: 'var(--color-heading-silver)', letterSpacing: '-0.02em', margin: '0 0 0.875rem 0', textAlign: 'center' }}>Get More Answers...</motion.h2>
       <motion.p className="faq-section-subline" initial={{ opacity: 0, y: 14 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true, amount: 0.45 }} transition={{ duration: 0.68, delay: 0.16, ease: [0.16, 1, 0.3, 1] }} style={{ margin: '0 auto 2.5rem auto', textAlign: 'center' }}>before we start our work.</motion.p>
       <div>
         {faqs.map((faq, index) => {
@@ -324,8 +345,8 @@ export default function FaqSection() {
       </div>
       <div style={{ backgroundColor: '#121316', background: '#121316', width: '100%', padding: '5rem 1.5rem 5.625rem 1.5rem', margin: '10.5rem 0 0 0', borderTop: '1px solid rgba(255, 255, 255, 0.08)' }}>
         <div style={{ maxWidth: '720px', width: '100%', margin: '0 auto', padding: '0 1.5rem', textAlign: 'left' }}>
-          <motion.h2 initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true, amount: 0.45 }} transition={{ duration: 0.72, delay: 0.08, ease: [0.16, 1, 0.3, 1] }} style={{ fontFamily: 'var(--font-heading)', fontSize: 'clamp(1.48rem, 7.7vw, 2.08rem)', fontWeight: 300, letterSpacing: '0.01em', lineHeight: 1.35, color: 'rgba(255, 255, 255, 0.8)', WebkitTextFillColor: 'rgba(255, 255, 255, 0.8)', textAlign: 'center', margin: '0 auto 2.5rem auto', maxWidth: '32ch', textWrap: 'balance' }}>
-            <span style={{ color: '#ffffff', WebkitTextFillColor: '#ffffff' }}>Need your problem solved by someone who gets business, design and tech?</span>{' '}
+          <motion.h2 initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true, amount: 0.45 }} transition={{ duration: 0.72, delay: 0.08, ease: [0.16, 1, 0.3, 1] }} style={{ fontFamily: 'var(--font-heading)', fontSize: 'clamp(1.48rem, 7.7vw, 2.08rem)', fontWeight: 300, letterSpacing: '-0.02em', lineHeight: 1.35, color: 'rgba(255, 255, 255, 0.8)', WebkitTextFillColor: 'rgba(255, 255, 255, 0.8)', textAlign: 'center', margin: '0 auto 2.5rem auto', maxWidth: '32ch', textWrap: 'balance' }}>
+            <span style={{ color: '#ffffff', WebkitTextFillColor: '#ffffff' }}>Looking for </span><span style={{ color: '#f2908f', WebkitTextFillColor: '#f2908f' }}>someone who gets business, design and tech?</span>{' '}
           </motion.h2>
           <motion.div initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true, amount: 0.45 }} transition={{ duration: 0.72, delay: 0.16, ease: [0.16, 1, 0.3, 1] }} style={{ margin: 0, textAlign: 'center' }}>
             <a href="#contact" style={{ display: 'inline-flex', alignItems: 'center', justifyContent: 'center', gap: '0.55rem', height: '3.01rem', padding: '0 1.74rem', fontFamily: "var(--font-body), 'Plus Jakarta Sans', sans-serif", fontSize: '0.72rem', fontWeight: 700, letterSpacing: '0.08em', textTransform: 'uppercase', textDecoration: 'none', color: '#000000', background: 'linear-gradient(315deg, #d6b792 0%, #f2908f 100%)', border: '1px solid #ffffff', borderRadius: '40px', boxShadow: 'none', cursor: 'pointer' }}>SEND YOUR PROBLEM MY WAY <span aria-hidden="true">↗</span></a>

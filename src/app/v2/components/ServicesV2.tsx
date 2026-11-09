@@ -40,7 +40,7 @@ export default function ServicesV2() {
       )
     },
     {
-      text: <span>I build a simple tool just for that task</span>,
+      text: <span>I build a simple app just for that task</span>,
       icon: (
         <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#1A1F2B" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
           <path d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94l-3.76 3.76z"/>
@@ -48,7 +48,7 @@ export default function ServicesV2() {
       )
     },
     {
-      text: <span>You stay in control. AI can use it to do the filling-in even faster.</span>,
+      text: <span>You stay in control. AI just helps you move faster.</span>,
       icon: (
         <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#1A1F2B" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
           <polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"/>
@@ -232,7 +232,7 @@ export default function ServicesV2() {
             fontStyle: 'normal'
           }}
         >
-          A website, a tool, or both.
+          ...a website, an app, or both?
         </motion.p>
       </div>
 
@@ -353,11 +353,11 @@ export default function ServicesV2() {
                   transition={{ duration: 0.65, delay: 0.1, ease: [0.16, 1, 0.3, 1] }}
                   style={{
                     fontFamily: "var(--font-heading)",
-                    fontSize: 'clamp(1.55rem, 2.52vw, 2.05rem)',
+                    fontSize: 'clamp(1.63rem, 2.65vw, 2.15rem)',
                     fontWeight: 400,
                     color: '#FFFFFF',
                     margin: '0 0 0.5rem 0',
-                    letterSpacing: '-0.02em',
+                    letterSpacing: '-0.01em',
                     lineHeight: 1.2,
                     WebkitTextStroke: '0'
                   }}
@@ -371,13 +371,14 @@ export default function ServicesV2() {
                   transition={{ duration: 0.65, delay: 0.18, ease: [0.16, 1, 0.3, 1] }}
                   style={{
                     fontFamily: "var(--font-body)",
-                    fontSize: '15px',
+                    fontSize: '15.75px',
                     color: '#a0abb8',
                     margin: '0 0 2.5rem 0',
-                    lineHeight: 1.5
+                    lineHeight: 1.5,
+                    letterSpacing: '0.015em'
                   }}
                 >
-                  New or outdated? Make it work harder.
+                  New or outdated? Make it work <span style={{ fontStyle: 'italic', textDecorationLine: 'underline', textDecorationColor: '#f2908f', textDecorationThickness: '1px', textUnderlineOffset: '0.16em' }}>harder</span>.
                 </motion.p>
                 
                 <ul style={{ listStyle: 'none', padding: 0, margin: 0, display: 'flex', flexDirection: 'column', gap: '16px' }}>
@@ -389,7 +390,7 @@ export default function ServicesV2() {
                       viewport={{ once: true, amount: 0.25 }}
                       transition={{ duration: 0.65, delay: 0.24 + idx * 0.11, ease: [0.16, 1, 0.3, 1] }}
                       style={{ 
-                        fontSize: '1.071rem',
+                        fontSize: '1.125rem',
                         color: '#e8ebee', 
                         display: 'flex', 
                         alignItems: 'center', 
@@ -422,7 +423,7 @@ export default function ServicesV2() {
                       >
                         {bullet.icon}
                       </motion.div>
-                      <div style={{ color: '#e8ebee' }}>
+                      <div style={{ color: '#e8ebee', fontSize: 'inherit', letterSpacing: 'inherit' }}>
                         {bullet.text}
                       </div>
                     </motion.li>
@@ -435,7 +436,7 @@ export default function ServicesV2() {
                   transition={{ duration: 0.6, delay: 0.58, ease: [0.16, 1, 0.3, 1] }}
                   style={{ display: 'flex', justifyContent: 'flex-end', marginTop: '64px' }}
                 >
-                  <a href="#cases" className="see-example-link-dark" style={{ position: 'relative', display: 'inline-flex', alignItems: 'center', fontFamily: 'var(--font-label), sans-serif', fontSize: '11px', fontWeight: 600, letterSpacing: '0.1em', opacity: 0.9, textDecoration: 'none', color: '#A9B4C0', paddingBottom: '4px', transition: 'opacity 0.2s' }} onMouseEnter={(e) => e.currentTarget.style.opacity = '1'} onMouseLeave={(e) => e.currentTarget.style.opacity = '0.9'}>
+                  <a href="#cases" className="see-example-link-dark" style={{ position: 'relative', display: 'inline-flex', alignItems: 'center', fontFamily: 'var(--font-label), sans-serif', fontSize: '11.55px', fontWeight: 600, letterSpacing: '0.105em', opacity: 0.9, textDecoration: 'none', color: '#A9B4C0', paddingBottom: '4px', transition: 'opacity 0.2s' }} onMouseEnter={(e) => e.currentTarget.style.opacity = '1'} onMouseLeave={(e) => e.currentTarget.style.opacity = '0.9'}>
                     <span>SEE WEBSITE EXAMPLES <span style={{ color: '#f7d6d0', marginLeft: '4px' }}>&darr;</span></span>
                   </a>
                 </motion.div>
@@ -486,16 +487,16 @@ export default function ServicesV2() {
                   transition={{ duration: 0.65, delay: 0.22, ease: [0.16, 1, 0.3, 1] }}
                   style={{
                     fontFamily: "var(--font-heading)",
-                    fontSize: 'clamp(1.55rem, 2.52vw, 2.05rem)',
+                    fontSize: 'clamp(1.63rem, 2.65vw, 2.15rem)',
                     fontWeight: 400,
                     color: 'var(--color-headline-matte, #31343c)',
                     margin: '0 0 0.5rem 0',
-                    letterSpacing: '-0.02em',
+                    letterSpacing: '-0.01em',
                     lineHeight: 1.2,
                     WebkitTextStroke: '0'
                   }}
                 >
-                  Custom tools, built to work with AI
+                  Custom apps, built to work with AI
                 </motion.h3>
                 <motion.p
                   initial={{ opacity: 0, y: 12 }}
@@ -504,13 +505,14 @@ export default function ServicesV2() {
                   transition={{ duration: 0.65, delay: 0.3, ease: [0.16, 1, 0.3, 1] }}
                   style={{
                     fontFamily: "var(--font-body)",
-                    fontSize: '15px',
+                    fontSize: '15.75px',
                     color: '#65707e',
                     margin: '0 0 2.5rem 0',
-                    lineHeight: 1.5
+                    lineHeight: 1.5,
+                    letterSpacing: '0.015em'
                   }}
                 >
-                  Stop doing it by hand.
+                  Stop doing everything <span style={{ fontStyle: 'italic', textDecorationLine: 'underline', textDecorationColor: '#1A1F2B', textDecorationThickness: '1px', textUnderlineOffset: '0.16em' }}>by hand</span>.
                 </motion.p>
                 
                 <ul style={{ listStyle: 'none', padding: 0, margin: 0, display: 'flex', flexDirection: 'column', gap: '16px' }}>
@@ -522,7 +524,7 @@ export default function ServicesV2() {
                       viewport={{ once: true, amount: 0.25 }}
                       transition={{ duration: 0.65, delay: 0.36 + idx * 0.11, ease: [0.16, 1, 0.3, 1] }}
                       style={{ 
-                        fontSize: '1.071rem',
+                        fontSize: '1.125rem',
                         color: '#1A1F2B', 
                         display: 'flex', 
                         alignItems: 'center', 
@@ -555,7 +557,7 @@ export default function ServicesV2() {
                       >
                         {bullet.icon}
                       </motion.div>
-                      <div style={{ color: '#1A1F2B' }}>
+                      <div style={{ color: '#1A1F2B', fontSize: 'inherit', letterSpacing: 'inherit' }}>
                         {bullet.text}
                       </div>
                     </motion.li>
@@ -568,8 +570,8 @@ export default function ServicesV2() {
                   transition={{ duration: 0.6, delay: 0.68, ease: [0.16, 1, 0.3, 1] }}
                   style={{ display: 'flex', justifyContent: 'flex-end', marginTop: '64px' }}
                 >
-                  <a href="#cases" className="see-example-link-light-bg" style={{ position: 'relative', display: 'inline-flex', alignItems: 'center', fontFamily: 'var(--font-label), sans-serif', fontSize: '11px', fontWeight: 600, letterSpacing: '0.1em', opacity: 0.9, textDecoration: 'none', color: '#5C6672', paddingBottom: '4px', transition: 'opacity 0.2s' }} onMouseEnter={(e) => e.currentTarget.style.opacity = '1'} onMouseLeave={(e) => e.currentTarget.style.opacity = '0.9'}>
-                    <span>SEE TOOL EXAMPLES <span style={{ color: '#8a94a0', marginLeft: '4px' }}>&darr;</span></span>
+                  <a href="#cases" className="see-example-link-light-bg" style={{ position: 'relative', display: 'inline-flex', alignItems: 'center', fontFamily: 'var(--font-label), sans-serif', fontSize: '11.55px', fontWeight: 600, letterSpacing: '0.105em', opacity: 0.9, textDecoration: 'none', color: '#5C6672', paddingBottom: '4px', transition: 'opacity 0.2s' }} onMouseEnter={(e) => e.currentTarget.style.opacity = '1'} onMouseLeave={(e) => e.currentTarget.style.opacity = '0.9'}>
+                    <span>SEE APP EXAMPLES <span style={{ color: '#8a94a0', marginLeft: '4px' }}>&darr;</span></span>
                   </a>
                 </motion.div>
               </div>

@@ -96,9 +96,6 @@ export default function Footer() {
         <p className="footer-copy-text">
           &copy; 2026 Iryna Sheremeta
         </p>
-        <a href="/hire" className="footer-hire-link">
-          Hiring? &rarr;
-        </a>
       </motion.div>
     </footer>
   );

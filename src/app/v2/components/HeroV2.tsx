@@ -28,7 +28,7 @@ export default function HeroV2() {
           .hero-name-group .hero-text h1.hero-statement {
             zoom: 1 !important;
             font-size: clamp(50px, 4.5vw, 64px) !important;
-            line-height: 0.886 !important;
+            line-height: 0.921 !important;
             letter-spacing: -0.018em !important;
           }
           .headline-desktop {
@@ -38,7 +38,7 @@ export default function HeroV2() {
           }
             .headline-desktop .headline-line {
     display: block !important;
-    line-height: 0.886 !important;
+    line-height: 0.921 !important;
     white-space: nowrap !important;
   }
   .hero-frame-paragraph {
@@ -890,7 +890,7 @@ export default function HeroV2() {
                       <strong className="headline-desktop-accent">websites,</strong>
                     </span>
                     <span className="headline-line">
-                      <strong className="headline-desktop-accent">tools,</strong>{' '}
+                      <strong className="headline-desktop-accent">apps,</strong>{' '}
                       <strong className="headline-desktop-accent">and</strong>{' '}
                       <strong className="headline-desktop-accent">workflows.</strong>
                     </span>
@@ -907,7 +907,7 @@ export default function HeroV2() {
                       <strong className="headline-mobile-accent">websites,</strong>
                     </span>
                     <span className="headline-line">
-                      <strong className="headline-mobile-accent">tools,</strong>{' '}
+                      <strong className="headline-mobile-accent">apps,</strong>{' '}
                       <strong className="headline-mobile-accent">and</strong>{' '}
                       <strong className="headline-mobile-accent">workflows.</strong>
                     </span>
