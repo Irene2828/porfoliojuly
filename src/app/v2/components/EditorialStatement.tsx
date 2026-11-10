@@ -269,7 +269,6 @@ export default function EditorialStatement() {
           >
             <span className="prefooter-closing-desktop">
               An outdated website or repetitive work{' '}
-              <br />
               <motion.span
                 initial={{ opacity: 0, y: 12 }}
                 whileInView={{ opacity: 1, y: 0 }}
@@ -282,8 +281,8 @@ export default function EditorialStatement() {
             </span>
             <span className="prefooter-closing-mobile">
               <span className="prefooter-closing-row">An outdated website</span>
-              <span className="prefooter-closing-row">or repetitive work</span>
-              <span className="prefooter-closing-row" style={{ fontWeight: 300, color: 'rgba(255, 255, 255, 0.8)', WebkitTextFillColor: 'rgba(255, 255, 255, 0.8)' }}>is <strong style={{ fontWeight: 500, fontStyle: 'italic', letterSpacing: '0.025em', color: '#f2908f', WebkitTextFillColor: '#f2908f' }}>slowing your</strong></span>
+              <span className="prefooter-closing-row" style={{ fontWeight: 300, color: 'rgba(255, 255, 255, 0.8)', WebkitTextFillColor: 'rgba(255, 255, 255, 0.8)' }}>or repetitive work is</span>
+              <span className="prefooter-closing-row"><strong style={{ fontWeight: 500, fontStyle: 'italic', letterSpacing: '0.025em', color: '#f2908f', WebkitTextFillColor: '#f2908f' }}>slowing your</strong></span>
               <strong className="prefooter-closing-row" style={{ fontWeight: 500, fontStyle: 'italic', letterSpacing: '0.025em', color: '#f2908f', WebkitTextFillColor: '#f2908f' }}>
                 business down.
               </strong>
