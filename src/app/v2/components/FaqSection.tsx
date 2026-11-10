@@ -210,18 +210,46 @@ export default function FaqSection() {
           -webkit-text-fill-color: rgba(0, 0, 0, 0.72) !important;
           margin: 0.85rem 0 0 0 !important;
         }
+        .faq-cta-heading .faq-cta-white {
+          font-weight: 300 !important;
+          color: rgba(255, 255, 255, 0.8) !important;
+          -webkit-text-fill-color: rgba(255, 255, 255, 0.8) !important;
+        }
         @media (max-width: 900px) {
           .faq-headline { text-align: center;
             font-size: clamp(1.9rem, 8vw, 2.4rem) !important; margin-left: 0 !important; margin-right: 0 !important;
           }
           .faq-question {
-          font-size: 1.23rem !important;
+          font-size: 1.2915rem !important;
+          }
+          .faq-answer-list li {
+            font-size: 1.071rem !important;
           }
           .faq-toggle {
             padding: 1.4rem 2.25rem 1.4rem 0 !important;
           }
           .faq-case-media {
             grid-template-columns: 1fr !important;
+          }
+          .faq-section .cases-decor-line {
+            margin-top: 10.2rem !important;
+          }
+          .faq-cta-heading {
+            text-align: left !important;
+            margin-left: 0 !important;
+            margin-right: 0 !important;
+            max-width: 32ch !important;
+          }
+          .faq-cta-heading .faq-cta-accent {
+            font-weight: 600 !important;
+          }
+          .faq-cta-heading .faq-cta-white {
+            font-weight: 300 !important;
+            color: rgba(255, 255, 255, 0.8) !important;
+            -webkit-text-fill-color: rgba(255, 255, 255, 0.8) !important;
+          }
+          .faq-cta-wrapper {
+            max-width: 720px !important;
           }
         }
       `}</style>
@@ -279,7 +307,7 @@ export default function FaqSection() {
           ))}
           <p style={{ gridColumn: '1 / -1', fontFamily: "var(--font-body), 'Plus Jakarta Sans', sans-serif", fontSize: 'clamp(1.05rem, 2.4vw, 1.2rem)', fontWeight: 700, letterSpacing: '-0.011em', lineHeight: 1.65, color: 'rgba(0, 0, 0, 0.78)', textAlign: 'center', margin: '0.5rem auto 0', maxWidth: '52ch' }}>Made by someone who uses AI, design, business and tech judgement and cares about your business as it impacts their own reputation.</p>
         </div>
-        <motion.div className="cases-decor-line" initial={{ scaleX: 0, opacity: 0 }} whileInView={{ scaleX: 1, opacity: 0.9 }} viewport={{ once: true, amount: 0.45 }} transition={{ duration: 0.65, ease: [0.16, 1, 0.3, 1] }} style={{ width: '60px', height: '1px', backgroundColor: '#2d3139', margin: '10.5rem auto 2.5rem auto', transformOrigin: 'center' }} aria-hidden="true" />
+        <motion.div className="cases-decor-line" initial={{ scaleX: 0, opacity: 0 }} whileInView={{ scaleX: 1, opacity: 0.9 }} viewport={{ once: true, amount: 0.45 }} transition={{ duration: 0.65, ease: [0.16, 1, 0.3, 1] }} style={{ width: '60px', height: '1px', backgroundColor: '#2d3139', margin: '10.2rem auto 2.5rem auto', transformOrigin: 'center' }} aria-hidden="true" />
         <motion.h2 className="faq-section-heading" initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true, amount: 0.45 }} transition={{ duration: 0.78, delay: 0.08, ease: [0.16, 1, 0.3, 1] }} style={{ fontFamily: 'var(--font-heading)', fontSize: 'clamp(28px, 4.4vw, 42px)', fontWeight: 400, lineHeight: 1.2, color: 'var(--color-heading-silver)', letterSpacing: '-0.02em', margin: '0 0 0.875rem 0', textAlign: 'center' }}>Get More Answers...</motion.h2>
       <motion.p className="faq-section-subline" initial={{ opacity: 0, y: 14 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true, amount: 0.45 }} transition={{ duration: 0.68, delay: 0.16, ease: [0.16, 1, 0.3, 1] }} style={{ margin: '0 auto 2.5rem auto', textAlign: 'center' }}>before we start our work.</motion.p>
       <div>
@@ -344,13 +372,14 @@ export default function FaqSection() {
         </div>
       </div>
       <div style={{ backgroundColor: '#121316', background: '#121316', width: '100%', padding: '5rem 1.5rem 5.625rem 1.5rem', margin: '10.5rem 0 0 0', borderTop: '1px solid rgba(255, 255, 255, 0.08)' }}>
-        <div style={{ maxWidth: '720px', width: '100%', margin: '0 auto', padding: '0 1.5rem', textAlign: 'left' }}>
-          <motion.h2 initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true, amount: 0.45 }} transition={{ duration: 0.72, delay: 0.08, ease: [0.16, 1, 0.3, 1] }} style={{ fontFamily: 'var(--font-heading)', fontSize: 'clamp(1.48rem, 7.7vw, 2.08rem)', fontWeight: 300, letterSpacing: '-0.02em', lineHeight: 1.35, color: 'rgba(255, 255, 255, 0.8)', WebkitTextFillColor: 'rgba(255, 255, 255, 0.8)', textAlign: 'center', margin: '0 auto 2.5rem auto', maxWidth: '32ch', textWrap: 'balance' }}>
-            <span style={{ color: '#ffffff', WebkitTextFillColor: '#ffffff' }}>Looking for </span><span style={{ color: '#f2908f', WebkitTextFillColor: '#f2908f' }}>someone who gets business, design and tech?</span>{' '}
+        <div className="faq-cta-wrapper" style={{ maxWidth: '1069px', width: '100%', margin: '0 auto', padding: '0 1.5rem', textAlign: 'left' }}>
+          <motion.h2 className="faq-cta-heading" initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true, amount: 0.45 }} transition={{ duration: 0.72, delay: 0.08, ease: [0.16, 1, 0.3, 1] }} style={{ fontFamily: 'var(--font-heading)', fontSize: 'clamp(1.48rem, 7.7vw, 2.08rem)', fontWeight: 300, letterSpacing: '-0.02em', lineHeight: 1.35, color: 'rgba(255, 255, 255, 0.8)', WebkitTextFillColor: 'rgba(255, 255, 255, 0.8)', textAlign: 'center', margin: '0 auto 2.5rem auto', maxWidth: '43.2ch', textWrap: 'balance' }}>
+            <span className="faq-cta-white" style={{ color: '#ffffff', WebkitTextFillColor: '#ffffff' }}>If you need a professional who combines </span><span className="faq-cta-accent" style={{ color: '#f2908f', WebkitTextFillColor: '#f2908f', fontWeight: 600 }}>creative thinking</span><span className="faq-cta-white" style={{ color: '#ffffff', WebkitTextFillColor: '#ffffff' }}> with </span><span className="faq-cta-accent" style={{ color: '#f2908f', WebkitTextFillColor: '#f2908f', fontWeight: 600 }}>technical skills</span><span className="faq-cta-white" style={{ color: '#ffffff', WebkitTextFillColor: '#ffffff' }}> needed to solve your business problem </span><span className="faq-cta-accent" style={{ color: '#f2908f', WebkitTextFillColor: '#f2908f', fontWeight: 600 }}>end-to-end</span><span className="faq-cta-white" style={{ color: '#ffffff', WebkitTextFillColor: '#ffffff' }}>, I&apos;m here.</span>{' '}
           </motion.h2>
           <motion.div initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true, amount: 0.45 }} transition={{ duration: 0.72, delay: 0.16, ease: [0.16, 1, 0.3, 1] }} style={{ margin: 0, textAlign: 'center' }}>
             <a href="#contact" style={{ display: 'inline-flex', alignItems: 'center', justifyContent: 'center', gap: '0.55rem', height: '3.01rem', padding: '0 1.74rem', fontFamily: "var(--font-body), 'Plus Jakarta Sans', sans-serif", fontSize: '0.72rem', fontWeight: 700, letterSpacing: '0.08em', textTransform: 'uppercase', textDecoration: 'none', color: '#000000', background: 'linear-gradient(315deg, #d6b792 0%, #f2908f 100%)', border: '1px solid #ffffff', borderRadius: '40px', boxShadow: 'none', cursor: 'pointer' }}>SEND YOUR PROBLEM MY WAY <span aria-hidden="true">↗</span></a>
           </motion.div>
+          <motion.p initial={{ opacity: 0, y: 12 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true, amount: 0.45 }} transition={{ duration: 0.72, delay: 0.24, ease: [0.16, 1, 0.3, 1] }} style={{ margin: '0.9rem 0 0', textAlign: 'center', fontFamily: 'var(--font-body), sans-serif', fontSize: '0.72rem', fontWeight: 300, letterSpacing: '0.015em', color: 'rgba(255, 255, 255, 0.58)' }}>I usually reply within 24 hrs.</motion.p>
         </div>
       </div>
     </section>

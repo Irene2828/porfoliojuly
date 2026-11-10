@@ -30,7 +30,7 @@ export default function ProcessSection() {
         .testimonial-decor span {
           display: block;
           height: 1px;
-          background: rgba(45, 49, 57, 0.8);
+          background: rgba(45, 49, 57, 0.6);
         }
         .testimonial-decor span:first-child { width: 248px; }
         .testimonial-decor span:last-child { width: 136px; }
@@ -61,12 +61,13 @@ export default function ProcessSection() {
         @media (max-width: 900px) {
           .testimonial-quote {
             font-size: clamp(1.13rem, 5.23vw, 1.43rem) !important;
+            max-width: 100% !important;
           }
           .testimonial-attribution {
             font-size: 0.72rem !important;
           }
           .testimonial-single {
-            padding: 1.5rem 1.75rem !important;
+            padding: 3rem 1.75rem 1.5rem !important;
           }
           .testimonials-grey-container > .container {
             padding-left: 1.5rem !important;
@@ -150,10 +151,6 @@ export default function ProcessSection() {
               <span />
               <span />
             </div>
-            <div className="testimonial-decor testimonial-decor-bottom" aria-hidden="true">
-              <span />
-              <span />
-            </div>
             <blockquote
               className="testimonial-quote"
               style={{
@@ -161,7 +158,7 @@ export default function ProcessSection() {
                 lineHeight: 1.35,
                 margin: 0,
                 padding: 0,
-                maxWidth: '950px',
+                maxWidth: '1093px',
                 fontStyle: 'italic',
                 color: 'rgba(0, 0, 0, 0.64)',
               }}

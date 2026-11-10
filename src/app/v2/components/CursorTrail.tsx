@@ -8,6 +8,7 @@ import React, { useEffect, useRef } from 'react';
 
 export default function CursorTrail() {
   const canvasRef = useRef<HTMLCanvasElement>(null);
+  const cursorRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
     // Accessibility check: Do not animate if user prefers reduced motion.
@@ -33,6 +34,7 @@ export default function CursorTrail() {
     let animationFrameId: number;
     let mouse = { x: -1000, y: -1000 };
     let isMoving = false;
+    const cursor = cursorRef.current;
 
     // Resize canvas to full window
     const resizeCanvas = () => {
@@ -47,6 +49,10 @@ export default function CursorTrail() {
       mouse.x = e.clientX;
       mouse.y = e.clientY;
       isMoving = true;
+      if (cursor) {
+        cursor.style.transform = `translate3d(${e.clientX}px, ${e.clientY}px, 0)`;
+        cursor.classList.toggle('cursor-arrow-hover', Boolean((e.target as HTMLElement | null)?.closest('a, button, [role="button"]')));
+      }
 
       const target = e.target as HTMLElement | null;
       const isInteractive = target?.closest('a, button, [role="button"], input[type="submit"], input[type="button"], .btn, .nav-link, .hero-ring-badge');
@@ -114,18 +120,25 @@ export default function CursorTrail() {
   }, []);
 
   return (
-    <canvas
-      ref={canvasRef}
-      style={{
-        position: 'fixed',
-        top: 0,
-        left: 0,
-        width: '100vw',
-        height: '100vh',
-        pointerEvents: 'none',
-        zIndex: 9999, // Ensure it's above other elements but doesn't block clicks
-      }}
-      aria-hidden="true"
-    />
+    <>
+      <canvas
+        ref={canvasRef}
+        style={{
+          position: 'fixed',
+          top: 0,
+          left: 0,
+          width: '100vw',
+          height: '100vh',
+          pointerEvents: 'none',
+          zIndex: 9999,
+        }}
+        aria-hidden="true"
+      />
+      <div ref={cursorRef} className="cursor-arrow" aria-hidden="true">
+        <svg viewBox="0 0 32 38" focusable="false">
+          <path d="M3 2.5 28.8 16.8c1.4.8 1.1 2.8-.5 3.2l-8.8 2.2 5.3 10.1c.5 1 .1 2.2-.9 2.7l-2.5 1.3c-1 .5-2.2.1-2.7-.9l-5.2-10.1-5.9 6.8c-1 1.1-2.9.5-3-1L3 2.5Z" />
+        </svg>
+      </div>
+    </>
   );
 }
