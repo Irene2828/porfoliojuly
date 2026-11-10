@@ -362,7 +362,7 @@ export default function ServicesV2() {
                     WebkitTextStroke: '0'
                   }}
                 >
-                  Custom website
+                  Custom websites
                 </motion.h3>
                 <motion.p
                   initial={{ opacity: 0, y: 12 }}
@@ -378,7 +378,7 @@ export default function ServicesV2() {
                     letterSpacing: '0.015em'
                   }}
                 >
-                  New or outdated? Make it work <span style={{ fontStyle: 'italic', textDecorationLine: 'underline', textDecorationColor: '#f2908f', textDecorationThickness: '1px', textUnderlineOffset: '0.16em' }}>harder</span>.
+                  Generic or outdated? Make it work <span style={{ fontStyle: 'italic', textDecorationLine: 'underline', textDecorationColor: '#f2908f', textDecorationThickness: '1px', textUnderlineOffset: '0.16em' }}>harder</span>.
                 </motion.p>
                 
                 <ul style={{ listStyle: 'none', padding: 0, margin: 0, display: 'flex', flexDirection: 'column', gap: '16px' }}>
@@ -496,7 +496,7 @@ export default function ServicesV2() {
                     WebkitTextStroke: '0'
                   }}
                 >
-                  Custom apps, built to work with AI
+                  Custom apps or workflows
                 </motion.h3>
                 <motion.p
                   initial={{ opacity: 0, y: 12 }}
@@ -512,7 +512,7 @@ export default function ServicesV2() {
                     letterSpacing: '0.015em'
                   }}
                 >
-                  Stop doing everything <span style={{ fontStyle: 'italic', textDecorationLine: 'underline', textDecorationColor: '#1A1F2B', textDecorationThickness: '1px', textUnderlineOffset: '0.16em' }}>by hand</span>.
+                  <span style={{ fontStyle: 'italic', textDecorationLine: 'underline', textDecorationColor: '#1A1F2B', textDecorationThickness: '1px', textUnderlineOffset: '0.16em' }}>Stop</span> doing everything by hand.
                 </motion.p>
                 
                 <ul style={{ listStyle: 'none', padding: 0, margin: 0, display: 'flex', flexDirection: 'column', gap: '16px' }}>

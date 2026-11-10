@@ -342,6 +342,15 @@ export default function ProjectsV2({ initialProjects = [] }: ProjectsV2Props) {
             max-width: 1267.2px !important;
             padding: 0 1.76rem !important;
           }
+          .cases-tabs {
+            max-width: 1267.2px !important;
+            margin-left: auto !important;
+            margin-right: auto !important;
+            padding-left: 1.76rem !important;
+            padding-right: 1.76rem !important;
+            justify-content: flex-end !important;
+            box-sizing: border-box !important;
+          }
         }
         @media (max-width: 900px) {
           .cases-grid-container {
@@ -509,7 +518,7 @@ export default function ProjectsV2({ initialProjects = [] }: ProjectsV2Props) {
       
       
       {/* Section Heading: Examples of My Work — Narrative Scroll-Arrival Choreography */}
-      <div className="cases-header-block" style={{ marginBottom: '1.75rem', textAlign: 'center', padding: '0 1.5rem' }}>
+      <div className="cases-header-block" style={{ marginBottom: '0.875rem', textAlign: 'center', padding: '0 1.5rem' }}>
         {/* 1. Architectural hairline draws outward from center */}
         <motion.div
           className="cases-decor-line"
@@ -566,10 +575,10 @@ export default function ProjectsV2({ initialProjects = [] }: ProjectsV2Props) {
             letterSpacing: '-0.01em'
           }}
         >
-          ...and how I approach problems
+          ...or how I approach problems
         </motion.p>
 
-              <div role="tablist" aria-label="Case categories" style={{ display: 'flex', justifyContent: 'center', gap: '0.5rem', flexWrap: 'wrap', width: '100%', margin: '28px 0 0', padding: '0', boxSizing: 'border-box' }}>
+              <div className="cases-tabs" role="tablist" aria-label="Case categories" style={{ display: 'flex', justifyContent: 'center', gap: '0.5rem', flexWrap: 'wrap', width: '100%', margin: '56px 0 0', padding: '0', boxSizing: 'border-box' }}>
         {([
           { id: 'internal-tools', label: 'Internal Apps' },
           { id: 'websites', label: 'Websites' },
@@ -592,7 +601,7 @@ export default function ProjectsV2({ initialProjects = [] }: ProjectsV2Props) {
         style={{ 
           width: '100%', 
           paddingBottom: '1.5rem',
-          paddingTop: '0.75rem'
+          paddingTop: '0.375rem'
         }}
       >
         <div className="cases-grid-container">

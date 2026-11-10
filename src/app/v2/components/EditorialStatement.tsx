@@ -22,25 +22,32 @@ export default function EditorialStatement() {
             background-color: #121316 !important;
           }
           .prefooter-closing-line {
-            font-family: var(--font-body), 'Plus Jakarta Sans', sans-serif !important;
+            font-family: var(--font-heading) !important;
             font-weight: 300 !important;
-            letter-spacing: 0.01em !important;
+            letter-spacing: -0.02em !important;
             color: rgba(255, 255, 255, 0.8) !important;
             -webkit-text-fill-color: rgba(255, 255, 255, 0.8) !important;
             -webkit-font-smoothing: antialiased !important;
             -moz-osx-font-smoothing: grayscale !important;
           }
           .prefooter-closing-line strong {
-            font-weight: 600 !important;
+            font-weight: 500 !important;
+            font-style: italic !important;
             letter-spacing: 0.025em !important;
             color: #f2908f !important;
             -webkit-text-fill-color: #f2908f !important;
+          }
+          .prefooter-closing-desktop,
+          .prefooter-closing-mobile .prefooter-closing-row:not(strong) {
+            font-weight: 300 !important;
+            color: rgba(255, 255, 255, 0.8) !important;
+            -webkit-text-fill-color: rgba(255, 255, 255, 0.8) !important;
           }
           .prefooter-closing-subtext,
           .prefooter-closing-subtext p {
             font-family: var(--font-body), 'Plus Jakarta Sans', sans-serif !important;
             font-weight: 300 !important;
-            letter-spacing: -0.011em !important;
+            letter-spacing: 0.005em !important;
             color: rgba(255, 255, 255, 0.8) !important;
             -webkit-text-fill-color: rgba(255, 255, 255, 0.8) !important;
           }
@@ -112,6 +119,27 @@ export default function EditorialStatement() {
             .prefooter-closing-line {
               font-size: clamp(1.48rem, 7.7vw, 2.08rem) !important;
               line-height: 1.35 !important;
+              text-align: left !important;
+              width: 100% !important;
+              max-width: none !important;
+              align-self: stretch !important;
+              font-weight: 300 !important;
+              color: rgba(255, 255, 255, 0.8) !important;
+              -webkit-text-fill-color: rgba(255, 255, 255, 0.8) !important;
+            }
+            .prefooter-closing-line strong {
+              font-weight: 600 !important;
+              color: #f2908f !important;
+              -webkit-text-fill-color: #f2908f !important;
+            }
+            .prefooter-closing-mobile .prefooter-closing-row {
+              color: rgba(255, 255, 255, 0.8) !important;
+              -webkit-text-fill-color: rgba(255, 255, 255, 0.8) !important;
+            }
+            .prefooter-closing-mobile strong.prefooter-closing-row {
+              font-weight: 600 !important;
+              color: #f2908f !important;
+              -webkit-text-fill-color: #f2908f !important;
             }
             .prefooter-section .prefooter-btn-primary.face-cta,
             .prefooter-btn-primary {
@@ -170,13 +198,18 @@ export default function EditorialStatement() {
             }
           }
           @media (max-width: 900px) {
+            .prefooter-content {
+              padding-left: 1.5rem !important;
+              padding-right: 1.5rem !important;
+            }
             .prefooter-closing-desktop {
               display: none !important;
             }
             .prefooter-closing-mobile {
               display: flex !important;
               flex-direction: column !important;
-              align-items: center !important;
+              align-items: flex-start !important;
+              width: 100% !important;
               gap: 0px !important;
             }
             .prefooter-closing-row {
@@ -185,6 +218,7 @@ export default function EditorialStatement() {
           }
         `}</style>
         <div
+          className="prefooter-content"
           style={{
             maxWidth: '820px',
             width: '100%',
@@ -221,10 +255,10 @@ export default function EditorialStatement() {
             viewport={{ once: true, amount: 0.45 }}
             transition={{ duration: 0.78, delay: 0.08, ease: [0.16, 1, 0.3, 1] }}
             style={{
-              fontFamily: 'var(--font-body), "Plus Jakarta Sans", sans-serif',
+              fontFamily: 'var(--font-heading)',
               fontSize: 'clamp(1.48rem, 7.7vw, 2.08rem)',
               fontWeight: 300,
-    letterSpacing: '-0.035em',
+              letterSpacing: '-0.02em',
               lineHeight: 1.35,
               color: 'rgba(255, 255, 255, 0.8)',
               WebkitTextFillColor: 'rgba(255, 255, 255, 0.8)',
@@ -236,23 +270,21 @@ export default function EditorialStatement() {
             <span className="prefooter-closing-desktop">
               An outdated website or repetitive work{' '}
               <br />
-              <motion.strong
+              <motion.span
                 initial={{ opacity: 0, y: 12 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true, amount: 0.45 }}
                 transition={{ duration: 0.72, delay: 0.22, ease: [0.16, 1, 0.3, 1] }}
-                style={{ display: 'inline-block', fontWeight: 600, letterSpacing: '0.025em', color: '#f2908f', WebkitTextFillColor: '#f2908f' }}
+                style={{ display: 'inline-block', fontWeight: 300, color: 'rgba(255, 255, 255, 0.8)', WebkitTextFillColor: 'rgba(255, 255, 255, 0.8)' }}
               >
-                is slowing your business down.
-              </motion.strong>
+                is <strong style={{ fontWeight: 500, fontStyle: 'italic', letterSpacing: '0.025em', color: '#f2908f', WebkitTextFillColor: '#f2908f' }}>slowing your business down.</strong>
+              </motion.span>
             </span>
             <span className="prefooter-closing-mobile">
               <span className="prefooter-closing-row">An outdated website</span>
               <span className="prefooter-closing-row">or repetitive work</span>
-              <strong className="prefooter-closing-row" style={{ fontWeight: 600, letterSpacing: '0.025em', color: '#f2908f', WebkitTextFillColor: '#f2908f' }}>
-                is slowing your
-              </strong>
-              <strong className="prefooter-closing-row" style={{ fontWeight: 600, letterSpacing: '0.025em', color: '#f2908f', WebkitTextFillColor: '#f2908f' }}>
+              <span className="prefooter-closing-row" style={{ fontWeight: 300, color: 'rgba(255, 255, 255, 0.8)', WebkitTextFillColor: 'rgba(255, 255, 255, 0.8)' }}>is <strong style={{ fontWeight: 500, fontStyle: 'italic', letterSpacing: '0.025em', color: '#f2908f', WebkitTextFillColor: '#f2908f' }}>slowing your</strong></span>
+              <strong className="prefooter-closing-row" style={{ fontWeight: 500, fontStyle: 'italic', letterSpacing: '0.025em', color: '#f2908f', WebkitTextFillColor: '#f2908f' }}>
                 business down.
               </strong>
             </span>
