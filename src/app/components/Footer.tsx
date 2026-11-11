@@ -1,14 +1,15 @@
 'use client';
 
 import { motion } from 'framer-motion';
+import FooterGarden from './FooterGarden';
 
 export default function Footer() {
   return (
     <footer 
       className="site-footer-minimal"
       style={{
-        backgroundColor: '#1e2126',
-        background: '#1e2126',
+        backgroundColor: '#17130f',
+        background: '#17130f',
         width: '100%',
         padding: '1.2rem 0 1.44rem 0',
         borderTop: '1px solid rgba(0, 0, 0, 0.45)',
@@ -18,8 +19,8 @@ export default function Footer() {
     >
       <style>{`
         .site-footer-minimal {
-          background-color: #1e2126 !important;
-          background: #1e2126 !important;
+          background-color: #17130f !important;
+          background: #17130f !important;
           border-top: 1px solid rgba(0, 0, 0, 0.45) !important;
         }
         .footer-inner-container {
@@ -86,6 +87,7 @@ export default function Footer() {
           }
         }
       `}</style>
+      <FooterGarden />
       <motion.div
         className="footer-inner-container"
         initial={{ opacity: 0, y: 10 }}
