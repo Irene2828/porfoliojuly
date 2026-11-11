@@ -152,6 +152,10 @@ export default function HeroV2() {
           -webkit-text-fill-color: #d9d9d9 !important;
           font-weight: 600 !important;
         }
+        .hero-body-finish {
+          display: inline-block;
+          white-space: nowrap;
+        }
         .v2-theme .hero-frame-paragraph em,
         .hero-frame-paragraph em {
           color: #d9d9d9 !important;
@@ -922,11 +926,11 @@ export default function HeroV2() {
                 </h1>
                 <p className="hero-frame-paragraph hero-paragraph-anim" style={{ marginTop: '1.7rem', fontSize: '1.395rem', lineHeight: '1.75', color: '#d9d9d9', WebkitTextFillColor: '#d9d9d9', fontWeight: 300, opacity: 1, textWrap: 'pretty' }}>
                   <span className="hero-body-desktop">
-                    <span className="hero-body-row hero-body-light" style={{ fontWeight: 300 }}>Got a dated site that undersells you, a task that eats your week, a process held together by spreadsheets? <span className="hero-body-normal" style={{ fontWeight: 500, fontStyle: 'normal' }}>I build what fixes it, so you don&rsquo;t have to.</span></span>
+                    <span className="hero-body-row hero-body-light" style={{ fontWeight: 300 }}>Got a dated site that undersells you, a task that eats your week, a process held together by spreadsheets? <span className="hero-body-finish"><strong className="hero-body-bold">I build what fixes it,</strong> <span className="hero-body-light">so you don&rsquo;t have to.</span></span></span>
                   </span>
                   <span className="hero-body-mobile">
                     <span className="hero-body-mobile-text hero-body-light">Got a dated site that undersells you, a task that eats your week, a process held together by spreadsheets?</span>{' '}
-                    <strong className="hero-body-bold">I build what fixes it, so you don’t have to.</strong>
+                    <span className="hero-body-finish"><strong className="hero-body-bold">I build what fixes it,</strong>{' '}<span className="hero-body-light">so you don’t have to.</span></span>
                   </span>
                 </p>
               </div>

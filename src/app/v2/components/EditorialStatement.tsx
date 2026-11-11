@@ -33,13 +33,15 @@ export default function EditorialStatement() {
           .prefooter-closing-line strong {
             font-weight: 500 !important;
             font-style: italic !important;
-            letter-spacing: 0.025em !important;
+            letter-spacing: 0.015em !important;
             color: #f2908f !important;
             -webkit-text-fill-color: #f2908f !important;
           }
           .prefooter-closing-desktop,
           .prefooter-closing-mobile .prefooter-closing-row:not(strong) {
             font-weight: 300 !important;
+            font-style: italic !important;
+            letter-spacing: 0.025em !important;
             color: rgba(255, 255, 255, 0.8) !important;
             -webkit-text-fill-color: rgba(255, 255, 255, 0.8) !important;
           }
@@ -128,16 +130,18 @@ export default function EditorialStatement() {
               -webkit-text-fill-color: rgba(255, 255, 255, 0.8) !important;
             }
             .prefooter-closing-line strong {
-              font-weight: 600 !important;
+              font-weight: 500 !important;
               color: #f2908f !important;
               -webkit-text-fill-color: #f2908f !important;
             }
             .prefooter-closing-mobile .prefooter-closing-row {
+              font-style: italic !important;
+              letter-spacing: 0.015em !important;
               color: rgba(255, 255, 255, 0.8) !important;
               -webkit-text-fill-color: rgba(255, 255, 255, 0.8) !important;
             }
             .prefooter-closing-mobile strong.prefooter-closing-row {
-              font-weight: 600 !important;
+              font-weight: 500 !important;
               color: #f2908f !important;
               -webkit-text-fill-color: #f2908f !important;
             }
@@ -208,12 +212,15 @@ export default function EditorialStatement() {
             .prefooter-closing-mobile {
               display: flex !important;
               flex-direction: column !important;
-              align-items: flex-start !important;
+              align-items: center !important;
               width: 100% !important;
               gap: 0px !important;
+              text-align: center !important;
             }
             .prefooter-closing-row {
               display: block !important;
+              width: 100% !important;
+              text-align: center !important;
             }
           }
         `}</style>
@@ -274,7 +281,7 @@ export default function EditorialStatement() {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true, amount: 0.45 }}
                 transition={{ duration: 0.72, delay: 0.22, ease: [0.16, 1, 0.3, 1] }}
-                style={{ display: 'inline-block', fontWeight: 300, color: 'rgba(255, 255, 255, 0.8)', WebkitTextFillColor: 'rgba(255, 255, 255, 0.8)' }}
+                style={{ display: 'inline', fontWeight: 300, color: 'rgba(255, 255, 255, 0.8)', WebkitTextFillColor: 'rgba(255, 255, 255, 0.8)' }}
               >
                 is <strong style={{ fontWeight: 500, fontStyle: 'italic', letterSpacing: '0.025em', color: '#f2908f', WebkitTextFillColor: '#f2908f' }}>slowing your business down.</strong>
               </motion.span>

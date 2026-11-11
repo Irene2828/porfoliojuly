@@ -212,6 +212,8 @@ export default function FaqSection() {
         }
         .faq-cta-heading .faq-cta-white {
           font-weight: 300 !important;
+          font-style: italic !important;
+          letter-spacing: 0.015em !important;
           color: rgba(255, 255, 255, 0.8) !important;
           -webkit-text-fill-color: rgba(255, 255, 255, 0.8) !important;
         }
@@ -380,7 +382,7 @@ export default function FaqSection() {
           <motion.div initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true, amount: 0.45 }} transition={{ duration: 0.72, delay: 0.16, ease: [0.16, 1, 0.3, 1] }} style={{ margin: 0, textAlign: 'center' }}>
             <a href="#contact" style={{ display: 'inline-flex', alignItems: 'center', justifyContent: 'center', gap: '0.55rem', height: '3.01rem', padding: '0 1.74rem', fontFamily: "var(--font-body), 'Plus Jakarta Sans', sans-serif", fontSize: '0.72rem', fontWeight: 700, letterSpacing: '0.08em', textTransform: 'uppercase', textDecoration: 'none', color: '#000000', background: 'linear-gradient(315deg, #d6b792 0%, #f2908f 100%)', border: '1px solid #ffffff', borderRadius: '40px', boxShadow: 'none', cursor: 'pointer' }}>SEND YOUR PROBLEM MY WAY <span aria-hidden="true">↗</span></a>
           </motion.div>
-          <motion.p initial={{ opacity: 0, y: 12 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true, amount: 0.45 }} transition={{ duration: 0.72, delay: 0.24, ease: [0.16, 1, 0.3, 1] }} style={{ margin: '0.9rem 0 0', textAlign: 'center', fontFamily: 'var(--font-body), sans-serif', fontSize: '0.72rem', fontWeight: 300, letterSpacing: '0.015em', color: 'rgba(255, 255, 255, 0.58)' }}>I usually reply within 24 hrs.</motion.p>
+          <motion.p initial={{ opacity: 0, y: 12 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true, amount: 0.45 }} transition={{ duration: 0.72, delay: 0.24, ease: [0.16, 1, 0.3, 1] }} style={{ margin: '0.9rem 0 0', textAlign: 'center', fontFamily: 'var(--font-body), sans-serif', fontSize: '0.828rem', fontWeight: 300, letterSpacing: '0.028em', color: 'rgba(255, 255, 255, 0.58)' }}>I usually reply within 24 hrs.</motion.p>
         </div>
       </div>
     </section>

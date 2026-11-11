@@ -23,16 +23,15 @@ interface ProjectsV2Props {
 
 export default function ProjectsV2({ initialProjects = [] }: ProjectsV2Props) {
   const [selectedProjectId, setSelectedProjectId] = useState<string | null>(null);
-  const [activeTab, setActiveTab] = useState<'internal-tools' | 'websites' | 'mobile-apps' | 'workflow-automations'>('internal-tools');
+  const [activeTab, setActiveTab] = useState<'internal-tools' | 'websites' | 'workflow-automations'>('internal-tools');
   const [hoveredProjectId, setHoveredProjectId] = useState<string | null>(null);
   const HOVER_MEDIA: Record<string, { staticSrc: string; hoverSrc: string }> = {
     'v2-1': { staticSrc: '/terry-fox-desktop-static.png', hoverSrc: '/terry-fox-desktop-hover.mp4' },
     'v2-2': { staticSrc: '/isabelle-mobile-static.png', hoverSrc: '/isabelle-desktop-hover.mp4' },
   };
-  const TAB_CASE_IDS: Record<'internal-tools' | 'websites' | 'mobile-apps' | 'workflow-automations', string[]> = {
+  const TAB_CASE_IDS: Record<'internal-tools' | 'websites' | 'workflow-automations', string[]> = {
     'internal-tools': ['v2-1'],
     websites: ['v2-2', 'v2-3'],
-    'mobile-apps': ['v2-4'],
     'workflow-automations': ['v2-5'],
   };
   const scrollTrackRef = useRef<HTMLDivElement>(null);
@@ -643,7 +642,6 @@ export default function ProjectsV2({ initialProjects = [] }: ProjectsV2Props) {
         {([
           { id: 'internal-tools', label: 'Internal Apps' },
           { id: 'websites', label: 'Websites' },
-          { id: 'mobile-apps', label: 'Mobile Apps' },
           { id: 'workflow-automations', label: 'Workflow Automations' },
         ] as const).map((tab, index) => (
           <Fragment key={tab.id}>

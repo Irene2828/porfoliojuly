@@ -13,7 +13,8 @@ export default function CursorTrail() {
   useEffect(() => {
     // Accessibility check: Do not animate if user prefers reduced motion.
     const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
-    if (prefersReducedMotion) return;
+    const isTouchDevice = window.matchMedia('(hover: none) and (pointer: coarse)').matches;
+    if (prefersReducedMotion || isTouchDevice) return;
 
     const canvas = canvasRef.current;
     if (!canvas) return;
@@ -32,8 +33,8 @@ export default function CursorTrail() {
     }> = [];
 
     let animationFrameId: number;
+    let cursorFrameId: number | null = null;
     let mouse = { x: -1000, y: -1000 };
-    let isMoving = false;
     const cursor = cursorRef.current;
 
     // Resize canvas to full window
@@ -48,10 +49,15 @@ export default function CursorTrail() {
     const handleMouseMove = (e: MouseEvent) => {
       mouse.x = e.clientX;
       mouse.y = e.clientY;
-      isMoving = true;
       if (cursor) {
-        cursor.style.transform = `translate3d(${e.clientX}px, ${e.clientY}px, 0)`;
         cursor.classList.toggle('cursor-arrow-hover', Boolean((e.target as HTMLElement | null)?.closest('a, button, [role="button"]')));
+        // Coalesce high-frequency pointer events into one compositor-friendly update per frame.
+        if (cursorFrameId === null) {
+          cursorFrameId = requestAnimationFrame(() => {
+            cursor.style.transform = `translate3d(${mouse.x}px, ${mouse.y}px, 0)`;
+            cursorFrameId = null;
+          });
+        }
       }
 
       const target = e.target as HTMLElement | null;
@@ -116,6 +122,7 @@ export default function CursorTrail() {
       window.removeEventListener('resize', resizeCanvas);
       window.removeEventListener('mousemove', handleMouseMove);
       cancelAnimationFrame(animationFrameId);
+      if (cursorFrameId !== null) cancelAnimationFrame(cursorFrameId);
     };
   }, []);
 

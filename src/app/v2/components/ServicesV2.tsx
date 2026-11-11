@@ -13,7 +13,7 @@ export default function ServicesV2() {
       )
     },
     {
-      text: <span>Makes it easy to book or contact you</span>,
+      text: <span>Makes it easy to book, contact and remember you.</span>,
       icon: (
         <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#e8ebee" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
           <rect x="3" y="4" width="18" height="18" rx="2" ry="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/>
@@ -232,7 +232,7 @@ export default function ServicesV2() {
             fontStyle: 'normal'
           }}
         >
-          ...a website, an app, or both?
+          ...a website, an app, or a workflow?
         </motion.p>
       </div>
 
@@ -496,7 +496,7 @@ export default function ServicesV2() {
                     WebkitTextStroke: '0'
                   }}
                 >
-                  Custom apps or workflows
+                  Custom app or workflow
                 </motion.h3>
                 <motion.p
                   initial={{ opacity: 0, y: 12 }}

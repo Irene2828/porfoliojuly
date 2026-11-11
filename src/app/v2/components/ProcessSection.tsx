@@ -20,20 +20,26 @@ export default function ProcessSection() {
         .testimonial-decor {
           position: absolute;
           left: 0;
-          display: flex;
-          flex-direction: column;
-          gap: 10px;
+          top: 0;
+          width: min(360px, 36vw);
+          height: 0.36rem;
           pointer-events: none;
+          transform: rotate(-3deg);
+          transform-origin: left center;
+          opacity: 0.6;
         }
-        .testimonial-decor-top { top: 0; }
+        .testimonial-decor-top {
+          top: 0;
+          z-index: 2;
+        }
         .testimonial-decor-bottom { bottom: 0; left: auto; right: 0; align-items: flex-end; }
-        .testimonial-decor span {
+        .testimonial-decor-underline {
           display: block;
-          height: 1px;
-          background: rgba(45, 49, 57, 0.6);
+          width: 100%;
+          height: 100%;
+          background: #f2908f;
+          border-radius: 999px;
         }
-        .testimonial-decor span:first-child { width: 248px; }
-        .testimonial-decor span:last-child { width: 136px; }
         .testimonial-heading {
   font-family: var(--font-heading) !important;
           font-weight: 400 !important;
@@ -44,7 +50,7 @@ export default function ProcessSection() {
         .testimonial-quote {
           font-family: var(--font-body), 'Plus Jakarta Sans', sans-serif !important;
           font-style: italic !important;
-          font-weight: 400 !important;
+          font-weight: 300 !important;
           letter-spacing: 0.008em !important;
           color: rgba(0, 0, 0, 0.64) !important;
           -webkit-text-fill-color: rgba(0, 0, 0, 0.64) !important;
@@ -67,8 +73,9 @@ export default function ProcessSection() {
             font-size: 0.72rem !important;
           }
           .testimonial-single {
-            padding: 3rem 1.75rem 1.5rem !important;
+            padding: 5.25rem 1.75rem 1.5rem !important;
           }
+          .testimonial-decor-top { top: 0; }
           .testimonials-grey-container > .container {
             padding-left: 1.5rem !important;
             padding-right: 1.5rem !important;
@@ -121,7 +128,7 @@ export default function ProcessSection() {
             style={{
               fontSize: 'clamp(28px, 4.4vw, 42px)',
               lineHeight: 1.2,
-              margin: '0 0 2.5rem 0',
+              margin: '0 0 1.25rem 0',
               color: 'var(--color-heading-silver)',
             }}
           >
@@ -139,7 +146,7 @@ export default function ProcessSection() {
               border: '1px dashed #000000',
               borderRadius: 0,
               boxShadow: 'none',
-              padding: '4.5rem 4rem',
+              padding: '6.5rem 4rem 4.5rem',
               display: 'flex',
               flexDirection: 'column',
               alignItems: 'flex-start',
@@ -148,8 +155,7 @@ export default function ProcessSection() {
             }}
           >
             <div className="testimonial-decor testimonial-decor-top" aria-hidden="true">
-              <span />
-              <span />
+              <span className="testimonial-decor-underline" />
             </div>
             <blockquote
               className="testimonial-quote"
@@ -179,7 +185,7 @@ export default function ProcessSection() {
                 color: 'rgba(0, 0, 0, 0.8)',
               }}
             >
-              <strong style={{ fontWeight: 700, color: 'rgba(0, 0, 0, 0.6)' }}>ISABELLE GUERTIN</strong>, INSURANCE CLAIMS EXPERT, <span style={{ color: 'rgba(0, 0, 0, 0.6)' }}>MONTREAL</span>
+              <strong style={{ fontWeight: 800, color: 'rgba(0, 0, 0, 0.6)' }}>ISABELLE GUERTIN</strong>, INSURANCE CLAIMS EXPERT, <span style={{ color: 'rgba(0, 0, 0, 0.6)' }}>MONTREAL</span>
             </motion.p>
           </motion.div>
         </div>
