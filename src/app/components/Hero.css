@@ -391,11 +391,6 @@
     display: flex !important;
     flex-direction: column !important;
   }
-  .hero-frame-paragraph .hero-body-bold {
-    font-weight: 700 !important;
-    color: #f3f4f6 !important;
-    -webkit-text-fill-color: #f3f4f6 !important;
-  }
   .headline-mobile {
     display: none !important;
   }
@@ -2153,11 +2148,6 @@
     font-size: inherit !important;
     text-decoration: none !important;
   }
-  .hero-frame-paragraph .hero-body-bold {
-    font-weight: 700 !important;
-    color: #f3f4f6 !important;
-    -webkit-text-fill-color: #f3f4f6 !important;
-  }
 
   /* ── Mobile: cut section spacing in half across all 4 section transitions ── */
   /* 1. Services -> Cases */
@@ -2363,3 +2353,27 @@
   }
 }
 
+.hero-frame-paragraph .hero-body-bold {
+  font-weight: 700;
+  color: #f3f4f6;
+  -webkit-text-fill-color: #f3f4f6;
+}
+
+/* Match HowItWorks' rendered mobile heading and subline sizes. */
+@media (max-width: 767px) {
+  .v2-theme .services-heading-block h2,
+  .v2-theme #cases .cases-header-block > h2,
+  .v2-theme .testimonial-heading,
+  .v2-theme .prefooter-closing-line,
+  .v2-theme .faq-headline,
+  .v2-theme .faq-section-heading,
+  .v2-theme .faq-cta-heading {
+    font-size: 2.1rem !important;
+  }
+
+  .v2-theme .testimonial-quote,
+  .v2-theme .prefooter-closing-subtext,
+  .v2-theme .prefooter-closing-subtext p {
+    font-size: clamp(1.05rem, 2.4vw, 1.2rem) !important;
+  }
+}

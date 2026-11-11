@@ -143,15 +143,6 @@ export default function HeroV2() {
           color: #d9d9d9 !important;
           -webkit-text-fill-color: #d9d9d9 !important;
         }
-        .v2-theme .hero-frame-paragraph .hero-body-bold,
-        .hero-frame-paragraph .hero-body-bold,
-        .hero-body-bold,
-        .v2-theme .hero-frame-paragraph strong,
-        .hero-frame-paragraph strong {
-          color: #d9d9d9 !important;
-          -webkit-text-fill-color: #d9d9d9 !important;
-          font-weight: 600 !important;
-        }
         .hero-body-finish {
           display: inline-block;
           white-space: nowrap;
@@ -218,8 +209,8 @@ export default function HeroV2() {
             margin-top: 1.26rem !important; /* headline-body spacing, tightened 10% from 1.4rem */
             line-height: 1.5225 !important;
           }
-          .v2-theme .hero-frame-paragraph .hero-body-light,
-          .hero-frame-paragraph .hero-body-light,
+          .v2-theme .hero-frame-paragraph .hero-body-mobile-text,
+          .hero-frame-paragraph .hero-body-mobile-text,
           .hero-body-mobile .hero-body-row,
           .hero-body-mobile,
           .hero-body-mobile-text {
@@ -232,20 +223,8 @@ export default function HeroV2() {
             line-height: 1.5225 !important;
             letter-spacing: 0.005em !important;
           }
-          .v2-theme .hero-frame-paragraph .hero-body-bold,
-          .hero-frame-paragraph .hero-body-bold,
-          .hero-body-mobile .hero-body-bold,
-          .hero-body-mobile strong {
-            display: block !important;
-            margin-top: 0.65rem !important; /* increased spacing between bold and unbold text */
-            font-family: var(--font-body) !important;
-            font-size: 15.6px !important;
-            font-weight: 400 !important; /* unbolded: same 400 weight as unbolded text */
-            font-style: normal !important; /* not italic */
-            color: #d9d9d9 !important;
-            -webkit-text-fill-color: #d9d9d9 !important;
-            line-height: 1.5225 !important;
-            letter-spacing: 0.005em !important;
+          .hero-body-mobile .hero-body-finish {
+            font-size: 15.6px;
           }
           .hero-body-desktop {
             display: none !important;

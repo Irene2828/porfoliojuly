@@ -698,14 +698,6 @@ h1, h2, h3, h4, h5, h6 {
   -webkit-text-fill-color: #dfe6ee !important;
 }
 
-.v2-theme .hero-frame-paragraph .hero-body-bold,
-.v2-theme .hero-frame-paragraph strong,
-.hero-frame-paragraph strong {
-  color: #dfe6ee !important;
-  -webkit-text-fill-color: #dfe6ee !important;
-  font-weight: 600 !important;
-}
-
 .v2-theme .hero-frame-paragraph em {
   font-style: italic !important;
   color: #dfe6ee !important;
@@ -1471,7 +1463,7 @@ h1, h2, h3, h4, h5, h6 {
     text-wrap: pretty !important;
   }
 
-  .v2-theme .hero-frame-paragraph .hero-body-light,
+  .v2-theme .hero-frame-paragraph .hero-body-mobile-text,
   .hero-body-mobile .hero-body-row,
   .hero-body-mobile,
   .hero-body-mobile-text {
@@ -1482,22 +1474,6 @@ h1, h2, h3, h4, h5, h6 {
     color: #dfe6ee !important;
     -webkit-text-fill-color: #dfe6ee !important;
     line-height: 1.5225 !important;
-  }
-
-  .v2-theme .hero-frame-paragraph .hero-body-bold,
-  .hero-frame-paragraph .hero-body-bold,
-  .hero-body-mobile .hero-body-bold,
-  .hero-body-mobile strong {
-    display: block !important;
-    margin-top: 0.65rem !important; /* increased spacing between bold and unbold text */
-    font-family: var(--font-body) !important;
-    font-size: 15.6px !important;
-    font-weight: 400 !important; /* unbolded: same 400 weight as unbolded text */
-    font-style: normal !important; /* not italic */
-    color: #dfe6ee !important;
-    -webkit-text-fill-color: #dfe6ee !important;
-    line-height: 1.5225 !important;
-    letter-spacing: normal !important;
   }
 
   .hero-body-desktop {
