@@ -23,16 +23,17 @@ interface ProjectsV2Props {
 
 export default function ProjectsV2({ initialProjects = [] }: ProjectsV2Props) {
   const [selectedProjectId, setSelectedProjectId] = useState<string | null>(null);
-  const [activeTab, setActiveTab] = useState<'internal-tools' | 'websites' | 'mobile-apps'>('internal-tools');
+  const [activeTab, setActiveTab] = useState<'internal-tools' | 'websites' | 'mobile-apps' | 'workflow-automations'>('internal-tools');
   const [hoveredProjectId, setHoveredProjectId] = useState<string | null>(null);
   const HOVER_MEDIA: Record<string, { staticSrc: string; hoverSrc: string }> = {
     'v2-1': { staticSrc: '/terry-fox-desktop-static.png', hoverSrc: '/terry-fox-desktop-hover.mp4' },
     'v2-2': { staticSrc: '/isabelle-mobile-static.png', hoverSrc: '/isabelle-desktop-hover.mp4' },
   };
-  const TAB_CASE_IDS: Record<'internal-tools' | 'websites' | 'mobile-apps', string[]> = {
+  const TAB_CASE_IDS: Record<'internal-tools' | 'websites' | 'mobile-apps' | 'workflow-automations', string[]> = {
     'internal-tools': ['v2-1'],
     websites: ['v2-2', 'v2-3'],
     'mobile-apps': ['v2-4'],
+    'workflow-automations': ['v2-5'],
   };
   const scrollTrackRef = useRef<HTMLDivElement>(null);
 
@@ -99,7 +100,35 @@ export default function ProjectsV2({ initialProjects = [] }: ProjectsV2Props) {
           sub: "The site now presents her at the level she works at. A client in trouble can understand what she does, see proof that it works, and reach her in one step — and a municipality sees a specialist, not a generalist. Live at rguertin.ca." 
         }
       ],
-      image: '/assets/guertin-desktop.png',     },     { id: 'v2-3', title: 'BuyUkrainian', slug: 'buyukrainian', subline: 'Case 03 · BuyUkrainian', hoverLabel: 'Tap to Zoom', annotations: [ { markerNumber: 1, title: 'Buy Ukrainian in Canada', text: 'BuyUkrainian.ca makes it easier to find products from Ukraine in Canadian stores.' }, { markerNumber: 2, title: 'A map and a directory', text: 'Products listed, stores on the map — and a way to add a store that is missing.' }, { markerNumber: 3, title: '105 products listed', text: 'The recording shows the directory as it stood when it was filmed.' }, ], statsTitle: 'At a glance', stats: [ { chip: '01', text: 'Find Ukrainian products in Canada.', sub: 'A grassroots directory and map, made to support Ukraine’s economy.' }, { chip: '02', text: 'A video walkthrough.', sub: 'The case is shown as a mobile recording of the site in use.' }, ], image: '/buyukrainian-mobile-case4.mp4', }, { id: 'v2-4', title: 'Dorion Driving Academy', slug: 'dorion-driving-academy', subline: 'Case 04 · Dorion', hoverLabel: 'Tap to Zoom', annotations: [ { markerNumber: 1, title: 'Your progress at a glance', text: 'The dashboard shows 16 of 25 required lessons done, with an estimated completion date of August 26.' }, { markerNumber: 2, title: 'Pick a date and a time', text: 'May 2026: the 25th and a 90-minute slot at 09:00, chosen in a few taps.' }, { markerNumber: 3, title: 'Reschedule or cancel', text: 'The booked lesson offers Reschedule and Cancel. Cancelling confirms the refund is processed and a receipt is sent by email.' } ], statsTitle: 'At a glance', stats: [ { chip: '01', text: 'Book a lesson in seconds.', sub: 'A mobile MVP for a driving school. Booking a lesson takes seconds instead of days.' }, { chip: '02', text: 'A video walkthrough.', sub: 'The case is shown as a mobile recording of the app in use.' } ], image: '/dorion-driving-case4-framed-v2.mp4' },   ];
+      image: '/assets/guertin-desktop.png',     },     { id: 'v2-3', title: 'BuyUkrainian', slug: 'buyukrainian', subline: 'Case 03 · BuyUkrainian', hoverLabel: 'Tap to Zoom', annotations: [ { markerNumber: 1, title: 'Buy Ukrainian in Canada', text: 'BuyUkrainian.ca makes it easier to find products from Ukraine in Canadian stores.' }, { markerNumber: 2, title: 'A map and a directory', text: 'Products listed, stores on the map — and a way to add a store that is missing.' }, { markerNumber: 3, title: '105 products listed', text: 'The recording shows the directory as it stood when it was filmed.' }, ], statsTitle: 'At a glance', stats: [ { chip: '01', text: 'Find Ukrainian products in Canada.', sub: 'A grassroots directory and map, made to support Ukraine’s economy.' }, { chip: '02', text: 'A video walkthrough.', sub: 'The case is shown as a mobile recording of the site in use.' }, ], image: '/buyukrainian-mobile-case4.mp4', }, { id: 'v2-4', title: 'Dorion Driving Academy', slug: 'dorion-driving-academy', subline: 'Case 04 · Dorion', hoverLabel: 'Tap to Zoom', annotations: [ { markerNumber: 1, title: 'Your progress at a glance', text: 'The dashboard shows 16 of 25 required lessons done, with an estimated completion date of August 26.' }, { markerNumber: 2, title: 'Pick a date and a time', text: 'May 2026: the 25th and a 90-minute slot at 09:00, chosen in a few taps.' }, { markerNumber: 3, title: 'Reschedule or cancel', text: 'The booked lesson offers Reschedule and Cancel. Cancelling confirms the refund is processed and a receipt is sent by email.' } ], statsTitle: 'At a glance', stats: [ { chip: '01', text: 'Book a lesson in seconds.', sub: 'A mobile MVP for a driving school. Booking a lesson takes seconds instead of days.' }, { chip: '02', text: 'A video walkthrough.', sub: 'The case is shown as a mobile recording of the app in use.' } ], image: '/dorion-driving-case4-framed-v2.mp4' },
+    {
+      id: 'v2-5',
+      title: 'North & Co. / Knowledge agent',
+      slug: 'north-co-knowledge-agent',
+      subline: 'Employees in 40 stores need answers they can trust.\nSearching takes minutes — and the answer depends on who you ask.',
+      hoverLabel: 'Tap to Zoom',
+      demoUrl: 'https://north-co-knowledge-agent.vercel.app/',
+      annotations: [
+        { markerNumber: 1, title: 'Cited answers', text: 'Every claim carries a citation to the document it came from. No citation, no answer.' },
+        { markerNumber: 2, title: 'A judge checks every draft', text: 'The judge grades each draft — grounded, correct, clear. A bad draft loops back for a fix, up to two retries.' },
+        { markerNumber: 3, title: 'Human in Control', text: 'Uncertain cases go to a human for approval. Nothing ships without a review.' }
+      ],
+      statsTitle: 'Impact',
+      stats: [
+        {
+          chip: 'Before',
+          text: 'Answers depended on who you asked.',
+          sub: "A simple question — 'what's the employee discount?' — meant minutes of searching through scattered documents, and the answer changed with the person you asked. Wrong answers cost real money: a wrong discount, a wrong return, a wrong procedure."
+        },
+        {
+          chip: 'After',
+          text: 'A checked answer in seconds',
+          sub: "Ask a question, get a cited answer in seconds, with every step visible — retrieve, draft, judge, approve, log.\n\nThe judge catches bad answers before they reach anyone: the demo shows a clean pass, an honest unknown, and a bad draft caught and fixed. When the documents don't cover the question, the agent says 'I don't know' instead of inventing one."
+        }
+      ],
+      image: '/assets/north-co/01-ask.png'
+    },
+  ];
 
   const [projectsList, setProjectsList] = useState(initialProjectsData);
   const visibleProjects = projectsList.filter((p) => TAB_CASE_IDS[activeTab].includes(p.id));
@@ -147,6 +176,18 @@ export default function ProjectsV2({ initialProjects = [] }: ProjectsV2Props) {
         statsTitle={project.statsTitle}
         annotations={project.stats}
       >
+        {project.demoUrl && (
+          <div style={{ textAlign: 'center', margin: '0.5rem 0 0' }}>
+            <a
+              href={project.demoUrl}
+              target="_blank"
+              rel="noopener noreferrer"
+              style={{ fontFamily: 'var(--font-body), "Plus Jakarta Sans", sans-serif', fontSize: '0.85rem', fontWeight: 300, lineHeight: 1.5, color: 'var(--color-heading-peach, #f2908f)', textDecoration: 'none' }}
+            >
+              See the live demo →
+            </a>
+          </div>
+        )}
         <div 
           className={`project-section-block ${project.slug}-section`}
           style={{ width: '100%', margin: 0 }}
@@ -201,6 +242,26 @@ export default function ProjectsV2({ initialProjects = [] }: ProjectsV2Props) {
                             src: '/assets/poster-tool/03-templates.png',
                             stepLabel: 'Step 1 — Five locked templates',
                             caption: 'Step 1 — Five locked templates: print sizes 11×17, 8.5×11, A3, A4 and a Facebook format. Same design for every city.'
+                          }
+                        ]}
+                      />
+                    ) : project.id === 'v2-5' ? (
+                      <PosterGallery
+                        images={[
+                          {
+                            src: '/assets/north-co/01-ask.png',
+                            stepLabel: 'Ask — One question, every step visible',
+                            caption: 'Ask — One question, every step visible: the question goes in, the harness shows retrieve, draft, judge, loop, approve and log. Connect a key to try it live.'
+                          },
+                          {
+                            src: '/assets/north-co/02-clean-pass.png',
+                            stepLabel: 'A clean pass — Cited answer, judge approved',
+                            caption: 'A clean pass — the employee discount is 30%, cited to the discount document, judge verdict PASS: grounded 1, clarity 1, confidence 1.'
+                          },
+                          {
+                            src: '/assets/north-co/03-how-it-works.png',
+                            stepLabel: 'How it works — The harness, step by step',
+                            caption: 'How it works — the harness, step by step: retrieve the right documents, draft from facts only, judge every claim, loop on a fail, escalate the uncertain to a human.'
                           }
                         ]}
                       />
@@ -583,6 +644,7 @@ export default function ProjectsV2({ initialProjects = [] }: ProjectsV2Props) {
           { id: 'internal-tools', label: 'Internal Apps' },
           { id: 'websites', label: 'Websites' },
           { id: 'mobile-apps', label: 'Mobile Apps' },
+          { id: 'workflow-automations', label: 'Workflow Automations' },
         ] as const).map((tab, index) => (
           <Fragment key={tab.id}>
             {index > 0 && <span aria-hidden="true" style={{ color: '#989898', fontFamily: 'var(--font-body)', fontSize: 'clamp(1.05rem, 2.4vw, 1.2rem)', fontWeight: 300, lineHeight: 1.55, letterSpacing: '-0.011em', padding: '0 0.15rem' }}>/</span>}
@@ -654,6 +716,10 @@ export default function ProjectsV2({ initialProjects = [] }: ProjectsV2Props) {
           {HOVER_MEDIA[project.id] && (
             <img src={HOVER_MEDIA[project.id].staticSrc} alt="" aria-hidden="true" style={{ position: 'absolute', inset: 0, width: '100%', height: '100%', objectFit: 'cover', opacity: hoveredProjectId === project.id ? 0 : 1, transition: 'opacity 0.25s ease', pointerEvents: 'none', zIndex: 2 }} />
           )}
+                      </div>
+                    ) : project.id === 'v2-5' ? (
+                      <div className="case-desktop-frame">
+                        <img src={project.image} alt={project.title} className="case-recording-video" />
                       </div>
                     ) : (
                       <div className="case-desktop-frame">
