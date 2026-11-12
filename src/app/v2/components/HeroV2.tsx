@@ -225,6 +225,7 @@ export default function HeroV2() {
           }
           .hero-body-mobile .hero-body-finish {
             font-size: 15.6px;
+            margin-top: 0.5225em;
           }
           .hero-body-desktop {
             display: none !important;
