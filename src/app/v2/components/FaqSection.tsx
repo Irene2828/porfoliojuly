@@ -271,7 +271,7 @@ export default function FaqSection() {
           maxWidth: '720px',
           width: '100%',
           margin: '0 auto',
-          padding: '0 1.5rem',
+          padding: '0 1.5rem 5.1rem',
           textAlign: 'left',
         }}
       >

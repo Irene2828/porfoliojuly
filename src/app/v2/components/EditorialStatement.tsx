@@ -20,7 +20,7 @@ export default function EditorialStatement({ showGarden = false }: { showGarden?
       >
         {showGarden && <div className="prefooter-garden"><FooterGarden /></div>}
         <style>{`
-          .prefooter-with-garden { margin-top: 31.5rem; }
+          .prefooter-with-garden { margin-top: 0 !important; }
           .prefooter-garden { position: absolute; right: 1rem; bottom: 1rem; width: min(336px, 60%); }
           @media (min-width: 1200px) {
             .prefooter-garden { top: 50%; bottom: auto; transform: translateY(-50%); }
@@ -242,6 +242,14 @@ export default function EditorialStatement({ showGarden = false }: { showGarden?
               width: 100% !important;
               text-align: center !important;
             }
+          }
+          .prefooter-with-garden .prefooter-content { padding-bottom: 1rem !important; }
+          .prefooter-with-garden .prefooter-cta-container { margin-bottom: 1.25rem !important; }
+          @media (min-width: 1200px) {
+            .prefooter-with-garden { padding-bottom: 2.5rem !important; }
+          }
+          @media (max-width: 1199px) {
+            .prefooter-with-garden { padding-bottom: 110px !important; }
           }
         `}</style>
         <div
