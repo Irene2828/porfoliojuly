@@ -1,7 +1,6 @@
 'use client';
 
 import { motion } from 'framer-motion';
-import FooterGarden from './FooterGarden';
 
 export default function Footer() {
   return (
@@ -87,7 +86,6 @@ export default function Footer() {
           }
         }
       `}</style>
-      <FooterGarden />
       <motion.div
         className="footer-inner-container"
         initial={{ opacity: 0, y: 10 }}

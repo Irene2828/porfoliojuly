@@ -1,11 +1,12 @@
 'use client';
 
 import { motion } from 'framer-motion';
+import FooterGarden from '../../components/FooterGarden';
 
-export default function EditorialStatement() {
+export default function EditorialStatement({ showGarden = false }: { showGarden?: boolean }) {
   return (
       <section
-        className="prefooter-section"
+        className={`prefooter-section${showGarden ? ' prefooter-with-garden' : ''}`}
         style={{
           backgroundColor: '#121316',
           padding: '80px 0 120px 0', /* doubled bottom space */
@@ -17,7 +18,18 @@ export default function EditorialStatement() {
           overflow: 'hidden'
         }}
       >
+        {showGarden && <div className="prefooter-garden"><FooterGarden /></div>}
         <style>{`
+          .prefooter-with-garden { margin-top: 10.5rem; }
+          .prefooter-garden { position: absolute; right: 1rem; bottom: 1rem; width: min(336px, 60%); }
+          @media (min-width: 1200px) {
+            .prefooter-with-garden { padding-right: 336px !important; }
+            .prefooter-garden { top: 50%; bottom: auto; transform: translateY(-50%); }
+          }
+          @media (max-width: 1199px) {
+            .prefooter-with-garden { padding-bottom: 220px !important; }
+          }
+
           .prefooter-section {
             background-color: #121316 !important;
           }

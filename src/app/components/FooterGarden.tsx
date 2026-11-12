@@ -1,6 +1,6 @@
 'use client';
 
-import { useState } from 'react';
+import { useEffect, useRef, useState } from 'react';
 import styles from './FooterGarden.module.css';
 
 const descriptions = [
@@ -12,15 +12,43 @@ const descriptions = [
 
 export default function FooterGarden() {
   const [step, setStep] = useState(0);
+  const [playback, setPlayback] = useState(0);
+  const gardenRef = useRef<HTMLDivElement>(null);
+
+  useEffect(() => {
+    const garden = gardenRef.current;
+    if (!garden) return;
+    const observer = new IntersectionObserver(([entry]) => {
+      if (!entry.isIntersecting) return;
+      observer.disconnect();
+      if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+        setStep(3);
+      } else {
+        setPlayback(current => current + 1);
+      }
+    }, { threshold: 0.5 });
+    observer.observe(garden);
+    return () => observer.disconnect();
+  }, []);
+
+  useEffect(() => {
+    if (playback === 0) return;
+    setStep(0);
+    const timers = [1, 2, 3].map((next, index) =>
+      window.setTimeout(() => setStep(next), 850 + index * 1100)
+    );
+    return () => timers.forEach(timer => window.clearTimeout(timer));
+  }, [playback]);
+
+  const replay = () => setPlayback(current => current + 1);
 
   return (
-    <div className={styles.garden} data-step={step}>
+    <div ref={gardenRef} className={styles.garden} data-step={step}>
       <button
         type="button"
         className={styles.scene}
-        onClick={() => setStep(current => Math.min(current + 1, 3))}
-        aria-label={`Plant growth game, step ${step + 1} of 4. ${descriptions[step]}`}
-        aria-disabled={step === 3}
+        onClick={replay}
+        aria-label="Replay plant growth animation"
       >
         <svg viewBox="0 0 480 280" fill="none" aria-hidden="true">
           <path d="M180 226H300" stroke="#f2908f" strokeWidth="1" />
@@ -66,7 +94,7 @@ export default function FooterGarden() {
           </g>
         </svg>
       </button>
-      <button type="button" className={styles.reset} onClick={() => setStep(0)} aria-label="Reset plant growth game">
+      <button type="button" className={styles.reset} onClick={replay} aria-label="Replay plant growth animation">
         <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
           <path d="M5 9a7 7 0 1 1 0 6M5 4v5h5" />
         </svg>

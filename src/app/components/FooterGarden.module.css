@@ -1,7 +1,7 @@
 .garden {
   position: relative;
-  width: min(100%, 560px);
-  margin: 0 auto 1.5rem;
+  width: 100%;
+  margin: 0;
   background: #121316;
   color: #f2908f;
 }
@@ -48,7 +48,7 @@
 .blossom { fill: #f2908f; transform-origin: 243px 77px; transform: scale(0); }
 .growth { transform-origin: 300px 199px; transform: scaleY(0); }
 
-/* Transitions run only when a visitor changes the step; nothing loops. */
+/* A single timed sequence runs on first view or explicit replay. */
 .canPosition { transition: transform 650ms ease, opacity 350ms ease; }
 .can, .leftLeaf, .rightLeaf, .blossom, .growth { transition: transform 750ms ease, opacity 550ms ease, fill 750ms ease; }
 .stem, .tallStem, .upperLeaves, .water, .cracks, .soil { transition: opacity 600ms ease, fill 600ms ease; }
