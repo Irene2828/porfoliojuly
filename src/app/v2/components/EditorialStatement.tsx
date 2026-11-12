@@ -18,15 +18,11 @@ export default function EditorialStatement({ showGarden = false }: { showGarden?
           overflow: 'hidden'
         }}
       >
-        {showGarden && <div className="prefooter-garden"><FooterGarden /></div>}
         <style>{`
           .prefooter-with-garden { margin-top: 0 !important; }
           .prefooter-garden { position: absolute; right: 1rem; bottom: 1rem; width: min(336px, 60%); }
           @media (min-width: 1200px) {
             .prefooter-garden { top: 50%; bottom: auto; transform: translateY(-50%); }
-          }
-          @media (max-width: 1199px) {
-            .prefooter-with-garden { padding-bottom: 220px !important; }
           }
 
           .prefooter-section {
@@ -249,7 +245,16 @@ export default function EditorialStatement({ showGarden = false }: { showGarden?
             .prefooter-with-garden { padding-bottom: 2.5rem !important; }
           }
           @media (max-width: 1199px) {
-            .prefooter-with-garden { padding-bottom: 110px !important; }
+            .prefooter-with-garden { flex-direction: column; padding-bottom: 1rem !important; }
+            .prefooter-garden {
+              position: relative;
+              top: auto;
+              right: auto;
+              bottom: auto;
+              transform: none;
+              flex-shrink: 0;
+              margin: 0 auto;
+            }
           }
         `}</style>
         <div
@@ -370,6 +375,7 @@ export default function EditorialStatement({ showGarden = false }: { showGarden?
             </a>
           </motion.div>
         </div>
+        {showGarden && <div className="prefooter-garden"><FooterGarden /></div>}
       </section>
 
 
