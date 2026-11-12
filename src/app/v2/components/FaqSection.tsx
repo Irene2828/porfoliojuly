@@ -255,6 +255,15 @@ export default function FaqSection() {
             max-width: 720px !important;
           }
         }
+        /* Match the “Made by someone…” statement at every viewport width. */
+        .faq-cta-heading {
+          font-size: clamp(1.05rem, 2.4vw, 1.2rem) !important;
+        }
+        .faq-cta-heading,
+        .faq-cta-heading .faq-cta-white,
+        .faq-cta-heading .faq-cta-accent {
+          font-weight: 700 !important;
+        }
       `}</style>
       <div
         style={{
@@ -376,7 +385,7 @@ export default function FaqSection() {
       </div>
       <div style={{ backgroundColor: '#121316', background: '#121316', width: '100%', padding: '5rem 1.5rem 5.625rem 1.5rem', margin: '10.5rem 0 0 0', borderTop: '1px solid rgba(255, 255, 255, 0.08)' }}>
         <div className="faq-cta-wrapper" style={{ maxWidth: '1069px', width: '100%', margin: '0 auto', padding: '0 1.5rem', textAlign: 'left' }}>
-          <motion.h2 className="faq-cta-heading" initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true, amount: 0.45 }} transition={{ duration: 0.72, delay: 0.08, ease: [0.16, 1, 0.3, 1] }} style={{ fontFamily: 'var(--font-heading)', fontSize: 'clamp(1.48rem, 7.7vw, 2.08rem)', fontWeight: 300, letterSpacing: '-0.02em', lineHeight: 1.35, color: 'rgba(255, 255, 255, 0.8)', WebkitTextFillColor: 'rgba(255, 255, 255, 0.8)', textAlign: 'center', margin: '0 auto 2.5rem auto', maxWidth: '43.2ch', textWrap: 'balance' }}>
+          <motion.h2 className="faq-cta-heading" initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true, amount: 0.45 }} transition={{ duration: 0.72, delay: 0.08, ease: [0.16, 1, 0.3, 1] }} style={{ fontFamily: 'var(--font-heading)', fontSize: 'clamp(1.05rem, 2.4vw, 1.2rem)', fontWeight: 700, letterSpacing: '-0.02em', lineHeight: 1.35, color: 'rgba(255, 255, 255, 0.8)', WebkitTextFillColor: 'rgba(255, 255, 255, 0.8)', textAlign: 'center', margin: '0 auto 2.5rem auto', maxWidth: '43.2ch', textWrap: 'balance' }}>
             <span className="faq-cta-white" style={{ color: '#ffffff', WebkitTextFillColor: '#ffffff' }}>If you need a professional who combines </span><span className="faq-cta-accent" style={{ color: '#f2908f', WebkitTextFillColor: '#f2908f', fontWeight: 500, fontStyle: 'italic' }}>creative thinking</span><span className="faq-cta-white" style={{ color: '#ffffff', WebkitTextFillColor: '#ffffff' }}> with </span><span className="faq-cta-accent" style={{ color: '#f2908f', WebkitTextFillColor: '#f2908f', fontWeight: 500, fontStyle: 'italic' }}>technical skills</span><span className="faq-cta-white" style={{ color: '#ffffff', WebkitTextFillColor: '#ffffff' }}> needed to solve your business problem </span><span className="faq-cta-accent" style={{ color: '#f2908f', WebkitTextFillColor: '#f2908f', fontWeight: 500, fontStyle: 'italic' }}>end-to-end</span><span className="faq-cta-white" style={{ color: '#ffffff', WebkitTextFillColor: '#ffffff' }}>, I&apos;m here.</span>{' '}
           </motion.h2>
           <motion.div initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true, amount: 0.45 }} transition={{ duration: 0.72, delay: 0.16, ease: [0.16, 1, 0.3, 1] }} style={{ margin: 0, textAlign: 'center' }}>

@@ -182,6 +182,14 @@ export default function EditorialStatement() {
             }
           }
           @media (min-width: 901px) {
+            .prefooter-closing-line,
+            .prefooter-closing-desktop,
+            .prefooter-closing-desktop > span {
+              font-weight: 400 !important;
+            }
+            .prefooter-closing-line strong {
+              font-weight: 600 !important;
+            }
             .prefooter-section {
               padding-bottom: 5rem !important; /* halved from 10rem */
             }
@@ -192,7 +200,7 @@ export default function EditorialStatement() {
               font-size: 1.23rem !important; /* 15% smaller on desktop (was 1.45rem) */
             }
             .prefooter-closing-line {
-              font-size: 2.08rem !important; /* 20% smaller on desktop (was 2.6rem) */
+              font-size: var(--closing-heading-size) !important;
               max-width: 44ch !important;
             }
             .prefooter-closing-desktop {
@@ -264,7 +272,7 @@ export default function EditorialStatement() {
             transition={{ duration: 0.78, delay: 0.08, ease: [0.16, 1, 0.3, 1] }}
             style={{
               fontFamily: 'var(--font-heading)',
-              fontSize: 'clamp(1.48rem, 7.7vw, 2.08rem)',
+              fontSize: 'var(--closing-heading-size)',
               fontWeight: 300,
               letterSpacing: '0.015em',
               lineHeight: 1.35,

@@ -2,8 +2,8 @@
   position: relative;
   width: min(100%, 560px);
   margin: 0 auto 1.5rem;
-  background: #17130f;
-  color: #f2a65a;
+  background: #121316;
+  color: #f2908f;
 }
 
 .scene {
@@ -11,7 +11,7 @@
   width: 100%;
   padding: 0;
   border: 0;
-  background: #17130f;
+  background: #121316;
   color: inherit;
   cursor: pointer;
   touch-action: manipulation;
@@ -19,7 +19,7 @@
 
 .scene svg { display: block; width: 100%; height: auto; }
 .scene[aria-disabled='true'] { cursor: default; }
-.scene:focus-visible, .reset:focus-visible { outline: 2px solid #f2a65a; outline-offset: 4px; }
+.scene:focus-visible, .reset:focus-visible { outline: 2px solid #f2908f; outline-offset: 4px; }
 .reset {
   position: absolute;
   top: 12px;
@@ -31,21 +31,21 @@
   padding: 12px;
   border: 0;
   border-radius: 50%;
-  background: #17130f;
-  color: #dd7f2d;
+  background: #121316;
+  color: #f2908f;
   cursor: pointer;
   touch-action: manipulation;
 }
 .reset svg { width: 20px; height: 20px; }
-.stem, .tallStem { stroke: #dd7f2d; stroke-width: 2.5; stroke-linecap: round; }
+.stem, .tallStem { stroke: #f2908f; stroke-width: 2.5; stroke-linecap: round; }
 .tallStem, .upperLeaves, .blossom, .growth, .water { opacity: 0; }
-.leftLeaf, .rightLeaf, .upperLeaves { fill: #dd7f2d; }
+.leftLeaf, .rightLeaf, .upperLeaves { fill: #f2908f; }
 .leftLeaf { transform-origin: 239px 163px; transform: rotate(-65deg); }
 .rightLeaf { transform-origin: 240px 150px; transform: rotate(65deg); }
-.soil { fill: #dd7f2d; }
+.soil { fill: #f2908f; }
 .canPosition { transform: translateX(130px); opacity: 0; }
 .can { transform-origin: 330px 130px; }
-.blossom { fill: #f2a65a; transform-origin: 243px 77px; transform: scale(0); }
+.blossom { fill: #f2908f; transform-origin: 243px 77px; transform: scale(0); }
 .growth { transform-origin: 300px 199px; transform: scaleY(0); }
 
 /* Transitions run only when a visitor changes the step; nothing loops. */
@@ -56,7 +56,7 @@
 .garden[data-step='1'] .canPosition, .garden[data-step='2'] .canPosition { transform: translateX(0); opacity: 1; }
 .garden[data-step='2'] .can { transform: rotate(-28deg); }
 .garden[data-step='2'] .water { opacity: 1; }
-.garden[data-step='2'] .soil, .garden[data-step='3'] .soil { fill: #17130f; }
+.garden[data-step='2'] .soil, .garden[data-step='3'] .soil { fill: #121316; }
 .garden[data-step='2'] .cracks, .garden[data-step='3'] .cracks { opacity: 0; }
 .garden[data-step='2'] .leftLeaf, .garden[data-step='2'] .rightLeaf,
 .garden[data-step='3'] .leftLeaf, .garden[data-step='3'] .rightLeaf { transform: rotate(0); }
@@ -65,7 +65,7 @@
 .garden[data-step='3'] .blossom, .garden[data-step='3'] .growth { opacity: 1; }
 .garden[data-step='3'] .plant { transform: scale(1.08); }
 .garden[data-step='3'] .leftLeaf, .garden[data-step='3'] .rightLeaf,
-.garden[data-step='3'] .upperLeaves { fill: #f2a65a; }
+.garden[data-step='3'] .upperLeaves { fill: #f2908f; }
 .garden[data-step='3'] .blossom, .garden[data-step='3'] .growth { transform: scale(1); }
 .srOnly { position: absolute; width: 1px; height: 1px; padding: 0; margin: -1px; overflow: hidden; clip-path: inset(50%); white-space: nowrap; border: 0; }
 @media (prefers-reduced-motion: reduce) {

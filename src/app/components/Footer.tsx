@@ -8,8 +8,8 @@ export default function Footer() {
     <footer 
       className="site-footer-minimal"
       style={{
-        backgroundColor: '#17130f',
-        background: '#17130f',
+        backgroundColor: '#121316',
+        background: '#121316',
         width: '100%',
         padding: '1.2rem 0 1.44rem 0',
         borderTop: '1px solid rgba(0, 0, 0, 0.45)',
@@ -19,8 +19,8 @@ export default function Footer() {
     >
       <style>{`
         .site-footer-minimal {
-          background-color: #17130f !important;
-          background: #17130f !important;
+          background-color: #121316 !important;
+          background: #121316 !important;
           border-top: 1px solid rgba(0, 0, 0, 0.45) !important;
         }
         .footer-inner-container {

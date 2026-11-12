@@ -1707,39 +1707,32 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 
-/* Browser-style arrow layered over the existing magical dust trail. */
-@media (pointer: fine) {
-  html, body, body * { cursor: none !important; }
-
-  .cursor-arrow {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 16px;
-    height: 19px;
-    pointer-events: none;
-    will-change: transform;
-    z-index: 10001;
-    transform: translate3d(-100px, -100px, 0);
-    transform-origin: 3px 3px;
-    filter: drop-shadow(0 0 4px rgba(150, 193, 255, 0.95)) drop-shadow(0 0 11px rgba(99, 157, 255, 0.5));
-    transition: filter 160ms ease, scale 160ms ease;
-  }
-
-  .cursor-arrow svg { display: block; width: 100%; height: 100%; overflow: visible; }
-  .cursor-arrow path { fill: #080a0f; stroke: #fff; stroke-width: 1.8; stroke-linejoin: round; }
-  .cursor-arrow-hover { scale: 1.08; filter: drop-shadow(0 0 5px rgba(242, 144, 143, 0.95)) drop-shadow(0 0 13px rgba(99, 157, 255, 0.55)); }
-
-  /* Keep the native I-beam visible anywhere text can be selected. */
-  body :where(p, h1, h2, h3, h4, h5, h6, blockquote, li, dt, dd, label, td, th, figcaption),
-  body :where(p, h1, h2, h3, h4, h5, h6, blockquote, li, dt, dd, label, td, th, figcaption) * {
-    cursor: text !important;
-  }
-  body :where(input, textarea, [contenteditable="true"]) {
-    cursor: text !important;
+/* Use the browser's cursor rendering for immediate feedback on actions only.
+   The independent canvas dust trail remains active across the page. */
+@media (hover: hover) and (pointer: fine) {
+  body :is(a[href], button, [role="button"], input[type="submit"], input[type="button"], input[type="reset"], .btn, .nav-link, .hero-ring-badge):not(:disabled):not([aria-disabled="true"]),
+  body :is(a[href], button, [role="button"], input[type="submit"], input[type="button"], input[type="reset"], .btn, .nav-link, .hero-ring-badge):not(:disabled):not([aria-disabled="true"]) * {
+    cursor: url('/action-cursor.svg') 7 7, pointer !important;
   }
 }
 
-@media (hover: none) and (pointer: coarse), (prefers-reduced-motion: reduce) {
-  .cursor-arrow { display: none; }
+/* Keep the closing statements at the same responsive type size. */
+.v2-theme {
+  --closing-heading-size: clamp(1.48rem, 7.7vw, 2.08rem);
+}
+
+/* Apply the requested weights after the shared closing-statement reset. */
+.v2-theme .faq-section .faq-cta-heading,
+.v2-theme .faq-section .faq-cta-heading * {
+  font-weight: 700 !important;
+}
+
+@media (min-width: 901px) {
+  .v2-theme .prefooter-section .prefooter-closing-line,
+  .v2-theme .prefooter-section .prefooter-closing-line * {
+    font-weight: 400 !important;
+  }
+  .v2-theme .prefooter-section .prefooter-closing-line strong {
+    font-weight: 600 !important;
+  }
 }
