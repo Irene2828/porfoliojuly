@@ -23,7 +23,6 @@ export default function EditorialStatement({ showGarden = false }: { showGarden?
           .prefooter-with-garden { margin-top: 10.5rem; }
           .prefooter-garden { position: absolute; right: 1rem; bottom: 1rem; width: min(336px, 60%); }
           @media (min-width: 1200px) {
-            .prefooter-with-garden { padding-right: 336px !important; }
             .prefooter-garden { top: 50%; bottom: auto; transform: translateY(-50%); }
           }
           @media (max-width: 1199px) {
