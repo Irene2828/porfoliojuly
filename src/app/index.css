@@ -1091,6 +1091,21 @@ h1, h2, h3, h4, h5, h6 {
   }
 }
 
+/* Keep both closing statements uniform across white and peach text. */
+.v2-theme .prefooter-section .prefooter-closing-line,
+.v2-theme .prefooter-section .prefooter-closing-line *,
+.v2-theme .faq-section .faq-cta-heading,
+.v2-theme .faq-section .faq-cta-heading * {
+  font-family: var(--font-body), 'Plus Jakarta Sans', sans-serif !important;
+  font-weight: 300 !important;
+  font-style: normal !important;
+}
+
+.v2-theme .prefooter-section .prefooter-closing-line *,
+.v2-theme .faq-section .faq-cta-heading * {
+  font-size: inherit !important;
+}
+
 /* Prefooter closing subtext: swapped - unbolded (300) & rgba(255, 255, 255, 0.8) */
 .v2-theme .prefooter-closing-subtext,
 .v2-theme .prefooter-closing-subtext p,
