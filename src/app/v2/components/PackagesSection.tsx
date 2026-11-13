@@ -250,6 +250,11 @@ export default function PackagesSection() {
           you pay for the research, the design, the setup and the verification around it.
         </p>
 
+        <p className="packages-honest" style={{ marginTop: '-1.25rem' }}>
+          Booking a website and a workflow together? The research overlaps — so your{' '}
+          <strong>first three months of care</strong> are on me.
+        </p>
+
         <div className="packages-cta-wrap">
           <a href="mailto:iryna@irynasheremeta.com" className="packages-btn-primary">
             <span style={{ letterSpacing: '0.08em' }}>SEND YOUR PROBLEM MY WAY</span>
