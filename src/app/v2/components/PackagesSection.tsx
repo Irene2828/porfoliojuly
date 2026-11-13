@@ -47,7 +47,7 @@ const WEBSITE_PACKAGES = [
   },
   {
     name: 'Custom Website',
-    price: 'from $3,000 CAD',
+    price: 'from $1,500 CAD',
     text: 'Research, three visual directions, design, copy, build, tested launch. Hosting set up; you keep the logins.',
   },
   {
