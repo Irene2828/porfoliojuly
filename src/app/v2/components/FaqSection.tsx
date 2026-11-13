@@ -33,24 +33,8 @@ const faqs = [
 
 export default function FaqSection() {
   const [openIndex, setOpenIndex] = useState<number>(-1);
-  const [playingVideo, setPlayingVideo] = useState<number | null>(null);
   const sectionRef = useRef<HTMLElement | null>(null);
-  const videoRefs = [useRef<HTMLVideoElement | null>(null), useRef<HTMLVideoElement | null>(null)];
 
-  const toggleVideo = (index: number) => {
-    const video = videoRefs[index].current;
-    if (!video) return;
-    if (playingVideo === index) {
-      video.pause();
-      setPlayingVideo(null);
-    } else {
-      videoRefs.forEach((ref, refIndex) => {
-        if (refIndex !== index) ref.current?.pause();
-      });
-      void video.play();
-      setPlayingVideo(index);
-    }
-  };
 
   return (
     <section
@@ -235,7 +219,7 @@ export default function FaqSection() {
             grid-template-columns: 1fr !important;
           }
           .faq-section .cases-decor-line {
-            margin-top: 10.2rem !important;
+            margin-top: 0 !important;
           }
           .faq-cta-heading {
             text-align: left !important;
@@ -275,52 +259,7 @@ export default function FaqSection() {
           textAlign: 'left',
         }}
       >
-        <motion.h2
-          className="faq-headline"
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true, amount: 0.45 }}
-          transition={{ duration: 0.78, delay: 0.08, ease: [0.16, 1, 0.3, 1] }}
-          style={{
-            fontFamily: 'var(--font-heading)',
-            fontSize: 'clamp(28px, 4.4vw, 42px)',
-            lineHeight: 1.2,
-            color: '#000000',
-            letterSpacing: '-0.02em',
-            margin: '0 auto 1.25rem auto',
-          }}
-        >
-          Why Hire Someone If There&apos;s AI?
-        </motion.h2>
-        <motion.p
-          className="faq-subline"
-          initial={{ opacity: 0, y: 14 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true, amount: 0.45 }}
-          transition={{ duration: 0.68, delay: 0.16, ease: [0.16, 1, 0.3, 1] }}
-          style={{
-            fontSize: 'clamp(1.05rem, 2.4vw, 1.2rem)',
-            lineHeight: 1.55,
-            margin: '0 auto 3.5rem auto',
-            textAlign: 'center',
-            maxWidth: '52ch',
-          }}
-        >
-          Take one case. You need a website for your custom bridal atelier. You go to AI.
-        </motion.p>
-        <div className="faq-case-media">
-          {[['/bridal-ai-video.mp4', undefined], ['/bridal-desktop-scroll-faststart.mp4', '/bridal-scroll-poster.jpg']].map(([src, poster], index) => (
-            <div key={src}>
-              <button type="button" onClick={() => toggleVideo(index)} style={{ display: 'block', position: 'relative', width: '100%', padding: 0, border: 0, background: 'none', cursor: 'pointer' }} aria-label={playingVideo === index ? 'Pause recording' : 'Play recording'}>
-                <video ref={videoRefs[index]} className="faq-case-video" src={src} poster={poster} muted loop playsInline />
-                <span aria-hidden="true" style={{ position: 'absolute', left: '50%', top: '50%', transform: 'translate(-50%, -50%)', width: '3rem', height: '3rem', borderRadius: '50%', background: 'rgba(255,255,255,0.88)', color: '#1A1F2B', display: playingVideo === index ? 'none' : 'grid', placeItems: 'center', fontSize: '1.15rem' }}>▶</span>
-              </button>
-              <p style={{ fontFamily: 'var(--font-label), sans-serif', fontSize: '0.68rem', fontWeight: 600, letterSpacing: '0.1em', textTransform: 'uppercase', color: '#5C6672', textAlign: 'center', margin: '0.7rem 0 0' }}>Tap to play</p>
-            </div>
-          ))}
-          <p style={{ gridColumn: '1 / -1', fontFamily: "var(--font-body), 'Plus Jakarta Sans', sans-serif", fontSize: 'clamp(1.05rem, 2.4vw, 1.2rem)', fontWeight: 700, letterSpacing: '-0.011em', lineHeight: 1.65, color: 'rgba(0, 0, 0, 0.78)', textAlign: 'center', margin: '0.5rem auto 0', maxWidth: '52ch' }}>Made by someone who designs, builds, and answers for the result — because their name is on it.</p>
-        </div>
-        <motion.div className="cases-decor-line" initial={{ scaleX: 0, opacity: 0 }} whileInView={{ scaleX: 1, opacity: 0.9 }} viewport={{ once: true, amount: 0.45 }} transition={{ duration: 0.65, ease: [0.16, 1, 0.3, 1] }} style={{ width: '60px', height: '1px', backgroundColor: '#2d3139', margin: '10.2rem auto 2.5rem auto', transformOrigin: 'center' }} aria-hidden="true" />
+        <motion.div className="cases-decor-line" initial={{ scaleX: 0, opacity: 0 }} whileInView={{ scaleX: 1, opacity: 0.9 }} viewport={{ once: true, amount: 0.45 }} transition={{ duration: 0.65, ease: [0.16, 1, 0.3, 1] }} style={{ width: '60px', height: '1px', backgroundColor: '#2d3139', margin: '0 auto 2.5rem auto', transformOrigin: 'center' }} aria-hidden="true" />
         <motion.h2 className="faq-section-heading" initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true, amount: 0.45 }} transition={{ duration: 0.78, delay: 0.08, ease: [0.16, 1, 0.3, 1] }} style={{ fontFamily: 'var(--font-heading)', fontSize: 'clamp(28px, 4.4vw, 42px)', fontWeight: 400, lineHeight: 1.2, color: 'var(--color-heading-silver)', letterSpacing: '-0.02em', margin: '0 0 0.875rem 0', textAlign: 'center' }}>Before we start</motion.h2>
       <motion.p className="faq-section-subline" initial={{ opacity: 0, y: 14 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true, amount: 0.45 }} transition={{ duration: 0.68, delay: 0.16, ease: [0.16, 1, 0.3, 1] }} style={{ margin: '0 auto 2.5rem auto', textAlign: 'center' }}>The questions every client asks, answered straight.</motion.p>
       <div>
