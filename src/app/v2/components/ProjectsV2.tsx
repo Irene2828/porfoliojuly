@@ -41,24 +41,24 @@ export default function ProjectsV2({ initialProjects = [] }: ProjectsV2Props) {
       id: 'v2-1',
       title: 'Terry Fox Foundation / Internal Poster tool',
       slug: 'terry-fox-run',
-      subline: 'Volunteers in every city need on brand customized posters.\nTeam designers - too busy with big tasks.',
+      subline: 'Every city runs its own event. Every poster has to stay on brand.',
       hoverLabel: 'Tap to Zoom',
       annotations: [
         { markerNumber: 1, title: 'Locked Template', text: 'Anyone can make an on-brand poster in minutes.' },
         { markerNumber: 2, title: 'Simple by default, deep on demand', text: 'The 3-step flow covers most posters; the full editor with placement controls is one click away, not in the way.' },
-        { markerNumber: 3, title: 'Human in Control', text: 'The poster’s owner reviews and approves everything.' }
+        { markerNumber: 3, title: 'Approval before it ships', text: 'Nothing goes out until the event’s owner has seen it.' }
       ],
       statsTitle: 'Impact',
       stats: [
         { 
           chip: 'Before', 
           text: 'Designers were the bottleneck.', 
-          sub: "Every poster had to be made by hand, in Figma, one at a time. Volunteers worldwide had to wait days for a single poster. They don't use Figma, managers too. Posters need to be on-brand, so no random AI generation allowed. Solution I offered? An internal tool to make them fast, always on brand, for both non-tech or tech-savvy users." 
+          sub: "Every poster was made by hand in Figma, one at a time. Volunteers waited days for a single poster, and designers were pulled away from bigger work. The team needed posters that were fast and on brand — made by people who don't use Figma." 
         },
         { 
           chip: 'After', 
           text: 'Minutes instead of days', 
-          sub: "Work that took days now takes minutes, done by volunteers or Foundation's managers without designers in the loop.\n\n5 formats to start & agent-ready: One set of details fills all 5 formats at once. Clean structure allows AI agents to populate fields directly. But it's still human who previews, edits or approves a poster for the event." 
+          sub: "One set of details fills all five formats at once, and the clean structure lets an AI agent fill the fields directly. Volunteers and managers run the whole flow themselves — and a person still previews and approves every poster before it goes out." 
         }
       ],
       image: '/assets/poster-tool/01-details-and-download.png'
@@ -96,10 +96,10 @@ export default function ProjectsV2({ initialProjects = [] }: ProjectsV2Props) {
         { 
           chip: 'After', 
           text: 'Live at rguertin.ca', 
-          sub: "The site now presents her at the level she works at. A client in trouble can understand what she does, see proof that it works, and reach her in one step — and a municipality sees a specialist, not a generalist. Live at rguertin.ca." 
+          sub: "The site now presents her at the level she works at. A client in trouble can understand what she does, see proof that it works, and reach her in one step — and a municipality sees a specialist, not a generalist." 
         }
       ],
-      image: '/assets/guertin-desktop.png',     },     { id: 'v2-3', title: 'BuyUkrainian', slug: 'buyukrainian', subline: 'Case 03 · BuyUkrainian', hoverLabel: 'Tap to Zoom', annotations: [ { markerNumber: 1, title: 'Buy Ukrainian in Canada', text: 'BuyUkrainian.ca makes it easier to find products from Ukraine in Canadian stores.' }, { markerNumber: 2, title: 'A map and a directory', text: 'Products listed, stores on the map — and a way to add a store that is missing.' }, { markerNumber: 3, title: '105 products listed', text: 'The recording shows the directory as it stood when it was filmed.' }, ], statsTitle: 'At a glance', stats: [ { chip: '01', text: 'Find Ukrainian products in Canada.', sub: 'A grassroots directory and map, made to support Ukraine’s economy.' }, { chip: '02', text: 'A video walkthrough.', sub: 'The case is shown as a mobile recording of the site in use.' }, ], image: '/buyukrainian-mobile-case4.mp4', }, { id: 'v2-4', title: 'Dorion Driving Academy', slug: 'dorion-driving-academy', subline: 'Case 04 · Dorion', hoverLabel: 'Tap to Zoom', annotations: [ { markerNumber: 1, title: 'Your progress at a glance', text: 'The dashboard shows 16 of 25 required lessons done, with an estimated completion date of August 26.' }, { markerNumber: 2, title: 'Pick a date and a time', text: 'May 2026: the 25th and a 90-minute slot at 09:00, chosen in a few taps.' }, { markerNumber: 3, title: 'Reschedule or cancel', text: 'The booked lesson offers Reschedule and Cancel. Cancelling confirms the refund is processed and a receipt is sent by email.' } ], statsTitle: 'At a glance', stats: [ { chip: '01', text: 'Book a lesson in seconds.', sub: 'A mobile MVP for a driving school. Booking a lesson takes seconds instead of days.' }, { chip: '02', text: 'A video walkthrough.', sub: 'The case is shown as a mobile recording of the app in use.' } ], image: '/dorion-driving-case4-framed-v2.mp4' },
+      image: '/assets/guertin-desktop.png',     },     { id: 'v2-3', title: 'BuyUkrainian', slug: 'buyukrainian', subline: 'Case 03 · BuyUkrainian', hoverLabel: 'Tap to Zoom', annotations: [ { markerNumber: 1, title: 'Buy Ukrainian in Canada', text: 'BuyUkrainian.ca makes it easier to find products from Ukraine in Canadian stores.' }, { markerNumber: 2, title: 'A map and a directory', text: 'Products listed, stores on the map — and a way to add a store that is missing.' }, { markerNumber: 3, title: '105 products listed', text: 'The recording shows the directory as it stood when it was filmed.' }, ], statsTitle: 'At a glance', stats: [ { chip: '01', text: 'A map of Ukrainian products in Canada.', sub: 'Search by city or product, and find the Canadian stores that carry them.' }, { chip: '02', text: 'One rule for every listing.', sub: 'Only products made in Ukraine. Every store is checked before it appears on the map.' }, ], image: '/buyukrainian-mobile-case4.mp4', }, { id: 'v2-4', title: 'Dorion Driving Academy', slug: 'dorion-driving-academy', subline: 'Case 04 · Dorion', hoverLabel: 'Tap to Zoom', annotations: [ { markerNumber: 1, title: 'Your progress at a glance', text: 'The dashboard shows 16 of 25 required lessons done, with an estimated completion date of August 26.' }, { markerNumber: 2, title: 'Pick a date and a time', text: 'May 2026: the 25th and a 90-minute slot at 09:00, chosen in a few taps.' }, { markerNumber: 3, title: 'Reschedule or cancel', text: 'The booked lesson offers Reschedule and Cancel. Cancelling confirms the refund is processed and a receipt is sent by email.' } ], statsTitle: 'At a glance', stats: [ { chip: '01', text: 'Booked from the phone, not the office.', sub: 'A mobile MVP for a driving school: pick a slot, book, reschedule or cancel — no phone tag with the school.' }, { chip: '02', text: 'Progress, visible.', sub: 'The dashboard tracks the lessons done and the estimated finish date, so students always know where they stand.' } ], image: '/dorion-driving-case4-framed-v2.mp4' },
     {
       id: 'v2-5',
       title: 'North & Co. / Knowledge agent',
@@ -110,7 +110,7 @@ export default function ProjectsV2({ initialProjects = [] }: ProjectsV2Props) {
       annotations: [
         { markerNumber: 1, title: 'Cited answers', text: 'Every claim carries a citation to the document it came from. No citation, no answer.' },
         { markerNumber: 2, title: 'A judge checks every draft', text: 'The judge grades each draft — grounded, correct, clear. A bad draft loops back for a fix, up to two retries.' },
-        { markerNumber: 3, title: 'Human in Control', text: 'Uncertain cases go to a human for approval. Nothing ships without a review.' }
+        { markerNumber: 3, title: 'A human decides the hard ones', text: 'When the agent isn’t sure, the case goes to a person instead of guessing.' }
       ],
       statsTitle: 'Impact',
       stats: [
@@ -230,17 +230,17 @@ export default function ProjectsV2({ initialProjects = [] }: ProjectsV2Props) {
                           {
                             src: '/assets/poster-tool/01-details-and-download.png',
                             stepLabel: 'Step 2–3 — One form drives the poster',
-                            caption: 'Step 2–3 — One form drives the poster: city, date, location, schedule and the QR link. The preview updates live; download is one click.'
+                            caption: 'City, date, location, schedule and the QR link go into one form. The preview updates live; download is one click.'
                           },
                           {
                             src: '/assets/poster-tool/02-full-editor.png',
                             stepLabel: 'Advanced editor',
-                            caption: 'Advanced editor — move any block, tune the text. It stays behind one click, so the default flow stays simple.'
+                            caption: 'Move any block, tune the text. It stays behind one click, so the default flow stays simple.'
                           },
                           {
                             src: '/assets/poster-tool/03-templates.png',
                             stepLabel: 'Step 1 — Five locked templates',
-                            caption: 'Step 1 — Five locked templates: print sizes 11×17, 8.5×11, A3, A4 and a Facebook format. Same design for every city.'
+                            caption: 'Print sizes 11×17, 8.5×11, A3, A4 and a Facebook format. Same design for every city.'
                           }
                         ]}
                       />
@@ -250,17 +250,17 @@ export default function ProjectsV2({ initialProjects = [] }: ProjectsV2Props) {
                           {
                             src: '/assets/north-co/01-ask.png',
                             stepLabel: 'Ask — One question, every step visible',
-                            caption: 'Ask — One question, every step visible: the question goes in, the harness shows retrieve, draft, judge, loop, approve and log. Connect a key to try it live.'
+                            caption: 'The question goes in; the harness shows retrieve, draft, judge, loop, approve and log. Connect a key to try it live.'
                           },
                           {
                             src: '/assets/north-co/02-clean-pass.png',
                             stepLabel: 'A clean pass — Cited answer, judge approved',
-                            caption: 'A clean pass — the employee discount is 30%, cited to the discount document, judge verdict PASS: grounded 1, clarity 1, confidence 1.'
+                            caption: 'The employee discount is 30%, cited to the discount document. Judge verdict: PASS — grounded 1, clarity 1, confidence 1.'
                           },
                           {
                             src: '/assets/north-co/03-how-it-works.png',
                             stepLabel: 'How it works — The harness, step by step',
-                            caption: 'How it works — the harness, step by step: retrieve the right documents, draft from facts only, judge every claim, loop on a fail, escalate the uncertain to a human.'
+                            caption: 'Retrieve the right documents, draft from facts only, judge every claim, loop on a fail, escalate the uncertain to a human.'
                           }
                         ]}
                       />
@@ -270,12 +270,12 @@ export default function ProjectsV2({ initialProjects = [] }: ProjectsV2Props) {
                           {
                             src: '/assets/guertin-desktop.png',
                             stepLabel: 'Desktop homepage — Credibility first & clear booking',
-                            caption: 'Desktop homepage — 20 years of expertise stated up front with clear claims services and direct consultation booking.'
+                            caption: '20 years of expertise stated up front, with clear claims services and direct consultation booking.'
                           },
                           {
                             src: '/assets/guertin-mobile.png',
                             stepLabel: 'Mobile homepage — Responsive access for clients in trouble',
-                            caption: 'Mobile homepage — Plain-language expertise and one-tap calling optimized for stressed homeowners on any phone.'
+                            caption: 'Plain-language expertise and one-tap calling, built for stressed homeowners on any phone.'
                           }
                         ]}
                       />
