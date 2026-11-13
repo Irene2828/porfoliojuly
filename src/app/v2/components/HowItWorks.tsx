@@ -6,25 +6,25 @@ export default function HowItWorks() {
   const steps = [
     {
       num: '01',
-      title: 'You tell me the problem.',
+      title: 'I research first.',
       bullets: [
-        { bold: 'A short call or an email.', rest: ' No prep, no tech talk.' }
+        { bold: 'You react to real directions, not promises.', rest: ' Three visual directions for a website; for a workflow — the routine mapped: steps, rules, approval points.' }
       ],
       
     },
     {
       num: '02',
-      title: 'I send a first version.',
+      title: 'I build and refine.',
       bullets: [
-        { bold: 'Something clickable in days,', rest: ' so you react to a real thing.' }
+        { bold: 'The busier you are, the fewer calls we need.', rest: ' Copy and files come from you — or I prepare them. AI gives me team speed; you approve every key stage.' }
       ],
       
     },
     {
       num: '03',
-      title: 'We fix it and launch.',
+      title: 'You get the result, tested.',
       bullets: [
-        { bold: 'I ship it, hand it over,', rest: ' and set up hosting and support.' }
+        { bold: 'Tested, set up, handed over.', rest: ' Hosting and the accounts around it are done — and you’re set for what comes next.' }
       ],
       
     }
