@@ -53,7 +53,7 @@ export default function ProjectsV2({ initialProjects = [] }: ProjectsV2Props) {
         { 
           chip: 'Before', 
           text: 'Designers were the bottleneck.', 
-          sub: "Every poster was made by hand in Figma, one at a time. Volunteers waited days for a single poster, and designers were pulled away from bigger work. The team needed posters that were fast and on brand — made by people who don't use Figma." 
+          sub: "Every poster was made by hand in Figma, one at a time. Volunteers waited days for a single poster, and designers were pulled away from bigger work. Asking AI instead wasn't an answer either: a new layout every time, colours that drift, text that wanders. A national run needs the same poster in every city." 
         },
         { 
           chip: 'After', 
