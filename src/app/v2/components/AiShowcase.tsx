@@ -289,6 +289,35 @@ export default function AiShowcase() {
           ))}
           <p style={{ gridColumn: '1 / -1', fontFamily: "var(--font-body), 'Plus Jakarta Sans', sans-serif", fontSize: 'clamp(1.05rem, 2.4vw, 1.2rem)', fontWeight: 700, letterSpacing: '-0.011em', lineHeight: 1.65, color: 'rgba(0, 0, 0, 0.78)', textAlign: 'center', margin: '0.5rem auto 0', maxWidth: '52ch' }}>Made by someone who designs, builds, and answers for the result — because their name is on it.</p>
         </div>
+        <motion.p
+          className="faq-subline"
+          initial={{ opacity: 0, y: 14 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true, amount: 0.45 }}
+          transition={{ duration: 0.68, delay: 0.08, ease: [0.16, 1, 0.3, 1] }}
+          style={{ fontSize: 'clamp(1.05rem, 2.4vw, 1.2rem)', lineHeight: 1.55, margin: '0 auto 1.25rem auto', textAlign: 'center', maxWidth: '52ch' }}
+        >
+          Or take the Terry Fox poster tool. Ask AI to generate the posters, and it drifts: spacing off, brand rules broken, fonts it doesn&apos;t have. And you can&apos;t expect every volunteer to know how to direct AI until it behaves.
+        </motion.p>
+        <motion.p
+          className="faq-subline"
+          initial={{ opacity: 0, y: 14 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true, amount: 0.45 }}
+          transition={{ duration: 0.68, delay: 0.16, ease: [0.16, 1, 0.3, 1] }}
+          style={{ fontSize: 'clamp(1.05rem, 2.4vw, 1.2rem)', lineHeight: 1.55, margin: '0 auto 1.25rem auto', textAlign: 'center', maxWidth: '52ch' }}
+        >
+          I build for deterministic output: rules, logic, and a human in charge. A custom solution, built around the problem — and it scales to the next problem, and the next.
+        </motion.p>
+        <motion.p
+          initial={{ opacity: 0, y: 14 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true, amount: 0.45 }}
+          transition={{ duration: 0.68, delay: 0.24, ease: [0.16, 1, 0.3, 1] }}
+          style={{ fontFamily: "var(--font-body), 'Plus Jakarta Sans', sans-serif", fontSize: 'clamp(1.05rem, 2.4vw, 1.2rem)', fontWeight: 700, letterSpacing: '-0.011em', lineHeight: 1.65, color: 'rgba(0, 0, 0, 0.78)', textAlign: 'center', margin: '2rem auto 0', maxWidth: '52ch' }}
+        >
+          That&apos;s where I can help.
+        </motion.p>
       </div>
     </section>
   );
