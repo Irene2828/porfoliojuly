@@ -8,24 +8,24 @@ const faqs = [
   {
     question: 'How fast is this, and what happens after launch?',
     answers: [
-      'First clickable version in days — you react to a real thing.',
-      'We fix it together. I ship it, hand it over, set up hosting and support.',
-      "After launch I'm still there: edits, updates, new features — monthly care plan, or per request.",
+      'First version in days, not weeks. You react to a working thing while changing it is still cheap.',
+      "After launch I stay available: fixes, edits, new features — per request, or on a monthly care plan.",
+      'You keep the logins, the files and the setup notes. Nothing is held hostage.',
     ],
   },
   {
-    question: 'What am I actually paying for?',
+    question: 'What do you need from me to start?',
     answers: [
-      'Not hours, not typing. Taste, judgment, and a finished thing that works.',
-      'Problem first. Copy that sounds like you. Phone, forms, domain, hosting — done.',
-      "AI can draft. It can't take responsibility for the result. I can.",
+      "A short call, or a voice note if that's easier. No prep, no brief to write.",
+      'Access to the tools involved — when we get there, not before.',
+      'Missing copy or files? I write them from scratch.',
     ],
   },
   {
     question: 'I already generated a draft. Can you fix it and launch it?',
     answers: [
-      "Yes. Bring it — I'll tell you honestly if a polish is enough or it needs rebuilding.",
-      'Polish covers structure, copy, images, mobile, forms, domain, launch.',
+      "Yes. Bring it — I'll tell you honestly whether a polish is enough or it needs rebuilding.",
+      'Polish covers structure, copy, images, mobile, forms, domain and launch.',
       "Some drafts need a firm hand. Some need rebuilding. I'll say which one yours is.",
     ],
   },
@@ -306,7 +306,7 @@ export default function FaqSection() {
             maxWidth: '52ch',
           }}
         >
-          Let&apos;s take a look at a particular case. You need a website for your custom bridal atelier. You go to AI.
+          Take one case. You need a website for your custom bridal atelier. You go to AI.
         </motion.p>
         <div className="faq-case-media">
           {[['/bridal-ai-video.mp4', undefined], ['/bridal-desktop-scroll-faststart.mp4', '/bridal-scroll-poster.jpg']].map(([src, poster], index) => (
@@ -318,11 +318,11 @@ export default function FaqSection() {
               <p style={{ fontFamily: 'var(--font-label), sans-serif', fontSize: '0.68rem', fontWeight: 600, letterSpacing: '0.1em', textTransform: 'uppercase', color: '#5C6672', textAlign: 'center', margin: '0.7rem 0 0' }}>Tap to play</p>
             </div>
           ))}
-          <p style={{ gridColumn: '1 / -1', fontFamily: "var(--font-body), 'Plus Jakarta Sans', sans-serif", fontSize: 'clamp(1.05rem, 2.4vw, 1.2rem)', fontWeight: 700, letterSpacing: '-0.011em', lineHeight: 1.65, color: 'rgba(0, 0, 0, 0.78)', textAlign: 'center', margin: '0.5rem auto 0', maxWidth: '52ch' }}>Made by someone who uses AI, design, business and tech judgement and cares about your business as it impacts their own reputation.</p>
+          <p style={{ gridColumn: '1 / -1', fontFamily: "var(--font-body), 'Plus Jakarta Sans', sans-serif", fontSize: 'clamp(1.05rem, 2.4vw, 1.2rem)', fontWeight: 700, letterSpacing: '-0.011em', lineHeight: 1.65, color: 'rgba(0, 0, 0, 0.78)', textAlign: 'center', margin: '0.5rem auto 0', maxWidth: '52ch' }}>Made by someone who designs, builds, and answers for the result — because their name is on it.</p>
         </div>
         <motion.div className="cases-decor-line" initial={{ scaleX: 0, opacity: 0 }} whileInView={{ scaleX: 1, opacity: 0.9 }} viewport={{ once: true, amount: 0.45 }} transition={{ duration: 0.65, ease: [0.16, 1, 0.3, 1] }} style={{ width: '60px', height: '1px', backgroundColor: '#2d3139', margin: '10.2rem auto 2.5rem auto', transformOrigin: 'center' }} aria-hidden="true" />
-        <motion.h2 className="faq-section-heading" initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true, amount: 0.45 }} transition={{ duration: 0.78, delay: 0.08, ease: [0.16, 1, 0.3, 1] }} style={{ fontFamily: 'var(--font-heading)', fontSize: 'clamp(28px, 4.4vw, 42px)', fontWeight: 400, lineHeight: 1.2, color: 'var(--color-heading-silver)', letterSpacing: '-0.02em', margin: '0 0 0.875rem 0', textAlign: 'center' }}>Get More Answers...</motion.h2>
-      <motion.p className="faq-section-subline" initial={{ opacity: 0, y: 14 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true, amount: 0.45 }} transition={{ duration: 0.68, delay: 0.16, ease: [0.16, 1, 0.3, 1] }} style={{ margin: '0 auto 2.5rem auto', textAlign: 'center' }}>before we start our work.</motion.p>
+        <motion.h2 className="faq-section-heading" initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true, amount: 0.45 }} transition={{ duration: 0.78, delay: 0.08, ease: [0.16, 1, 0.3, 1] }} style={{ fontFamily: 'var(--font-heading)', fontSize: 'clamp(28px, 4.4vw, 42px)', fontWeight: 400, lineHeight: 1.2, color: 'var(--color-heading-silver)', letterSpacing: '-0.02em', margin: '0 0 0.875rem 0', textAlign: 'center' }}>Before we start</motion.h2>
+      <motion.p className="faq-section-subline" initial={{ opacity: 0, y: 14 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true, amount: 0.45 }} transition={{ duration: 0.68, delay: 0.16, ease: [0.16, 1, 0.3, 1] }} style={{ margin: '0 auto 2.5rem auto', textAlign: 'center' }}>The questions every client asks, answered straight.</motion.p>
       <div>
         {faqs.map((faq, index) => {
             const isOpen = openIndex === index;
