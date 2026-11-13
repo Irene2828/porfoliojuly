@@ -4,7 +4,7 @@ import ProjectsV2 from './v2/components/ProjectsV2';
 import ServicesV2 from './v2/components/ServicesV2';
 import HowItWorks from './v2/components/HowItWorks';
 import ProcessSection from './v2/components/ProcessSection';
-import EditorialStatement from './v2/components/EditorialStatement';
+import PackagesSection from './v2/components/PackagesSection';
 import FaqSection from './v2/components/FaqSection';
 import Footer from './components/Footer';
 import ClientWrapper from './components/ClientWrapper';
@@ -42,8 +42,8 @@ export default function HomePage() {
         {/* Process Section */}
         <ProcessSection />
 
-        {/* Editorial Statement */}
-        <EditorialStatement />
+        {/* Packages Section */}
+        <PackagesSection />
 
         <FaqSection />
 
