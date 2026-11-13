@@ -39,6 +39,24 @@ const PACKAGES = [
   },
 ];
 
+const WEBSITE_PACKAGES = [
+  {
+    name: 'Polish & Launch',
+    price: 'from $750 CAD',
+    text: 'An AI draft or a dated site, fixed and launched: structure, copy, mobile, forms, domain.',
+  },
+  {
+    name: 'Custom Website',
+    price: 'from $3,000 CAD',
+    text: 'Research, three visual directions, design, copy, build, tested launch. Hosting set up; you keep the logins.',
+  },
+  {
+    name: 'Website Care',
+    price: 'from $100 CAD/month',
+    text: 'Updates, small edits, checks. Your site stays current without you touching it.',
+  },
+];
+
 export default function PackagesSection() {
   return (
     <section
@@ -180,6 +198,28 @@ export default function PackagesSection() {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true, amount: 0.45 }}
           transition={{ duration: 0.7, ease: [0.16, 1, 0.3, 1] }}
+        >
+          Custom <strong>websites</strong> — built around your business
+        </motion.h2>
+
+        <p className="packages-kicker">Packages</p>
+        <div className="packages-cards">
+          {WEBSITE_PACKAGES.map((pkg) => (
+            <div className="packages-card" key={pkg.name}>
+              <h3 className="packages-card-name">{pkg.name}</h3>
+              <p className="packages-card-price">{pkg.price}</p>
+              <p className="packages-card-text">{pkg.text}</p>
+            </div>
+          ))}
+        </div>
+
+        <motion.h2
+          className="packages-heading"
+          initial={{ opacity: 0, y: 16 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true, amount: 0.45 }}
+          transition={{ duration: 0.7, ease: [0.16, 1, 0.3, 1] }}
+          style={{ marginTop: '5.5rem' }}
         >
           Custom <strong>agents, workflows &amp; tools</strong> — built around your problem
         </motion.h2>
