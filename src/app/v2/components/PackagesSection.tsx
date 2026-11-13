@@ -5,7 +5,7 @@ import { motion } from 'framer-motion';
 const VALUE_ITEMS = [
   {
     title: 'Problem research',
-    text: 'I find where the time actually goes and what really breaks.',
+    text: 'I find where the time goes — and what breaks.',
   },
   {
     title: 'Process design',
@@ -25,7 +25,7 @@ const PACKAGES = [
   {
     name: 'Workflow Build',
     price: 'from $1,500 CAD',
-    text: 'One repetitive routine, end to end: research, rules, build, live check, handover.',
+    text: 'One repetitive routine, turned into a system that runs on your accounts — a store update, a weekly report, a follow-up chain.',
   },
   {
     name: 'Agent System Setup',
