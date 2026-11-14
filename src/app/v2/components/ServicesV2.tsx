@@ -1,8 +1,25 @@
 'use client';
 
-import { motion } from 'framer-motion';
+import { useEffect, useState } from 'react';
+import { motion, AnimatePresence } from 'framer-motion';
+import PackagesSection from './PackagesSection';
 
 export default function ServicesV2() {
+  const [showPackages, setShowPackages] = useState(false);
+
+  useEffect(() => {
+    if (!showPackages) return;
+    const handleKeyDown = (event: KeyboardEvent) => {
+      if (event.key === 'Escape') setShowPackages(false);
+    };
+    document.addEventListener('keydown', handleKeyDown);
+    document.body.style.overflow = 'hidden';
+    return () => {
+      document.removeEventListener('keydown', handleKeyDown);
+      document.body.style.overflow = '';
+    };
+  }, [showPackages]);
+
   const websitesBullets = [
     {
       text: <span>What you do, who it’s for, how to reach you — clear in seconds</span>,
@@ -40,7 +57,7 @@ export default function ServicesV2() {
       )
     },
     {
-      text: <span>Runs on the tools and accounts you already use</span>,
+      text: <span>Runs on the tools and accounts you already use - I build it around your stack.</span>,
       icon: (
         <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#1A1F2B" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
           <path d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94l-3.76 3.76z"/>
@@ -161,6 +178,10 @@ export default function ServicesV2() {
           .ghost-circles-light > div { opacity: 0.45 !important; }
           .services-card-top-left-circle {
             display: none !important;
+          }
+          .services-col-left ul li,
+          .services-col-right ul li {
+            font-size: 1.06875rem !important;
           }
         }
         @media (min-width: 861px) {
@@ -357,7 +378,7 @@ export default function ServicesV2() {
                     fontWeight: 400,
                     color: '#FFFFFF',
                     margin: '0 0 0.5rem 0',
-                    letterSpacing: '-0.01em',
+                    letterSpacing: '0em',
                     lineHeight: 1.2,
                     WebkitTextStroke: '0'
                   }}
@@ -378,7 +399,7 @@ export default function ServicesV2() {
                     letterSpacing: '0.015em'
                   }}
                 >
-                  When your work is <span style={{ fontStyle: 'italic', textDecorationLine: 'underline', textDecorationColor: '#f2908f', textDecorationThickness: '1px', textUnderlineOffset: '0.16em' }}>better</span> than your website.
+                  For when your work is better than current website
                 </motion.p>
                 
                 <ul style={{ listStyle: 'none', padding: 0, margin: 0, display: 'flex', flexDirection: 'column', gap: '16px' }}>
@@ -429,17 +450,11 @@ export default function ServicesV2() {
                     </motion.li>
                   ))}
                 </ul>
-                <motion.div
-                  initial={{ opacity: 0, y: 10 }}
-                  whileInView={{ opacity: 1, y: 0 }}
-                  viewport={{ once: true, amount: 0.2 }}
-                  transition={{ duration: 0.6, delay: 0.58, ease: [0.16, 1, 0.3, 1] }}
-                  style={{ display: 'flex', justifyContent: 'flex-end', marginTop: '64px' }}
-                >
-                  <a href="#cases" className="see-example-link-dark" style={{ position: 'relative', display: 'inline-flex', alignItems: 'center', fontFamily: 'var(--font-label), sans-serif', fontSize: '11.55px', fontWeight: 600, letterSpacing: '0.105em', opacity: 0.9, textDecoration: 'none', color: '#A9B4C0', paddingBottom: '4px', transition: 'opacity 0.2s' }} onMouseEnter={(e) => e.currentTarget.style.opacity = '1'} onMouseLeave={(e) => e.currentTarget.style.opacity = '0.9'}>
-                    <span>SEE WEBSITE EXAMPLES <span style={{ color: '#f7d6d0', marginLeft: '4px' }}>&darr;</span></span>
-                  </a>
-                </motion.div>
+                <div style={{ display: 'flex', justifyContent: 'center', marginTop: '64px' }}>
+                  <button type="button" onClick={() => setShowPackages(true)} style={{ background: 'none', border: 0, padding: 0, fontFamily: 'var(--font-label), sans-serif', fontSize: '11.55px', fontWeight: 600, letterSpacing: '0.105em', color: '#efb4a4', cursor: 'pointer', textDecoration: 'none' }}>
+                    SEE WEBSITE PACKAGES <span aria-hidden="true" style={{ marginLeft: '4px' }}>↓</span>
+                  </button>
+                </div>
               </div>
             </motion.div>
 
@@ -491,7 +506,7 @@ export default function ServicesV2() {
                     fontWeight: 400,
                     color: 'var(--color-headline-matte, #31343c)',
                     margin: '0 0 0.5rem 0',
-                    letterSpacing: '-0.01em',
+                    letterSpacing: '0em',
                     lineHeight: 1.2,
                     WebkitTextStroke: '0'
                   }}
@@ -512,7 +527,7 @@ export default function ServicesV2() {
                     letterSpacing: '0.015em'
                   }}
                 >
-                  For the work that <span style={{ fontStyle: 'italic', textDecorationLine: 'underline', textDecorationColor: '#1A1F2B', textDecorationThickness: '1px', textUnderlineOffset: '0.16em' }}>repeats</span> — and keeps breaking.
+                  For when your work repeats itself and you wish to automate it.
                 </motion.p>
                 
                 <ul style={{ listStyle: 'none', padding: 0, margin: 0, display: 'flex', flexDirection: 'column', gap: '16px' }}>
@@ -563,17 +578,11 @@ export default function ServicesV2() {
                     </motion.li>
                   ))}
                 </ul>
-                <motion.div
-                  initial={{ opacity: 0, y: 10 }}
-                  whileInView={{ opacity: 1, y: 0 }}
-                  viewport={{ once: true, amount: 0.2 }}
-                  transition={{ duration: 0.6, delay: 0.68, ease: [0.16, 1, 0.3, 1] }}
-                  style={{ display: 'flex', justifyContent: 'flex-end', marginTop: '64px' }}
-                >
-                  <a href="#cases" className="see-example-link-light-bg" style={{ position: 'relative', display: 'inline-flex', alignItems: 'center', fontFamily: 'var(--font-label), sans-serif', fontSize: '11.55px', fontWeight: 600, letterSpacing: '0.105em', opacity: 0.9, textDecoration: 'none', color: '#5C6672', paddingBottom: '4px', transition: 'opacity 0.2s' }} onMouseEnter={(e) => e.currentTarget.style.opacity = '1'} onMouseLeave={(e) => e.currentTarget.style.opacity = '0.9'}>
-                    <span>SEE APP EXAMPLES <span style={{ color: '#8a94a0', marginLeft: '4px' }}>&darr;</span></span>
-                  </a>
-                </motion.div>
+                <div style={{ display: 'flex', justifyContent: 'center', marginTop: '64px' }}>
+                  <button type="button" onClick={() => setShowPackages(true)} style={{ background: 'none', border: 0, padding: 0, fontFamily: 'var(--font-label), sans-serif', fontSize: '11.55px', fontWeight: 600, letterSpacing: '0.105em', color: '#1A1F2B', cursor: 'pointer', textDecoration: 'none' }}>
+                    SEE AI PRODUCT PACKAGES <span aria-hidden="true" style={{ marginLeft: '4px' }}>↓</span>
+                  </button>
+                </div>
               </div>
             </motion.div>
           </div>
@@ -593,6 +602,33 @@ export default function ServicesV2() {
           }}
         />
       </div>
+
+      <AnimatePresence>
+        {showPackages && (
+          <motion.div
+            className="project-modal-overlay"
+            initial={{ opacity: 0, backdropFilter: 'blur(0px)' }}
+            animate={{ opacity: 1, backdropFilter: 'blur(8px)' }}
+            exit={{ opacity: 0, backdropFilter: 'blur(0px)' }}
+            transition={{ duration: 0.35, ease: [0.16, 1, 0.3, 1] }}
+            onClick={() => setShowPackages(false)}
+          >
+            <motion.div
+              className="project-modal-content"
+              initial={{ scale: 0.88, opacity: 0, y: 20 }}
+              animate={{ scale: 1, opacity: 1, y: 0 }}
+              exit={{ scale: 0.88, opacity: 0, y: 20 }}
+              transition={{ duration: 0.4, ease: [0.16, 1, 0.3, 1] }}
+              onClick={(event) => event.stopPropagation()}
+            >
+              <button className="modal-close-btn" onClick={() => setShowPackages(false)} aria-label="Close packages">
+                ✕
+              </button>
+              <PackagesSection onCtaClick={() => setShowPackages(false)} />
+            </motion.div>
+          </motion.div>
+        )}
+      </AnimatePresence>
     </section>
   );
 }

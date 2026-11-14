@@ -132,7 +132,7 @@ export default function HeroV2() {
         .v2-theme .hero-frame-paragraph .hero-body-light,
         .hero-frame-paragraph .hero-body-light,
         .hero-body-light {
-          font-weight: 300 !important;
+          font-weight: 400 !important;
         font-style: normal !important;
         }
         .v2-theme .hero-frame-paragraph .hero-body-normal,
@@ -910,7 +910,7 @@ export default function HeroV2() {
                 </h1>
                 <p className="hero-frame-paragraph hero-paragraph-anim" style={{ marginTop: '1.7rem', fontSize: '1.395rem', lineHeight: '1.75', color: 'var(--header-title-color)', WebkitTextFillColor: 'var(--header-title-color)', fontWeight: 300, opacity: 1, textWrap: 'pretty' }}>
                   <span className="hero-body-desktop">
-                    <span className="hero-body-row hero-body-light" style={{ fontWeight: 300 }}>Got a dated site that undersells you, a task that eats your week, a process held together by spreadsheets? <span className="hero-body-finish"><strong className="hero-body-bold">I build what fixes it,</strong> <span className="hero-body-light">so you don&rsquo;t have to.</span></span></span>
+                    <span className="hero-body-row hero-body-light" style={{ fontWeight: 400 }}>Got a dated site that undersells you, a task that eats your week, a process held together by spreadsheets? <span className="hero-body-finish"><strong className="hero-body-bold">I build what fixes it,</strong> <span className="hero-body-light">so you don&rsquo;t have to.</span></span></span>
                   </span>
                   <span className="hero-body-mobile">
                     <span className="hero-body-mobile-text hero-body-light">Got a dated site that undersells you, a task that eats your week, a process held together by spreadsheets?</span>{' '}

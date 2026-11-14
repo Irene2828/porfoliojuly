@@ -32,7 +32,7 @@ export default function EditorialStatement({ showGarden = false }: { showGarden?
             font-family: var(--font-heading) !important;
             font-weight: 300 !important;
             font-style: normal !important;
-            letter-spacing: 0.015em !important;
+            letter-spacing: 0.005em !important;
             color: rgba(255, 255, 255, 0.8) !important;
             -webkit-text-fill-color: rgba(255, 255, 255, 0.8) !important;
             -webkit-font-smoothing: antialiased !important;
@@ -57,7 +57,7 @@ export default function EditorialStatement({ showGarden = false }: { showGarden?
           .prefooter-closing-subtext p {
             font-family: var(--font-body), 'Plus Jakarta Sans', sans-serif !important;
             font-weight: 300 !important;
-            letter-spacing: 0.005em !important;
+            letter-spacing: 0.015em !important;
             color: rgba(255, 255, 255, 0.8) !important;
             -webkit-text-fill-color: rgba(255, 255, 255, 0.8) !important;
           }
@@ -144,12 +144,20 @@ export default function EditorialStatement({ showGarden = false }: { showGarden?
             }
             .prefooter-closing-mobile .prefooter-closing-row {
               font-style: normal !important;
-              letter-spacing: 0.015em !important;
+              letter-spacing: -0.01em !important;
               color: rgba(255, 255, 255, 0.8) !important;
               -webkit-text-fill-color: rgba(255, 255, 255, 0.8) !important;
             }
+            .prefooter-closing-mobile .prefooter-closing-row:not(strong) {
+              letter-spacing: -0.01em !important;
+            }
+            .prefooter-closing-mobile,
+            .prefooter-closing-mobile * {
+              letter-spacing: -0.01em !important;
+            }
             .prefooter-closing-mobile strong.prefooter-closing-row {
               font-weight: 500 !important;
+              letter-spacing: -0.01em !important;
               color: #f2908f !important;
               -webkit-text-fill-color: #f2908f !important;
             }
@@ -238,6 +246,11 @@ export default function EditorialStatement({ showGarden = false }: { showGarden?
               width: 100% !important;
               text-align: center !important;
             }
+            .prefooter-closing-mobile > .prefooter-closing-row,
+            .prefooter-closing-mobile > .prefooter-closing-row *,
+            .prefooter-closing-mobile > strong.prefooter-closing-row {
+              letter-spacing: -0.01em !important;
+            }
           }
           .prefooter-with-garden .prefooter-content { padding-bottom: 1rem !important; }
           .prefooter-with-garden .prefooter-cta-container { margin-bottom: 1.25rem !important; }
@@ -316,15 +329,15 @@ export default function EditorialStatement({ showGarden = false }: { showGarden?
                 transition={{ duration: 0.72, delay: 0.22, ease: [0.16, 1, 0.3, 1] }}
                 style={{ display: 'inline', fontWeight: 300, color: 'rgba(255, 255, 255, 0.8)', WebkitTextFillColor: 'rgba(255, 255, 255, 0.8)' }}
               >
-                is <strong style={{ fontWeight: 500, fontStyle: 'normal', letterSpacing: '0.015em', color: '#f2908f', WebkitTextFillColor: '#f2908f' }}>slowing your business down.</strong>
+                is <strong style={{ fontWeight: 500, fontStyle: 'normal', letterSpacing: '0.005em', color: '#f2908f', WebkitTextFillColor: '#f2908f' }}>slowing your business growth.</strong>
               </motion.span>
             </span>
             <span className="prefooter-closing-mobile">
               <span className="prefooter-closing-row">An outdated website</span>
               <span className="prefooter-closing-row" style={{ fontWeight: 300, color: 'rgba(255, 255, 255, 0.8)', WebkitTextFillColor: 'rgba(255, 255, 255, 0.8)' }}>or repetitive work is</span>
-              <span className="prefooter-closing-row"><strong style={{ fontWeight: 500, fontStyle: 'normal', letterSpacing: '0.015em', color: '#f2908f', WebkitTextFillColor: '#f2908f' }}>slowing your</strong></span>
-              <strong className="prefooter-closing-row" style={{ fontWeight: 500, fontStyle: 'normal', letterSpacing: '0.015em', color: '#f2908f', WebkitTextFillColor: '#f2908f' }}>
-                business down.
+              <span className="prefooter-closing-row"><strong style={{ fontWeight: 500, fontStyle: 'normal', color: '#f2908f', WebkitTextFillColor: '#f2908f' }}>slowing your</strong></span>
+              <strong className="prefooter-closing-row" style={{ fontWeight: 500, fontStyle: 'normal', color: '#f2908f', WebkitTextFillColor: '#f2908f' }}>
+                business growth.
               </strong>
             </span>
           </motion.h2>
@@ -350,7 +363,7 @@ export default function EditorialStatement({ showGarden = false }: { showGarden?
               textWrap: 'balance'
             }}
           >
-            <p style={{ margin: 0 }}>Let’s solve this.</p>
+            <p style={{ margin: 0 }}>Let's help it grow.</p>
           </motion.div>
 
           {/* 4. Action CTA Pill Arrival */}

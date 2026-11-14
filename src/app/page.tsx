@@ -4,7 +4,6 @@ import ProjectsV2 from './v2/components/ProjectsV2';
 import ServicesV2 from './v2/components/ServicesV2';
 import HowItWorks from './v2/components/HowItWorks';
 import ProcessSection from './v2/components/ProcessSection';
-import PackagesSection from './v2/components/PackagesSection';
 import AiShowcase from './v2/components/AiShowcase';
 import FaqSection from './v2/components/FaqSection';
 import Footer from './components/Footer';
@@ -45,9 +44,6 @@ export default function HomePage() {
 
         {/* Why Hire Someone If There's AI — showcase */}
         <AiShowcase />
-
-        {/* Packages Section */}
-        <PackagesSection />
 
         <FaqSection />
 

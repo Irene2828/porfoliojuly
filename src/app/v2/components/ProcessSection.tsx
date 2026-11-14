@@ -17,29 +17,6 @@ export default function ProcessSection() {
           box-shadow: none !important;
           position: relative !important;
         }
-        .testimonial-decor {
-          position: absolute;
-          left: 0;
-          top: 0;
-          width: min(360px, 36vw);
-          height: 0.36rem;
-          pointer-events: none;
-          transform: rotate(-3deg);
-          transform-origin: left center;
-          opacity: 0.6;
-        }
-        .testimonial-decor-top {
-          top: 0;
-          z-index: 2;
-        }
-        .testimonial-decor-bottom { bottom: 0; left: auto; right: 0; align-items: flex-end; }
-        .testimonial-decor-underline {
-          display: block;
-          width: 100%;
-          height: 100%;
-          background: #f2908f;
-          border-radius: 999px;
-        }
         .testimonial-heading {
   font-family: var(--font-heading) !important;
           font-weight: 400 !important;
@@ -73,9 +50,8 @@ export default function ProcessSection() {
             font-size: 0.72rem !important;
           }
           .testimonial-single {
-            padding: 5.25rem 1.75rem 1.5rem !important;
+            padding: 2.625rem 1.75rem 1.5rem !important;
           }
-          .testimonial-decor-top { top: 0; }
           .testimonials-grey-container > .container {
             padding-left: 1.5rem !important;
             padding-right: 1.5rem !important;
@@ -146,7 +122,7 @@ export default function ProcessSection() {
               border: '1px dashed #000000',
               borderRadius: 0,
               boxShadow: 'none',
-              padding: '6.5rem 4rem 4.5rem',
+              padding: '3.25rem 4rem 2.25rem',
               display: 'flex',
               flexDirection: 'column',
               alignItems: 'flex-start',
@@ -154,9 +130,6 @@ export default function ProcessSection() {
               textAlign: 'left',
             }}
           >
-            <div className="testimonial-decor testimonial-decor-top" aria-hidden="true">
-              <span className="testimonial-decor-underline" />
-            </div>
             <blockquote
               className="testimonial-quote"
               style={{

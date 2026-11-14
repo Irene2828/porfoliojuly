@@ -6,25 +6,25 @@ export default function HowItWorks() {
   const steps = [
     {
       num: '01',
-      title: 'I research first.',
+      title: 'I clarify the problem, come up with the first solutions.',
       bullets: [
-        { bold: 'You react to real directions, not promises.', rest: ' Three visual directions for a website; for a workflow — the routine mapped: steps, rules, approval points.' }
+        { bold: 'You react to a real solution preview, not a description of it.', rest: ' Three visual directions for a website; for a workflow — the routine mapped: steps, rules, approval points. ' }
       ],
       
     },
     {
       num: '02',
-      title: 'I build and refine.',
+      title: "I build your product's logic, we test it until it works.",
       bullets: [
-        { bold: 'The busier you are, the fewer calls we need.', rest: ' Copy and files come from you — or I prepare them. AI gives me team speed; you approve every key stage.' }
+        { bold: 'The busier you are, the fewer calls we need.', rest: ' Copy and files come from you — or I prepare them. AI gives me team speed; you approve every key stage. ' }
       ],
       
     },
     {
       num: '03',
-      title: 'You get the result, tested.',
+      title: 'I apply care to details, until it reaches our goal.',
       bullets: [
-        { bold: 'Tested, set up, handed over.', rest: ' Hosting and the accounts around it are done — and you’re set for what comes next.' }
+        { bold: 'Tested, set up, handed over.', rest: ' Hosting and the accounts around it are done — and you’re set for what comes next. ' }
       ],
       
     }
@@ -75,6 +75,8 @@ export default function HowItWorks() {
         .how-step-title {
           font-family: var(--font-heading) !important;
           font-weight: 400 !important;
+          font-size: 1.5675rem !important;
+          letter-spacing: 0.005em !important;
           color: #ffffff !important;
           -webkit-text-fill-color: #ffffff !important;
         }
@@ -111,7 +113,7 @@ export default function HowItWorks() {
             font-size: 2.65rem !important;
           }
           .how-step-title {
-            font-size: 1.5rem !important;
+            font-size: 1.425rem !important;
           }
         }
         @media (min-width: 1200px) {
@@ -157,7 +159,7 @@ export default function HowItWorks() {
             textAlign: 'left'
           }}
         >
-          Simple, honest, fast.
+          Clarity. Logic. Care.
         </motion.h2>
         <motion.p
           className="how-subcopy"
@@ -176,9 +178,10 @@ export default function HowItWorks() {
             textAlign: 'left'
           }}
         >
-          Three steps, no mystery. You always know what happens next.
+          Each stage moves the needle - from problem to solution.
         </motion.p>
         <div
+          className="how-steps-grid"
           style={{
             display: 'flex',
             flexDirection: 'row',
@@ -187,7 +190,7 @@ export default function HowItWorks() {
             backgroundColor: 'transparent',
             borderRadius: '16px',
             padding: '1.4rem',
-            maxWidth: '1120px',
+            maxWidth: '1288px',
             margin: '0 auto',
             boxShadow: 'none'
           }}
@@ -269,8 +272,8 @@ export default function HowItWorks() {
                   >
                     <span style={{ color: '#f2908f', fontSize: '1.05rem', lineHeight: 1.6, flexShrink: 0 }}>•</span>
                     <span>
-                      <strong style={{ fontWeight: 600, color: '#ffffff' }}>{bullet.bold}</strong>
                       {bullet.rest}
+                      <span>{bullet.bold}</span>
                     </span>
                   </li>
                 ))}

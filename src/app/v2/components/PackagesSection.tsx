@@ -57,7 +57,7 @@ const WEBSITE_PACKAGES = [
   },
 ];
 
-export default function PackagesSection() {
+export default function PackagesSection({ onCtaClick }: { onCtaClick?: () => void }) {
   return (
     <section
       className="packages-section"
@@ -256,7 +256,7 @@ export default function PackagesSection() {
         </p>
 
         <div className="packages-cta-wrap">
-          <a href="mailto:iryna@irynasheremeta.com" className="packages-btn-primary">
+          <a href="mailto:iryna@irynasheremeta.com" className="packages-btn-primary" onClick={onCtaClick}>
             <span style={{ letterSpacing: '0.08em' }}>SEND YOUR PROBLEM MY WAY</span>
             <svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round" style={{ transform: 'translateY(-0.5px)' }}>
               <line x1="7" y1="17" x2="17" y2="7"></line>

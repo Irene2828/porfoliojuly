@@ -244,6 +244,20 @@ export default function AiShowcase() {
           textAlign: 'left',
         }}
       >
+        <motion.div
+          className="faq-heading-divider"
+          initial={{ scaleX: 0, opacity: 0 }}
+          whileInView={{ scaleX: 1, opacity: 0.9 }}
+          viewport={{ once: true, amount: 0.5 }}
+          transition={{ duration: 0.65, ease: [0.16, 1, 0.3, 1] }}
+          style={{
+            width: '60px',
+            height: '1px',
+            backgroundColor: '#2d3139',
+            margin: '0 auto 2.5rem auto',
+            transformOrigin: 'center',
+          }}
+        />
         <motion.h2
           className="faq-headline"
           initial={{ opacity: 0, y: 20 }}

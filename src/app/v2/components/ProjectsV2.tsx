@@ -618,26 +618,6 @@ export default function ProjectsV2({ initialProjects = [] }: ProjectsV2Props) {
           <span style={{ fontWeight: 400, color: 'var(--color-heading-silver, #4a5461)' }}>Examples of </span><span style={{ fontWeight: 400, color: 'var(--color-heading-silver, #4a5461)' }}>My Work</span>
         </motion.h2>
 
-        <motion.p
-          initial={{ opacity: 0, y: 14 }}
-          whileInView={{ opacity: 0.9, y: 0 }}
-          viewport={{ once: true, amount: 0.5 }}
-          transition={{ duration: 0.7, delay: 0.18, ease: [0.16, 1, 0.3, 1] }}
-          style={{
-            fontFamily: 'var(--font-body)',
-            fontSize: 'clamp(1.05rem, 2.4vw, 1.2rem)',
-            fontWeight: 300,
-            lineHeight: 1.55,
-            color: 'var(--color-body-dark, #2b3038)',
-            maxWidth: '640px',
-            margin: '0 auto 14px auto',
-            textAlign: 'center',
-            letterSpacing: '-0.01em'
-          }}
-        >
-          ...or how I approach problems
-        </motion.p>
-
               <div className="cases-tabs" role="tablist" aria-label="Case categories" style={{ display: 'flex', justifyContent: 'center', gap: '0.5rem', flexWrap: 'wrap', width: '100%', margin: '56px 0 0', padding: '0', boxSizing: 'border-box' }}>
         {([
           { id: 'internal-tools', label: 'Internal Apps' },
