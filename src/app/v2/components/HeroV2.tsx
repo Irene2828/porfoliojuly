@@ -125,8 +125,8 @@ export default function HeroV2() {
         }
         .v2-theme .hero-frame-paragraph,
         .hero-frame-paragraph {
-          color: #d9d9d9 !important;
-          -webkit-text-fill-color: #d9d9d9 !important;
+          color: var(--header-title-color) !important;
+          -webkit-text-fill-color: var(--header-title-color) !important;
           font-weight: 300 !important;
         }
         .v2-theme .hero-frame-paragraph .hero-body-light,
@@ -140,8 +140,12 @@ export default function HeroV2() {
         .hero-body-normal {
           font-weight: 500 !important; /* one touch bolder on desktop hero */
           font-style: normal !important;
-          color: #d9d9d9 !important;
-          -webkit-text-fill-color: #d9d9d9 !important;
+          color: var(--header-title-color) !important;
+          -webkit-text-fill-color: var(--header-title-color) !important;
+        }
+        .v2-theme .hero-frame-paragraph .hero-body-bold {
+          color: var(--header-title-color) !important;
+          -webkit-text-fill-color: var(--header-title-color) !important;
         }
         .hero-body-finish {
           display: inline-block;
@@ -149,8 +153,8 @@ export default function HeroV2() {
         }
         .v2-theme .hero-frame-paragraph em,
         .hero-frame-paragraph em {
-          color: #d9d9d9 !important;
-          -webkit-text-fill-color: #d9d9d9 !important;
+          color: var(--header-title-color) !important;
+          -webkit-text-fill-color: var(--header-title-color) !important;
           font-style: normal !important;
         }
         .hero-offer-item {
@@ -201,8 +205,8 @@ export default function HeroV2() {
             font-family: var(--font-body) !important;
             font-size: 17.33px !important; /* +10% text size */
             font-weight: 400 !important;
-            color: #d9d9d9 !important;
-            -webkit-text-fill-color: #d9d9d9 !important;
+            color: var(--header-title-color) !important;
+            -webkit-text-fill-color: var(--header-title-color) !important;
             text-align: left !important;
             align-self: flex-start !important;
             margin-left: 0 !important;
@@ -218,8 +222,8 @@ export default function HeroV2() {
             font-size: 15.6px !important; /* -10% text size from 17.33px */
             font-weight: 400 !important;
         font-style: normal !important;
-            color: #d9d9d9 !important;
-            -webkit-text-fill-color: #d9d9d9 !important;
+            color: var(--header-title-color) !important;
+            -webkit-text-fill-color: var(--header-title-color) !important;
             line-height: 1.5225 !important;
             letter-spacing: 0.005em !important;
           }
@@ -904,7 +908,7 @@ export default function HeroV2() {
                     </span>
                   </span>
                 </h1>
-                <p className="hero-frame-paragraph hero-paragraph-anim" style={{ marginTop: '1.7rem', fontSize: '1.395rem', lineHeight: '1.75', color: '#d9d9d9', WebkitTextFillColor: '#d9d9d9', fontWeight: 300, opacity: 1, textWrap: 'pretty' }}>
+                <p className="hero-frame-paragraph hero-paragraph-anim" style={{ marginTop: '1.7rem', fontSize: '1.395rem', lineHeight: '1.75', color: 'var(--header-title-color)', WebkitTextFillColor: 'var(--header-title-color)', fontWeight: 300, opacity: 1, textWrap: 'pretty' }}>
                   <span className="hero-body-desktop">
                     <span className="hero-body-row hero-body-light" style={{ fontWeight: 300 }}>Got a dated site that undersells you, a task that eats your week, a process held together by spreadsheets? <span className="hero-body-finish"><strong className="hero-body-bold">I build what fixes it,</strong> <span className="hero-body-light">so you don&rsquo;t have to.</span></span></span>
                   </span>

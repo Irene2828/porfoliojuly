@@ -23,6 +23,7 @@
   --color-heading-silver: #4a5461;
   --color-headline-matte: #31343c;
   --color-body-dark: #2b3038;
+  --header-title-color: rgba(201, 206, 214, 0.77);
   --color-matte-black: #1c1e23;
   --color-matte-black-hover: #262930;
   
@@ -1211,8 +1212,8 @@ h1, h2, h3, h4, h5, h6 {
 
 .v2-theme .mobile-brand-title,
 .v2-theme .header-spacer-desktop a span:last-child {
-  color: rgba(201, 206, 214, 0.77) !important;
-  -webkit-text-fill-color: rgba(201, 206, 214, 0.77) !important;
+  color: var(--header-title-color) !important;
+  -webkit-text-fill-color: var(--header-title-color) !important;
 }
 
 .v2-theme .premium-header svg {
