@@ -173,7 +173,7 @@ export default function Header() {
               lineHeight: '1.2', 
               letterSpacing: '0.03em' 
             }}>
-              / Product Designer &amp; Builder /
+              / Product Designer &amp; AI Builder /
             </span>
           </a>
         </div>
@@ -205,7 +205,7 @@ export default function Header() {
       <div className="mobile-header-left">
         <a href="/" aria-label="Home" className="mobile-brand-link">
           <span className="mobile-brand-name">IRYNA SHEREMETA</span>
-          <span className="mobile-brand-title">/ Product Designer &amp; Builder /</span>
+          <span className="mobile-brand-title">/ Product Designer &amp; AI Builder /</span>
         </a>
       </div>
 
