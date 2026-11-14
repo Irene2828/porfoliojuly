@@ -363,7 +363,7 @@ export default function EditorialStatement({ showGarden = false }: { showGarden?
               textWrap: 'balance'
             }}
           >
-            <p style={{ margin: 0 }}>Let's help it grow.</p>
+            <p style={{ margin: 0 }}>Let's fix that.</p>
           </motion.div>
 
           {/* 4. Action CTA Pill Arrival */}
