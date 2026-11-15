@@ -676,6 +676,12 @@ export default function ProjectsV2({ initialProjects = [] }: ProjectsV2Props) {
         .cases-grid-item .preview-card-caption {
           margin-top: 0.25rem !important;
         }
+        .cases-grid-item .preview-card-caption-btn {
+          color: #f2908f !important;
+        }
+        .cases-grid-item .preview-card-caption-btn span {
+          color: #f2908f !important;
+        }
         @media (min-width: 901px) {
           .recording-card-wrapper .case-pair {
             margin-bottom: 11%;
