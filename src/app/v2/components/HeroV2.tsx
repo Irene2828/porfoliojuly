@@ -9,6 +9,7 @@ export default function HeroV2() {
     <section className="section hero-section" id="home" style={{ backgroundColor: '#121316', background: '#121316' }}>
       {/* Off-black matte theme rules */}
       <style>{`
+        @import url('https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&display=swap');
         .hero-section,
         .v2-theme .hero-section {
           background: #121316 !important;
@@ -62,16 +63,16 @@ export default function HeroV2() {
         }
         .headline-desktop-light,
         .headline-mobile-light {
-          font-family: -apple-system, BlinkMacSystemFont, "Helvetica Neue", Helvetica, Arial, sans-serif !important;
-          font-weight: 400 !important;
+          font-family: 'Space Grotesk', sans-serif !important;
+          font-weight: 500 !important;
           color: #ffffff !important;
           -webkit-text-fill-color: #ffffff !important;
           letter-spacing: -0.018em !important;
         }
         .headline-desktop-accent,
         .headline-mobile-accent {
-          font-family: 'Newsreader', 'Source Serif 4', Georgia, serif !important;
-          font-weight: 400 !important;
+          font-family: 'Space Grotesk', sans-serif !important;
+          font-weight: 500 !important;
           background: none !important;
           -webkit-background-clip: border-box !important;
           background-clip: border-box !important;
@@ -82,18 +83,18 @@ export default function HeroV2() {
         }
         .headline-desktop-serif,
         .headline-mobile-serif {
-          font-family: 'Newsreader', 'Source Serif 4', Georgia, serif !important;
+          font-family: 'Space Grotesk', sans-serif !important;
           font-style: italic !important;
-          font-weight: 400 !important;
+          font-weight: 500 !important;
           color: #ffffff !important;
           -webkit-text-fill-color: #ffffff !important;
           letter-spacing: -0.01em !important;
         }
         .headline-desktop-serif-normal,
         .headline-mobile-serif-normal {
-          font-family: 'Newsreader', 'Source Serif 4', Georgia, serif !important;
+          font-family: 'Space Grotesk', sans-serif !important;
           font-style: normal !important;
-          font-weight: 400 !important;
+          font-weight: 500 !important;
           color: #ffffff !important;
           -webkit-text-fill-color: #ffffff !important;
           letter-spacing: -0.01em !important;
