@@ -3,6 +3,8 @@ import './index.css';
 import CursorTrail from './v2/components/CursorTrail';
 
 export const metadata: Metadata = {
+  metadataBase: new URL('https://www.irynasheremeta.com'),
+  alternates: { canonical: '/' },
   title: 'Iryna Sheremeta — Product designer & builder',
   description:
     'I build custom websites and tools for busy professionals. You explain the problem. I handle the rest.',
@@ -11,8 +13,46 @@ export const metadata: Metadata = {
     description:
       'I build custom websites and tools for busy professionals. You explain the problem. I handle the rest.',
     type: 'website',
+    url: 'https://www.irynasheremeta.com/',
+    siteName: 'Iryna Sheremeta',
+  },
+  twitter: {
+    card: 'summary_large_image',
+    title: 'Iryna Sheremeta — Product designer & builder',
+    description:
+      'I build custom websites and tools for busy professionals. You explain the problem. I handle the rest.',
   },
 };
+
+const structuredData = {
+  '@context': 'https://schema.org',
+  '@graph': [
+    {
+      '@type': 'Person',
+      '@id': 'https://www.irynasheremeta.com/#person',
+      name: 'Iryna Sheremeta',
+      jobTitle: 'Product Designer & AI Builder',
+      url: 'https://www.irynasheremeta.com/',
+      sameAs: ['https://www.linkedin.com/in/iryna-sheremeta-643316414'],
+      address: {
+        '@type': 'PostalAddress',
+        addressLocality: 'Montréal',
+        addressRegion: 'QC',
+        addressCountry: 'CA',
+      },
+    },
+    {
+      '@type': 'ProfessionalService',
+      name: 'Iryna Sheremeta — Product Design & AI Building',
+      url: 'https://www.irynasheremeta.com/',
+      founder: { '@id': 'https://www.irynasheremeta.com/#person' },
+      areaServed: 'Canada',
+      description:
+        'Custom websites, internal tools and AI workflows for small businesses — from problem to solution.',
+    },
+  ],
+};
+
 export const viewport = {
   width: 'device-width',
   initialScale: 1,
@@ -44,6 +84,10 @@ export default function RootLayout({
         />
       </head>
       <body>
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(structuredData) }}
+        />
         <CursorTrail />
         {children}
         {shouldInjectToolbar && <VercelToolbar />}

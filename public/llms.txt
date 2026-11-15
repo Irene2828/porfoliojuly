@@ -1,0 +1,20 @@
+# Iryna Sheremeta — Product Designer & AI Builder
+
+> Iryna Sheremeta designs and builds digital products end to end — from problem to solution: custom websites, internal tools, and AI workflows for small businesses. Based in Montréal, Canada; works remotely across Canada.
+
+## Services
+
+- Custom websites — designed and built around the business, with hosting and care available after launch. Packages from $750 CAD.
+- Workflow builds — repetitive routines mapped, automated and tested with the client. From $1,500 CAD.
+- AI agent system setup — custom agents configured on the client's own accounts, with guardrails and human approval points. From $3,000 CAD.
+
+## Selected work
+
+- Poster generator for the Terry Fox Foundation — a custom internal tool that lets volunteers and managers produce approved event posters in minutes instead of days.
+- BuyUkrainian — an interactive directory of stores selling products made in Ukraine, across Canada.
+
+## Links
+
+- Website: https://www.irynasheremeta.com/
+- About: https://www.irynasheremeta.com/about
+- LinkedIn: https://www.linkedin.com/in/iryna-sheremeta-643316414
