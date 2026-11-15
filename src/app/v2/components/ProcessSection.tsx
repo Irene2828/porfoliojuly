@@ -35,7 +35,8 @@ export default function ProcessSection() {
         .testimonial-attribution {
           font-family: var(--font-body), 'Plus Jakarta Sans', sans-serif !important;
           font-weight: 500 !important;
-          font-size: 0.85rem !important;
+          font-size: var(--text-small) !important;
+          line-height: var(--lh-small);
           letter-spacing: 0.18em !important;
           text-transform: uppercase !important;
           color: rgba(0, 0, 0, 0.8) !important;
@@ -43,11 +44,11 @@ export default function ProcessSection() {
         }
         @media (max-width: 900px) {
           .testimonial-quote {
-            font-size: clamp(1.13rem, 5.23vw, 1.43rem) !important;
+            font-size: var(--text-small) !important;
             max-width: 100% !important;
           }
           .testimonial-attribution {
-            font-size: 0.72rem !important;
+            font-size: var(--text-label) !important;
           }
           .testimonial-single {
             padding: 2.625rem 1.75rem 1.5rem !important;
@@ -66,7 +67,7 @@ export default function ProcessSection() {
         }
         @media (min-width: 901px) {
           .testimonial-quote {
-            font-size: clamp(0.936rem, 1.989vw, 1.404rem) !important;
+            font-size: var(--text-small) !important;
           }
           .testimonial-single {
             width: 77% !important;
@@ -116,7 +117,7 @@ export default function ProcessSection() {
             viewport={{ once: true, margin: '-80px' }}
             transition={{ duration: 0.7, ease: 'easeOut' }}
             style={{
-              fontSize: 'clamp(28px, 4.4vw, 42px)',
+              fontSize: 'var(--text-section-title)',
               lineHeight: 1.2,
               margin: '0 0 1.25rem 0',
               color: 'var(--color-heading-silver)',
@@ -147,8 +148,8 @@ export default function ProcessSection() {
             <blockquote
               className="testimonial-quote"
               style={{
-                fontSize: 'clamp(1.04rem, 2.21vw, 1.56rem)',
-                lineHeight: 1.35,
+                fontSize: 'var(--text-small)',
+                lineHeight: 'var(--lh-small)',
                 margin: 0,
                 padding: 0,
                 maxWidth: '1093px',
@@ -166,7 +167,8 @@ export default function ProcessSection() {
               transition={{ duration: 0.6, delay: 0.2, ease: 'easeOut' }}
               style={{
                 margin: '2.5rem 0 0 0',
-                fontSize: '0.85rem',
+                fontSize: 'var(--text-small)',
+                lineHeight: 'var(--lh-small)',
                 letterSpacing: '0.18em',
                 textTransform: 'uppercase',
                 color: 'rgba(0, 0, 0, 0.8)',

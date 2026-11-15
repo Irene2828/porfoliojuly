@@ -46,7 +46,8 @@ export default function Footer() {
         }
         .footer-copy-text {
           font-family: var(--font-label), -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
-          font-size: 14px !important;
+          font-size: var(--text-small) !important;
+          line-height: var(--lh-small);
           font-weight: 400;
           letter-spacing: 0.02em;
           color: rgba(201, 206, 214, 0.77) !important;
@@ -56,7 +57,8 @@ export default function Footer() {
         }
         .footer-hire-link {
           font-family: var(--font-label), -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
-          font-size: 14px !important;
+          font-size: var(--text-small) !important;
+          line-height: var(--lh-small);
           font-weight: 500;
           letter-spacing: 0.02em;
           color: #ffffff !important;

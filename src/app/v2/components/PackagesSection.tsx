@@ -62,8 +62,8 @@ export default function PackagesSection({ onCtaClick, mode = 'website' }: { onCt
           color: #ffffff !important;
           -webkit-text-fill-color: #ffffff !important;
           opacity: 1 !important;
-          font-size: clamp(30px, 4.6vw, 46px);
-          line-height: 1.18;
+          font-size: var(--text-section-title);
+          line-height: 1.2;
           text-align: center;
           margin: 0 auto 1rem auto;
           max-width: 22ch;
@@ -72,7 +72,7 @@ export default function PackagesSection({ onCtaClick, mode = 'website' }: { onCt
         .packages-heading strong { font-weight: 500; color: #ffffff !important; -webkit-text-fill-color: #ffffff !important; }
         .packages-kicker {
           font-family: var(--font-label), sans-serif;
-          font-size: 0.72rem;
+          font-size: var(--text-label);
           font-weight: 600;
           text-transform: uppercase;
           letter-spacing: 0.14em;
@@ -90,7 +90,7 @@ export default function PackagesSection({ onCtaClick, mode = 'website' }: { onCt
         .packages-value-item { background: #121316; padding: 1.6rem 1.75rem; }
         .packages-value-title {
           font-family: var(--font-heading);
-          font-size: 1.15rem;
+          font-size: var(--text-lead);
           font-weight: 500;
           color: #ffffff;
           margin: 0 0 0.45rem 0;
@@ -98,8 +98,8 @@ export default function PackagesSection({ onCtaClick, mode = 'website' }: { onCt
         .packages-value-text {
           font-family: var(--font-body), 'Plus Jakarta Sans', sans-serif;
           font-weight: 300;
-          font-size: 0.98rem;
-          line-height: 1.55;
+          font-size: var(--text-body);
+          line-height: var(--lh-body);
           color: rgba(255, 255, 255, 0.75);
           margin: 0;
         }
@@ -116,14 +116,15 @@ export default function PackagesSection({ onCtaClick, mode = 'website' }: { onCt
         }
         .packages-card-name {
           font-family: var(--font-heading);
-          font-size: 1.3rem;
+          font-size: var(--text-subhead);
+          line-height: 1.3;
           font-weight: 500;
           color: #ffffff;
           margin: 0 0 0.35rem 0;
         }
         .packages-card-price {
           font-family: var(--font-label), sans-serif;
-          font-size: 0.78rem;
+          font-size: var(--text-label);
           font-weight: 600;
           text-transform: uppercase;
           letter-spacing: 0.1em;
@@ -133,16 +134,16 @@ export default function PackagesSection({ onCtaClick, mode = 'website' }: { onCt
         .packages-card-text {
           font-family: var(--font-body), 'Plus Jakarta Sans', sans-serif;
           font-weight: 300;
-          font-size: 0.98rem;
-          line-height: 1.55;
+          font-size: var(--text-body);
+          line-height: var(--lh-body);
           color: rgba(255, 255, 255, 0.75);
           margin: 0;
         }
         .packages-honest {
           font-family: var(--font-body), 'Plus Jakarta Sans', sans-serif;
           font-weight: 300;
-          font-size: 1.02rem;
-          line-height: 1.6;
+          font-size: var(--text-body);
+          line-height: var(--lh-body);
           color: rgba(255, 255, 255, 0.8);
           text-align: center;
           max-width: 58ch;
@@ -152,7 +153,7 @@ export default function PackagesSection({ onCtaClick, mode = 'website' }: { onCt
         .packages-cta-wrap { text-align: center; margin-top: 4rem; }
         .packages-btn-primary {
           font-family: var(--font-label), sans-serif !important;
-          font-size: 0.72rem !important;
+          font-size: var(--text-label) !important;
           font-weight: 600 !important;
           text-transform: uppercase !important;
           letter-spacing: 0.08em !important;

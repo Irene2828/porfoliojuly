@@ -136,7 +136,7 @@ export default function PosterGallery({ images }: { images: PosterGalleryImage[]
         }
         .poster-gallery-counter {
           font-family: var(--font-body), 'Plus Jakarta Sans', sans-serif !important;
-          font-size: 11.5px;
+          font-size: var(--text-label);
           font-weight: 600;
           letter-spacing: 0.06em;
           color: #4b5563;

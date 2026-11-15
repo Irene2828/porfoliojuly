@@ -71,7 +71,7 @@ export default function FaqSection() {
         }
         .faq-kicker {
           font-family: var(--font-body), 'Plus Jakarta Sans', sans-serif !important;
-          font-size: 0.72rem !important;
+          font-size: var(--text-label) !important;
           font-weight: 600 !important;
           text-transform: uppercase !important;
           letter-spacing: 0.14em !important;
@@ -94,9 +94,9 @@ export default function FaqSection() {
         }
         .faq-section-subline {
           font-family: var(--font-body), 'Plus Jakarta Sans', sans-serif !important;
-          font-size: clamp(1.05rem, 2.4vw, 1.2rem) !important;
+          font-size: var(--text-lead) !important;
           font-weight: 300 !important;
-          line-height: 1.55 !important;
+          line-height: var(--lh-body) !important;
           letter-spacing: -0.011em !important;
           color: var(--color-body-dark, #2b3038) !important;
           -webkit-text-fill-color: var(--color-body-dark, #2b3038) !important;
@@ -131,6 +131,8 @@ export default function FaqSection() {
           text-align: left !important;
         }
         .faq-question {
+          font-size: var(--text-subhead) !important;
+          line-height: 1.3;
           font-family: 'Newsreader', Georgia, serif !important;
           font-weight: 400 !important;
           letter-spacing: -0.015em !important;
@@ -160,10 +162,10 @@ export default function FaqSection() {
         }
         .faq-answer-list li {
           font-family: var(--font-body), 'Plus Jakarta Sans', sans-serif !important;
-          font-size: 1.02rem !important;
+          font-size: var(--text-body) !important;
           font-weight: 300 !important;
           letter-spacing: -0.011em !important;
-          line-height: 1.65 !important;
+          line-height: var(--lh-body) !important;
           color: rgba(0, 0, 0, 0.78) !important;
           -webkit-text-fill-color: rgba(0, 0, 0, 0.78) !important;
           margin-bottom: 0.55rem !important;
@@ -205,10 +207,10 @@ export default function FaqSection() {
         }
         .faq-case-caption {
           font-family: var(--font-body), 'Plus Jakarta Sans', sans-serif !important;
-          font-size: 1rem !important;
+          font-size: var(--text-body) !important;
           font-weight: 300 !important;
           letter-spacing: -0.011em !important;
-          line-height: 1.55 !important;
+          line-height: var(--lh-body) !important;
           color: rgba(0, 0, 0, 0.72) !important;
           -webkit-text-fill-color: rgba(0, 0, 0, 0.72) !important;
           margin: 0.85rem 0 0 0 !important;
@@ -225,10 +227,10 @@ export default function FaqSection() {
             font-size: clamp(1.9rem, 8vw, 2.4rem) !important; margin-left: 0 !important; margin-right: 0 !important;
           }
           .faq-question {
-          font-size: 1.2915rem !important;
+          font-size: var(--text-subhead) !important;
           }
           .faq-answer-list li {
-            font-size: 1.017rem !important;
+            font-size: var(--text-body) !important;
           }
           .faq-toggle {
             padding: 1.4rem 2.25rem 1.4rem 0 !important;
@@ -260,7 +262,7 @@ export default function FaqSection() {
         }
         /* Match the “Made by someone…” statement at every viewport width. */
         .faq-cta-heading {
-          font-size: clamp(1.05rem, 2.4vw, 1.2rem) !important;
+          font-size: var(--text-lead) !important;
         }
         .faq-cta-heading,
         .faq-cta-heading .faq-cta-white,
@@ -278,7 +280,7 @@ export default function FaqSection() {
         }}
       >
         <motion.div className="cases-decor-line" initial={{ scaleX: 0, opacity: 0 }} whileInView={{ scaleX: 1, opacity: 0.9 }} viewport={{ once: true, amount: 0.45 }} transition={{ duration: 0.65, ease: [0.16, 1, 0.3, 1] }} style={{ width: '60px', height: '1px', backgroundColor: '#2d3139', margin: '0 auto 2.5rem auto', transformOrigin: 'center' }} aria-hidden="true" />
-      <motion.h2 className="faq-section-heading" initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true, amount: 0.45 }} transition={{ duration: 0.78, delay: 0.08, ease: [0.16, 1, 0.3, 1] }} style={{ fontFamily: 'var(--font-heading)', fontSize: 'clamp(28px, 4.4vw, 42px)', fontWeight: 400, lineHeight: 1.2, color: 'var(--color-heading-silver)', letterSpacing: '-0.02em', margin: '0 0 2.5rem 0', textAlign: 'center' }}>Other questions — <em>answered</em>.</motion.h2>
+      <motion.h2 className="faq-section-heading" initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true, amount: 0.45 }} transition={{ duration: 0.78, delay: 0.08, ease: [0.16, 1, 0.3, 1] }} style={{ fontFamily: 'var(--font-heading)', fontSize: 'var(--text-section-title)', fontWeight: 400, lineHeight: 1.2, color: 'var(--color-heading-silver)', letterSpacing: '-0.02em', margin: '0 0 2.5rem 0', textAlign: 'center' }}>Other questions — <em>answered</em>.</motion.h2>
       <div>
         {faqs.map((faq, index) => {
             const isOpen = openIndex === index;
@@ -291,7 +293,7 @@ export default function FaqSection() {
                 viewport={{ once: true, amount: 0.3 }}
                 transition={{ duration: 0.68, delay: index * 0.04, ease: [0.16, 1, 0.3, 1] }}
               >
-                <h3 style={{ margin: 0 }}>
+                <h3 style={{ margin: 0, fontSize: 'var(--text-subhead)', lineHeight: 1.3 }}>
                   <button
                     type="button"
                     className="faq-toggle"
@@ -306,7 +308,7 @@ export default function FaqSection() {
                     <span
                       className="faq-question"
                       style={{
-                        fontSize: 'clamp(1.28rem, 2.89vw, 1.57rem)',
+                        fontSize: 'var(--text-subhead)',
                         lineHeight: 1.3,
                       }}
                     >
