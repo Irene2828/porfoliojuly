@@ -64,7 +64,7 @@ export default function HowItWorks() {
         }
         .how-subcopy {
           font-family: var(--font-body), 'Plus Jakarta Sans', sans-serif !important;
-          font-size: var(--text-lead) !important;
+          font-size: var(--text-body) !important;
           font-weight: 300 !important;
           line-height: var(--lh-body) !important;
           letter-spacing: 0.015em !important;
@@ -165,7 +165,7 @@ export default function HowItWorks() {
           transition={{ duration: 0.68, ease: [0.16, 1, 0.3, 1] }}
           style={{ margin: '0 0 1.05rem 0', textAlign: 'left' }}
         >
-          How I work
+          Why work with me
         </motion.p>
         <motion.h2
           className="how-title"
@@ -193,7 +193,7 @@ export default function HowItWorks() {
           transition={{ duration: 0.68, delay: 0.16, ease: [0.16, 1, 0.3, 1] }}
           style={{
             fontFamily: "'Plus Jakarta Sans', sans-serif",
-            fontSize: 'var(--text-lead)',
+            fontSize: 'var(--text-body)',
             fontWeight: 300,
             lineHeight: 'var(--lh-body)',
             letterSpacing: '-0.011em',
@@ -202,7 +202,7 @@ export default function HowItWorks() {
             textAlign: 'left'
           }}
         >
-          Each stage moves the needle - from problem to solution.
+          I approach each problem in stages — from the messy start to the final solution.
         </motion.p>
         <div
           className="how-steps-grid"
