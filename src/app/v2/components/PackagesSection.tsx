@@ -56,7 +56,7 @@ export default function PackagesSection({ onCtaClick, mode = 'website' }: { onCt
       className="packages-section"
       style={{
         backgroundColor: '#121316',
-        padding: '96px 0 104px 0',
+        padding: '5.1rem 0 5.1rem 0',
         width: '100%',
         position: 'relative',
         overflow: 'hidden',
