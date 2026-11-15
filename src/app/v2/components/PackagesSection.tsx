@@ -53,6 +53,7 @@ export default function PackagesSection({ onCtaClick, mode = 'website' }: { onCt
   const isAi = mode === 'ai';
   const packages = isAi ? AI_PACKAGES : WEBSITE_PACKAGES;
   const [agentDetailsOpen, setAgentDetailsOpen] = useState(false);
+  const [openPackages, setOpenPackages] = useState<Record<string, boolean>>({});
   return (
     <section
       className="packages-section"
@@ -316,12 +317,25 @@ export default function PackagesSection({ onCtaClick, mode = 'website' }: { onCt
         </motion.h2>
 
         <div className="packages-cards">
-          {packages.map((pkg) => (
+          {packages.map((pkg, index) => (
             <div className="packages-card" key={pkg.name}>
               <h3 className="packages-card-name">{pkg.name}</h3>
               <p className="packages-card-price">{pkg.price}</p>
               {pkg.lead && <p className="packages-card-text" style={{ marginBottom: '0.65rem' }}>{pkg.lead}</p>}
-              <ul className="packages-card-bullets">
+              <button
+                type="button"
+                className="agent-setup-toggle"
+                aria-expanded={Boolean(openPackages[pkg.name])}
+                aria-controls={`package-details-${mode}-${index}`}
+                onClick={() => setOpenPackages((open) => ({ ...open, [pkg.name]: !open[pkg.name] }))}
+              >
+                {openPackages[pkg.name] ? 'Hide what’s included' : 'See what’s included'}<svg className="agent-setup-toggle-icon" aria-hidden="true" viewBox="0 0 12 12" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" style={{ transform: openPackages[pkg.name] ? 'rotate(180deg)' : undefined }}><path d="m2 4 4 4 4-4" /></svg>
+              </button>
+              <ul
+                id={`package-details-${mode}-${index}`}
+                className="packages-card-bullets"
+                style={{ display: openPackages[pkg.name] ? undefined : 'none' }}
+              >
                 {pkg.bullets.map((item) => (
                   <li key={item}>{item}</li>
                 ))}
