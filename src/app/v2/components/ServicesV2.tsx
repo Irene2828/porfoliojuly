@@ -188,7 +188,7 @@ export default function ServicesV2() {
           }
           .services-col-left ul li,
           .services-col-right ul li {
-            font-size: var(--text-lead) !important;
+            font-size: var(--text-body) !important;
           }
         }
         @media (min-width: 861px) {
