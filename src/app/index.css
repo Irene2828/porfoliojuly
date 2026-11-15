@@ -1796,7 +1796,7 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 .v2-theme #faq-section > .prefooter-section {
-  padding-top: 2.55rem !important;
+  padding-top: 5.1rem !important;
 }
 
 /* Keep the closing sentence setup white and preserve its peach conclusion. */
@@ -1814,4 +1814,15 @@ h1, h2, h3, h4, h5, h6 {
 
 .v2-theme section:not(#home) h2 strong {
   font-weight: 600 !important;
+}
+
+/* Double the space below the final collapsed question before its stroke. */
+#faq-section .faq-item:last-child .faq-toggle[aria-expanded="false"] {
+  padding-bottom: 3.4rem !important;
+}
+
+@media (max-width: 900px) {
+  #faq-section .faq-item:last-child .faq-toggle[aria-expanded="false"] {
+    padding-bottom: 2.8rem !important;
+  }
 }
