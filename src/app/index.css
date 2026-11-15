@@ -1805,3 +1805,13 @@ h1, h2, h3, h4, h5, h6 {
   color: #ffffff !important;
   -webkit-text-fill-color: #ffffff !important;
 }
+
+/* Give section headings a slightly heavier weight while preserving the hero. */
+.v2-theme section:not(#home) h2,
+.v2-theme section:not(#home) h2 :is(span, em) {
+  font-weight: 500 !important;
+}
+
+.v2-theme section:not(#home) h2 strong {
+  font-weight: 600 !important;
+}
