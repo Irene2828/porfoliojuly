@@ -5,12 +5,13 @@ import { motion, AnimatePresence } from 'framer-motion';
 import PackagesSection from './PackagesSection';
 
 export default function ServicesV2() {
-  const [showPackages, setShowPackages] = useState(false);
+  const [packageMode, setPackageMode] = useState<'website' | 'ai' | null>(null);
+  const showPackages = packageMode !== null;
 
   useEffect(() => {
     if (!showPackages) return;
     const handleKeyDown = (event: KeyboardEvent) => {
-      if (event.key === 'Escape') setShowPackages(false);
+      if (event.key === 'Escape') setPackageMode(null);
     };
     document.addEventListener('keydown', handleKeyDown);
     document.body.style.overflow = 'hidden';
@@ -22,7 +23,7 @@ export default function ServicesV2() {
 
   const websitesBullets = [
     {
-      text: <span>What you do, who it’s for, how to reach you — clear in seconds</span>,
+      text: <span>What you do, who it’s for, how to reach you — <strong>clear in seconds</strong></span>,
       icon: (
         <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#e8ebee" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
           <circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/>
@@ -30,7 +31,7 @@ export default function ServicesV2() {
       )
     },
     {
-      text: <span>Designed around your clients’ questions, not a template</span>,
+      text: <span>Designed around your <strong>clients’ questions</strong>, not a template</span>,
       icon: (
         <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#e8ebee" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
           <rect x="3" y="4" width="18" height="18" rx="2" ry="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/>
@@ -38,7 +39,7 @@ export default function ServicesV2() {
       )
     },
     {
-      text: <span>Fast on phones, and updates don’t need a developer</span>,
+      text: <span><strong>Fast on phones</strong>, and updates don’t need a developer</span>,
       icon: (
         <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#e8ebee" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
           <path d="M13 2L3 14h9l-1 8 10-12h-9l1-8z"/>
@@ -49,7 +50,7 @@ export default function ServicesV2() {
 
   const aiToolsBullets = [
     {
-      text: <span>Built for one job: the report, the form, the follow-up, the check</span>,
+      text: <span>Built for <strong>one job</strong>: the report, the form, the follow-up, the check</span>,
       icon: (
         <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#1A1F2B" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
           <circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/>
@@ -57,7 +58,7 @@ export default function ServicesV2() {
       )
     },
     {
-      text: <span>Runs on the tools and accounts you already use - I build it around your stack.</span>,
+      text: <span>Runs on the tools and accounts you already use - I build it around <strong>your stack</strong>.</span>,
       icon: (
         <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#1A1F2B" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
           <path d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94l-3.76 3.76z"/>
@@ -65,7 +66,7 @@ export default function ServicesV2() {
       )
     },
     {
-      text: <span>The routine runs itself; approvals stay human</span>,
+      text: <span>The routine <strong>runs itself</strong>; approvals stay human</span>,
       icon: (
         <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#1A1F2B" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
           <polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"/>
@@ -86,6 +87,12 @@ export default function ServicesV2() {
       }}
     >
       <style>{`
+        .packages-modal-close {
+          color: #ffffff !important;
+        }
+        .packages-modal-close:hover {
+          color: #ffffff !important;
+        }
         .see-example-link-dark::after {
           content: '';
           position: absolute;
@@ -392,7 +399,7 @@ export default function ServicesV2() {
                   transition={{ duration: 0.65, delay: 0.18, ease: [0.16, 1, 0.3, 1] }}
                   style={{
                     fontFamily: "var(--font-body)",
-                    fontSize: '15.75px',
+                    fontSize: '1.125rem',
                     color: '#a0abb8',
                     margin: '0 0 2.5rem 0',
                     lineHeight: 1.5,
@@ -411,7 +418,7 @@ export default function ServicesV2() {
                       viewport={{ once: true, amount: 0.25 }}
                       transition={{ duration: 0.65, delay: 0.24 + idx * 0.11, ease: [0.16, 1, 0.3, 1] }}
                       style={{ 
-                        fontSize: '1.125rem',
+                        fontSize: '15.75px',
                         color: '#e8ebee', 
                         display: 'flex', 
                         alignItems: 'center', 
@@ -451,7 +458,7 @@ export default function ServicesV2() {
                   ))}
                 </ul>
                 <div style={{ display: 'flex', justifyContent: 'center', marginTop: '64px' }}>
-                  <button type="button" onClick={() => setShowPackages(true)} style={{ background: 'none', border: 0, padding: 0, fontFamily: 'var(--font-label), sans-serif', fontSize: '11.55px', fontWeight: 600, letterSpacing: '0.105em', color: '#efb4a4', cursor: 'pointer', textDecoration: 'none' }}>
+                  <button type="button" onClick={() => setPackageMode('website')} style={{ background: 'none', border: 0, padding: 0, fontFamily: 'var(--font-label), sans-serif', fontSize: '11.55px', fontWeight: 600, letterSpacing: '0.105em', color: '#efb4a4', cursor: 'pointer', textDecoration: 'none' }}>
                     SEE WEBSITE PACKAGES <span aria-hidden="true" style={{ marginLeft: '4px' }}>↓</span>
                   </button>
                 </div>
@@ -520,14 +527,14 @@ export default function ServicesV2() {
                   transition={{ duration: 0.65, delay: 0.3, ease: [0.16, 1, 0.3, 1] }}
                   style={{
                     fontFamily: "var(--font-body)",
-                    fontSize: '15.75px',
+                    fontSize: '1.125rem',
                     color: '#65707e',
                     margin: '0 0 2.5rem 0',
                     lineHeight: 1.5,
                     letterSpacing: '0.015em'
                   }}
                 >
-                  For when your work repeats itself and you wish to automate it.
+                  For repetitive work you want to automate.
                 </motion.p>
                 
                 <ul style={{ listStyle: 'none', padding: 0, margin: 0, display: 'flex', flexDirection: 'column', gap: '16px' }}>
@@ -539,7 +546,7 @@ export default function ServicesV2() {
                       viewport={{ once: true, amount: 0.25 }}
                       transition={{ duration: 0.65, delay: 0.36 + idx * 0.11, ease: [0.16, 1, 0.3, 1] }}
                       style={{ 
-                        fontSize: '1.125rem',
+                        fontSize: '15.75px',
                         color: '#1A1F2B', 
                         display: 'flex', 
                         alignItems: 'center', 
@@ -579,7 +586,7 @@ export default function ServicesV2() {
                   ))}
                 </ul>
                 <div style={{ display: 'flex', justifyContent: 'center', marginTop: '64px' }}>
-                  <button type="button" onClick={() => setShowPackages(true)} style={{ background: 'none', border: 0, padding: 0, fontFamily: 'var(--font-label), sans-serif', fontSize: '11.55px', fontWeight: 600, letterSpacing: '0.105em', color: '#1A1F2B', cursor: 'pointer', textDecoration: 'none' }}>
+                  <button type="button" onClick={() => setPackageMode('ai')} style={{ background: 'none', border: 0, padding: 0, fontFamily: 'var(--font-label), sans-serif', fontSize: '11.55px', fontWeight: 600, letterSpacing: '0.105em', color: '#1A1F2B', cursor: 'pointer', textDecoration: 'none' }}>
                     SEE AI PRODUCT PACKAGES <span aria-hidden="true" style={{ marginLeft: '4px' }}>↓</span>
                   </button>
                 </div>
@@ -611,7 +618,7 @@ export default function ServicesV2() {
             animate={{ opacity: 1, backdropFilter: 'blur(8px)' }}
             exit={{ opacity: 0, backdropFilter: 'blur(0px)' }}
             transition={{ duration: 0.35, ease: [0.16, 1, 0.3, 1] }}
-            onClick={() => setShowPackages(false)}
+            onClick={() => setPackageMode(null)}
           >
             <motion.div
               className="project-modal-content"
@@ -621,10 +628,10 @@ export default function ServicesV2() {
               transition={{ duration: 0.4, ease: [0.16, 1, 0.3, 1] }}
               onClick={(event) => event.stopPropagation()}
             >
-              <button className="modal-close-btn" onClick={() => setShowPackages(false)} aria-label="Close packages">
+              <button className="modal-close-btn packages-modal-close" onClick={() => setPackageMode(null)} aria-label="Close packages">
                 ✕
               </button>
-              <PackagesSection onCtaClick={() => setShowPackages(false)} />
+              <PackagesSection mode={packageMode ?? 'website'} onCtaClick={() => setPackageMode(null)} />
             </motion.div>
           </motion.div>
         )}

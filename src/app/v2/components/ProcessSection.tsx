@@ -6,11 +6,11 @@ export default function ProcessSection() {
   return (
     <section
       id="process"
-      style={{ padding: '0 0 6rem 0', backgroundColor: '#ffffff' }}
+      style={{ padding: '0 0 6rem 0', background: 'radial-gradient(circle at 44% 42%, rgba(255, 255, 255, 0.95) 0%, rgba(255, 255, 255, 0.52) 34%, rgba(247, 243, 237, 0) 72%), #f7f3ed', borderBottom: '1px solid rgba(120, 128, 136, 0.18)' }}
     >
       <style>{`
         .testimonial-single {
-  background-color: #ffffff !important;
+  background-color: transparent !important;
           color: #000000 !important;
   border: none !important;
           border-radius: 0 !important;
@@ -64,6 +64,20 @@ export default function ProcessSection() {
             padding-right: 1.76rem !important;
           }
         }
+        @media (min-width: 901px) {
+          .testimonial-quote {
+            font-size: clamp(0.936rem, 1.989vw, 1.404rem) !important;
+          }
+          .testimonial-single {
+            width: 77% !important;
+            margin-left: auto !important;
+            margin-right: 0 !important;
+            transform: translateX(5%) !important;
+          }
+          .testimonial-quote {
+            max-width: 100% !important;
+          }
+        }
       `}</style>
       <div
         className="testimonials-grey-container"
@@ -108,7 +122,7 @@ export default function ProcessSection() {
               color: 'var(--color-heading-silver)',
             }}
           >
-            Working With Me Is...
+            A client&rsquo;s perspective:
           </motion.h2>
           <motion.div
             className="testimonial-single"
@@ -142,7 +156,7 @@ export default function ProcessSection() {
                 color: 'rgba(0, 0, 0, 0.64)',
               }}
             >
-              &ldquo;Iryna built my new website, and it started working right away &mdash; several calls from potential new clients since it went live. She explained everything clearly and patiently, even to someone like me who isn&apos;t tech-savvy at all. Working with her feels personal, not transactional. I recommend her without hesitation.&rdquo;
+              &ldquo;Iryna built my new website, and <strong style={{ fontWeight: 600, color: 'rgba(0, 0, 0, 0.82)' }}>it started working right away &mdash; several calls from potential new clients since it went live.</strong> She explained everything clearly and patiently, even to someone like me who isn&apos;t tech-savvy at all. Working with her feels personal, not transactional. I recommend her without hesitation.&rdquo;
             </blockquote>
             <motion.p
               className="testimonial-attribution"

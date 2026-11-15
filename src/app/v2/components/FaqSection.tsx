@@ -1,7 +1,7 @@
 'use client';
 
 import EditorialStatement from './EditorialStatement';
-import { useRef, useState } from 'react';
+import { useEffect, useRef, useState } from 'react';
 import { AnimatePresence, motion } from 'framer-motion';
 
 const faqs = [
@@ -34,6 +34,20 @@ const faqs = [
 export default function FaqSection() {
   const [openIndex, setOpenIndex] = useState<number>(-1);
   const sectionRef = useRef<HTMLElement | null>(null);
+  const hasInteractedRef = useRef(false);
+
+  useEffect(() => {
+    const section = sectionRef.current;
+    if (!section) return;
+    const observer = new IntersectionObserver(([entry]) => {
+      if (entry.isIntersecting && !hasInteractedRef.current) {
+        setOpenIndex((current) => current === -1 ? 0 : current);
+        observer.disconnect();
+      }
+    }, { threshold: 0.2 });
+    observer.observe(section);
+    return () => observer.disconnect();
+  }, []);
 
 
   return (
@@ -42,7 +56,8 @@ export default function FaqSection() {
       ref={sectionRef}
       className="faq-section"
       style={{
-        backgroundColor: '#ffffff',
+          backgroundColor: '#ffffff',
+          borderTop: '1px solid rgba(120, 128, 136, 0.18)',
         padding: '5.1rem 0 0 0',
         width: '100%',
         position: 'relative',
@@ -96,6 +111,9 @@ export default function FaqSection() {
         }
         .faq-item {
           border-top: 1px solid rgba(0, 0, 0, 0.12) !important;
+        }
+        .faq-item:first-child {
+          border-top: none !important;
         }
         .faq-item:last-child {
           border-bottom: 1px solid rgba(0, 0, 0, 0.12) !important;
@@ -210,7 +228,7 @@ export default function FaqSection() {
           font-size: 1.2915rem !important;
           }
           .faq-answer-list li {
-            font-size: 1.071rem !important;
+            font-size: 1.017rem !important;
           }
           .faq-toggle {
             padding: 1.4rem 2.25rem 1.4rem 0 !important;
@@ -260,8 +278,7 @@ export default function FaqSection() {
         }}
       >
         <motion.div className="cases-decor-line" initial={{ scaleX: 0, opacity: 0 }} whileInView={{ scaleX: 1, opacity: 0.9 }} viewport={{ once: true, amount: 0.45 }} transition={{ duration: 0.65, ease: [0.16, 1, 0.3, 1] }} style={{ width: '60px', height: '1px', backgroundColor: '#2d3139', margin: '0 auto 2.5rem auto', transformOrigin: 'center' }} aria-hidden="true" />
-        <motion.h2 className="faq-section-heading" initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true, amount: 0.45 }} transition={{ duration: 0.78, delay: 0.08, ease: [0.16, 1, 0.3, 1] }} style={{ fontFamily: 'var(--font-heading)', fontSize: 'clamp(28px, 4.4vw, 42px)', fontWeight: 400, lineHeight: 1.2, color: 'var(--color-heading-silver)', letterSpacing: '-0.02em', margin: '0 0 0.875rem 0', textAlign: 'center' }}>Before we start</motion.h2>
-      <motion.p className="faq-section-subline" initial={{ opacity: 0, y: 14 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true, amount: 0.45 }} transition={{ duration: 0.68, delay: 0.16, ease: [0.16, 1, 0.3, 1] }} style={{ margin: '0 auto 2.5rem auto', textAlign: 'center' }}>The most popular questions I get - answered.</motion.p>
+      <motion.h2 className="faq-section-heading" initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true, amount: 0.45 }} transition={{ duration: 0.78, delay: 0.08, ease: [0.16, 1, 0.3, 1] }} style={{ fontFamily: 'var(--font-heading)', fontSize: 'clamp(28px, 4.4vw, 42px)', fontWeight: 400, lineHeight: 1.2, color: 'var(--color-heading-silver)', letterSpacing: '-0.02em', margin: '0 0 2.5rem 0', textAlign: 'center' }}>Other questions — <em>answered</em>.</motion.h2>
       <div>
         {faqs.map((faq, index) => {
             const isOpen = openIndex === index;
@@ -281,7 +298,10 @@ export default function FaqSection() {
                     aria-expanded={isOpen}
                     aria-controls={`faq-panel-${index}`}
                     id={`faq-button-${index}`}
-                    onClick={() => setOpenIndex(isOpen ? -1 : index)}
+                    onClick={() => {
+                      hasInteractedRef.current = true;
+                      setOpenIndex(isOpen ? -1 : index);
+                    }}
                   >
                     <span
                       className="faq-question"
@@ -323,7 +343,7 @@ export default function FaqSection() {
           })}
         </div>
       </div>
-      <EditorialStatement showGarden />
+      <EditorialStatement />
     </section>
   );
 }

@@ -25,7 +25,7 @@ export default function AiShowcase() {
   return (
     <section
       id="ai-showcase"
-      className="faq-section"
+      className="ai-showcase-section"
       style={{
         backgroundColor: '#ffffff',
         padding: '5.1rem 0 0 0',
@@ -35,7 +35,7 @@ export default function AiShowcase() {
       }}
     >
       <style>{`
-        .faq-section {
+        .ai-showcase-section {
           background-color: #ffffff !important;
           color: #000000 !important;
         }
@@ -203,7 +203,7 @@ export default function AiShowcase() {
           .faq-case-media {
             grid-template-columns: 1fr !important;
           }
-          .faq-section .cases-decor-line {
+          .ai-showcase-section .cases-decor-line {
             margin-top: 10.2rem !important;
           }
           .faq-cta-heading {
@@ -273,7 +273,7 @@ export default function AiShowcase() {
             margin: '0 auto 1.25rem auto',
           }}
         >
-          Why Hire Someone If There&apos;s AI?
+          But wait... can&apos;t AI do it all for me?
         </motion.h2>
         <motion.p
           className="faq-subline"
@@ -286,7 +286,7 @@ export default function AiShowcase() {
             lineHeight: 1.55,
             margin: '0 auto 3.5rem auto',
             textAlign: 'center',
-            maxWidth: '52ch',
+            maxWidth: '42.1ch',
           }}
         >
           Take one case. You need a website for your custom bridal atelier. You go to AI.
@@ -301,7 +301,6 @@ export default function AiShowcase() {
               <p style={{ fontFamily: 'var(--font-label), sans-serif', fontSize: '0.68rem', fontWeight: 600, letterSpacing: '0.1em', textTransform: 'uppercase', color: '#5C6672', textAlign: 'center', margin: '0.7rem 0 0' }}>Tap to play</p>
             </div>
           ))}
-          <p style={{ gridColumn: '1 / -1', fontFamily: "var(--font-body), 'Plus Jakarta Sans', sans-serif", fontSize: 'clamp(1.05rem, 2.4vw, 1.2rem)', fontWeight: 700, letterSpacing: '-0.011em', lineHeight: 1.65, color: 'rgba(0, 0, 0, 0.78)', textAlign: 'center', margin: '0.5rem auto 0', maxWidth: '52ch' }}>Made by someone who designs, builds, and answers for the result — because their name is on it.</p>
         </div>
         <motion.p
           className="faq-subline"
@@ -309,7 +308,7 @@ export default function AiShowcase() {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true, amount: 0.45 }}
           transition={{ duration: 0.68, delay: 0.08, ease: [0.16, 1, 0.3, 1] }}
-          style={{ fontSize: 'clamp(1.05rem, 2.4vw, 1.2rem)', lineHeight: 1.55, margin: '0 auto 1.25rem auto', textAlign: 'center', maxWidth: '52ch' }}
+          style={{ fontSize: 'clamp(1.05rem, 2.4vw, 1.2rem)', lineHeight: 1.55, margin: '0 0 1.25rem 0', textAlign: 'left', maxWidth: '52ch' }}
         >
           Or take the Terry Fox poster tool. Ask AI to generate the posters, and it drifts: spacing off, brand rules broken, fonts it doesn&apos;t have. And you can&apos;t expect every volunteer to know how to direct AI until it behaves.
         </motion.p>
@@ -319,7 +318,7 @@ export default function AiShowcase() {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true, amount: 0.45 }}
           transition={{ duration: 0.68, delay: 0.16, ease: [0.16, 1, 0.3, 1] }}
-          style={{ fontSize: 'clamp(1.05rem, 2.4vw, 1.2rem)', lineHeight: 1.55, margin: '0 auto 1.25rem auto', textAlign: 'center', maxWidth: '52ch' }}
+          style={{ fontSize: 'clamp(1.05rem, 2.4vw, 1.2rem)', lineHeight: 1.55, margin: '0 0 1.25rem 0', textAlign: 'left', maxWidth: '52ch' }}
         >
           I build for deterministic output: rules, logic, and a human in charge. A custom solution, built around the problem — and it scales to the next problem, and the next.
         </motion.p>

@@ -1,6 +1,6 @@
 'use client';
 
-import { Fragment, useState, useEffect, useRef } from 'react';
+import { useState, useEffect, useRef } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import '@/app/components/Projects.css';
 import SectionDivider from '@/app/components/SectionDivider';
@@ -23,7 +23,6 @@ interface ProjectsV2Props {
 
 export default function ProjectsV2({ initialProjects = [] }: ProjectsV2Props) {
   const [selectedProjectId, setSelectedProjectId] = useState<string | null>(null);
-  const [activeTab, setActiveTab] = useState<'internal-tools' | 'websites' | 'workflow-automations'>('internal-tools');
   const [hoveredProjectId, setHoveredProjectId] = useState<string | null>(null);
   const HOVER_MEDIA: Record<string, { staticSrc: string; hoverSrc: string }> = {
     'v2-1': { staticSrc: '/terry-fox-desktop-static.png', hoverSrc: '/terry-fox-desktop-hover.mp4' },
@@ -31,7 +30,7 @@ export default function ProjectsV2({ initialProjects = [] }: ProjectsV2Props) {
   };
   const TAB_CASE_IDS: Record<'internal-tools' | 'websites' | 'workflow-automations', string[]> = {
     'internal-tools': ['v2-1'],
-    websites: ['v2-2', 'v2-3'],
+    websites: ['v2-3'],
     'workflow-automations': ['v2-5'],
   };
   const scrollTrackRef = useRef<HTMLDivElement>(null);
@@ -130,12 +129,11 @@ export default function ProjectsV2({ initialProjects = [] }: ProjectsV2Props) {
   ];
 
   const [projectsList, setProjectsList] = useState(initialProjectsData);
-  const visibleProjects = projectsList.filter((p) => TAB_CASE_IDS[activeTab].includes(p.id));
-  useEffect(() => {
-    document.querySelectorAll('[data-hover-card="true"] video').forEach((v) => {
-      (v as HTMLVideoElement).pause();
-    });
-  }, [activeTab]);
+  const caseGroups = [
+    { id: 'internal-tools', label: 'Internal Apps' },
+    { id: 'websites', label: 'Websites' },
+    { id: 'workflow-automations', label: 'Workflow Automations' },
+  ].map((group) => ({ ...group, projects: projectsList.filter((p) => TAB_CASE_IDS[group.id as keyof typeof TAB_CASE_IDS].includes(p.id)) }));
     const selectedProject = projectsList.find((p) => p.id === selectedProjectId) ?? null;
 
   useEffect(() => {
@@ -420,13 +418,17 @@ export default function ProjectsV2({ initialProjects = [] }: ProjectsV2Props) {
             padding: 0 1.5rem !important;
           }
         }
-        @media (min-width: 901px) { .cases-grid-container { display: grid !important; grid-template-columns: auto auto !important; } } .cases-grid-item {
+        @media (min-width: 901px) { .cases-grid-container { display: grid !important; grid-template-columns: 1fr !important; } } .cases-grid-item {
           width: fit-content !important;
           flex: 0 0 auto !important;
           min-width: 0 !important;
           max-width: 100% !important;
           overflow: visible !important;
           box-sizing: border-box !important;
+          justify-self: center !important;
+        }
+        .case-group + .case-group {
+          margin-top: 4rem !important;
         }
         @media (max-width: 900px) {
                  @media (min-width: 901px) { .cases-grid-container { display: grid !important; grid-template-columns: auto auto !important; } } .cases-grid-item {
@@ -457,6 +459,11 @@ export default function ProjectsV2({ initialProjects = [] }: ProjectsV2Props) {
           aspect-ratio: auto !important;
           padding: 0 !important;
           width: fit-content !important;
+        }
+        @media (min-width: 901px) {
+          .terry-fox-preview {
+            margin-inline: auto !important;
+          }
         }
         @media (max-width: 900px) {
           .preview-card-wrapper.recording-card-wrapper {
@@ -615,23 +622,10 @@ export default function ProjectsV2({ initialProjects = [] }: ProjectsV2Props) {
             textWrap: 'balance'
           }}
         >
-          <span style={{ fontWeight: 400, color: 'var(--color-heading-silver, #4a5461)' }}>Examples of </span><span style={{ fontWeight: 400, color: 'var(--color-heading-silver, #4a5461)' }}>My Work</span>
+          <span style={{ fontWeight: 400, color: 'var(--color-heading-silver, #4a5461)' }}>Examples of </span><span style={{ fontWeight: 400, color: 'var(--color-heading-silver, #4a5461)' }}>my work</span>
         </motion.h2>
 
-              <div className="cases-tabs" role="tablist" aria-label="Case categories" style={{ display: 'flex', justifyContent: 'center', gap: '0.5rem', flexWrap: 'wrap', width: '100%', margin: '56px 0 0', padding: '0', boxSizing: 'border-box' }}>
-        {([
-          { id: 'internal-tools', label: 'Internal Apps' },
-          { id: 'websites', label: 'Websites' },
-          { id: 'workflow-automations', label: 'Workflow Automations' },
-        ] as const).map((tab, index) => (
-          <Fragment key={tab.id}>
-            {index > 0 && <span aria-hidden="true" style={{ color: '#989898', fontFamily: 'var(--font-body)', fontSize: 'clamp(1.05rem, 2.4vw, 1.2rem)', fontWeight: 300, lineHeight: 1.55, letterSpacing: '-0.011em', padding: '0 0.15rem' }}>/</span>}
-            <button type="button" role="tab" aria-selected={activeTab === tab.id} onClick={() => setActiveTab(tab.id)} style={{ fontFamily: 'var(--font-body)', fontSize: 'clamp(1.05rem, 2.4vw, 1.2rem)', fontWeight: activeTab === tab.id ? 400 : 300, lineHeight: 1.55, letterSpacing: '-0.011em', color: activeTab === tab.id ? '#2b3038' : '#989898', backgroundColor: 'transparent', border: 'none', borderRadius: 0, padding: 0, cursor: 'pointer' }}>
-              {tab.label}
-            </button>
-          </Fragment>
-        ))}
-      </div>
+              <div aria-hidden="true" style={{ height: '28px' }} />
         
       </div>
       
@@ -644,8 +638,13 @@ export default function ProjectsV2({ initialProjects = [] }: ProjectsV2Props) {
           paddingTop: '0.375rem'
         }}
       >
-        <div className="cases-grid-container">
-          {visibleProjects.map((project, idx) => {
+        {caseGroups.map((group) => (
+          <div className="case-group" key={group.id} style={{ width: '100%' }}>
+            <h3 style={{ fontFamily: 'var(--font-body)', fontSize: 'clamp(1.05rem, 2.4vw, 1.2rem)', fontWeight: 400, lineHeight: 1.35, letterSpacing: '-0.011em', color: '#2b3038', textAlign: 'center', margin: '0 0 1rem' }}>
+              {group.label}
+            </h3>
+            <div className="cases-grid-container">
+          {group.projects.map((project, idx) => {
             return (
               <motion.div 
                 key={`${project.id}-${idx}`}
@@ -668,7 +667,7 @@ export default function ProjectsV2({ initialProjects = [] }: ProjectsV2Props) {
                   aria-label={`${project.title} case preview`}
                 >
                   <div 
-                    className="preview-card-wrapper recording-card-wrapper"
+                    className={`preview-card-wrapper recording-card-wrapper${project.id === 'v2-1' ? ' terry-fox-preview' : ''}`}
                     onClick={() => setSelectedProjectId(project.id)}
       data-hover-card={HOVER_MEDIA[project.id] ? 'true' : undefined}
       onMouseEnter={(e) => { if (HOVER_MEDIA[project.id]) { setHoveredProjectId(project.id); const v = e.currentTarget.querySelector('video') as HTMLVideoElement | null; if (v) { v.currentTime = 0; v.play().catch(() => {}); } } }}
@@ -678,7 +677,7 @@ export default function ProjectsV2({ initialProjects = [] }: ProjectsV2Props) {
                     {project.id === 'v2-2' || project.id === 'v2-3' || project.id === 'v2-4' ? (
                       <div className="case-phone-frame" style={project.id === 'v2-4' ? { border: 'none', backgroundColor: '#000000' } : undefined}>
                         <video
-                          autoPlay
+                          autoPlay={project.id !== 'v2-3'}
                           loop
                           muted
                           playsInline
@@ -738,7 +737,9 @@ export default function ProjectsV2({ initialProjects = [] }: ProjectsV2Props) {
               </motion.div>
             );
           })}
-        </div>
+            </div>
+          </div>
+        ))}
       </div>
 
       <AnimatePresence>

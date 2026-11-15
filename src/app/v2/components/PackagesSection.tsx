@@ -2,43 +2,6 @@
 
 import { motion } from 'framer-motion';
 
-const VALUE_ITEMS = [
-  {
-    title: 'Problem research',
-    text: 'I find where the time goes — and what breaks.',
-  },
-  {
-    title: 'Process design',
-    text: 'The rules, the evidence, the approval points, the guardrails.',
-  },
-  {
-    title: 'Agent orchestration & build',
-    text: 'The right agents and tools, assembled into the solution you need.',
-  },
-  {
-    title: 'Taste, judgment, verification',
-    text: 'I check the result live. “Automated” isn’t done until it works.',
-  },
-];
-
-const PACKAGES = [
-  {
-    name: 'Workflow Build',
-    price: 'from $1,500 CAD',
-    text: 'One repetitive routine, turned into a system that runs on your accounts — a store update, a weekly report, a follow-up chain.',
-  },
-  {
-    name: 'Agent System Setup',
-    price: 'from $3,000 CAD',
-    text: 'A personal agent system for an owner or a small team — memory, rules, schedules, guardrails. Set up on the AI you choose.',
-  },
-  {
-    name: 'Care & Tuning',
-    price: 'from $200 CAD/month',
-    text: 'Monitoring, small rule fixes, new scenarios, a short monthly note on what’s saved.',
-  },
-];
-
 const WEBSITE_PACKAGES = [
   {
     name: 'Polish & Launch',
@@ -57,7 +20,27 @@ const WEBSITE_PACKAGES = [
   },
 ];
 
-export default function PackagesSection({ onCtaClick }: { onCtaClick?: () => void }) {
+const AI_PACKAGES = [
+  {
+    name: 'Workflow Build',
+    price: 'from $1,500 CAD',
+    text: 'One repetitive routine, turned into a system that runs on your accounts — a store update, a weekly report, a follow-up chain.',
+  },
+  {
+    name: 'Agent System Setup',
+    price: 'from $3,000 CAD',
+    text: 'A personal agent system for an owner or a small team — memory, rules, schedules, guardrails. Set up on the AI you choose.',
+  },
+  {
+    name: 'Care & Tuning',
+    price: 'from $200 CAD/month',
+    text: 'Monitoring, small rule fixes, new scenarios, a short monthly note on what’s saved.',
+  },
+];
+
+export default function PackagesSection({ onCtaClick, mode = 'website' }: { onCtaClick?: () => void; mode?: 'website' | 'ai' }) {
+  const isAi = mode === 'ai';
+  const packages = isAi ? AI_PACKAGES : WEBSITE_PACKAGES;
   return (
     <section
       className="packages-section"
@@ -76,7 +59,9 @@ export default function PackagesSection({ onCtaClick }: { onCtaClick?: () => voi
           font-family: var(--font-heading);
           font-weight: 300;
           letter-spacing: 0.015em;
-          color: rgba(255, 255, 255, 0.92);
+          color: #ffffff !important;
+          -webkit-text-fill-color: #ffffff !important;
+          opacity: 1 !important;
           font-size: clamp(30px, 4.6vw, 46px);
           line-height: 1.18;
           text-align: center;
@@ -84,7 +69,7 @@ export default function PackagesSection({ onCtaClick }: { onCtaClick?: () => voi
           max-width: 22ch;
           text-wrap: balance;
         }
-        .packages-heading strong { font-weight: 500; color: #f2908f; }
+        .packages-heading strong { font-weight: 500; color: #ffffff !important; -webkit-text-fill-color: #ffffff !important; }
         .packages-kicker {
           font-family: var(--font-label), sans-serif;
           font-size: 0.72rem;
@@ -164,7 +149,7 @@ export default function PackagesSection({ onCtaClick }: { onCtaClick?: () => voi
           margin: 3rem auto 2.5rem auto;
         }
         .packages-honest strong { font-weight: 500; color: #ffffff; }
-        .packages-cta-wrap { text-align: center; }
+        .packages-cta-wrap { text-align: center; margin-top: 4rem; }
         .packages-btn-primary {
           font-family: var(--font-label), sans-serif !important;
           font-size: 0.72rem !important;
@@ -198,62 +183,21 @@ export default function PackagesSection({ onCtaClick }: { onCtaClick?: () => voi
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true, amount: 0.45 }}
           transition={{ duration: 0.7, ease: [0.16, 1, 0.3, 1] }}
+          style={{ color: '#ffffff', WebkitTextFillColor: '#ffffff' }}
         >
-          Custom <strong>websites</strong> — built around your business
+          {isAi ? <>Custom <strong>AI products</strong> — built around your problem</> : <>Custom <strong>websites</strong> — built around your business</>}
         </motion.h2>
 
         <p className="packages-kicker">Packages</p>
         <div className="packages-cards">
-          {WEBSITE_PACKAGES.map((pkg) => (
+          {packages.map((pkg) => (
             <div className="packages-card" key={pkg.name}>
               <h3 className="packages-card-name">{pkg.name}</h3>
               <p className="packages-card-price">{pkg.price}</p>
-              <p className="packages-card-text">{pkg.text}</p>
+              {'text' in pkg && typeof pkg.text === 'string' && <p className="packages-card-text">{pkg.text}</p>}
             </div>
           ))}
         </div>
-
-        <motion.h2
-          className="packages-heading"
-          initial={{ opacity: 0, y: 16 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true, amount: 0.45 }}
-          transition={{ duration: 0.7, ease: [0.16, 1, 0.3, 1] }}
-          style={{ marginTop: '5.5rem' }}
-        >
-          Custom <strong>agents, workflows &amp; tools</strong> — built around your problem
-        </motion.h2>
-
-        <p className="packages-kicker">What you’re paying for</p>
-        <div className="packages-value-grid">
-          {VALUE_ITEMS.map((item) => (
-            <div className="packages-value-item" key={item.title}>
-              <h3 className="packages-value-title">{item.title}</h3>
-              <p className="packages-value-text">{item.text}</p>
-            </div>
-          ))}
-        </div>
-
-        <p className="packages-kicker">Packages</p>
-        <div className="packages-cards">
-          {PACKAGES.map((pkg) => (
-            <div className="packages-card" key={pkg.name}>
-              <h3 className="packages-card-name">{pkg.name}</h3>
-              <p className="packages-card-price">{pkg.price}</p>
-              <p className="packages-card-text">{pkg.text}</p>
-            </div>
-          ))}
-        </div>
-
-        <p className="packages-honest">
-          The tools themselves may be free or cheap. <strong>You don’t pay for the tool</strong> —
-          you pay for the research, the design, the setup and the verification around it.
-        </p>
-
-        <p className="packages-honest" style={{ marginTop: '-1.25rem' }}>
-          Booking a website and a workflow together? The research overlaps — so your{' '}
-          <strong>first three months of care</strong> are on me.
-        </p>
 
         <div className="packages-cta-wrap">
           <a href="mailto:iryna@irynasheremeta.com" className="packages-btn-primary" onClick={onCtaClick}>

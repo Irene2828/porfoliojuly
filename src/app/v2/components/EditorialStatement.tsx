@@ -1,12 +1,11 @@
 'use client';
 
 import { motion } from 'framer-motion';
-import FooterGarden from '../../components/FooterGarden';
 
-export default function EditorialStatement({ showGarden = false }: { showGarden?: boolean }) {
+export default function EditorialStatement() {
   return (
       <section
-        className={`prefooter-section${showGarden ? ' prefooter-with-garden' : ''}`}
+        className="prefooter-section"
         style={{
           backgroundColor: '#121316',
           padding: '80px 0 120px 0', /* doubled bottom space */
@@ -19,18 +18,12 @@ export default function EditorialStatement({ showGarden = false }: { showGarden?
         }}
       >
         <style>{`
-          .prefooter-with-garden { margin-top: 0 !important; }
-          .prefooter-garden { position: absolute; right: 1rem; bottom: 1rem; width: min(336px, 60%); }
-          @media (min-width: 1200px) {
-            .prefooter-garden { top: 50%; bottom: auto; transform: translateY(-50%); }
-          }
-
           .prefooter-section {
             background-color: #121316 !important;
           }
           .prefooter-closing-line {
             font-family: var(--font-heading) !important;
-            font-weight: 300 !important;
+            font-weight: 400 !important;
             font-style: normal !important;
             letter-spacing: 0.005em !important;
             color: rgba(255, 255, 255, 0.8) !important;
@@ -47,11 +40,14 @@ export default function EditorialStatement({ showGarden = false }: { showGarden?
           }
           .prefooter-closing-desktop,
           .prefooter-closing-mobile .prefooter-closing-row:not(strong) {
-            font-weight: 300 !important;
+            font-weight: 400 !important;
             font-style: normal !important;
             letter-spacing: 0.015em !important;
             color: rgba(255, 255, 255, 0.8) !important;
             -webkit-text-fill-color: rgba(255, 255, 255, 0.8) !important;
+          }
+          .prefooter-closing-desktop *:not(strong) {
+            font-weight: 400 !important;
           }
           .prefooter-closing-subtext,
           .prefooter-closing-subtext p {
@@ -127,23 +123,24 @@ export default function EditorialStatement({ showGarden = false }: { showGarden?
           }
           @media (max-width: 900px) {
             .prefooter-closing-line {
-              font-size: clamp(1.48rem, 7.7vw, 2.08rem) !important;
+              font-size: clamp(1.258rem, 6.55vw, 1.77rem) !important;
               line-height: 1.35 !important;
               text-align: left !important;
               width: 100% !important;
               max-width: none !important;
               align-self: stretch !important;
-              font-weight: 300 !important;
+              font-weight: 600 !important;
               color: rgba(255, 255, 255, 0.8) !important;
               -webkit-text-fill-color: rgba(255, 255, 255, 0.8) !important;
             }
             .prefooter-closing-line strong {
-              font-weight: 500 !important;
+              font-weight: 600 !important;
               color: #f2908f !important;
               -webkit-text-fill-color: #f2908f !important;
             }
             .prefooter-closing-mobile .prefooter-closing-row {
               font-style: normal !important;
+              font-weight: 600 !important;
               letter-spacing: -0.01em !important;
               color: rgba(255, 255, 255, 0.8) !important;
               -webkit-text-fill-color: rgba(255, 255, 255, 0.8) !important;
@@ -206,10 +203,10 @@ export default function EditorialStatement({ showGarden = false }: { showGarden?
               font-weight: 600 !important;
             }
             .prefooter-section {
-              padding-bottom: 5rem !important; /* halved from 10rem */
+              padding-bottom: 2.5rem !important;
             }
             .prefooter-cta-container {
-              margin-bottom: 2.5rem !important; /* halved from 5rem */
+              margin-bottom: 1.25rem !important;
             }
             .prefooter-closing-subtext {
               font-size: 1.23rem !important; /* 15% smaller on desktop (was 1.45rem) */
@@ -226,6 +223,9 @@ export default function EditorialStatement({ showGarden = false }: { showGarden?
             }
           }
           @media (max-width: 900px) {
+            .prefooter-section {
+              padding-bottom: 3.75rem !important;
+            }
             .prefooter-content {
               padding-left: 1.5rem !important;
               padding-right: 1.5rem !important;
@@ -250,23 +250,6 @@ export default function EditorialStatement({ showGarden = false }: { showGarden?
             .prefooter-closing-mobile > .prefooter-closing-row *,
             .prefooter-closing-mobile > strong.prefooter-closing-row {
               letter-spacing: -0.01em !important;
-            }
-          }
-          .prefooter-with-garden .prefooter-content { padding-bottom: 1rem !important; }
-          .prefooter-with-garden .prefooter-cta-container { margin-bottom: 1.25rem !important; }
-          @media (min-width: 1200px) {
-            .prefooter-with-garden { padding-bottom: 2.5rem !important; }
-          }
-          @media (max-width: 1199px) {
-            .prefooter-with-garden { flex-direction: column; padding-bottom: 1rem !important; }
-            .prefooter-garden {
-              position: relative;
-              top: auto;
-              right: auto;
-              bottom: auto;
-              transform: none;
-              flex-shrink: 0;
-              margin: 0 auto;
             }
           }
         `}</style>
@@ -295,7 +278,7 @@ export default function EditorialStatement({ showGarden = false }: { showGarden?
               width: '48px', 
               height: '1px', 
               backgroundColor: '#2d3139', 
-              margin: '4rem auto 2rem auto',
+              margin: '2rem auto 1rem auto',
               transformOrigin: 'center'
             }}
           />
@@ -334,7 +317,7 @@ export default function EditorialStatement({ showGarden = false }: { showGarden?
             </span>
             <span className="prefooter-closing-mobile">
               <span className="prefooter-closing-row">An outdated website</span>
-              <span className="prefooter-closing-row" style={{ fontWeight: 300, color: 'rgba(255, 255, 255, 0.8)', WebkitTextFillColor: 'rgba(255, 255, 255, 0.8)' }}>or repetitive work is</span>
+              <span className="prefooter-closing-row" style={{ fontWeight: 400, color: 'rgba(255, 255, 255, 0.8)', WebkitTextFillColor: 'rgba(255, 255, 255, 0.8)' }}>or repetitive work is</span>
               <span className="prefooter-closing-row"><strong style={{ fontWeight: 500, fontStyle: 'normal', color: '#f2908f', WebkitTextFillColor: '#f2908f' }}>slowing your</strong></span>
               <strong className="prefooter-closing-row" style={{ fontWeight: 500, fontStyle: 'normal', color: '#f2908f', WebkitTextFillColor: '#f2908f' }}>
                 business growth.
@@ -363,7 +346,7 @@ export default function EditorialStatement({ showGarden = false }: { showGarden?
               textWrap: 'balance'
             }}
           >
-            <p style={{ margin: 0 }}>Let's fix that.</p>
+            <p style={{ margin: 0, fontWeight: 500 }}>Let's fix that.</p>
           </motion.div>
 
           {/* 4. Action CTA Pill Arrival */}
@@ -373,7 +356,7 @@ export default function EditorialStatement({ showGarden = false }: { showGarden?
             whileInView={{ opacity: 1, y: 0, scale: 1 }}
             viewport={{ once: true, amount: 0.45 }}
             transition={{ duration: 0.72, delay: 0.42, ease: [0.16, 1, 0.3, 1] }}
-            style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', gap: '1rem', marginTop: '0rem', marginBottom: '2.5rem', justifyContent: 'center' }}
+            style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', gap: '1rem', marginTop: '0rem', marginBottom: '1.25rem', justifyContent: 'center' }}
           >
             <a 
               href="mailto:iryna@irynasheremeta.com" 
@@ -386,9 +369,11 @@ export default function EditorialStatement({ showGarden = false }: { showGarden?
                 <polyline points="7 7 17 7 17 17"></polyline>
               </svg>
             </a>
+            <p style={{ margin: 0, fontFamily: 'var(--font-body), "Plus Jakarta Sans", sans-serif', fontSize: '0.82rem', fontWeight: 300, letterSpacing: '0.015em', color: 'rgba(255, 255, 255, 0.68)', textAlign: 'center' }}>
+              I&apos;ll reply to you within the next 24 hrs.
+            </p>
           </motion.div>
         </div>
-        {showGarden && <div className="prefooter-garden"><FooterGarden /></div>}
       </section>
 
 

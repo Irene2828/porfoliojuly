@@ -1,30 +1,32 @@
 'use client';
 
-import { motion } from 'framer-motion';
+import { motion, AnimatePresence } from 'framer-motion';
+import { useState } from 'react';
 
 export default function HowItWorks() {
+  const [collapsedSteps, setCollapsedSteps] = useState<Record<string, boolean>>({});
   const steps = [
     {
       num: '01',
-      title: 'I clarify the problem, come up with the first solutions.',
+      title: 'I clarify the problem and come up with the first solutions.',
       bullets: [
-        { bold: 'You react to a real solution preview, not a description of it.', rest: ' Three visual directions for a website; for a workflow — the routine mapped: steps, rules, approval points. ' }
+        { rest: 'Three visual directions for a website; for a workflow — the routine mapped: steps, rules, approval points. You react to a real solution preview, not a description of it.' }
       ],
       
     },
     {
       num: '02',
-      title: "I build your product's logic, we test it until it works.",
+      title: 'I build the logic behind the solution.',
       bullets: [
-        { bold: 'The busier you are, the fewer calls we need.', rest: ' Copy and files come from you — or I prepare them. AI gives me team speed; you approve every key stage. ' }
+        { rest: 'I handle the build, bring in what’s missing, and keep you involved at the decisions that matter. We test the result together before it goes live or becomes part of your daily work.' }
       ],
       
     },
     {
       num: '03',
-      title: 'I apply care to details, until it reaches our goal.',
+      title: 'I apply care to every detail until we reach the goal.',
       bullets: [
-        { bold: 'Tested, set up, handed over.', rest: ' Hosting and the accounts around it are done — and you’re set for what comes next. ' }
+        { rest: "Hosting and the accounts around it are taken care of — you're set for what comes next. Tested, set up, handed over." }
       ],
       
     }
@@ -62,6 +64,10 @@ export default function HowItWorks() {
         }
         .how-subcopy {
           font-family: var(--font-body), 'Plus Jakarta Sans', sans-serif !important;
+          font-size: 1.125rem !important;
+          font-weight: 300 !important;
+          line-height: 1.5 !important;
+          letter-spacing: 0.015em !important;
           color: rgba(255, 255, 255, 0.72) !important;
           -webkit-text-fill-color: rgba(255, 255, 255, 0.72) !important;
         }
@@ -72,13 +78,23 @@ export default function HowItWorks() {
           -webkit-text-fill-color: #f2908f !important;
           font-size: 2.8rem !important;
         }
+        .how-step-toggle {
+          color: #f2908f !important;
+          -webkit-text-fill-color: #f2908f !important;
+        }
         .how-step-title {
-          font-family: var(--font-heading) !important;
+          font-family: var(--font-body), 'Plus Jakarta Sans', sans-serif !important;
           font-weight: 400 !important;
-          font-size: 1.5675rem !important;
-          letter-spacing: 0.005em !important;
+          font-size: 15.75px !important;
+          line-height: 1.55 !important;
+          letter-spacing: 0.015em !important;
           color: #ffffff !important;
           -webkit-text-fill-color: #ffffff !important;
+        }
+        @media (min-width: 901px) {
+          .how-step-title {
+            min-height: 3.1em !important;
+          }
         }
         .how-step-sub {
           font-family: var(--font-body), 'Plus Jakarta Sans', sans-serif !important;
@@ -109,11 +125,14 @@ export default function HowItWorks() {
           .how-title {
             font-size: 2.1rem !important;
           }
+          .how-subcopy {
+            margin-bottom: 1.575rem !important;
+          }
           .how-num {
             font-size: 2.65rem !important;
           }
           .how-step-title {
-            font-size: 1.425rem !important;
+            font-size: 15.75px !important;
           }
         }
         @media (min-width: 1200px) {
@@ -121,6 +140,11 @@ export default function HowItWorks() {
             max-width: 1267.2px !important;
             padding-left: 1.76rem !important;
             padding-right: 1.76rem !important;
+          }
+        }
+        @media (min-width: 901px) {
+          .how-subcopy {
+            margin-bottom: 1.575rem !important;
           }
         }
       `}</style>
@@ -241,43 +265,55 @@ export default function HowItWorks() {
                   margin: 0
                 }}
               >
-                {step.title}
+                {step.title}{' '}
+                <button
+                  type="button"
+                  className="how-step-toggle"
+                  aria-expanded={!collapsedSteps[step.num]}
+                  aria-label={`${collapsedSteps[step.num] ? 'Show' : 'Hide'} details for step ${step.num}`}
+                  onClick={() => setCollapsedSteps((current) => ({ ...current, [step.num]: !current[step.num] }))}
+                  style={{
+                    color: '#f2908f',
+                    fontFamily: 'var(--font-body), sans-serif',
+                    fontSize: '1.35rem',
+                    fontWeight: 400,
+                    lineHeight: 1,
+                    verticalAlign: '0.08em',
+                    background: 'none',
+                    border: 0,
+                    padding: '0 0.15rem',
+                    cursor: 'pointer'
+                  }}
+                >
+                  {collapsedSteps[step.num] ? '+' : '−'}
+                </button>
               </h3>
-              <ul
-                style={{
-                  listStyle: 'none',
-                  padding: 0,
-                  margin: '0 0 0.2rem 0',
-                  display: 'flex',
-                  flexDirection: 'column',
-                  gap: '0.65rem'
-                }}
-              >
-                {step.bullets.map((bullet, bulletIndex) => (
-                  <li
-                    key={bulletIndex}
-                    className="how-step-sub"
+              <AnimatePresence initial={false}>
+                {!collapsedSteps[step.num] && (
+                  <motion.ul
+                    initial={{ height: 0, opacity: 0 }}
+                    animate={{ height: 'auto', opacity: 1 }}
+                    exit={{ height: 0, opacity: 0 }}
+                    transition={{ duration: 0.28, ease: [0.16, 1, 0.3, 1] }}
                     style={{
-                      fontFamily: "'Plus Jakarta Sans', sans-serif",
-                      fontSize: '0.98rem',
-                      fontWeight: 300,
-                      lineHeight: 1.6,
-                      letterSpacing: '0.005em',
-                      color: 'rgba(255, 255, 255, 0.82)',
-                      margin: 0,
+                      listStyle: 'none',
+                      padding: 0,
+                      margin: '0 0 0.2rem 0',
                       display: 'flex',
-                      alignItems: 'flex-start',
-                      gap: '0.65rem'
+                      flexDirection: 'column',
+                      gap: '0.65rem',
+                      overflow: 'hidden'
                     }}
                   >
-                    <span style={{ color: '#f2908f', fontSize: '1.05rem', lineHeight: 1.6, flexShrink: 0 }}>•</span>
-                    <span>
-                      {bullet.rest}
-                      <span>{bullet.bold}</span>
-                    </span>
-                  </li>
-                ))}
-              </ul>
+                    {step.bullets.map((bullet, bulletIndex) => (
+                      <li key={bulletIndex} className="how-step-sub" style={{ fontFamily: "'Plus Jakarta Sans', sans-serif", fontSize: '0.98rem', fontWeight: 300, lineHeight: 1.6, letterSpacing: '0.005em', color: 'rgba(255, 255, 255, 0.82)', margin: 0, display: 'flex', alignItems: 'flex-start', gap: '0.65rem' }}>
+                        <span style={{ color: '#f2908f', fontSize: '1.05rem', lineHeight: 1.6, flexShrink: 0 }}>•</span>
+                        <span>{bullet.rest}</span>
+                      </li>
+                    ))}
+                  </motion.ul>
+                )}
+              </AnimatePresence>
             </motion.div>
           ))}
         </div>
