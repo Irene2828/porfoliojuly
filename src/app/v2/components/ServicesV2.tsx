@@ -399,7 +399,7 @@ export default function ServicesV2() {
                   transition={{ duration: 0.65, delay: 0.18, ease: [0.16, 1, 0.3, 1] }}
                   style={{
                     fontFamily: "var(--font-body)",
-                    fontSize: 'var(--text-lead)',
+                    fontSize: 'var(--text-body)',
                     color: '#a0abb8',
                     margin: '0 0 2.5rem 0',
                     lineHeight: 'var(--lh-body)',
@@ -527,7 +527,7 @@ export default function ServicesV2() {
                   transition={{ duration: 0.65, delay: 0.3, ease: [0.16, 1, 0.3, 1] }}
                   style={{
                     fontFamily: "var(--font-body)",
-                    fontSize: 'var(--text-lead)',
+                    fontSize: 'var(--text-body)',
                     color: '#65707e',
                     margin: '0 0 2.5rem 0',
                     lineHeight: 'var(--lh-body)',
