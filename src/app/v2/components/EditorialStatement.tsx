@@ -26,8 +26,8 @@ export default function EditorialStatement() {
             font-weight: 400 !important;
             font-style: normal !important;
             letter-spacing: 0.005em !important;
-            color: rgba(255, 255, 255, 0.8) !important;
-            -webkit-text-fill-color: rgba(255, 255, 255, 0.8) !important;
+            color: #ffffff !important;
+            -webkit-text-fill-color: #ffffff !important;
             -webkit-font-smoothing: antialiased !important;
             -moz-osx-font-smoothing: grayscale !important;
           }
@@ -43,8 +43,8 @@ export default function EditorialStatement() {
             font-weight: 400 !important;
             font-style: normal !important;
             letter-spacing: 0.015em !important;
-            color: rgba(255, 255, 255, 0.8) !important;
-            -webkit-text-fill-color: rgba(255, 255, 255, 0.8) !important;
+            color: #ffffff !important;
+            -webkit-text-fill-color: #ffffff !important;
           }
           .prefooter-closing-desktop *:not(strong) {
             font-weight: 400 !important;
@@ -130,8 +130,8 @@ export default function EditorialStatement() {
               max-width: none !important;
               align-self: stretch !important;
               font-weight: 600 !important;
-              color: rgba(255, 255, 255, 0.8) !important;
-              -webkit-text-fill-color: rgba(255, 255, 255, 0.8) !important;
+              color: #ffffff !important;
+              -webkit-text-fill-color: #ffffff !important;
             }
             .prefooter-closing-line strong {
               font-weight: 600 !important;
@@ -142,8 +142,8 @@ export default function EditorialStatement() {
               font-style: normal !important;
               font-weight: 600 !important;
               letter-spacing: -0.01em !important;
-              color: rgba(255, 255, 255, 0.8) !important;
-              -webkit-text-fill-color: rgba(255, 255, 255, 0.8) !important;
+              color: #ffffff !important;
+              -webkit-text-fill-color: #ffffff !important;
             }
             .prefooter-closing-mobile .prefooter-closing-row:not(strong) {
               letter-spacing: -0.01em !important;
@@ -296,8 +296,8 @@ export default function EditorialStatement() {
               fontWeight: 300,
               letterSpacing: '0.015em',
               lineHeight: 1.35,
-              color: 'rgba(255, 255, 255, 0.8)',
-              WebkitTextFillColor: 'rgba(255, 255, 255, 0.8)',
+              color: '#ffffff',
+              WebkitTextFillColor: '#ffffff',
               textAlign: 'center',
               margin: '0 0 3.5rem 0',
               maxWidth: '44ch',
@@ -310,14 +310,14 @@ export default function EditorialStatement() {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true, amount: 0.45 }}
                 transition={{ duration: 0.72, delay: 0.22, ease: [0.16, 1, 0.3, 1] }}
-                style={{ display: 'inline', fontWeight: 300, color: 'rgba(255, 255, 255, 0.8)', WebkitTextFillColor: 'rgba(255, 255, 255, 0.8)' }}
+                style={{ display: 'inline', fontWeight: 300, color: '#ffffff', WebkitTextFillColor: '#ffffff' }}
               >
                 is <strong style={{ fontWeight: 500, fontStyle: 'normal', letterSpacing: '0.005em', color: '#f2908f', WebkitTextFillColor: '#f2908f' }}>slowing your business growth.</strong>
               </motion.span>
             </span>
             <span className="prefooter-closing-mobile">
               <span className="prefooter-closing-row">An outdated website</span>
-              <span className="prefooter-closing-row" style={{ fontWeight: 400, color: 'rgba(255, 255, 255, 0.8)', WebkitTextFillColor: 'rgba(255, 255, 255, 0.8)' }}>or repetitive work is</span>
+              <span className="prefooter-closing-row" style={{ fontWeight: 400, color: '#ffffff', WebkitTextFillColor: '#ffffff' }}>or repetitive work is</span>
               <span className="prefooter-closing-row"><strong style={{ fontWeight: 500, fontStyle: 'normal', color: '#f2908f', WebkitTextFillColor: '#f2908f' }}>slowing your</strong></span>
               <strong className="prefooter-closing-row" style={{ fontWeight: 500, fontStyle: 'normal', color: '#f2908f', WebkitTextFillColor: '#f2908f' }}>
                 business growth.
