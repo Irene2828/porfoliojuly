@@ -801,9 +801,9 @@ export default function ProjectsV2({ initialProjects = [] }: ProjectsV2Props) {
                         />
                       </div>
                     ) : project.id === 'v2-4' ? (
-                      <div className="case-phone-frame" style={project.id === 'v2-4' ? { border: 'none', backgroundColor: '#000000' } : undefined}>
+                      <div className="case-phone-frame" style={{ border: 'none', backgroundColor: '#000000' }}>
                         <video
-                          autoPlay={project.id !== 'v2-3'}
+                          autoPlay
                           loop
                           muted
                           playsInline
@@ -813,8 +813,8 @@ export default function ProjectsV2({ initialProjects = [] }: ProjectsV2Props) {
                               e.currentTarget.play().catch(() => {});
                             }
                           }}
-                          src={project.id === 'v2-4' ? '/dorion-driving-case4-framed-v2.mp4' : project.id === 'v2-3' ? '/buyukrainian-mobile-case4.mp4' : '/isabelle-desktop-hover.mp4'}
-                          className="case-recording-video" style={project.id === 'v2-4' ? { objectFit: 'contain', backgroundColor: '#000000' } : undefined}
+                          src="/dorion-driving-case4-framed-v2.mp4"
+                          className="case-recording-video" style={{ objectFit: 'contain', backgroundColor: '#000000' }}
           />
           {HOVER_MEDIA[project.id] && (
             <img src={HOVER_MEDIA[project.id].staticSrc} alt="" aria-hidden="true" style={{ position: 'absolute', inset: 0, width: '100%', height: '100%', objectFit: 'cover', opacity: hoveredProjectId === project.id ? 0 : 1, transition: 'opacity 0.25s ease', pointerEvents: 'none', zIndex: 2 }} />
