@@ -159,7 +159,7 @@ export default function PackagesSection({ onCtaClick, mode = 'website' }: { onCt
           margin: 0;
         }
         .packages-card-bullets li::before {
-          content: '•';
+          content: '–';
           color: #f2908f;
           flex-shrink: 0;
         }
