@@ -59,6 +59,7 @@ export default function ProjectsV2({ initialProjects = [] }: ProjectsV2Props) {
       slug: 'terry-fox-run',
       subline: 'Every city runs its own event. Every poster has to stay on brand.',
       hoverLabel: 'Tap to Zoom',
+      teaser: 'On-brand posters in minutes for teams in every city — no designer bottleneck, no waiting days.',
       annotations: [
         { markerNumber: 1, title: 'Locked Template', text: 'Anyone can make an on-brand poster in minutes.' },
         { markerNumber: 2, title: 'Simple by default, deep on demand', text: 'The 3-step flow covers most posters; the full editor with placement controls is one click away, not in the way.' },
@@ -85,6 +86,7 @@ export default function ProjectsV2({ initialProjects = [] }: ProjectsV2Props) {
       slug: 'guertin-isabelle',
       subline: 'A 20-year claims expert, hidden behind an outdated WordPress site.',
       hoverLabel: 'Tap to Zoom',
+      teaser: 'A solo expert’s whole practice online — credibility up front, booking one step away.',
       statsTitle: 'Impact',
       annotations: [
         { 
@@ -115,13 +117,14 @@ export default function ProjectsV2({ initialProjects = [] }: ProjectsV2Props) {
           sub: "The site now presents her at the level she works at. A client in trouble can understand what she does, see proof that it works, and reach her in one step — and a municipality sees a specialist, not a generalist." 
         }
       ],
-      image: '/assets/guertin-desktop.png',     },     { id: 'v2-3', title: 'BuyUkrainian', slug: 'buyukrainian', subline: 'Case 03 · BuyUkrainian', hoverLabel: 'Tap to Zoom', annotations: [ { markerNumber: 1, title: 'Buy Ukrainian in Canada', text: 'BuyUkrainian.ca makes it easier to find products from Ukraine in Canadian stores.' }, { markerNumber: 2, title: 'A map and a directory', text: 'Products listed, stores on the map — and a way to add a store that is missing.' }, { markerNumber: 3, title: '105 products listed', text: 'The recording shows the directory as it stood when it was filmed.' }, ], statsTitle: 'At a glance', stats: [ { chip: '01', text: 'A map of Ukrainian products in Canada.', sub: 'Search by city or product, and find the Canadian stores that carry them.' }, { chip: '02', text: 'One rule for every listing.', sub: 'Only products made in Ukraine. Every store is checked before it appears on the map.' }, ], image: '/buyukrainian-mobile-case4.mp4', }, { id: 'v2-4', title: 'Dorion Driving Academy', slug: 'dorion-driving-academy', subline: 'Case 04 · Dorion', hoverLabel: 'Tap to Zoom', annotations: [ { markerNumber: 1, title: 'Your progress at a glance', text: 'The dashboard shows 16 of 25 required lessons done, with an estimated completion date of August 26.' }, { markerNumber: 2, title: 'Pick a date and a time', text: 'May 2026: the 25th and a 90-minute slot at 09:00, chosen in a few taps.' }, { markerNumber: 3, title: 'Reschedule or cancel', text: 'The booked lesson offers Reschedule and Cancel. Cancelling confirms the refund is processed and a receipt is sent by email.' } ], statsTitle: 'At a glance', stats: [ { chip: '01', text: 'Booked from the phone, not the office.', sub: 'A mobile MVP for a driving school: pick a slot, book, reschedule or cancel — no phone tag with the school.' }, { chip: '02', text: 'Progress, visible.', sub: 'The dashboard tracks the lessons done and the estimated finish date, so students always know where they stand.' } ], image: '/dorion-driving-case4-framed-v2.mp4' },
+      image: '/assets/guertin-desktop.png',     },     { id: 'v2-3', title: 'BuyUkrainian', slug: 'buyukrainian', subline: 'Case 03 · BuyUkrainian', hoverLabel: 'Tap to Zoom', teaser: 'Ukrainian-made products on one map — 28 stores across Canada, and anyone can add a missing one.', annotations: [ { markerNumber: 1, title: 'Buy Ukrainian in Canada', text: 'BuyUkrainian.ca makes it easier to find products from Ukraine in Canadian stores.' }, { markerNumber: 2, title: 'A map and a directory', text: 'Products listed, stores on the map — and a way to add a store that is missing.' }, { markerNumber: 3, title: '105 products listed', text: 'The recording shows the directory as it stood when it was filmed.' }, ], statsTitle: 'At a glance', stats: [ { chip: '01', text: 'A map of Ukrainian products in Canada.', sub: 'Search by city or product, and find the Canadian stores that carry them.' }, { chip: '02', text: 'One rule for every listing.', sub: 'Only products made in Ukraine. Every store is checked before it appears on the map.' }, ], image: '/buyukrainian-mobile-case4.mp4', }, { id: 'v2-4', title: 'Dorion Driving Academy', slug: 'dorion-driving-academy', subline: 'Case 04 · Dorion', hoverLabel: 'Tap to Zoom', annotations: [ { markerNumber: 1, title: 'Your progress at a glance', text: 'The dashboard shows 16 of 25 required lessons done, with an estimated completion date of August 26.' }, { markerNumber: 2, title: 'Pick a date and a time', text: 'May 2026: the 25th and a 90-minute slot at 09:00, chosen in a few taps.' }, { markerNumber: 3, title: 'Reschedule or cancel', text: 'The booked lesson offers Reschedule and Cancel. Cancelling confirms the refund is processed and a receipt is sent by email.' } ], statsTitle: 'At a glance', stats: [ { chip: '01', text: 'Booked from the phone, not the office.', sub: 'A mobile MVP for a driving school: pick a slot, book, reschedule or cancel — no phone tag with the school.' }, { chip: '02', text: 'Progress, visible.', sub: 'The dashboard tracks the lessons done and the estimated finish date, so students always know where they stand.' } ], image: '/dorion-driving-case4-framed-v2.mp4', teaser: 'Booked from the phone, not the office — lessons, progress and rescheduling in one app.' },
     {
       id: 'v2-5',
       title: 'North & Co. / Knowledge agent',
       slug: 'north-co-knowledge-agent',
       subline: 'Employees in 40 stores need answers they can trust.\nSearching takes minutes — and the answer depends on who you ask.',
       hoverLabel: 'Tap to Zoom',
+      teaser: 'Answers from company documents, with a citation on every claim — and a human for the hard ones.',
       demoUrl: 'https://north-co-knowledge-agent.vercel.app/',
       annotations: [
         { markerNumber: 1, title: 'Cited answers', text: 'Every claim carries a citation to the document it came from. No citation, no answer.' },
@@ -149,6 +152,7 @@ export default function ProjectsV2({ initialProjects = [] }: ProjectsV2Props) {
       slug: 'workflow-setup-demo',
       subline: 'A one-person bookkeeping practice was answering client inquiries at night — and losing the ones she missed.',
       hoverLabel: 'Tap to Zoom',
+      teaser: 'First reply in minutes, not next day — every draft waits for the owner’s tap.',
       annotations: [
         { markerNumber: 1, title: 'Rules, written down', text: 'Prices, checklists and limits are set once, in her words. The agent drafts inside them — it never invents a price or promises a deadline.' },
         { markerNumber: 2, title: 'Drafts, not sends', text: 'Every reply lands in Drafts. She confirms or edits — two taps, from anywhere. Nothing goes out without her.' },
@@ -646,6 +650,24 @@ export default function ProjectsV2({ initialProjects = [] }: ProjectsV2Props) {
           width: 100%;
           max-width: 880px;
         }
+
+        /* Terry Fox preview: same frame size as the website pairs' desktop (desktop widths) */
+        @media (min-width: 901px) {
+          .case-desktop-frame.tf-match {
+            width: min(49.3vw, 561px) !important;
+            aspect-ratio: 16 / 10.4 !important;
+          }
+        }
+
+        /* Key-value line under each case preview */
+        .preview-card-teaser {
+          font-size: 15px;
+          line-height: 1.5;
+          color: #5b6068;
+          text-align: center;
+          max-width: 600px;
+          margin: 0.9rem auto 0.4rem;
+        }
         @media (max-width: 900px) {
           .case-pair {
             width: 94vw;
@@ -825,7 +847,7 @@ export default function ProjectsV2({ initialProjects = [] }: ProjectsV2Props) {
                         <img src={project.image} alt={project.title} className="case-recording-video" />
                       </div>
                     ) : (
-                      <div className="case-desktop-frame">
+                      <div className="case-desktop-frame tf-match">
                         <video
                           autoPlay
                           loop
@@ -847,6 +869,9 @@ export default function ProjectsV2({ initialProjects = [] }: ProjectsV2Props) {
                     )}
                   </div>
                   <div className="preview-card-caption">
+                    {project.teaser && (
+                      <p className="preview-card-teaser">{project.teaser}</p>
+                    )}
                     <button 
                       type="button"
                       className="preview-card-caption-btn"
