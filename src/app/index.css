@@ -1798,3 +1798,10 @@ h1, h2, h3, h4, h5, h6 {
 .v2-theme #faq-section > .prefooter-section {
   padding-top: 0.85rem !important;
 }
+
+/* Keep the closing sentence setup white and preserve its peach conclusion. */
+.v2-theme .prefooter-section h2.prefooter-closing-line,
+.v2-theme .prefooter-section h2.prefooter-closing-line span {
+  color: #ffffff !important;
+  -webkit-text-fill-color: #ffffff !important;
+}
