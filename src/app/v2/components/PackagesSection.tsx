@@ -59,7 +59,7 @@ export default function PackagesSection({ onCtaClick, mode = 'website' }: { onCt
       className="packages-section"
       style={{
         backgroundColor: '#121316',
-        padding: '10.2rem 0 5.1rem 0',
+        padding: '20.4rem 0 5.1rem 0',
         width: '100%',
         position: 'relative',
         overflow: 'hidden',
@@ -177,7 +177,7 @@ export default function PackagesSection({ onCtaClick, mode = 'website' }: { onCt
           margin: 3rem auto 2.5rem auto;
         }
         .packages-honest strong { font-weight: 500; color: #ffffff; }
-        .packages-cta-wrap { text-align: center; margin-top: 4rem; }
+        .packages-cta-wrap { text-align: center; margin-top: 2rem; }
         .packages-btn-primary {
           font-family: var(--font-label), sans-serif !important;
           font-size: var(--text-label) !important;
