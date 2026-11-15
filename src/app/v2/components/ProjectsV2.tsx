@@ -21,6 +21,23 @@ interface ProjectsV2Props {
   initialProjects?: any[];
 }
 
+function DevicePair({ desktopSrc, phoneImgSrc, phoneVideoSrc, alt, modal = false }: { desktopSrc: string; phoneImgSrc?: string; phoneVideoSrc?: string; alt: string; modal?: boolean }) {
+  return (
+    <div className={`case-pair${modal ? ' modal-pair' : ''}`}>
+      <div className="pair-desktop">
+        <img src={desktopSrc} alt={alt} />
+      </div>
+      <div className="pair-phone">
+        {phoneVideoSrc ? (
+          <video src={phoneVideoSrc} autoPlay loop muted playsInline />
+        ) : (
+          <img src={phoneImgSrc} alt="" />
+        )}
+      </div>
+    </div>
+  );
+}
+
 export default function ProjectsV2({ initialProjects = [] }: ProjectsV2Props) {
   const [selectedProjectId, setSelectedProjectId] = useState<string | null>(null);
   const [hoveredProjectId, setHoveredProjectId] = useState<string | null>(null);
@@ -30,8 +47,8 @@ export default function ProjectsV2({ initialProjects = [] }: ProjectsV2Props) {
   };
   const TAB_CASE_IDS: Record<'internal-tools' | 'websites' | 'workflow-automations', string[]> = {
     'internal-tools': ['v2-1'],
-    websites: ['v2-3'],
-    'workflow-automations': ['v2-5'],
+    websites: ['v2-2', 'v2-3'],
+    'workflow-automations': ['v2-6'],
   };
   const scrollTrackRef = useRef<HTMLDivElement>(null);
 
@@ -125,6 +142,32 @@ export default function ProjectsV2({ initialProjects = [] }: ProjectsV2Props) {
         }
       ],
       image: '/assets/north-co/01-ask.png'
+    },
+    {
+      id: 'v2-6',
+      title: 'Workflow Setup — Demo case',
+      slug: 'workflow-setup-demo',
+      subline: 'A one-person bookkeeping practice was answering client inquiries at night — and losing the ones she missed.',
+      hoverLabel: 'Tap to Zoom',
+      annotations: [
+        { markerNumber: 1, title: 'Rules, written down', text: 'Prices, checklists and limits are set once, in her words. The agent drafts inside them — it never invents a price or promises a deadline.' },
+        { markerNumber: 2, title: 'Drafts, not sends', text: 'Every reply lands in Drafts. She confirms or edits — two taps, from anywhere. Nothing goes out without her.' },
+        { markerNumber: 3, title: 'The file builds itself', text: 'Arriving documents are checked against the checklist, reminders are drafted, and a one-page case summary is ready when the file is complete.' }
+      ],
+      statsTitle: 'Impact',
+      stats: [
+        {
+          chip: 'Before',
+          text: 'Replies waited until evening',
+          sub: "Each new client took about 30 minutes of fragmented time spread over days — finding the price, listing the documents, chasing what was missing. Some inquiries were answered the next day. Some, never."
+        },
+        {
+          chip: 'After',
+          text: 'First reply in minutes',
+          sub: "The draft is ready in about two minutes; approving takes about three. Across ten new clients a month, that returns roughly 4.5 hours — and no inquiry is left unanswered. Figures from the practice's first two months; name and details changed for privacy."
+        }
+      ],
+      image: '/workflow-setup-demo.mp4'
     },
   ];
 
@@ -262,6 +305,18 @@ export default function ProjectsV2({ initialProjects = [] }: ProjectsV2Props) {
                           }
                         ]}
                       />
+                    ) : project.id === 'v2-2' || project.id === 'v2-3' ? (
+                      <DevicePair
+                        modal={isModal}
+                        alt={project.title}
+                        desktopSrc={project.id === 'v2-2' ? '/assets/guertin-desktop.png' : '/assets/buyukrainian-desktop.jpg'}
+                        phoneImgSrc={project.id === 'v2-2' ? '/assets/guertin-mobile.png' : '/assets/buyukrainian-mobile.jpg'}
+                        phoneVideoSrc={isModal ? (project.id === 'v2-2' ? '/assets/guertin-mobile-preview.mp4' : '/buyukrainian-mobile-case4.mp4') : undefined}
+                      />
+                    ) : project.id === 'v2-6' ? (
+                      <div className="case-desktop-frame" style={{ width: '100%', maxWidth: '880px', margin: '0 auto', aspectRatio: '16 / 9' }}>
+                        <video src="/workflow-setup-demo.mp4" autoPlay loop muted playsInline className="case-recording-video" />
+                      </div>
                     ) : isModal && project.id === 'v2-2' ? (
                       <PosterGallery 
                         images={[
@@ -546,6 +601,60 @@ export default function ProjectsV2({ initialProjects = [] }: ProjectsV2Props) {
           outline: none !important;
         }
 
+        /* --- Website cases: desktop + phone pair, phone lower right, overlapping --- */
+        .case-pair {
+          position: relative;
+          width: min(58vw, 660px);
+          margin: 0 auto 9%;
+        }
+        .case-pair .pair-desktop {
+          width: 85%;
+          aspect-ratio: 16 / 10.4;
+          overflow: hidden;
+          border: 1px solid #dcdce0;
+          background: #ffffff;
+          box-sizing: border-box;
+        }
+        .case-pair .pair-desktop img {
+          width: 100%;
+          height: 100%;
+          object-fit: cover;
+          object-position: top center;
+          display: block;
+        }
+        .case-pair .pair-phone {
+          position: absolute;
+          right: 0;
+          bottom: -13%;
+          width: 24%;
+          aspect-ratio: 390 / 844;
+          overflow: hidden;
+          border: 1px solid #dcdce0;
+          background: #ffffff;
+          z-index: 2;
+          box-sizing: border-box;
+        }
+        .case-pair .pair-phone img,
+        .case-pair .pair-phone video {
+          width: 100%;
+          height: 100%;
+          object-fit: cover;
+          object-position: top center;
+          display: block;
+        }
+        .case-pair.modal-pair {
+          width: 100%;
+          max-width: 880px;
+        }
+        @media (max-width: 900px) {
+          .case-pair {
+            width: 94vw;
+          }
+          .case-pair .pair-phone {
+            width: 27%;
+          }
+        }
+
         @media (max-width: 900px) {
           @media (min-width: 901px) { .cases-grid-container { display: grid !important; grid-template-columns: auto auto !important; } } .cases-grid-item {
             overflow: visible !important;
@@ -674,7 +783,24 @@ export default function ProjectsV2({ initialProjects = [] }: ProjectsV2Props) {
       onMouseLeave={(e) => { if (HOVER_MEDIA[project.id]) { setHoveredProjectId(null); const v = e.currentTarget.querySelector('video') as HTMLVideoElement | null; if (v) { v.pause(); } } }}
                     style={{ cursor: 'pointer' }}
                   >
-                    {project.id === 'v2-2' || project.id === 'v2-3' || project.id === 'v2-4' ? (
+                    {project.id === 'v2-2' || project.id === 'v2-3' ? (
+                      <DevicePair
+                        alt={project.title}
+                        desktopSrc={project.id === 'v2-2' ? '/assets/guertin-desktop.png' : '/assets/buyukrainian-desktop.jpg'}
+                        phoneImgSrc={project.id === 'v2-2' ? '/assets/guertin-mobile.png' : '/assets/buyukrainian-mobile.jpg'}
+                      />
+                    ) : project.id === 'v2-6' ? (
+                      <div className="case-desktop-frame">
+                        <video
+                          autoPlay
+                          loop
+                          muted
+                          playsInline
+                          src="/workflow-setup-demo.mp4"
+                          className="case-recording-video"
+                        />
+                      </div>
+                    ) : project.id === 'v2-4' ? (
                       <div className="case-phone-frame" style={project.id === 'v2-4' ? { border: 'none', backgroundColor: '#000000' } : undefined}>
                         <video
                           autoPlay={project.id !== 'v2-3'}
