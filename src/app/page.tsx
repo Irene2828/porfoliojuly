@@ -27,8 +27,8 @@ export default function HomePage() {
             style={{
               backgroundColor: '#ffffff',
               width: '100%',
-              padding: '2.25rem 0',
-              marginBottom: '3.3rem'
+              padding: '2.55rem 0',
+              marginBottom: '2.55rem'
             }}
           >
             <div style={{ width: '100%', margin: '0', padding: '0' }}>
