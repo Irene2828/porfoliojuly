@@ -195,7 +195,7 @@ export default function HowItWorks() {
           transition={{ duration: 0.68, ease: [0.16, 1, 0.3, 1] }}
           style={{ margin: '0 0 1.05rem 0', textAlign: 'left' }}
         >
-          Why work with me
+          MY APPROACH TO WORK
         </motion.p>
         <motion.h2
           className="how-title"
