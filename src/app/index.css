@@ -1815,11 +1815,3 @@ h1, h2, h3, h4, h5, h6 {
 .v2-theme section:not(#home) h2 strong {
   font-weight: 600 !important;
 }
-
-/* AI package kicker and heading. */
-.v2-theme #packages > section + section .packages-inner > p:first-child,
-.v2-theme #packages > section + section h2.packages-heading,
-.v2-theme #packages > section + section h2.packages-heading strong {
-  color: #000000 !important;
-  -webkit-text-fill-color: #000000 !important;
-}
