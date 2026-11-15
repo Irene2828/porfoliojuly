@@ -8,7 +8,9 @@ export default function HowItWorks() {
       num: '01',
       title: 'I clarify the problem and come up with the first solutions.',
       bullets: [
-        { rest: 'Three visual directions for a website; for a workflow — the routine mapped: steps, rules, approval points. You react to a real solution preview, not a description of it.' }
+        { rest: 'Three visual directions for a website' },
+        { rest: 'For a workflow — the routine mapped: steps, rules, approval points' },
+        { rest: 'You react to a real solution preview, not a description of it.' }
       ],
       
     },
@@ -16,7 +18,8 @@ export default function HowItWorks() {
       num: '02',
       title: 'I build the logic behind the solution.',
       bullets: [
-        { rest: 'I handle the build, bring in what’s missing, and keep you involved at the decisions that matter. We test the result together before it goes live or becomes part of your daily work.' }
+        { rest: 'I handle the build, bring in what’s missing, and keep you involved at the decisions that matter' },
+        { rest: 'We test the result together before it goes live or becomes part of your daily work.' }
       ],
       
     },
@@ -24,7 +27,8 @@ export default function HowItWorks() {
       num: '03',
       title: 'I apply care to every detail until we reach the goal.',
       bullets: [
-        { rest: "Hosting and the accounts around it are taken care of — you're set for what comes next. Tested, set up, handed over." }
+        { rest: "Hosting and the accounts around it are taken care of — you're set for what comes next" },
+        { rest: 'Tested, set up, handed over.' }
       ],
       
     }
@@ -274,6 +278,7 @@ export default function HowItWorks() {
               >
                 {step.bullets.map((bullet, bulletIndex) => (
                   <li key={bulletIndex} className="how-step-sub" style={{ fontFamily: "'Plus Jakarta Sans', sans-serif", fontSize: 'var(--text-body)', fontWeight: 300, lineHeight: 'var(--lh-body)', letterSpacing: '0.005em', color: 'rgba(255, 255, 255, 0.82)', margin: 0, display: 'flex', alignItems: 'flex-start', gap: '0.65rem' }}>
+                    <span style={{ color: '#f2908f', flexShrink: 0 }}>–</span>
                     <span>{bullet.rest}</span>
                   </li>
                 ))}
