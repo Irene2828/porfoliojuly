@@ -1,6 +1,7 @@
 'use client';
 
 import { motion } from 'framer-motion';
+import { useState } from 'react';
 
 interface Package {
   name: string;
@@ -51,6 +52,7 @@ const AI_PACKAGES: Package[] = [
 export default function PackagesSection({ onCtaClick, mode = 'website' }: { onCtaClick?: () => void; mode?: 'website' | 'ai' }) {
   const isAi = mode === 'ai';
   const packages = isAi ? AI_PACKAGES : WEBSITE_PACKAGES;
+  const [diffOpen, setDiffOpen] = useState(false);
   return (
     <section
       className="packages-section"
@@ -261,6 +263,77 @@ export default function PackagesSection({ onCtaClick, mode = 'website' }: { onCt
           max-width: 62ch;
           margin: 1.1rem 0 0 0;
         }
+        .diff-link-wrap { text-align: center; margin: 0 0 2.5rem 0; }
+        .diff-link {
+          background: none;
+          border: none;
+          cursor: pointer;
+          font-family: var(--font-label), sans-serif;
+          font-size: var(--text-label);
+          font-weight: 600;
+          text-transform: uppercase;
+          letter-spacing: 0.1em;
+          color: #f2908f;
+          padding: 0;
+        }
+        .diff-link:hover { text-decoration: underline; }
+        .diff-overlay {
+          position: fixed;
+          inset: 0;
+          background: rgba(6, 7, 9, 0.72);
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          padding: 1.25rem;
+          z-index: 200;
+        }
+        .diff-panel {
+          position: relative;
+          background: #17181c;
+          border: 1px solid rgba(255, 255, 255, 0.16);
+          border-radius: 16px;
+          max-width: 620px;
+          width: 100%;
+          max-height: 86vh;
+          overflow-y: auto;
+          padding: 2.2rem 2rem;
+        }
+        .diff-close {
+          position: absolute;
+          top: 0.9rem;
+          right: 1.1rem;
+          background: none;
+          border: none;
+          color: rgba(255, 255, 255, 0.7);
+          font-size: 1.6rem;
+          line-height: 1;
+          cursor: pointer;
+          padding: 0.25rem;
+        }
+        .diff-title {
+          font-family: var(--font-heading);
+          font-size: 1.65rem;
+          font-weight: 500;
+          color: #ffffff;
+          line-height: 1.3;
+          margin: 0 0 1.4rem 0;
+        }
+        .diff-block-title {
+          font-family: var(--font-body), 'Plus Jakarta Sans', sans-serif;
+          font-size: 1.02rem;
+          font-weight: 600;
+          color: #ffffff;
+          margin: 0 0 0.4rem 0;
+        }
+        .diff-text {
+          font-family: var(--font-body), 'Plus Jakarta Sans', sans-serif;
+          font-weight: 300;
+          font-size: var(--text-body);
+          line-height: var(--lh-body);
+          color: rgba(255, 255, 255, 0.78);
+          margin: 0 0 1.3rem 0;
+        }
+        .diff-text-last { margin-bottom: 0; color: rgba(255, 255, 255, 0.92); }
         @media (max-width: 820px) {
           .packages-heading { font-size: 2.1rem; }
           .agent-setup-bullets { grid-template-columns: 1fr; }
@@ -302,6 +375,12 @@ export default function PackagesSection({ onCtaClick, mode = 'website' }: { onCt
           </div>
         )}
 
+        {isAi && (
+          <div className="diff-link-wrap">
+            <button className="diff-link" onClick={() => setDiffOpen(true)}>Assistant or workflow — what’s the difference?</button>
+          </div>
+        )}
+
         <div className="packages-cards">
           {packages.map((pkg) => (
             <div className="packages-card" key={pkg.name}>
@@ -327,6 +406,20 @@ export default function PackagesSection({ onCtaClick, mode = 'website' }: { onCt
           </a>
         </div>
       </div>
+
+      {diffOpen && (
+        <div className="diff-overlay" onClick={() => setDiffOpen(false)}>
+          <div className="diff-panel" onClick={(e) => e.stopPropagation()}>
+            <button className="diff-close" onClick={() => setDiffOpen(false)} aria-label="Close">&times;</button>
+            <h3 className="diff-title">Assistant or workflow — what’s the difference?</h3>
+            <p className="diff-block-title">A personal assistant works for you.</p>
+            <p className="diff-text">It remembers your business, drafts, plans and does tasks across your day — with your judgment, checking in with you.</p>
+            <p className="diff-block-title">A workflow works for your business.</p>
+            <p className="diff-text">It runs by itself when something happens — a new inquiry, an unpaid invoice, a weekly report. Same steps, same rules, every time. You only approve.</p>
+            <p className="diff-text diff-text-last">Most owners end up with both. The assistant takes work off your plate. Workflows take you out of the process. We start with whichever costs you more time.</p>
+          </div>
+        </div>
+      )}
     </section>
   );
 }
