@@ -1,26 +1,8 @@
 'use client';
 
-import { useEffect, useState } from 'react';
-import { motion, AnimatePresence } from 'framer-motion';
-import PackagesSection from './PackagesSection';
+import { motion } from 'framer-motion';
 
 export default function ServicesV2() {
-  const [packageMode, setPackageMode] = useState<'website' | 'ai' | null>(null);
-  const showPackages = packageMode !== null;
-
-  useEffect(() => {
-    if (!showPackages) return;
-    const handleKeyDown = (event: KeyboardEvent) => {
-      if (event.key === 'Escape') setPackageMode(null);
-    };
-    document.addEventListener('keydown', handleKeyDown);
-    document.body.style.overflow = 'hidden';
-    return () => {
-      document.removeEventListener('keydown', handleKeyDown);
-      document.body.style.overflow = '';
-    };
-  }, [showPackages]);
-
   const websitesBullets = [
     {
       text: <span>What you do, who it’s for, how to reach you — <strong>clear in seconds</strong></span>,
@@ -87,12 +69,6 @@ export default function ServicesV2() {
       }}
     >
       <style>{`
-        .packages-modal-close {
-          color: #ffffff !important;
-        }
-        .packages-modal-close:hover {
-          color: #ffffff !important;
-        }
         .see-example-link-dark::after {
           content: '';
           position: absolute;
@@ -458,9 +434,9 @@ export default function ServicesV2() {
                   ))}
                 </ul>
                 <div style={{ display: 'flex', justifyContent: 'center', marginTop: '64px' }}>
-                  <button type="button" onClick={() => setPackageMode('website')} style={{ background: 'none', border: 0, padding: 0, fontFamily: 'var(--font-label), sans-serif', fontSize: 'var(--text-label)', fontWeight: 600, letterSpacing: '0.105em', color: '#efb4a4', cursor: 'pointer', textDecoration: 'none' }}>
+                  <a href="#packages" style={{ background: 'none', border: 0, padding: 0, fontFamily: 'var(--font-label), sans-serif', fontSize: 'var(--text-label)', fontWeight: 600, letterSpacing: '0.105em', color: '#efb4a4', cursor: 'pointer', textDecoration: 'none' }}>
                     SEE WEBSITE PACKAGES <span aria-hidden="true" style={{ marginLeft: '4px' }}>↓</span>
-                  </button>
+                  </a>
                 </div>
               </div>
             </motion.div>
@@ -586,9 +562,9 @@ export default function ServicesV2() {
                   ))}
                 </ul>
                 <div style={{ display: 'flex', justifyContent: 'center', marginTop: '64px' }}>
-                  <button type="button" onClick={() => setPackageMode('ai')} style={{ background: 'none', border: 0, padding: 0, fontFamily: 'var(--font-label), sans-serif', fontSize: 'var(--text-label)', fontWeight: 600, letterSpacing: '0.105em', color: '#1A1F2B', cursor: 'pointer', textDecoration: 'none' }}>
+                  <a href="#packages" style={{ background: 'none', border: 0, padding: 0, fontFamily: 'var(--font-label), sans-serif', fontSize: 'var(--text-label)', fontWeight: 600, letterSpacing: '0.105em', color: '#1A1F2B', cursor: 'pointer', textDecoration: 'none' }}>
                     SEE AI PRODUCT PACKAGES <span aria-hidden="true" style={{ marginLeft: '4px' }}>↓</span>
-                  </button>
+                  </a>
                 </div>
               </div>
             </motion.div>
@@ -610,32 +586,6 @@ export default function ServicesV2() {
         />
       </div>
 
-      <AnimatePresence>
-        {showPackages && (
-          <motion.div
-            className="project-modal-overlay"
-            initial={{ opacity: 0, backdropFilter: 'blur(0px)' }}
-            animate={{ opacity: 1, backdropFilter: 'blur(8px)' }}
-            exit={{ opacity: 0, backdropFilter: 'blur(0px)' }}
-            transition={{ duration: 0.35, ease: [0.16, 1, 0.3, 1] }}
-            onClick={() => setPackageMode(null)}
-          >
-            <motion.div
-              className="project-modal-content"
-              initial={{ scale: 0.88, opacity: 0, y: 20 }}
-              animate={{ scale: 1, opacity: 1, y: 0 }}
-              exit={{ scale: 0.88, opacity: 0, y: 20 }}
-              transition={{ duration: 0.4, ease: [0.16, 1, 0.3, 1] }}
-              onClick={(event) => event.stopPropagation()}
-            >
-              <button className="modal-close-btn packages-modal-close" onClick={() => setPackageMode(null)} aria-label="Close packages">
-                ✕
-              </button>
-              <PackagesSection mode={packageMode ?? 'website'} onCtaClick={() => setPackageMode(null)} />
-            </motion.div>
-          </motion.div>
-        )}
-      </AnimatePresence>
     </section>
   );
 }
