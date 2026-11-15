@@ -47,7 +47,7 @@ export default function HomePage() {
         <AiShowcase />
 
         <div id="packages" style={{ scrollMarginTop: '88px' }}>
-          <style>{`#packages > section + section { padding-top: 0 !important; }`}</style>
+          <style>{`#packages > section + section { padding-top: 5.1rem !important; }`}</style>
           <PackagesSection mode="website" />
           <PackagesSection mode="ai" />
         </div>
