@@ -5,6 +5,7 @@ import ServicesV2 from './v2/components/ServicesV2';
 import HowItWorks from './v2/components/HowItWorks';
 import ProcessSection from './v2/components/ProcessSection';
 import AiShowcase from './v2/components/AiShowcase';
+import PackagesSection from './v2/components/PackagesSection';
 import FaqSection from './v2/components/FaqSection';
 import Footer from './components/Footer';
 import ClientWrapper from './components/ClientWrapper';
@@ -44,6 +45,12 @@ export default function HomePage() {
 
         {/* Why Hire Someone If There's AI — showcase */}
         <AiShowcase />
+
+        <div id="packages" style={{ scrollMarginTop: '88px' }}>
+          <style>{`#packages > section + section { padding-top: 0 !important; }`}</style>
+          <PackagesSection mode="website" />
+          <PackagesSection mode="ai" />
+        </div>
 
         <FaqSection />
 
