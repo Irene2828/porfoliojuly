@@ -224,6 +224,7 @@ export default function EditorialStatement() {
           }
           @media (max-width: 900px) {
             .prefooter-section {
+              padding-top: 2.55rem !important;
               padding-bottom: 2.55rem !important;
             }
             .prefooter-content {

@@ -1,8 +1,10 @@
 'use client';
 
-import { motion } from 'framer-motion';
+import { AnimatePresence, motion } from 'framer-motion';
+import { useState } from 'react';
 
 export default function HowItWorks() {
+  const [openStep, setOpenStep] = useState<string | null>(null);
   const steps = [
     {
       num: '01',
@@ -83,7 +85,7 @@ export default function HowItWorks() {
         .how-step-title {
           font-family: var(--font-body), 'Plus Jakarta Sans', sans-serif !important;
           font-weight: 400 !important;
-          font-size: var(--text-body) !important;
+          font-size: calc(var(--text-body) * 1.2) !important;
           line-height: var(--lh-body) !important;
           letter-spacing: 0.015em !important;
           color: #ffffff !important;
@@ -112,6 +114,31 @@ export default function HowItWorks() {
           transform: translateY(-4px) !important;
           border: none !important;
         }
+        .how-step-label {
+          display: flex;
+          align-items: center;
+          justify-content: space-between;
+          gap: 1rem;
+          width: 100%;
+          padding: 0;
+          margin: 0;
+          border: 0;
+          background: transparent;
+          color: #ffffff;
+          text-align: left;
+          font: inherit;
+          cursor: pointer;
+        }
+        .how-step-check {
+          display: inline-block;
+          margin-left: 0.3em;
+          vertical-align: 0.04em;
+          color: #f2908f !important;
+          -webkit-text-fill-color: #f2908f !important;
+          font-size: 1.05em;
+          font-weight: 400;
+          line-height: 1;
+        }
         @media (max-width: 900px) {
           #how-it-works {
             padding: 7rem 0 2.55rem 0 !important;
@@ -130,7 +157,7 @@ export default function HowItWorks() {
             font-size: 2.65rem !important;
           }
           .how-step-title {
-            font-size: var(--text-body) !important;
+            font-size: calc(var(--text-body) * 1.2) !important;
           }
         }
         @media (min-width: 1200px) {
@@ -142,6 +169,7 @@ export default function HowItWorks() {
         }
         @media (min-width: 901px) {
           .how-subcopy {
+            font-size: calc(var(--text-body) + 2px) !important;
             margin-bottom: 1.575rem !important;
           }
         }
@@ -253,36 +281,34 @@ export default function HowItWorks() {
               >
                 {step.num}
               </span>
-              <h3
-                className="how-step-title"
-                style={{
-                  fontFamily: 'var(--font-heading)',
-                  fontWeight: 400,
-                  fontSize: 'var(--text-panel)',
-                  lineHeight: 1.2,
-                  margin: 0
-                }}
-              >
-                {step.title}
+              <h3 className="how-step-title" style={{ margin: 0, width: '100%' }}>
+                <button
+                  type="button"
+                  className="how-step-label"
+                  aria-expanded={openStep === step.num}
+                  onClick={() => setOpenStep((current) => current === step.num ? null : step.num)}
+                >
+                  <span>{step.title}</span><span className="how-step-check" aria-hidden="true">{openStep === step.num ? '⌃' : '⌄'}</span>
+                </button>
               </h3>
-              <ul
-                style={{
-                  listStyle: 'none',
-                  padding: 0,
-                  margin: '0 0 0.2rem 0',
-                  display: 'flex',
-                  flexDirection: 'column',
-                  gap: '0.65rem',
-                  overflow: 'hidden'
-                }}
-              >
-                {step.bullets.map((bullet, bulletIndex) => (
-                  <li key={bulletIndex} className="how-step-sub" style={{ fontFamily: "'Plus Jakarta Sans', sans-serif", fontSize: 'var(--text-body)', fontWeight: 300, lineHeight: 'var(--lh-body)', letterSpacing: '0.005em', color: 'rgba(255, 255, 255, 0.82)', margin: 0, display: 'flex', alignItems: 'flex-start', gap: '0.65rem' }}>
-                    <span style={{ color: '#f2908f', flexShrink: 0 }}>–</span>
-                    <span>{bullet.rest}</span>
-                  </li>
-                ))}
-              </ul>
+              <AnimatePresence initial={false}>
+                {openStep === step.num && (
+                  <motion.ul
+                    initial={{ height: 0, opacity: 0 }}
+                    animate={{ height: 'auto', opacity: 1 }}
+                    exit={{ height: 0, opacity: 0 }}
+                    transition={{ duration: 0.28, ease: [0.16, 1, 0.3, 1] }}
+                    style={{ listStyle: 'none', padding: 0, margin: '0 0 0.2rem 0', display: 'flex', flexDirection: 'column', gap: '0.65rem', overflow: 'hidden' }}
+                  >
+                    {step.bullets.map((bullet, bulletIndex) => (
+                      <li key={bulletIndex} className="how-step-sub" style={{ margin: 0, display: 'flex', alignItems: 'flex-start', gap: '0.65rem' }}>
+                        <span style={{ color: '#f2908f', flexShrink: 0 }}>–</span>
+                        <span>{bullet.rest}</span>
+                      </li>
+                    ))}
+                  </motion.ul>
+                )}
+              </AnimatePresence>
             </motion.div>
           ))}
         </div>

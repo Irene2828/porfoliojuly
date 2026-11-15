@@ -92,6 +92,10 @@ export default function FaqSection() {
           color: var(--color-heading-silver) !important;
           -webkit-text-fill-color: var(--color-heading-silver) !important;
         }
+        .faq-section-heading .faq-heading-prefix {
+          color: #f2908f !important;
+          -webkit-text-fill-color: #f2908f !important;
+        }
         .faq-section-subline {
           font-family: var(--font-body), 'Plus Jakarta Sans', sans-serif !important;
           font-size: var(--text-lead) !important;
@@ -224,6 +228,7 @@ export default function FaqSection() {
         }
         .faq-heading-answer { white-space: nowrap; }
         @media (max-width: 900px) {
+          .faq-section { padding-top: 2.55rem !important; }
           .faq-heading-answer { display: block; }
           .faq-headline { text-align: center;
             font-size: clamp(1.9rem, 8vw, 2.4rem) !important; margin-left: 0 !important; margin-right: 0 !important;
@@ -281,7 +286,7 @@ export default function FaqSection() {
           textAlign: 'left',
         }}
       >
-      <motion.h2 className="faq-section-heading" initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true, amount: 0.45 }} transition={{ duration: 0.78, delay: 0.08, ease: [0.16, 1, 0.3, 1] }} style={{ fontFamily: 'var(--font-heading)', fontSize: 'var(--text-section-title)', fontWeight: 400, lineHeight: 1.2, color: 'var(--color-heading-silver)', letterSpacing: '-0.02em', margin: '0 0 2.5rem 0', textAlign: 'center' }}>Your questions <span className="faq-heading-answer">— <em>answered</em>.</span></motion.h2>
+      <motion.h2 className="faq-section-heading" initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true, amount: 0.45 }} transition={{ duration: 0.78, delay: 0.08, ease: [0.16, 1, 0.3, 1] }} style={{ fontFamily: 'var(--font-heading)', fontSize: 'var(--text-section-title)', fontWeight: 400, lineHeight: 1.2, color: 'var(--color-heading-silver)', letterSpacing: '-0.02em', margin: '0 0 2.5rem 0', textAlign: 'center' }}><span className="faq-heading-prefix">Most frequent questions</span> <span className="faq-heading-answer">— <em>answered</em>.</span></motion.h2>
       <div>
         {faqs.map((faq, index) => {
             const isOpen = openIndex === index;

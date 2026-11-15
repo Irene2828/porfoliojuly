@@ -95,6 +95,11 @@ export default function ServicesV2() {
         .see-example-link-light-bg:hover::after {
           width: 100%;
         }
+        @media (min-width: 901px) {
+          .services-subline {
+            font-size: calc(var(--text-body) + 2px) !important;
+          }
+        }
         @media (max-width: 860px) {
           #expertise {
             padding-top: 2.55rem !important;
@@ -219,6 +224,7 @@ export default function ServicesV2() {
 
         {/* 3. Subline follows */}
         <motion.p
+          className="services-subline"
           initial={{ opacity: 0, y: 14 }}
           whileInView={{ opacity: 0.9, y: 0 }}
           viewport={{ once: true, amount: 0.5 }}

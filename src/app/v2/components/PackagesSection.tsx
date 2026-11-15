@@ -53,6 +53,7 @@ export default function PackagesSection({ onCtaClick, mode = 'website' }: { onCt
   const isAi = mode === 'ai';
   const packages = isAi ? AI_PACKAGES : WEBSITE_PACKAGES;
   const [diffOpen, setDiffOpen] = useState(false);
+  const [agentDetailsOpen, setAgentDetailsOpen] = useState(false);
   return (
     <section
       className="packages-section"
@@ -202,7 +203,7 @@ export default function PackagesSection({ onCtaClick, mode = 'website' }: { onCt
           border-radius: 16px;
           padding: 2rem 1.8rem;
           background: rgba(255, 255, 255, 0.03);
-          margin: 0 0 1.25rem 0;
+          margin: 2.5rem 0 1.25rem 0;
           scroll-margin-top: 88px;
         }
         .agent-setup-new {
@@ -239,6 +240,27 @@ export default function PackagesSection({ onCtaClick, mode = 'website' }: { onCt
           color: rgba(255, 255, 255, 0.75);
           max-width: 62ch;
           margin: 0 0 0.9rem 0;
+        }
+        .agent-setup-toggle {
+          appearance: none;
+          border: 0;
+          background: transparent;
+          color: #f2908f;
+          font-family: var(--font-label), sans-serif;
+          font-size: var(--text-label);
+          font-weight: 600;
+          letter-spacing: 0.1em;
+          text-transform: uppercase;
+          padding: 0;
+          margin: 0 0 1rem 0;
+          cursor: pointer;
+        }
+        .agent-setup-toggle-icon {
+          display: inline-block;
+          margin-left: 0.35em;
+          font-size: 1.05em;
+          line-height: 1;
+          vertical-align: 0.04em;
         }
         .agent-setup-shift {
           font-family: var(--font-body), 'Plus Jakarta Sans', sans-serif;
@@ -334,7 +356,11 @@ export default function PackagesSection({ onCtaClick, mode = 'website' }: { onCt
           margin: 0 0 1.3rem 0;
         }
         .diff-text-last { margin-bottom: 0; color: rgba(255, 255, 255, 0.92); }
+        @media (max-width: 900px) {
+          .packages-section { padding-top: 2.55rem !important; }
+        }
         @media (max-width: 820px) {
+          .packages-section { padding-top: 2.55rem !important; }
           .packages-heading { font-size: 2.1rem; }
           .agent-setup-bullets { grid-template-columns: 1fr; }
           .packages-value-grid { grid-template-columns: 1fr; }
@@ -357,30 +383,6 @@ export default function PackagesSection({ onCtaClick, mode = 'website' }: { onCt
           {isAi ? <>Custom <strong>AI products</strong> — built around your problem</> : <>Custom <strong>websites</strong> — built around your business</>}
         </motion.h2>
 
-        {isAi && (
-          <div className="agent-setup-band" id="personal-agent-setup">
-            <p className="agent-setup-new">New!</p>
-            <h3 className="agent-setup-title">Personal Agent Setup</h3>
-            <p className="agent-setup-price">from $750 CAD · one-time setup</p>
-            <p className="agent-setup-lead">You have a personal AI assistant but use it as a chatbot. I set it up around your business — so it does the work, not just the talking.</p>
-            <p className="agent-setup-shift">From “Cool, I can chat and ask for things” — to “It runs my routine business processes and does exactly what I need.”</p>
-            <ul className="packages-card-bullets agent-setup-bullets">
-              <li>Your day, mapped: what can be handed to the assistant</li>
-              <li>Memory and rules set up around your business</li>
-              <li>Tasks and routines configured</li>
-              <li>Fine-tuning done for you, tested on your real work</li>
-              <li>Works with Muse, Grok, Dots, Duet — whichever you use</li>
-            </ul>
-            <p className="agent-setup-note">Pay once. The hours you get back go to work that needs your energy — and to your personal time. And it’s personal by design: the setup is done with you, and I keep no access to your assistant.</p>
-          </div>
-        )}
-
-        {isAi && (
-          <div className="diff-link-wrap">
-            <button className="diff-link" onClick={() => setDiffOpen(true)}>Assistant or workflow — what’s the difference?</button>
-          </div>
-        )}
-
         <div className="packages-cards">
           {packages.map((pkg) => (
             <div className="packages-card" key={pkg.name}>
@@ -395,6 +397,37 @@ export default function PackagesSection({ onCtaClick, mode = 'website' }: { onCt
             </div>
           ))}
         </div>
+
+        {isAi && (
+          <div className="agent-setup-band" id="personal-agent-setup">
+            <p className="agent-setup-new">New!</p>
+            <h3 className="agent-setup-title">Personal Agent Setup</h3>
+            <p className="agent-setup-price">from $750 CAD · one-time setup</p>
+            <p className="agent-setup-lead">You have a personal AI assistant but use it as a chatbot. I set it up around your business — so it does the work, not just the talking. Pay once. The hours you get back go to work that needs your energy — and to your personal time.</p>
+            <button type="button" className="agent-setup-toggle" aria-expanded={agentDetailsOpen} onClick={() => setAgentDetailsOpen((open) => !open)}>
+              {agentDetailsOpen ? 'Hide what’s included' : 'See what’s included'}<span className="agent-setup-toggle-icon" aria-hidden="true">{agentDetailsOpen ? '⌃' : '⌄'}</span>
+            </button>
+            {agentDetailsOpen && (
+              <div>
+                <p className="agent-setup-shift">From “Cool, I can chat and ask for things” — to “It runs my routine business processes and does exactly what I need.”</p>
+                <ul className="packages-card-bullets agent-setup-bullets">
+                  <li>Your day, mapped: what can be handed to the assistant</li>
+                  <li>Memory and rules set up around your business</li>
+                  <li>Tasks and routines configured</li>
+                  <li>Fine-tuning done for you, tested on your real work</li>
+                  <li>Works with Muse, Grok, Dots, Duet — whichever you use</li>
+                </ul>
+                <p className="agent-setup-note">Personal by design: the setup is done with you, and I keep no access to your assistant.</p>
+              </div>
+            )}
+          </div>
+        )}
+
+        {isAi && (
+          <div className="diff-link-wrap">
+            <button className="diff-link" onClick={() => setDiffOpen(true)}>Assistant or workflow — what’s the difference?</button>
+          </div>
+        )}
 
         <div className="packages-cta-wrap">
           <a href={isAi ? 'mailto:iryna@irynasheremeta.com?subject=AI%20product%20packages' : 'mailto:iryna@irynasheremeta.com?subject=Website%20packages'} className="packages-btn-primary" onClick={onCtaClick}>

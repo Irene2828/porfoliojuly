@@ -67,7 +67,7 @@ export default function ProcessSection() {
         }
         @media (min-width: 901px) {
           .testimonial-quote {
-            font-size: var(--text-small) !important;
+            font-size: calc(var(--text-small) * 1.2) !important;
           }
           .testimonial-single {
             width: 77% !important;

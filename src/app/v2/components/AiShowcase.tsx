@@ -188,6 +188,7 @@ export default function AiShowcase() {
           -webkit-text-fill-color: rgba(255, 255, 255, 0.8) !important;
         }
         @media (max-width: 900px) {
+          .ai-showcase-section { padding-top: 2.55rem !important; }
           .faq-headline { text-align: center;
             font-size: clamp(1.9rem, 8vw, 2.4rem) !important; margin-left: 0 !important; margin-right: 0 !important;
           }
@@ -224,6 +225,11 @@ export default function AiShowcase() {
           }
           .faq-cta-wrapper {
             max-width: 720px !important;
+          }
+        }
+        @media (min-width: 901px) {
+          .faq-subline {
+            font-size: calc(var(--text-lead) + 2px) !important;
           }
         }
         /* Match the “Made by someone…” statement at every viewport width. */
@@ -309,9 +315,9 @@ export default function AiShowcase() {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true, amount: 0.45 }}
           transition={{ duration: 0.68, delay: 0.08, ease: [0.16, 1, 0.3, 1] }}
-          style={{ fontSize: 'var(--text-lead)', lineHeight: 'var(--lh-body)', margin: '0 0 1.25rem 0', textAlign: 'left', maxWidth: '52ch' }}
+          style={{ fontSize: 'var(--text-lead)', lineHeight: 'var(--lh-body)', margin: '0 auto 0.75rem auto', textAlign: 'center', maxWidth: '52ch' }}
         >
-          Or take the Terry Fox poster tool. Ask AI to generate the posters, and it drifts: spacing off, brand rules broken, fonts it doesn&apos;t have. And you can&apos;t expect every volunteer to know how to direct AI until it behaves.
+          Or take the Terry Fox poster tool.
         </motion.p>
         <motion.p
           className="faq-subline"
@@ -319,7 +325,17 @@ export default function AiShowcase() {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true, amount: 0.45 }}
           transition={{ duration: 0.68, delay: 0.16, ease: [0.16, 1, 0.3, 1] }}
-          style={{ fontSize: 'var(--text-lead)', lineHeight: 'var(--lh-body)', margin: '0 0 1.25rem 0', textAlign: 'left', maxWidth: '52ch' }}
+          style={{ fontSize: 'var(--text-body)', lineHeight: 'var(--lh-body)', margin: '0 auto 1.25rem auto', textAlign: 'left', maxWidth: '70ch' }}
+        >
+          Ask AI to generate the posters, and it drifts: spacing off, brand rules broken, fonts it doesn&apos;t have. And you can&apos;t expect every volunteer to know how to direct AI until it behaves.
+        </motion.p>
+        <motion.p
+          className="faq-subline"
+          initial={{ opacity: 0, y: 14 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true, amount: 0.45 }}
+          transition={{ duration: 0.68, delay: 0.16, ease: [0.16, 1, 0.3, 1] }}
+          style={{ fontSize: 'var(--text-body)', lineHeight: 'var(--lh-body)', margin: '0 auto 1.25rem auto', textAlign: 'left', maxWidth: '70ch' }}
         >
           I build for deterministic output: rules, logic, and a human in charge. A custom solution, built around the problem — and it scales to the next problem, and the next.
         </motion.p>

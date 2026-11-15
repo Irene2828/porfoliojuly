@@ -683,6 +683,16 @@ export default function ProjectsV2({ initialProjects = [] }: ProjectsV2Props) {
           color: #a7aeb8 !important;
         }
         @media (min-width: 901px) {
+          .preview-card-caption {
+            opacity: 1 !important;
+            transform: translateY(0) !important;
+          }
+          .preview-item-container .case-desktop-frame,
+          .preview-item-container .case-phone-frame,
+          .preview-item-container .case-pair {
+            transform: scale(1.02);
+            transform-origin: center center;
+          }
           .recording-card-wrapper .case-pair {
             margin-bottom: 11%;
           }
@@ -788,7 +798,7 @@ export default function ProjectsV2({ initialProjects = [] }: ProjectsV2Props) {
         className="cases-grid-wrapper"
         style={{ 
           width: '100%', 
-          paddingBottom: '1.5rem',
+          paddingBottom: '0.75rem',
           paddingTop: '0.375rem'
         }}
       >
