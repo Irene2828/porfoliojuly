@@ -82,8 +82,8 @@ export default function HowItWorks() {
           font-size: var(--text-body) !important;
           line-height: var(--lh-body) !important;
           letter-spacing: 0.015em !important;
-          color: #ffffff !important;
-          -webkit-text-fill-color: #ffffff !important;
+          color: #f2908f !important;
+          -webkit-text-fill-color: #f2908f !important;
         }
         @media (min-width: 901px) {
           .how-step-title {
