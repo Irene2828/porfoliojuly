@@ -1057,7 +1057,7 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 /* Section Headings */
-.v2-theme section:not(.prefooter-section) h2,
+.v2-theme section:not(.prefooter-section):not(.packages-section) h2,
 .v2-theme #cases-section h2,
 .v2-theme #expertise h2,
 .v2-theme #how-it-works h2,
