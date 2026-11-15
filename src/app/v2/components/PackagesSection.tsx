@@ -23,7 +23,7 @@ const WEBSITE_PACKAGES = [
 const AI_PACKAGES = [
   {
     name: 'Workflow Build',
-    price: 'from $1,500 CAD',
+    price: 'from $1,800 CAD',
     text: 'One repetitive routine, turned into a system that runs on your accounts — a store update, a weekly report, a follow-up chain.',
   },
   {
