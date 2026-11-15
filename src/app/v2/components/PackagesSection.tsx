@@ -403,7 +403,7 @@ export default function PackagesSection({ onCtaClick, mode = 'website' }: { onCt
             <p className="agent-setup-new">New!</p>
             <h3 className="agent-setup-title">Personal Agent Setup</h3>
             <p className="agent-setup-price">from $750 CAD · one-time setup</p>
-            <p className="agent-setup-lead">You have a personal AI assistant but use it as a chatbot. I set it up around your business — so it does the work, not just the talking. Pay once. The hours you get back go to work that needs your energy — and to your personal time.</p>
+            <p className="agent-setup-lead">You have a personal AI assistant but use it as a chatbot. I set it up around your business — so it does the work, not just the talking.</p>
             <button type="button" className="agent-setup-toggle" aria-expanded={agentDetailsOpen} onClick={() => setAgentDetailsOpen((open) => !open)}>
               {agentDetailsOpen ? 'Hide what’s included' : 'See what’s included'}<span className="agent-setup-toggle-icon" aria-hidden="true">{agentDetailsOpen ? '⌃' : '⌄'}</span>
             </button>
@@ -418,6 +418,7 @@ export default function PackagesSection({ onCtaClick, mode = 'website' }: { onCt
                   <li>Works with Muse, Grok, Dots, Duet — whichever you use</li>
                 </ul>
                 <p className="agent-setup-note">Personal by design: the setup is done with you, and I keep no access to your assistant.</p>
+                <p className="agent-setup-note">Pay once. The hours you get back go to work that needs your energy — and to your personal time.</p>
               </div>
             )}
           </div>
