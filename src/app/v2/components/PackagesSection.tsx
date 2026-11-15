@@ -2,39 +2,49 @@
 
 import { motion } from 'framer-motion';
 
-const WEBSITE_PACKAGES = [
+interface Package {
+  name: string;
+  price: string;
+  lead?: string;
+  bullets: string[];
+}
+
+const WEBSITE_PACKAGES: Package[] = [
   {
     name: 'Polish & Launch',
     price: 'from $750 CAD',
-    text: 'An AI draft or a dated site, fixed and launched: structure, copy, mobile, forms, domain.',
+    lead: 'An AI draft or a dated site, fixed and launched.',
+    bullets: ['Structure', 'Copy', 'Mobile', 'Forms', 'Domain'],
   },
   {
     name: 'Custom Website',
     price: 'from $1,500 CAD',
-    text: 'Research, three visual directions, design, copy, build, tested launch. Hosting set up; you keep the logins.',
+    bullets: ['Research', 'Three visual directions', 'Design', 'Copy', 'Build', 'Tested launch', 'Hosting set up; you keep the logins'],
   },
   {
     name: 'Website Care',
     price: 'from $100 CAD/month',
-    text: 'Updates, small edits, checks. Your site stays current without you touching it.',
+    bullets: ['Updates', 'Small edits', 'Checks', 'Your site stays current without you touching it'],
   },
 ];
 
-const AI_PACKAGES = [
+const AI_PACKAGES: Package[] = [
   {
     name: 'Workflow Build',
     price: 'from $1,800 CAD',
-    text: 'One repetitive routine, turned into a system that runs on your accounts — a store update, a weekly report, a follow-up chain.',
+    lead: 'One repetitive routine, turned into a system that runs on your accounts.',
+    bullets: ['A store update', 'A weekly report', 'A follow-up chain'],
   },
   {
     name: 'Agent System Setup',
     price: 'from $3,000 CAD',
-    text: 'A personal agent system for an owner or a small team — memory, rules, schedules, guardrails. Set up on the AI you choose.',
+    lead: 'A personal agent system for an owner or a small team.',
+    bullets: ['Memory', 'Rules', 'Schedules', 'Guardrails', 'Set up on the AI you choose'],
   },
   {
     name: 'Care & Tuning',
     price: 'from $200 CAD/month',
-    text: 'Monitoring, small rule fixes, new scenarios, a short monthly note on what’s saved.',
+    bullets: ['Monitoring', 'Small rule fixes', 'New scenarios', 'A short monthly note on what’s saved'],
   },
 ];
 
@@ -129,6 +139,30 @@ export default function PackagesSection({ onCtaClick, mode = 'website' }: { onCt
           color: rgba(255, 255, 255, 0.75);
           margin: 0;
         }
+        .packages-card-bullets {
+          list-style: none;
+          margin: 0;
+          padding: 0;
+          display: flex;
+          flex-direction: column;
+          gap: 0.45rem;
+        }
+        .packages-card-bullets li {
+          font-family: var(--font-body), 'Plus Jakarta Sans', sans-serif;
+          font-weight: 300;
+          font-size: var(--text-body);
+          line-height: var(--lh-body);
+          color: rgba(255, 255, 255, 0.75);
+          display: flex;
+          align-items: flex-start;
+          gap: 0.6rem;
+          margin: 0;
+        }
+        .packages-card-bullets li::before {
+          content: '•';
+          color: #f2908f;
+          flex-shrink: 0;
+        }
         .packages-honest {
           font-family: var(--font-body), 'Plus Jakarta Sans', sans-serif;
           font-weight: 300;
@@ -188,7 +222,12 @@ export default function PackagesSection({ onCtaClick, mode = 'website' }: { onCt
             <div className="packages-card" key={pkg.name}>
               <h3 className="packages-card-name">{pkg.name}</h3>
               <p className="packages-card-price">{pkg.price}</p>
-              {'text' in pkg && typeof pkg.text === 'string' && <p className="packages-card-text">{pkg.text}</p>}
+              {pkg.lead && <p className="packages-card-text" style={{ marginBottom: '0.65rem' }}>{pkg.lead}</p>}
+              <ul className="packages-card-bullets">
+                {pkg.bullets.map((item) => (
+                  <li key={item}>{item}</li>
+                ))}
+              </ul>
             </div>
           ))}
         </div>
