@@ -6,7 +6,7 @@ export default function ProcessSection() {
   return (
     <section
       id="process"
-      style={{ padding: '0 0 6rem 0', background: 'radial-gradient(circle at 44% 42%, rgba(255, 255, 255, 0.95) 0%, rgba(255, 255, 255, 0.52) 34%, rgba(247, 243, 237, 0) 72%), #f7f3ed', borderBottom: '1px solid rgba(120, 128, 136, 0.18)' }}
+      style={{ padding: '0 0 5.1rem 0', background: 'radial-gradient(circle at 44% 42%, rgba(255, 255, 255, 0.95) 0%, rgba(255, 255, 255, 0.52) 34%, rgba(247, 243, 237, 0) 72%), #f7f3ed', borderBottom: '1px solid rgba(120, 128, 136, 0.18)' }}
     >
       <style>{`
         .testimonial-single {
