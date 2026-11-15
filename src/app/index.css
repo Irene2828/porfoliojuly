@@ -1106,7 +1106,7 @@ h1, h2, h3, h4, h5, h6 {
   }
 
   .v2-theme #faq-section .faq-section-heading {
-    font-size: calc(var(--text-section-title) * 1.1) !important;
+    font-size: calc(var(--text-section-title) * 1.32) !important;
   }
 }
 
