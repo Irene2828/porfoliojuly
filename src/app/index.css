@@ -1073,6 +1073,36 @@ h1, h2, h3, h4, h5, h6 {
   -webkit-text-fill-color: var(--color-heading-peach) !important;
 }
 
+/* Section-specific heading colors and top spacing. */
+.v2-theme #how-it-works {
+  padding-top: 40.8rem !important;
+}
+
+.v2-theme #how-it-works h2.how-title {
+  color: #ffffff !important;
+  -webkit-text-fill-color: #ffffff !important;
+}
+
+.v2-theme #process h2.testimonial-heading,
+.v2-theme #ai-showcase h2.faq-headline {
+  color: #000000 !important;
+  -webkit-text-fill-color: #000000 !important;
+}
+
+.v2-theme #faq-section {
+  padding-top: 20.4rem !important;
+}
+
+@media (max-width: 900px) {
+  .v2-theme #how-it-works {
+    padding-top: 14rem !important;
+  }
+
+  .v2-theme #faq-section .faq-section-heading {
+    font-size: calc(var(--text-section-title) * 1.1) !important;
+  }
+}
+
 /* Prefooter closing headline: matching hero headline letter spacing, color and font weight */
 .v2-theme .prefooter-section:not(.about-cta-section) h2,
 .v2-theme .prefooter-closing-line {
