@@ -1056,31 +1056,24 @@ h1, h2, h3, h4, h5, h6 {
   }
 }
 
-/* Section Headings */
-.v2-theme section:not(.prefooter-section):not(.packages-section) h2,
-.v2-theme #cases-section h2,
-.v2-theme #expertise h2,
-.v2-theme #how-it-works h2,
-.v2-theme #process h2 {
+/* Section headings and all emphasized words use the brand peach pink. */
+.v2-theme section:not(.prefooter-section) h2,
+.v2-theme #how-it-works h2.how-title {
   font-family: var(--font-heading) !important;
   font-weight: 400 !important;
   letter-spacing: -0.02em !important;
-  color: var(--color-heading-silver) !important;
-  -webkit-text-fill-color: var(--color-heading-silver) !important;
+  color: var(--color-heading-peach) !important;
+  -webkit-text-fill-color: var(--color-heading-peach) !important;
   -webkit-text-stroke: 0 !important;
   text-stroke: 0 !important;
 }
 
-/* Bolded words in section headings: 70% black color (15% less black) */
-.v2-theme #cases-section h2 span:last-child,
-.v2-theme #expertise h2 span:last-child,
-.v2-theme #how-it-works h2 span:last-child,
-.v2-theme #process h2 span:last-child {
-  color: rgba(0, 0, 0, 0.70) !important;
-  -webkit-text-fill-color: rgba(0, 0, 0, 0.70) !important;
+.v2-theme section:not(.prefooter-section) h2 :is(span, em, strong) {
+  color: var(--color-heading-peach) !important;
+  -webkit-text-fill-color: var(--color-heading-peach) !important;
 }
 
-/* How I work heading: pure white on the matte-black section */ .v2-theme #how-it-works h2.how-title { color: #ffffff !important; -webkit-text-fill-color: #ffffff !important; } /* Prefooter closing headline: matching hero headline letter spacing, color and font weight */
+/* Prefooter closing headline: matching hero headline letter spacing, color and font weight */
 .v2-theme .prefooter-section:not(.about-cta-section) h2,
 .v2-theme .prefooter-closing-line {
   font-family: var(--font-body), 'Plus Jakarta Sans', sans-serif !important;

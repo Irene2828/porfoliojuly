@@ -58,7 +58,7 @@ export default function FaqSection() {
       style={{
           backgroundColor: '#ffffff',
           borderTop: '1px solid rgba(120, 128, 136, 0.18)',
-        padding: '5.1rem 0 0 0',
+        padding: '10.2rem 0 0 0',
         width: '100%',
         position: 'relative',
         overflow: 'hidden',

@@ -59,7 +59,7 @@ export default function PackagesSection({ onCtaClick, mode = 'website' }: { onCt
       className="packages-section"
       style={{
         backgroundColor: '#121316',
-        padding: '5.1rem 0 5.1rem 0',
+        padding: '10.2rem 0 5.1rem 0',
         width: '100%',
         position: 'relative',
         overflow: 'hidden',
@@ -212,7 +212,7 @@ export default function PackagesSection({ onCtaClick, mode = 'website' }: { onCt
           font-weight: 700;
           text-transform: uppercase;
           letter-spacing: 0.14em;
-          color: #f2908f;
+          color: #ffffff;
           margin: 0 0 0.5rem 0;
         }
         .agent-setup-title {
@@ -245,7 +245,7 @@ export default function PackagesSection({ onCtaClick, mode = 'website' }: { onCt
           appearance: none;
           border: 0;
           background: transparent;
-          color: #f2908f;
+          color: #ffffff;
           font-family: var(--font-label), sans-serif;
           font-size: var(--text-label);
           font-weight: 600;
@@ -295,7 +295,7 @@ export default function PackagesSection({ onCtaClick, mode = 'website' }: { onCt
           font-weight: 600;
           text-transform: uppercase;
           letter-spacing: 0.1em;
-          color: #f2908f;
+          color: #d8d8dc;
           padding: 0;
         }
         .diff-link:hover { text-decoration: underline; }
