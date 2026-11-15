@@ -1073,6 +1073,13 @@ h1, h2, h3, h4, h5, h6 {
   -webkit-text-fill-color: var(--color-heading-peach) !important;
 }
 
+/* Package headings stay white, including emphasized words. */
+.v2-theme .packages-section h2.packages-heading,
+.v2-theme .packages-section h2.packages-heading :is(span, em, strong) {
+  color: #ffffff !important;
+  -webkit-text-fill-color: #ffffff !important;
+}
+
 /* Section-specific heading colors and top spacing. */
 .v2-theme #how-it-works {
   padding-top: 40.8rem !important;
