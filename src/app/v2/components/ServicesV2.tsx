@@ -188,7 +188,7 @@ export default function ServicesV2() {
           }
           .services-col-left ul li,
           .services-col-right ul li {
-            font-size: 1.06875rem !important;
+            font-size: var(--text-lead) !important;
           }
         }
         @media (min-width: 861px) {
@@ -226,7 +226,7 @@ export default function ServicesV2() {
           transition={{ duration: 0.72, delay: 0.08, ease: [0.16, 1, 0.3, 1] }}
           style={{ 
             fontFamily: "var(--font-heading)", 
-            fontSize: 'clamp(28px, 4.4vw, 42px)', 
+            fontSize: 'var(--text-section-title)',
             color: 'var(--color-heading-silver)', 
             fontWeight: 400,
             lineHeight: 1.2,
@@ -249,9 +249,9 @@ export default function ServicesV2() {
           transition={{ duration: 0.7, delay: 0.18, ease: [0.16, 1, 0.3, 1] }}
           style={{
             fontFamily: "var(--font-body)",
-            fontSize: 'clamp(1.05rem, 2.4vw, 1.2rem)',
+            fontSize: 'var(--text-lead)',
             fontWeight: 300,
-            lineHeight: 1.55,
+            lineHeight: 'var(--lh-body)',
             color: 'var(--color-body-dark, #2b3038)',
             maxWidth: '640px',
             margin: '0 auto',
@@ -399,10 +399,10 @@ export default function ServicesV2() {
                   transition={{ duration: 0.65, delay: 0.18, ease: [0.16, 1, 0.3, 1] }}
                   style={{
                     fontFamily: "var(--font-body)",
-                    fontSize: '1.125rem',
+                    fontSize: 'var(--text-lead)',
                     color: '#a0abb8',
                     margin: '0 0 2.5rem 0',
-                    lineHeight: 1.5,
+                    lineHeight: 'var(--lh-body)',
                     letterSpacing: '0.015em'
                   }}
                 >
@@ -418,12 +418,12 @@ export default function ServicesV2() {
                       viewport={{ once: true, amount: 0.25 }}
                       transition={{ duration: 0.65, delay: 0.24 + idx * 0.11, ease: [0.16, 1, 0.3, 1] }}
                       style={{ 
-                        fontSize: '15.75px',
+                        fontSize: 'var(--text-body)',
                         color: '#e8ebee', 
                         display: 'flex', 
                         alignItems: 'center', 
                         gap: '16px', 
-                        lineHeight: 1.55,
+                        lineHeight: 'var(--lh-body)',
                         background: 'rgba(255, 255, 255, 0.04)',
                         borderRadius: '0px',
                         boxShadow: '0 1px 6px rgba(0, 0, 0, 0.1)',
@@ -458,7 +458,7 @@ export default function ServicesV2() {
                   ))}
                 </ul>
                 <div style={{ display: 'flex', justifyContent: 'center', marginTop: '64px' }}>
-                  <button type="button" onClick={() => setPackageMode('website')} style={{ background: 'none', border: 0, padding: 0, fontFamily: 'var(--font-label), sans-serif', fontSize: '11.55px', fontWeight: 600, letterSpacing: '0.105em', color: '#efb4a4', cursor: 'pointer', textDecoration: 'none' }}>
+                  <button type="button" onClick={() => setPackageMode('website')} style={{ background: 'none', border: 0, padding: 0, fontFamily: 'var(--font-label), sans-serif', fontSize: 'var(--text-label)', fontWeight: 600, letterSpacing: '0.105em', color: '#efb4a4', cursor: 'pointer', textDecoration: 'none' }}>
                     SEE WEBSITE PACKAGES <span aria-hidden="true" style={{ marginLeft: '4px' }}>↓</span>
                   </button>
                 </div>
@@ -527,10 +527,10 @@ export default function ServicesV2() {
                   transition={{ duration: 0.65, delay: 0.3, ease: [0.16, 1, 0.3, 1] }}
                   style={{
                     fontFamily: "var(--font-body)",
-                    fontSize: '1.125rem',
+                    fontSize: 'var(--text-lead)',
                     color: '#65707e',
                     margin: '0 0 2.5rem 0',
-                    lineHeight: 1.5,
+                    lineHeight: 'var(--lh-body)',
                     letterSpacing: '0.015em'
                   }}
                 >
@@ -546,12 +546,12 @@ export default function ServicesV2() {
                       viewport={{ once: true, amount: 0.25 }}
                       transition={{ duration: 0.65, delay: 0.36 + idx * 0.11, ease: [0.16, 1, 0.3, 1] }}
                       style={{ 
-                        fontSize: '15.75px',
+                        fontSize: 'var(--text-body)',
                         color: '#1A1F2B', 
                         display: 'flex', 
                         alignItems: 'center', 
                         gap: '16px', 
-                        lineHeight: 1.55,
+                        lineHeight: 'var(--lh-body)',
                         background: 'rgba(255, 255, 255, 0.75)',
                         borderRadius: '0px',
                         boxShadow: '0 1px 6px rgba(0, 0, 0, 0.03)',
@@ -586,7 +586,7 @@ export default function ServicesV2() {
                   ))}
                 </ul>
                 <div style={{ display: 'flex', justifyContent: 'center', marginTop: '64px' }}>
-                  <button type="button" onClick={() => setPackageMode('ai')} style={{ background: 'none', border: 0, padding: 0, fontFamily: 'var(--font-label), sans-serif', fontSize: '11.55px', fontWeight: 600, letterSpacing: '0.105em', color: '#1A1F2B', cursor: 'pointer', textDecoration: 'none' }}>
+                  <button type="button" onClick={() => setPackageMode('ai')} style={{ background: 'none', border: 0, padding: 0, fontFamily: 'var(--font-label), sans-serif', fontSize: 'var(--text-label)', fontWeight: 600, letterSpacing: '0.105em', color: '#1A1F2B', cursor: 'pointer', textDecoration: 'none' }}>
                     SEE AI PRODUCT PACKAGES <span aria-hidden="true" style={{ marginLeft: '4px' }}>↓</span>
                   </button>
                 </div>

@@ -10,8 +10,8 @@
 }
 
 .cta-section h2 {
-  font-size: clamp(1.5rem, 5.25vw, 4.2rem); /* Scaled up 50% from previous size */
-  line-height: 1.1;
+  font-size: var(--text-section-title);
+  line-height: 1.2;
   background-image: url('../assets/ocean.png');
   background-size: cover;
   background-position: center;
@@ -28,7 +28,7 @@
   border: 1px solid rgba(23, 53, 74, 0.25);
   border-radius: 0;
   font-family: var(--font-sans);
-  font-size: 0.96rem; /* Scaled down 20% from 1.2rem */
+  font-size: var(--text-label);
   font-weight: 400; /* Less bold */
   text-transform: uppercase;
   letter-spacing: 0.1em;
@@ -48,7 +48,8 @@
   justify-content: space-between;
   align-items: center;
   font-family: var(--font-sans);
-  font-size: 0.9rem;
+  font-size: var(--text-small);
+  line-height: var(--lh-small);
   color: rgba(255, 255, 255, 0.72);
   border-top: 0;
   padding-top: 0;

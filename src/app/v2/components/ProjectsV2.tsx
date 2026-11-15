@@ -179,7 +179,7 @@ export default function ProjectsV2({ initialProjects = [] }: ProjectsV2Props) {
               href={project.demoUrl}
               target="_blank"
               rel="noopener noreferrer"
-              style={{ fontFamily: 'var(--font-body), "Plus Jakarta Sans", sans-serif', fontSize: '0.85rem', fontWeight: 300, lineHeight: 1.5, color: 'var(--color-heading-peach, #f2908f)', textDecoration: 'none' }}
+              style={{ fontFamily: 'var(--font-body), "Plus Jakarta Sans", sans-serif', fontSize: 'var(--text-small)', fontWeight: 300, lineHeight: 'var(--lh-small)', color: 'var(--color-heading-peach, #f2908f)', textDecoration: 'none' }}
             >
               See the live demo →
             </a>
@@ -610,7 +610,7 @@ export default function ProjectsV2({ initialProjects = [] }: ProjectsV2Props) {
           transition={{ duration: 0.72, delay: 0.08, ease: [0.16, 1, 0.3, 1] }}
           style={{
             fontFamily: "var(--font-heading)",
-            fontSize: 'clamp(28px, 4.4vw, 42px)',
+            fontSize: 'var(--text-section-title)',
             color: 'var(--color-heading-silver)',
             fontWeight: 400,
             lineHeight: 1.2,
@@ -640,7 +640,7 @@ export default function ProjectsV2({ initialProjects = [] }: ProjectsV2Props) {
       >
         {caseGroups.map((group) => (
           <div className="case-group" key={group.id} style={{ width: '100%' }}>
-            <h3 style={{ fontFamily: 'var(--font-body)', fontSize: 'clamp(1.05rem, 2.4vw, 1.2rem)', fontWeight: 400, lineHeight: 1.35, letterSpacing: '-0.011em', color: '#2b3038', textAlign: 'center', margin: '0 0 1rem' }}>
+            <h3 style={{ fontFamily: 'var(--font-body)', fontSize: 'var(--text-lead)', fontWeight: 400, lineHeight: 1.35, letterSpacing: '-0.011em', color: '#2b3038', textAlign: 'center', margin: '0 0 1rem' }}>
               {group.label}
             </h3>
             <div className="cases-grid-container">

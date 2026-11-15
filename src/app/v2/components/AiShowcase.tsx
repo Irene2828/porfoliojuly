@@ -41,7 +41,7 @@ export default function AiShowcase() {
         }
         .faq-kicker {
           font-family: var(--font-body), 'Plus Jakarta Sans', sans-serif !important;
-          font-size: 0.72rem !important;
+          font-size: var(--text-label) !important;
           font-weight: 600 !important;
           text-transform: uppercase !important;
           letter-spacing: 0.14em !important;
@@ -64,9 +64,9 @@ export default function AiShowcase() {
         }
         .faq-section-subline {
           font-family: var(--font-body), 'Plus Jakarta Sans', sans-serif !important;
-          font-size: clamp(1.05rem, 2.4vw, 1.2rem) !important;
+          font-size: var(--text-lead) !important;
           font-weight: 300 !important;
-          line-height: 1.55 !important;
+          line-height: var(--lh-body) !important;
           letter-spacing: -0.011em !important;
           color: var(--color-body-dark, #2b3038) !important;
           -webkit-text-fill-color: var(--color-body-dark, #2b3038) !important;
@@ -127,10 +127,10 @@ export default function AiShowcase() {
         }
         .faq-answer-list li {
           font-family: var(--font-body), 'Plus Jakarta Sans', sans-serif !important;
-          font-size: 1.02rem !important;
+          font-size: var(--text-body) !important;
           font-weight: 300 !important;
           letter-spacing: -0.011em !important;
-          line-height: 1.65 !important;
+          line-height: var(--lh-body) !important;
           color: rgba(0, 0, 0, 0.78) !important;
           -webkit-text-fill-color: rgba(0, 0, 0, 0.78) !important;
           margin-bottom: 0.55rem !important;
@@ -172,10 +172,10 @@ export default function AiShowcase() {
         }
         .faq-case-caption {
           font-family: var(--font-body), 'Plus Jakarta Sans', sans-serif !important;
-          font-size: 1rem !important;
+          font-size: var(--text-body) !important;
           font-weight: 300 !important;
           letter-spacing: -0.011em !important;
-          line-height: 1.55 !important;
+          line-height: var(--lh-body) !important;
           color: rgba(0, 0, 0, 0.72) !important;
           -webkit-text-fill-color: rgba(0, 0, 0, 0.72) !important;
           margin: 0.85rem 0 0 0 !important;
@@ -192,10 +192,11 @@ export default function AiShowcase() {
             font-size: clamp(1.9rem, 8vw, 2.4rem) !important; margin-left: 0 !important; margin-right: 0 !important;
           }
           .faq-question {
-          font-size: 1.2915rem !important;
+          font-size: var(--text-subhead) !important;
+          line-height: 1.3;
           }
           .faq-answer-list li {
-            font-size: 1.071rem !important;
+            font-size: var(--text-lead) !important;
           }
           .faq-toggle {
             padding: 1.4rem 2.25rem 1.4rem 0 !important;
@@ -227,7 +228,7 @@ export default function AiShowcase() {
         }
         /* Match the “Made by someone…” statement at every viewport width. */
         .faq-cta-heading {
-          font-size: clamp(1.05rem, 2.4vw, 1.2rem) !important;
+          font-size: var(--text-lead) !important;
         }
         .faq-cta-heading,
         .faq-cta-heading .faq-cta-white,
@@ -266,7 +267,7 @@ export default function AiShowcase() {
           transition={{ duration: 0.78, delay: 0.08, ease: [0.16, 1, 0.3, 1] }}
           style={{
             fontFamily: 'var(--font-heading)',
-            fontSize: 'clamp(28px, 4.4vw, 42px)',
+            fontSize: 'var(--text-section-title)',
             lineHeight: 1.2,
             color: '#000000',
             letterSpacing: '-0.02em',
@@ -282,8 +283,8 @@ export default function AiShowcase() {
           viewport={{ once: true, amount: 0.45 }}
           transition={{ duration: 0.68, delay: 0.16, ease: [0.16, 1, 0.3, 1] }}
           style={{
-            fontSize: 'clamp(1.05rem, 2.4vw, 1.2rem)',
-            lineHeight: 1.55,
+            fontSize: 'var(--text-lead)',
+            lineHeight: 'var(--lh-body)',
             margin: '0 auto 3.5rem auto',
             textAlign: 'center',
             maxWidth: '42.1ch',
@@ -298,7 +299,7 @@ export default function AiShowcase() {
                 <video ref={videoRefs[index]} className="faq-case-video" src={src} poster={poster} muted loop playsInline />
                 <span aria-hidden="true" style={{ position: 'absolute', left: '50%', top: '50%', transform: 'translate(-50%, -50%)', width: '3rem', height: '3rem', borderRadius: '50%', background: 'rgba(255,255,255,0.88)', color: '#1A1F2B', display: playingVideo === index ? 'none' : 'grid', placeItems: 'center', fontSize: '1.15rem' }}>▶</span>
               </button>
-              <p style={{ fontFamily: 'var(--font-label), sans-serif', fontSize: '0.68rem', fontWeight: 600, letterSpacing: '0.1em', textTransform: 'uppercase', color: '#5C6672', textAlign: 'center', margin: '0.7rem 0 0' }}>Tap to play</p>
+              <p style={{ fontFamily: 'var(--font-label), sans-serif', fontSize: 'var(--text-label)', fontWeight: 600, letterSpacing: '0.1em', textTransform: 'uppercase', color: '#5C6672', textAlign: 'center', margin: '0.7rem 0 0' }}>Tap to play</p>
             </div>
           ))}
         </div>
@@ -308,7 +309,7 @@ export default function AiShowcase() {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true, amount: 0.45 }}
           transition={{ duration: 0.68, delay: 0.08, ease: [0.16, 1, 0.3, 1] }}
-          style={{ fontSize: 'clamp(1.05rem, 2.4vw, 1.2rem)', lineHeight: 1.55, margin: '0 0 1.25rem 0', textAlign: 'left', maxWidth: '52ch' }}
+          style={{ fontSize: 'var(--text-lead)', lineHeight: 'var(--lh-body)', margin: '0 0 1.25rem 0', textAlign: 'left', maxWidth: '52ch' }}
         >
           Or take the Terry Fox poster tool. Ask AI to generate the posters, and it drifts: spacing off, brand rules broken, fonts it doesn&apos;t have. And you can&apos;t expect every volunteer to know how to direct AI until it behaves.
         </motion.p>
@@ -318,7 +319,7 @@ export default function AiShowcase() {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true, amount: 0.45 }}
           transition={{ duration: 0.68, delay: 0.16, ease: [0.16, 1, 0.3, 1] }}
-          style={{ fontSize: 'clamp(1.05rem, 2.4vw, 1.2rem)', lineHeight: 1.55, margin: '0 0 1.25rem 0', textAlign: 'left', maxWidth: '52ch' }}
+          style={{ fontSize: 'var(--text-lead)', lineHeight: 'var(--lh-body)', margin: '0 0 1.25rem 0', textAlign: 'left', maxWidth: '52ch' }}
         >
           I build for deterministic output: rules, logic, and a human in charge. A custom solution, built around the problem — and it scales to the next problem, and the next.
         </motion.p>
@@ -327,7 +328,7 @@ export default function AiShowcase() {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true, amount: 0.45 }}
           transition={{ duration: 0.68, delay: 0.24, ease: [0.16, 1, 0.3, 1] }}
-          style={{ fontFamily: "var(--font-body), 'Plus Jakarta Sans', sans-serif", fontSize: 'clamp(1.05rem, 2.4vw, 1.2rem)', fontWeight: 700, letterSpacing: '-0.011em', lineHeight: 1.65, color: 'rgba(0, 0, 0, 0.78)', textAlign: 'center', margin: '2rem auto 0', maxWidth: '52ch' }}
+          style={{ fontFamily: "var(--font-body), 'Plus Jakarta Sans', sans-serif", fontSize: 'var(--text-lead)', fontWeight: 700, letterSpacing: '-0.011em', lineHeight: 'var(--lh-body)', color: 'rgba(0, 0, 0, 0.78)', textAlign: 'center', margin: '2rem auto 0', maxWidth: '52ch' }}
         >
           That&apos;s where I can help.
         </motion.p>

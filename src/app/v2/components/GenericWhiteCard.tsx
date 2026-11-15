@@ -27,7 +27,7 @@ export default function GenericWhiteCard({ title, subline, annotations, stats, i
       <div className="guertin-content">
         
         {/* Mockup Area */}
-        <div style={{ fontFamily: 'var(--font-mono), monospace', fontSize: '11px', marginBottom: '16px', width: '100%', textAlign: 'left' }}>
+        <div style={{ fontFamily: 'var(--font-mono), monospace', fontSize: 'var(--text-label)', marginBottom: '16px', width: '100%', textAlign: 'left' }}>
           <span style={{ color: '#4B5565', fontWeight: 600 }}>{title.toUpperCase()}</span><br/>
           <span style={{ color: '#555555', whiteSpace: 'pre-line' }}>{subline || 'Interactive Digital Tool'}</span>
         </div>
@@ -136,7 +136,7 @@ export default function GenericWhiteCard({ title, subline, annotations, stats, i
                     border: '1px solid #f2908f', 
                     padding: '2px 6px', 
                     borderRadius: '3px', 
-                    fontSize: '9.5px', 
+                    fontSize: 'var(--text-label)',
                     fontWeight: 700, 
                     textTransform: 'uppercase',
                     letterSpacing: '0.06em'

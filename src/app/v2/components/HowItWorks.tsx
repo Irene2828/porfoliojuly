@@ -54,7 +54,7 @@ export default function HowItWorks() {
         }
         .how-kicker {
           font-family: var(--font-body), 'Plus Jakarta Sans', sans-serif !important;
-          font-size: 0.72rem !important;
+          font-size: var(--text-label) !important;
           font-weight: 600 !important;
           text-transform: uppercase !important;
           letter-spacing: 0.14em !important;
@@ -64,9 +64,9 @@ export default function HowItWorks() {
         }
         .how-subcopy {
           font-family: var(--font-body), 'Plus Jakarta Sans', sans-serif !important;
-          font-size: 1.125rem !important;
+          font-size: var(--text-lead) !important;
           font-weight: 300 !important;
-          line-height: 1.5 !important;
+          line-height: var(--lh-body) !important;
           letter-spacing: 0.015em !important;
           color: rgba(255, 255, 255, 0.72) !important;
           -webkit-text-fill-color: rgba(255, 255, 255, 0.72) !important;
@@ -85,8 +85,8 @@ export default function HowItWorks() {
         .how-step-title {
           font-family: var(--font-body), 'Plus Jakarta Sans', sans-serif !important;
           font-weight: 400 !important;
-          font-size: 15.75px !important;
-          line-height: 1.55 !important;
+          font-size: var(--text-body) !important;
+          line-height: var(--lh-body) !important;
           letter-spacing: 0.015em !important;
           color: #ffffff !important;
           -webkit-text-fill-color: #ffffff !important;
@@ -132,7 +132,7 @@ export default function HowItWorks() {
             font-size: 2.65rem !important;
           }
           .how-step-title {
-            font-size: 15.75px !important;
+            font-size: var(--text-body) !important;
           }
         }
         @media (min-width: 1200px) {
@@ -175,7 +175,7 @@ export default function HowItWorks() {
           transition={{ duration: 0.78, delay: 0.08, ease: [0.16, 1, 0.3, 1] }}
           style={{
             fontFamily: 'var(--font-heading)',
-            fontSize: 'clamp(28px, 4.4vw, 42px)', WebkitTextFillColor: '#ffffff',
+            fontSize: 'var(--text-section-title)', WebkitTextFillColor: '#ffffff',
             lineHeight: 1.2,
             color: '#ffffff',
             letterSpacing: '-0.02em',
@@ -193,9 +193,9 @@ export default function HowItWorks() {
           transition={{ duration: 0.68, delay: 0.16, ease: [0.16, 1, 0.3, 1] }}
           style={{
             fontFamily: "'Plus Jakarta Sans', sans-serif",
-            fontSize: 'clamp(1.05rem, 2.4vw, 1.2rem)',
+            fontSize: 'var(--text-lead)',
             fontWeight: 300,
-            lineHeight: 1.55,
+            lineHeight: 'var(--lh-body)',
             letterSpacing: '-0.011em',
             margin: '0 0 3.15rem 0',
             maxWidth: '52ch',
@@ -260,7 +260,7 @@ export default function HowItWorks() {
                 style={{
                   fontFamily: 'var(--font-heading)',
                   fontWeight: 400,
-                  fontSize: '1.65rem',
+                  fontSize: 'var(--text-panel)',
                   lineHeight: 1.2,
                   margin: 0
                 }}
@@ -275,7 +275,7 @@ export default function HowItWorks() {
                   style={{
                     color: '#f2908f',
                     fontFamily: 'var(--font-body), sans-serif',
-                    fontSize: '1.35rem',
+                    fontSize: 'var(--text-step)',
                     fontWeight: 400,
                     lineHeight: 1,
                     verticalAlign: '0.08em',
@@ -306,8 +306,8 @@ export default function HowItWorks() {
                     }}
                   >
                     {step.bullets.map((bullet, bulletIndex) => (
-                      <li key={bulletIndex} className="how-step-sub" style={{ fontFamily: "'Plus Jakarta Sans', sans-serif", fontSize: '0.98rem', fontWeight: 300, lineHeight: 1.6, letterSpacing: '0.005em', color: 'rgba(255, 255, 255, 0.82)', margin: 0, display: 'flex', alignItems: 'flex-start', gap: '0.65rem' }}>
-                        <span style={{ color: '#f2908f', fontSize: '1.05rem', lineHeight: 1.6, flexShrink: 0 }}>•</span>
+                      <li key={bulletIndex} className="how-step-sub" style={{ fontFamily: "'Plus Jakarta Sans', sans-serif", fontSize: 'var(--text-body)', fontWeight: 300, lineHeight: 'var(--lh-body)', letterSpacing: '0.005em', color: 'rgba(255, 255, 255, 0.82)', margin: 0, display: 'flex', alignItems: 'flex-start', gap: '0.65rem' }}>
+                        <span style={{ color: '#f2908f', fontSize: 'var(--text-body)', lineHeight: 'var(--lh-body)', flexShrink: 0 }}>•</span>
                         <span>{bullet.rest}</span>
                       </li>
                     ))}
