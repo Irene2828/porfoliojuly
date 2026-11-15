@@ -514,7 +514,7 @@ export default function ProjectsV2({ initialProjects = [] }: ProjectsV2Props) {
           align-items: center !important;
           justify-content: center !important;
           overflow: visible !important;
-          height: 442px !important; /* +30% larger on desktop from 340px */
+          height: 420px !important;
           aspect-ratio: auto !important;
           padding: 0 !important;
           width: fit-content !important;
@@ -666,7 +666,20 @@ export default function ProjectsV2({ initialProjects = [] }: ProjectsV2Props) {
           color: #5b6068;
           text-align: center;
           max-width: 600px;
-          margin: 0.9rem auto 0.4rem;
+          margin: 0.3rem auto 0.8rem;
+        }
+
+        /* Case spacing (15.11): frame->caption halved, caption->button doubled */
+        .cases-grid-item .preview-item-container {
+          gap: 0.375rem !important;
+        }
+        .cases-grid-item .preview-card-caption {
+          margin-top: 0.25rem !important;
+        }
+        @media (min-width: 901px) {
+          .recording-card-wrapper .case-pair {
+            margin-bottom: 11%;
+          }
         }
         @media (max-width: 900px) {
           .case-pair {
@@ -694,6 +707,10 @@ export default function ProjectsV2({ initialProjects = [] }: ProjectsV2Props) {
             box-shadow: none !important;
             border: 1px solid #dcdce0 !important;
             transform-origin: center center;
+          }
+          .case-desktop-frame.tf-match {
+            width: min(79.9vw, 561px) !important;
+            aspect-ratio: 16 / 10.4 !important;
           }
           .case-phone-frame {
             width: min(46vw, 173px) !important;
@@ -812,7 +829,7 @@ export default function ProjectsV2({ initialProjects = [] }: ProjectsV2Props) {
                         phoneImgSrc={project.id === 'v2-2' ? '/assets/guertin-mobile.png' : '/assets/buyukrainian-mobile.jpg'}
                       />
                     ) : project.id === 'v2-6' ? (
-                      <div className="case-desktop-frame">
+                      <div className="case-desktop-frame tf-match">
                         <video
                           autoPlay
                           loop
