@@ -1092,8 +1092,8 @@ h1, h2, h3, h4, h5, h6 {
 
 .v2-theme #process h2.testimonial-heading,
 .v2-theme #ai-showcase h2.faq-headline {
-  color: #000000 !important;
-  -webkit-text-fill-color: #000000 !important;
+  color: var(--color-heading-peach) !important;
+  -webkit-text-fill-color: var(--color-heading-peach) !important;
 }
 
 .v2-theme #faq-section {
