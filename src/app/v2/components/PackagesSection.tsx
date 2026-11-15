@@ -75,7 +75,7 @@ export default function PackagesSection({ onCtaClick, mode = 'website' }: { onCt
           font-size: var(--text-section-title);
           line-height: 1.2;
           text-align: center;
-          margin: 0 auto 1rem auto;
+          margin: 0 auto 2.5rem auto;
           max-width: 22ch;
           text-wrap: balance;
         }
