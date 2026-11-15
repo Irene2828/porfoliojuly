@@ -195,8 +195,75 @@ export default function PackagesSection({ onCtaClick, mode = 'website' }: { onCt
           box-shadow: none !important;
           text-decoration: none;
         }
+        .agent-setup-band {
+          border: 1px solid rgba(242, 144, 143, 0.45);
+          border-radius: 16px;
+          padding: 2rem 1.8rem;
+          background: rgba(255, 255, 255, 0.03);
+          margin: 0 0 1.25rem 0;
+          scroll-margin-top: 88px;
+        }
+        .agent-setup-new {
+          font-family: var(--font-label), sans-serif;
+          font-size: var(--text-label);
+          font-weight: 700;
+          text-transform: uppercase;
+          letter-spacing: 0.14em;
+          color: #f2908f;
+          margin: 0 0 0.5rem 0;
+        }
+        .agent-setup-title {
+          font-family: var(--font-heading);
+          font-size: clamp(1.7rem, 3.2vw, 2.2rem);
+          line-height: 1.25;
+          font-weight: 500;
+          color: #ffffff;
+          margin: 0 0 0.35rem 0;
+        }
+        .agent-setup-price {
+          font-family: var(--font-label), sans-serif;
+          font-size: var(--text-label);
+          font-weight: 600;
+          text-transform: uppercase;
+          letter-spacing: 0.1em;
+          color: #f2908f;
+          margin: 0 0 1rem 0;
+        }
+        .agent-setup-lead {
+          font-family: var(--font-body), 'Plus Jakarta Sans', sans-serif;
+          font-weight: 300;
+          font-size: var(--text-body);
+          line-height: var(--lh-body);
+          color: rgba(255, 255, 255, 0.75);
+          max-width: 62ch;
+          margin: 0 0 0.9rem 0;
+        }
+        .agent-setup-shift {
+          font-family: var(--font-body), 'Plus Jakarta Sans', sans-serif;
+          font-weight: 400;
+          font-size: var(--text-body);
+          line-height: var(--lh-body);
+          color: rgba(255, 255, 255, 0.92);
+          max-width: 62ch;
+          margin: 0 0 1.1rem 0;
+        }
+        .agent-setup-bullets {
+          display: grid;
+          grid-template-columns: 1fr 1fr;
+          gap: 0.45rem 2rem;
+        }
+        .agent-setup-note {
+          font-family: var(--font-body), 'Plus Jakarta Sans', sans-serif;
+          font-weight: 300;
+          font-size: var(--text-body);
+          line-height: var(--lh-body);
+          color: rgba(255, 255, 255, 0.75);
+          max-width: 62ch;
+          margin: 1.1rem 0 0 0;
+        }
         @media (max-width: 820px) {
           .packages-heading { font-size: 2.1rem; }
+          .agent-setup-bullets { grid-template-columns: 1fr; }
           .packages-value-grid { grid-template-columns: 1fr; }
           .packages-cards { grid-template-columns: 1fr; }
         }
@@ -216,6 +283,24 @@ export default function PackagesSection({ onCtaClick, mode = 'website' }: { onCt
         >
           {isAi ? <>Custom <strong>AI products</strong> — built around your problem</> : <>Custom <strong>websites</strong> — built around your business</>}
         </motion.h2>
+
+        {isAi && (
+          <div className="agent-setup-band" id="personal-agent-setup">
+            <p className="agent-setup-new">New!</p>
+            <h3 className="agent-setup-title">Personal Agent Setup</h3>
+            <p className="agent-setup-price">from $750 CAD · one-time setup</p>
+            <p className="agent-setup-lead">You have a personal AI assistant but use it as a chatbot. I set it up around your business — so it does the work, not just the talking.</p>
+            <p className="agent-setup-shift">From “Cool, I can chat and ask for things” — to “It runs my routine business processes and does exactly what I need.”</p>
+            <ul className="packages-card-bullets agent-setup-bullets">
+              <li>Your day, mapped: what can be handed to the assistant</li>
+              <li>Memory and rules set up around your business</li>
+              <li>Tasks and routines configured</li>
+              <li>Fine-tuning done for you, tested on your real work</li>
+              <li>Works with Muse, Grok, Dots, Duet — whichever you use</li>
+            </ul>
+            <p className="agent-setup-note">Pay once. The hours you get back go to work that needs your energy — and to your personal time. And it’s personal by design: the setup is done with you, and I keep no access to your assistant.</p>
+          </div>
+        )}
 
         <div className="packages-cards">
           {packages.map((pkg) => (
