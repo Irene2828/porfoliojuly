@@ -8,7 +8,7 @@ export default function EditorialStatement() {
         className="prefooter-section"
         style={{
           backgroundColor: '#121316',
-          padding: '80px 0 120px 0', /* doubled bottom space */
+          padding: '5.1rem 0 5.1rem 0',
           width: '100%',
           display: 'flex',
           justifyContent: 'center',
@@ -203,7 +203,7 @@ export default function EditorialStatement() {
               font-weight: 600 !important;
             }
             .prefooter-section {
-              padding-bottom: 2.5rem !important;
+              padding-bottom: 2.55rem !important;
             }
             .prefooter-cta-container {
               margin-bottom: 1.25rem !important;
@@ -224,7 +224,7 @@ export default function EditorialStatement() {
           }
           @media (max-width: 900px) {
             .prefooter-section {
-              padding-bottom: 3.75rem !important;
+              padding-bottom: 2.55rem !important;
             }
             .prefooter-content {
               padding-left: 1.5rem !important;
