@@ -859,6 +859,25 @@ export default function HeroV2() {
             filter: none !important;
           }
         }
+        /* Match the process introduction's typography without changing hero sizes. */
+        .v2-theme .hero-section .hero-frame-paragraph,
+        .v2-theme .hero-section .hero-frame-paragraph span {
+          font-family: var(--font-body), 'Plus Jakarta Sans', sans-serif !important;
+          font-weight: 300 !important;
+          font-style: normal !important;
+          line-height: var(--lh-body) !important;
+          letter-spacing: 0.015em !important;
+          color: rgba(255, 255, 255, 0.72) !important;
+          -webkit-text-fill-color: rgba(255, 255, 255, 0.72) !important;
+        }
+        .v2-theme .hero-section .hero-frame-paragraph .hero-body-bold {
+          font-family: var(--font-body), 'Plus Jakarta Sans', sans-serif !important;
+          font-weight: 700 !important;
+          font-style: normal !important;
+          letter-spacing: 0.015em !important;
+          color: rgba(255, 255, 255, 0.72) !important;
+          -webkit-text-fill-color: rgba(255, 255, 255, 0.72) !important;
+        }
       `}</style>
     
 
