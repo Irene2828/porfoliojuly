@@ -1,10 +1,8 @@
 'use client';
 
-import { motion, AnimatePresence } from 'framer-motion';
-import { useState } from 'react';
+import { motion } from 'framer-motion';
 
 export default function HowItWorks() {
-  const [collapsedSteps, setCollapsedSteps] = useState<Record<string, boolean>>({});
   const steps = [
     {
       num: '01',
@@ -77,10 +75,6 @@ export default function HowItWorks() {
           color: #f2908f !important;
           -webkit-text-fill-color: #f2908f !important;
           font-size: 2.8rem !important;
-        }
-        .how-step-toggle {
-          color: #f2908f !important;
-          -webkit-text-fill-color: #f2908f !important;
         }
         .how-step-title {
           font-family: var(--font-body), 'Plus Jakarta Sans', sans-serif !important;
@@ -265,55 +259,26 @@ export default function HowItWorks() {
                   margin: 0
                 }}
               >
-                {step.title}{' '}
-                <button
-                  type="button"
-                  className="how-step-toggle"
-                  aria-expanded={!collapsedSteps[step.num]}
-                  aria-label={`${collapsedSteps[step.num] ? 'Show' : 'Hide'} details for step ${step.num}`}
-                  onClick={() => setCollapsedSteps((current) => ({ ...current, [step.num]: !current[step.num] }))}
-                  style={{
-                    color: '#f2908f',
-                    fontFamily: 'var(--font-body), sans-serif',
-                    fontSize: 'var(--text-step)',
-                    fontWeight: 400,
-                    lineHeight: 1,
-                    verticalAlign: '0.08em',
-                    background: 'none',
-                    border: 0,
-                    padding: '0 0.15rem',
-                    cursor: 'pointer'
-                  }}
-                >
-                  {collapsedSteps[step.num] ? '+' : '−'}
-                </button>
+                {step.title}
               </h3>
-              <AnimatePresence initial={false}>
-                {!collapsedSteps[step.num] && (
-                  <motion.ul
-                    initial={{ height: 0, opacity: 0 }}
-                    animate={{ height: 'auto', opacity: 1 }}
-                    exit={{ height: 0, opacity: 0 }}
-                    transition={{ duration: 0.28, ease: [0.16, 1, 0.3, 1] }}
-                    style={{
-                      listStyle: 'none',
-                      padding: 0,
-                      margin: '0 0 0.2rem 0',
-                      display: 'flex',
-                      flexDirection: 'column',
-                      gap: '0.65rem',
-                      overflow: 'hidden'
-                    }}
-                  >
-                    {step.bullets.map((bullet, bulletIndex) => (
-                      <li key={bulletIndex} className="how-step-sub" style={{ fontFamily: "'Plus Jakarta Sans', sans-serif", fontSize: 'var(--text-body)', fontWeight: 300, lineHeight: 'var(--lh-body)', letterSpacing: '0.005em', color: 'rgba(255, 255, 255, 0.82)', margin: 0, display: 'flex', alignItems: 'flex-start', gap: '0.65rem' }}>
-                        <span style={{ color: '#f2908f', fontSize: 'var(--text-body)', lineHeight: 'var(--lh-body)', flexShrink: 0 }}>•</span>
-                        <span>{bullet.rest}</span>
-                      </li>
-                    ))}
-                  </motion.ul>
-                )}
-              </AnimatePresence>
+              <ul
+                style={{
+                  listStyle: 'none',
+                  padding: 0,
+                  margin: '0 0 0.2rem 0',
+                  display: 'flex',
+                  flexDirection: 'column',
+                  gap: '0.65rem',
+                  overflow: 'hidden'
+                }}
+              >
+                {step.bullets.map((bullet, bulletIndex) => (
+                  <li key={bulletIndex} className="how-step-sub" style={{ fontFamily: "'Plus Jakarta Sans', sans-serif", fontSize: 'var(--text-body)', fontWeight: 300, lineHeight: 'var(--lh-body)', letterSpacing: '0.005em', color: 'rgba(255, 255, 255, 0.82)', margin: 0, display: 'flex', alignItems: 'flex-start', gap: '0.65rem' }}>
+                    <span style={{ color: '#f2908f', fontSize: 'var(--text-body)', lineHeight: 'var(--lh-body)', flexShrink: 0 }}>•</span>
+                    <span>{bullet.rest}</span>
+                  </li>
+                ))}
+              </ul>
             </motion.div>
           ))}
         </div>
