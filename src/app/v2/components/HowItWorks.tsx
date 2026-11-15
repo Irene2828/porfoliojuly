@@ -82,8 +82,8 @@ export default function HowItWorks() {
           font-size: var(--text-body) !important;
           line-height: var(--lh-body) !important;
           letter-spacing: 0.015em !important;
-          color: #f2908f !important;
-          -webkit-text-fill-color: #f2908f !important;
+          color: #ffffff !important;
+          -webkit-text-fill-color: #ffffff !important;
         }
         @media (min-width: 901px) {
           .how-step-title {
@@ -274,7 +274,6 @@ export default function HowItWorks() {
               >
                 {step.bullets.map((bullet, bulletIndex) => (
                   <li key={bulletIndex} className="how-step-sub" style={{ fontFamily: "'Plus Jakarta Sans', sans-serif", fontSize: 'var(--text-body)', fontWeight: 300, lineHeight: 'var(--lh-body)', letterSpacing: '0.005em', color: 'rgba(255, 255, 255, 0.82)', margin: 0, display: 'flex', alignItems: 'flex-start', gap: '0.65rem' }}>
-                    <span style={{ color: '#f2908f', fontSize: 'var(--text-body)', lineHeight: 'var(--lh-body)', flexShrink: 0 }}>•</span>
                     <span>{bullet.rest}</span>
                   </li>
                 ))}
