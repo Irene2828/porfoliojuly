@@ -115,10 +115,7 @@ export default function HowItWorks() {
           border: none !important;
         }
         .how-step-label {
-          display: flex;
-          align-items: center;
-          justify-content: space-between;
-          gap: 1rem;
+          display: block;
           width: 100%;
           padding: 0;
           margin: 0;
@@ -129,10 +126,17 @@ export default function HowItWorks() {
           font: inherit;
           cursor: pointer;
         }
+        .how-step-last-word {
+          display: inline-flex;
+          align-items: center;
+          white-space: nowrap;
+        }
         .how-step-check {
           display: inline-block;
+          width: 0.55em;
+          height: 0.55em;
+          flex-shrink: 0;
           margin-left: 0.3em;
-          vertical-align: 0.04em;
           color: #f2908f !important;
           -webkit-text-fill-color: #f2908f !important;
           font-size: 1.05em;
@@ -288,7 +292,7 @@ export default function HowItWorks() {
                   aria-expanded={openStep === step.num}
                   onClick={() => setOpenStep((current) => current === step.num ? null : step.num)}
                 >
-                  <span>{step.title}</span><span className="how-step-check" aria-hidden="true">{openStep === step.num ? '⌃' : '⌄'}</span>
+                  {step.title.slice(0, step.title.lastIndexOf(' ') + 1)}<span className="how-step-last-word">{step.title.slice(step.title.lastIndexOf(' ') + 1)}<svg className="how-step-check" aria-hidden="true" viewBox="0 0 12 12" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" style={{ transform: openStep === step.num ? 'rotate(180deg)' : undefined }}><path d="m2 4 4 4 4-4" /></svg></span>
                 </button>
               </h3>
               <AnimatePresence initial={false}>

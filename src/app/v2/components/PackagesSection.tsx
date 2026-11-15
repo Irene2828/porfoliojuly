@@ -241,6 +241,8 @@ export default function PackagesSection({ onCtaClick, mode = 'website' }: { onCt
           margin: 0 0 0.9rem 0;
         }
         .agent-setup-toggle {
+          display: inline-flex;
+          align-items: center;
           appearance: none;
           border: 0;
           background: transparent;
@@ -257,9 +259,11 @@ export default function PackagesSection({ onCtaClick, mode = 'website' }: { onCt
         .agent-setup-toggle-icon {
           display: inline-block;
           margin-left: 0.35em;
-          font-size: 1.05em;
+          width: 0.65em;
+          height: 0.65em;
+          flex-shrink: 0;
+          color: #f2908f;
           line-height: 1;
-          vertical-align: 0.04em;
         }
         .agent-setup-shift {
           font-family: var(--font-body), 'Plus Jakarta Sans', sans-serif;
@@ -333,7 +337,7 @@ export default function PackagesSection({ onCtaClick, mode = 'website' }: { onCt
             <p className="agent-setup-price">from $750 CAD · one-time setup</p>
             <p className="agent-setup-lead">You have a personal AI assistant but use it as a chatbot. I set it up around your business — so it does the work, not just the talking.</p>
             <button type="button" className="agent-setup-toggle" aria-expanded={agentDetailsOpen} onClick={() => setAgentDetailsOpen((open) => !open)}>
-              {agentDetailsOpen ? 'Hide what’s included' : 'See what’s included'}<span className="agent-setup-toggle-icon" aria-hidden="true">{agentDetailsOpen ? '⌃' : '⌄'}</span>
+              {agentDetailsOpen ? 'Hide what’s included' : 'See what’s included'}<svg className="agent-setup-toggle-icon" aria-hidden="true" viewBox="0 0 12 12" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" style={{ transform: agentDetailsOpen ? 'rotate(180deg)' : undefined }}><path d="m2 4 4 4 4-4" /></svg>
             </button>
             {agentDetailsOpen && (
               <div>
