@@ -29,6 +29,14 @@ const faqs = [
       "Some drafts need a firm hand. Some need rebuilding. I'll say which one yours is.",
     ],
   },
+  {
+    question: 'Assistant or workflow — what’s the difference?',
+    answers: [
+      'A personal assistant works for you. It remembers your business, drafts, plans and does tasks across your day — with your judgment, checking in with you.',
+      'A workflow works for your business. It runs by itself when something happens — a new inquiry, an unpaid invoice, a weekly report. Same steps, same rules, every time. You only approve.',
+      'Most owners end up with both. The assistant takes work off your plate. Workflows take you out of the process. We start with whichever costs you more time.',
+    ],
+  },
 ];
 
 export default function FaqSection() {
