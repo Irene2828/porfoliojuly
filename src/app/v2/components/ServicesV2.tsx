@@ -62,7 +62,7 @@ export default function ServicesV2() {
       id="expertise" 
       style={{ 
         backgroundColor: '#ffffff',
-        padding: '5.1rem 0 2.5rem 0',
+        padding: '5.1rem 0 5.1rem 0',
         margin: '5.1rem 0 0 0',
         position: 'relative',
         overflow: 'hidden'
