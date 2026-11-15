@@ -10,7 +10,7 @@ export default function Footer() {
         backgroundColor: '#121316',
         background: '#121316',
         width: '100%',
-        padding: '1.2rem 0 1.44rem 0',
+        padding: '1.2rem 0 1.2rem 0',
         borderTop: '1px solid rgba(0, 0, 0, 0.45)',
         position: 'relative',
         zIndex: 10
