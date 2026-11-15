@@ -1097,7 +1097,7 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 .v2-theme #faq-section {
-  padding-top: 20.4rem !important;
+  padding-top: 6.8rem !important;
 }
 
 @media (max-width: 900px) {
@@ -1788,4 +1788,13 @@ h1, h2, h3, h4, h5, h6 {
   .v2-theme #cases {
     padding-bottom: 2rem !important;
   }
+}
+
+/* Reduce the spacing between FAQ content and the closing section to one third. */
+.v2-theme #faq-section > div {
+  padding-bottom: 1.7rem !important;
+}
+
+.v2-theme #faq-section > .prefooter-section {
+  padding-top: 0.85rem !important;
 }
