@@ -225,7 +225,7 @@ export default function ServicesV2() {
           transition={{ duration: 0.7, delay: 0.18, ease: [0.16, 1, 0.3, 1] }}
           style={{
             fontFamily: "var(--font-body)",
-            fontSize: 'var(--text-lead)',
+            fontSize: 'var(--text-body)',
             fontWeight: 300,
             lineHeight: 'var(--lh-body)',
             color: 'var(--color-body-dark, #2b3038)',

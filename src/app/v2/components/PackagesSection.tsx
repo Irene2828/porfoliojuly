@@ -57,7 +57,7 @@ export default function PackagesSection({ onCtaClick, mode = 'website' }: { onCt
         .packages-inner { max-width: 1080px; margin: 0 auto; padding: 0 1.5rem; }
         .packages-heading {
           font-family: var(--font-heading);
-          font-weight: 300;
+          font-weight: 500;
           letter-spacing: 0.015em;
           color: #ffffff !important;
           -webkit-text-fill-color: #ffffff !important;
@@ -70,16 +70,6 @@ export default function PackagesSection({ onCtaClick, mode = 'website' }: { onCt
           text-wrap: balance;
         }
         .packages-heading strong { font-weight: 500; color: #ffffff !important; -webkit-text-fill-color: #ffffff !important; }
-        .packages-kicker {
-          font-family: var(--font-label), sans-serif;
-          font-size: var(--text-label);
-          font-weight: 600;
-          text-transform: uppercase;
-          letter-spacing: 0.14em;
-          color: rgba(255, 255, 255, 0.55);
-          text-align: center;
-          margin: 3.5rem 0 1.5rem 0;
-        }
         .packages-value-grid {
           display: grid;
           grid-template-columns: 1fr 1fr;
@@ -178,6 +168,9 @@ export default function PackagesSection({ onCtaClick, mode = 'website' }: { onCt
       `}</style>
 
       <div className="packages-inner">
+        <p style={{ fontFamily: 'var(--font-label)', fontSize: 'var(--text-label)', fontWeight: 600, textTransform: 'uppercase', letterSpacing: '0.14em', color: '#f2908f', textAlign: 'center', margin: '0 0 1.05rem 0' }}>
+          {isAi ? 'AI product packages' : 'Website packages'}
+        </p>
         <motion.h2
           className="packages-heading"
           initial={{ opacity: 0, y: 16 }}
@@ -189,7 +182,6 @@ export default function PackagesSection({ onCtaClick, mode = 'website' }: { onCt
           {isAi ? <>Custom <strong>AI products</strong> — built around your problem</> : <>Custom <strong>websites</strong> — built around your business</>}
         </motion.h2>
 
-        <p className="packages-kicker">Packages</p>
         <div className="packages-cards">
           {packages.map((pkg) => (
             <div className="packages-card" key={pkg.name}>
@@ -201,8 +193,8 @@ export default function PackagesSection({ onCtaClick, mode = 'website' }: { onCt
         </div>
 
         <div className="packages-cta-wrap">
-          <a href="mailto:iryna@irynasheremeta.com" className="packages-btn-primary" onClick={onCtaClick}>
-            <span style={{ letterSpacing: '0.08em' }}>SEND YOUR PROBLEM MY WAY</span>
+          <a href={isAi ? 'mailto:iryna@irynasheremeta.com?subject=AI%20product%20packages' : 'mailto:iryna@irynasheremeta.com?subject=Website%20packages'} className="packages-btn-primary" onClick={onCtaClick}>
+            <span style={{ letterSpacing: '0.08em' }}>EMAIL ME YOUR PROBLEM</span>
             <svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round" style={{ transform: 'translateY(-0.5px)' }}>
               <line x1="7" y1="17" x2="17" y2="7"></line>
               <polyline points="7 7 17 7 17 17"></polyline>
