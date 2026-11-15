@@ -28,7 +28,7 @@ export default function AiShowcase() {
       className="ai-showcase-section"
       style={{
         backgroundColor: '#ffffff',
-        padding: '5.1rem 0 0 0',
+        padding: '10.2rem 0 0 0',
         width: '100%',
         position: 'relative',
         overflow: 'hidden',
@@ -188,7 +188,7 @@ export default function AiShowcase() {
           -webkit-text-fill-color: rgba(255, 255, 255, 0.8) !important;
         }
         @media (max-width: 900px) {
-          .ai-showcase-section { padding-top: 2.55rem !important; }
+          .ai-showcase-section { padding-top: 5.1rem !important; }
           .faq-headline { text-align: center;
             font-size: clamp(1.9rem, 8vw, 2.4rem) !important; margin-left: 0 !important; margin-right: 0 !important;
           }
