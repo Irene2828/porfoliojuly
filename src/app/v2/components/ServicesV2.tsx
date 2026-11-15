@@ -382,6 +382,7 @@ export default function ServicesV2() {
                   style={{
                     fontFamily: "var(--font-body)",
                     fontSize: 'var(--text-body)',
+                    fontWeight: 300,
                     color: '#a0abb8',
                     margin: '0 0 2.5rem 0',
                     lineHeight: 'var(--lh-body)',
@@ -510,6 +511,7 @@ export default function ServicesV2() {
                   style={{
                     fontFamily: "var(--font-body)",
                     fontSize: 'var(--text-body)',
+                    fontWeight: 300,
                     color: '#65707e',
                     margin: '0 0 2.5rem 0',
                     lineHeight: 'var(--lh-body)',

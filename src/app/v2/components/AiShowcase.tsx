@@ -289,7 +289,7 @@ export default function AiShowcase() {
           viewport={{ once: true, amount: 0.45 }}
           transition={{ duration: 0.68, delay: 0.16, ease: [0.16, 1, 0.3, 1] }}
           style={{
-            fontSize: 'var(--text-lead)',
+            fontSize: 'var(--text-body)', fontWeight: 300,
             lineHeight: 'var(--lh-body)',
             margin: '0 auto 3.5rem auto',
             textAlign: 'center',
@@ -315,7 +315,7 @@ export default function AiShowcase() {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true, amount: 0.45 }}
           transition={{ duration: 0.68, delay: 0.08, ease: [0.16, 1, 0.3, 1] }}
-          style={{ fontSize: 'var(--text-lead)', lineHeight: 'var(--lh-body)', margin: '0 auto 0.75rem auto', textAlign: 'center', maxWidth: '52ch' }}
+          style={{ fontSize: 'var(--text-body)', fontWeight: 300, lineHeight: 'var(--lh-body)', margin: '0 auto 0.75rem auto', textAlign: 'center', maxWidth: '52ch' }}
         >
           Or take the Terry Fox poster tool.
         </motion.p>
