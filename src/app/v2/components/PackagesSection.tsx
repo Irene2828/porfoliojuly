@@ -57,8 +57,8 @@ export default function PackagesSection({ onCtaClick, mode = 'website' }: { onCt
         .packages-inner { max-width: 1080px; margin: 0 auto; padding: 0 1.5rem; }
         .packages-heading {
           font-family: var(--font-heading);
-          font-weight: 500;
-          letter-spacing: 0.015em;
+          font-weight: 400;
+          letter-spacing: -0.02em;
           color: #ffffff !important;
           -webkit-text-fill-color: #ffffff !important;
           opacity: 1 !important;
@@ -162,6 +162,7 @@ export default function PackagesSection({ onCtaClick, mode = 'website' }: { onCt
           text-decoration: none;
         }
         @media (max-width: 820px) {
+          .packages-heading { font-size: 2.1rem; }
           .packages-value-grid { grid-template-columns: 1fr; }
           .packages-cards { grid-template-columns: 1fr; }
         }
