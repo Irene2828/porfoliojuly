@@ -150,7 +150,11 @@ export default function Header() {
             filter: none !important;
           }
         }
-      `}</style>
+        .site-header-new { font-family: 'Inter', sans-serif; font-size: 0.95rem; font-weight: 500; color: rgba(255, 255, 255, 0.88); text-decoration: none; white-space: nowrap; }
+        .site-header-new b { color: #f2908f; font-weight: 700; }
+        .header-center-empty { display: flex; align-items: center; justify-content: center; }
+        .hn-new-inline { color: #f2908f; font-weight: 700; } 
+        `}</style>
       <div className="header-inner-wrapper">
         {/* Left side (Desktop): Name and Title */}
         <div className="header-spacer-desktop">
@@ -179,7 +183,7 @@ export default function Header() {
         </div>
 
         {/* Center (Desktop): Empty */}
-        <div className="header-center-empty"></div>
+        <div className="header-center-empty"><a className="site-header-new" href="#personal-agent-setup"><b>New!</b> <span className="hn-long">Personal Agent Setup</span></a></div>
 
         {/* Right side (Desktop): Nav links */}
         <nav className="header-nav header-nav-desktop" style={{ marginLeft: 'auto', marginRight: '0', justifyContent: 'flex-end', alignItems: 'center' }}>
@@ -230,6 +234,7 @@ export default function Header() {
             <div className="drawer-nav-links">
               <a href="/#cases" onClick={() => setIsMenuOpen(false)} className="drawer-link">PORTFOLIO</a>
               <a href="/about" onClick={() => setIsMenuOpen(false)} className="drawer-link">ABOUT ME</a>
+              <a href="#personal-agent-setup" onClick={() => setIsMenuOpen(false)} className="drawer-link"><span className="hn-new-inline">New!</span> Personal Agent Setup</a>
               <a 
                 href="mailto:iryna@irynasheremeta.com" 
                 onClick={(e) => { handleCopyEmail(e); setIsMenuOpen(false); }} 
