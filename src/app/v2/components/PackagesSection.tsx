@@ -285,10 +285,10 @@ export default function PackagesSection({ onCtaClick, mode = 'website' }: { onCt
           margin: 1.1rem 0 0 0;
         }
         @media (max-width: 900px) {
-          .packages-section { padding-top: 2.55rem !important; }
+          .packages-section { padding-top: 5.1rem !important; }
         }
         @media (max-width: 820px) {
-          .packages-section { padding-top: 2.55rem !important; }
+          .packages-section { padding-top: 5.1rem !important; }
           .packages-heading { font-size: 2.1rem; }
           .agent-setup-bullets { grid-template-columns: 1fr; }
           .packages-value-grid { grid-template-columns: 1fr; }
