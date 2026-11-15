@@ -1082,7 +1082,7 @@ h1, h2, h3, h4, h5, h6 {
 
 /* Section-specific heading colors and top spacing. */
 .v2-theme #how-it-works {
-  padding-top: 40.8rem !important;
+  padding-top: 20.4rem !important;
 }
 
 .v2-theme #how-it-works h2.how-title {
@@ -1102,7 +1102,7 @@ h1, h2, h3, h4, h5, h6 {
 
 @media (max-width: 900px) {
   .v2-theme #how-it-works {
-    padding-top: 14rem !important;
+    padding-top: 7rem !important;
   }
 
   .v2-theme #faq-section .faq-section-heading {
