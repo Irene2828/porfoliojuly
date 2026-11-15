@@ -1778,3 +1778,14 @@ h1, h2, h3, h4, h5, h6 {
     font-weight: 600 !important;
   }
 }
+
+/* Double the gap after the final case caption before the dark section. */
+.v2-theme #cases .cases-grid-wrapper {
+  padding-bottom: 1.5rem !important;
+}
+
+@media (max-width: 900px) {
+  .v2-theme #cases {
+    padding-bottom: 2rem !important;
+  }
+}
