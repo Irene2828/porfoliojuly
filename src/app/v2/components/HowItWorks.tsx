@@ -232,7 +232,7 @@ export default function HowItWorks() {
             textAlign: 'left'
           }}
         >
-          I approach each problem in stages — from the messy start to the final solution.
+          Three stages - three steps to bring a problem to solution.
         </motion.p>
         <div
           className="how-steps-grid"
