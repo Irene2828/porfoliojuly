@@ -87,7 +87,7 @@ export default function ProcessSection() {
           background: 'transparent',
           boxShadow: 'none',
           border: 'none',
-          padding: '4.5rem 2rem 5rem 2rem',
+          padding: '2.25rem 2rem 5rem 2rem',
           display: 'flex',
           flexDirection: 'column',
           alignItems: 'center',
