@@ -1792,7 +1792,7 @@ h1, h2, h3, h4, h5, h6 {
 
 /* Double the gap below the final FAQ divider before the prefooter. */
 .v2-theme #faq-section > div {
-  padding-bottom: 3.4rem !important;
+  padding-bottom: 6.8rem !important;
 }
 
 .v2-theme #faq-section > .prefooter-section {
@@ -1825,9 +1825,4 @@ h1, h2, h3, h4, h5, h6 {
   #faq-section .faq-item:last-child .faq-toggle[aria-expanded="false"] {
     padding-bottom: 2.8rem !important;
   }
-}
-
-/* Match the footer divider to the header bottom border. */
-.v2-theme footer#about {
-  border-top-color: rgba(209, 213, 219, 0.2) !important;
 }
