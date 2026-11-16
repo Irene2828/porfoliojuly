@@ -490,7 +490,7 @@ export default function ProjectsV2({ initialProjects = [] }: ProjectsV2Props) {
           justify-self: center !important;
         }
         .case-group + .case-group {
-          margin-top: 2.8rem !important;
+          margin-top: 3.64rem !important;
         }
         .cases-grid-wrapper > .case-group:first-child > h3 {
           margin-bottom: 0.5rem !important;
@@ -503,7 +503,7 @@ export default function ProjectsV2({ initialProjects = [] }: ProjectsV2Props) {
         }
         @media (max-width: 900px) {
           .cases-grid-wrapper > .case-group:nth-child(2) > h3 {
-            margin-bottom: 1rem !important;
+            margin-bottom: 0.5rem !important;
           }
         }
         .cases-grid-wrapper {
