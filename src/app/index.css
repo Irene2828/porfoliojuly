@@ -1826,3 +1826,8 @@ h1, h2, h3, h4, h5, h6 {
     padding-bottom: 2.8rem !important;
   }
 }
+
+/* Match the footer divider to the header bottom border. */
+.v2-theme footer#about {
+  border-top-color: rgba(209, 213, 219, 0.2) !important;
+}
