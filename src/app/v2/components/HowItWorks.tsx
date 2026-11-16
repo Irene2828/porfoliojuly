@@ -4,7 +4,7 @@ import { AnimatePresence, motion } from 'framer-motion';
 import { useState } from 'react';
 
 export default function HowItWorks() {
-  const [openStep, setOpenStep] = useState<string | null>(null);
+  const [openSteps, setOpenSteps] = useState<Record<string, boolean>>({ '01': true, '02': true, '03': true });
   const steps = [
     {
       num: '01',
@@ -99,8 +99,8 @@ export default function HowItWorks() {
         }
         .how-step-sub {
           font-family: var(--font-body), 'Plus Jakarta Sans', sans-serif !important;
-          color: rgba(255, 255, 255, 0.82) !important;
-          -webkit-text-fill-color: rgba(255, 255, 255, 0.82) !important;
+          color: rgba(255, 255, 255, 0.72) !important;
+          -webkit-text-fill-color: rgba(255, 255, 255, 0.72) !important;
           letter-spacing: 0.005em !important;
         }
         .how-step-sub strong {
@@ -313,14 +313,14 @@ export default function HowItWorks() {
                 <button
                   type="button"
                   className="how-step-label"
-                  aria-expanded={openStep === step.num}
-                  onClick={() => setOpenStep((current) => current === step.num ? null : step.num)}
+                  aria-expanded={openSteps[step.num]}
+                  onClick={() => setOpenSteps((current) => ({ ...current, [step.num]: !current[step.num] }))}
                 >
-                  {step.title.slice(0, step.title.lastIndexOf(' ') + 1)}<span className="how-step-last-word">{step.title.slice(step.title.lastIndexOf(' ') + 1)}<svg className="how-step-check" aria-hidden="true" viewBox="0 0 12 12" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" style={{ transform: openStep === step.num ? 'rotate(180deg)' : undefined }}><path d="m2 4 4 4 4-4" /></svg></span>
+                  {step.title.slice(0, step.title.lastIndexOf(' ') + 1)}<span className="how-step-last-word">{step.title.slice(step.title.lastIndexOf(' ') + 1)}<svg className="how-step-check" aria-hidden="true" viewBox="0 0 12 12" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" style={{ transform: openSteps[step.num] ? 'rotate(180deg)' : undefined }}><path d="m2 4 4 4 4-4" /></svg></span>
                 </button>
               </h3>
               <AnimatePresence initial={false}>
-                {openStep === step.num && (
+                {openSteps[step.num] && (
                   <motion.ul
                     initial={{ height: 0, opacity: 0 }}
                     animate={{ height: 'auto', opacity: 1 }}
