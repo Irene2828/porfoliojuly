@@ -297,7 +297,28 @@ export default function PackagesSection({ onCtaClick, mode = 'website' }: { onCt
           .packages-heading { font-size: 2.1rem; }
           .agent-setup-bullets { grid-template-columns: 1fr; }
           .packages-value-grid { grid-template-columns: 1fr; }
-          .packages-cards { grid-template-columns: 1fr; }
+          .packages-cards {
+            /* Native scrolling keeps vertical page gestures and arrival motion independent. */
+            display: flex;
+            gap: 1rem;
+            margin-inline: -1.5rem;
+            padding: 0.25rem 9vw 0.75rem;
+            overflow-x: auto;
+            scroll-snap-type: x mandatory;
+            overscroll-behavior-x: contain;
+            scrollbar-width: none;
+          }
+          .packages-cards::-webkit-scrollbar { display: none; }
+          .packages-card {
+            flex: 0 0 82vw;
+            min-width: 0;
+            box-sizing: border-box;
+            scroll-snap-align: center;
+          }
+          .packages-cards:focus-visible {
+            outline: 1px solid #f2908f;
+            outline-offset: -2px;
+          }
         }
       `}</style>
 
@@ -316,7 +337,7 @@ export default function PackagesSection({ onCtaClick, mode = 'website' }: { onCt
           {isAi ? <>Custom <strong>AI products</strong> — built around your problem</> : <>Custom <strong>websites</strong> — built around your business</>}
         </motion.h2>
 
-        <div className="packages-cards">
+        <div className="packages-cards" role="region" aria-label={isAi ? 'AI product packages' : 'Website packages'} tabIndex={0}>
           {packages.map((pkg, index) => (
             <div className="packages-card" key={pkg.name}>
               <h3 className="packages-card-name">{pkg.name}</h3>

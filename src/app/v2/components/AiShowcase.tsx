@@ -1,27 +1,8 @@
 'use client';
 
-import { useRef, useState } from 'react';
 import { motion } from 'framer-motion';
 
 export default function AiShowcase() {
-  const [playingVideo, setPlayingVideo] = useState<number | null>(null);
-  const videoRefs = [useRef<HTMLVideoElement | null>(null), useRef<HTMLVideoElement | null>(null)];
-
-  const toggleVideo = (index: number) => {
-    const video = videoRefs[index].current;
-    if (!video) return;
-    if (playingVideo === index) {
-      video.pause();
-      setPlayingVideo(null);
-    } else {
-      videoRefs.forEach((ref, refIndex) => {
-        if (refIndex !== index) ref.current?.pause();
-      });
-      void video.play();
-      setPlayingVideo(index);
-    }
-  };
-
   return (
     <section
       id="ai-showcase"
@@ -301,11 +282,7 @@ export default function AiShowcase() {
         <div className="faq-case-media">
           {[['/bridal-ai-video.mp4', undefined], ['/bridal-desktop-scroll-faststart.mp4', '/bridal-scroll-poster.jpg']].map(([src, poster], index) => (
             <div key={src}>
-              <button type="button" onClick={() => toggleVideo(index)} style={{ display: 'block', position: 'relative', width: '100%', padding: 0, border: 0, background: 'none', cursor: 'pointer' }} aria-label={playingVideo === index ? 'Pause recording' : 'Play recording'}>
-                <video ref={videoRefs[index]} className="faq-case-video" src={src} poster={poster} muted loop playsInline />
-                <span aria-hidden="true" style={{ position: 'absolute', left: '50%', top: '50%', transform: 'translate(-50%, -50%)', width: '3rem', height: '3rem', borderRadius: '50%', background: 'rgba(255,255,255,0.88)', color: '#1A1F2B', display: playingVideo === index ? 'none' : 'grid', placeItems: 'center', fontSize: '1.15rem' }}>▶</span>
-              </button>
-              <p style={{ fontFamily: 'var(--font-label), sans-serif', fontSize: 'var(--text-label)', fontWeight: 600, letterSpacing: '0.1em', textTransform: 'uppercase', color: '#5C6672', textAlign: 'center', margin: '0.7rem 0 0' }}>Tap to play</p>
+              <video className="faq-case-video" src={src} poster={poster} autoPlay muted loop playsInline controls aria-label={index === 0 ? 'AI bridal atelier website demo' : 'Custom bridal atelier website demo'} />
             </div>
           ))}
         </div>

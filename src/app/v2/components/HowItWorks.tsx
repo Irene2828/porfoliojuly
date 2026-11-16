@@ -157,6 +157,29 @@ export default function HowItWorks() {
           .how-subcopy {
             margin-bottom: 1.575rem !important;
           }
+          .how-steps-grid {
+            flex-direction: column !important;
+            padding: 1.4rem 0 !important;
+          }
+          .how-step-card {
+            display: grid !important;
+            grid-template-columns: 3.5rem minmax(0, 1fr);
+            align-items: start !important;
+            column-gap: 1.25rem !important;
+            row-gap: 1rem !important;
+            padding-inline: 0 !important;
+            min-width: 0 !important;
+          }
+          .how-step-card > .how-num {
+            grid-column: 1;
+            grid-row: 1;
+            margin-top: 0 !important;
+          }
+          .how-step-card > .how-step-title {
+            grid-column: 2;
+            grid-row: 1;
+          }
+          .how-step-card > ul { grid-column: 2; }
           .how-num {
             font-size: 2.65rem !important;
           }
