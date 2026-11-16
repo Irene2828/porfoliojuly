@@ -598,9 +598,9 @@ h1, h2, h3, h4, h5, h6 {
     transform-origin: top left;
   }
 
-  /* Keep prefooter closing heading size unchanged */
+  /* Reduce the prefooter closing headline by 20% on mobile. */
   .v2-theme .prefooter-closing-line {
-    font-size: clamp(1.48rem, 7.7vw, 2.95rem) !important;
+    font-size: clamp(1.184rem, 6.16vw, 2.36rem) !important;
     line-height: 1.35 !important;
   }
 }

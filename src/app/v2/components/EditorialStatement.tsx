@@ -123,7 +123,7 @@ export default function EditorialStatement() {
           }
           @media (max-width: 900px) {
             .prefooter-closing-line {
-              font-size: clamp(1.258rem, 6.55vw, 1.77rem) !important;
+              font-size: clamp(1.0064rem, 5.24vw, 1.416rem) !important;
               line-height: 1.35 !important;
               text-align: left !important;
               width: 100% !important;
