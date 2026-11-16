@@ -111,6 +111,7 @@ export default function PackagesSection({ onCtaClick, mode = 'website' }: { onCt
           grid-template-columns: repeat(3, 1fr);
           gap: 1.25rem;
         }
+        .packages-standard-row { display: contents; }
         .packages-card {
           border: 1px solid rgba(255, 255, 255, 0.16);
           border-radius: 16px;
@@ -311,6 +312,13 @@ export default function PackagesSection({ onCtaClick, mode = 'website' }: { onCt
             scrollbar-width: none;
           }
           .packages-cards::-webkit-scrollbar { display: none; }
+          .packages-standard-row {
+            display: flex;
+            align-items: stretch;
+            flex: 0 0 auto;
+            gap: 1rem;
+          }
+          .packages-standard-row > .packages-card { width: 82vw; }
           .packages-card {
             flex: 0 0 82vw;
             min-width: 0;
@@ -346,6 +354,7 @@ export default function PackagesSection({ onCtaClick, mode = 'website' }: { onCt
         </motion.h2>
 
         <div className="packages-cards" role="region" aria-label={isAi ? 'AI product packages' : 'Website packages'} tabIndex={0}>
+          <div className="packages-standard-row">
           {packages.map((pkg, index) => (
             <div className="packages-card" key={pkg.name}>
               <h3 className="packages-card-name">{pkg.name}</h3>
@@ -371,6 +380,7 @@ export default function PackagesSection({ onCtaClick, mode = 'website' }: { onCt
               </ul>
             </div>
           ))}
+          </div>
 
         {isAi && (
           <div className="packages-card agent-setup-band" id="personal-agent-setup">
