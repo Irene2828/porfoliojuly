@@ -128,7 +128,7 @@ export default function FaqSection() {
         .faq-question {
           font-size: var(--text-subhead) !important;
           line-height: 1.3;
-          font-family: 'Newsreader', Georgia, serif !important;
+          font-family: var(--font-heading) !important;
           font-weight: 400 !important;
           letter-spacing: -0.015em !important;
           color: #000000 !important;

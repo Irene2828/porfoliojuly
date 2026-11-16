@@ -171,8 +171,11 @@ export default function PackagesSection({ onCtaClick, mode = 'website' }: { onCt
           font-weight: 600;
           text-transform: uppercase;
           letter-spacing: 0.1em;
-          color: #f2908f;
+          color: #a7aeb8;
           margin: 0 0 0.9rem 0;
+        }
+        .website-packages-cards .packages-card-price {
+          color: #a7aeb8;
         }
         .packages-card-text {
           font-family: var(--font-body), 'Plus Jakarta Sans', sans-serif;
@@ -203,7 +206,7 @@ export default function PackagesSection({ onCtaClick, mode = 'website' }: { onCt
         }
         .packages-card-bullets li::before {
           content: '–';
-          color: #f2908f;
+          color: #a7aeb8;
           flex-shrink: 0;
         }
         .packages-honest {
@@ -270,7 +273,7 @@ export default function PackagesSection({ onCtaClick, mode = 'website' }: { onCt
           font-weight: 600;
           text-transform: uppercase;
           letter-spacing: 0.1em;
-          color: #f2908f;
+          color: #a7aeb8;
           margin: 0 0 1rem 0;
         }
         .agent-setup-lead {
@@ -288,7 +291,7 @@ export default function PackagesSection({ onCtaClick, mode = 'website' }: { onCt
           appearance: none;
           border: 0;
           background: transparent;
-          color: #ffffff;
+          color: #f2908f;
           font-family: var(--font-label), sans-serif;
           font-size: var(--text-label);
           font-weight: 600;
@@ -414,7 +417,7 @@ export default function PackagesSection({ onCtaClick, mode = 'website' }: { onCt
                 aria-controls={`package-details-${mode}-${index}`}
                 onClick={() => setOpenPackages((open) => ({ ...open, [pkg.name]: !open[pkg.name] }))}
               >
-                {openPackages[pkg.name] ? 'Hide what’s included' : 'See what’s included'}<svg className="agent-setup-toggle-icon" aria-hidden="true" viewBox="0 0 12 12" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" style={{ transform: openPackages[pkg.name] ? 'rotate(180deg)' : undefined }}><path d="m2 4 4 4 4-4" /></svg>
+                WHAT'S INCLUDED<svg className="agent-setup-toggle-icon" aria-hidden="true" viewBox="0 0 12 12" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" style={{ transform: openPackages[pkg.name] ? 'rotate(180deg)' : undefined }}><path d="m2 4 4 4 4-4" /></svg>
               </button>
               <ul
                 id={`package-details-${mode}-${index}`}
@@ -432,11 +435,11 @@ export default function PackagesSection({ onCtaClick, mode = 'website' }: { onCt
         {isAi && (
           <div className="packages-card agent-setup-band" id="personal-agent-setup">
             <p className="agent-setup-new">New!</p>
-            <h3 className="agent-setup-title">Personal Agent Setup</h3>
-            <p className="agent-setup-price">from $750 CAD · one-time setup</p>
-            <p className="agent-setup-lead">You have a personal AI assistant but use it as a chatbot. I set it up around your business — so it does the work, not just the talking.</p>
+            <h3 className="packages-card-name">Personal Agent Setup</h3>
+            <p className="packages-card-price">from $750 CAD · one-time setup</p>
+            <p className="packages-card-text" style={{ marginBottom: '0.65rem' }}>You have a personal AI assistant but use it as a chatbot. I set it up around your business — so it does the work, not just the talking.</p>
             <button type="button" className="agent-setup-toggle" aria-expanded={agentDetailsOpen} onClick={() => setAgentDetailsOpen((open) => !open)}>
-              {agentDetailsOpen ? 'Hide what’s included' : 'See what’s included'}<svg className="agent-setup-toggle-icon" aria-hidden="true" viewBox="0 0 12 12" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" style={{ transform: agentDetailsOpen ? 'rotate(180deg)' : undefined }}><path d="m2 4 4 4 4-4" /></svg>
+              WHAT'S INCLUDED<svg className="agent-setup-toggle-icon" aria-hidden="true" viewBox="0 0 12 12" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" style={{ transform: agentDetailsOpen ? 'rotate(180deg)' : undefined }}><path d="m2 4 4 4 4-4" /></svg>
             </button>
             {agentDetailsOpen && (
               <div>

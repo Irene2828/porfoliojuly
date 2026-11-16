@@ -316,7 +316,7 @@ export default function HowItWorks() {
                   aria-expanded={openSteps[step.num]}
                   onClick={() => setOpenSteps((current) => ({ ...current, [step.num]: !current[step.num] }))}
                 >
-                  {step.title.slice(0, step.title.lastIndexOf(' ') + 1)}<span className="how-step-last-word">{step.title.slice(step.title.lastIndexOf(' ') + 1)}<svg className="how-step-check" aria-hidden="true" viewBox="0 0 12 12" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" style={{ transform: openSteps[step.num] ? 'rotate(180deg)' : undefined }}><path d="m2 4 4 4 4-4" /></svg></span>
+                  {step.title.slice(0, step.title.lastIndexOf(' ') + 1)}<span className="how-step-last-word">{step.title.slice(step.title.lastIndexOf(' ') + 1)}<svg className="how-step-check" aria-hidden="true" viewBox="0 0 12 12" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" style={{ transform: openSteps[step.num] ? 'rotate(0deg)' : 'rotate(180deg)' }}><path d="m2 4 4 4 4-4" /></svg></span>
                 </button>
               </h3>
               <AnimatePresence initial={false}>
