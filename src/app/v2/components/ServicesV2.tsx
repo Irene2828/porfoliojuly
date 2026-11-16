@@ -339,23 +339,8 @@ export default function ServicesV2() {
             >
               {/* Premium Geometric Decor Layer for Left Card */}
               <div style={{ position: 'absolute', inset: 0, overflow: 'hidden', pointerEvents: 'none', zIndex: 0 }}>
-                <div className="services-card-top-left-circle" style={{ position: 'absolute', width: '140px', height: '140px', border: '1px solid rgba(242, 144, 143, 0.32)', top: '-30px', left: '-30px', borderRadius: '50%' }} />
                 <div style={{ position: 'absolute', width: '70px', height: '70px', border: '1px dashed rgba(242, 144, 143, 0.32)', bottom: '10%', right: '-20px', transform: 'rotate(15deg)' }} />
               </div>
-
-              {/* Premium Ghost Geometry (Replacing 01) — Orbital Expansion on View */}
-              <motion.div
-                className="ghost-circles-dark"
-                initial={{ opacity: 0, scale: 0.86 }}
-                whileInView={{ opacity: 1, scale: 1 }}
-                viewport={{ once: true, amount: 0.25 }}
-                transition={{ duration: 1.1, delay: 0.15, ease: [0.16, 1, 0.3, 1] }}
-                style={{ position: 'absolute', inset: 0, overflow: 'hidden', borderRadius: '0px', pointerEvents: 'none', transformOrigin: 'top right' }}
-              >
-                <div style={{ position: 'absolute', width: '320px', height: '320px', borderRadius: '50%', border: '1px solid rgba(242, 144, 143, 0.24)', top: '-60px', right: '-40px' }} />
-                <div style={{ position: 'absolute', width: '240px', height: '240px', borderRadius: '50%', border: '1px dashed rgba(242, 144, 143, 0.26)', top: '-20px', right: '0px' }} />
-                <div style={{ position: 'absolute', width: '160px', height: '160px', borderRadius: '50%', border: '1px solid rgba(242, 144, 143, 0.22)', top: '20px', right: '40px' }} />
-              </motion.div>
 
               {/* Real Card Content (zIndex: 1) */}
               <div style={{ position: 'relative', zIndex: 1, paddingTop: '1.25rem' }}>
