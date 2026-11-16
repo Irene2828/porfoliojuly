@@ -52,7 +52,7 @@ const AI_PACKAGES: Package[] = [
 export default function PackagesSection({ onCtaClick, mode = 'website' }: { onCtaClick?: () => void; mode?: 'website' | 'ai' }) {
   const isAi = mode === 'ai';
   const packages = isAi ? AI_PACKAGES : WEBSITE_PACKAGES;
-  const [agentDetailsOpen, setAgentDetailsOpen] = useState(true);
+  const [agentDetailsOpen, setAgentDetailsOpen] = useState(false);
   const [openPackages, setOpenPackages] = useState<Record<string, boolean>>(() => Object.fromEntries([...WEBSITE_PACKAGES, ...AI_PACKAGES].map((pkg) => [pkg.name, true])));
   return (
     <section
