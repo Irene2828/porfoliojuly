@@ -76,6 +76,7 @@ export default function HowItWorks() {
           -webkit-text-fill-color: rgba(255, 255, 255, 0.72) !important;
         }
         .how-num {
+          opacity: 0.3;
           font-family: var(--font-heading) !important;
           font-weight: 400 !important;
           color: #f2908f !important;

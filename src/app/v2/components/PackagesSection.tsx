@@ -52,8 +52,8 @@ const AI_PACKAGES: Package[] = [
 export default function PackagesSection({ onCtaClick, mode = 'website' }: { onCtaClick?: () => void; mode?: 'website' | 'ai' }) {
   const isAi = mode === 'ai';
   const packages = isAi ? AI_PACKAGES : WEBSITE_PACKAGES;
-  const [agentDetailsOpen, setAgentDetailsOpen] = useState(false);
-  const [openPackages, setOpenPackages] = useState<Record<string, boolean>>({});
+  const [agentDetailsOpen, setAgentDetailsOpen] = useState(true);
+  const [openPackages, setOpenPackages] = useState<Record<string, boolean>>(() => Object.fromEntries([...WEBSITE_PACKAGES, ...AI_PACKAGES].map((pkg) => [pkg.name, true])));
   return (
     <section
       className="packages-section"
@@ -199,6 +199,7 @@ export default function PackagesSection({ onCtaClick, mode = 'website' }: { onCt
           text-decoration: none;
         }
         .agent-setup-band {
+          grid-column: 1 / -1;
           border: 1px solid rgba(242, 144, 143, 0.45);
           border-radius: 16px;
           padding: 2rem 1.8rem;
@@ -315,6 +316,12 @@ export default function PackagesSection({ onCtaClick, mode = 'website' }: { onCt
             box-sizing: border-box;
             scroll-snap-align: center;
           }
+          .packages-cards > .agent-setup-band {
+            margin: 0;
+            padding: 1.75rem 1.6rem;
+          }
+          .packages-cards .agent-setup-title { font-size: var(--text-subhead); }
+          .packages-cards .agent-setup-bullets { grid-template-columns: 1fr; }
           .packages-cards:focus-visible {
             outline: 1px solid #f2908f;
             outline-offset: -2px;
@@ -363,10 +370,9 @@ export default function PackagesSection({ onCtaClick, mode = 'website' }: { onCt
               </ul>
             </div>
           ))}
-        </div>
 
         {isAi && (
-          <div className="agent-setup-band" id="personal-agent-setup">
+          <div className="packages-card agent-setup-band" id="personal-agent-setup">
             <p className="agent-setup-new">New!</p>
             <h3 className="agent-setup-title">Personal Agent Setup</h3>
             <p className="agent-setup-price">from $750 CAD · one-time setup</p>
@@ -390,6 +396,7 @@ export default function PackagesSection({ onCtaClick, mode = 'website' }: { onCt
             )}
           </div>
         )}
+        </div>
 
         <div className="packages-cta-wrap">
           <a href={isAi ? 'mailto:iryna@irynasheremeta.com?subject=AI%20product%20packages' : 'mailto:iryna@irynasheremeta.com?subject=Website%20packages'} className="packages-btn-primary" onClick={onCtaClick}>
