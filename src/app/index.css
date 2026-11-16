@@ -1790,9 +1790,9 @@ h1, h2, h3, h4, h5, h6 {
   }
 }
 
-/* Reduce the spacing between FAQ content and the closing section to one third. */
+/* Double the gap below the final FAQ divider before the prefooter. */
 .v2-theme #faq-section > div {
-  padding-bottom: 1.7rem !important;
+  padding-bottom: 3.4rem !important;
 }
 
 .v2-theme #faq-section > .prefooter-section {
