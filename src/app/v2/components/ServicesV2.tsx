@@ -103,6 +103,8 @@ export default function ServicesV2() {
         }
         @media (max-width: 860px) {
           #expertise {
+            background: #ffffff !important;
+            background-color: #ffffff !important;
             padding-top: 2.55rem !important;
             padding-bottom: 0 !important;
             margin-top: 2.55rem !important;
