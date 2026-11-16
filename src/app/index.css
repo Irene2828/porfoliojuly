@@ -1080,9 +1080,15 @@ h1, h2, h3, h4, h5, h6 {
   -webkit-text-fill-color: #ffffff !important;
 }
 
-/* Section-specific heading colors and top spacing. */
-.v2-theme #how-it-works {
-  padding-top: 20.4rem !important;
+/* Shared spacing from section boundary to its first text line. */
+.v2-theme {
+  --section-entry-space: 20.4rem;
+}
+
+.v2-theme #how-it-works,
+.v2-theme .packages-section,
+.v2-theme #process > .testimonials-grey-container {
+  padding-top: var(--section-entry-space) !important;
 }
 
 .v2-theme #how-it-works h2.how-title {
@@ -1101,8 +1107,8 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 @media (max-width: 900px) {
-  .v2-theme #how-it-works {
-    padding-top: 7rem !important;
+  .v2-theme {
+    --section-entry-space: 5.1rem;
   }
 
   .v2-theme #faq-section .faq-section-heading {

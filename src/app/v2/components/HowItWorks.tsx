@@ -41,7 +41,7 @@ export default function HowItWorks() {
       id="how-it-works"
       style={{
         backgroundColor: 'var(--color-matte-black, #25282e)',
-        padding: '20.4rem 0 2.55rem 0',
+        padding: 'var(--section-entry-space, 20.4rem) 0 2.55rem 0',
         width: '100%',
         position: 'relative',
         overflow: 'hidden'
@@ -146,7 +146,7 @@ export default function HowItWorks() {
         }
         @media (max-width: 900px) {
           #how-it-works {
-            padding: 7rem 0 2.55rem 0 !important;
+            padding: var(--section-entry-space, 5.1rem) 0 2.55rem 0 !important;
           }
           #how-it-works > .container {
             padding-left: 1.5rem !important;
