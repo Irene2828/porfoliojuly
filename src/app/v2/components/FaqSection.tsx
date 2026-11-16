@@ -1,7 +1,7 @@
 'use client';
 
 import EditorialStatement from './EditorialStatement';
-import { useEffect, useRef, useState } from 'react';
+import { useState } from 'react';
 import { AnimatePresence, motion } from 'framer-motion';
 
 const faqs = [
@@ -41,27 +41,10 @@ const faqs = [
 
 export default function FaqSection() {
   const [openIndex, setOpenIndex] = useState<number>(-1);
-  const sectionRef = useRef<HTMLElement | null>(null);
-  const hasInteractedRef = useRef(false);
-
-  useEffect(() => {
-    const section = sectionRef.current;
-    if (!section) return;
-    const observer = new IntersectionObserver(([entry]) => {
-      if (entry.isIntersecting && !hasInteractedRef.current) {
-        setOpenIndex((current) => current === -1 ? 0 : current);
-        observer.disconnect();
-      }
-    }, { threshold: 0.2 });
-    observer.observe(section);
-    return () => observer.disconnect();
-  }, []);
-
 
   return (
     <section
       id="faq-section"
-      ref={sectionRef}
       className="faq-section"
       style={{
           backgroundColor: '#ffffff',
@@ -315,7 +298,6 @@ export default function FaqSection() {
                     aria-controls={`faq-panel-${index}`}
                     id={`faq-button-${index}`}
                     onClick={() => {
-                      hasInteractedRef.current = true;
                       setOpenIndex(isOpen ? -1 : index);
                     }}
                   >
