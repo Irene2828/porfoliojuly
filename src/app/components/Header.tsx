@@ -150,12 +150,7 @@ export default function Header() {
             filter: none !important;
           }
         }
-        .site-header-new { font-family: 'Inter', sans-serif; font-size: 0.95rem; font-weight: 500; color: rgba(255, 255, 255, 0.88); text-decoration: none; white-space: nowrap; }
-        .site-header-new b { color: #f2908f; font-weight: 700; }
-        .nav-new-link { font-family: var(--font-label), 'Plus Jakarta Sans', sans-serif; font-size: 12.5px; font-weight: 700; letter-spacing: 0.02em; color: #f2908f; text-decoration: none; white-space: nowrap; padding: 0.2rem 0.45rem; line-height: 1.3; }
-        .nav-new-link:hover { color: #ffffff; }
         .header-center-empty { display: flex; align-items: center; justify-content: center; }
-        .hn-new-inline { color: #f2908f; font-weight: 700; } 
         `}</style>
       <div className="header-inner-wrapper">
         {/* Left side (Desktop): Name and Title */}
@@ -189,7 +184,6 @@ export default function Header() {
 
         {/* Right side (Desktop): Nav links */}
         <nav className="header-nav header-nav-desktop" style={{ marginLeft: 'auto', marginRight: '0', justifyContent: 'flex-end', alignItems: 'center' }}>
-          <a href="#personal-agent-setup" className="nav-new-link">New!</a>
           <a href="/#cases" className="nav-link">PORTFOLIO</a>
           <a href="/about" className="nav-link">ABOUT ME</a>
           <a 
@@ -237,7 +231,6 @@ export default function Header() {
             <div className="drawer-nav-links">
               <a href="/#cases" onClick={() => setIsMenuOpen(false)} className="drawer-link">PORTFOLIO</a>
               <a href="/about" onClick={() => setIsMenuOpen(false)} className="drawer-link">ABOUT ME</a>
-              <a href="#personal-agent-setup" onClick={() => setIsMenuOpen(false)} className="drawer-link"><span className="hn-new-inline">New!</span></a>
               <a 
                 href="mailto:iryna@irynasheremeta.com" 
                 onClick={(e) => { handleCopyEmail(e); setIsMenuOpen(false); }} 

@@ -1,7 +1,7 @@
 'use client';
 
 import { motion } from 'framer-motion';
-import { useState } from 'react';
+import { useRef, useState } from 'react';
 
 interface Package {
   name: string;
@@ -12,15 +12,15 @@ interface Package {
 
 const WEBSITE_PACKAGES: Package[] = [
   {
+    name: 'Custom Website',
+    price: 'from $1,500 CAD',
+    bullets: ['Research', 'Three visual directions', 'Design', 'Copy', 'Build', 'Tested launch', 'Hosting set up; you keep the logins'],
+  },
+  {
     name: 'Polish & Launch',
     price: 'from $750 CAD',
     lead: 'An AI draft or a dated site, fixed and launched.',
     bullets: ['Structure', 'Copy', 'Mobile', 'Forms', 'Domain'],
-  },
-  {
-    name: 'Custom Website',
-    price: 'from $1,500 CAD',
-    bullets: ['Research', 'Three visual directions', 'Design', 'Copy', 'Build', 'Tested launch', 'Hosting set up; you keep the logins'],
   },
   {
     name: 'Website Care',
@@ -53,20 +53,22 @@ export default function PackagesSection({ onCtaClick, mode = 'website' }: { onCt
   const isAi = mode === 'ai';
   const packages = isAi ? AI_PACKAGES : WEBSITE_PACKAGES;
   const [agentDetailsOpen, setAgentDetailsOpen] = useState(false);
+  const [activePackageDot, setActivePackageDot] = useState(0);
+  const packagesRailRef = useRef<HTMLDivElement>(null);
   const [openPackages, setOpenPackages] = useState<Record<string, boolean>>(() => Object.fromEntries([...WEBSITE_PACKAGES, ...AI_PACKAGES].map((pkg) => [pkg.name, true])));
   return (
     <section
       className="packages-section"
       style={{
         backgroundColor: '#121316',
-        padding: '20.4rem 0 5.1rem 0',
+        padding: '5.1rem 0 5.1rem 0',
         width: '100%',
         position: 'relative',
         overflow: 'hidden',
       }}
     >
       <style>{`
-        .packages-section { background-color: #121316 !important; }
+        .packages-section { background-color: #121316 !important; border-top: 1px solid rgba(255,255,255,0.14); }
         .packages-inner { max-width: 1080px; margin: 0 auto; padding: 0 1.5rem; }
         .packages-heading {
           font-family: var(--font-heading);
@@ -103,7 +105,7 @@ export default function PackagesSection({ onCtaClick, mode = 'website' }: { onCt
           font-weight: 300;
           font-size: var(--text-body);
           line-height: var(--lh-body);
-          color: rgba(255, 255, 255, 0.75);
+          color: rgba(255, 255, 255, 0.84);
           margin: 0;
         }
         .packages-cards {
@@ -111,6 +113,43 @@ export default function PackagesSection({ onCtaClick, mode = 'website' }: { onCt
           grid-template-columns: repeat(3, 1fr);
           gap: 1.25rem;
         }
+        .ai-packages-cards {
+          display: flex;
+          align-items: stretch;
+          gap: 1.25rem;
+          overflow-x: auto;
+          padding: 0.25rem 0.2rem 0.9rem;
+          scroll-snap-type: x mandatory;
+          overscroll-behavior-x: contain;
+          scrollbar-width: thin;
+          scrollbar-color: rgba(167, 174, 184, 0.45) transparent;
+        }
+        .ai-packages-cards::-webkit-scrollbar { height: 4px; }
+        .ai-packages-cards::-webkit-scrollbar-thumb { background: rgba(167, 174, 184, 0.45); border-radius: 999px; }
+        .ai-packages-cards .packages-standard-row { display: contents; }
+        .ai-packages-cards > .packages-card,
+        .ai-packages-cards > .agent-setup-band,
+        .ai-packages-cards .packages-standard-row > .packages-card {
+          flex: 0 0 280px;
+          width: 280px;
+          min-width: 280px;
+          min-height: 390px;
+          box-sizing: border-box;
+          scroll-snap-align: start;
+        }
+        .ai-packages-cards > .agent-setup-band { grid-column: auto; margin: 0; }
+        .ai-packages-cards .packages-card-bullets li::before { color: #a7aeb8; }
+        .packages-scroll-hint {
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          gap: 0.5rem;
+          margin: -1.2rem 0 1.25rem;
+        }
+        .packages-scroll-dot { width: 0.42rem; height: 0.42rem; border-radius: 50%; background: rgba(242, 144, 143, 0.35); transition: transform 0.2s ease, background 0.2s ease; }
+        .packages-scroll-dot.is-active { background: #f2908f; transform: scale(1.3); }
+        .website-packages-cards > .packages-card:first-child { order: 2; }
+        .website-packages-cards > .packages-card:nth-child(2) { order: 1; }
         .packages-standard-row { display: contents; }
         .packages-card {
           border: 1px solid rgba(255, 255, 255, 0.16);
@@ -140,7 +179,7 @@ export default function PackagesSection({ onCtaClick, mode = 'website' }: { onCt
           font-weight: 300;
           font-size: var(--text-body);
           line-height: var(--lh-body);
-          color: rgba(255, 255, 255, 0.75);
+          color: rgba(255, 255, 255, 0.84);
           margin: 0;
         }
         .packages-card-bullets {
@@ -156,7 +195,7 @@ export default function PackagesSection({ onCtaClick, mode = 'website' }: { onCt
           font-weight: 300;
           font-size: var(--text-body);
           line-height: var(--lh-body);
-          color: rgba(255, 255, 255, 0.75);
+          color: rgba(255, 255, 255, 0.84);
           display: flex;
           align-items: flex-start;
           gap: 0.6rem;
@@ -200,12 +239,12 @@ export default function PackagesSection({ onCtaClick, mode = 'website' }: { onCt
           text-decoration: none;
         }
         .agent-setup-band {
-          grid-column: 1 / -1;
+          grid-column: 2 / 3;
           border: 1px solid rgba(242, 144, 143, 0.45);
           border-radius: 16px;
           padding: 2rem 1.8rem;
           background: rgba(255, 255, 255, 0.03);
-          margin: 2.5rem 0 1.25rem 0;
+          margin: 3.5rem 0 1.25rem 0;
           scroll-margin-top: 88px;
         }
         .agent-setup-new {
@@ -305,12 +344,16 @@ export default function PackagesSection({ onCtaClick, mode = 'website' }: { onCt
             align-items: flex-start;
             gap: 1rem;
             margin-inline: -1.5rem;
-            padding: 0.25rem 9vw 0.75rem;
+            padding: 0.25rem 15vw 0.75rem;
             overflow-x: auto;
             scroll-snap-type: x mandatory;
             overscroll-behavior-x: contain;
             scrollbar-width: none;
           }
+          .ai-packages-cards { margin-inline: -1.5rem; padding: 0.25rem 15vw 0.75rem; }
+          .ai-packages-cards > .packages-card,
+          .ai-packages-cards > .agent-setup-band,
+          .ai-packages-cards .packages-standard-row > .packages-card { flex-basis: 82vw; width: 82vw; min-width: 82vw; }
           .packages-cards::-webkit-scrollbar { display: none; }
           .packages-standard-row {
             display: flex;
@@ -318,6 +361,7 @@ export default function PackagesSection({ onCtaClick, mode = 'website' }: { onCt
             flex: 0 0 auto;
             gap: 1rem;
           }
+          .ai-packages-cards .packages-standard-row { display: contents; }
           .packages-standard-row > .packages-card { width: 82vw; }
           .packages-card {
             flex: 0 0 82vw;
@@ -325,7 +369,9 @@ export default function PackagesSection({ onCtaClick, mode = 'website' }: { onCt
             box-sizing: border-box;
             scroll-snap-align: center;
           }
+          .website-packages-cards > .packages-card { order: 0; }
           .packages-cards > .agent-setup-band {
+            grid-column: 1 / -1;
             margin: 0;
             padding: 1.75rem 1.6rem;
           }
@@ -353,7 +399,8 @@ export default function PackagesSection({ onCtaClick, mode = 'website' }: { onCt
           {isAi ? <>Custom <strong>AI products</strong> — built around your problem</> : <>Custom <strong>websites</strong> — built around your business</>}
         </motion.h2>
 
-        <div className="packages-cards" role="region" aria-label={isAi ? 'AI product packages' : 'Website packages'} tabIndex={0}>
+        {isAi && <div className="packages-scroll-hint" aria-label={`Package ${activePackageDot + 1} of 4`} role="status">{[0, 1, 2, 3].map((dot) => <span key={dot} className={`packages-scroll-dot${activePackageDot === dot ? ' is-active' : ''}`} aria-hidden="true" />)}</div>}
+        <div ref={isAi ? packagesRailRef : undefined} onScroll={isAi ? (event) => { const rail = event.currentTarget; const max = rail.scrollWidth - rail.clientWidth; setActivePackageDot(max > 0 ? Math.max(0, Math.min(3, Math.round((rail.scrollLeft / max) * 3))) : 0); } : undefined} className={`packages-cards${isAi ? ' ai-packages-cards' : ' website-packages-cards'}`} role="region" aria-label={isAi ? 'AI product packages' : 'Website packages'} tabIndex={0}>
           <div className="packages-standard-row">
           {packages.map((pkg, index) => (
             <div className="packages-card" key={pkg.name}>

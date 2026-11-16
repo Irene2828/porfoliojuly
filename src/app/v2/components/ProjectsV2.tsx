@@ -447,7 +447,7 @@ export default function ProjectsV2({ initialProjects = [] }: ProjectsV2Props) {
           flex-direction: row !important;
           justify-content: space-between !important;
           align-items: center !important;
-          gap: 2.5rem !important;
+          gap: 5rem !important;
           width: 100% !important;
           margin: 0 auto !important;
           padding: 0 var(--space-md, 2rem) !important;
@@ -470,10 +470,13 @@ export default function ProjectsV2({ initialProjects = [] }: ProjectsV2Props) {
           }
         }
         @media (max-width: 900px) {
+          .cases-grid-wrapper > .case-group:nth-child(2) > h3 {
+            margin-bottom: 1rem !important;
+          }
           .cases-grid-container {
             display: grid !important;
             grid-template-columns: 1fr !important;
-            gap: 5rem !important; /* doubled spacing between cases on mobile */
+            gap: 5rem !important;
             padding: 0 1.5rem !important;
           }
         }
@@ -487,7 +490,32 @@ export default function ProjectsV2({ initialProjects = [] }: ProjectsV2Props) {
           justify-self: center !important;
         }
         .case-group + .case-group {
-          margin-top: 4rem !important;
+          margin-top: 2.8rem !important;
+        }
+        .cases-grid-wrapper > .case-group:first-child > h3 {
+          margin-bottom: 0.5rem !important;
+        }
+        .cases-grid-wrapper > .case-group:nth-child(2) > h3 {
+          margin-bottom: 2rem !important;
+        }
+        .cases-grid-wrapper > .case-group:nth-child(3) > h3 {
+          margin-bottom: 0.5rem !important;
+        }
+        @media (max-width: 900px) {
+          .cases-grid-wrapper > .case-group:nth-child(2) > h3 {
+            margin-bottom: 1rem !important;
+          }
+        }
+        .cases-grid-wrapper {
+          padding-bottom: 6.75rem !important;
+        }
+        @media (min-width: 901px) {
+          .cases-grid-wrapper {
+            padding-bottom: 4.725rem !important;
+          }
+          .cases-grid-wrapper .case-group:last-child {
+            margin-bottom: 4.725rem !important;
+          }
         }
         @media (max-width: 900px) {
                  @media (min-width: 901px) { .cases-grid-container { display: grid !important; grid-template-columns: auto auto !important; } } .cases-grid-item {
@@ -786,7 +814,7 @@ export default function ProjectsV2({ initialProjects = [] }: ProjectsV2Props) {
             textWrap: 'balance'
           }}
         >
-          <span style={{ fontWeight: 400, color: 'var(--color-heading-silver, #4a5461)' }}>Examples of </span><span style={{ fontWeight: 400, color: 'var(--color-heading-silver, #4a5461)' }}>my work</span>
+          <span style={{ fontWeight: 400, color: 'var(--color-heading-silver, #4a5461)' }}>Examples of</span>{' '}<span style={{ fontWeight: 400, color: 'var(--color-heading-silver, #4a5461)' }}>my work</span>
         </motion.h2>
 
               <div aria-hidden="true" style={{ height: '28px' }} />
@@ -798,7 +826,7 @@ export default function ProjectsV2({ initialProjects = [] }: ProjectsV2Props) {
         className="cases-grid-wrapper"
         style={{ 
           width: '100%', 
-          paddingBottom: '0.75rem',
+          paddingBottom: '2.25rem',
           paddingTop: '0.375rem'
         }}
       >

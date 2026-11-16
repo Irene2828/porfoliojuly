@@ -6,7 +6,7 @@ export default function ProcessSection() {
   return (
     <section
       id="process"
-      style={{ padding: '0 0 5.1rem 0', background: 'radial-gradient(circle at 44% 42%, rgba(255, 255, 255, 0.95) 0%, rgba(255, 255, 255, 0.52) 34%, rgba(247, 243, 237, 0) 72%), #f7f3ed', borderBottom: '1px solid rgba(120, 128, 136, 0.18)' }}
+      style={{ padding: '0', background: 'radial-gradient(circle at 44% 42%, rgba(255, 255, 255, 0.95) 0%, rgba(255, 255, 255, 0.52) 34%, rgba(247, 243, 237, 0) 72%), #f7f3ed', borderBottom: '1px solid rgba(120, 128, 136, 0.18)' }}
     >
       <style>{`
         .testimonial-single {
@@ -26,11 +26,11 @@ export default function ProcessSection() {
         }
         .testimonial-quote {
           font-family: var(--font-body), 'Plus Jakarta Sans', sans-serif !important;
-          font-style: italic !important;
-          font-weight: 300 !important;
+          font-style: normal !important;
+          font-weight: 400 !important;
           letter-spacing: 0.008em !important;
-          color: rgba(0, 0, 0, 0.64) !important;
-          -webkit-text-fill-color: rgba(0, 0, 0, 0.64) !important;
+          color: rgba(0, 0, 0, 0.78) !important;
+          -webkit-text-fill-color: rgba(0, 0, 0, 0.78) !important;
         }
         .testimonial-attribution {
           font-family: var(--font-body), 'Plus Jakarta Sans', sans-serif !important;
@@ -41,6 +41,15 @@ export default function ProcessSection() {
           text-transform: uppercase !important;
           color: rgba(0, 0, 0, 0.8) !important;
           -webkit-text-fill-color: rgba(0, 0, 0, 0.8) !important;
+        }
+        .testimonial-pull-quote {
+          font-family: var(--font-body), 'Plus Jakarta Sans', sans-serif !important;
+          font-size: clamp(1.15rem, 1.8vw, 1.55rem) !important;
+          line-height: 1.4 !important;
+          font-weight: 500 !important;
+          color: #1d2229 !important;
+          max-width: 38ch;
+          margin: 0 0 1.25rem 0;
         }
         @media (max-width: 900px) {
           .testimonial-quote {
@@ -87,7 +96,7 @@ export default function ProcessSection() {
           background: 'transparent',
           boxShadow: 'none',
           border: 'none',
-          padding: '2.25rem 2rem 5rem 2rem',
+          padding: '0.56rem 2rem 2.55rem 2rem',
           display: 'flex',
           flexDirection: 'column',
           alignItems: 'center',
@@ -145,6 +154,9 @@ export default function ProcessSection() {
               textAlign: 'left',
             }}
           >
+            <p className="testimonial-pull-quote">
+              “It started working right away — several calls from potential new clients since it went live.”
+            </p>
             <blockquote
               className="testimonial-quote"
               style={{
@@ -153,11 +165,11 @@ export default function ProcessSection() {
                 margin: 0,
                 padding: 0,
                 maxWidth: '1093px',
-                fontStyle: 'italic',
+                fontStyle: 'normal',
                 color: 'rgba(0, 0, 0, 0.64)',
               }}
             >
-              &ldquo;Iryna built my new website, and <strong style={{ fontWeight: 600, color: 'rgba(0, 0, 0, 0.82)' }}>it started working right away &mdash; several calls from potential new clients since it went live.</strong> She explained everything clearly and patiently, even to someone like me who isn&apos;t tech-savvy at all. Working with her feels personal, not transactional. I recommend her without hesitation.&rdquo;
+              Iryna built my new website, and she explained everything clearly and patiently, even to someone like me who isn&apos;t tech-savvy at all. Working with her feels personal, not transactional. I recommend her without hesitation.
             </blockquote>
             <motion.p
               className="testimonial-attribution"

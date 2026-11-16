@@ -61,7 +61,8 @@ export default function ServicesV2() {
     <section 
       id="expertise" 
       style={{ 
-        backgroundColor: '#ffffff',
+        background: 'radial-gradient(circle at 44% 42%, rgba(255, 255, 255, 0.95) 0%, rgba(255, 255, 255, 0.52) 34%, rgba(247, 243, 237, 0) 72%), #f7f3ed',
+        backgroundColor: '#f7f3ed',
         padding: '5.1rem 0 5.1rem 0',
         margin: '5.1rem 0 0 0',
         position: 'relative',
@@ -146,8 +147,8 @@ export default function ServicesV2() {
             width: 100% !important;
             max-width: 100% !important;
             box-sizing: border-box !important;
-            background: linear-gradient(135deg, #f0f3f6 0%, #e2e6eb 50%, #cdd2d8 100%) !important;
-            background-color: #C8CCD1 !important;
+            background: radial-gradient(circle at 44% 42%, rgba(255, 255, 255, 0.95) 0%, rgba(255, 255, 255, 0.52) 34%, rgba(247, 243, 237, 0) 72%), #f7f3ed !important;
+            background-color: #f7f3ed !important;
             border-radius: 0px !important;
             padding: 3.2rem 1.6rem !important;
             overflow: hidden !important;
@@ -249,7 +250,8 @@ export default function ServicesV2() {
       {/* Matte Charcoal Container for 2 Columns of Services */}
       <div className="services-cards-outer-container"
         style={{
-          backgroundColor: '#ffffff',
+          background: 'radial-gradient(circle at 44% 42%, rgba(255, 255, 255, 0.95) 0%, rgba(255, 255, 255, 0.52) 34%, rgba(247, 243, 237, 0) 72%), #f7f3ed',
+          backgroundColor: '#f7f3ed',
           width: '100%',
           position: 'relative',
           overflow: 'hidden',
@@ -279,7 +281,8 @@ export default function ServicesV2() {
             bottom: 0,
             left: '50%',
             right: 0,
-            backgroundColor: '#ffffff',
+            background: 'radial-gradient(circle at 44% 42%, rgba(255, 255, 255, 0.95) 0%, rgba(255, 255, 255, 0.52) 34%, rgba(247, 243, 237, 0) 72%), #f7f3ed',
+            backgroundColor: '#f7f3ed',
             zIndex: 1,
             pointerEvents: 'none'
           }}
@@ -456,7 +459,8 @@ export default function ServicesV2() {
               viewport={{ once: true, amount: 0.18 }}
               transition={{ duration: 0.85, delay: 0.14, ease: [0.16, 1, 0.3, 1] }}
               style={{
-                backgroundColor: '#ffffff',
+                background: 'radial-gradient(circle at 44% 42%, rgba(255, 255, 255, 0.95) 0%, rgba(255, 255, 255, 0.52) 34%, rgba(247, 243, 237, 0) 72%), #f7f3ed',
+                backgroundColor: '#f7f3ed',
                 borderRadius: '0px',
                 boxShadow: 'none',
                 position: 'relative',

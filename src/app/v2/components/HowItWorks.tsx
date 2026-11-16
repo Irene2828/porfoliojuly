@@ -41,7 +41,7 @@ export default function HowItWorks() {
       id="how-it-works"
       style={{
         backgroundColor: 'var(--color-matte-black, #25282e)',
-        padding: 'var(--section-entry-space, 20.4rem) 0 2.55rem 0',
+        padding: 'var(--section-entry-space, 5.1rem) 0 2.55rem 0',
         width: '100%',
         position: 'relative',
         overflow: 'hidden'

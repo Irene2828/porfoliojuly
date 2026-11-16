@@ -221,6 +221,14 @@ export default function FaqSection() {
         @media (max-width: 900px) {
           .faq-section { padding-top: 2.55rem !important; }
           .faq-heading-answer { display: block; }
+          .faq-section-heading .faq-heading-question,
+          .faq-section-heading .faq-heading-answer {
+            display: block !important;
+            white-space: nowrap !important;
+          }
+          .faq-section-heading .faq-heading-answer {
+            margin-top: 0.12em !important;
+          }
           .faq-headline { text-align: center;
             font-size: clamp(1.9rem, 8vw, 2.4rem) !important; margin-left: 0 !important; margin-right: 0 !important;
           }
@@ -277,7 +285,7 @@ export default function FaqSection() {
           textAlign: 'left',
         }}
       >
-      <motion.h2 className="faq-section-heading" initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true, amount: 0.45 }} transition={{ duration: 0.78, delay: 0.08, ease: [0.16, 1, 0.3, 1] }} style={{ fontFamily: 'var(--font-heading)', fontSize: 'var(--text-section-title)', fontWeight: 400, lineHeight: 1.2, color: 'var(--color-heading-silver)', letterSpacing: '-0.02em', margin: '0 0 2.5rem 0', textAlign: 'center' }}>Frequent questions <span className="faq-heading-answer">- <em>answered</em>.</span></motion.h2>
+      <motion.h2 className="faq-section-heading" initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true, amount: 0.45 }} transition={{ duration: 0.78, delay: 0.08, ease: [0.16, 1, 0.3, 1] }} style={{ fontFamily: 'var(--font-heading)', fontSize: 'var(--text-section-title)', fontWeight: 400, lineHeight: 1.2, color: 'var(--color-heading-silver)', letterSpacing: '-0.02em', margin: '0 0 2.5rem 0', textAlign: 'center' }}><span className="faq-heading-question">Frequent questions</span>{' '}<span className="faq-heading-answer">- <em>answered</em>.</span></motion.h2>
       <div>
         {faqs.map((faq, index) => {
             const isOpen = openIndex === index;

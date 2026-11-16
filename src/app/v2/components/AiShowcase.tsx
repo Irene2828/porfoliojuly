@@ -60,6 +60,15 @@ export default function AiShowcase() {
           color: rgba(0, 0, 0, 0.72) !important;
           -webkit-text-fill-color: rgba(0, 0, 0, 0.72) !important;
         }
+        .ai-showcase-section .faq-body-copy {
+          font-size: var(--text-body) !important;
+          line-height: var(--lh-body) !important;
+        }
+        @media (min-width: 901px) {
+          .ai-showcase-section .faq-body-copy {
+            font-size: calc(var(--text-body) + 2px) !important;
+          }
+        }
         .faq-item {
           border-top: 1px solid rgba(0, 0, 0, 0.12) !important;
         }
@@ -264,7 +273,7 @@ export default function AiShowcase() {
           But wait... can&apos;t AI do it all for me?
         </motion.h2>
         <motion.p
-          className="faq-subline"
+          className="faq-subline faq-body-copy"
           initial={{ opacity: 0, y: 14 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true, amount: 0.45 }}
@@ -280,14 +289,14 @@ export default function AiShowcase() {
           Take one case. You need a website for your custom bridal atelier. You go to AI.
         </motion.p>
         <div className="faq-case-media">
-          {[['/bridal-ai-video.mp4', undefined], ['/bridal-desktop-scroll-faststart.mp4', '/bridal-scroll-poster.jpg']].map(([src, poster], index) => (
+          {[['/bridal-ai-video.mp4', '/bridal-editorial-hero.png'], ['/bridal-desktop-scroll-faststart.mp4', '/bridal-scroll-poster.jpg']].map(([src, poster], index) => (
             <div key={src}>
               <video className="faq-case-video" src={src} poster={poster} autoPlay muted loop playsInline controls aria-label={index === 0 ? 'AI bridal atelier website demo' : 'Custom bridal atelier website demo'} />
             </div>
           ))}
         </div>
         <motion.p
-          className="faq-subline"
+          className="faq-subline faq-body-copy"
           initial={{ opacity: 0, y: 14 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true, amount: 0.45 }}
@@ -297,7 +306,7 @@ export default function AiShowcase() {
           Or take the Terry Fox poster tool.
         </motion.p>
         <motion.p
-          className="faq-subline"
+          className="faq-subline faq-body-copy"
           initial={{ opacity: 0, y: 14 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true, amount: 0.45 }}
@@ -307,7 +316,7 @@ export default function AiShowcase() {
           Ask AI to generate the posters, and it drifts: spacing off, brand rules broken, fonts it doesn&apos;t have. And you can&apos;t expect every volunteer to know how to direct AI until it behaves.
         </motion.p>
         <motion.p
-          className="faq-subline"
+          className="faq-subline faq-body-copy"
           initial={{ opacity: 0, y: 14 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true, amount: 0.45 }}

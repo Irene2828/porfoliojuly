@@ -277,17 +277,18 @@ export default function HeroV2() {
           .v2-theme .headline-mobile,
           .headline-mobile {
             font-size: clamp(2.82rem, 12.77vw, 4.18rem) !important; /* +20% mobile hero headline */
-            line-height: 1.02 !important; /* line spacing 20% less */
+            line-height: 0.979 !important; /* mobile hero line spacing increased by 20% */
           }
           .v2-theme .headline-mobile,
+          .hero-statement .headline-mobile,
           .headline-mobile {
-            line-height: 1.02 !important;
-            gap: 0px !important;
+            line-height: 0.979 !important;
+            gap: 0 !important;
           }
           .v2-theme .headline-mobile .headline-line,
           .headline-mobile .headline-line {
             display: block !important;
-            line-height: 1.02 !important;
+            line-height: 0.979 !important;
             font-size: 1em !important;
             margin: 0 !important;
             padding: 0 !important;
@@ -296,7 +297,7 @@ export default function HeroV2() {
           .v2-theme .headline-mobile .headline-line *,
           .headline-mobile .headline-line * {
             display: inline !important;
-            line-height: 1.02 !important;
+            line-height: 0.979 !important;
             font-size: 1em !important;
             margin: 0 !important;
             padding: 0 !important;
