@@ -898,7 +898,7 @@ export default function HeroV2({ variant = 'client' }: { variant?: 'client' | 'h
                       <>
                         <span className="headline-line">
                           <span className="headline-desktop-serif-normal">Designer</span>{' '}
-                          <strong className="headline-desktop-accent">and builder</strong>
+                          <span className="headline-desktop-serif-normal">and builder</span>
                         </span>
                         <span className="headline-line">
                           <span className="headline-desktop-serif-normal">for</span>{' '}
@@ -939,7 +939,7 @@ export default function HeroV2({ variant = 'client' }: { variant?: 'client' | 'h
                       <>
                         <span className="headline-line">
                           <span className="headline-mobile-serif-normal">Designer</span>{' '}
-                          <strong className="headline-mobile-accent">and builder</strong>
+                          <span className="headline-mobile-serif-normal">and builder</span>
                         </span>
                         <span className="headline-line">
                           <span className="headline-mobile-serif-normal">for</span>{' '}

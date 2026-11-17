@@ -19,6 +19,7 @@ const textVariant = {
 
 interface ProjectsV2Props {
   initialProjects?: any[];
+  showWorkflowAutomations?: boolean;
 }
 
 function DevicePair({ desktopSrc, desktopVideoSrc, phoneImgSrc, phoneVideoSrc, alt, modal = false }: { desktopSrc: string; desktopVideoSrc?: string; phoneImgSrc?: string; phoneVideoSrc?: string; alt: string; modal?: boolean }) {
@@ -42,7 +43,7 @@ function DevicePair({ desktopSrc, desktopVideoSrc, phoneImgSrc, phoneVideoSrc, a
   );
 }
 
-export default function ProjectsV2({ initialProjects = [] }: ProjectsV2Props) {
+export default function ProjectsV2({ initialProjects = [], showWorkflowAutomations = true }: ProjectsV2Props) {
   const [selectedProjectId, setSelectedProjectId] = useState<string | null>(null);
   const [hoveredProjectId, setHoveredProjectId] = useState<string | null>(null);
   const HOVER_MEDIA: Record<string, { staticSrc: string; hoverSrc: string }> = {};
@@ -182,7 +183,8 @@ export default function ProjectsV2({ initialProjects = [] }: ProjectsV2Props) {
     { id: 'internal-tools', label: 'Internal Apps' },
     { id: 'websites', label: 'Websites' },
     { id: 'workflow-automations', label: 'Workflow Automations' },
-  ].map((group) => ({ ...group, projects: projectsList.filter((p) => TAB_CASE_IDS[group.id as keyof typeof TAB_CASE_IDS].includes(p.id)) }));
+  ].filter((group) => showWorkflowAutomations || group.id !== 'workflow-automations')
+    .map((group) => ({ ...group, projects: projectsList.filter((p) => TAB_CASE_IDS[group.id as keyof typeof TAB_CASE_IDS].includes(p.id)) }));
     const selectedProject = projectsList.find((p) => p.id === selectedProjectId) ?? null;
 
   useEffect(() => {

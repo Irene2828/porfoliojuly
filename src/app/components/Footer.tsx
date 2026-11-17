@@ -61,10 +61,11 @@ export default function Footer() {
           align-items: center;
           gap: 0.6rem;
           width: 100%;
+          position: relative;
         }
         .footer-meta-block {
           display: flex;
-          justify-content: space-between;
+          justify-content: center;
           align-items: flex-end;
           gap: 1rem;
           width: 100%;
@@ -78,11 +79,13 @@ export default function Footer() {
           color: rgba(255, 255, 255, 0.68) !important;
           -webkit-text-fill-color: rgba(255, 255, 255, 0.68) !important;
           margin: 0;
-          text-align: left;
+          text-align: center;
         }
         .footer-linkedin-icon {
           display: inline-flex;
           flex-shrink: 0;
+          position: absolute;
+          right: 0;
           color: rgba(255, 255, 255, 0.68);
           -webkit-text-fill-color: rgba(255, 255, 255, 0.68);
           transition: color 0.25s ease;
@@ -140,15 +143,8 @@ export default function Footer() {
         whileInView={{ opacity: 1, y: 0 }}
         viewport={{ once: true, amount: 0.5 }}
         transition={{ duration: 0.65, ease: [0.16, 1, 0.3, 1] }}
-        style={{ flexDirection: 'column', alignItems: 'stretch', gap: '0.9rem' }}
+        style={{ flexDirection: 'column', alignItems: 'stretch', gap: '1.8rem' }}
       >
-        <div className="footer-meta-block">
-          <div>
-            <p className="footer-meta-text">
-              Hands on AI product builder, certified in UX design, MA in social sciences, ex fashion brand founder.
-            </p>
-          </div>
-        </div>
         <div className="footer-name-row">
           <p className="footer-copy-text">
             &copy; 2026 Iryna Sheremeta
@@ -164,6 +160,13 @@ export default function Footer() {
               <path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.225 0z" />
             </svg>
           </a>
+        </div>
+        <div className="footer-meta-block">
+          <div>
+            <p className="footer-meta-text">
+              Hands on AI product builder, certified in UX design, MA in social sciences, ex fashion brand founder.
+            </p>
+          </div>
         </div>
       </motion.div>
     </footer>
