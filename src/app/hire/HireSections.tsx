@@ -670,6 +670,7 @@ export function HireClosing() {
           font-family: 'Newsreader', 'Source Serif 4', Georgia, serif !important;
           font-style: italic !important;
           font-weight: 400 !important;
+          line-height: 1.05 !important;
         }
         .hire-closing-copy {
           display: inline-flex;
@@ -767,6 +768,7 @@ export function HireClosing() {
             font-style: normal !important;
             font-weight: 600 !important;
             letter-spacing: -0.01em !important;
+            line-height: 1.05 !important;
             color: #ffffff !important;
             -webkit-text-fill-color: #ffffff !important;
           }
@@ -853,7 +855,7 @@ export function HireClosing() {
         >
           <span className="hire-closing-desktop">
             If you need a{' '}
-            <strong style={{ fontWeight: 500, fontStyle: 'normal', letterSpacing: '0.005em', color: '#ffffff', WebkitTextFillColor: '#ffffff' }}>product thinker</strong>{' '}
+            <strong style={{ fontWeight: 500, fontStyle: 'normal', letterSpacing: '0.005em', color: '#ffffff', WebkitTextFillColor: '#ffffff' }}>thoughtful designer</strong>{' '}
             and a <strong>hands-on builder</strong> —{' '}
             <motion.span
               className="hire-closing-here"
@@ -868,7 +870,7 @@ export function HireClosing() {
           </span>
           <span className="hire-closing-mobile">
             <span className="hire-closing-row">If you need a</span>
-            <strong className="hire-closing-row">product thinker</strong>
+            <strong className="hire-closing-row">thoughtful designer</strong>
             <span className="hire-closing-row">and a <strong>hands-on builder</strong> —</span>
             <span className="hire-closing-row hire-closing-here">I’m here.</span>
           </span>
