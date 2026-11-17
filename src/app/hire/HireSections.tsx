@@ -77,24 +77,14 @@ function CaseStory({
       >
         {kicker}
       </motion.p>
-      <motion.h3
-        className="hire-story-title"
-        initial={{ opacity: 0, y: 20 }}
-        whileInView={{ opacity: 1, y: 0 }}
-        viewport={{ once: true, amount: 0.45 }}
-        transition={{ duration: 0.78, delay: 0.08, ease: [0.16, 1, 0.3, 1] }}
-        style={{ margin: stack ? '0 0 1.05rem 0' : '0 0 2.55rem 0', textAlign: 'left' }}
-      >
-        {title}
-      </motion.h3>
       {stack && (
         <motion.p
           initial={{ opacity: 0, y: 14 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true, amount: 0.45 }}
-          transition={{ duration: 0.68, delay: 0.14, ease: [0.16, 1, 0.3, 1] }}
+          transition={{ duration: 0.68, delay: 0.08, ease: [0.16, 1, 0.3, 1] }}
           style={{
-            margin: '0 0 1.5rem 0',
+            margin: '0 0 1.05rem 0',
             textAlign: 'left',
             display: 'flex',
             alignItems: 'baseline',
@@ -125,6 +115,16 @@ function CaseStory({
           </span>
         </motion.p>
       )}
+      <motion.h3
+        className="hire-story-title"
+        initial={{ opacity: 0, y: 20 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        viewport={{ once: true, amount: 0.45 }}
+        transition={{ duration: 0.78, delay: 0.16, ease: [0.16, 1, 0.3, 1] }}
+        style={{ margin: '0 0 2.55rem 0', textAlign: 'left' }}
+      >
+        {title}
+      </motion.h3>
       <div className="hire-story-steps">
         {steps.map((step, index) => (
           <motion.div
