@@ -894,15 +894,30 @@ export default function HeroV2({ variant = 'client' }: { variant?: 'client' | 'h
                 <h1 className="hero-statement hero-statement-anim" style={{ display: 'flex', flexDirection: 'column', gap: '0px', lineHeight: '1.22', color: 'rgba(255, 255, 255, 0.8)', WebkitTextFillColor: 'rgba(255, 255, 255, 0.8)' }}>
                   {/* Desktop Headline (3 lines) */}
                   <span className="headline-desktop">
-                    <span className="headline-line">
-                      <span className="headline-desktop-serif-normal">Custom</span>{' '}
-                      <strong className="headline-desktop-accent">websites,</strong>
-                    </span>
-                    <span className="headline-line">
-                      <strong className="headline-desktop-accent">apps,</strong>{' '}
-                      <strong className="headline-desktop-accent">and</strong>{' '}
-                      <strong className="headline-desktop-accent">workflows.</strong>
-                    </span>
+                    {isHire ? (
+                      <>
+                        <span className="headline-line">
+                          <span className="headline-desktop-serif-normal">Designer</span>{' '}
+                          <strong className="headline-desktop-accent">and builder</strong>
+                        </span>
+                        <span className="headline-line">
+                          <span className="headline-desktop-serif-normal">for</span>{' '}
+                          <strong className="headline-desktop-accent">AI-native teams.</strong>
+                        </span>
+                      </>
+                    ) : (
+                      <>
+                        <span className="headline-line">
+                          <span className="headline-desktop-serif-normal">Custom</span>{' '}
+                          <strong className="headline-desktop-accent">websites,</strong>
+                        </span>
+                        <span className="headline-line">
+                          <strong className="headline-desktop-accent">apps,</strong>{' '}
+                          <strong className="headline-desktop-accent">and</strong>{' '}
+                          <strong className="headline-desktop-accent">workflows.</strong>
+                        </span>
+                      </>
+                    )}
                     <span className="headline-line">
                       {isHire ? (
                         <>
@@ -920,15 +935,30 @@ export default function HeroV2({ variant = 'client' }: { variant?: 'client' | 'h
 
                   {/* Mobile Headline (4 lines, left-aligned) */}
                   <span className="headline-mobile" style={{ gap: '0px', lineHeight: 1.02 }}>
-                    <span className="headline-line">
-                      <span className="headline-mobile-serif-normal">Custom</span>{' '}
-                      <strong className="headline-mobile-accent">websites,</strong>
-                    </span>
-                    <span className="headline-line">
-                      <strong className="headline-mobile-accent">apps,</strong>{' '}
-                      <strong className="headline-mobile-accent">and</strong>{' '}
-                      <strong className="headline-mobile-accent">workflows.</strong>
-                    </span>
+                    {isHire ? (
+                      <>
+                        <span className="headline-line">
+                          <span className="headline-mobile-serif-normal">Designer</span>{' '}
+                          <strong className="headline-mobile-accent">and builder</strong>
+                        </span>
+                        <span className="headline-line">
+                          <span className="headline-mobile-serif-normal">for</span>{' '}
+                          <strong className="headline-mobile-accent">AI-native teams.</strong>
+                        </span>
+                      </>
+                    ) : (
+                      <>
+                        <span className="headline-line">
+                          <span className="headline-mobile-serif-normal">Custom</span>{' '}
+                          <strong className="headline-mobile-accent">websites,</strong>
+                        </span>
+                        <span className="headline-line">
+                          <strong className="headline-mobile-accent">apps,</strong>{' '}
+                          <strong className="headline-mobile-accent">and</strong>{' '}
+                          <strong className="headline-mobile-accent">workflows.</strong>
+                        </span>
+                      </>
+                    )}
                     {isHire ? (
                       <>
                         <span className="headline-line">
