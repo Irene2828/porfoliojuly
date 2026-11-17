@@ -638,6 +638,9 @@ export function HireClosing() {
           >
             Find me on LinkedIn
           </a>
+          <a className="hire-closing-linkedin" href="/freelance">
+            Here for your own business instead? See what I build for clients
+          </a>
         </motion.div>
       </div>
     </section>
