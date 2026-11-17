@@ -253,7 +253,7 @@ export function CaseStories() {
           padding-left: calc(50vw - 50% + 2rem);
           padding-right: calc(50vw - 50% + 2rem);
           padding-bottom: 4.55rem;
-          background: linear-gradient(180deg, #d9edfb 0%, #eaf5fc 28%, #ffffff 52%, #ffffff 100%);
+          background: linear-gradient(180deg, #e6f2fb 0%, #f0f7fc 28%, #ffffff 52%, #ffffff 100%);
         }
         .hire-story--sky .hire-story-copy {
           background: transparent;
