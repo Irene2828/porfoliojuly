@@ -423,6 +423,7 @@ export function HireClosing() {
           letter-spacing: 0.08em !important;
           justify-content: center;
           height: 3.01rem !important;
+          min-width: 272px !important;
           padding: 0 1.74rem !important;
           background: linear-gradient(315deg, #d6b792 0%, #f2908f 100%) !important;
           color: #000000 !important;
