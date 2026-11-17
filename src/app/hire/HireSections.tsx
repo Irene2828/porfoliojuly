@@ -59,6 +59,7 @@ function CaseStory({
   link,
   recordingSrc,
   recordingCaption,
+  className,
   delayBase = 0,
 }: {
   kicker: string;
@@ -68,10 +69,11 @@ function CaseStory({
   link?: { href: string; label: string };
   recordingSrc?: string;
   recordingCaption?: string;
+  className?: string;
   delayBase?: number;
 }) {
   return (
-    <div className="hire-story">
+    <div className={className ? `hire-story ${className}` : 'hire-story'}>
       <div className="hire-story-copy">
       <motion.p
         className="hire-story-kicker"
@@ -241,6 +243,26 @@ export function CaseStories() {
         }
         .hire-story + .hire-story {
           margin-top: 2.55rem;
+        }
+        /* First story band: full-bleed light sky-blue gradient, from its top
+           divider line straight to the next story's divider. */
+        .hire-story--sky {
+          width: 100vw;
+          max-width: none;
+          margin-left: calc(50% - 50vw);
+          padding-left: calc(50vw - 50% + 2rem);
+          padding-right: calc(50vw - 50% + 2rem);
+          padding-bottom: 4.55rem;
+          background: linear-gradient(180deg, #ffffff 0%, #eaf5fc 26%, #d9edfb 62%, #e8f4fc 100%);
+        }
+        .hire-story--sky .hire-story-copy {
+          background: transparent;
+        }
+        .hire-story--sky .hire-story-visual {
+          background: transparent;
+        }
+        .hire-story--sky + .hire-story {
+          margin-top: 0;
         }
         .hire-story-copy {
           margin: -3.5rem -2rem 0;
@@ -491,6 +513,7 @@ export function CaseStories() {
           title="Terry Fox Foundation — the poster tool"
           stack="Codex · Antigravity · Google Stitch"
           steps={terryFoxSteps}
+          className="hire-story--sky"
           recordingSrc="/terry-fox-flow.mp4"
           recordingCaption="On-brand posters in minutes for teams in every city — no designer bottleneck, no waiting days."
         />
@@ -630,6 +653,23 @@ export function HireClosing() {
           color: #ffffff !important;
           -webkit-text-fill-color: #ffffff !important;
           font-style: normal !important;
+        }
+        /* The global .v2-theme h2 span rule paints headline spans peach with
+           higher specificity than the rules above; these win it back. */
+        .v2-theme .hire-closing-section .hire-closing-line {
+          color: #ffffff !important;
+          -webkit-text-fill-color: #ffffff !important;
+        }
+        .v2-theme .hire-closing-section .hire-closing-row:not(strong) {
+          color: #ffffff !important;
+          -webkit-text-fill-color: #ffffff !important;
+        }
+        .v2-theme .hire-closing-section .hire-closing-here {
+          color: #ffffff !important;
+          -webkit-text-fill-color: #ffffff !important;
+          font-family: 'Newsreader', 'Source Serif 4', Georgia, serif !important;
+          font-style: italic !important;
+          font-weight: 400 !important;
         }
         .hire-closing-copy {
           display: inline-flex;
