@@ -15,6 +15,10 @@ export const metadata: Metadata = {
   alternates: {
     canonical: 'https://www.irynasheremeta.com/freelance',
   },
+  robots: {
+    index: false,
+    follow: false,
+  },
 };
 
 export default function FreelancePage() {
