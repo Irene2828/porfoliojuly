@@ -21,11 +21,15 @@ interface ProjectsV2Props {
   initialProjects?: any[];
 }
 
-function DevicePair({ desktopSrc, phoneImgSrc, phoneVideoSrc, alt, modal = false }: { desktopSrc: string; phoneImgSrc?: string; phoneVideoSrc?: string; alt: string; modal?: boolean }) {
+function DevicePair({ desktopSrc, desktopVideoSrc, phoneImgSrc, phoneVideoSrc, alt, modal = false }: { desktopSrc: string; desktopVideoSrc?: string; phoneImgSrc?: string; phoneVideoSrc?: string; alt: string; modal?: boolean }) {
   return (
     <div className={`case-pair${modal ? ' modal-pair' : ''}`}>
       <div className="pair-desktop">
-        <img src={desktopSrc} alt={alt} />
+        {desktopVideoSrc ? (
+          <video src={desktopVideoSrc} poster={desktopSrc} autoPlay loop muted playsInline />
+        ) : (
+          <img src={desktopSrc} alt={alt} />
+        )}
       </div>
       <div className="pair-phone">
         {phoneVideoSrc ? (
@@ -41,10 +45,7 @@ function DevicePair({ desktopSrc, phoneImgSrc, phoneVideoSrc, alt, modal = false
 export default function ProjectsV2({ initialProjects = [] }: ProjectsV2Props) {
   const [selectedProjectId, setSelectedProjectId] = useState<string | null>(null);
   const [hoveredProjectId, setHoveredProjectId] = useState<string | null>(null);
-  const HOVER_MEDIA: Record<string, { staticSrc: string; hoverSrc: string }> = {
-    'v2-1': { staticSrc: '/terry-fox-desktop-static.png', hoverSrc: '/terry-fox-desktop-hover.mp4' },
-    'v2-2': { staticSrc: '/isabelle-mobile-static.png', hoverSrc: '/isabelle-desktop-hover.mp4' },
-  };
+  const HOVER_MEDIA: Record<string, { staticSrc: string; hoverSrc: string }> = {};
   const TAB_CASE_IDS: Record<'internal-tools' | 'websites' | 'workflow-automations', string[]> = {
     'internal-tools': ['v2-1'],
     websites: ['v2-2', 'v2-3'],
@@ -316,8 +317,9 @@ export default function ProjectsV2({ initialProjects = [] }: ProjectsV2Props) {
                         modal={isModal}
                         alt={project.title}
                         desktopSrc={project.id === 'v2-2' ? '/assets/guertin-desktop.png' : '/assets/buyukrainian-desktop.jpg'}
+                        desktopVideoSrc={project.id === 'v2-2' ? '/isabelle-desktop-flow.mp4' : '/buyukrainian-desktop-flow.mp4'}
                         phoneImgSrc={project.id === 'v2-2' ? '/assets/guertin-mobile.png' : '/assets/buyukrainian-mobile.jpg'}
-                        phoneVideoSrc={isModal ? (project.id === 'v2-2' ? '/assets/guertin-mobile-preview.mp4' : '/buyukrainian-mobile-case4.mp4') : undefined}
+                        phoneVideoSrc={project.id === 'v2-2' ? '/isabelle-mobile-flow.mp4' : '/buyukrainian-mobile-flow.mp4'}
                       />
                     ) : project.id === 'v2-6' ? (
                       <div className="case-desktop-frame" style={{ width: '100%', maxWidth: '880px', margin: '0 auto', aspectRatio: '16 / 9' }}>
@@ -649,7 +651,8 @@ export default function ProjectsV2({ initialProjects = [] }: ProjectsV2Props) {
           background: #ffffff;
           box-sizing: border-box;
         }
-        .case-pair .pair-desktop img {
+        .case-pair .pair-desktop img,
+        .case-pair .pair-desktop video {
           width: 100%;
           height: 100%;
           object-fit: cover;
@@ -872,7 +875,9 @@ export default function ProjectsV2({ initialProjects = [] }: ProjectsV2Props) {
                       <DevicePair
                         alt={project.title}
                         desktopSrc={project.id === 'v2-2' ? '/assets/guertin-desktop.png' : '/assets/buyukrainian-desktop.jpg'}
+                        desktopVideoSrc={project.id === 'v2-2' ? '/isabelle-desktop-flow.mp4' : '/buyukrainian-desktop-flow.mp4'}
                         phoneImgSrc={project.id === 'v2-2' ? '/assets/guertin-mobile.png' : '/assets/buyukrainian-mobile.jpg'}
+                        phoneVideoSrc={project.id === 'v2-2' ? '/isabelle-mobile-flow.mp4' : '/buyukrainian-mobile-flow.mp4'}
                       />
                     ) : project.id === 'v2-6' ? (
                       <div className="case-desktop-frame tf-match">
@@ -922,7 +927,7 @@ export default function ProjectsV2({ initialProjects = [] }: ProjectsV2Props) {
                               e.currentTarget.play().catch(() => {});
                             }
                           }}
-                          src="/terry-fox-desktop-hover.mp4"
+                          src="/terry-fox-flow.mp4"
                           className="case-recording-video" style={project.id === 'v2-4' ? { objectFit: 'contain', backgroundColor: '#000000' } : undefined}
           />
           {HOVER_MEDIA[project.id] && (
