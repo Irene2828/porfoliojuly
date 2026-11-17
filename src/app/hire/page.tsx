@@ -4,7 +4,7 @@ import HeroV2 from '../v2/components/HeroV2';
 import ProjectsV2 from '../v2/components/ProjectsV2';
 import Footer from '../components/Footer';
 import ClientWrapper from '../components/ClientWrapper';
-import { CaseStories, HireClosing, HowIUseAI } from './HireSections';
+import { CaseStories, HireClosing, HireTestimonial, HowIUseAI } from './HireSections';
 
 export const metadata: Metadata = {
   title: 'Iryna Sheremeta — Product Designer & AI Builder',
@@ -50,6 +50,9 @@ export default function HirePage() {
 
         {/* How I use AI — her story, replaces the homepage's How It Works */}
         <HowIUseAI />
+
+        {/* Testimonial — Isabelle Guertin's fresh review */}
+        <HireTestimonial />
 
         {/* Closing — recruiter version of the homepage prefooter */}
         <HireClosing />
