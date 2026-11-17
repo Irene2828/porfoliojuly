@@ -2,10 +2,9 @@ import type { Metadata } from 'next';
 import Header from '../components/Header';
 import HeroV2 from '../v2/components/HeroV2';
 import ProjectsV2 from '../v2/components/ProjectsV2';
-import HowItWorks from '../v2/components/HowItWorks';
 import Footer from '../components/Footer';
 import ClientWrapper from '../components/ClientWrapper';
-import { CaseStories, HireClosing } from './HireSections';
+import { CaseStories, HireClosing, HowIUseAI } from './HireSections';
 
 export const metadata: Metadata = {
   title: 'Iryna Sheremeta — Product Designer & AI Builder',
@@ -49,8 +48,8 @@ export default function HirePage() {
         {/* Case stories: Terry Fox + BuyUkrainian, problem to live use */}
         <CaseStories />
 
-        {/* How I work — same section as the homepage */}
-        <HowItWorks />
+        {/* How I use AI — her story, replaces the homepage's How It Works */}
+        <HowIUseAI />
 
         {/* Closing — recruiter version of the homepage prefooter */}
         <HireClosing />

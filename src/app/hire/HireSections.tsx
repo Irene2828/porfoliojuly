@@ -643,3 +643,188 @@ export function HireClosing() {
     </section>
   );
 }
+
+/* "How I use AI" — replaces HowItWorks on the /hire page. Copy: Iryna's own text, lightly edited. */
+
+export function HowIUseAI() {
+  return (
+    <section
+      id="how-i-use-ai"
+      style={{
+        backgroundColor: 'var(--color-matte-black, #25282e)',
+        padding: 'var(--section-entry-space, 5.1rem) 0 5.1rem 0',
+        width: '100%',
+        position: 'relative',
+        overflow: 'hidden',
+      }}
+    >
+      <style>{`
+        .hire-ai-kicker {
+          font-family: var(--font-body), 'Plus Jakarta Sans', sans-serif !important;
+          font-size: var(--text-label) !important;
+          font-weight: 600 !important;
+          text-transform: uppercase !important;
+          letter-spacing: 0.14em !important;
+          color: #f2908f !important;
+          -webkit-text-fill-color: #f2908f !important;
+        }
+        .hire-ai-title {
+          font-family: var(--font-heading) !important;
+          font-weight: 400 !important;
+          letter-spacing: -0.02em !important;
+          font-size: var(--text-section-title);
+          line-height: 1.2;
+          color: #ffffff !important;
+          -webkit-text-fill-color: #ffffff !important;
+        }
+        .hire-ai-body {
+          font-family: var(--font-body), 'Plus Jakarta Sans', sans-serif !important;
+          font-size: var(--text-body) !important;
+          font-weight: 300 !important;
+          line-height: var(--lh-body) !important;
+          letter-spacing: 0.015em !important;
+          color: rgba(255, 255, 255, 0.72) !important;
+          -webkit-text-fill-color: rgba(255, 255, 255, 0.72) !important;
+          max-width: 68ch;
+          text-align: left;
+        }
+        .hire-ai-body p {
+          margin: 0 0 1.4rem 0;
+        }
+        .hire-ai-body p:last-child {
+          margin-bottom: 0;
+        }
+        .hire-ai-creds {
+          font-family: var(--font-body), 'Plus Jakarta Sans', sans-serif !important;
+          font-size: var(--text-small) !important;
+          font-weight: 400 !important;
+          line-height: var(--lh-small) !important;
+          letter-spacing: 0.02em !important;
+          color: rgba(255, 255, 255, 0.55) !important;
+          -webkit-text-fill-color: rgba(255, 255, 255, 0.55) !important;
+          margin: 2.55rem 0 0 0;
+          text-align: left;
+        }
+        .hire-ai-creds span {
+          color: #f2908f !important;
+          -webkit-text-fill-color: #f2908f !important;
+        }
+        .hire-ai-closing {
+          font-family: var(--font-body), 'Plus Jakarta Sans', sans-serif !important;
+          font-size: calc(var(--text-body) * 1.2) !important;
+          font-weight: 500 !important;
+          line-height: var(--lh-body) !important;
+          letter-spacing: 0.015em !important;
+          color: #ffffff !important;
+          -webkit-text-fill-color: #ffffff !important;
+          margin: 2.55rem 0 0 0;
+          text-align: left;
+        }
+        @media (min-width: 1200px) {
+          #how-i-use-ai > .container {
+            max-width: 1267.2px !important;
+            padding-left: 1.76rem !important;
+            padding-right: 1.76rem !important;
+          }
+        }
+        @media (max-width: 900px) {
+          #how-i-use-ai > .container {
+            padding-left: 1.5rem !important;
+            padding-right: 1.5rem !important;
+          }
+          .hire-ai-title {
+            font-size: 2.1rem !important;
+          }
+        }
+        @media (min-width: 901px) {
+          .hire-ai-body {
+            font-size: calc(var(--text-body) + 2px) !important;
+          }
+        }
+      `}</style>
+      <div
+        className="container"
+        style={{
+          maxWidth: '1440px',
+          margin: '0 auto',
+          padding: '0 6rem',
+          textAlign: 'center',
+        }}
+      >
+        <motion.p
+          className="hire-ai-kicker"
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true, amount: 0.45 }}
+          transition={{ duration: 0.68, ease: [0.16, 1, 0.3, 1] }}
+          style={{ margin: '0 0 1.05rem 0', textAlign: 'left' }}
+        >
+          HOW I USE AI
+        </motion.p>
+        <motion.h2
+          className="hire-ai-title"
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true, amount: 0.45 }}
+          transition={{ duration: 0.78, delay: 0.08, ease: [0.16, 1, 0.3, 1] }}
+          style={{ margin: '0 0 2.55rem 0', textAlign: 'left' }}
+        >
+          My thinking has always been end to end.
+        </motion.h2>
+        <motion.div
+          className="hire-ai-body"
+          initial={{ opacity: 0, y: 14 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true, amount: 0.3 }}
+          transition={{ duration: 0.68, delay: 0.16, ease: [0.16, 1, 0.3, 1] }}
+        >
+          <p>
+            AI has changed the way I design and how I approach problems. My thinking has always
+            been end to end — design in static screens and Figma prototypes was a limitation of
+            the tools at the time, never a limitation of how far my design intent could go. For
+            the past year I’ve built with agentic code tools — Codex, Antigravity, and Claude.
+            That put a builder mindset to work on more complex customer and personal problems,
+            instead of keeping it locked in a design tool.
+          </p>
+          <p>
+            When I was 23, I launched my own fashion brand in Kyiv, Ukraine. It started as a
+            design dream — bringing ideas to life — and became a first real school of what
+            business is: what it takes to make all the elements of a product work, to be liked,
+            loved, and used. I directed the work of my master tailors to bring ideas to life.
+          </p>
+          <p>
+            After a motherhood break, turning to tech was a natural step — a way to explore
+            what’s possible when you combine creative and business thinking. Then came first
+            clients, the AI boom, and the ability to create at a speed not imaginable a year
+            ago. Design thinking still takes the biggest share of the time. But building now
+            happens everywhere I can: a work laptop, or a mobile device on the go.
+          </p>
+          <p>
+            I want to bring my thinking to your team, learn from how you do it, and see how we
+            can build and design better products for customers who are getting more demanding
+            than ever.
+          </p>
+        </motion.div>
+        <motion.p
+          className="hire-ai-creds"
+          initial={{ opacity: 0, y: 14 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true, amount: 0.45 }}
+          transition={{ duration: 0.68, delay: 0.2, ease: [0.16, 1, 0.3, 1] }}
+        >
+          Certified in UX design <span>·</span> Hands-on with most agentic tools <span>·</span>{' '}
+          Master’s degree in social science <span>·</span> Startup life, from my own experience
+        </motion.p>
+        <motion.p
+          className="hire-ai-closing"
+          initial={{ opacity: 0, y: 14 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true, amount: 0.45 }}
+          transition={{ duration: 0.68, delay: 0.28, ease: [0.16, 1, 0.3, 1] }}
+        >
+          If you need a product thinker and a hands-on builder — I’d love to talk to you.
+        </motion.p>
+      </div>
+    </section>
+  );
+}
