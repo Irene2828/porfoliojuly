@@ -244,8 +244,8 @@ export function CaseStories() {
         .hire-story + .hire-story {
           margin-top: 2.55rem;
         }
-        /* First story band: full-bleed light sky-blue gradient, from its top
-           divider line straight to the next story's divider. */
+        /* Story band: full-bleed sky-blue gradient under each story's top
+           divider — blue at the top, white in the middle, ending fully white. */
         .hire-story--sky {
           width: 100vw;
           max-width: none;
@@ -253,7 +253,7 @@ export function CaseStories() {
           padding-left: calc(50vw - 50% + 2rem);
           padding-right: calc(50vw - 50% + 2rem);
           padding-bottom: 4.55rem;
-          background: linear-gradient(180deg, #d9edfb 0%, #eaf5fc 30%, #ffffff 50%, #eaf5fc 70%, #d9edfb 100%);
+          background: linear-gradient(180deg, #d9edfb 0%, #eaf5fc 28%, #ffffff 52%, #ffffff 100%);
         }
         .hire-story--sky .hire-story-copy {
           background: transparent;
@@ -266,7 +266,7 @@ export function CaseStories() {
         }
         .hire-story-copy {
           margin: -3.5rem -2rem 0;
-          padding: 7rem 2rem 3rem;
+          padding: 3.5rem 2rem 3rem;
           background: #ffffff;
           border-top: 1px solid #121316;
         }
@@ -524,6 +524,7 @@ export function CaseStories() {
           steps={buyUkrainianSteps}
           recordingSrc="/buyukrainian-desktop-flow.mp4"
           recordingCaption="Ukrainian-made products on one map — 28 stores across Canada, and anyone can add a missing one."
+          className="hire-story--sky"
           link={{ href: 'https://www.buyukrainian.ca', label: 'Visit the live site' }}
         />
       </div>
