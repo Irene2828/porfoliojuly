@@ -155,7 +155,7 @@ export default function ProcessSection() {
             }}
           >
             <p className="testimonial-pull-quote">
-              “It started working right away — several calls from potential new clients since it went live.”
+              “Your website is so effective that I&apos;m now receiving calls every day from potential clients — sometimes as many as three a day!”
             </p>
             <blockquote
               className="testimonial-quote"
@@ -169,7 +169,7 @@ export default function ProcessSection() {
                 color: 'rgba(0, 0, 0, 0.64)',
               }}
             >
-              Iryna built my new website, and she explained everything clearly and patiently, even to someone like me who isn&apos;t tech-savvy at all. Working with her feels personal, not transactional. I recommend her without hesitation.
+              Working with Iryna was a great experience from start to finish. She is professional, patient, and truly listens to her clients. What sets her apart is her ability to go beyond what&apos;s asked, anticipate needs, and offer thoughtful solutions. She delivered a website that perfectly reflects my business and values. I couldn&apos;t be happier with the result and highly recommend her services!
             </blockquote>
             <motion.p
               className="testimonial-attribution"
