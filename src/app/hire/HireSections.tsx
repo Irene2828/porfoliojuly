@@ -53,12 +53,14 @@ const buyUkrainianSteps = [
 function CaseStory({
   kicker,
   title,
+  stack,
   steps,
   link,
   delayBase = 0,
 }: {
   kicker: string;
   title: string;
+  stack?: string;
   steps: { num: string; title: string; text: string }[];
   link?: { href: string; label: string };
   delayBase?: number;
@@ -81,10 +83,48 @@ function CaseStory({
         whileInView={{ opacity: 1, y: 0 }}
         viewport={{ once: true, amount: 0.45 }}
         transition={{ duration: 0.78, delay: 0.08, ease: [0.16, 1, 0.3, 1] }}
-        style={{ margin: '0 0 2.55rem 0', textAlign: 'left' }}
+        style={{ margin: stack ? '0 0 1.05rem 0' : '0 0 2.55rem 0', textAlign: 'left' }}
       >
         {title}
       </motion.h3>
+      {stack && (
+        <motion.p
+          initial={{ opacity: 0, y: 14 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true, amount: 0.45 }}
+          transition={{ duration: 0.68, delay: 0.14, ease: [0.16, 1, 0.3, 1] }}
+          style={{
+            margin: '0 0 1.5rem 0',
+            textAlign: 'left',
+            display: 'flex',
+            alignItems: 'baseline',
+            gap: '0.65rem',
+            fontFamily: 'var(--font-body), "Plus Jakarta Sans", sans-serif',
+          }}
+        >
+          <span
+            style={{
+              fontSize: '0.7rem',
+              fontWeight: 600,
+              letterSpacing: '0.16em',
+              textTransform: 'uppercase',
+              color: 'rgba(28, 30, 35, 0.5)',
+            }}
+          >
+            Design &amp; build
+          </span>
+          <span
+            style={{
+              fontSize: '0.92rem',
+              fontWeight: 400,
+              letterSpacing: '0.01em',
+              color: 'rgba(28, 30, 35, 0.85)',
+            }}
+          >
+            {stack}
+          </span>
+        </motion.p>
+      )}
       <div className="hire-story-steps">
         {steps.map((step, index) => (
           <motion.div
@@ -289,11 +329,26 @@ export function CaseStories() {
         <CaseStory
           kicker="CASE STUDY · CLIENT TOOL"
           title="Terry Fox Foundation — the poster tool"
+          stack="Codex · Antigravity · Google Stitch"
           steps={terryFoxSteps}
+        />
+        <motion.div
+          aria-hidden="true"
+          initial={{ opacity: 0 }}
+          whileInView={{ opacity: 1 }}
+          viewport={{ once: true, amount: 0.9 }}
+          transition={{ duration: 0.7, ease: [0.16, 1, 0.3, 1] }}
+          style={{
+            height: '1px',
+            backgroundColor: '#121316',
+            margin: '5.1rem 0 0 0',
+            width: '100%',
+          }}
         />
         <CaseStory
           kicker="CASE STUDY · MY OWN PRODUCT"
           title="BuyUkrainian — a live product of my own"
+          stack="Codex · Antigravity · Figma"
           steps={buyUkrainianSteps}
           link={{ href: 'https://www.buyukrainian.ca', label: 'Visit the live site' }}
         />
