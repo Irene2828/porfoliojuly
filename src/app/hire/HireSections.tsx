@@ -413,6 +413,19 @@ export function HireClosing() {
           border-bottom: 1px solid rgba(242, 144, 143, 0.6);
           padding-bottom: 1px;
         }
+        .hire-closing-linkedin-icon {
+          transition: color 0.25s ease;
+        }
+        .hire-closing-linkedin-icon:hover {
+          color: #f2908f !important;
+          -webkit-text-fill-color: #f2908f !important;
+        }
+        @media (max-width: 900px) {
+          .hire-closing-linkedin-icon {
+            right: 1.5rem !important;
+            bottom: 1.5rem !important;
+          }
+        }
         @media (min-width: 901px) {
           .hire-closing-line,
           .hire-closing-desktop,
@@ -525,7 +538,7 @@ export function HireClosing() {
           maxWidth: '820px',
           width: '100%',
           textAlign: 'center',
-          padding: '2rem 1rem',
+          padding: '2rem 1rem 0 1rem',
           display: 'flex',
           flexDirection: 'column',
           alignItems: 'center',
@@ -617,7 +630,7 @@ export function HireClosing() {
           whileInView={{ opacity: 1, y: 0, scale: 1 }}
           viewport={{ once: true, amount: 0.45 }}
           transition={{ duration: 0.72, delay: 0.42, ease: [0.16, 1, 0.3, 1] }}
-          style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', gap: '1rem', marginTop: '0rem', marginBottom: '1.25rem', justifyContent: 'center' }}
+          style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', gap: '1rem', marginTop: '0rem', marginBottom: '0', justifyContent: 'center' }}
         >
           <a
             href="mailto:iryna@irynasheremeta.com"
@@ -636,16 +649,28 @@ export function HireClosing() {
           <p style={{ margin: 0, fontFamily: 'var(--font-body), "Plus Jakarta Sans", sans-serif', fontSize: '0.82rem', fontWeight: 300, letterSpacing: '0.015em', color: 'rgba(255, 255, 255, 0.68)', textAlign: 'center', maxWidth: '52ch' }}>
             Certified in UX design · Hands-on with most agentic tools · Master’s degree in social science · Startup life, from my own experience
           </p>
-          <a
-            className="hire-closing-linkedin"
-            href="https://www.linkedin.com/in/iryna-sheremeta-643316414/"
-            target="_blank"
-            rel="noreferrer"
-          >
-            Find me on LinkedIn
-          </a>
         </motion.div>
       </div>
+      <a
+        className="hire-closing-linkedin-icon"
+        href="https://www.linkedin.com/in/iryna-sheremeta-643316414/"
+        target="_blank"
+        rel="noreferrer"
+        aria-label="Find me on LinkedIn"
+        style={{
+          position: 'absolute',
+          right: '2rem',
+          bottom: '2rem',
+          display: 'inline-flex',
+          color: 'rgba(255, 255, 255, 0.68)',
+          WebkitTextFillColor: 'rgba(255, 255, 255, 0.68)',
+          zIndex: 3,
+        }}
+      >
+        <svg width="22" height="22" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+          <path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.225 0z" />
+        </svg>
+      </a>
     </section>
   );
 }
