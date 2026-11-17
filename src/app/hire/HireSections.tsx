@@ -852,3 +852,149 @@ export function HowIUseAI() {
     </section>
   );
 }
+
+export function HireTestimonial() {
+  return (
+    <section
+      id="testimonial"
+      style={{
+        background:
+          'radial-gradient(circle at 44% 42%, rgba(255, 255, 255, 0.95) 0%, rgba(255, 255, 255, 0.52) 34%, rgba(247, 243, 237, 0) 72%), #f7f3ed',
+        borderBottom: '1px solid rgba(120, 128, 136, 0.18)',
+        padding: '5.1rem 2rem 2.55rem 2rem',
+        width: '100%',
+        display: 'flex',
+        flexDirection: 'column',
+        alignItems: 'center',
+        justifyContent: 'center',
+        position: 'relative',
+        overflow: 'hidden',
+      }}
+    >
+      <style>{`
+        .hire-t-heading {
+          font-family: var(--font-heading) !important;
+          font-weight: 400 !important;
+          letter-spacing: -0.02em !important;
+          font-size: var(--text-section-title);
+          line-height: 1.2;
+          color: var(--color-heading-silver) !important;
+          -webkit-text-fill-color: var(--color-heading-silver) !important;
+        }
+        .hire-t-card {
+          width: 100%;
+          background-color: #ffffff;
+          border: 1px dashed #000000;
+          border-radius: 0;
+          box-shadow: none;
+          padding: 3.25rem 4rem 2.25rem;
+          display: flex;
+          flex-direction: column;
+          align-items: flex-start;
+          justify-content: flex-start;
+          text-align: left;
+        }
+        .hire-t-pull {
+          font-family: var(--font-body), 'Plus Jakarta Sans', sans-serif !important;
+          font-size: clamp(1.15rem, 1.8vw, 1.55rem) !important;
+          line-height: 1.4 !important;
+          font-weight: 500 !important;
+          color: #1d2229 !important;
+          max-width: 38ch;
+          margin: 0 0 1.25rem 0;
+        }
+        .hire-t-quote {
+          font-family: var(--font-body), 'Plus Jakarta Sans', sans-serif !important;
+          font-style: normal !important;
+          font-weight: 400 !important;
+          font-size: var(--text-small);
+          line-height: var(--lh-small);
+          letter-spacing: 0.008em !important;
+          color: rgba(0, 0, 0, 0.78) !important;
+          -webkit-text-fill-color: rgba(0, 0, 0, 0.78) !important;
+          margin: 0;
+          padding: 0;
+          max-width: 1093px;
+        }
+        .hire-t-attribution {
+          font-family: var(--font-body), 'Plus Jakarta Sans', sans-serif !important;
+          font-weight: 500 !important;
+          font-size: var(--text-small) !important;
+          line-height: var(--lh-small);
+          letter-spacing: 0.18em !important;
+          text-transform: uppercase !important;
+          color: rgba(0, 0, 0, 0.8) !important;
+          -webkit-text-fill-color: rgba(0, 0, 0, 0.8) !important;
+        }
+        @media (max-width: 900px) {
+          .hire-t-container {
+            padding-left: 1.5rem !important;
+            padding-right: 1.5rem !important;
+          }
+          .hire-t-card {
+            padding: 2.625rem 1.75rem 1.5rem !important;
+          }
+          .hire-t-attribution {
+            font-size: var(--text-label) !important;
+          }
+        }
+      `}</style>
+      <div
+        className="hire-t-container"
+        style={{
+          width: '100%',
+          maxWidth: '1440px',
+          paddingLeft: '6rem',
+          paddingRight: '6rem',
+          display: 'flex',
+          flexDirection: 'column',
+          alignItems: 'flex-start',
+          justifyContent: 'flex-start',
+          textAlign: 'left',
+        }}
+      >
+        <motion.h2
+          className="hire-t-heading"
+          initial={{ opacity: 0, y: 24 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true, margin: '-80px' }}
+          transition={{ duration: 0.7, ease: 'easeOut' }}
+          style={{ margin: '0 0 1.25rem 0' }}
+        >
+          A client&rsquo;s perspective:
+        </motion.h2>
+        <motion.div
+          className="hire-t-card"
+          initial={{ opacity: 0, y: 24 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true, margin: '-80px' }}
+          transition={{ duration: 0.7, delay: 0.1, ease: 'easeOut' }}
+        >
+          <p className="hire-t-pull">
+            “Your website is so effective that I&apos;m now receiving calls every day from
+            potential clients — sometimes as many as three a day!”
+          </p>
+          <blockquote className="hire-t-quote">
+            Working with Iryna was a great experience from start to finish. She is professional,
+            patient, and truly listens to her clients. What sets her apart is her ability to go
+            beyond what&apos;s asked, anticipate needs, and offer thoughtful solutions. She
+            delivered a website that perfectly reflects my business and values. I couldn&apos;t be
+            happier with the result and highly recommend her services!
+          </blockquote>
+          <motion.p
+            className="hire-t-attribution"
+            initial={{ opacity: 0, y: 12 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true, margin: '-80px' }}
+            transition={{ duration: 0.6, delay: 0.2, ease: 'easeOut' }}
+            style={{ margin: '2.5rem 0 0 0' }}
+          >
+            <strong style={{ fontWeight: 800, color: 'rgba(0, 0, 0, 0.6)' }}>ISABELLE GUERTIN</strong>
+            , INSURANCE CLAIMS EXPERT,{' '}
+            <span style={{ color: 'rgba(0, 0, 0, 0.6)' }}>MONTREAL</span>
+          </motion.p>
+        </motion.div>
+      </div>
+    </section>
+  );
+}
