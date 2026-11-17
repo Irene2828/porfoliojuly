@@ -132,7 +132,7 @@ export default function ProcessSection() {
               color: 'var(--color-heading-silver)',
             }}
           >
-            A client&rsquo;s perspective:
+            Working with me, in client&rsquo;s words:
           </motion.h2>
           <motion.div
             className="testimonial-single"
