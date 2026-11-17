@@ -8,6 +8,7 @@ type SectionDividerProps = {
   theme?: 'light' | 'dark';
   liveLink?: string;
   subline?: string;
+  stack?: string;
   align?: 'center' | 'right';
   statsTitle?: string;
   annotations?: { chip: string; text: string; stat?: string; statLabel?: string; sub?: React.ReactNode }[];
@@ -19,7 +20,8 @@ export default function SectionDivider({
   label, 
   theme = 'dark', 
   liveLink, 
-  subline, 
+  subline,
+  stack,
   align = 'right', 
   statsTitle,
   annotations, 
@@ -83,6 +85,39 @@ export default function SectionDivider({
             {subline && (
               <span className="section-divider-subline" style={{ whiteSpace: 'pre-line' }}>
                 &mdash; {subline}
+              </span>
+            )}
+            {stack && (
+              <span
+                style={{
+                  display: 'inline-flex',
+                  alignItems: 'baseline',
+                  gap: '0.65rem',
+                  fontFamily: 'var(--font-body), "Plus Jakarta Sans", sans-serif',
+                  textAlign: 'center',
+                }}
+              >
+                <span
+                  style={{
+                    fontSize: '0.7rem',
+                    fontWeight: 600,
+                    letterSpacing: '0.16em',
+                    textTransform: 'uppercase',
+                    color: 'rgba(255, 255, 255, 0.55)',
+                  }}
+                >
+                  Design &amp; build
+                </span>
+                <span
+                  style={{
+                    fontSize: '0.92rem',
+                    fontWeight: 400,
+                    letterSpacing: '0.01em',
+                    color: 'rgba(255, 255, 255, 0.88)',
+                  }}
+                >
+                  {stack}
+                </span>
               </span>
             )}
           </div>
