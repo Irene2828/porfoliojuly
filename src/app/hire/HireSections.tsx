@@ -1,5 +1,6 @@
 'use client';
 
+import { useState } from 'react';
 import { motion } from 'framer-motion';
 
 /* Case stories for the /hire page: how two products went from problem to live use. */
@@ -360,6 +361,7 @@ export function CaseStories() {
 /* Closing for the /hire page: same editorial statement design as the homepage prefooter, recruiter copy. */
 
 export function HireClosing() {
+  const [copied, setCopied] = useState(false);
   return (
     <section
       id="contact"
@@ -469,6 +471,30 @@ export function HireClosing() {
           border-bottom: 1px solid rgba(242, 144, 143, 0.6);
           padding-bottom: 1px;
         }
+        .hire-closing-copy {
+          display: inline-flex;
+          align-items: center;
+          gap: 0.45rem;
+          background: none;
+          border: none;
+          padding: 0;
+          cursor: pointer;
+          font-family: var(--font-body), 'Plus Jakarta Sans', sans-serif !important;
+          font-size: 0.82rem !important;
+          font-weight: 300 !important;
+          letter-spacing: 0.015em !important;
+          color: rgba(255, 255, 255, 0.55) !important;
+          -webkit-text-fill-color: rgba(255, 255, 255, 0.55) !important;
+          transition: color 0.25s ease;
+        }
+        .hire-closing-copy:hover {
+          color: rgba(255, 255, 255, 0.85) !important;
+          -webkit-text-fill-color: rgba(255, 255, 255, 0.85) !important;
+        }
+        .hire-closing-copy svg {
+          flex: none;
+          opacity: 0.7;
+        }
 
         @media (min-width: 901px) {
           .hire-closing-line,
@@ -508,7 +534,7 @@ export function HireClosing() {
           .hire-closing-line {
             font-size: clamp(1.0064rem, 5.24vw, 1.416rem) !important;
             line-height: 1.35 !important;
-            text-align: left !important;
+            text-align: right !important;
             width: 100% !important;
             max-width: none !important;
             align-self: stretch !important;
@@ -527,15 +553,15 @@ export function HireClosing() {
           .hire-closing-mobile {
             display: flex !important;
             flex-direction: column !important;
-            align-items: center !important;
+            align-items: flex-end !important;
             width: 100% !important;
             gap: 0px !important;
-            text-align: center !important;
+            text-align: right !important;
           }
           .hire-closing-row {
             display: block !important;
             width: 100% !important;
-            text-align: center !important;
+            text-align: right !important;
             font-style: normal !important;
             font-weight: 600 !important;
             letter-spacing: -0.01em !important;
@@ -553,7 +579,7 @@ export function HireClosing() {
             height: 3.25rem !important;
             width: auto !important;
             padding: 0 1.88rem !important;
-            margin: 0 auto !important;
+            margin: 0 0 0 auto !important;
             justify-content: center !important;
             white-space: nowrap !important;
             border-radius: 44px !important;
@@ -581,11 +607,11 @@ export function HireClosing() {
         style={{
           maxWidth: '820px',
           width: '100%',
-          textAlign: 'center',
+          textAlign: 'right',
           padding: '2rem 1rem 0 1rem',
           display: 'flex',
           flexDirection: 'column',
-          alignItems: 'center',
+          alignItems: 'flex-end',
           position: 'relative',
           zIndex: 2,
         }}
@@ -599,41 +625,17 @@ export function HireClosing() {
             width: '48px',
             height: '1px',
             backgroundColor: '#2d3139',
-            margin: '2rem auto 1rem auto',
-            transformOrigin: 'center',
+            margin: '2rem 0 1rem auto',
+            transformOrigin: 'right',
           }}
         />
-
-        <motion.p
-          initial={{ opacity: 0, y: 14 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true, amount: 0.45 }}
-          transition={{ duration: 0.68, delay: 0.08, ease: [0.16, 1, 0.3, 1] }}
-          style={{
-            fontFamily: 'var(--font-body), "Plus Jakarta Sans", sans-serif',
-            fontSize: 'clamp(1.15rem, 2.8vw, 1.23rem)',
-            fontWeight: 300,
-            letterSpacing: '-0.011em',
-            lineHeight: 1.55,
-            color: 'rgba(255, 255, 255, 0.8)',
-            WebkitTextFillColor: 'rgba(255, 255, 255, 0.8)',
-            textAlign: 'center',
-            margin: '0 auto 2.55rem auto',
-            maxWidth: '52ch',
-            textWrap: 'balance',
-          }}
-        >
-          I want to bring my thinking to your team, learn from how you do it, and see how we can
-          build and design better products for customers who are getting more demanding than
-          ever.
-        </motion.p>
 
         <motion.h2
           className="hire-closing-line"
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true, amount: 0.45 }}
-          transition={{ duration: 0.78, delay: 0.18, ease: [0.16, 1, 0.3, 1] }}
+          transition={{ duration: 0.78, delay: 0.08, ease: [0.16, 1, 0.3, 1] }}
           style={{
             fontFamily: 'var(--font-heading)',
             fontSize: 'var(--closing-heading-size)',
@@ -642,8 +644,8 @@ export function HireClosing() {
             lineHeight: 1.35,
             color: '#ffffff',
             WebkitTextFillColor: '#ffffff',
-            textAlign: 'center',
-            margin: '0 0 3.5rem 0',
+            textAlign: 'right',
+            margin: '0 0 2.55rem 0',
             maxWidth: '44ch',
           }}
         >
@@ -669,12 +671,36 @@ export function HireClosing() {
           </span>
         </motion.h2>
 
+        <motion.p
+          initial={{ opacity: 0, y: 14 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true, amount: 0.45 }}
+          transition={{ duration: 0.68, delay: 0.18, ease: [0.16, 1, 0.3, 1] }}
+          style={{
+            fontFamily: 'var(--font-body), "Plus Jakarta Sans", sans-serif',
+            fontSize: 'clamp(1.15rem, 2.8vw, 1.23rem)',
+            fontWeight: 300,
+            letterSpacing: '-0.011em',
+            lineHeight: 1.55,
+            color: 'rgba(255, 255, 255, 0.8)',
+            WebkitTextFillColor: 'rgba(255, 255, 255, 0.8)',
+            textAlign: 'right',
+            margin: '0 0 2.55rem 0',
+            maxWidth: '52ch',
+            textWrap: 'balance',
+          }}
+        >
+          I want to bring my thinking to your team, learn from how you do it, and see how we can
+          build and design better products for customers who are getting more demanding than
+          ever.
+        </motion.p>
+
         <motion.div
           initial={{ opacity: 0, y: 16, scale: 0.96 }}
           whileInView={{ opacity: 1, y: 0, scale: 1 }}
           viewport={{ once: true, amount: 0.45 }}
           transition={{ duration: 0.72, delay: 0.42, ease: [0.16, 1, 0.3, 1] }}
-          style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', gap: '1rem', marginTop: '0rem', marginBottom: '0', justifyContent: 'center' }}
+          style={{ display: 'flex', flexDirection: 'column', alignItems: 'flex-end', gap: '1rem', marginTop: '0rem', marginBottom: '0', justifyContent: 'center' }}
         >
           <a
             href="mailto:iryna@irynasheremeta.com"
@@ -687,6 +713,22 @@ export function HireClosing() {
               <polyline points="7 7 17 7 17 17"></polyline>
             </svg>
           </a>
+          <button
+            type="button"
+            className="hire-closing-copy"
+            onClick={() => {
+              navigator.clipboard.writeText('iryna@irynasheremeta.com').then(() => {
+                setCopied(true);
+                setTimeout(() => setCopied(false), 2000);
+              }).catch(() => {});
+            }}
+          >
+            {copied ? 'Copied' : 'iryna@irynasheremeta.com'}
+            <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+              <rect x="9" y="9" width="13" height="13" rx="2"></rect>
+              <path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path>
+            </svg>
+          </button>
         </motion.div>
       </div>
     </section>
