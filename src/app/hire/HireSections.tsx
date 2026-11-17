@@ -961,7 +961,7 @@ export function HireTestimonial() {
           transition={{ duration: 0.7, ease: 'easeOut' }}
           style={{ margin: '0 0 1.25rem 0' }}
         >
-          A client&rsquo;s perspective:
+          Working with me, in client&rsquo;s words:
         </motion.h2>
         <motion.div
           className="hire-t-card"
