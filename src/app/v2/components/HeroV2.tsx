@@ -992,7 +992,7 @@ export default function HeroV2({ variant = 'client' }: { variant?: 'client' | 'h
                 <a 
                   href="#contact" 
                   className="btn prefooter-btn-primary face-cta" 
-                  style={{ display: 'inline-flex', alignItems: 'center', gap: '0.45rem' }}
+                  style={{ display: 'inline-flex', alignItems: 'center', gap: '0.45rem', ...(isHire ? { minWidth: '272px' } : {}) }}
                 >
                   <span>{isHire ? 'GET IN TOUCH' : 'SEND YOUR PROBLEM MY WAY'}</span>
                   <svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round" style={{ transform: 'translateY(-0.5px)' }}>
