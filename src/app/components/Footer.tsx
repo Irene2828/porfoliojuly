@@ -138,10 +138,7 @@ export default function Footer() {
         <div className="footer-meta-block">
           <div>
             <p className="footer-meta-text">
-              Open to remote roles across Canada · Based in Montréal
-            </p>
-            <p className="footer-meta-text">
-              Certified in UX design · Hands-on with most agentic tools · Master’s degree in social science · Startup life, from my own experience
+              Product thinker, certified in UX design, hands on with agentic coding tools, MA in social sciences, ex fashion brand founder.
             </p>
           </div>
           <a
