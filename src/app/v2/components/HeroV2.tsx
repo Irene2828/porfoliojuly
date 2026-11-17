@@ -3,7 +3,8 @@
 import '@/app/components/Hero.css';
 import heroImage from '@/app/assets/new_me.jpg';
 
-export default function HeroV2() {
+export default function HeroV2({ variant = 'client' }: { variant?: 'client' | 'hire' } = {}) {
+  const isHire = variant === 'hire';
     
   return (
     <section className="section hero-section" id="home" style={{ backgroundColor: '#121316', background: '#121316' }}>
@@ -903,8 +904,17 @@ export default function HeroV2() {
                       <strong className="headline-desktop-accent">workflows.</strong>
                     </span>
                     <span className="headline-line">
-                      <span className="headline-desktop-serif-normal">Built for one business &mdash;</span>{' '}
-                      <em className="headline-desktop-serif">yours.</em>
+                      {isHire ? (
+                        <>
+                          <span className="headline-desktop-serif-normal">From problem &mdash;</span>{' '}
+                          <em className="headline-desktop-serif">to shipped product.</em>
+                        </>
+                      ) : (
+                        <>
+                          <span className="headline-desktop-serif-normal">Built for one business &mdash;</span>{' '}
+                          <em className="headline-desktop-serif">yours.</em>
+                        </>
+                      )}
                     </span>
                   </span>
 
@@ -919,23 +929,50 @@ export default function HeroV2() {
                       <strong className="headline-mobile-accent">and</strong>{' '}
                       <strong className="headline-mobile-accent">workflows.</strong>
                     </span>
-                    <span className="headline-line">
-                      <span className="headline-mobile-serif-normal">Built for one</span>
-                    </span>
-                    <span className="headline-line">
-                      <span className="headline-mobile-serif-normal">business &mdash;</span>{' '}
-                      <em className="headline-mobile-serif">yours.</em>
-                    </span>
+                    {isHire ? (
+                      <>
+                        <span className="headline-line">
+                          <span className="headline-mobile-serif-normal">From problem &mdash;</span>
+                        </span>
+                        <span className="headline-line">
+                          <em className="headline-mobile-serif">to shipped product.</em>
+                        </span>
+                      </>
+                    ) : (
+                      <>
+                        <span className="headline-line">
+                          <span className="headline-mobile-serif-normal">Built for one</span>
+                        </span>
+                        <span className="headline-line">
+                          <span className="headline-mobile-serif-normal">business &mdash;</span>{' '}
+                          <em className="headline-mobile-serif">yours.</em>
+                        </span>
+                      </>
+                    )}
                   </span>
                 </h1>
                 <p className="hero-frame-paragraph hero-paragraph-anim" style={{ marginTop: '1.7rem', fontSize: '1.395rem', lineHeight: '1.75', color: 'var(--header-title-color)', WebkitTextFillColor: 'var(--header-title-color)', fontWeight: 300, opacity: 1, textWrap: 'pretty' }}>
-                  <span className="hero-body-desktop">
-                    <span className="hero-body-row hero-body-light" style={{ fontWeight: 400 }}>Got a dated site that undersells you, a task that eats your week, a process held together by spreadsheets? <span className="hero-body-finish"><strong className="hero-body-bold">I build what fixes it,</strong> <span className="hero-body-light">so you don&rsquo;t have to.</span></span></span>
-                  </span>
-                  <span className="hero-body-mobile">
-                    <span className="hero-body-mobile-text hero-body-light">Got a dated site that undersells you, a task that eats your week, a process held together by spreadsheets?</span>{' '}
-                    <span className="hero-body-finish"><strong className="hero-body-bold">I build what fixes it,</strong>{' '}<span className="hero-body-light">so you don’t have to.</span></span>
-                  </span>
+                  {isHire ? (
+                    <>
+                      <span className="hero-body-desktop">
+                        <span className="hero-body-row hero-body-light" style={{ fontWeight: 400 }}>I scope the problem, design the experience, and ship a working product — then iterate with the people who use it. <span className="hero-body-finish"><strong className="hero-body-bold">Everything below is live,</strong> <span className="hero-body-light">not a mockup.</span></span></span>
+                      </span>
+                      <span className="hero-body-mobile">
+                        <span className="hero-body-mobile-text hero-body-light">I scope the problem, design the experience, and ship a working product — then iterate with the people who use it.</span>{' '}
+                        <span className="hero-body-finish"><strong className="hero-body-bold">Everything below is live,</strong>{' '}<span className="hero-body-light">not a mockup.</span></span>
+                      </span>
+                    </>
+                  ) : (
+                    <>
+                      <span className="hero-body-desktop">
+                        <span className="hero-body-row hero-body-light" style={{ fontWeight: 400 }}>Got a dated site that undersells you, a task that eats your week, a process held together by spreadsheets? <span className="hero-body-finish"><strong className="hero-body-bold">I build what fixes it,</strong> <span className="hero-body-light">so you don&rsquo;t have to.</span></span></span>
+                      </span>
+                      <span className="hero-body-mobile">
+                        <span className="hero-body-mobile-text hero-body-light">Got a dated site that undersells you, a task that eats your week, a process held together by spreadsheets?</span>{' '}
+                        <span className="hero-body-finish"><strong className="hero-body-bold">I build what fixes it,</strong>{' '}<span className="hero-body-light">so you don’t have to.</span></span>
+                      </span>
+                    </>
+                  )}
                 </p>
               </div>
 
@@ -957,7 +994,7 @@ export default function HeroV2() {
                   className="btn prefooter-btn-primary face-cta" 
                   style={{ display: 'inline-flex', alignItems: 'center', gap: '0.45rem' }}
                 >
-                  <span>SEND YOUR PROBLEM MY WAY</span>
+                  <span>{isHire ? 'GET IN TOUCH' : 'SEND YOUR PROBLEM MY WAY'}</span>
                   <svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round" style={{ transform: 'translateY(-0.5px)' }}>
                     <line x1="7" y1="17" x2="17" y2="7"></line>
                     <polyline points="7 7 17 7 17 17"></polyline>
