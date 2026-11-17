@@ -28,7 +28,7 @@ export default function HeroV2({ variant = 'client' }: { variant?: 'client' | 'h
           .hero-statement,
           .hero-name-group .hero-text h1.hero-statement {
             zoom: 1 !important;
-            font-size: clamp(50px, 4.5vw, 64px) !important;
+            font-size: clamp(60px, 5.4vw, 76.8px) !important;
             line-height: 0.921 !important;
             letter-spacing: -0.018em !important;
           }
@@ -88,6 +88,15 @@ export default function HeroV2({ variant = 'client' }: { variant?: 'client' | 'h
           font-weight: 400 !important;
           color: #ffffff !important;
           -webkit-text-fill-color: #ffffff !important;
+          letter-spacing: -0.01em !important;
+        }
+        .headline-desktop-serif-accent,
+        .headline-mobile-serif-accent {
+          font-family: 'Newsreader', 'Source Serif 4', Georgia, serif !important;
+          font-style: italic !important;
+          font-weight: 400 !important;
+          color: #f2908f !important;
+          -webkit-text-fill-color: #f2908f !important;
           letter-spacing: -0.01em !important;
         }
         .headline-desktop-serif-normal,
@@ -895,16 +904,7 @@ export default function HeroV2({ variant = 'client' }: { variant?: 'client' | 'h
                   {/* Desktop Headline (3 lines) */}
                   <span className="headline-desktop">
                     {isHire ? (
-                      <>
-                        <span className="headline-line">
-                          <span className="headline-desktop-serif-normal">Designer</span>{' '}
-                          <span className="headline-desktop-serif-normal">and builder</span>
-                        </span>
-                        <span className="headline-line">
-                          <span className="headline-desktop-serif-normal">for</span>{' '}
-                          <strong className="headline-desktop-accent">AI-native teams.</strong>
-                        </span>
-                      </>
+                      null
                     ) : (
                       <>
                         <span className="headline-line">
@@ -921,8 +921,7 @@ export default function HeroV2({ variant = 'client' }: { variant?: 'client' | 'h
                     <span className="headline-line">
                       {isHire ? (
                         <>
-                          <span className="headline-desktop-serif-normal">From problem &mdash;</span>{' '}
-                          <em className="headline-desktop-serif">to shipped product.</em>
+                          <span className="headline-desktop-serif-normal">From problem &mdash;</span>
                         </>
                       ) : (
                         <>
@@ -931,21 +930,23 @@ export default function HeroV2({ variant = 'client' }: { variant?: 'client' | 'h
                         </>
                       )}
                     </span>
+                    {isHire && (
+                      <>
+                        <span className="headline-line">
+                          <span className="headline-desktop-serif-normal">to </span>
+                          <em className="headline-desktop-serif-accent">designed and built</em>
+                        </span>
+                        <span className="headline-line">
+                          <span className="headline-desktop-serif-normal">solution.</span>
+                        </span>
+                      </>
+                    )}
                   </span>
 
                   {/* Mobile Headline (4 lines, left-aligned) */}
                   <span className="headline-mobile" style={{ gap: '0px', lineHeight: 1.02 }}>
                     {isHire ? (
-                      <>
-                        <span className="headline-line">
-                          <span className="headline-mobile-serif-normal">Designer</span>{' '}
-                          <span className="headline-mobile-serif-normal">and builder</span>
-                        </span>
-                        <span className="headline-line">
-                          <span className="headline-mobile-serif-normal">for</span>{' '}
-                          <strong className="headline-mobile-accent">AI-native teams.</strong>
-                        </span>
-                      </>
+                      null
                     ) : (
                       <>
                         <span className="headline-line">
@@ -965,7 +966,11 @@ export default function HeroV2({ variant = 'client' }: { variant?: 'client' | 'h
                           <span className="headline-mobile-serif-normal">From problem &mdash;</span>
                         </span>
                         <span className="headline-line">
-                          <em className="headline-mobile-serif">to shipped product.</em>
+                          <span className="headline-mobile-serif-normal">to </span>
+                          <em className="headline-mobile-serif-accent">designed and built</em>
+                        </span>
+                        <span className="headline-line">
+                          <span className="headline-mobile-serif-normal">solution.</span>
                         </span>
                       </>
                     ) : (
@@ -985,7 +990,7 @@ export default function HeroV2({ variant = 'client' }: { variant?: 'client' | 'h
                   {isHire ? (
                     <>
                       <span className="hero-body-desktop">
-                        <span className="hero-body-row hero-body-light" style={{ fontWeight: 400 }}>I scope the problem, design the experience, and ship a working product — then iterate with the people who use it. <span className="hero-body-finish"><strong className="hero-body-bold">Everything below is live,</strong> <span className="hero-body-light">not a mockup.</span></span></span>
+                        <span className="hero-body-row hero-body-light" style={{ fontWeight: 400 }}>I scope the problem, design the experience, and ship a working product —<br />then iterate with the people who use it. <span className="hero-body-finish"><strong className="hero-body-bold">Everything below is live,</strong> <span className="hero-body-light">not a mockup.</span></span></span>
                       </span>
                       <span className="hero-body-mobile">
                         <span className="hero-body-mobile-text hero-body-light">I scope the problem, design the experience, and ship a working product — then iterate with the people who use it.</span>{' '}

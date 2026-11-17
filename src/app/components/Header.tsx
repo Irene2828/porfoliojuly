@@ -56,10 +56,17 @@ export default function Header() {
           backdrop-filter: blur(20px) saturate(180%) !important;
           -webkit-backdrop-filter: blur(20px) saturate(180%) !important;
         }
-        .v2-theme .premium-header .mobile-brand-title,
-        .v2-theme .header-spacer-desktop a span:last-child {
+        .v2-theme .premium-header .mobile-brand-title {
           color: rgba(201, 206, 214, 0.77) !important;
           -webkit-text-fill-color: rgba(201, 206, 214, 0.77) !important;
+        }
+        .v2-theme .header-spacer-desktop a span:first-child {
+          color: rgba(201, 206, 214, 0.77) !important;
+          -webkit-text-fill-color: rgba(201, 206, 214, 0.77) !important;
+        }
+        .v2-theme .header-spacer-desktop a span:last-child {
+          color: #e2e4e9 !important;
+          -webkit-text-fill-color: #e2e4e9 !important;
         }
         .mobile-brand-title {
           color: rgba(201, 206, 214, 0.77) !important;
@@ -160,7 +167,7 @@ export default function Header() {
               fontFamily: 'var(--font-heading), -apple-system, BlinkMacSystemFont, "Helvetica Neue", Arial, sans-serif', 
               fontSize: '13.8px', 
               fontWeight: 500, 
-              color: 'var(--header-brand-color, #e2e4e9)', 
+              color: 'var(--header-title-color, rgba(201, 206, 214, 0.77))',
               letterSpacing: '0.04em', 
               lineHeight: '1.2'
             }}>
@@ -170,7 +177,7 @@ export default function Header() {
               fontFamily: 'var(--font-heading), -apple-system, BlinkMacSystemFont, "Helvetica Neue", Arial, sans-serif', 
               fontSize: '13px', 
               fontWeight: 400, 
-              color: 'var(--header-title-color, rgba(201, 206, 214, 0.77))', 
+              color: 'var(--header-brand-color, #e2e4e9)',
               lineHeight: '1.2', 
               letterSpacing: '0.03em' 
             }}>

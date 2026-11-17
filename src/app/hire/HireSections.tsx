@@ -1,6 +1,6 @@
 'use client';
 
-import { useState } from 'react';
+import { useState, type ReactNode } from 'react';
 import { motion } from 'framer-motion';
 
 /* Case stories for the /hire page: how two products went from problem to live use. */
@@ -32,12 +32,24 @@ const buyUkrainianSteps = [
   {
     num: '01',
     title: 'The problem',
-    text: 'Ukrainian-made products are sold in stores all across Canada, but there was no one place to find them — just scattered lists and word of mouth.',
+    text: (
+      <>
+        Ukrainian-made products are sold in stores all across Canada, but{' '}
+        <span className="hire-story-step-accent">there was no one place to find them</span> — just
+        scattered lists and word of mouth.
+      </>
+    ),
   },
   {
     num: '02',
     title: 'What I built',
-    text: 'An interactive map and directory: search by city or by product, and see the stores that carry it. One rule decides every listing — the products are made in Ukraine — and every store is checked before it appears on the map.',
+    text: (
+      <>
+        An <span className="hire-story-step-accent">interactive map and directory</span>: search by
+        city or by product, and see the stores that carry it. One rule decides every listing — the
+        products are made in Ukraine — and every store is checked before it appears on the map.
+      </>
+    ),
   },
   {
     num: '03',
@@ -62,10 +74,10 @@ function CaseStory({
   className,
   delayBase = 0,
 }: {
-  kicker: string;
-  title: string;
+  kicker?: string;
+  title?: ReactNode;
   stack?: string;
-  steps: { num: string; title: string; text: string }[];
+  steps: { num: string; title: string; text: ReactNode }[];
   link?: { href: string; label: string };
   recordingSrc?: string;
   recordingCaption?: string;
@@ -75,26 +87,30 @@ function CaseStory({
   return (
     <div className={className ? `hire-story ${className}` : 'hire-story'}>
       <div className="hire-story-copy">
-      <motion.p
-        className="hire-story-kicker"
-        initial={{ opacity: 0, y: 20 }}
-        whileInView={{ opacity: 1, y: 0 }}
-        viewport={{ once: true, amount: 0.45 }}
-        transition={{ duration: 0.68, ease: [0.16, 1, 0.3, 1] }}
-        style={{ margin: '0 0 1.05rem 0', textAlign: 'left' }}
-      >
-        {kicker}
-      </motion.p>
-      <motion.h3
-        className="hire-story-title"
-        initial={{ opacity: 0, y: 20 }}
-        whileInView={{ opacity: 1, y: 0 }}
-        viewport={{ once: true, amount: 0.45 }}
-        transition={{ duration: 0.78, delay: 0.16, ease: [0.16, 1, 0.3, 1] }}
-        style={{ margin: '0 0 2.55rem 0', textAlign: 'left' }}
-      >
-        {title}
-      </motion.h3>
+      {kicker && (
+        <motion.p
+          className="hire-story-kicker"
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true, amount: 0.45 }}
+          transition={{ duration: 0.68, ease: [0.16, 1, 0.3, 1] }}
+          style={{ margin: '0 0 1.05rem 0', textAlign: 'left' }}
+        >
+          {kicker}
+        </motion.p>
+      )}
+      {title && (
+        <motion.h3
+          className="hire-story-title"
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true, amount: 0.45 }}
+          transition={{ duration: 0.78, delay: 0.16, ease: [0.16, 1, 0.3, 1] }}
+          style={{ margin: '0 0 2.55rem 0', textAlign: 'left' }}
+        >
+          {title}
+        </motion.h3>
+      )}
       <div className="hire-story-steps">
         {steps.map((step, index) => (
           <motion.div
@@ -173,7 +189,7 @@ function CaseStory({
             Tap to Zoom <span aria-hidden="true">→</span>
           </a>
           {stack && (
-            <div className="hire-story-stack" style={{ justifyContent: 'center', marginTop: '1rem' }}>
+            <div className="hire-story-stack" style={{ justifyContent: 'center', marginTop: '1.35rem' }}>
               <span className="hire-story-stack-label">Design &amp; build</span>
               <span className="hire-story-stack-value">{stack}</span>
             </div>
@@ -223,12 +239,22 @@ export function CaseStories() {
           color: #f2908f !important;
           -webkit-text-fill-color: #f2908f !important;
         }
+        #case-stories {
+          padding: 10.2rem 0 5.1rem !important;
+        }
         .hire-stories-title {
           font-family: var(--font-heading) !important;
-          font-weight: 400 !important;
+          font-weight: 500 !important;
           letter-spacing: -0.02em !important;
           font-size: var(--text-section-title);
           line-height: 1.2;
+          color: #1c1e23 !important;
+          -webkit-text-fill-color: #1c1e23 !important;
+        }
+        #case-stories > .container > .hire-story-kicker {
+          margin-bottom: 2.1rem !important;
+        }
+        #case-stories .hire-story-kicker {
           color: #1c1e23 !important;
           -webkit-text-fill-color: #1c1e23 !important;
         }
@@ -244,6 +270,18 @@ export function CaseStories() {
         .hire-story + .hire-story {
           margin-top: 2.55rem;
         }
+        .hire-stories-title + .hire-story {
+          margin-top: 1.275rem;
+        }
+        .hire-stories-title + .hire-story.hire-story--first {
+          margin-top: 0.6375rem;
+        }
+        .hire-story--first .hire-story-copy {
+          padding-top: 1.75rem;
+        }
+        .hire-story--first .hire-story-step {
+          padding-top: 0.675rem;
+        }
         /* Story band: full-bleed sky-blue gradient under each story's top
            divider — blue at the top, white in the middle, ending fully white. */
         .hire-story--sky {
@@ -252,41 +290,85 @@ export function CaseStories() {
           margin-left: calc(50% - 50vw);
           padding-left: calc(50vw - 50% + 2rem);
           padding-right: calc(50vw - 50% + 2rem);
-          padding-bottom: 4.55rem;
-          background: linear-gradient(180deg, #e6f2fb 0%, #f0f7fc 28%, #ffffff 52%, #ffffff 100%);
+          padding-bottom: 2.275rem;
+          background: #ffffff;
         }
         .hire-story--sky .hire-story-copy {
           background: transparent;
         }
+        .hire-stories-title::before,
+        .hire-story-title::before {
+          content: '';
+          display: block;
+          width: 64px;
+          height: 1px;
+          margin: 0 auto 1.5rem;
+          background: #121316;
+        }
         .hire-story--sky .hire-story-visual {
           background: transparent;
+        }
+        .hire-story--sky .hire-story-visual {
+          margin-top: 0.31875rem;
+        }
+        .hire-story--sky .hire-story-copy > p:last-child {
+          margin-top: 0.5rem !important;
         }
         .hire-story--sky + .hire-story {
           margin-top: 0;
         }
         .hire-story-copy {
           margin: -3.5rem -2rem 0;
-          padding: 3.5rem 2rem 3rem;
+          padding: 3.5rem 2rem 1.5rem;
           background: #ffffff;
-          border-top: 1px solid #121316;
+          border-top: 0;
         }
         .hire-story-copy .hire-story-title,
         .hire-story-copy .hire-story-step-title {
           color: #1c1e23 !important;
           -webkit-text-fill-color: #1c1e23 !important;
         }
+        .hire-story-copy .hire-story-title {
+          color: #f2908f !important;
+          -webkit-text-fill-color: #f2908f !important;
+        }
+        .hire-stories-title .hire-story-title-black,
+        .hire-story-title .hire-story-title-black {
+          color: #1c1e23 !important;
+          -webkit-text-fill-color: #1c1e23 !important;
+        }
+        .hire-story-copy > .hire-story-kicker,
+        .hire-story-copy > .hire-story-title {
+          text-align: center !important;
+        }
         .hire-story-copy .hire-story-step-text {
           color: rgba(28, 30, 35, 0.72) !important;
           -webkit-text-fill-color: rgba(28, 30, 35, 0.72) !important;
         }
+        .hire-story-step-accent {
+          color: #f2908f !important;
+          -webkit-text-fill-color: #f2908f !important;
+          font-weight: 500 !important;
+        }
         .hire-story-title {
           font-family: var(--font-heading) !important;
-          font-weight: 400 !important;
+          font-weight: 500 !important;
           letter-spacing: -0.02em !important;
-          font-size: calc(var(--text-section-title) * 0.72);
+          font-size: var(--text-section-title);
           line-height: 1.2;
-          color: #ffffff !important;
-          -webkit-text-fill-color: #ffffff !important;
+          color: #f2908f !important;
+          -webkit-text-fill-color: #f2908f !important;
+        }
+        .hire-stories-title .hire-story-title-black {
+          font-weight: 500 !important;
+        }
+        @media (min-width: 901px) {
+          .hire-stories-title {
+            font-size: calc(var(--text-section-title) * 1.2) !important;
+          }
+          .hire-story-title {
+            font-size: calc(var(--text-section-title) * 1.2) !important;
+          }
         }
         .hire-story-steps {
           display: flex;
@@ -311,9 +393,9 @@ export function CaseStories() {
           font-weight: 400 !important;
           font-size: 2.6rem !important;
           line-height: 1;
-          color: #f2908f !important;
-          -webkit-text-fill-color: #f2908f !important;
-          opacity: 0.55;
+          color: #b8c0ca !important;
+          -webkit-text-fill-color: #b8c0ca !important;
+          opacity: 0.9;
           display: block;
         }
         .hire-story-step-title {
@@ -329,7 +411,7 @@ export function CaseStories() {
         .hire-story-step-text {
           font-family: var(--font-body), 'Plus Jakarta Sans', sans-serif !important;
           font-size: var(--text-body) !important;
-          font-weight: 300 !important;
+          font-weight: 400 !important;
           line-height: var(--lh-body) !important;
           letter-spacing: 0.005em !important;
           color: rgba(255, 255, 255, 0.72) !important;
@@ -353,9 +435,9 @@ export function CaseStories() {
         .hire-story-visual {
           width: 100vw;
           max-width: none;
-          margin: 2.55rem 0 0 calc(50% - 50vw);
+          margin: 0.31875rem 0 0 calc(50% - 50vw);
           margin-bottom: 0;
-          padding: 2.25rem 2rem 2.5rem;
+          padding: 0.5625rem 2rem 2.5rem;
           box-sizing: border-box;
           background: #ffffff;
           position: relative;
@@ -365,7 +447,7 @@ export function CaseStories() {
         .hire-story-recording {
           display: block;
           width: 100%;
-          max-width: 1100px;
+          max-width: 880px;
           margin: 0 auto;
           aspect-ratio: 16 / 9;
           object-fit: cover;
@@ -373,23 +455,28 @@ export function CaseStories() {
           border: 1px solid rgba(28, 30, 35, 0.14);
         }
         .hire-story-visual-caption {
-          margin: 1.1rem auto 0;
+          margin: 2.2rem auto 0;
           max-width: 62ch;
           font-family: var(--font-body), 'Plus Jakarta Sans', sans-serif !important;
           font-size: var(--text-body) !important;
-          font-weight: 300 !important;
+          font-weight: 400 !important;
           line-height: var(--lh-body) !important;
           letter-spacing: 0.005em !important;
           color: rgba(28, 30, 35, 0.72) !important;
           -webkit-text-fill-color: rgba(28, 30, 35, 0.72) !important;
         }
+        @media (min-width: 901px) {
+          .hire-story-visual-caption {
+            font-weight: 500 !important;
+          }
+        }
         .hire-story-zoom {
-          display: inline-flex;
+          display: none !important;
           align-items: center;
           gap: 0.35rem;
-          margin-top: 0.7rem;
+          margin-top: 0.35rem;
           font-family: var(--font-body), 'Plus Jakarta Sans', sans-serif !important;
-          font-size: var(--text-body) !important;
+          font-size: calc(var(--text-body) * 0.8) !important;
           font-weight: 400 !important;
           color: #a7aeb8 !important;
           -webkit-text-fill-color: #a7aeb8 !important;
@@ -433,10 +520,20 @@ export function CaseStories() {
           color: rgba(255, 255, 255, 0.85) !important;
         }
         .hire-story-visual .hire-story-stack-label {
-          color: rgba(28, 30, 35, 0.5) !important;
+          color: #f2908f !important;
+          -webkit-text-fill-color: #f2908f !important;
         }
         .hire-story-visual .hire-story-stack-value {
-          color: rgba(28, 30, 35, 0.85) !important;
+          color: #f2908f !important;
+          -webkit-text-fill-color: #f2908f !important;
+        }
+        @media (min-width: 901px) {
+        .hire-story--sky > p:last-child {
+            margin-top: -3.5rem !important;
+            position: relative;
+            z-index: 2;
+            transform: translateY(-1.5rem);
+          }
         }
         @media (min-width: 1200px) {
           #case-stories > .container {
@@ -505,20 +602,17 @@ export function CaseStories() {
           transition={{ duration: 0.78, delay: 0.08, ease: [0.16, 1, 0.3, 1] }}
           style={{ margin: '0', textAlign: 'center' }}
         >
-          Two builds, start to finish.
+          <span className="hire-story-title-black">Terry Fox Foundation</span> — the poster tool
         </motion.h2>
 
         <CaseStory
-          kicker="CASE STUDY"
-          title="Terry Fox Foundation — the poster tool"
+          className="hire-story--first"
           stack="Codex · Antigravity · Google Stitch"
           steps={terryFoxSteps}
-          className="hire-story--sky"
           recordingSrc="/terry-fox-flow.mp4"
           recordingCaption="On-brand posters in minutes for teams in every city — no designer bottleneck, no waiting days."
         />
         <CaseStory
-          kicker="CASE STUDY"
           title="BuyUkrainian — a live product of my own"
           stack="Codex · Antigravity · Figma"
           steps={buyUkrainianSteps}
@@ -554,6 +648,15 @@ export function HireClosing() {
       <style>{`
         .hire-closing-section {
           background-color: #121316 !important;
+          padding-top: 2.55rem !important;
+          padding-bottom: 10.2rem !important;
+        }
+        @media (min-width: 901px) {
+          .hire-closing-divider {
+            align-self: center !important;
+            margin-left: auto !important;
+            margin-right: auto !important;
+          }
         }
         .hire-closing-line {
           font-family: 'Newsreader', 'Source Serif 4', Georgia, serif !important;
@@ -570,6 +673,21 @@ export function HireClosing() {
           font-weight: 500 !important;
           font-style: normal !important;
           letter-spacing: 0.015em !important;
+          color: #f2908f !important;
+          -webkit-text-fill-color: #f2908f !important;
+        }
+        .hire-closing-line strong,
+        .hire-closing-line strong.hire-closing-builder,
+        .hire-closing-desktop > strong:nth-of-type(1),
+        .hire-closing-mobile .hire-closing-row:nth-child(3) strong {
+          color: #f2908f !important;
+          -webkit-text-fill-color: #f2908f !important;
+        }
+        .hire-closing-line strong.hire-closing-builder {
+          color: #ffffff !important;
+          -webkit-text-fill-color: #ffffff !important;
+        }
+        .hire-closing-desktop .hire-closing-accent {
           color: #f2908f !important;
           -webkit-text-fill-color: #f2908f !important;
         }
@@ -697,6 +815,10 @@ export function HireClosing() {
           flex: none;
           opacity: 0.7;
         }
+        .hire-closing-actions {
+          padding-top: 2rem !important;
+          padding-bottom: 2rem !important;
+        }
 
         @media (min-width: 901px) {
           .hire-closing-line,
@@ -708,7 +830,7 @@ export function HireClosing() {
             font-weight: 600 !important;
           }
           .hire-closing-section {
-            padding-bottom: 2.55rem !important;
+            padding-bottom: 5.1rem !important;
           }
           .hire-closing-subtext {
             font-size: 1.23rem !important;
@@ -822,6 +944,7 @@ export function HireClosing() {
         }}
       >
         <motion.div
+          className="hire-closing-divider"
           initial={{ scaleX: 0, opacity: 0 }}
           whileInView={{ scaleX: 1, opacity: 0.9 }}
           viewport={{ once: true, amount: 0.5 }}
@@ -856,8 +979,8 @@ export function HireClosing() {
         >
           <span className="hire-closing-desktop">
             If you need a{' '}
-            <strong style={{ fontWeight: 500, fontStyle: 'normal', letterSpacing: '0.005em', color: '#ffffff', WebkitTextFillColor: '#ffffff' }}>thoughtful designer</strong>{' '}
-            and a <strong>hands-on builder</strong> —{' '}
+            <strong className="hire-closing-accent" style={{ fontWeight: 500, fontStyle: 'normal', letterSpacing: '0.005em' }}>thoughtful designer</strong>{' '}
+            and a <strong className="hire-closing-accent">hands-on builder</strong> —{' '}
             <motion.span
               className="hire-closing-here"
               initial={{ opacity: 0, y: 12 }}
@@ -878,6 +1001,7 @@ export function HireClosing() {
         </motion.h2>
 
         <motion.div
+          className="hire-closing-actions"
           initial={{ opacity: 0, y: 16, scale: 0.96 }}
           whileInView={{ opacity: 1, y: 0, scale: 1 }}
           viewport={{ once: true, amount: 0.45 }}
@@ -941,6 +1065,14 @@ export function HowIUseAI() {
           color: #f2908f !important;
           -webkit-text-fill-color: #f2908f !important;
         }
+        .hire-ai-kicker::before {
+          content: '';
+          display: block;
+          width: 48px;
+          height: 1px;
+          margin: 0 0 1.5rem;
+          background: #ffffff;
+        }
         .hire-ai-title {
           font-family: var(--font-heading) !important;
           font-weight: 400 !important;
@@ -953,6 +1085,17 @@ export function HowIUseAI() {
         .hire-ai-title .hire-ai-title-accent {
           color: #f2908f !important;
           -webkit-text-fill-color: #f2908f !important;
+        }
+        .hire-ai-title > span:first-child {
+          color: #ffffff !important;
+          -webkit-text-fill-color: #ffffff !important;
+        }
+        .hire-ai-title-break-desktop {
+          display: none;
+        }
+        .v2-theme #how-i-use-ai .hire-ai-title > span:first-child {
+          color: #ffffff !important;
+          -webkit-text-fill-color: #ffffff !important;
         }
         .hire-ai-body {
           font-family: var(--font-body), 'Plus Jakarta Sans', sans-serif !important;
@@ -967,11 +1110,27 @@ export function HowIUseAI() {
         }
         .hire-ai-body p {
           margin: 0 0 1.4rem 0;
+          text-align: justify;
+          text-justify: inter-word;
         }
         .hire-ai-body p:last-child {
           margin-bottom: 0;
         }
         @media (min-width: 901px) {
+          #how-i-use-ai {
+          border-top: 0.5px solid rgba(18, 19, 22, 0.48) !important;
+          border-bottom: 0.5px solid rgba(18, 19, 22, 0.48) !important;
+          box-sizing: border-box;
+            padding-top: 5.1rem !important;
+            padding-bottom: 10.2rem !important;
+            background: linear-gradient(90deg, #121316 0 50%, #ffffff 50% 100%) !important;
+          }
+          .hire-ai-title-break-desktop {
+            display: block;
+          }
+          .hire-ai-title {
+            max-width: 55% !important;
+          }
           .hire-ai-body {
             display: grid;
             grid-template-columns: minmax(0, 1.08fr) minmax(0, 0.92fr);
@@ -981,35 +1140,46 @@ export function HowIUseAI() {
           }
           .hire-ai-body p:first-child {
             grid-column: 1;
-            grid-row: 1 / span 2;
+            grid-row: 1;
             max-width: 91%;
             padding-right: clamp(1rem, 2vw, 2rem);
             margin-bottom: 0;
             font-size: 80%;
           }
           .hire-ai-body p:nth-child(2) {
-            grid-column: 2;
-            grid-row: 1;
+            grid-column: 1;
+            grid-row: 2;
             align-self: start;
             justify-self: stretch;
+            max-width: 91%;
+            padding-right: clamp(1rem, 2vw, 2rem);
             text-align: left;
             font-size: 80%;
+            margin-top: 4.2rem;
+            color: rgba(255, 255, 255, 0.9) !important;
+            -webkit-text-fill-color: rgba(255, 255, 255, 0.9) !important;
           }
           .hire-ai-body p:nth-child(3) {
             grid-column: 2;
-            grid-row: 2;
+            grid-row: 1 / span 2;
             justify-self: stretch;
             width: auto;
             margin-top: 0;
+            padding-top: 0;
             text-align: left;
             font-size: 80%;
+            color: #1c1e23 !important;
+            -webkit-text-fill-color: #1c1e23 !important;
           }
           .hire-ai-body p:nth-child(2) {
             padding-bottom: 1.4rem;
             border-bottom: 1px solid rgba(255, 255, 255, 0.16);
           }
           .hire-ai-body p:nth-child(3) {
-            padding-top: 1.4rem;
+            padding-top: 0;
+          }
+          .hire-ai-body p {
+            text-align: justify;
           }
         }
         .hire-ai-creds {
@@ -1087,7 +1257,9 @@ export function HowIUseAI() {
           transition={{ duration: 0.78, delay: 0.08, ease: [0.16, 1, 0.3, 1] }}
           style={{ margin: '0 0 2.55rem 0', textAlign: 'left' }}
         >
-          <span>My thinking has always been </span><span className="hire-ai-title-accent">end-to-end.</span>
+          <span>My thinking has always been </span>
+          <br className="hire-ai-title-break-desktop" />
+          <span className="hire-ai-title-accent">end-to-end.</span>
         </motion.h2>
         <motion.div
           className="hire-ai-body"
@@ -1151,21 +1323,36 @@ export function HireTestimonial() {
           color: var(--color-heading-silver) !important;
           -webkit-text-fill-color: var(--color-heading-silver) !important;
         }
+        .hire-t-heading::before {
+          content: '';
+          display: block;
+          width: 48px;
+          height: 1px;
+          margin: 0 0 1.5rem;
+          background: #121316;
+        }
         @media (min-width: 901px) {
+          .hire-t-container {
+            padding-left: 2.5rem !important;
+            padding-right: 2.5rem !important;
+          }
           .hire-t-heading {
             margin-bottom: 2.5rem !important;
+            margin-left: 0 !important;
           }
           #testimonial {
             padding-bottom: 5.1rem !important;
           }
           .hire-t-card {
-            width: 70%;
-            margin-left: 30%;
+            width: 42.25%;
+            margin-left: auto;
+            margin-right: 0;
           }
         }
         .hire-t-card {
           width: 100%;
-          background-color: #ffffff;
+          background: radial-gradient(circle at 50% 42%, rgba(255, 255, 255, 0.82) 0%, rgba(255, 255, 255, 0.42) 42%, rgba(255, 255, 255, 0) 76%), radial-gradient(circle at 0% 100%, rgba(255, 255, 255, 0.96) 0%, rgba(255, 255, 255, 0.62) 32%, rgba(255, 255, 255, 0) 62%), #fffaf4 !important;
+          background-color: #fffaf4 !important;
           border: 1px dashed rgba(0, 0, 0, 0.2);
           border-radius: 0;
           box-shadow: none;
@@ -1176,11 +1363,18 @@ export function HireTestimonial() {
           justify-content: flex-start;
           text-align: left;
         }
+        @media (min-width: 901px) {
+          .hire-t-card {
+            width: 66.67%;
+            margin-left: auto;
+            margin-right: 0;
+          }
+        }
         .hire-t-pull {
           font-family: var(--font-body), 'Plus Jakarta Sans', sans-serif !important;
           font-size: clamp(1.15rem, 1.8vw, 1.55rem) !important;
           line-height: 1.4 !important;
-          font-weight: 500 !important;
+          font-weight: 400 !important;
           color: #1d2229 !important;
           max-width: 38ch;
           margin: 0 0 1.25rem 0;
