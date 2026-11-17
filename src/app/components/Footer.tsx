@@ -161,13 +161,6 @@ export default function Footer() {
             </svg>
           </a>
         </div>
-        <div className="footer-meta-block">
-          <div>
-            <p className="footer-meta-text">
-              Hands on AI product builder, certified in UX design, MA in social sciences, ex fashion brand founder.
-            </p>
-          </div>
-        </div>
       </motion.div>
     </footer>
   );
