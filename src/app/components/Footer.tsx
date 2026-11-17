@@ -55,6 +55,13 @@ export default function Footer() {
           margin: 0;
           text-align: left;
         }
+        .footer-name-row {
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          gap: 0.6rem;
+          width: 100%;
+        }
         .footer-meta-block {
           display: flex;
           justify-content: space-between;
@@ -141,6 +148,11 @@ export default function Footer() {
               Product thinker, certified in UX design, hands on with agentic coding tools, MA in social sciences, ex fashion brand founder.
             </p>
           </div>
+        </div>
+        <div className="footer-name-row">
+          <p className="footer-copy-text">
+            &copy; 2026 Iryna Sheremeta
+          </p>
           <a
             className="footer-linkedin-icon"
             href="https://www.linkedin.com/in/iryna-sheremeta-643316414/"
@@ -153,9 +165,6 @@ export default function Footer() {
             </svg>
           </a>
         </div>
-        <p className="footer-copy-text">
-          &copy; 2026 Iryna Sheremeta
-        </p>
       </motion.div>
     </footer>
   );
