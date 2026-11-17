@@ -547,12 +547,36 @@ export function HireClosing() {
           }}
         />
 
+        <motion.p
+          initial={{ opacity: 0, y: 14 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true, amount: 0.45 }}
+          transition={{ duration: 0.68, delay: 0.08, ease: [0.16, 1, 0.3, 1] }}
+          style={{
+            fontFamily: 'var(--font-body), "Plus Jakarta Sans", sans-serif',
+            fontSize: 'clamp(1.15rem, 2.8vw, 1.23rem)',
+            fontWeight: 300,
+            letterSpacing: '-0.011em',
+            lineHeight: 1.55,
+            color: 'rgba(255, 255, 255, 0.8)',
+            WebkitTextFillColor: 'rgba(255, 255, 255, 0.8)',
+            textAlign: 'center',
+            margin: '0 auto 2.55rem auto',
+            maxWidth: '52ch',
+            textWrap: 'balance',
+          }}
+        >
+          I want to bring my thinking to your team, learn from how you do it, and see how we can
+          build and design better products for customers who are getting more demanding than
+          ever.
+        </motion.p>
+
         <motion.h2
           className="hire-closing-line"
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true, amount: 0.45 }}
-          transition={{ duration: 0.78, delay: 0.08, ease: [0.16, 1, 0.3, 1] }}
+          transition={{ duration: 0.78, delay: 0.18, ease: [0.16, 1, 0.3, 1] }}
           style={{
             fontFamily: 'var(--font-heading)',
             fontSize: 'var(--closing-heading-size)',
@@ -567,47 +591,26 @@ export function HireClosing() {
           }}
         >
           <span className="hire-closing-desktop">
-            Most portfolios show pictures.{' '}
+            If you need a{' '}
+            <strong style={{ fontWeight: 500, fontStyle: 'normal', letterSpacing: '0.005em', color: '#f2908f', WebkitTextFillColor: '#f2908f' }}>product thinker</strong>{' '}
+            and a hands-on builder —{' '}
             <motion.span
               initial={{ opacity: 0, y: 12 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true, amount: 0.45 }}
-              transition={{ duration: 0.72, delay: 0.22, ease: [0.16, 1, 0.3, 1] }}
+              transition={{ duration: 0.72, delay: 0.3, ease: [0.16, 1, 0.3, 1] }}
               style={{ display: 'inline', fontWeight: 300, color: '#ffffff', WebkitTextFillColor: '#ffffff' }}
             >
-              Mine shows <strong style={{ fontWeight: 500, fontStyle: 'normal', letterSpacing: '0.005em', color: '#f2908f', WebkitTextFillColor: '#f2908f' }}>products in use.</strong>
+              I’d love to talk to you.
             </motion.span>
           </span>
           <span className="hire-closing-mobile">
-            <span className="hire-closing-row">Most portfolios</span>
-            <span className="hire-closing-row">show pictures.</span>
-            <strong className="hire-closing-row">Mine shows</strong>
-            <strong className="hire-closing-row">products in use.</strong>
+            <span className="hire-closing-row">If you need a</span>
+            <strong className="hire-closing-row">product thinker</strong>
+            <span className="hire-closing-row">and a hands-on builder —</span>
+            <span className="hire-closing-row">I’d love to talk to you.</span>
           </span>
         </motion.h2>
-
-        <motion.div
-          className="hire-closing-subtext"
-          initial={{ opacity: 0, y: 14 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true, amount: 0.45 }}
-          transition={{ duration: 0.68, delay: 0.32, ease: [0.16, 1, 0.3, 1] }}
-          style={{
-            fontFamily: 'var(--font-body), "Plus Jakarta Sans", sans-serif',
-            fontSize: 'clamp(1.15rem, 2.8vw, 1.23rem)',
-            fontWeight: 300,
-            letterSpacing: '-0.011em',
-            lineHeight: 1.55,
-            color: 'rgba(255, 255, 255, 0.8)',
-            WebkitTextFillColor: 'rgba(255, 255, 255, 0.8)',
-            textAlign: 'center',
-            margin: '0 auto 2rem auto',
-            maxWidth: '46ch',
-            textWrap: 'balance',
-          }}
-        >
-          <p style={{ margin: 0, fontWeight: 500 }}>Let’s talk.</p>
-        </motion.div>
 
         <motion.div
           initial={{ opacity: 0, y: 16, scale: 0.96 }}
@@ -629,6 +632,9 @@ export function HireClosing() {
           </a>
           <p style={{ margin: 0, fontFamily: 'var(--font-body), "Plus Jakarta Sans", sans-serif', fontSize: '0.82rem', fontWeight: 300, letterSpacing: '0.015em', color: 'rgba(255, 255, 255, 0.68)', textAlign: 'center' }}>
             Open to remote roles across Canada · Based in Montréal
+          </p>
+          <p style={{ margin: 0, fontFamily: 'var(--font-body), "Plus Jakarta Sans", sans-serif', fontSize: '0.82rem', fontWeight: 300, letterSpacing: '0.015em', color: 'rgba(255, 255, 255, 0.68)', textAlign: 'center', maxWidth: '52ch' }}>
+            Certified in UX design · Hands-on with most agentic tools · Master’s degree in social science · Startup life, from my own experience
           </p>
           <a
             className="hire-closing-linkedin"
@@ -802,31 +808,7 @@ export function HowIUseAI() {
             ago. Design thinking still takes the biggest share of the time. But building now
             happens everywhere I can: a work laptop, or a mobile device on the go.
           </p>
-          <p>
-            I want to bring my thinking to your team, learn from how you do it, and see how we
-            can build and design better products for customers who are getting more demanding
-            than ever.
-          </p>
         </motion.div>
-        <motion.p
-          className="hire-ai-creds"
-          initial={{ opacity: 0, y: 14 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true, amount: 0.45 }}
-          transition={{ duration: 0.68, delay: 0.2, ease: [0.16, 1, 0.3, 1] }}
-        >
-          Certified in UX design <span>·</span> Hands-on with most agentic tools <span>·</span>{' '}
-          Master’s degree in social science <span>·</span> Startup life, from my own experience
-        </motion.p>
-        <motion.p
-          className="hire-ai-closing"
-          initial={{ opacity: 0, y: 14 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true, amount: 0.45 }}
-          transition={{ duration: 0.68, delay: 0.28, ease: [0.16, 1, 0.3, 1] }}
-        >
-          If you need a product thinker and a hands-on builder — I’d love to talk to you.
-        </motion.p>
       </div>
     </section>
   );
