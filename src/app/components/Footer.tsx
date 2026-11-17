@@ -145,7 +145,7 @@ export default function Footer() {
         <div className="footer-meta-block">
           <div>
             <p className="footer-meta-text">
-              Product thinker, certified in UX design, hands on with agentic coding tools, MA in social sciences, ex fashion brand founder.
+              Hands on AI product builder, certified in UX design, MA in social sciences, ex fashion brand founder.
             </p>
           </div>
         </div>
