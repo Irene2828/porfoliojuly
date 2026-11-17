@@ -57,8 +57,6 @@ function CaseStory({
   stack,
   steps,
   link,
-  recordingSrc,
-  recordingCaption,
   delayBase = 0,
 }: {
   kicker: string;
@@ -66,13 +64,10 @@ function CaseStory({
   stack?: string;
   steps: { num: string; title: string; text: string }[];
   link?: { href: string; label: string };
-  recordingSrc?: string;
-  recordingCaption?: string;
   delayBase?: number;
 }) {
   return (
     <div className="hire-story">
-      <div className="hire-story-copy">
       <motion.p
         className="hire-story-kicker"
         initial={{ opacity: 0, y: 20 }}
@@ -83,6 +78,44 @@ function CaseStory({
       >
         {kicker}
       </motion.p>
+      {stack && (
+        <motion.p
+          initial={{ opacity: 0, y: 14 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true, amount: 0.45 }}
+          transition={{ duration: 0.68, delay: 0.08, ease: [0.16, 1, 0.3, 1] }}
+          style={{
+            margin: '0 0 1.05rem 0',
+            textAlign: 'left',
+            display: 'flex',
+            alignItems: 'baseline',
+            gap: '0.65rem',
+            fontFamily: 'var(--font-body), "Plus Jakarta Sans", sans-serif',
+          }}
+        >
+          <span
+            style={{
+              fontSize: '0.7rem',
+              fontWeight: 600,
+              letterSpacing: '0.16em',
+              textTransform: 'uppercase',
+              color: 'rgba(28, 30, 35, 0.5)',
+            }}
+          >
+            Design &amp; build
+          </span>
+          <span
+            style={{
+              fontSize: '0.92rem',
+              fontWeight: 400,
+              letterSpacing: '0.01em',
+              color: 'rgba(28, 30, 35, 0.85)',
+            }}
+          >
+            {stack}
+          </span>
+        </motion.p>
+      )}
       <motion.h3
         className="hire-story-title"
         initial={{ opacity: 0, y: 20 }}
@@ -109,82 +142,13 @@ function CaseStory({
           </motion.div>
         ))}
       </div>
-      {false && stack && (
-        <motion.p
-          initial={{ opacity: 0, y: 14 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true, amount: 0.45 }}
-          transition={{ duration: 0.68, delay: 0.08, ease: [0.16, 1, 0.3, 1] }}
-          style={{
-            margin: '1.05rem 0 0 0',
-            textAlign: 'left',
-            display: 'flex',
-            alignItems: 'baseline',
-            gap: '0.65rem',
-            fontFamily: 'var(--font-body), "Plus Jakarta Sans", sans-serif',
-          }}
-        >
-          <span
-            style={{
-              fontSize: '0.7rem',
-              fontWeight: 600,
-              letterSpacing: '0.16em',
-              textTransform: 'uppercase',
-              color: 'rgba(255, 255, 255, 0.5)',
-            }}
-          >
-            Design &amp; build
-          </span>
-          <span
-            style={{
-              fontSize: '0.92rem',
-              fontWeight: 400,
-              letterSpacing: '0.01em',
-              color: 'rgba(255, 255, 255, 0.85)',
-            }}
-          >
-            {stack}
-          </span>
-        </motion.p>
-      )}
-      </div>
-      {recordingSrc && (
-        <motion.div
-          className="hire-story-visual"
-          initial={{ opacity: 0, y: 18 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true, amount: 0.25 }}
-          transition={{ duration: 0.72, delay: 0.14, ease: [0.16, 1, 0.3, 1] }}
-        >
-          <video
-            className="hire-story-recording"
-            src={recordingSrc}
-            autoPlay
-            loop
-            muted
-            playsInline
-            controls
-            aria-label={recordingCaption || 'Terry Fox poster tool recording'}
-          />
-          {recordingCaption && <p className="hire-story-visual-caption">{recordingCaption}</p>}
-          <a className="hire-story-zoom" href={recordingSrc} target="_blank" rel="noreferrer">
-            Tap to Zoom <span aria-hidden="true">→</span>
-          </a>
-          {stack && (
-            <div className="hire-story-stack" style={{ justifyContent: 'center', marginTop: '1rem' }}>
-              <span className="hire-story-stack-label">Design &amp; build</span>
-              <span className="hire-story-stack-value">{stack}</span>
-            </div>
-          )}
-        </motion.div>
-      )}
       {link && (
         <motion.p
           initial={{ opacity: 0, y: 14 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true, amount: 0.45 }}
           transition={{ duration: 0.68, delay: 0.2, ease: [0.16, 1, 0.3, 1] }}
-          style={{ margin: '1rem 0 0 0', textAlign: 'left', display: 'flex', alignItems: 'baseline', justifyContent: 'flex-end', gap: '2rem', flexWrap: 'wrap' }}
+          style={{ margin: '2rem 0 0 0', textAlign: 'left' }}
         >
           <a className="hire-story-link" href={link.href} target="_blank" rel="noreferrer">
             {link.label}
@@ -232,30 +196,6 @@ export function CaseStories() {
         }
         .hire-story {
           margin-top: 5.1rem;
-          background: #ffffff;
-          width: 100%;
-          margin-left: 0;
-          box-sizing: border-box;
-          padding: 3.5rem 2rem 2rem;
-          color: #1c1e23;
-        }
-        .hire-story + .hire-story {
-          margin-top: 2.55rem;
-        }
-        .hire-story-copy {
-          margin: -3.5rem -2rem 0;
-          padding: 7rem 2rem 3rem;
-          background: #ffffff;
-          border-top: 1px solid #121316;
-        }
-        .hire-story-copy .hire-story-title,
-        .hire-story-copy .hire-story-step-title {
-          color: #1c1e23 !important;
-          -webkit-text-fill-color: #1c1e23 !important;
-        }
-        .hire-story-copy .hire-story-step-text {
-          color: rgba(28, 30, 35, 0.72) !important;
-          -webkit-text-fill-color: rgba(28, 30, 35, 0.72) !important;
         }
         .hire-story-title {
           font-family: var(--font-heading) !important;
@@ -263,8 +203,8 @@ export function CaseStories() {
           letter-spacing: -0.02em !important;
           font-size: calc(var(--text-section-title) * 0.72);
           line-height: 1.2;
-          color: #ffffff !important;
-          -webkit-text-fill-color: #ffffff !important;
+          color: #1c1e23 !important;
+          -webkit-text-fill-color: #1c1e23 !important;
         }
         .hire-story-steps {
           display: flex;
@@ -300,8 +240,8 @@ export function CaseStories() {
           font-size: calc(var(--text-body) * 1.05);
           line-height: var(--lh-body) !important;
           letter-spacing: 0.015em !important;
-          color: #ffffff !important;
-          -webkit-text-fill-color: #ffffff !important;
+          color: #1c1e23 !important;
+          -webkit-text-fill-color: #1c1e23 !important;
           margin: 0;
         }
         .hire-story-step-text {
@@ -310,8 +250,8 @@ export function CaseStories() {
           font-weight: 300 !important;
           line-height: var(--lh-body) !important;
           letter-spacing: 0.005em !important;
-          color: rgba(255, 255, 255, 0.72) !important;
-          -webkit-text-fill-color: rgba(255, 255, 255, 0.72) !important;
+          color: rgba(28, 30, 35, 0.72) !important;
+          -webkit-text-fill-color: rgba(28, 30, 35, 0.72) !important;
           margin: 0;
         }
         .hire-story-link {
@@ -327,94 +267,6 @@ export function CaseStories() {
           gap: 0.45rem;
           border-bottom: 1px solid #f2908f;
           padding-bottom: 2px;
-        }
-        .hire-story-visual {
-          width: 100vw;
-          max-width: none;
-          margin: 2.55rem 0 0 calc(50% - 50vw);
-          margin-bottom: 0;
-          padding: 2.25rem 2rem 2.5rem;
-          box-sizing: border-box;
-          background: #ffffff;
-          position: relative;
-          z-index: 1;
-          text-align: center;
-        }
-        .hire-story-recording {
-          display: block;
-          width: 100%;
-          max-width: 1100px;
-          margin: 0 auto;
-          aspect-ratio: 16 / 9;
-          object-fit: cover;
-          background: #eef0f2;
-          border: 1px solid rgba(28, 30, 35, 0.14);
-        }
-        .hire-story-visual-caption {
-          margin: 1.1rem auto 0;
-          max-width: 62ch;
-          font-family: var(--font-body), 'Plus Jakarta Sans', sans-serif !important;
-          font-size: var(--text-body) !important;
-          font-weight: 300 !important;
-          line-height: var(--lh-body) !important;
-          letter-spacing: 0.005em !important;
-          color: rgba(28, 30, 35, 0.72) !important;
-          -webkit-text-fill-color: rgba(28, 30, 35, 0.72) !important;
-        }
-        .hire-story-zoom {
-          display: inline-flex;
-          align-items: center;
-          gap: 0.35rem;
-          margin-top: 0.7rem;
-          font-family: var(--font-body), 'Plus Jakarta Sans', sans-serif !important;
-          font-size: var(--text-body) !important;
-          font-weight: 400 !important;
-          color: #a7aeb8 !important;
-          -webkit-text-fill-color: #a7aeb8 !important;
-          text-decoration: none;
-        }
-        .hire-story-zoom:hover {
-          color: #1c1e23 !important;
-          -webkit-text-fill-color: #1c1e23 !important;
-        }
-        .hire-story-meta-row {
-          display: flex;
-          align-items: baseline;
-          justify-content: space-between;
-          gap: 2rem;
-          width: 100%;
-        }
-        .hire-story-stack {
-          display: flex;
-          align-items: baseline;
-          gap: 0.65rem;
-          margin: 0;
-          font-family: var(--font-body), 'Plus Jakarta Sans', sans-serif;
-        }
-        .hire-story-stack-label {
-          font-size: 0.7rem;
-          font-weight: 600;
-          letter-spacing: 0.16em;
-          text-transform: uppercase;
-          color: rgba(28, 30, 35, 0.5);
-        }
-        .hire-story-stack-value {
-          font-size: 0.92rem;
-          font-weight: 400;
-          letter-spacing: 0.01em;
-          color: rgba(28, 30, 35, 0.85);
-        }
-        .hire-story-stack-label {
-          color: rgba(255, 255, 255, 0.5) !important;
-        }
-        .hire-story-stack-value {
-          color: rgba(255, 255, 255, 0.85) !important;
-        }
-        .hire-story-visual .hire-story-stack-label {
-          color: rgba(28, 30, 35, 0.5) !important;
-        }
-        .hire-story-visual .hire-story-stack-value {
-          color: rgba(28, 30, 35, 0.85) !important;
         }
         @media (min-width: 1200px) {
           #case-stories > .container {
@@ -443,17 +295,6 @@ export function CaseStories() {
           .hire-story-num {
             font-size: 2.65rem !important;
           }
-          .hire-story-visual {
-            margin-top: 2rem;
-          }
-          .hire-story-meta-row {
-            align-items: flex-start;
-            flex-direction: column;
-            gap: 0.85rem;
-          }
-          .hire-story-stack {
-            flex-wrap: wrap;
-          }
         }
       `}</style>
       <div
@@ -471,9 +312,9 @@ export function CaseStories() {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true, amount: 0.45 }}
           transition={{ duration: 0.68, ease: [0.16, 1, 0.3, 1] }}
-          style={{ margin: '0 0 1.05rem 0', textAlign: 'center' }}
+          style={{ margin: '0 0 1.05rem 0', textAlign: 'left' }}
         >
-          WORK EXAMPLES
+          CASE STUDIES
         </motion.p>
         <motion.h2
           className="hire-stories-title"
@@ -481,26 +322,35 @@ export function CaseStories() {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true, amount: 0.45 }}
           transition={{ duration: 0.78, delay: 0.08, ease: [0.16, 1, 0.3, 1] }}
-          style={{ margin: '0', textAlign: 'center' }}
+          style={{ margin: '0', textAlign: 'left' }}
         >
           Two builds, start to finish.
         </motion.h2>
 
         <CaseStory
-          kicker="CASE STUDY"
+          kicker="CASE STUDY · CLIENT TOOL"
           title="Terry Fox Foundation — the poster tool"
           stack="Codex · Antigravity · Google Stitch"
           steps={terryFoxSteps}
-          recordingSrc="/terry-fox-flow.mp4"
-          recordingCaption="On-brand posters in minutes for teams in every city — no designer bottleneck, no waiting days."
+        />
+        <motion.div
+          aria-hidden="true"
+          initial={{ opacity: 0 }}
+          whileInView={{ opacity: 1 }}
+          viewport={{ once: true, amount: 0.9 }}
+          transition={{ duration: 0.7, ease: [0.16, 1, 0.3, 1] }}
+          style={{
+            height: '1px',
+            backgroundColor: '#121316',
+            margin: '5.1rem 0 0 0',
+            width: '100%',
+          }}
         />
         <CaseStory
-          kicker="CASE STUDY"
+          kicker="CASE STUDY · MY OWN PRODUCT"
           title="BuyUkrainian — a live product of my own"
           stack="Codex · Antigravity · Figma"
           steps={buyUkrainianSteps}
-          recordingSrc="/buyukrainian-desktop-flow.mp4"
-          recordingCaption="Ukrainian-made products on one map — 28 stores across Canada, and anyone can add a missing one."
           link={{ href: 'https://www.buyukrainian.ca', label: 'Visit the live site' }}
         />
       </div>
@@ -532,11 +382,10 @@ export function HireClosing() {
           background-color: #121316 !important;
         }
         .hire-closing-line {
-          font-family: 'Newsreader', 'Source Serif 4', Georgia, serif !important;
+          font-family: var(--font-heading) !important;
           font-weight: 400 !important;
           font-style: normal !important;
-          letter-spacing: -0.018em !important;
-          line-height: 0.98 !important;
+          letter-spacing: 0.005em !important;
           color: #ffffff !important;
           -webkit-text-fill-color: #ffffff !important;
           -webkit-font-smoothing: antialiased !important;
@@ -559,10 +408,6 @@ export function HireClosing() {
         }
         .hire-closing-desktop *:not(strong) {
           font-weight: 400 !important;
-        }
-        .hire-closing-desktop > span:last-child {
-          color: #ffffff !important;
-          -webkit-text-fill-color: #ffffff !important;
         }
         .hire-closing-subtext,
         .hire-closing-subtext p {
@@ -626,6 +471,11 @@ export function HireClosing() {
           border-bottom: 1px solid rgba(242, 144, 143, 0.6);
           padding-bottom: 1px;
         }
+        .hire-closing-here {
+          color: #ffffff !important;
+          -webkit-text-fill-color: #ffffff !important;
+          font-style: normal !important;
+        }
         .hire-closing-copy {
           display: inline-flex;
           align-items: center;
@@ -667,10 +517,8 @@ export function HireClosing() {
             font-size: 1.23rem !important;
           }
           .hire-closing-line {
-            font-size: clamp(30px, 2.7vw, 38px) !important;
+            font-size: var(--closing-heading-size) !important;
             max-width: 44ch !important;
-            text-align: center !important;
-            align-self: center !important;
           }
           .hire-closing-desktop {
             display: inline !important;
@@ -689,9 +537,9 @@ export function HireClosing() {
             padding-right: 1.5rem !important;
           }
           .hire-closing-line {
-            font-size: clamp(2.82rem, 12.77vw, 4.18rem) !important;
-            line-height: 0.98 !important;
-            text-align: left !important;
+            font-size: clamp(1.0064rem, 5.24vw, 1.416rem) !important;
+            line-height: 1.35 !important;
+            text-align: right !important;
             width: 100% !important;
             max-width: none !important;
             align-self: stretch !important;
@@ -710,15 +558,15 @@ export function HireClosing() {
           .hire-closing-mobile {
             display: flex !important;
             flex-direction: column !important;
-            align-items: flex-start !important;
+            align-items: flex-end !important;
             width: 100% !important;
             gap: 0px !important;
-            text-align: left !important;
+            text-align: right !important;
           }
           .hire-closing-row {
             display: block !important;
             width: 100% !important;
-            text-align: left !important;
+            text-align: right !important;
             font-style: normal !important;
             font-weight: 600 !important;
             letter-spacing: -0.01em !important;
@@ -736,7 +584,7 @@ export function HireClosing() {
             height: 3.25rem !important;
             width: auto !important;
             padding: 0 1.88rem !important;
-            margin: 0 auto !important;
+            margin: 0 0 0 auto !important;
             justify-content: center !important;
             white-space: nowrap !important;
             border-radius: 44px !important;
@@ -764,11 +612,11 @@ export function HireClosing() {
         style={{
           maxWidth: '820px',
           width: '100%',
-          textAlign: 'left',
+          textAlign: 'right',
           padding: '2rem 1rem 0 1rem',
           display: 'flex',
           flexDirection: 'column',
-          alignItems: 'flex-start',
+          alignItems: 'flex-end',
           position: 'relative',
           zIndex: 2,
         }}
@@ -782,8 +630,8 @@ export function HireClosing() {
             width: '48px',
             height: '1px',
             backgroundColor: '#2d3139',
-            margin: '2rem 0 1rem 0',
-            transformOrigin: 'left',
+            margin: '2rem 0 1rem auto',
+            transformOrigin: 'right',
           }}
         />
 
@@ -794,78 +642,54 @@ export function HireClosing() {
           viewport={{ once: true, amount: 0.45 }}
           transition={{ duration: 0.78, delay: 0.08, ease: [0.16, 1, 0.3, 1] }}
           style={{
-            fontFamily: "'Newsreader', 'Source Serif 4', Georgia, serif",
-            fontSize: 'clamp(30px, 2.7vw, 38px)',
-            fontWeight: 400,
-            letterSpacing: '-0.018em',
-            lineHeight: 0.98,
+            fontFamily: 'var(--font-heading)',
+            fontSize: 'var(--closing-heading-size)',
+            fontWeight: 300,
+            letterSpacing: '0.015em',
+            lineHeight: 1.35,
             color: '#ffffff',
             WebkitTextFillColor: '#ffffff',
-            textAlign: 'left',
-            margin: '0 0 2.55rem 0',
+            textAlign: 'right',
+            margin: '0 0 3.5rem 0',
             maxWidth: '44ch',
           }}
         >
           <span className="hire-closing-desktop">
             If you need a{' '}
-            <strong style={{ fontWeight: 500, fontStyle: 'normal', letterSpacing: '0.005em', color: '#ffffff', WebkitTextFillColor: '#ffffff' }}>product thinker</strong>{' '}
-            and a <strong>hands-on builder</strong> —{' '}
+            <strong style={{ fontWeight: 500, fontStyle: 'normal', letterSpacing: '0.005em', color: '#f2908f', WebkitTextFillColor: '#f2908f' }}>product thinker</strong>{' '}
+            and a hands-on builder —{' '}
             <motion.span
+              className="hire-closing-here"
               initial={{ opacity: 0, y: 12 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true, amount: 0.45 }}
               transition={{ duration: 0.72, delay: 0.3, ease: [0.16, 1, 0.3, 1] }}
               style={{ display: 'inline', fontWeight: 300, color: '#ffffff', WebkitTextFillColor: '#ffffff' }}
             >
-              I’d love to talk to you.
+              I’m here.
             </motion.span>
           </span>
           <span className="hire-closing-mobile">
             <span className="hire-closing-row">If you need a</span>
             <strong className="hire-closing-row">product thinker</strong>
-            <span className="hire-closing-row">and a <strong>hands-on builder</strong> —</span>
-            <span className="hire-closing-row">I’d love to talk to you.</span>
+            <span className="hire-closing-row">and a hands-on builder —</span>
+            <span className="hire-closing-row hire-closing-here">I’m here.</span>
           </span>
         </motion.h2>
-
-        <motion.p
-          initial={{ opacity: 0, y: 14 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true, amount: 0.45 }}
-          transition={{ duration: 0.68, delay: 0.18, ease: [0.16, 1, 0.3, 1] }}
-          style={{
-            fontFamily: 'var(--font-body), "Plus Jakarta Sans", sans-serif',
-            fontSize: 'clamp(1.05rem, 2.5vw, 1.2555rem)',
-            fontWeight: 300,
-            letterSpacing: '0.012em',
-            lineHeight: 1.5,
-            color: 'rgba(255, 255, 255, 0.8)',
-            WebkitTextFillColor: 'rgba(255, 255, 255, 0.8)',
-            textAlign: 'center',
-            alignSelf: 'center',
-            margin: '0 0 2.55rem 0',
-            maxWidth: '47ch',
-            textWrap: 'balance',
-          }}
-        >
-          I want to bring my thinking to your team, learn from how you do it, and see how we can
-          build and design better products for customers who are getting more demanding than
-          ever.
-        </motion.p>
 
         <motion.div
           initial={{ opacity: 0, y: 16, scale: 0.96 }}
           whileInView={{ opacity: 1, y: 0, scale: 1 }}
           viewport={{ once: true, amount: 0.45 }}
           transition={{ duration: 0.72, delay: 0.42, ease: [0.16, 1, 0.3, 1] }}
-          style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', width: '100%', gap: '1rem', marginTop: '0rem', marginBottom: '0', justifyContent: 'center' }}
+          style={{ display: 'flex', flexDirection: 'column', alignItems: 'flex-end', gap: '1rem', marginTop: '0rem', marginBottom: '0', justifyContent: 'center' }}
         >
           <a
             href="mailto:iryna@irynasheremeta.com"
             className="btn hire-closing-btn face-cta"
             style={{ display: 'inline-flex', alignItems: 'center', gap: '0.45rem' }}
           >
-            <span style={{ letterSpacing: '0.08em' }}>SEND ME AN EMAIL</span>
+            <span style={{ letterSpacing: '0.08em' }}>GET IN TOUCH</span>
             <svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round" style={{ transform: 'translateY(-0.5px)' }}>
               <line x1="7" y1="17" x2="17" y2="7"></line>
               <polyline points="7 7 17 7 17 17"></polyline>
@@ -881,10 +705,10 @@ export function HireClosing() {
               }).catch(() => {});
             }}
           >
-            {copied ? 'Copied' : 'Copy'}
+            {copied ? 'Copied' : 'iryna@irynasheremeta.com'}
             <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-              <rect x="3" y="5" width="18" height="14" rx="2"></rect>
-              <path d="m3 7 9 6 9-6"></path>
+              <rect x="9" y="9" width="13" height="13" rx="2"></rect>
+              <path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path>
             </svg>
           </button>
         </motion.div>
@@ -926,10 +750,6 @@ export function HowIUseAI() {
           color: #ffffff !important;
           -webkit-text-fill-color: #ffffff !important;
         }
-        .hire-ai-title .hire-ai-title-accent {
-          color: #f2908f !important;
-          -webkit-text-fill-color: #f2908f !important;
-        }
         .hire-ai-body {
           font-family: var(--font-body), 'Plus Jakarta Sans', sans-serif !important;
           font-size: var(--text-body) !important;
@@ -946,47 +766,6 @@ export function HowIUseAI() {
         }
         .hire-ai-body p:last-child {
           margin-bottom: 0;
-        }
-        @media (min-width: 901px) {
-          .hire-ai-body {
-            display: grid;
-            grid-template-columns: minmax(0, 1.08fr) minmax(0, 0.92fr);
-            column-gap: clamp(3rem, 7vw, 7rem);
-            max-width: none;
-            align-items: start;
-          }
-          .hire-ai-body p:first-child {
-            grid-column: 1;
-            grid-row: 1 / span 2;
-            max-width: 91%;
-            padding-right: clamp(1rem, 2vw, 2rem);
-            margin-bottom: 0;
-            font-size: 80%;
-          }
-          .hire-ai-body p:nth-child(2) {
-            grid-column: 2;
-            grid-row: 1;
-            align-self: start;
-            justify-self: stretch;
-            text-align: left;
-            font-size: 80%;
-          }
-          .hire-ai-body p:nth-child(3) {
-            grid-column: 2;
-            grid-row: 2;
-            justify-self: stretch;
-            width: auto;
-            margin-top: 0;
-            text-align: left;
-            font-size: 80%;
-          }
-          .hire-ai-body p:nth-child(2) {
-            padding-bottom: 1.4rem;
-            border-bottom: 1px solid rgba(255, 255, 255, 0.16);
-          }
-          .hire-ai-body p:nth-child(3) {
-            padding-top: 1.4rem;
-          }
         }
         .hire-ai-creds {
           font-family: var(--font-body), 'Plus Jakarta Sans', sans-serif !important;
@@ -1063,7 +842,7 @@ export function HowIUseAI() {
           transition={{ duration: 0.78, delay: 0.08, ease: [0.16, 1, 0.3, 1] }}
           style={{ margin: '0 0 2.55rem 0', textAlign: 'left' }}
         >
-          <span>My thinking has always been </span><span className="hire-ai-title-accent">end-to-end.</span>
+          My thinking has always been end to end.
         </motion.h2>
         <motion.div
           className="hire-ai-body"
@@ -1104,10 +883,10 @@ export function HireTestimonial() {
     <section
       id="testimonial"
       style={{
-        background: '#ffffff',
-        backgroundColor: '#ffffff',
+        background:
+          'radial-gradient(circle at 44% 42%, rgba(255, 255, 255, 0.95) 0%, rgba(255, 255, 255, 0.52) 34%, rgba(247, 243, 237, 0) 72%), #f7f3ed',
         borderBottom: '1px solid rgba(120, 128, 136, 0.18)',
-        padding: '5.1rem 2rem 5.1rem 2rem',
+        padding: '5.1rem 2rem 2.55rem 2rem',
         width: '100%',
         display: 'flex',
         flexDirection: 'column',
@@ -1127,22 +906,10 @@ export function HireTestimonial() {
           color: var(--color-heading-silver) !important;
           -webkit-text-fill-color: var(--color-heading-silver) !important;
         }
-        @media (min-width: 901px) {
-          .hire-t-heading {
-            margin-bottom: 2.5rem !important;
-          }
-          #testimonial {
-            padding-bottom: 5.1rem !important;
-          }
-          .hire-t-card {
-            width: 70%;
-            margin-left: 30%;
-          }
-        }
         .hire-t-card {
           width: 100%;
           background-color: #ffffff;
-          border: 1px dashed rgba(0, 0, 0, 0.2);
+          border: 1px dashed #000000;
           border-radius: 0;
           box-shadow: none;
           padding: 3.25rem 4rem 2.25rem;
