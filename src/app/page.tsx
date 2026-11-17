@@ -1,28 +1,36 @@
+import type { Metadata } from 'next';
 import Header from './components/Header';
 import HeroV2 from './v2/components/HeroV2';
 import ProjectsV2 from './v2/components/ProjectsV2';
-import ServicesV2 from './v2/components/ServicesV2';
-import HowItWorks from './v2/components/HowItWorks';
-import ProcessSection from './v2/components/ProcessSection';
-import AiShowcase from './v2/components/AiShowcase';
-import PackagesSection from './v2/components/PackagesSection';
-import FaqSection from './v2/components/FaqSection';
 import Footer from './components/Footer';
 import ClientWrapper from './components/ClientWrapper';
+import { CaseStories, HireClosing, HowIUseAI } from './hire/HireSections';
+
+export const metadata: Metadata = {
+  title: 'Iryna Sheremeta — Product Designer & AI Builder',
+  description:
+    'For employers: live products designed and built end to end — an internal poster tool used by Terry Fox Foundation teams, a live map of Ukrainian products in Canada, and more. Remote, Canada.',
+  alternates: {
+    canonical: 'https://www.irynasheremeta.com/',
+  },
+  openGraph: {
+    title: 'Iryna Sheremeta — Product Designer & AI Builder',
+    description:
+      'Live products designed and built end to end — not mockups. Remote, Canada.',
+    url: 'https://www.irynasheremeta.com/',
+    type: 'website',
+  },
+};
 
 export default function HomePage() {
-
   return (
     <ClientWrapper>
       <div className="v2-theme">
         <Header />
-        <HeroV2 />
+        <HeroV2 variant="hire" />
 
-        <ServicesV2 />
-
-        {/* Cases Section */}
+        {/* Projects */}
         <section id="cases-section" className="cases-section-wrapper" style={{ padding: '5.1rem 0 0 0', backgroundColor: '#ffffff' }}>
-           {/* Frame starting under subline with dot matrix pattern */}
           <div className="cases-section-frame"
             style={{
               backgroundColor: '#ffffff',
@@ -37,24 +45,15 @@ export default function HomePage() {
           </div>
         </section>
 
-        {/* How It Works (3 simple steps process) */}
-        <HowItWorks />
+        {/* Case stories: Terry Fox + BuyUkrainian, problem to live use */}
+        <CaseStories />
 
-        {/* Process Section */}
-        <ProcessSection />
+        {/* How I use AI — her story, replaces the homepage's How It Works */}
+        <HowIUseAI />
 
-        {/* Why Hire Someone If There's AI — showcase */}
-        <AiShowcase />
+        {/* Closing — recruiter version of the homepage prefooter */}
+        <HireClosing />
 
-        <div id="packages" style={{ scrollMarginTop: '88px' }}>
-          <style>{`#packages > section + section { padding-top: 5.1rem !important; }`}</style>
-          <PackagesSection mode="website" />
-          <PackagesSection mode="ai" />
-        </div>
-
-        <FaqSection />
-
-        {/* Minimal subtle footer */}
         <Footer />
       </div>
     </ClientWrapper>
