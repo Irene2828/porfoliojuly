@@ -346,9 +346,9 @@ export function CaseStories() {
           -webkit-text-fill-color: rgba(28, 30, 35, 0.72) !important;
         }
         .hire-story-step-accent {
-          color: #f2908f !important;
-          -webkit-text-fill-color: #f2908f !important;
-          font-weight: 500 !important;
+          color: #1c1e23 !important;
+          -webkit-text-fill-color: #1c1e23 !important;
+          font-weight: 600 !important;
         }
         .hire-story-title {
           font-family: var(--font-heading) !important;
@@ -1081,6 +1081,18 @@ export function HowIUseAI() {
           line-height: 1.2;
           color: #ffffff !important;
           -webkit-text-fill-color: #ffffff !important;
+        }
+        @media (min-width: 901px) {
+          .hire-ai-title {
+            font-size: clamp(30px, 2.7vw, 38px) !important;
+            line-height: 1.02 !important;
+          }
+        }
+        @media (max-width: 900px) {
+          .hire-ai-title {
+            font-size: clamp(2.82rem, 12.77vw, 4.18rem) !important;
+            line-height: 0.98 !important;
+          }
         }
         .hire-ai-title .hire-ai-title-accent {
           color: #f2908f !important;
