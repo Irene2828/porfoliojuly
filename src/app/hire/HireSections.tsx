@@ -1088,12 +1088,6 @@ export function HowIUseAI() {
             line-height: 1.02 !important;
           }
         }
-        @media (max-width: 900px) {
-          .hire-ai-title {
-            font-size: clamp(2.82rem, 12.77vw, 4.18rem) !important;
-            line-height: 0.98 !important;
-          }
-        }
         .hire-ai-title .hire-ai-title-accent {
           color: #f2908f !important;
           -webkit-text-fill-color: #f2908f !important;
@@ -1233,7 +1227,8 @@ export function HowIUseAI() {
             padding-right: 1.5rem !important;
           }
           .hire-ai-title {
-            font-size: 2.1rem !important;
+            font-size: clamp(2.82rem, 12.77vw, 4.18rem) !important;
+            line-height: 0.98 !important;
           }
         }
         @media (min-width: 901px) {
