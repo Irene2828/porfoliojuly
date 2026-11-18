@@ -63,6 +63,14 @@ const buyUkrainianSteps = [
   },
 ];
 
+const dorionSteps = [
+  {
+    num: '01',
+    title: 'The prototype',
+    text: 'Prototype to change the regular spreadsheets and phone ping-pong experience of a local school on a competitive market with a custom scheduling app.',
+  },
+];
+
 function CaseStory({
   kicker,
   title,
@@ -454,6 +462,12 @@ export function CaseStories() {
           background: #eef0f2;
           border: 1px solid rgba(28, 30, 35, 0.14);
         }
+        .hire-story--dorion .hire-story-recording {
+          max-width: 300px;
+          aspect-ratio: 390 / 844;
+          object-fit: contain;
+          background: #000000;
+        }
         .hire-story-visual-caption {
           margin: 2.2rem auto 0;
           max-width: 62ch;
@@ -620,6 +634,13 @@ export function CaseStories() {
           recordingCaption="Ukrainian-made products on one map — 28 stores across Canada, and anyone can add a missing one."
           className="hire-story--sky"
           link={{ href: 'https://www.buyukrainian.ca', label: 'Visit the live site' }}
+        />
+        <CaseStory
+          title="Dorion Driving Academy — a scheduling app prototype"
+          steps={dorionSteps}
+          recordingSrc="/dorion-driving-flow.mp4"
+          recordingCaption="Making driving school cancellations and rescheduling as fast as a drive-through. Open, swipe, confirm the change with the school. No calls or emails back-and-forth."
+          className="hire-story--dorion"
         />
       </div>
     </section>
