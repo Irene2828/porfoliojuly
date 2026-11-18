@@ -1282,6 +1282,18 @@ export function HowIUseAI() {
             font-size: calc(var(--text-body) + 2px) !important;
           }
         }
+        .hire-ai-video { display: none; }
+        @media (min-width: 901px) {
+          #how-i-use-ai .hire-ai-body p:nth-child(3) { display: none !important; }
+          #how-i-use-ai .hire-ai-video {
+            display: block;
+            grid-column: 2;
+            grid-row: 1 / span 2;
+            align-self: center;
+            width: 100%;
+          }
+          #how-i-use-ai .hire-ai-video video { display: block; width: 100%; height: auto; }
+        }
       `}</style>
       <div
         className="container"
@@ -1342,6 +1354,16 @@ export function HowIUseAI() {
             ago. Design thinking still takes the biggest share of the time. But building now
             happens everywhere I can: a work laptop, or a mobile device on the go.
           </p>
+          <div className="hire-ai-video" aria-hidden="true">
+            <video
+              src="/how-i-use-ai-promo.mp4"
+              autoPlay
+              muted
+              loop
+              playsInline
+              preload="auto"
+            />
+          </div>
         </motion.div>
       </div>
     </section>
