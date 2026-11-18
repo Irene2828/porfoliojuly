@@ -7,7 +7,7 @@ export default function HeroV2({ variant = 'client' }: { variant?: 'client' | 'h
   const isHire = variant === 'hire';
     
   return (
-    <section className="section hero-section" id="home" style={{ backgroundColor: '#121316', background: '#121316' }}>
+    <section className={isHire ? 'section hero-section hero-hire' : 'section hero-section'} id="home" style={{ backgroundColor: '#121316', background: '#121316' }}>
       {/* Off-black matte theme rules */}
       <style>{`
         .hero-section,
@@ -288,6 +288,11 @@ export default function HeroV2({ variant = 'client' }: { variant?: 'client' | 'h
           .headline-mobile {
             font-size: clamp(2.82rem, 12.77vw, 4.18rem) !important; /* +20% mobile hero headline */
             line-height: 0.979 !important; /* mobile hero line spacing increased by 20% */
+          }
+          .v2-theme .hero-hire .hero-name-group .hero-text .headline-mobile,
+          .hero-hire .hero-name-group .hero-text .headline-mobile {
+            font-size: clamp(2.82rem, 12.77vw, 4.18rem) !important; /* hire hero: editorial size, matches AI + closing headlines */
+            line-height: 0.98 !important;
           }
           .v2-theme .headline-mobile,
           .hero-statement .headline-mobile,
