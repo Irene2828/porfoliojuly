@@ -291,8 +291,14 @@ export default function HeroV2({ variant = 'client' }: { variant?: 'client' | 'h
           }
           .v2-theme .hero-hire .hero-name-group .hero-text .headline-mobile,
           .hero-hire .hero-name-group .hero-text .headline-mobile {
-            font-size: clamp(2.82rem, 12.77vw, 4.18rem) !important; /* hire hero: editorial size, matches AI + closing headlines */
-            line-height: 0.98 !important;
+            font-size: clamp(3rem, 14.87vw, 3.625rem) !important; /* hire hero variant C: 58px at 390px wide, 4-line break */
+            line-height: 0.92 !important;
+          }
+          .v2-theme .hero-hire .hero-name-group .hero-text .headline-mobile .headline-line,
+          .hero-hire .hero-name-group .hero-text .headline-mobile .headline-line,
+          .v2-theme .hero-hire .hero-name-group .hero-text .headline-mobile .headline-line *,
+          .hero-hire .hero-name-group .hero-text .headline-mobile .headline-line * {
+            line-height: 0.92 !important;
           }
           .v2-theme .headline-mobile,
           .hero-statement .headline-mobile,
@@ -972,7 +978,10 @@ export default function HeroV2({ variant = 'client' }: { variant?: 'client' | 'h
                         </span>
                         <span className="headline-line">
                           <span className="headline-mobile-serif-normal">to </span>
-                          <em className="headline-mobile-serif-accent">designed and built</em>
+                          <em className="headline-mobile-serif-accent">designed</em>
+                        </span>
+                        <span className="headline-line">
+                          <em className="headline-mobile-serif-accent">and built</em>
                         </span>
                         <span className="headline-line">
                           <span className="headline-mobile-serif-normal">solution.</span>
