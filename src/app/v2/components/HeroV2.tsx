@@ -292,7 +292,13 @@ export default function HeroV2({ variant = 'client' }: { variant?: 'client' | 'h
           .v2-theme .hero-hire .hero-name-group .hero-text .headline-mobile,
           .hero-hire .hero-name-group .hero-text .headline-mobile {
             font-size: clamp(2.82rem, 12.77vw, 4.18rem) !important; /* hire hero: editorial size, matches AI + closing headlines */
-            line-height: 0.98 !important;
+            line-height: 0.89 !important; /* serif needs 0.89 to match the Jakarta sections' visible gap */
+          }
+          .v2-theme .hero-hire .hero-name-group .hero-text .headline-mobile .headline-line,
+          .hero-hire .hero-name-group .hero-text .headline-mobile .headline-line,
+          .v2-theme .hero-hire .hero-name-group .hero-text .headline-mobile .headline-line *,
+          .hero-hire .hero-name-group .hero-text .headline-mobile .headline-line * {
+            line-height: 0.89 !important;
           }
           .v2-theme .headline-mobile,
           .hero-statement .headline-mobile,
