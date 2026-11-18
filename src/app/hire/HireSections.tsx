@@ -520,12 +520,12 @@ export function CaseStories() {
           color: rgba(255, 255, 255, 0.85) !important;
         }
         .hire-story-visual .hire-story-stack-label {
-          color: #f2908f !important;
-          -webkit-text-fill-color: #f2908f !important;
+          color: #b8c0ca !important;
+          -webkit-text-fill-color: #b8c0ca !important;
         }
         .hire-story-visual .hire-story-stack-value {
-          color: #f2908f !important;
-          -webkit-text-fill-color: #f2908f !important;
+          color: #b8c0ca !important;
+          -webkit-text-fill-color: #b8c0ca !important;
         }
         @media (min-width: 901px) {
         .hire-story--sky > p:last-child {
@@ -772,6 +772,7 @@ export function HireClosing() {
           color: #ffffff !important;
           -webkit-text-fill-color: #ffffff !important;
           font-style: normal !important;
+          margin-top: 1rem !important;
         }
         /* The global .v2-theme h2 span rule paints headline spans peach with
            higher specificity than the rules above; these win it back. */
@@ -816,21 +817,36 @@ export function HireClosing() {
           opacity: 0.7;
         }
         .hire-closing-actions {
-          padding-top: 2rem !important;
-          padding-bottom: 2rem !important;
+          padding-top: 1rem !important;
+          padding-bottom: 1rem !important;
+        }
+        .hire-closing-line {
+          margin-bottom: 1.275rem !important;
         }
 
         @media (min-width: 901px) {
           .hire-closing-line,
           .hire-closing-desktop,
           .hire-closing-desktop > span {
-            font-weight: 400 !important;
-          }
-          .hire-closing-line strong {
             font-weight: 600 !important;
+            color: #ffffff !important;
+            -webkit-text-fill-color: #ffffff !important;
+          }
+          .v2-theme .hire-closing-section .hire-closing-desktop .hire-closing-accent,
+          .hire-closing-section .hire-closing-desktop .hire-closing-accent {
+            font-weight: 500 !important;
+            color: #f2908f !important;
+            -webkit-text-fill-color: #f2908f !important;
+          }
+          .v2-theme .hire-closing-section .hire-closing-desktop .hire-closing-here,
+          .hire-closing-section .hire-closing-desktop .hire-closing-here {
+            font-weight: 400 !important;
+            font-style: italic !important;
+            color: #ffffff !important;
+            -webkit-text-fill-color: #ffffff !important;
           }
           .hire-closing-section {
-            padding-bottom: 5.1rem !important;
+            padding-bottom: 2.55rem !important;
           }
           .hire-closing-subtext {
             font-size: 1.23rem !important;
@@ -842,10 +858,40 @@ export function HireClosing() {
             align-self: center !important;
           }
           .hire-closing-desktop {
-            display: inline !important;
+            display: none !important;
           }
           .hire-closing-mobile {
-            display: none !important;
+            display: flex !important;
+            flex-direction: column !important;
+            align-items: center !important;
+            width: 100% !important;
+            gap: 0 !important;
+            text-align: center !important;
+          }
+          .v2-theme .hire-closing-section .hire-closing-mobile .hire-closing-row,
+          .hire-closing-section .hire-closing-mobile .hire-closing-row {
+            display: block !important;
+            width: 100% !important;
+            text-align: center !important;
+            font-weight: 600 !important;
+            font-style: normal !important;
+            color: #ffffff !important;
+            -webkit-text-fill-color: #ffffff !important;
+          }
+          .v2-theme .hire-closing-section .hire-closing-mobile strong.hire-closing-row,
+          .v2-theme .hire-closing-section .hire-closing-mobile .hire-closing-row > strong,
+          .hire-closing-section .hire-closing-mobile strong.hire-closing-row,
+          .hire-closing-section .hire-closing-mobile .hire-closing-row > strong {
+            font-weight: 500 !important;
+            color: #f2908f !important;
+            -webkit-text-fill-color: #f2908f !important;
+          }
+          .v2-theme .hire-closing-section .hire-closing-mobile .hire-closing-here,
+          .hire-closing-section .hire-closing-mobile .hire-closing-here {
+            font-weight: 400 !important;
+            font-style: italic !important;
+            color: #ffffff !important;
+            -webkit-text-fill-color: #ffffff !important;
           }
         }
         @media (max-width: 900px) {
@@ -1013,7 +1059,7 @@ export function HireClosing() {
             className="btn hire-closing-btn face-cta"
             style={{ display: 'inline-flex', alignItems: 'center', gap: '0.45rem' }}
           >
-            <span style={{ letterSpacing: '0.08em' }}>SEND ME AN EMAIL</span>
+            <span style={{ letterSpacing: '0.08em' }}>LET&apos;S CHAT</span>
             <svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round" style={{ transform: 'translateY(-0.5px)' }}>
               <line x1="7" y1="17" x2="17" y2="7"></line>
               <polyline points="7 7 17 7 17 17"></polyline>
@@ -1029,7 +1075,7 @@ export function HireClosing() {
               }).catch(() => {});
             }}
           >
-            {copied ? 'Copied' : 'Copy'}
+            {copied ? 'Copied' : 'Copy email'}
             <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
               <rect x="3" y="5" width="18" height="14" rx="2"></rect>
               <path d="m3 7 9 6 9-6"></path>
@@ -1060,10 +1106,10 @@ export function HowIUseAI() {
           font-family: var(--font-body), 'Plus Jakarta Sans', sans-serif !important;
           font-size: var(--text-label) !important;
           font-weight: 600 !important;
-          text-transform: uppercase !important;
+          text-transform: none !important;
           letter-spacing: 0.14em !important;
-          color: #f2908f !important;
-          -webkit-text-fill-color: #f2908f !important;
+          color: #ffffff !important;
+          -webkit-text-fill-color: #ffffff !important;
         }
         .hire-ai-kicker::before {
           content: '';
@@ -1254,7 +1300,7 @@ export function HowIUseAI() {
           transition={{ duration: 0.68, ease: [0.16, 1, 0.3, 1] }}
           style={{ margin: '0 0 1.05rem 0', textAlign: 'left' }}
         >
-          HOW I USE AI
+          How I work with AI
         </motion.p>
         <motion.h2
           className="hire-ai-title"
@@ -1399,6 +1445,18 @@ export function HireTestimonial() {
           padding: 0;
           max-width: 1093px;
         }
+        .hire-t-featured {
+          display: block;
+          margin-bottom: 0.75rem !important;
+          font-size: clamp(1.05rem, 1.65vw, 1.42rem) !important;
+          line-height: 1.12 !important;
+          font-weight: 500 !important;
+          color: #1d2229 !important;
+          -webkit-text-fill-color: #1d2229 !important;
+        }
+        .hire-t-quote-sentence {
+          display: block;
+        }
         .hire-t-attribution {
           font-family: var(--font-body), 'Plus Jakarta Sans', sans-serif !important;
           font-weight: 500 !important;
@@ -1453,16 +1511,17 @@ export function HireTestimonial() {
           viewport={{ once: true, margin: '-80px' }}
           transition={{ duration: 0.7, delay: 0.1, ease: 'easeOut' }}
         >
-          <p className="hire-t-pull">
-            “Your website is so effective that I&apos;m now receiving calls every day from
-            potential clients — sometimes as many as three a day!”
-          </p>
           <blockquote className="hire-t-quote">
-            Working with Iryna was a great experience from start to finish. She is professional,
-            patient, and truly listens to her clients. What sets her apart is her ability to go
-            beyond what&apos;s asked, anticipate needs, and offer thoughtful solutions. She
-            delivered a website that perfectly reflects my business and values. I couldn&apos;t be
-            happier with the result and highly recommend her services!
+            <span className="hire-t-featured">
+              “What sets her apart is her ability to go beyond what&apos;s asked, anticipate needs,
+              and offer thoughtful solutions.”
+            </span>
+            <span className="hire-t-quote-sentence">
+              Working with Iryna was a great experience from start to finish. She is professional,
+              patient, and truly listens to her clients. She delivered a website that perfectly
+              reflects my business and values. I couldn&apos;t be happier with the result and highly
+              recommend her services!
+            </span>
           </blockquote>
           <motion.p
             className="hire-t-attribution"

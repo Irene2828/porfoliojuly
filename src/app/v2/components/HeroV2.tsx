@@ -291,7 +291,7 @@ export default function HeroV2({ variant = 'client' }: { variant?: 'client' | 'h
           }
           .v2-theme .hero-hire .hero-name-group .hero-text .headline-mobile,
           .hero-hire .hero-name-group .hero-text .headline-mobile {
-            font-size: clamp(2.82rem, 12.77vw, 4.18rem) !important; /* hire hero: editorial size, matches AI + closing headlines */
+            font-size: clamp(2.92rem, 13.21vw, 4.33rem) !important; /* 10% smaller than the previous mobile size */
             line-height: 0.89 !important; /* serif needs 0.89 to match the Jakarta sections' visible gap */
           }
           .v2-theme .hero-hire .hero-name-group .hero-text .headline-mobile .headline-line,
@@ -512,6 +512,16 @@ export default function HeroV2({ variant = 'client' }: { variant?: 'client' | 'h
           .hero-body-mobile {
             width: 100% !important;
             max-width: 100% !important;
+          }
+        }
+        @media (min-width: 414px) and (max-width: 900px) {
+          .v2-theme .hero-image-wrapper,
+          .hero-image-wrapper {
+            padding-top: 1.32rem !important;
+          }
+          .v2-theme .hero-section,
+          .hero-section {
+            padding-bottom: 3.85rem !important;
           }
         }
         /* Very small screens (<= 349px, e.g. iPhone 5 / SE 1st gen) */
