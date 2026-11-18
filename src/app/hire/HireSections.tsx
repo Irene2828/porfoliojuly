@@ -1,7 +1,8 @@
 'use client';
 
-import { useState, type ReactNode } from 'react';
-import { motion } from 'framer-motion';
+import { useRef, useState, type ReactNode, type SyntheticEvent } from 'react';
+import { motion, useInView } from 'framer-motion';
+import heroImage from '@/app/assets/new_me.jpg';
 
 /* Case stories for the /hire page: how two products went from problem to live use. */
 
@@ -9,22 +10,38 @@ const terryFoxSteps = [
   {
     num: '01',
     title: 'The problem',
-    text: 'Every city runs its own Terry Fox Run, and every poster has to stay on brand. Posters were made by hand in Figma, one at a time — volunteers waited days for a single poster, and the designers were pulled away from bigger work.',
+    text: (
+      <>
+        Every city runs its own Terry Fox Run, and <span className="hire-story-step-accent">every poster has to stay on brand</span>. Posters were made by hand in Figma, one at a time — volunteers <span className="hire-story-step-accent">waited days for a single poster</span>, and the designers were pulled away from bigger work.
+      </>
+    ),
   },
   {
     num: '02',
     title: 'Scoping the fix',
-    text: 'The bottleneck wasn’t effort, it was the process. I helped scope a locked-template tool: brand rules built in, one set of event details filling all five poster formats at once, and the event’s owner approving every poster before it goes out.',
+    text: (
+      <>
+        The bottleneck wasn’t effort, it was the process. I helped scope a <span className="hire-story-step-accent">locked-template tool</span>: brand rules built in, one set of event details filling <span className="hire-story-step-accent">all five poster formats at once</span>, and the event’s owner approving every poster before it goes out.
+      </>
+    ),
   },
   {
     num: '03',
     title: 'Prototype, then iterate',
-    text: 'The first version covered the core flow in three steps. Iteration added a full editor with placement controls for the posters the simple flow can’t cover — one click away, not in the way. The structure came out clean enough that an AI agent can fill the fields directly.',
+    text: (
+      <>
+        The first version covered the <span className="hire-story-step-accent">core flow in three steps</span>. Iteration added a full editor with placement controls for the posters the simple flow can’t cover — one click away, not in the way. The structure came out clean enough that an <span className="hire-story-step-accent">AI agent can fill the fields directly</span>.
+      </>
+    ),
   },
   {
     num: '04',
     title: 'In use now',
-    text: 'Volunteers and managers run the whole flow themselves — posters in minutes instead of days, no designer in the loop. A person still previews and approves every poster before it ships.',
+    text: (
+      <>
+        Volunteers and managers <span className="hire-story-step-accent">run the whole flow themselves</span> — <span className="hire-story-step-accent">posters in minutes instead of days</span>, no designer in the loop. A person still previews and approves every poster before it ships.
+      </>
+    ),
   },
 ];
 
@@ -34,8 +51,8 @@ const buyUkrainianSteps = [
     title: 'The problem',
     text: (
       <>
-        Ukrainian-made products are sold in stores all across Canada, but{' '}
-        <span className="hire-story-step-accent">there was no one place to find them</span> — just
+        Ukrainian-made products are <span className="hire-story-step-accent">sold in stores all across Canada</span>, but{' '}
+        there was <span className="hire-story-step-accent">no one place to find them</span> — just
         scattered lists and word of mouth.
       </>
     ),
@@ -47,19 +64,27 @@ const buyUkrainianSteps = [
       <>
         An <span className="hire-story-step-accent">interactive map and directory</span>: search by
         city or by product, and see the stores that carry it. One rule decides every listing — the
-        products are made in Ukraine — and every store is checked before it appears on the map.
+        products are made in Ukraine — and <span className="hire-story-step-accent">every store is checked</span> before it appears on the map.
       </>
     ),
   },
   {
     num: '03',
     title: 'Built to grow',
-    text: 'Anyone can add a store that’s missing; submissions come in for review before they go live. The catalogue grows city by city, without the map turning into a free-for-all.',
+    text: (
+      <>
+        Anyone can <span className="hire-story-step-accent">add a store that’s missing</span>; submissions come in for <span className="hire-story-step-accent">review before they go live</span>. The catalogue grows city by city, without the map turning into a free-for-all.
+      </>
+    ),
   },
   {
     num: '04',
     title: 'Live today',
-    text: '26 stores across Canada and counting. I scoped it, designed it, built it — and I still run it: new stores, data checks, fixes.',
+    text: (
+      <>
+        <span className="hire-story-step-accent">26 stores across Canada and counting</span>. I <span className="hire-story-step-accent">scoped it, designed it, built it — and I still run it</span>: new stores, data checks, fixes.
+      </>
+    ),
   },
 ];
 
@@ -71,6 +96,11 @@ const dorionSteps = [
   },
 ];
 
+function setVideoPlaybackRate(event: SyntheticEvent<HTMLVideoElement>, playbackRate: number) {
+  event.currentTarget.defaultPlaybackRate = playbackRate;
+  event.currentTarget.playbackRate = playbackRate;
+}
+
 function CaseStory({
   kicker,
   title,
@@ -78,7 +108,9 @@ function CaseStory({
   steps,
   link,
   recordingSrc,
+  recordingMobileSrc,
   recordingCaption,
+  recordingSpeed = 1.5,
   className,
   delayBase = 0,
 }: {
@@ -88,7 +120,9 @@ function CaseStory({
   steps: { num: string; title: string; text: ReactNode }[];
   link?: { href: string; label: string };
   recordingSrc?: string;
+  recordingMobileSrc?: string;
   recordingCaption?: string;
+  recordingSpeed?: number;
   className?: string;
   delayBase?: number;
 }) {
@@ -176,22 +210,59 @@ function CaseStory({
       </div>
       {recordingSrc && (
         <motion.div
-          className="hire-story-visual"
+          className={`hire-story-visual${recordingMobileSrc ? ' hire-story-visual--pair' : ''}`}
           initial={{ opacity: 0, y: 18 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true, amount: 0.25 }}
           transition={{ duration: 0.72, delay: 0.14, ease: [0.16, 1, 0.3, 1] }}
         >
-          <video
-            className="hire-story-recording"
-            src={recordingSrc}
-            autoPlay
-            loop
-            muted
-            playsInline
-            controls
-            aria-label={recordingCaption || 'Terry Fox poster tool recording'}
-          />
+          {recordingMobileSrc ? (
+            <div className="hire-story-recording-pair">
+              <div className="hire-story-recording-shell hire-story-recording-shell--desktop">
+                <video
+                  className="hire-story-recording hire-story-recording--desktop"
+                  src={recordingSrc}
+                  autoPlay
+                  loop
+                  muted
+                  playsInline
+                  controls
+                  onLoadedMetadata={(event) => setVideoPlaybackRate(event, recordingSpeed)}
+                  onPlay={(event) => setVideoPlaybackRate(event, recordingSpeed)}
+                  aria-label={recordingCaption || 'Desktop product recording'}
+                />
+              </div>
+              <div className="hire-story-recording-shell hire-story-recording-shell--mobile">
+                <video
+                  className="hire-story-recording hire-story-recording--mobile"
+                  src={recordingMobileSrc}
+                  autoPlay
+                  loop
+                  muted
+                  playsInline
+                  controls
+                  onLoadedMetadata={(event) => setVideoPlaybackRate(event, recordingSpeed)}
+                  onPlay={(event) => setVideoPlaybackRate(event, recordingSpeed)}
+                  aria-label={recordingCaption || 'Mobile product recording'}
+                />
+              </div>
+            </div>
+          ) : (
+            <div className="hire-story-recording-shell">
+              <video
+                className="hire-story-recording"
+                src={recordingSrc}
+                autoPlay
+                loop
+                muted
+                playsInline
+                controls
+                onLoadedMetadata={(event) => setVideoPlaybackRate(event, recordingSpeed)}
+                onPlay={(event) => setVideoPlaybackRate(event, recordingSpeed)}
+                aria-label={recordingCaption || 'Terry Fox poster tool recording'}
+              />
+            </div>
+          )}
           {recordingCaption && <p className="hire-story-visual-caption">{recordingCaption}</p>}
           <a className="hire-story-zoom" href={recordingSrc} target="_blank" rel="noreferrer">
             Tap to Zoom <span aria-hidden="true">→</span>
@@ -248,7 +319,7 @@ export function CaseStories() {
           -webkit-text-fill-color: #f2908f !important;
         }
         #case-stories {
-          padding: 10.2rem 0 5.1rem !important;
+          padding: 5.1rem 0 5.1rem !important;
         }
         .hire-stories-title {
           font-family: var(--font-heading) !important;
@@ -313,6 +384,17 @@ export function CaseStories() {
           margin: 0 auto 1.5rem;
           background: #121316;
         }
+        #case-stories > .container > .hire-story-kicker::before {
+          content: '';
+          display: block;
+          width: 64px;
+          height: 1px;
+          margin: 0 auto 1.5rem;
+          background: #121316;
+        }
+        #case-stories > .container > .hire-stories-title::before {
+          display: none;
+        }
         .hire-story--sky .hire-story-visual {
           background: transparent;
         }
@@ -339,6 +421,14 @@ export function CaseStories() {
         .hire-story-copy .hire-story-title {
           color: #f2908f !important;
           -webkit-text-fill-color: #f2908f !important;
+        }
+        .hire-story--sky .hire-story-title {
+          color: #1c1e23 !important;
+          -webkit-text-fill-color: #1c1e23 !important;
+        }
+        .hire-story-copy .hire-story-step-title {
+          color: #8f98a6 !important;
+          -webkit-text-fill-color: #8f98a6 !important;
         }
         .hire-stories-title .hire-story-title-black,
         .hire-story-title .hire-story-title-black {
@@ -373,9 +463,15 @@ export function CaseStories() {
         @media (min-width: 901px) {
           .hire-stories-title {
             font-size: calc(var(--text-section-title) * 1.2) !important;
+            max-width: 70% !important;
+            margin-left: auto !important;
+            margin-right: auto !important;
           }
           .hire-story-title {
             font-size: calc(var(--text-section-title) * 1.2) !important;
+            max-width: 70% !important;
+            margin-left: auto !important;
+            margin-right: auto !important;
           }
         }
         .hire-story-steps {
@@ -405,6 +501,26 @@ export function CaseStories() {
           -webkit-text-fill-color: #b8c0ca !important;
           opacity: 0.9;
           display: block;
+        }
+        .hire-story--sky .hire-story-num {
+          color: #b8c0ca !important;
+          -webkit-text-fill-color: #b8c0ca !important;
+          opacity: 0.9;
+        }
+        .hire-stories-title,
+        .hire-stories-title * {
+          color: #1c1e23 !important;
+          -webkit-text-fill-color: #1c1e23 !important;
+        }
+        .v2-theme .hire-stories-title,
+        .v2-theme .hire-stories-title * {
+          color: #1c1e23 !important;
+          -webkit-text-fill-color: #1c1e23 !important;
+        }
+        #case-stories .hire-stories-title,
+        #case-stories .hire-stories-title * {
+          color: #1c1e23 !important;
+          -webkit-text-fill-color: #1c1e23 !important;
         }
         .hire-story-step-title {
           font-family: var(--font-body), 'Plus Jakarta Sans', sans-serif !important;
@@ -440,6 +556,17 @@ export function CaseStories() {
           border-bottom: 1px solid #f2908f;
           padding-bottom: 2px;
         }
+        .hire-story--sky .hire-story-link {
+          color: #525861 !important;
+          -webkit-text-fill-color: #525861 !important;
+          border-bottom-color: rgba(82, 88, 97, 0.5);
+        }
+        .hire-story--sky > p:last-child {
+          width: 100% !important;
+          margin: -1.5rem 0 0 !important;
+          justify-content: center !important;
+          text-align: center !important;
+        }
         .hire-story-visual {
           width: 100vw;
           max-width: none;
@@ -452,15 +579,85 @@ export function CaseStories() {
           z-index: 1;
           text-align: center;
         }
-        .hire-story-recording {
+        .hire-story-recording-shell {
+          position: relative;
           display: block;
           width: 100%;
           max-width: 880px;
           margin: 0 auto;
           aspect-ratio: 16 / 9;
+          overflow: hidden;
+          background: #ffffff;
+          border: 1px solid rgba(28, 30, 35, 0.14);
+          box-shadow:
+            0 12px 30px rgba(18, 19, 22, 0.08),
+            0 0 0 1px rgba(255, 255, 255, 0.75);
+        }
+        .hire-story-recording-shell::after {
+          content: '';
+          position: absolute;
+          inset: 0;
+          pointer-events: none;
+          border: 6px solid rgba(255, 255, 255, 0.78);
+          box-shadow: inset 0 0 0 1px rgba(28, 30, 35, 0.1);
+        }
+        .hire-story-recording {
+          display: block;
+          width: 100%;
+          max-width: none;
+          height: 100%;
+          margin: 0;
+          aspect-ratio: auto;
           object-fit: cover;
           background: #eef0f2;
-          border: 1px solid rgba(28, 30, 35, 0.14);
+          border: 0;
+        }
+        .hire-story-recording-pair {
+          position: relative;
+          width: min(100%, 900px);
+          height: clamp(260px, 35vw, 520px);
+          margin: 0 auto;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+        }
+        .hire-story-recording-pair .hire-story-recording-shell--desktop {
+          width: 88%;
+          max-width: none;
+          aspect-ratio: 16 / 9;
+          margin: 0;
+        }
+        .hire-story-recording-pair .hire-story-recording-shell--mobile {
+          position: absolute;
+          top: 10%;
+          right: 0;
+          width: auto;
+          height: 80%;
+          max-width: none;
+          aspect-ratio: 724 / 1774;
+          margin: 0;
+          object-fit: cover;
+          z-index: 2;
+        }
+        @media (max-width: 900px) {
+          .hire-story-recording-pair {
+            width: 100%;
+            height: auto;
+            display: block;
+          }
+          .hire-story-recording-pair .hire-story-recording-shell--desktop {
+            display: none;
+          }
+          .hire-story-recording-pair .hire-story-recording-shell--mobile {
+            position: relative;
+            top: auto;
+            right: auto;
+            display: block;
+            width: min(62%, 240px);
+            height: auto;
+            aspect-ratio: 724 / 1774;
+            margin: 0 auto;
+          }
         }
         .hire-story--dorion .hire-story-recording {
           max-width: 300px;
@@ -534,19 +731,16 @@ export function CaseStories() {
           color: rgba(255, 255, 255, 0.85) !important;
         }
         .hire-story-visual .hire-story-stack-label {
-          color: #b8c0ca !important;
-          -webkit-text-fill-color: #b8c0ca !important;
+          color: #a7aeb8 !important;
+          -webkit-text-fill-color: #a7aeb8 !important;
         }
         .hire-story-visual .hire-story-stack-value {
-          color: #b8c0ca !important;
-          -webkit-text-fill-color: #b8c0ca !important;
+          color: #a7aeb8 !important;
+          -webkit-text-fill-color: #a7aeb8 !important;
         }
-        @media (min-width: 901px) {
-        .hire-story--sky > p:last-child {
-            margin-top: -3.5rem !important;
-            position: relative;
-            z-index: 2;
-            transform: translateY(-1.5rem);
+        @media (max-width: 900px) {
+          .hire-story--sky > p:last-child {
+            margin-top: 0.5rem !important;
           }
         }
         @media (min-width: 1200px) {
@@ -578,6 +772,12 @@ export function CaseStories() {
           }
           .hire-story-visual {
             margin-top: 2rem;
+          }
+          .hire-story--sky .hire-story-visual {
+            padding-bottom: 1.25rem;
+          }
+          .hire-story--sky > p:last-child {
+            margin-top: 0.25rem !important;
           }
           .hire-story-meta-row {
             align-items: flex-start;
@@ -623,14 +823,17 @@ export function CaseStories() {
           className="hire-story--first"
           stack="Codex · Antigravity · Google Stitch"
           steps={terryFoxSteps}
-          recordingSrc="/terry-fox-flow.mp4"
+          recordingSrc="/assets/case-recordings/optimized/terry-fox-loop.mp4"
+          recordingSpeed={1.5}
           recordingCaption="On-brand posters in minutes for teams in every city — no designer bottleneck, no waiting days."
         />
         <CaseStory
-          title="BuyUkrainian — a live product of my own"
+          title="BuyUkrainian.ca — a live product of my own"
           stack="Codex · Antigravity · Figma"
           steps={buyUkrainianSteps}
-          recordingSrc="/buyukrainian-desktop-flow.mp4"
+          recordingSrc="/assets/case-recordings/optimized/buyukrainian-desktop-loop.mp4"
+          recordingMobileSrc="/assets/case-recordings/optimized/buyukrainian-mobile-loop.mp4"
+          recordingSpeed={1.5}
           recordingCaption="Ukrainian-made products on one map — 28 stores across Canada, and anyone can add a missing one."
           className="hire-story--sky"
           link={{ href: 'https://www.buyukrainian.ca', label: 'Visit the live site' }}
@@ -651,10 +854,13 @@ export function CaseStories() {
 
 export function HireClosing() {
   const [copied, setCopied] = useState(false);
+  const closingSectionRef = useRef<HTMLElement | null>(null);
+  const closingInView = useInView(closingSectionRef, { once: true, amount: 0.45 });
   return (
     <section
       id="contact"
       className="hire-closing-section"
+      ref={closingSectionRef}
       style={{
         backgroundColor: '#121316',
         padding: '5.1rem 0 5.1rem 0',
@@ -671,6 +877,46 @@ export function HireClosing() {
           background-color: #121316 !important;
           padding-top: 2.55rem !important;
           padding-bottom: 10.2rem !important;
+        }
+        .hire-closing-hero-image {
+          display: none;
+        }
+        @media (min-width: 901px) {
+          .hire-closing-hero-image {
+            display: block;
+            position: static;
+            z-index: 1;
+            align-self: center;
+            margin: 0 auto 1.75rem;
+            width: 96px;
+            height: 96px;
+            aspect-ratio: 1 / 1;
+            border-radius: 50%;
+            background: #181a1f;
+            object-fit: cover;
+            object-position: center 15%;
+            box-shadow: -8px -8px 0 #1e2026;
+            filter: brightness(1.06) saturate(1.1);
+            pointer-events: none;
+          }
+        }
+        @media (max-width: 900px) {
+          .hire-closing-hero-image {
+            display: block;
+            position: static;
+            align-self: center;
+            margin: 0 auto 1.5rem;
+            width: 96px;
+            height: 96px;
+            aspect-ratio: 1 / 1;
+            border-radius: 50%;
+            background: #181a1f;
+            object-fit: cover;
+            object-position: center 15%;
+            box-shadow: -6px -6px 0 #1e2026;
+            filter: brightness(1.06) saturate(1.1);
+            pointer-events: none;
+          }
         }
         @media (min-width: 901px) {
           .hire-closing-divider {
@@ -719,6 +965,9 @@ export function HireClosing() {
           letter-spacing: 0.015em !important;
           color: #ffffff !important;
           -webkit-text-fill-color: #ffffff !important;
+        }
+        .hire-closing-mobile .hire-closing-row:not(.hire-closing-here) {
+          font-size: 1.2em !important;
         }
         .hire-closing-desktop *:not(strong) {
           font-weight: 400 !important;
@@ -867,14 +1116,18 @@ export function HireClosing() {
             -webkit-text-fill-color: #ffffff !important;
           }
           .hire-closing-section {
+            padding-top: 5rem !important;
             padding-bottom: 2.55rem !important;
+          }
+          .hire-closing-content {
+            max-width: 1100px !important;
           }
           .hire-closing-subtext {
             font-size: 1.23rem !important;
           }
           .hire-closing-line {
             font-size: clamp(30px, 2.7vw, 38px) !important;
-            max-width: 44ch !important;
+            max-width: 52ch !important;
             text-align: center !important;
             align-self: center !important;
           }
@@ -934,6 +1187,9 @@ export function HireClosing() {
             font-weight: 600 !important;
             color: #ffffff !important;
             -webkit-text-fill-color: #ffffff !important;
+          }
+          .hire-closing-mobile .hire-closing-row:not(.hire-closing-here) {
+            font-size: 1em !important;
           }
           .hire-closing-line strong {
             font-weight: 600 !important;
@@ -995,6 +1251,55 @@ export function HireClosing() {
             height: 11px !important;
           }
         }
+        .hire-closing-mobile {
+          width: fit-content !important;
+          max-width: 100% !important;
+          align-items: stretch !important;
+          margin-left: auto !important;
+          margin-right: auto !important;
+          text-align: left !important;
+        }
+        .hire-closing-mobile .hire-closing-row {
+          width: 100% !important;
+          text-align: left !important;
+        }
+        .hire-closing-desktop-break {
+          display: none !important;
+        }
+        @media (min-width: 901px) {
+          .hire-closing-mobile {
+            display: block !important;
+          }
+          .hire-closing-desktop-break {
+            display: block !important;
+          }
+          .v2-theme .hire-closing-section .hire-closing-mobile .hire-closing-row,
+          .hire-closing-section .hire-closing-mobile .hire-closing-row {
+            display: inline !important;
+            width: auto !important;
+            text-align: left !important;
+          }
+          .v2-theme .hire-closing-section .hire-closing-mobile .hire-closing-row:nth-child(2),
+          .hire-closing-section .hire-closing-mobile .hire-closing-row:nth-child(2) {
+            margin-left: 0.25em !important;
+          }
+          .v2-theme .hire-closing-section .hire-closing-mobile .hire-closing-row:nth-child(3),
+          .hire-closing-section .hire-closing-mobile .hire-closing-row:nth-child(3) {
+            display: inline !important;
+            width: auto !important;
+          }
+          .v2-theme .hire-closing-section .hire-closing-mobile .hire-closing-row:nth-child(4),
+          .hire-closing-section .hire-closing-mobile .hire-closing-row:nth-child(4) {
+            display: inline !important;
+            width: auto !important;
+            margin-left: 0.25em !important;
+          }
+          .v2-theme .hire-closing-section .hire-closing-mobile .hire-closing-here,
+          .hire-closing-section .hire-closing-mobile .hire-closing-here {
+            margin-top: 0 !important;
+            vertical-align: baseline !important;
+          }
+        }
       `}</style>
       <div
         className="hire-closing-content"
@@ -1028,8 +1333,7 @@ export function HireClosing() {
         <motion.h2
           className="hire-closing-line"
           initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true, amount: 0.45 }}
+          animate={closingInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 20 }}
           transition={{ duration: 0.78, delay: 0.08, ease: [0.16, 1, 0.3, 1] }}
           style={{
             fontFamily: "'Newsreader', 'Source Serif 4', Georgia, serif",
@@ -1051,8 +1355,7 @@ export function HireClosing() {
             <motion.span
               className="hire-closing-here"
               initial={{ opacity: 0, y: 12 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true, amount: 0.45 }}
+              animate={closingInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 12 }}
               transition={{ duration: 0.72, delay: 0.3, ease: [0.16, 1, 0.3, 1] }}
               style={{ display: 'inline', fontWeight: 300, color: '#ffffff', WebkitTextFillColor: '#ffffff' }}
             >
@@ -1062,17 +1365,27 @@ export function HireClosing() {
           <span className="hire-closing-mobile">
             <span className="hire-closing-row">If you need a</span>
             <strong className="hire-closing-row">thoughtful designer</strong>
+            <br className="hire-closing-desktop-break" aria-hidden="true" />
             <span className="hire-closing-row">and a <strong>hands-on builder</strong> —</span>
             <span className="hire-closing-row hire-closing-here">I’m here.</span>
           </span>
         </motion.h2>
 
+        <motion.img
+          className="hire-closing-hero-image"
+          src={heroImage.src}
+          alt=""
+          aria-hidden="true"
+          initial={{ opacity: 0, x: 0, y: 88 }}
+          animate={closingInView ? { opacity: 1, x: 0, y: 0 } : { opacity: 0, x: 0, y: 88 }}
+          transition={{ duration: 1.35, delay: 1.05, ease: [0.16, 1, 0.3, 1] }}
+        />
+
         <motion.div
           className="hire-closing-actions"
-          initial={{ opacity: 0, y: 16, scale: 0.96 }}
-          whileInView={{ opacity: 1, y: 0, scale: 1 }}
-          viewport={{ once: true, amount: 0.45 }}
-          transition={{ duration: 0.72, delay: 0.42, ease: [0.16, 1, 0.3, 1] }}
+          initial={{ opacity: 0, y: 88, scale: 1 }}
+          animate={closingInView ? { opacity: 1, y: 0, scale: 1 } : { opacity: 0, y: 88, scale: 1 }}
+          transition={{ duration: 1.35, delay: 1.05, ease: [0.16, 1, 0.3, 1] }}
           style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', width: '100%', gap: '1rem', marginTop: '0rem', marginBottom: '0', justifyContent: 'center' }}
         >
           <a
@@ -1127,7 +1440,7 @@ export function HowIUseAI() {
           font-family: var(--font-body), 'Plus Jakarta Sans', sans-serif !important;
           font-size: var(--text-label) !important;
           font-weight: 600 !important;
-          text-transform: none !important;
+          text-transform: uppercase !important;
           letter-spacing: 0.14em !important;
           color: #ffffff !important;
           -webkit-text-fill-color: #ffffff !important;
@@ -1189,13 +1502,16 @@ export function HowIUseAI() {
         .hire-ai-body p:last-child {
           margin-bottom: 0;
         }
+        #how-i-use-ai .hire-ai-body p:first-child {
+          font-style: italic !important;
+        }
         @media (min-width: 901px) {
           #how-i-use-ai {
           border-top: 0.5px solid rgba(18, 19, 22, 0.48) !important;
           border-bottom: 0.5px solid rgba(18, 19, 22, 0.48) !important;
           box-sizing: border-box;
             padding-top: 5.1rem !important;
-            padding-bottom: 10.2rem !important;
+            padding-bottom: 2.55rem !important;
             background: linear-gradient(90deg, #121316 0 50%, #ffffff 50% 100%) !important;
           }
           .hire-ai-title-break-desktop {
@@ -1289,9 +1605,32 @@ export function HowIUseAI() {
           }
         }
         @media (max-width: 900px) {
+          #how-i-use-ai {
+            background: #121316 !important;
+          }
           #how-i-use-ai > .container {
             padding-left: 1.5rem !important;
             padding-right: 1.5rem !important;
+          }
+          #how-i-use-ai .hire-ai-body {
+            max-width: none;
+          }
+          #how-i-use-ai .hire-ai-body p:nth-child(3) {
+            display: none !important;
+          }
+          #how-i-use-ai .hire-ai-video {
+            display: block;
+            width: calc(100% + 3rem);
+            margin: 2.55rem -1.5rem -5.1rem;
+            padding: 3.4rem 1.5rem 5.1rem;
+            box-sizing: border-box;
+            background: #ffffff;
+            transform: none;
+          }
+          #how-i-use-ai .hire-ai-video video {
+            display: block;
+            width: 100%;
+            height: auto;
           }
           .hire-ai-title {
             font-size: clamp(2.82rem, 12.77vw, 4.18rem) !important;
@@ -1312,6 +1651,10 @@ export function HowIUseAI() {
             grid-row: 1 / span 2;
             align-self: center;
             width: 100%;
+            position: relative !important;
+            top: calc(-1 * clamp(9rem, 14vw, 12rem)) !important;
+            margin-top: 0 !important;
+            transform: none !important;
           }
           #how-i-use-ai .hire-ai-video video { display: block; width: 100%; height: auto; }
         }
@@ -1355,18 +1698,18 @@ export function HowIUseAI() {
           transition={{ duration: 0.68, delay: 0.16, ease: [0.16, 1, 0.3, 1] }}
         >
           <p>
+            When I was 23, I launched my own fashion brand in Kyiv, Ukraine. It started as a
+            design dream — bringing ideas to life — and became a first real school of what
+            business is: what it takes to make all the elements of a product work, to be liked,
+            loved, and used. I directed the work of my master tailors to bring ideas to life.
+          </p>
+          <p>
             AI has changed the way I design and how I approach problems. My thinking has always
             been end to end — design in static screens and Figma prototypes was a limitation of
             the tools at the time, never a limitation of how far my design intent could go. For
             the past year I’ve built with agentic code tools — Codex, Antigravity, and Claude.
             That put a builder mindset to work on more complex customer and personal problems,
             instead of keeping it locked in a design tool.
-          </p>
-          <p>
-            When I was 23, I launched my own fashion brand in Kyiv, Ukraine. It started as a
-            design dream — bringing ideas to life — and became a first real school of what
-            business is: what it takes to make all the elements of a product work, to be liked,
-            loved, and used. I directed the work of my master tailors to bring ideas to life.
           </p>
           <p>
             After a motherhood break, turning to tech was a natural step — a way to explore
@@ -1447,8 +1790,8 @@ export function HireTestimonial() {
         }
         .hire-t-card {
           width: 100%;
-          background: radial-gradient(circle at 50% 42%, rgba(255, 255, 255, 0.82) 0%, rgba(255, 255, 255, 0.42) 42%, rgba(255, 255, 255, 0) 76%), radial-gradient(circle at 0% 100%, rgba(255, 255, 255, 0.96) 0%, rgba(255, 255, 255, 0.62) 32%, rgba(255, 255, 255, 0) 62%), #fffaf4 !important;
-          background-color: #fffaf4 !important;
+          background: radial-gradient(circle at 50% 42%, rgba(255, 255, 255, 0.92) 0%, rgba(255, 255, 255, 0.56) 42%, rgba(255, 255, 255, 0) 76%), radial-gradient(circle at 0% 100%, rgba(255, 255, 255, 0.98) 0%, rgba(255, 255, 255, 0.72) 32%, rgba(255, 255, 255, 0) 62%), linear-gradient(90deg, #fffdf8 0%, #fffdf8 33%, #ffffff 100%) !important;
+          background-color: #fffdf8 !important;
           border: 1px dashed rgba(0, 0, 0, 0.2);
           border-radius: 0;
           box-shadow: none;
@@ -1490,7 +1833,7 @@ export function HireTestimonial() {
         }
         .hire-t-featured {
           display: block;
-          margin-bottom: 0.75rem !important;
+          margin-bottom: 1.5rem !important;
           font-size: clamp(1.05rem, 1.65vw, 1.42rem) !important;
           line-height: 1.12 !important;
           font-weight: 500 !important;
@@ -1499,6 +1842,11 @@ export function HireTestimonial() {
         }
         .hire-t-quote-sentence {
           display: block;
+        }
+        @media (min-width: 901px) {
+          .hire-t-quote-sentence {
+            font-size: calc(var(--text-small) + 2px) !important;
+          }
         }
         .hire-t-attribution {
           font-family: var(--font-body), 'Plus Jakarta Sans', sans-serif !important;
