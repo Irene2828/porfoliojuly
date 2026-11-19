@@ -39,7 +39,30 @@ const faqs = [
   },
 ];
 
-export default function FaqSection() {
+const websiteFaqs = [
+  faqs[0],
+  faqs[1],
+  faqs[2],
+  {
+    question: 'I have a WordPress site. Do I have to stay on WordPress?',
+    answers: [
+      'No. I rebuild on a modern stack — faster, more secure, and far less upkeep than a plugin-heavy WordPress site.',
+      'Your domain, your content and your search positions move with you. I set up the redirects, so visitors and Google land in the right place.',
+      'You own the site and the code. Nothing ties you to a platform — or to me.',
+    ],
+  },
+  {
+    question: 'Who updates the site after launch?',
+    answers: [
+      'Whichever way suits you. Routine content — products, partners, photos, prices — can live in a simple admin panel you update yourself, without touching the design.',
+      'Or send the updates to me: on a care plan I handle them, with a short monthly note on what was done.',
+      'The technical layer — hosting, backups, monitoring — stays on my side either way.',
+    ],
+  },
+];
+
+export default function FaqSection({ variant = 'all' }: { variant?: 'all' | 'websites' } = {}) {
+  const visibleFaqs = variant === 'websites' ? websiteFaqs : faqs;
   const [openIndex, setOpenIndex] = useState<number>(-1);
 
   return (
@@ -287,7 +310,7 @@ export default function FaqSection() {
       >
       <motion.h2 className="faq-section-heading" initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true, amount: 0.45 }} transition={{ duration: 0.78, delay: 0.08, ease: [0.16, 1, 0.3, 1] }} style={{ fontFamily: 'var(--font-heading)', fontSize: 'var(--text-section-title)', fontWeight: 400, lineHeight: 1.2, color: 'var(--color-heading-silver)', letterSpacing: '-0.02em', margin: '0 0 2.5rem 0', textAlign: 'center' }}><span className="faq-heading-question">Frequent questions</span>{' '}<span className="faq-heading-answer">- <em>answered</em>.</span></motion.h2>
       <div>
-        {faqs.map((faq, index) => {
+        {visibleFaqs.map((faq, index) => {
             const isOpen = openIndex === index;
             return (
               <motion.article
