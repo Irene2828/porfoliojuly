@@ -234,7 +234,7 @@ export default function HeroV2({ variant = 'client' }: { variant?: 'client' | 'h
             zoom: 0.845 !important; /* +5% headline size on mobile */
           }
           .hero-websites .hero-statement {
-            zoom: 0.9295 !important; /* +10% from the current homepage mobile size */
+            zoom: 0.976 !important; /* +5% over the previous homepage mobile size (0.9295 x 1.05); longest line still fits 390px at the standard inset */
           }
           .v2-theme .hero-name-group .hero-text,
           .hero-name-group .hero-text,
