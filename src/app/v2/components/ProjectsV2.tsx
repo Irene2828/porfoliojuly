@@ -189,6 +189,11 @@ export default function ProjectsV2({ initialProjects = [], showWorkflowAutomatio
   const visibleGroups = recentProjects
     ? [{ id: 'recent', label: '', projects: ['v2-3', 'v2-2', 'v2-1'].map((id) => projectsList.find((p) => p.id === id)).filter((p): p is (typeof projectsList)[number] => Boolean(p)) }]
     : caseGroups;
+  // On the client homepage (recentProjects), use Iryna's own recordings — the same
+  // optimized loops the recruiter page uses. Freelance keeps the original flow files.
+  const buDesktopVideo = recentProjects ? '/assets/case-recordings/optimized/buyukrainian-desktop-loop.mp4' : '/buyukrainian-desktop-flow.mp4';
+  const buMobileVideo = recentProjects ? '/assets/case-recordings/optimized/buyukrainian-mobile-loop.mp4' : '/buyukrainian-mobile-flow.mp4';
+  const tfVideo = recentProjects ? '/assets/case-recordings/optimized/terry-fox-loop.mp4' : '/terry-fox-flow.mp4';
     const selectedProject = projectsList.find((p) => p.id === selectedProjectId) ?? null;
 
   useEffect(() => {
@@ -323,9 +328,9 @@ export default function ProjectsV2({ initialProjects = [], showWorkflowAutomatio
                         modal={isModal}
                         alt={project.title}
                         desktopSrc={project.id === 'v2-2' ? '/assets/guertin-desktop.png' : '/assets/buyukrainian-desktop.jpg'}
-                        desktopVideoSrc={project.id === 'v2-2' ? '/isabelle-desktop-flow.mp4' : '/buyukrainian-desktop-flow.mp4'}
+                        desktopVideoSrc={project.id === 'v2-2' ? '/isabelle-desktop-flow.mp4' : buDesktopVideo}
                         phoneImgSrc={project.id === 'v2-2' ? '/assets/guertin-mobile.png' : '/assets/buyukrainian-mobile.jpg'}
-                        phoneVideoSrc={project.id === 'v2-2' ? '/isabelle-mobile-flow.mp4' : '/buyukrainian-mobile-flow.mp4'}
+                        phoneVideoSrc={project.id === 'v2-2' ? '/isabelle-mobile-flow.mp4' : buMobileVideo}
                       />
                     ) : project.id === 'v2-6' ? (
                       <div className="case-desktop-frame" style={{ width: '100%', maxWidth: '880px', margin: '0 auto', aspectRatio: '16 / 9' }}>
@@ -887,9 +892,9 @@ export default function ProjectsV2({ initialProjects = [], showWorkflowAutomatio
                       <DevicePair
                         alt={project.title}
                         desktopSrc={project.id === 'v2-2' ? '/assets/guertin-desktop.png' : '/assets/buyukrainian-desktop.jpg'}
-                        desktopVideoSrc={project.id === 'v2-2' ? '/isabelle-desktop-flow.mp4' : '/buyukrainian-desktop-flow.mp4'}
+                        desktopVideoSrc={project.id === 'v2-2' ? '/isabelle-desktop-flow.mp4' : buDesktopVideo}
                         phoneImgSrc={project.id === 'v2-2' ? '/assets/guertin-mobile.png' : '/assets/buyukrainian-mobile.jpg'}
-                        phoneVideoSrc={project.id === 'v2-2' ? '/isabelle-mobile-flow.mp4' : '/buyukrainian-mobile-flow.mp4'}
+                        phoneVideoSrc={project.id === 'v2-2' ? '/isabelle-mobile-flow.mp4' : buMobileVideo}
                       />
                     ) : project.id === 'v2-6' ? (
                       <div className="case-desktop-frame tf-match">
@@ -939,7 +944,7 @@ export default function ProjectsV2({ initialProjects = [], showWorkflowAutomatio
                               e.currentTarget.play().catch(() => {});
                             }
                           }}
-                          src="/terry-fox-flow.mp4"
+                          src={tfVideo}
                           className="case-recording-video" style={project.id === 'v2-4' ? { objectFit: 'contain', backgroundColor: '#000000' } : undefined}
           />
           {HOVER_MEDIA[project.id] && (
