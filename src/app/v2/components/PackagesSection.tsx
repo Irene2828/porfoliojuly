@@ -1,6 +1,7 @@
 'use client';
 
 import { motion } from 'framer-motion';
+import { openContact } from '@/app/components/ContactModal';
 import { useRef, useState } from 'react';
 
 interface Package {
@@ -505,7 +506,7 @@ export default function PackagesSection({ onCtaClick, mode = 'website', variant 
         )}
 
         <div className="packages-cta-wrap">
-          <a href={isAi ? 'mailto:iryna@irynasheremeta.com?subject=AI%20product%20packages' : 'mailto:iryna@irynasheremeta.com?subject=Website%20packages'} className="packages-btn-primary" onClick={onCtaClick}>
+          <a href={isAi ? 'mailto:iryna@irynasheremeta.com?subject=AI%20product%20packages' : 'mailto:iryna@irynasheremeta.com?subject=Website%20packages'} className="packages-btn-primary" onClick={(e) => { e.preventDefault(); onCtaClick?.(); openContact(isAi ? 'AI product packages' : 'Website packages'); }}>
             <span style={{ letterSpacing: '0.08em' }}>{isWebsites ? 'TELL ME ABOUT YOUR WEBSITE' : 'EMAIL ME YOUR PROBLEM'}</span>
             <svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round" style={{ transform: 'translateY(-0.5px)' }}>
               <line x1="7" y1="17" x2="17" y2="7"></line>
