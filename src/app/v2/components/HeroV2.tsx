@@ -931,8 +931,12 @@ export default function HeroV2({ variant = 'client' }: { variant?: 'client' | 'h
                       <>
                         <span className="headline-line">
                           <span className="headline-desktop-serif-normal">Custom</span>{' '}
-                          <strong className="headline-desktop-accent">websites</strong>{' '}
-                          <span className="headline-desktop-serif-normal">designed and built</span>
+                          <strong className="headline-desktop-accent">websites</strong>
+                        </span>
+                        <span className="headline-line">
+                          <strong className="headline-desktop-accent">designed</strong>{' '}
+                          <strong className="headline-desktop-accent">and</strong>{' '}
+                          <strong className="headline-desktop-accent">built</strong>
                         </span>
                         <span className="headline-line">
                           <span className="headline-desktop-serif-normal">around one business &mdash;</span>{' '}
@@ -990,12 +994,15 @@ export default function HeroV2({ variant = 'client' }: { variant?: 'client' | 'h
                           <strong className="headline-mobile-accent">websites</strong>
                         </span>
                         <span className="headline-line">
-                          <span className="headline-mobile-serif-normal">designed and built</span>
+                          <strong className="headline-mobile-accent">designed</strong>{' '}
+                          <strong className="headline-mobile-accent">and</strong>{' '}
+                          <strong className="headline-mobile-accent">built</strong>
                         </span>
                         <span className="headline-line">
-                          <span className="headline-mobile-serif-normal">around one business &mdash;</span>
+                          <span className="headline-mobile-serif-normal">around one</span>
                         </span>
                         <span className="headline-line">
+                          <span className="headline-mobile-serif-normal">business &mdash;</span>{' '}
                           <em className="headline-mobile-serif">yours.</em>
                         </span>
                       </>
