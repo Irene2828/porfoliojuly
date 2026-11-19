@@ -32,11 +32,32 @@ export default function HeroV2({ variant = 'client' }: { variant?: 'client' | 'h
           color: #f2908f !important;
           -webkit-text-fill-color: #f2908f !important;
         }
+        .hero-websites .hero-statement .headline-supporting {
+          font-size: 100% !important;
+        }
+        .hero-websites .hero-statement .headline-supporting,
+        .hero-websites .hero-statement .headline-supporting *,
+        .hero-websites .hero-statement .headline-line:first-child .headline-desktop-accent,
+        .hero-websites .hero-statement .headline-line:first-child .headline-mobile-accent {
+          font-weight: 500 !important;
+        }
+        .hero-websites .hero-statement {
+          font-size: 125% !important;
+        }
+        .hero-websites .hero-frame-paragraph .hero-body-bold {
+          letter-spacing: 0.025em !important;
+        }
         .hero-websites .hero-text .hero-statement .headline-line:first-child .headline-desktop-serif-normal,
         .hero-websites .hero-text .hero-statement .headline-line:first-child .headline-mobile-serif-normal {
           color: #f2908f !important;
           -webkit-text-fill-color: #f2908f !important;
           font-style: italic !important;
+        }
+        .hero-websites .hero-statement .headline-line:first-child .headline-desktop-serif-normal,
+        .hero-websites .hero-statement .headline-line:first-child .headline-desktop-accent,
+        .hero-websites .hero-statement .headline-line:first-child .headline-mobile-serif-normal,
+        .hero-websites .hero-statement .headline-line:first-child .headline-mobile-accent {
+          font-weight: 500 !important;
         }
         .v2-theme .hero-statement,
         .hero-statement {
@@ -60,6 +81,9 @@ export default function HeroV2({ variant = 'client' }: { variant?: 'client' | 'h
     display: block !important;
     line-height: 0.921 !important;
     white-space: nowrap !important;
+  }
+  .hero-websites .headline-desktop .headline-line {
+    line-height: 0.98 !important;
   }
   .hero-frame-paragraph {
     font-size: 1.2555rem !important;
@@ -256,6 +280,9 @@ export default function HeroV2({ variant = 'client' }: { variant?: 'client' | 'h
             margin-left: 0 !important;
             margin-top: 1.26rem !important; /* headline-body spacing, tightened 10% from 1.4rem */
             line-height: 1.5225 !important;
+          }
+          .hero-websites .hero-frame-paragraph {
+            font-size: 17.85px !important;
           }
           .v2-theme .hero-frame-paragraph .hero-body-mobile-text,
           .hero-frame-paragraph .hero-body-mobile-text,
@@ -533,6 +560,9 @@ export default function HeroV2({ variant = 'client' }: { variant?: 'client' | 'h
           .v2-theme .hero-image-wrapper,
           .hero-image-wrapper {
             top: -5.4rem !important;
+          }
+          .hero-websites .hero-image-wrapper {
+            transform: translateX(10%) !important;
           }
         }
         /* Mobile hero body line width (350px to 900px, covers iPhone 13, 13 mini, display zoom, 12, 14, 15) */
@@ -956,6 +986,10 @@ export default function HeroV2({ variant = 'client' }: { variant?: 'client' | 'h
           color: rgba(255, 255, 255, 0.72) !important;
           -webkit-text-fill-color: rgba(255, 255, 255, 0.72) !important;
         }
+        .hero-websites .hero-frame-paragraph .hero-body-light {
+          color: rgba(255, 255, 255, 0.76) !important;
+          -webkit-text-fill-color: rgba(255, 255, 255, 0.76) !important;
+        }
       `}</style>
     
 
@@ -978,12 +1012,12 @@ export default function HeroV2({ variant = 'client' }: { variant?: 'client' | 'h
                           <span className="headline-desktop-serif-normal">Custom</span>{' '}
                           <strong className="headline-desktop-accent">websites</strong>
                         </span>
-                        <span className="headline-line">
+                        <span className="headline-line headline-supporting">
                           <strong className="headline-desktop-accent">designed</strong>{' '}
                           <strong className="headline-desktop-accent">and</strong>{' '}
                           <strong className="headline-desktop-accent">built</strong>
                         </span>
-                        <span className="headline-line">
+                        <span className="headline-line headline-supporting">
                           <span className="headline-desktop-serif-normal">around one business &mdash;</span>{' '}
                           <em className="headline-desktop-serif">yours.</em>
                         </span>
@@ -1038,15 +1072,15 @@ export default function HeroV2({ variant = 'client' }: { variant?: 'client' | 'h
                           <span className="headline-mobile-serif-normal">Custom</span>{' '}
                           <strong className="headline-mobile-accent">websites</strong>
                         </span>
-                        <span className="headline-line">
+                        <span className="headline-line headline-supporting">
                           <strong className="headline-mobile-accent">designed</strong>{' '}
                           <strong className="headline-mobile-accent">and</strong>{' '}
                           <strong className="headline-mobile-accent">built</strong>
                         </span>
-                        <span className="headline-line">
+                        <span className="headline-line headline-supporting">
                           <span className="headline-mobile-serif-normal">around one</span>
                         </span>
-                        <span className="headline-line">
+                        <span className="headline-line headline-supporting">
                           <span className="headline-mobile-serif-normal">business &mdash;</span>{' '}
                           <em className="headline-mobile-serif">yours.</em>
                         </span>

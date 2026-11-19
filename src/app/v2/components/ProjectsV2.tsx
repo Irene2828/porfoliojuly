@@ -28,14 +28,14 @@ function DevicePair({ desktopSrc, desktopVideoSrc, phoneImgSrc, phoneVideoSrc, a
     <div className={`case-pair${modal ? ' modal-pair' : ''}${className ? ` ${className}` : ''}`}>
       <div className="pair-desktop">
         {desktopVideoSrc ? (
-          <video src={desktopVideoSrc} poster={desktopSrc} autoPlay loop muted playsInline />
+          <video src={desktopVideoSrc} poster={desktopSrc} autoPlay loop muted playsInline preload="auto" />
         ) : (
           <img src={desktopSrc} alt={alt} />
         )}
       </div>
       <div className="pair-phone">
         {phoneVideoSrc ? (
-          <video src={phoneVideoSrc} autoPlay loop muted playsInline />
+          <video src={phoneVideoSrc} poster={phoneImgSrc} autoPlay loop muted playsInline preload="auto" />
         ) : (
           <img src={phoneImgSrc} alt="" />
         )}
@@ -583,14 +583,25 @@ export default function ProjectsV2({ initialProjects = [], showWorkflowAutomatio
             display: grid !important;
             grid-template-columns: minmax(0, 1fr) 300px;
             align-items: center;
-            column-gap: 3rem !important;
+            column-gap: 4rem !important;
             width: min(100%, 1040px) !important;
             max-width: 1040px !important;
+          }
+          .recent-projects-layout .cases-grid-item:nth-child(1) .preview-item-container {
+            column-gap: 6rem !important;
+          }
+          .recent-projects-layout .cases-grid-item:nth-child(2) .preview-item-container,
+          .recent-projects-layout .cases-grid-item:nth-child(3) .preview-item-container {
+            column-gap: 8rem !important;
           }
           .recent-projects-layout .preview-card-wrapper.recording-card-wrapper {
             grid-column: 1;
             grid-row: 1;
             justify-self: start;
+          }
+          .recent-projects-layout .case-pair {
+            width: 100% !important;
+            max-width: 100% !important;
           }
           .recent-projects-layout .preview-card-caption {
             grid-column: 2;
@@ -665,7 +676,7 @@ export default function ProjectsV2({ initialProjects = [], showWorkflowAutomatio
           position: relative;
           width: min(56vw, 731px) !important; /* +30% larger on desktop from 562px */
           max-width: 100% !important;
-          aspect-ratio: 16 / 8.8 !important;
+          aspect-ratio: 16 / 10 !important;
           height: auto !important;
           background: #ffffff;
           border-radius: 0px !important;
@@ -690,7 +701,7 @@ export default function ProjectsV2({ initialProjects = [], showWorkflowAutomatio
           position: relative;
           height: min(32vw, 420px) !important; /* +30% larger on desktop from 323px */
           max-height: 100% !important;
-          aspect-ratio: 292 / 640 !important;
+          aspect-ratio: 430 / 932 !important;
           width: auto !important;
           background: #ffffff;
           border-radius: 0px !important;
@@ -733,12 +744,12 @@ export default function ProjectsV2({ initialProjects = [], showWorkflowAutomatio
         /* --- Website cases: desktop + phone pair, phone lower right, overlapping --- */
         .case-pair {
           position: relative;
-          width: min(58vw, 660px);
+          width: min(66vw, 800px);
           margin: 0 auto 9%;
         }
         .case-pair .pair-desktop {
           width: 85%;
-          aspect-ratio: 16 / 10.4;
+          aspect-ratio: 16 / 10;
           overflow: hidden;
           border: 1px solid #dcdce0;
           background: #ffffff;
@@ -756,8 +767,8 @@ export default function ProjectsV2({ initialProjects = [], showWorkflowAutomatio
           position: absolute;
           right: 0;
           bottom: -13%;
-          width: 24%;
-          aspect-ratio: 390 / 844;
+          width: 25%;
+          aspect-ratio: 430 / 932;
           overflow: hidden;
           border: 1px solid #dcdce0;
           background: #ffffff;
@@ -814,10 +825,15 @@ export default function ProjectsV2({ initialProjects = [], showWorkflowAutomatio
         .recent-projects-layout .case-phone-frame,
         .recent-projects-layout .case-pair .pair-desktop,
         .recent-projects-layout .case-pair .pair-phone {
-          border: 1px solid rgba(166, 174, 184, 0.9) !important;
-          background: #edf0f2 !important;
-          box-shadow: inset 0 0 0 1px rgba(255, 255, 255, 0.82), 0 10px 24px rgba(18, 22, 28, 0.08) !important;
-          padding: 3px !important;
+          border: 1px solid rgba(220, 225, 230, 0.95) !important;
+          background: #e4e8ec !important;
+          box-shadow: 0 5px 12px rgba(18, 22, 28, 0.08) !important;
+          padding: 4px !important;
+          border-radius: 8px !important;
+        }
+        .recent-projects-layout .case-phone-frame,
+        .recent-projects-layout .case-pair .pair-phone {
+          border-radius: 16px !important;
         }
         .recent-projects-layout .case-recording-video,
         .recent-projects-layout .case-pair .pair-desktop video,
@@ -826,19 +842,19 @@ export default function ProjectsV2({ initialProjects = [], showWorkflowAutomatio
           object-position: center center;
         }
         .recent-projects-layout .case-desktop-frame.tf-match {
-          aspect-ratio: 15 / 8 !important;
+          aspect-ratio: 16 / 10 !important;
         }
         .recent-projects-layout .case-pair.optimized-pair .pair-desktop {
-          aspect-ratio: 15 / 8 !important;
+          aspect-ratio: 16 / 10 !important;
         }
         .recent-projects-layout .case-pair.optimized-pair .pair-phone {
-          aspect-ratio: 362 / 887 !important;
+          aspect-ratio: 430 / 932 !important;
         }
         .recent-projects-layout .case-pair.optimized-isabelle-pair .pair-desktop {
-          aspect-ratio: 72 / 47 !important;
+          aspect-ratio: 16 / 10 !important;
         }
         .recent-projects-layout .case-pair.optimized-isabelle-pair .pair-phone {
-          aspect-ratio: 464 / 887 !important;
+          aspect-ratio: 430 / 932 !important;
         }
         @media (min-width: 901px) {
           .preview-card-caption {
@@ -857,10 +873,10 @@ export default function ProjectsV2({ initialProjects = [], showWorkflowAutomatio
         }
         @media (max-width: 900px) {
           .case-pair {
-            width: 94vw;
+            width: 96vw;
           }
           .case-pair .pair-phone {
-            width: 27%;
+            width: 29%;
           }
           .recent-projects-layout .preview-item-container {
             display: block !important;
@@ -891,22 +907,22 @@ export default function ProjectsV2({ initialProjects = [], showWorkflowAutomatio
           }
           .case-desktop-frame {
             width: min(70vw, 252px) !important;
-            aspect-ratio: 16 / 8.8 !important;
+            aspect-ratio: 16 / 10 !important;
             height: auto !important;
-            border-radius: 0px !important;
+            border-radius: 8px !important;
             box-shadow: none !important;
             border: 1px solid #dcdce0 !important;
             transform-origin: center center;
           }
           .case-desktop-frame.tf-match {
             width: min(79.9vw, 561px) !important;
-            aspect-ratio: 16 / 10.4 !important;
+            aspect-ratio: 16 / 10 !important;
           }
           .case-phone-frame {
             width: min(46vw, 173px) !important;
             height: auto !important;
-            aspect-ratio: 292 / 640 !important;
-            border-radius: 0px !important;
+            aspect-ratio: 430 / 932 !important;
+            border-radius: 16px !important;
             box-shadow: none !important;
             border: 1px solid #dcdce0 !important;
             transform-origin: center center;
@@ -962,7 +978,7 @@ export default function ProjectsV2({ initialProjects = [], showWorkflowAutomatio
           }}
         >
           {recentProjects ? (
-            <span style={{ fontWeight: 400, color: 'var(--color-heading-silver, #4a5461)' }}>Recent projects</span>
+            <span style={{ fontWeight: 400, color: 'var(--color-heading-silver, #4a5461)' }}>Recent Projects</span>
           ) : (
             <><span style={{ fontWeight: 400, color: 'var(--color-heading-silver, #4a5461)' }}>Examples of</span>{' '}<span style={{ fontWeight: 400, color: 'var(--color-heading-silver, #4a5461)' }}>my work</span></>
           )}
@@ -1037,6 +1053,7 @@ export default function ProjectsV2({ initialProjects = [], showWorkflowAutomatio
                           muted
                           playsInline
                           src="/workflow-setup-demo.mp4"
+                          preload="auto"
                           className="case-recording-video"
                         />
                       </div>
@@ -1054,6 +1071,7 @@ export default function ProjectsV2({ initialProjects = [], showWorkflowAutomatio
                             }
                           }}
                           src="/dorion-driving-flow.mp4"
+                          preload="auto"
                           className="case-recording-video" style={{ objectFit: 'contain', backgroundColor: '#000000' }}
           />
           {HOVER_MEDIA[project.id] && (
@@ -1078,6 +1096,8 @@ export default function ProjectsV2({ initialProjects = [], showWorkflowAutomatio
                             }
                           }}
                           src={tfVideo}
+                          poster="/assets/poster-tool/01-details-and-download.png"
+                          preload="auto"
                           className="case-recording-video" style={project.id === 'v2-4' ? { objectFit: 'contain', backgroundColor: '#000000' } : undefined}
           />
           {HOVER_MEDIA[project.id] && (

@@ -30,10 +30,10 @@ export default function Footer({ variant }: { variant?: 'standard' | 'ticker' })
           }
           .footer-ticker-strip {
             overflow: hidden;
-            background: linear-gradient(180deg, rgba(255, 255, 255, 0.09), rgba(255, 255, 255, 0.03));
+            background: linear-gradient(180deg, rgba(255, 255, 255, 0.04), rgba(255, 255, 255, 0.012));
             -webkit-backdrop-filter: blur(18px) saturate(160%);
             backdrop-filter: blur(18px) saturate(160%);
-            border-top: 1px solid rgba(255, 255, 255, 0.14);
+            border-top: 1px solid rgba(255, 255, 255, 0.08);
             padding: 0.95rem 0;
           }
           .footer-ticker-track {
@@ -56,8 +56,8 @@ export default function Footer({ variant }: { variant?: 'standard' | 'ticker' })
             letter-spacing: 0.14em;
             text-transform: uppercase;
             white-space: nowrap;
-            color: #ffffff;
-            -webkit-text-fill-color: #ffffff;
+            color: rgba(255, 255, 255, 0.72);
+            -webkit-text-fill-color: rgba(255, 255, 255, 0.72);
             padding: 0 1.5rem;
           }
           .footer-ticker-item-dim {

@@ -7,9 +7,12 @@ export default function ProcessSection({ variant = 'default' }: { variant?: 'def
   return (
     <section
       id="process"
-      style={{ padding: '0', background: 'radial-gradient(circle at 44% 42%, rgba(255, 255, 255, 0.95) 0%, rgba(255, 255, 255, 0.52) 34%, rgba(247, 243, 237, 0) 72%), #f7f3ed', borderBottom: '1px solid rgba(120, 128, 136, 0.18)' }}
+      style={{ padding: '0', background: '#ffffff', borderBottom: '1px solid rgba(120, 128, 136, 0.18)' }}
     >
       <style>{`
+        .testimonials-grey-container {
+          background: #ffffff !important;
+        }
         .testimonial-single {
   background-color: transparent !important;
           color: #000000 !important;
@@ -48,15 +51,16 @@ export default function ProcessSection({ variant = 'default' }: { variant?: 'def
           font-size: clamp(1.15rem, 1.8vw, 1.55rem) !important;
           line-height: 1.4 !important;
           font-weight: 500 !important;
-          color: #1d2229 !important;
+          color: #f2908f !important;
+          -webkit-text-fill-color: #f2908f !important;
           max-width: 38ch;
           margin: 0 0 1.25rem 0;
         }
         .homepage-testimonial-single::before {
           content: '“';
           position: absolute;
-          left: -3.4rem;
-          top: 1.35rem;
+          left: -1.7rem;
+          top: 3.5rem;
           font-family: 'Newsreader', 'Source Serif 4', Georgia, serif;
           font-size: 5.2rem;
           line-height: 0.8;
@@ -102,6 +106,10 @@ export default function ProcessSection({ variant = 'default' }: { variant?: 'def
             margin-left: auto !important;
             margin-right: 0 !important;
             transform: translateX(5%) !important;
+          }
+          .homepage-testimonial-single {
+            padding-top: 6.5rem !important;
+            padding-bottom: 4.5rem !important;
           }
           .testimonial-quote {
             max-width: 100% !important;

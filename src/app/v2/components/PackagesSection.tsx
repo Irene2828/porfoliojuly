@@ -105,7 +105,7 @@ export default function PackagesSection({ onCtaClick, mode = 'website', variant 
         .packages-inner { max-width: 1080px; margin: 0 auto; padding: 0 1.5rem; }
         .packages-heading {
           font-family: var(--font-heading);
-          font-weight: 400;
+          font-weight: 600;
           letter-spacing: -0.02em;
           color: #ffffff !important;
           -webkit-text-fill-color: #ffffff !important;
@@ -117,7 +117,13 @@ export default function PackagesSection({ onCtaClick, mode = 'website', variant 
           max-width: 22ch;
           text-wrap: balance;
         }
-        .packages-heading strong { font-weight: 500; color: #ffffff !important; -webkit-text-fill-color: #ffffff !important; }
+        .packages-heading strong { font-weight: 600; color: #ffffff !important; -webkit-text-fill-color: #ffffff !important; }
+        .packages-heading em.packages-heading-accent {
+          color: #f2908f !important;
+          -webkit-text-fill-color: #f2908f !important;
+          font-style: italic !important;
+          font-weight: inherit !important;
+        }
         .packages-value-grid {
           display: grid;
           grid-template-columns: 1fr 1fr;
@@ -441,7 +447,7 @@ export default function PackagesSection({ onCtaClick, mode = 'website', variant 
           transition={{ duration: 0.7, ease: [0.16, 1, 0.3, 1] }}
           style={{ color: '#ffffff', WebkitTextFillColor: '#ffffff' }}
         >
-          {isAi ? <>Custom <strong>AI products</strong> — built around your problem</> : <>Custom <strong>websites</strong> — built around your business</>}
+          {isAi ? <>Custom <strong>AI products</strong> — built around your problem</> : <>Custom <strong style={{ fontWeight: 600 }}>websites</strong> — built around <em className="packages-heading-accent" style={{ color: '#f2908f', WebkitTextFillColor: '#f2908f', fontStyle: 'italic' }}>your</em> business</>}
         </motion.h2>
 
         {isAi && <div className="packages-scroll-hint" aria-label={`Package ${activePackageDot + 1} of 4`} role="status">{[0, 1, 2, 3].map((dot) => <span key={dot} className={`packages-scroll-dot${activePackageDot === dot ? ' is-active' : ''}`} aria-hidden="true" />)}</div>}

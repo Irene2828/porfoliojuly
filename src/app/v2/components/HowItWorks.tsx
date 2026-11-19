@@ -84,11 +84,16 @@ export default function HowItWorks({ variant = 'default' }: HowItWorksProps) {
       <style>{`
         .how-title {
           font-family: var(--font-heading) !important;
-          font-weight: 400 !important;
+          font-weight: 500 !important;
           letter-spacing: -0.02em !important;
           color: #ffffff !important;
           background: none !important;
           -webkit-text-fill-color: #ffffff !important;
+        }
+        .how-title-last {
+          color: #f2908f !important;
+          -webkit-text-fill-color: #f2908f !important;
+          font-style: italic !important;
         }
         .how-kicker {
           font-family: var(--font-body), 'Plus Jakarta Sans', sans-serif !important;
@@ -271,7 +276,7 @@ export default function HowItWorks({ variant = 'default' }: HowItWorksProps) {
             textAlign: 'left'
           }}
         >
-          Clarity. Logic. Care.
+          Clarity. Logic. <span className="how-title-last">Care.</span>
         </motion.h2>
         <motion.p
           className="how-subcopy"
