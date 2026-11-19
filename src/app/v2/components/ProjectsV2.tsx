@@ -23,9 +23,9 @@ interface ProjectsV2Props {
   recentProjects?: boolean;
 }
 
-function DevicePair({ desktopSrc, desktopVideoSrc, phoneImgSrc, phoneVideoSrc, alt, modal = false }: { desktopSrc: string; desktopVideoSrc?: string; phoneImgSrc?: string; phoneVideoSrc?: string; alt: string; modal?: boolean }) {
+function DevicePair({ desktopSrc, desktopVideoSrc, phoneImgSrc, phoneVideoSrc, alt, modal = false, className }: { desktopSrc: string; desktopVideoSrc?: string; phoneImgSrc?: string; phoneVideoSrc?: string; alt: string; modal?: boolean; className?: string }) {
   return (
-    <div className={`case-pair${modal ? ' modal-pair' : ''}`}>
+    <div className={`case-pair${modal ? ' modal-pair' : ''}${className ? ` ${className}` : ''}`}>
       <div className="pair-desktop">
         {desktopVideoSrc ? (
           <video src={desktopVideoSrc} poster={desktopSrc} autoPlay loop muted playsInline />
@@ -187,7 +187,7 @@ export default function ProjectsV2({ initialProjects = [], showWorkflowAutomatio
   ].filter((group) => showWorkflowAutomations || group.id !== 'workflow-automations')
     .map((group) => ({ ...group, projects: projectsList.filter((p) => TAB_CASE_IDS[group.id as keyof typeof TAB_CASE_IDS].includes(p.id)) }));
   const visibleGroups = recentProjects
-    ? [{ id: 'recent', label: '', projects: ['v2-3', 'v2-2', 'v2-1'].map((id) => projectsList.find((p) => p.id === id)).filter((p): p is (typeof projectsList)[number] => Boolean(p)) }]
+    ? [{ id: 'recent', label: '', projects: ['v2-1', 'v2-2', 'v2-3'].map((id) => projectsList.find((p) => p.id === id)).filter((p): p is (typeof projectsList)[number] => Boolean(p)) }]
     : caseGroups;
   const homepageProjectCopy: Record<string, { title?: string; teaser: string }> = {
     'v2-3': {
@@ -208,6 +208,8 @@ export default function ProjectsV2({ initialProjects = [], showWorkflowAutomatio
   // optimized loops the recruiter page uses. Freelance keeps the original flow files.
   const buDesktopVideo = recentProjects ? '/assets/case-recordings/optimized/buyukrainian-desktop-loop.mp4' : '/buyukrainian-desktop-flow.mp4';
   const buMobileVideo = recentProjects ? '/assets/case-recordings/optimized/buyukrainian-mobile-loop.mp4' : '/buyukrainian-mobile-flow.mp4';
+  const isabelleDesktopVideo = recentProjects ? '/assets/case-recordings/optimized/isabelle-desktop.mp4' : '/isabelle-desktop-flow.mp4';
+  const isabelleMobileVideo = recentProjects ? '/assets/case-recordings/optimized/isabelle-mobile.mp4' : '/isabelle-mobile-flow.mp4';
   const tfVideo = recentProjects ? '/assets/case-recordings/optimized/terry-fox-loop.mp4' : '/terry-fox-flow.mp4';
     const selectedProject = projectsList.find((p) => p.id === selectedProjectId) ?? null;
 
@@ -343,9 +345,10 @@ export default function ProjectsV2({ initialProjects = [], showWorkflowAutomatio
                         modal={isModal}
                         alt={project.title}
                         desktopSrc={project.id === 'v2-2' ? '/assets/guertin-desktop.png' : '/assets/buyukrainian-desktop.jpg'}
-                        desktopVideoSrc={project.id === 'v2-2' ? '/isabelle-desktop-flow.mp4' : buDesktopVideo}
+                        desktopVideoSrc={project.id === 'v2-2' ? isabelleDesktopVideo : buDesktopVideo}
                         phoneImgSrc={project.id === 'v2-2' ? '/assets/guertin-mobile.png' : '/assets/buyukrainian-mobile.jpg'}
-                        phoneVideoSrc={project.id === 'v2-2' ? '/isabelle-mobile-flow.mp4' : buMobileVideo}
+                        phoneVideoSrc={project.id === 'v2-2' ? isabelleMobileVideo : buMobileVideo}
+                        className={recentProjects ? (project.id === 'v2-2' ? 'optimized-isabelle-pair' : 'optimized-pair') : undefined}
                       />
                     ) : project.id === 'v2-6' ? (
                       <div className="case-desktop-frame" style={{ width: '100%', maxWidth: '880px', margin: '0 auto', aspectRatio: '16 / 9' }}>
@@ -805,6 +808,38 @@ export default function ProjectsV2({ initialProjects = [], showWorkflowAutomatio
         .cases-grid-item .preview-card-caption-btn span {
           color: #a7aeb8 !important;
         }
+
+        /* Homepage recordings: a quiet silver frame with source-matched proportions. */
+        .recent-projects-layout .case-desktop-frame,
+        .recent-projects-layout .case-phone-frame,
+        .recent-projects-layout .case-pair .pair-desktop,
+        .recent-projects-layout .case-pair .pair-phone {
+          border: 1px solid rgba(166, 174, 184, 0.9) !important;
+          background: #edf0f2 !important;
+          box-shadow: inset 0 0 0 1px rgba(255, 255, 255, 0.82), 0 10px 24px rgba(18, 22, 28, 0.08) !important;
+          padding: 3px !important;
+        }
+        .recent-projects-layout .case-recording-video,
+        .recent-projects-layout .case-pair .pair-desktop video,
+        .recent-projects-layout .case-pair .pair-phone video {
+          object-fit: cover;
+          object-position: center center;
+        }
+        .recent-projects-layout .case-desktop-frame.tf-match {
+          aspect-ratio: 15 / 8 !important;
+        }
+        .recent-projects-layout .case-pair.optimized-pair .pair-desktop {
+          aspect-ratio: 15 / 8 !important;
+        }
+        .recent-projects-layout .case-pair.optimized-pair .pair-phone {
+          aspect-ratio: 362 / 887 !important;
+        }
+        .recent-projects-layout .case-pair.optimized-isabelle-pair .pair-desktop {
+          aspect-ratio: 72 / 47 !important;
+        }
+        .recent-projects-layout .case-pair.optimized-isabelle-pair .pair-phone {
+          aspect-ratio: 464 / 887 !important;
+        }
         @media (min-width: 901px) {
           .preview-card-caption {
             opacity: 1 !important;
@@ -989,9 +1024,10 @@ export default function ProjectsV2({ initialProjects = [], showWorkflowAutomatio
                       <DevicePair
                         alt={displayProject.title}
                         desktopSrc={project.id === 'v2-2' ? '/assets/guertin-desktop.png' : '/assets/buyukrainian-desktop.jpg'}
-                        desktopVideoSrc={project.id === 'v2-2' ? '/isabelle-desktop-flow.mp4' : buDesktopVideo}
+                        desktopVideoSrc={project.id === 'v2-2' ? isabelleDesktopVideo : buDesktopVideo}
                         phoneImgSrc={project.id === 'v2-2' ? '/assets/guertin-mobile.png' : '/assets/buyukrainian-mobile.jpg'}
-                        phoneVideoSrc={project.id === 'v2-2' ? '/isabelle-mobile-flow.mp4' : buMobileVideo}
+                        phoneVideoSrc={project.id === 'v2-2' ? isabelleMobileVideo : buMobileVideo}
+                        className={recentProjects ? (project.id === 'v2-2' ? 'optimized-isabelle-pair' : 'optimized-pair') : undefined}
                       />
                     ) : project.id === 'v2-6' ? (
                       <div className="case-desktop-frame tf-match">
