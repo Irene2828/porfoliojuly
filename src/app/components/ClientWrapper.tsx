@@ -1,6 +1,7 @@
 'use client';
 
 import { ReactNode, useEffect } from 'react';
+import ContactModal from './ContactModal';
 
 export default function ClientWrapper({ children }: { children: ReactNode }) {
   useEffect(() => {
@@ -13,5 +14,10 @@ export default function ClientWrapper({ children }: { children: ReactNode }) {
     window.scrollTo({ top: 0, left: 0, behavior: 'instant' });
   }, []);
 
-  return <>{children}</>;
+  return (
+    <>
+      {children}
+      <ContactModal />
+    </>
+  );
 }
