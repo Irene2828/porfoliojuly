@@ -29,6 +29,32 @@ const WEBSITE_PACKAGES: Package[] = [
   },
 ];
 
+const HOMEPAGE_WEBSITE_PACKAGES: Package[] = [
+  {
+    name: 'Custom Website',
+    price: 'from $1,500 CAD',
+    lead: 'New business or a rebuild: a site built around your business, from scratch.',
+    bullets: ['A call to learn your business and clients', 'Three visual directions', 'Design and copy', 'Build', 'A tested launch', 'Hosting set up, and you keep the logins'],
+  },
+  {
+    name: 'Polish & Launch',
+    price: 'from $750 CAD',
+    lead: 'You already have an AI draft or a dated site. I fix it and launch it.',
+    bullets: ['Clearer structure', 'Better copy', 'Mobile fixes', 'Working forms', 'Your domain connected'],
+  },
+  {
+    name: 'Larger Builds',
+    price: 'scoped on a call',
+    lead: 'For catalogs, migrations from older platforms, and sites that connect to other tools.',
+    bullets: ['Everything in Custom Website', 'Content migration', 'Redirects that protect your Google position', 'Integrations scoped to your needs'],
+  },
+  {
+    name: 'Website Care',
+    price: 'from $100 CAD/month',
+    bullets: ['Updates, small edits, regular checks.', 'Your site stays current without you touching it.', 'Bigger changes are quoted separately, only when you ask.'],
+  },
+];
+
 const AI_PACKAGES: Package[] = [
   {
     name: 'Workflow Build',
@@ -49,13 +75,19 @@ const AI_PACKAGES: Package[] = [
   },
 ];
 
-export default function PackagesSection({ onCtaClick, mode = 'website' }: { onCtaClick?: () => void; mode?: 'website' | 'ai' }) {
+export default function PackagesSection({ onCtaClick, mode = 'website', variant = 'default' }: { onCtaClick?: () => void; mode?: 'website' | 'ai'; variant?: 'default' | 'websites' }) {
   const isAi = mode === 'ai';
-  const packages = isAi ? AI_PACKAGES : WEBSITE_PACKAGES;
+  const isWebsites = variant === 'websites';
+  const packages = isAi ? AI_PACKAGES : isWebsites ? HOMEPAGE_WEBSITE_PACKAGES : WEBSITE_PACKAGES;
+  const packagesClassName = [
+    'packages-cards',
+    isAi ? 'ai-packages-cards' : 'website-packages-cards',
+    isWebsites && !isAi ? 'homepage-website-packages-cards' : '',
+  ].filter(Boolean).join(' ');
   const [agentDetailsOpen, setAgentDetailsOpen] = useState(false);
   const [activePackageDot, setActivePackageDot] = useState(0);
   const packagesRailRef = useRef<HTMLDivElement>(null);
-  const [openPackages, setOpenPackages] = useState<Record<string, boolean>>(() => Object.fromEntries([...WEBSITE_PACKAGES, ...AI_PACKAGES].map((pkg) => [pkg.name, true])));
+  const [openPackages, setOpenPackages] = useState<Record<string, boolean>>(() => Object.fromEntries([...WEBSITE_PACKAGES, ...HOMEPAGE_WEBSITE_PACKAGES, ...AI_PACKAGES].map((pkg) => [pkg.name, true])));
   return (
     <section
       className="packages-section"
@@ -112,6 +144,15 @@ export default function PackagesSection({ onCtaClick, mode = 'website' }: { onCt
           display: grid;
           grid-template-columns: repeat(3, 1fr);
           gap: 1.25rem;
+        }
+        .homepage-website-packages-cards {
+          grid-template-columns: repeat(2, 1fr);
+        }
+        @media (min-width: 821px) {
+          .homepage-website-packages-cards {
+            column-gap: 2.5rem;
+            row-gap: 2.5rem;
+          }
         }
         .ai-packages-cards {
           display: flex;
@@ -403,7 +444,7 @@ export default function PackagesSection({ onCtaClick, mode = 'website' }: { onCt
         </motion.h2>
 
         {isAi && <div className="packages-scroll-hint" aria-label={`Package ${activePackageDot + 1} of 4`} role="status">{[0, 1, 2, 3].map((dot) => <span key={dot} className={`packages-scroll-dot${activePackageDot === dot ? ' is-active' : ''}`} aria-hidden="true" />)}</div>}
-        <div ref={isAi ? packagesRailRef : undefined} onScroll={isAi ? (event) => { const rail = event.currentTarget; const max = rail.scrollWidth - rail.clientWidth; setActivePackageDot(max > 0 ? Math.max(0, Math.min(3, Math.round((rail.scrollLeft / max) * 3))) : 0); } : undefined} className={`packages-cards${isAi ? ' ai-packages-cards' : ' website-packages-cards'}`} role="region" aria-label={isAi ? 'AI product packages' : 'Website packages'} tabIndex={0}>
+        <div ref={isAi ? packagesRailRef : undefined} onScroll={isAi ? (event) => { const rail = event.currentTarget; const max = rail.scrollWidth - rail.clientWidth; setActivePackageDot(max > 0 ? Math.max(0, Math.min(3, Math.round((rail.scrollLeft / max) * 3))) : 0); } : undefined} className={packagesClassName} role="region" aria-label={isAi ? 'AI product packages' : 'Website packages'} tabIndex={0}>
           <div className="packages-standard-row">
           {packages.map((pkg, index) => (
             <div className="packages-card" key={pkg.name}>
@@ -459,9 +500,13 @@ export default function PackagesSection({ onCtaClick, mode = 'website' }: { onCt
         )}
         </div>
 
+        {isWebsites && !isAi && (
+          <p className="packages-honest">Not sure which fits? Tell me about your site and I’ll recommend one, honestly.</p>
+        )}
+
         <div className="packages-cta-wrap">
           <a href={isAi ? 'mailto:iryna@irynasheremeta.com?subject=AI%20product%20packages' : 'mailto:iryna@irynasheremeta.com?subject=Website%20packages'} className="packages-btn-primary" onClick={onCtaClick}>
-            <span style={{ letterSpacing: '0.08em' }}>EMAIL ME YOUR PROBLEM</span>
+            <span style={{ letterSpacing: '0.08em' }}>{isWebsites ? 'TELL ME ABOUT YOUR WEBSITE' : 'EMAIL ME YOUR PROBLEM'}</span>
             <svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round" style={{ transform: 'translateY(-0.5px)' }}>
               <line x1="7" y1="17" x2="17" y2="7"></line>
               <polyline points="7 7 17 7 17 17"></polyline>

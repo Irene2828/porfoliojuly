@@ -189,6 +189,21 @@ export default function ProjectsV2({ initialProjects = [], showWorkflowAutomatio
   const visibleGroups = recentProjects
     ? [{ id: 'recent', label: '', projects: ['v2-3', 'v2-2', 'v2-1'].map((id) => projectsList.find((p) => p.id === id)).filter((p): p is (typeof projectsList)[number] => Boolean(p)) }]
     : caseGroups;
+  const homepageProjectCopy: Record<string, { title?: string; teaser: string }> = {
+    'v2-3': {
+      teaser: 'Ukrainian-made products on one map. 28 stores across Canada, and anyone can add a missing one.',
+    },
+    'v2-2': {
+      teaser: 'A solo expert’s whole practice online. Credibility up front, a call one tap away. New clients now phone her most days.',
+    },
+    'v2-1': {
+      title: 'Terry Fox Foundation / Internal poster tool',
+      teaser: 'On-brand posters in minutes for teams in every city. No waiting on a designer.',
+    },
+  };
+  const getProjectCopy = (project: any) => recentProjects
+    ? { ...project, ...homepageProjectCopy[project.id] }
+    : project;
   // On the client homepage (recentProjects), use Iryna's own recordings — the same
   // optimized loops the recruiter page uses. Freelance keeps the original flow files.
   const buDesktopVideo = recentProjects ? '/assets/case-recordings/optimized/buyukrainian-desktop-loop.mp4' : '/buyukrainian-desktop-flow.mp4';
@@ -455,7 +470,7 @@ export default function ProjectsV2({ initialProjects = [], showWorkflowAutomatio
   }, [projectsList.length]);
 
   return (
-    <section className="projects-section" id="cases" style={{ position: 'relative', width: '100%', margin: '0 auto', padding: '1rem 0 2rem 0' }}>
+    <section className={`projects-section${recentProjects ? ' recent-projects-layout' : ''}`} id="cases" style={{ position: 'relative', width: '100%', margin: '0 auto', padding: '1rem 0 2rem 0' }}>
       <style>{`
         .cases-grid-container {
           display: flex !important;
@@ -535,6 +550,70 @@ export default function ProjectsV2({ initialProjects = [], showWorkflowAutomatio
         @media (max-width: 900px) {
                  @media (min-width: 901px) { .cases-grid-container { display: grid !important; grid-template-columns: auto auto !important; } } .cases-grid-item {
             width: 100% !important;
+          }
+        }
+
+        @media (min-width: 901px) {
+          .recent-projects-layout .cases-grid-container {
+            display: flex !important;
+            flex-direction: column !important;
+            align-items: stretch !important;
+            gap: 5rem !important;
+          }
+          .recent-projects-layout .cases-grid-item {
+            display: flex !important;
+            width: 100% !important;
+            justify-self: stretch !important;
+            justify-content: flex-start !important;
+          }
+          .recent-projects-layout .cases-grid-item:nth-child(even) {
+            justify-content: flex-end !important;
+          }
+          .recent-projects-layout .preview-item-container {
+            width: fit-content !important;
+            max-width: 100% !important;
+            margin: 0 !important;
+          }
+
+          /* Homepage recent projects: keep the explanation beside the case visual. */
+          .recent-projects-layout .preview-item-container {
+            display: grid !important;
+            grid-template-columns: minmax(0, 1fr) 300px;
+            align-items: center;
+            column-gap: 3rem !important;
+            width: min(100%, 1040px) !important;
+            max-width: 1040px !important;
+          }
+          .recent-projects-layout .preview-card-wrapper.recording-card-wrapper {
+            grid-column: 1;
+            grid-row: 1;
+            justify-self: start;
+          }
+          .recent-projects-layout .preview-card-caption {
+            grid-column: 2;
+            grid-row: 1;
+            align-self: center;
+            margin-top: 0 !important;
+            text-align: left !important;
+          }
+          .recent-projects-layout .preview-card-teaser {
+            max-width: 30ch;
+            margin: 0 0 1.25rem 0 !important;
+            text-align: left !important;
+          }
+          .recent-projects-layout .preview-card-caption-btn {
+            display: inline-flex;
+            margin: 0 !important;
+          }
+          .recent-projects-layout .cases-grid-item:nth-child(even) .preview-item-container {
+            grid-template-columns: 300px minmax(0, 1fr);
+          }
+          .recent-projects-layout .cases-grid-item:nth-child(even) .preview-card-wrapper.recording-card-wrapper {
+            grid-column: 2;
+            justify-self: end;
+          }
+          .recent-projects-layout .cases-grid-item:nth-child(even) .preview-card-caption {
+            grid-column: 1;
           }
         }
 
@@ -748,6 +827,22 @@ export default function ProjectsV2({ initialProjects = [], showWorkflowAutomatio
           .case-pair .pair-phone {
             width: 27%;
           }
+          .recent-projects-layout .preview-item-container {
+            display: block !important;
+            width: fit-content !important;
+            max-width: 100% !important;
+          }
+          .recent-projects-layout .preview-card-caption {
+            margin-top: 0.25rem !important;
+            text-align: center !important;
+          }
+          .recent-projects-layout .preview-card-teaser {
+            margin: 0.3rem auto 0.8rem !important;
+            text-align: center !important;
+          }
+          .recent-projects-layout .preview-card-caption-btn {
+            margin: 0 auto !important;
+          }
         }
 
         @media (max-width: 900px) {
@@ -812,6 +907,7 @@ export default function ProjectsV2({ initialProjects = [], showWorkflowAutomatio
 
         {/* 2. Section title rises with editorial authority */}
         <motion.h2
+          className={recentProjects ? 'homepage-light-heading' : undefined}
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true, amount: 0.5 }}
@@ -859,6 +955,7 @@ export default function ProjectsV2({ initialProjects = [], showWorkflowAutomatio
             ) : null}
             <div className="cases-grid-container">
           {group.projects.map((project, idx) => {
+            const displayProject = getProjectCopy(project);
             return (
               <motion.div 
                 key={`${project.id}-${idx}`}
@@ -878,7 +975,7 @@ export default function ProjectsV2({ initialProjects = [], showWorkflowAutomatio
                 <div 
                   className="preview-item-container"
                   role="region"
-                  aria-label={`${project.title} case preview`}
+                  aria-label={`${displayProject.title} case preview`}
                 >
                   <div 
                     className={`preview-card-wrapper recording-card-wrapper${project.id === 'v2-1' ? ' terry-fox-preview' : ''}`}
@@ -890,7 +987,7 @@ export default function ProjectsV2({ initialProjects = [], showWorkflowAutomatio
                   >
                     {project.id === 'v2-2' || project.id === 'v2-3' ? (
                       <DevicePair
-                        alt={project.title}
+                        alt={displayProject.title}
                         desktopSrc={project.id === 'v2-2' ? '/assets/guertin-desktop.png' : '/assets/buyukrainian-desktop.jpg'}
                         desktopVideoSrc={project.id === 'v2-2' ? '/isabelle-desktop-flow.mp4' : buDesktopVideo}
                         phoneImgSrc={project.id === 'v2-2' ? '/assets/guertin-mobile.png' : '/assets/buyukrainian-mobile.jpg'}
@@ -929,7 +1026,7 @@ export default function ProjectsV2({ initialProjects = [], showWorkflowAutomatio
                       </div>
                     ) : project.id === 'v2-5' ? (
                       <div className="case-desktop-frame">
-                        <img src={project.image} alt={project.title} className="case-recording-video" />
+                        <img src={project.image} alt={displayProject.title} className="case-recording-video" />
                       </div>
                     ) : (
                       <div className="case-desktop-frame tf-match">
@@ -954,8 +1051,8 @@ export default function ProjectsV2({ initialProjects = [], showWorkflowAutomatio
                     )}
                   </div>
                   <div className="preview-card-caption">
-                    {project.teaser && (
-                      <p className="preview-card-teaser">{project.teaser}</p>
+                    {displayProject.teaser && (
+                      <p className="preview-card-teaser">{displayProject.teaser}</p>
                     )}
                     <button 
                       type="button"
@@ -964,7 +1061,7 @@ export default function ProjectsV2({ initialProjects = [], showWorkflowAutomatio
                         e.stopPropagation();
                         setSelectedProjectId(project.id);
                       }}
-                      aria-label={`Tap to zoom ${project.title}`}
+                      aria-label={`Tap to zoom ${displayProject.title}`}
                     >
                       Tap to Zoom <span style={{ color: '#717885', marginLeft: '4px' }}>&rarr;</span>
                     </button>
@@ -999,7 +1096,7 @@ export default function ProjectsV2({ initialProjects = [], showWorkflowAutomatio
               <button className="modal-close-btn" onClick={() => setSelectedProjectId(null)}>
                 ✕
               </button>
-              {renderProjectContent(selectedProject, true)}
+              {renderProjectContent(getProjectCopy(selectedProject), true)}
             </motion.div>
           </motion.div>
         )}

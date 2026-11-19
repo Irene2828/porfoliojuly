@@ -8,7 +8,7 @@ export default function HeroV2({ variant = 'client' }: { variant?: 'client' | 'h
   const isWebsites = variant === 'websites';
     
   return (
-    <section className={isHire ? 'section hero-section hero-hire' : 'section hero-section'} id="home" style={{ backgroundColor: '#121316', background: '#121316' }}>
+    <section className={isHire ? 'section hero-section hero-hire' : isWebsites ? 'section hero-section hero-websites' : 'section hero-section'} id="home" style={{ backgroundColor: '#121316', background: '#121316' }}>
       {/* Off-black matte theme rules */}
       <style>{`
         .hero-section,
@@ -60,6 +60,18 @@ export default function HeroV2({ variant = 'client' }: { variant?: 'client' | 'h
           }
           .hero-frame-paragraph {
             font-size: 1.067rem !important;
+          }
+        }
+        @media (min-width: 901px) {
+          .hero-websites .hero-statement,
+          .hero-websites .hero-name-group .hero-text h1.hero-statement {
+            font-size: clamp(56.7px, 5.103vw, 72.58px) !important;
+          }
+        }
+        @media (min-width: 901px) and (max-width: 1200px) {
+          .hero-websites .hero-statement,
+          .hero-websites .hero-name-group .hero-text h1.hero-statement {
+            font-size: clamp(43.47px, 3.9123vw, 55.66px) !important;
           }
         }
         .headline-desktop-light,
@@ -1059,11 +1071,11 @@ export default function HeroV2({ variant = 'client' }: { variant?: 'client' | 'h
                   ) : isWebsites ? (
                     <>
                       <span className="hero-body-desktop">
-                        <span className="hero-body-row hero-body-light" style={{ fontWeight: 400 }}>Got a dated site that undersells you — visitors land, can&rsquo;t tell what you do, and leave? <span className="hero-body-finish"><strong className="hero-body-bold">I build the site that fixes it,</strong> <span className="hero-body-light">so you don&rsquo;t have to.</span></span></span>
+                        <span className="hero-body-row hero-body-light" style={{ fontWeight: 400 }}>Starting from zero, or stuck with a site that undersells you? Visitors land, can&rsquo;t tell what you do, and leave. <span className="hero-body-finish"><strong className="hero-body-bold">I design and build a site that fixes this. End-to-end. So you don&rsquo;t have to.</strong></span></span>
                       </span>
                       <span className="hero-body-mobile">
-                        <span className="hero-body-mobile-text hero-body-light">Got a dated site that undersells you — visitors land, can’t tell what you do, and leave?</span>{' '}
-                        <span className="hero-body-finish"><strong className="hero-body-bold">I build the site that fixes it,</strong>{' '}<span className="hero-body-light">so you don’t have to.</span></span>
+                        <span className="hero-body-mobile-text hero-body-light">Starting from zero, or stuck with a site that undersells you? Visitors land, can’t tell what you do, and leave.</span>{' '}
+                        <span className="hero-body-finish"><strong className="hero-body-bold">I design and build a site that fixes this. End-to-end. So you don’t have to.</strong></span>
                       </span>
                     </>
                   ) : (

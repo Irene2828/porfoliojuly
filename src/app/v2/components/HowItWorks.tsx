@@ -3,9 +3,13 @@
 import { AnimatePresence, motion } from 'framer-motion';
 import { useState } from 'react';
 
-export default function HowItWorks() {
+type HowItWorksProps = {
+  variant?: 'default' | 'websites';
+};
+
+export default function HowItWorks({ variant = 'default' }: HowItWorksProps) {
   const [openSteps, setOpenSteps] = useState<Record<string, boolean>>({ '01': true, '02': true, '03': true });
-  const steps = [
+  const defaultSteps = [
     {
       num: '01',
       title: 'I clarify the problem and come up with the first solutions.',
@@ -35,6 +39,36 @@ export default function HowItWorks() {
       
     }
   ];
+  const websiteSteps = [
+    {
+      num: '01',
+      title: 'I start with your business, not a template.',
+      bullets: [
+        { rest: 'What you sell, who buys it, and what a visitor has to understand in the first ten seconds.' },
+        { rest: 'You get three visual directions to react to: real designs, not descriptions.' },
+        { rest: 'We pick one together before anything is built.' }
+      ],
+    },
+    {
+      num: '02',
+      title: 'I design and build the whole site.',
+      bullets: [
+        { rest: 'Structure, copy and design that explain your offer in plain words.' },
+        { rest: 'Built on a modern stack: fast, secure, easy to find on Google.' },
+        { rest: 'You see a working site early, while changes are still cheap.' }
+      ],
+    },
+    {
+      num: '03',
+      title: 'I launch it, and I stay.',
+      bullets: [
+        { rest: 'Domain, hosting and forms set up and tested. Nothing left half-done.' },
+        { rest: 'Update it yourself in a simple admin panel, or send changes to me on a care plan.' },
+        { rest: 'You own the site, the code and the accounts. Nothing is held hostage.' }
+      ],
+    }
+  ];
+  const steps = variant === 'websites' ? websiteSteps : defaultSteps;
 
   return (
     <section
@@ -256,7 +290,7 @@ export default function HowItWorks() {
             textAlign: 'left'
           }}
         >
-          Three stages - three steps to bring a problem to solution.
+          {variant === 'websites' ? 'Three stages, from problem to solution.' : 'Three stages - three steps to bring a problem to solution.'}
         </motion.p>
         <div
           className="how-steps-grid"

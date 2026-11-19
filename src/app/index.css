@@ -1856,3 +1856,14 @@ h1, h2, h3, h4, h5, h6 {
     padding-bottom: 2.8rem !important;
   }
 }
+
+/* Homepage light-section headings use ink black; dark sections keep their existing contrast. */
+.v2-theme section:not(.prefooter-section) h2.homepage-light-heading,
+.v2-theme section:not(.prefooter-section) h2.homepage-light-heading :is(span, em, strong),
+.v2-theme #process h2.testimonial-heading.homepage-light-heading,
+.v2-theme #process h2.testimonial-heading.homepage-light-heading :is(span, em, strong) {
+  color: #000000 !important;
+  -webkit-text-fill-color: #000000 !important;
+  -webkit-text-stroke: 0 !important;
+  text-stroke: 0 !important;
+}

@@ -2,7 +2,8 @@
 
 import { motion } from 'framer-motion';
 
-export default function ProcessSection() {
+export default function ProcessSection({ variant = 'default' }: { variant?: 'default' | 'websites' }) {
+  const isWebsites = variant === 'websites';
   return (
     <section
       id="process"
@@ -51,6 +52,19 @@ export default function ProcessSection() {
           max-width: 38ch;
           margin: 0 0 1.25rem 0;
         }
+        .homepage-testimonial-single::before {
+          content: '“';
+          position: absolute;
+          left: -3.4rem;
+          top: 1.35rem;
+          font-family: 'Newsreader', 'Source Serif 4', Georgia, serif;
+          font-size: 5.2rem;
+          line-height: 0.8;
+          font-weight: 400;
+          color: #f2908f;
+          -webkit-text-fill-color: #f2908f;
+          pointer-events: none;
+        }
         @media (max-width: 900px) {
           .testimonial-quote {
             font-size: var(--text-small) !important;
@@ -61,6 +75,11 @@ export default function ProcessSection() {
           }
           .testimonial-single {
             padding: 2.625rem 1.75rem 1.5rem !important;
+          }
+          .homepage-testimonial-single::before {
+            left: 0.45rem;
+            top: 1rem;
+            font-size: 3.6rem;
           }
           .testimonials-grey-container > .container {
             padding-left: 1.5rem !important;
@@ -120,7 +139,7 @@ export default function ProcessSection() {
           }}
         >
           <motion.h2
-            className="testimonial-heading"
+            className={`testimonial-heading${isWebsites ? ' homepage-light-heading' : ''}`}
             initial={{ opacity: 0, y: 24 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true, margin: '-80px' }}
@@ -132,10 +151,10 @@ export default function ProcessSection() {
               color: 'var(--color-heading-silver)',
             }}
           >
-            Working with me, in client&rsquo;s words:
+            {isWebsites ? 'Working with me, in client’s words:' : 'Working with me, in client’s words:'}
           </motion.h2>
           <motion.div
-            className="testimonial-single"
+            className={`testimonial-single${isWebsites ? ' homepage-testimonial-single' : ''}`}
             initial={{ opacity: 0, y: 24 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true, margin: '-80px' }}

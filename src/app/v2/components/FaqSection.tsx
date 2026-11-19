@@ -40,23 +40,40 @@ const faqs = [
 ];
 
 const websiteFaqs = [
-  faqs[0],
-  faqs[1],
-  faqs[2],
+  {
+    question: 'How fast is this, and what happens after launch?',
+    answers: [
+      'You see a first version within days, while changes are still cheap. After launch I stay: fixes, edits, new features, per request or on a monthly care plan. You keep the logins, files and setup notes.',
+    ],
+  },
+  {
+    question: 'I don’t have a website yet. Where do we start?',
+    answers: [
+      'A short call, or a voice note if that’s easier. I ask about your business and your clients, then bring you three visual directions to react to. No brief or prep needed.',
+    ],
+  },
+  {
+    question: 'What do you need from me to start?',
+    answers: [
+      'A short call, or a voice note if that’s easier. No prep and no brief to write. If copy or files are missing, I write them from scratch.',
+    ],
+  },
+  {
+    question: 'I already generated a draft. Can you fix it and launch it?',
+    answers: [
+      'Yes. Bring it and I’ll tell you honestly whether a polish is enough or it needs rebuilding. Some drafts need a firm hand. Some need rebuilding. I’ll say which one yours is.',
+    ],
+  },
   {
     question: 'I have a WordPress site. Do I have to stay on WordPress?',
     answers: [
-      'No. I rebuild on a modern stack — faster, more secure, and far less upkeep than a plugin-heavy WordPress site.',
-      'Your domain, your content and your search positions move with you. I set up the redirects, so visitors and Google land in the right place.',
-      'You own the site and the code. Nothing ties you to a platform — or to me.',
+      'No. I rebuild on a modern stack that’s faster, more secure, and needs far less upkeep than a plugin-heavy WordPress site. Your domain, content and search positions come with you, and I set up redirects so visitors and Google land in the right place. You own the site and the code. Nothing ties you to a platform, or to me.',
     ],
   },
   {
     question: 'Who updates the site after launch?',
     answers: [
-      'Whichever way suits you. Routine content — products, partners, photos, prices — can live in a simple admin panel you update yourself, without touching the design.',
-      'Or send the updates to me: on a care plan I handle them, with a short monthly note on what was done.',
-      'The technical layer — hosting, backups, monitoring — stays on my side either way.',
+      'Whichever way suits you. Routine content (products, partners, photos, prices) can live in a simple admin panel you update yourself. Or send the updates to me and I handle them on a care plan, with a short monthly note on what was done. Hosting, backups and monitoring stay on my side either way.',
     ],
   },
 ];
@@ -308,7 +325,7 @@ export default function FaqSection({ variant = 'all' }: { variant?: 'all' | 'web
           textAlign: 'left',
         }}
       >
-      <motion.h2 className="faq-section-heading" initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true, amount: 0.45 }} transition={{ duration: 0.78, delay: 0.08, ease: [0.16, 1, 0.3, 1] }} style={{ fontFamily: 'var(--font-heading)', fontSize: 'var(--text-section-title)', fontWeight: 400, lineHeight: 1.2, color: 'var(--color-heading-silver)', letterSpacing: '-0.02em', margin: '0 0 2.5rem 0', textAlign: 'center' }}><span className="faq-heading-question">Frequent questions</span>{' '}<span className="faq-heading-answer">- <em>answered</em>.</span></motion.h2>
+      <motion.h2 className={`faq-section-heading${variant === 'websites' ? ' homepage-light-heading' : ''}`} initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true, amount: 0.45 }} transition={{ duration: 0.78, delay: 0.08, ease: [0.16, 1, 0.3, 1] }} style={{ fontFamily: 'var(--font-heading)', fontSize: 'var(--text-section-title)', fontWeight: 400, lineHeight: 1.2, color: 'var(--color-heading-silver)', letterSpacing: '-0.02em', margin: '0 0 2.5rem 0', textAlign: 'center' }}><span className="faq-heading-question">Frequent questions</span><span className="faq-heading-answer">{variant === 'websites' ? ', ' : ' - '}<em>answered</em>.</span></motion.h2>
       <div>
         {visibleFaqs.map((faq, index) => {
             const isOpen = openIndex === index;
@@ -372,7 +389,7 @@ export default function FaqSection({ variant = 'all' }: { variant?: 'all' | 'web
           })}
         </div>
       </div>
-      <EditorialStatement />
+      <EditorialStatement variant={variant === 'websites' ? 'websites' : 'default'} />
     </section>
   );
 }

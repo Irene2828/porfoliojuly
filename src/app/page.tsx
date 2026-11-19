@@ -2,11 +2,11 @@ import type { Metadata } from 'next';
 import Header from './components/Header';
 import HeroV2 from './v2/components/HeroV2';
 import ProjectsV2 from './v2/components/ProjectsV2';
+import ServicesV2 from './v2/components/ServicesV2';
 import HowItWorks from './v2/components/HowItWorks';
 import ProcessSection from './v2/components/ProcessSection';
 import PackagesSection from './v2/components/PackagesSection';
 import FaqSection from './v2/components/FaqSection';
-import { HireClosing } from './hire/HireSections';
 import Footer from './components/Footer';
 import ClientWrapper from './components/ClientWrapper';
 
@@ -32,6 +32,7 @@ export default function HomePage() {
       <div className="v2-theme">
         <Header />
         <HeroV2 variant="websites" />
+        <ServicesV2 websitesOnly />
 
         {/* Recent projects: BuyUkrainian, Isabelle Guertin, Terry Fox poster tool */}
         <section id="cases-section" className="cases-section-wrapper" style={{ padding: '5.1rem 0 0 0', backgroundColor: '#ffffff' }}>
@@ -50,19 +51,16 @@ export default function HomePage() {
         </section>
 
         {/* How I build (3 simple steps process) */}
-        <HowItWorks />
+        <HowItWorks variant="websites" />
 
         {/* Client feedback — Isabelle Guertin's review */}
-        <ProcessSection />
+        <ProcessSection variant="websites" />
 
         <div id="packages" style={{ scrollMarginTop: '88px' }}>
-          <PackagesSection mode="website" />
+          <PackagesSection mode="website" variant="websites" />
         </div>
 
         <FaqSection variant="websites" />
-
-        {/* Closing — prefooter with email CTA */}
-        <HireClosing />
 
         <Footer />
       </div>

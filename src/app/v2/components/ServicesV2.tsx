@@ -2,8 +2,39 @@
 
 import { motion } from 'framer-motion';
 
-export default function ServicesV2() {
-  const websitesBullets = [
+type ServicesV2Props = {
+  websitesOnly?: boolean;
+};
+
+export default function ServicesV2({ websitesOnly = false }: ServicesV2Props) {
+  const homepageWebsitesBullets = [
+    {
+      text: <span><strong>Clear in seconds:</strong> what you do, who it’s for, how to reach you</span>,
+      icon: (
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#e8ebee" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
+          <circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/>
+        </svg>
+      )
+    },
+    {
+      text: <span>Designed around your clients’ questions, not a template</span>,
+      icon: (
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#e8ebee" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
+          <rect x="3" y="4" width="18" height="18" rx="2" ry="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/>
+        </svg>
+      )
+    },
+    {
+      text: <span><strong>Fast on phones</strong>, and you can update it without calling a developer</span>,
+      icon: (
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#e8ebee" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
+          <path d="M13 2L3 14h9l-1 8 10-12h-9l1-8z"/>
+        </svg>
+      )
+    }
+  ];
+
+  const websitesBullets = websitesOnly ? homepageWebsitesBullets : [
     {
       text: <span>What you do, who it’s for, how to reach you — <strong>clear in seconds</strong></span>,
       icon: (
@@ -60,6 +91,7 @@ export default function ServicesV2() {
   return (
     <section 
       id="expertise" 
+      className={websitesOnly ? 'homepage-services' : undefined}
       style={{ 
         background: 'radial-gradient(circle at 44% 42%, rgba(255, 255, 255, 0.95) 0%, rgba(255, 255, 255, 0.52) 34%, rgba(247, 243, 237, 0) 72%), #f7f3ed',
         backgroundColor: '#f7f3ed',
@@ -179,6 +211,34 @@ export default function ServicesV2() {
           .process-svg-mobile {
             display: none !important;
           }
+          .homepage-services .services-grid {
+            grid-template-columns: minmax(0, 792px) !important;
+            max-width: 792px !important;
+          }
+          .homepage-services .homepage-services-card {
+            padding: 5.5rem 4.4rem !important;
+          }
+          .homepage-services .homepage-services-card-content {
+            padding-top: 0 !important;
+          }
+          .homepage-services .homepage-services-bullets {
+            gap: 1.1rem !important;
+          }
+          .homepage-services .homepage-services-bullets > li {
+            gap: 1.1rem !important;
+            padding: 0.55rem 1.65rem 0.55rem 0.55rem !important;
+            font-size: calc(var(--text-body) * 1.1) !important;
+            letter-spacing: 0.01em !important;
+          }
+          .homepage-services .homepage-services-bullets > li > div:first-child {
+            width: 44px !important;
+            height: 44px !important;
+          }
+          .homepage-services .homepage-services-cta {
+            margin-top: 4.4rem !important;
+            font-size: calc(var(--text-label) * 1.1) !important;
+            letter-spacing: 0.1155em !important;
+          }
         }
       `}</style>
 
@@ -204,6 +264,7 @@ export default function ServicesV2() {
 
         {/* 2. Section Heading rises into view */}
         <motion.h2
+          className={websitesOnly ? 'homepage-light-heading' : undefined}
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true, amount: 0.5 }}
@@ -252,8 +313,8 @@ export default function ServicesV2() {
       {/* Matte Charcoal Container for 2 Columns of Services */}
       <div className="services-cards-outer-container"
         style={{
-          background: 'radial-gradient(circle at 44% 42%, rgba(255, 255, 255, 0.95) 0%, rgba(255, 255, 255, 0.52) 34%, rgba(247, 243, 237, 0) 72%), #f7f3ed',
-          backgroundColor: '#f7f3ed',
+          background: websitesOnly ? 'var(--color-matte-black, #25282e)' : 'radial-gradient(circle at 44% 42%, rgba(255, 255, 255, 0.95) 0%, rgba(255, 255, 255, 0.52) 34%, rgba(247, 243, 237, 0) 72%), #f7f3ed',
+          backgroundColor: websitesOnly ? 'var(--color-matte-black, #25282e)' : '#f7f3ed',
           width: '100%',
           position: 'relative',
           overflow: 'hidden',
@@ -268,14 +329,14 @@ export default function ServicesV2() {
             top: 0,
             bottom: 0,
             left: 0,
-            right: '50%',
+            right: websitesOnly ? 0 : '50%',
             backgroundColor: 'var(--color-matte-black, #25282e)',
             zIndex: 1,
             pointerEvents: 'none'
           }}
         />
         {/* Full Edge-to-Edge Right Side Fill for Solution 02 (Custom AI Tools - Pure White) */}
-        <div 
+        {!websitesOnly && <div
           className="services-right-split-bg"
           style={{
             position: 'absolute',
@@ -288,7 +349,7 @@ export default function ServicesV2() {
             zIndex: 1,
             pointerEvents: 'none'
           }}
-        />
+        />}
         {/* Top Edge-to-Edge 1px Subtle Grey Divider Bar */}
         <div 
           className="process-divider"
@@ -313,14 +374,15 @@ export default function ServicesV2() {
             className="services-grid"
             style={{
               display: 'grid',
-              gridTemplateColumns: '1fr 1fr',
+              gridTemplateColumns: websitesOnly ? 'minmax(0, 720px)' : '1fr 1fr',
               gap: '2.5rem',
-              minHeight: '460px'
+              minHeight: '460px',
+              ...(websitesOnly ? { maxWidth: '720px', margin: '0 auto' } : {})
             }}
           >
             {/* Column 1: Custom Websites (Left Card - #25282e Matte Black) */}
             <motion.div 
-              className="services-col-left"
+              className={`services-col-left${websitesOnly ? ' homepage-services-card' : ''}`}
               initial={{ opacity: 0, y: 28, x: -16 }}
               whileInView={{ opacity: 1, y: 0, x: 0 }}
               viewport={{ once: true, amount: 0.18 }}
@@ -345,8 +407,8 @@ export default function ServicesV2() {
               </div>
 
               {/* Real Card Content (zIndex: 1) */}
-              <div style={{ position: 'relative', zIndex: 1, paddingTop: '1.25rem' }}>
-                <motion.h3
+              <div className={websitesOnly ? 'homepage-services-card-content' : undefined} style={{ position: 'relative', zIndex: 1, paddingTop: '1.25rem' }}>
+                {!websitesOnly && <motion.h3
                   initial={{ opacity: 0, y: 16 }}
                   whileInView={{ opacity: 1, y: 0 }}
                   viewport={{ once: true, amount: 0.3 }}
@@ -362,9 +424,9 @@ export default function ServicesV2() {
                     WebkitTextStroke: '0'
                   }}
                 >
-                  Custom websites
-                </motion.h3>
-                <motion.p
+                  {websitesOnly ? 'CUSTOM WEBSITES' : 'Custom websites'}
+                </motion.h3>}
+                {!websitesOnly && <motion.p
                   initial={{ opacity: 0, y: 12 }}
                   whileInView={{ opacity: 1, y: 0 }}
                   viewport={{ once: true, amount: 0.3 }}
@@ -379,10 +441,10 @@ export default function ServicesV2() {
                     letterSpacing: '0.015em'
                   }}
                 >
-                  For when your work is better than current website
-                </motion.p>
+                  {websitesOnly ? 'For when your work is better than your website' : 'For when your work is better than your current website'}
+                </motion.p>}
                 
-                <ul style={{ listStyle: 'none', padding: 0, margin: 0, display: 'flex', flexDirection: 'column', gap: '16px' }}>
+                <ul className={websitesOnly ? 'homepage-services-bullets' : undefined} style={{ listStyle: 'none', padding: 0, margin: 0, display: 'flex', flexDirection: 'column', gap: '16px' }}>
                   {websitesBullets.map((bullet, idx) => (
                     <motion.li
                       key={idx}
@@ -430,7 +492,7 @@ export default function ServicesV2() {
                     </motion.li>
                   ))}
                 </ul>
-                <div style={{ display: 'flex', justifyContent: 'center', marginTop: '64px' }}>
+                <div className={websitesOnly ? 'homepage-services-cta' : undefined} style={{ display: 'flex', justifyContent: 'center', marginTop: '64px' }}>
                   <a href="#packages" style={{ background: 'none', border: 0, padding: 0, fontFamily: 'var(--font-label), sans-serif', fontSize: 'var(--text-label)', fontWeight: 600, letterSpacing: '0.105em', color: '#efb4a4', cursor: 'pointer', textDecoration: 'none' }}>
                     SEE WEBSITE PACKAGES <span aria-hidden="true" style={{ marginLeft: '4px' }}>↓</span>
                   </a>
@@ -439,7 +501,7 @@ export default function ServicesV2() {
             </motion.div>
 
             {/* Column 2: Custom AI Tools (Right Card - Pure White) */}
-            <motion.div 
+            {!websitesOnly && <motion.div
               className="services-col-right"
               initial={{ opacity: 0, y: 28, x: 16 }}
               whileInView={{ opacity: 1, y: 0, x: 0 }}
@@ -566,7 +628,7 @@ export default function ServicesV2() {
                   </a>
                 </div>
               </div>
-            </motion.div>
+            </motion.div>}
           </div>
         </div>
 
