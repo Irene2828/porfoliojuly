@@ -15,6 +15,7 @@ export default function ContactModal() {
   const [email, setEmail] = useState('');
   const [message, setMessage] = useState('');
   const [company, setCompany] = useState('');
+  const [copied, setCopied] = useState(false);
   const [status, setStatus] = useState<Status>('idle');
   const [error, setError] = useState('');
   const firstFieldRef = useRef<HTMLInputElement | null>(null);
@@ -147,6 +148,14 @@ export default function ContactModal() {
         .contact-modal-submit:disabled { opacity: 0.6; cursor: default; }
         .contact-modal-alt { margin: 1.1rem 0 0; text-align: center; font-size: 13px; color: rgba(255,255,255,0.5); }
         .contact-modal-alt a { color: rgba(255,255,255,0.8); }
+        .contact-modal-copy {
+          display: inline-flex; align-items: center; gap: 0.4rem;
+          margin-left: 0.6rem; padding: 0.3rem 0.75rem;
+          background: transparent; border: 1px solid #2a2c31; border-radius: 999px;
+          color: rgba(255,255,255,0.8); font-family: inherit; font-size: 12px; font-weight: 600;
+          letter-spacing: 0.04em; cursor: pointer; vertical-align: middle;
+        }
+        .contact-modal-copy:hover { border-color: #f2908f; color: #f2908f; }
         .contact-modal-sent { text-align: center; padding: 1.5rem 0 0.5rem; }
         .contact-modal-sent-title {
           font-family: 'Newsreader', 'Source Serif 4', Georgia, serif;
@@ -230,6 +239,18 @@ export default function ContactModal() {
               </button>
               <p className="contact-modal-alt">
                 Prefer email? <a href="mailto:iryna@irynasheremeta.com">iryna@irynasheremeta.com</a>
+                <button
+                  type="button"
+                  className="contact-modal-copy"
+                  onClick={() => {
+                    navigator.clipboard.writeText('iryna@irynasheremeta.com').then(() => {
+                      setCopied(true);
+                      setTimeout(() => setCopied(false), 2000);
+                    }).catch(() => {});
+                  }}
+                >
+                  {copied ? 'Copied' : 'Copy email'}
+                </button>
               </p>
             </form>
           </>
