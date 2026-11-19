@@ -37,6 +37,11 @@ export default function HeroV2({ variant = 'client' }: { variant?: 'client' | 'h
           color: #f2908f !important;
           -webkit-text-fill-color: #f2908f !important;
         }
+        .hero-websites .hero-text .hero-statement .headline-line:first-child .headline-desktop-accent,
+        .hero-websites .hero-text .hero-statement .headline-line:first-child .headline-mobile-accent {
+          color: #f2908f !important;
+          -webkit-text-fill-color: #f2908f !important;
+        }
         .v2-theme .hero-statement,
         .hero-statement {
           zoom: 0.84;
@@ -1095,11 +1100,10 @@ export default function HeroV2({ variant = 'client' }: { variant?: 'client' | 'h
                   ) : isWebsites ? (
                     <>
                       <span className="hero-body-desktop">
-                        <span className="hero-body-row hero-body-light" style={{ fontWeight: 400 }}>Starting from zero, or stuck with a site that undersells you? Visitors land, can&rsquo;t tell what you do, and leave?<br />Let&rsquo;s fix that.</span>
+                        <span className="hero-body-row hero-body-light" style={{ fontWeight: 400 }}>Starting from zero, or stuck with a site that undersells you? Visitors land, can&rsquo;t tell what you do, and leave? <strong className="hero-body-bold">Let&rsquo;s fix that.</strong></span>
                       </span>
                       <span className="hero-body-mobile">
-                        <span className="hero-body-mobile-text hero-body-light">Starting from zero, or stuck with a site that undersells you? Visitors land, can’t tell what you do, and leave?</span>{' '}
-                        <span className="hero-body-finish"><span className="hero-body-light hero-mobile-next-line">Let’s fix that.</span></span>
+                        <span className="hero-body-mobile-text hero-body-light">Starting from zero, or stuck with a site that undersells you? Visitors land, can’t tell what you do, and leave? <strong className="hero-body-bold">Let’s fix that.</strong></span>
                       </span>
                     </>
                   ) : (
