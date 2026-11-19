@@ -9,14 +9,14 @@ const LOOP_EASE: [number, number, number, number] = [0.16, 1, 0.3, 1];
 const rowLoopVariants: Variants = {
   rest: { opacity: 1, y: 0 },
   loop: (i: number) => {
-    const s = 0.2 + i * 0.5;
-    const e = s + 0.6;
+    const s = 0.15 + i * 0.45;
+    const e = s + 0.55;
     return {
       opacity: [0, 0, 1, 1, 0, 0],
       y: [16, 16, 0, 0, -10, -10],
       transition: {
         duration: LOOP_SECONDS,
-        times: [0, s / LOOP_SECONDS, e / LOOP_SECONDS, 5.55 / LOOP_SECONDS, 6.15 / LOOP_SECONDS, 1],
+        times: [0, s / LOOP_SECONDS, e / LOOP_SECONDS, 5.3 / LOOP_SECONDS, 5.85 / LOOP_SECONDS, 1],
         repeat: Infinity,
         ease: LOOP_EASE,
       },
@@ -27,14 +27,14 @@ const rowLoopVariants: Variants = {
 const iconBoxVariants: Variants = {
   rest: { scale: 1, opacity: 1 },
   loop: (i: number) => {
-    const s = 0.2 + i * 0.5;
-    const e = s + 0.6;
+    const s = 0.15 + i * 0.45;
+    const e = s + 0.55;
     return {
       scale: [0.82, 0.82, 1, 1, 0.94, 0.94],
       opacity: [0, 0, 1, 1, 0, 0],
       transition: {
         duration: LOOP_SECONDS,
-        times: [0, s / LOOP_SECONDS, e / LOOP_SECONDS, 5.55 / LOOP_SECONDS, 6.15 / LOOP_SECONDS, 1],
+        times: [0, s / LOOP_SECONDS, e / LOOP_SECONDS, 5.3 / LOOP_SECONDS, 5.85 / LOOP_SECONDS, 1],
         repeat: Infinity,
         ease: LOOP_EASE,
       },
@@ -45,8 +45,8 @@ const iconBoxVariants: Variants = {
 const iconDrawVariants: Variants = {
   rest: { pathLength: 1 },
   loop: (i: number) => {
-    const s = 0.32 + i * 0.5;
-    const e = s + 0.8;
+    const s = 0.27 + i * 0.45;
+    const e = s + 0.75;
     return {
       pathLength: [0, 0, 1, 1],
       transition: {
