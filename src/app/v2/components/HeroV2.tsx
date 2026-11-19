@@ -3,8 +3,9 @@
 import '@/app/components/Hero.css';
 import heroImage from '@/app/assets/new_me.jpg';
 
-export default function HeroV2({ variant = 'client' }: { variant?: 'client' | 'hire' } = {}) {
+export default function HeroV2({ variant = 'client' }: { variant?: 'client' | 'hire' | 'websites' } = {}) {
   const isHire = variant === 'hire';
+  const isWebsites = variant === 'websites';
     
   return (
     <section className={isHire ? 'section hero-section hero-hire' : 'section hero-section'} id="home" style={{ backgroundColor: '#121316', background: '#121316' }}>
@@ -926,6 +927,13 @@ export default function HeroV2({ variant = 'client' }: { variant?: 'client' | 'h
                   <span className="headline-desktop">
                     {isHire ? (
                       null
+                    ) : isWebsites ? (
+                      <>
+                        <span className="headline-line">
+                          <span className="headline-desktop-serif-normal">Custom</span>{' '}
+                          <strong className="headline-desktop-accent">websites.</strong>
+                        </span>
+                      </>
                     ) : (
                       <>
                         <span className="headline-line">
@@ -968,6 +976,13 @@ export default function HeroV2({ variant = 'client' }: { variant?: 'client' | 'h
                   <span className="headline-mobile" style={{ gap: '0px', lineHeight: 1.02 }}>
                     {isHire ? (
                       null
+                    ) : isWebsites ? (
+                      <>
+                        <span className="headline-line">
+                          <span className="headline-mobile-serif-normal">Custom</span>{' '}
+                          <strong className="headline-mobile-accent">websites.</strong>
+                        </span>
+                      </>
                     ) : (
                       <>
                         <span className="headline-line">
@@ -1018,6 +1033,16 @@ export default function HeroV2({ variant = 'client' }: { variant?: 'client' | 'h
                         <span className="hero-body-finish"><strong className="hero-body-bold">Everything below is live,</strong>{' '}<span className="hero-body-light">not a mockup.</span></span>
                       </span>
                     </>
+                  ) : isWebsites ? (
+                    <>
+                      <span className="hero-body-desktop">
+                        <span className="hero-body-row hero-body-light" style={{ fontWeight: 400 }}>Got a dated site that undersells you — visitors land, can&rsquo;t tell what you do, and leave? <span className="hero-body-finish"><strong className="hero-body-bold">I build the site that fixes it,</strong> <span className="hero-body-light">so you don&rsquo;t have to.</span></span></span>
+                      </span>
+                      <span className="hero-body-mobile">
+                        <span className="hero-body-mobile-text hero-body-light">Got a dated site that undersells you — visitors land, can’t tell what you do, and leave?</span>{' '}
+                        <span className="hero-body-finish"><strong className="hero-body-bold">I build the site that fixes it,</strong>{' '}<span className="hero-body-light">so you don’t have to.</span></span>
+                      </span>
+                    </>
                   ) : (
                     <>
                       <span className="hero-body-desktop">
@@ -1050,14 +1075,14 @@ export default function HeroV2({ variant = 'client' }: { variant?: 'client' | 'h
                   className="btn prefooter-btn-primary face-cta" 
                   style={{ display: 'inline-flex', alignItems: 'center', gap: '0.45rem', ...(isHire ? { minWidth: '272px' } : {}) }}
                 >
-                  <span>{isHire ? 'GET IN TOUCH' : 'SEND YOUR PROBLEM MY WAY'}</span>
+                  <span>{isHire ? 'GET IN TOUCH' : isWebsites ? 'TELL ME ABOUT YOUR WEBSITE' : 'SEND YOUR PROBLEM MY WAY'}</span>
                   <svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round" style={{ transform: 'translateY(-0.5px)' }}>
                     <line x1="7" y1="17" x2="17" y2="7"></line>
                     <polyline points="7 7 17 7 17 17"></polyline>
                   </svg>
                 </a>
                 <a href="#cases" className="btn btn-secondary btn-secondary-stacked" style={{ color: 'rgba(255, 255, 255, 0.8)' }}>
-                  SEE WHAT I’VE BUILT <span className="arrow" style={{ color: 'rgba(255, 255, 255, 0.8)' }}>↓</span>
+                  {isWebsites ? 'SEE RECENT PROJECTS' : 'SEE WHAT I’VE BUILT'} <span className="arrow" style={{ color: 'rgba(255, 255, 255, 0.8)' }}>↓</span>
                 </a>
               </div>
             </div>
