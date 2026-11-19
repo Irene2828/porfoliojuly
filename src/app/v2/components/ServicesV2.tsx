@@ -1,98 +1,18 @@
 'use client';
 
-import { useRef } from 'react';
-import { motion, useInView, useReducedMotion, type Variants } from 'framer-motion';
-
-const LOOP_SECONDS = 6.4;
-const LOOP_EASE: [number, number, number, number] = [0.16, 1, 0.3, 1];
-
-const rowLoopVariants: Variants = {
-  rest: { opacity: 1, y: 0 },
-  loop: (i: number) => {
-    const s = 0.15 + i * 0.45;
-    const e = s + 0.55;
-    return {
-      opacity: [0, 0, 1, 1, 0, 0],
-      y: [16, 16, 0, 0, -10, -10],
-      transition: {
-        duration: LOOP_SECONDS,
-        times: [0, s / LOOP_SECONDS, e / LOOP_SECONDS, 5.3 / LOOP_SECONDS, 5.85 / LOOP_SECONDS, 1],
-        repeat: Infinity,
-        ease: LOOP_EASE,
-      },
-    };
-  },
-};
-
-const iconBoxVariants: Variants = {
-  rest: { scale: 1, opacity: 1 },
-  loop: (i: number) => {
-    const s = 0.15 + i * 0.45;
-    const e = s + 0.55;
-    return {
-      scale: [0.82, 0.82, 1, 1, 0.94, 0.94],
-      opacity: [0, 0, 1, 1, 0, 0],
-      transition: {
-        duration: LOOP_SECONDS,
-        times: [0, s / LOOP_SECONDS, e / LOOP_SECONDS, 5.3 / LOOP_SECONDS, 5.85 / LOOP_SECONDS, 1],
-        repeat: Infinity,
-        ease: LOOP_EASE,
-      },
-    };
-  },
-};
-
-const iconDrawVariants: Variants = {
-  rest: { pathLength: 1 },
-  loop: (i: number) => {
-    const s = 0.27 + i * 0.45;
-    const e = s + 0.75;
-    return {
-      pathLength: [0, 0, 1, 1],
-      transition: {
-        duration: LOOP_SECONDS,
-        times: [0, s / LOOP_SECONDS, e / LOOP_SECONDS, 1],
-        repeat: Infinity,
-        ease: 'easeInOut',
-      },
-    };
-  },
-};
-
-const sheenVariants: Variants = {
-  rest: { x: '-130%' },
-  loop: (i: number) => {
-    const a = 3.05 + i * 0.18;
-    const b = a + 0.85;
-    return {
-      x: ['-130%', '-130%', '130%', '130%'],
-      transition: {
-        duration: LOOP_SECONDS,
-        times: [0, a / LOOP_SECONDS, b / LOOP_SECONDS, 1],
-        repeat: Infinity,
-        ease: 'easeInOut',
-      },
-    };
-  },
-};
+import { motion } from 'framer-motion';
 
 type ServicesV2Props = {
   websitesOnly?: boolean;
 };
 
 export default function ServicesV2({ websitesOnly = false }: ServicesV2Props) {
-  const bulletsRef = useRef<HTMLUListElement>(null);
-  const bulletsInView = useInView(bulletsRef, { amount: 0.35 });
-  const reduceMotion = useReducedMotion();
-  const loopActive = websitesOnly && !reduceMotion;
-
   const homepageWebsitesBullets = [
     {
       text: <span><strong>Clear in seconds:</strong> what you do, who it’s for, how to reach you</span>,
       icon: (
         <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#e8ebee" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
-          <motion.path d="M12 2 A10 10 0 1 1 11.9 2.01" variants={iconDrawVariants} />
-          <motion.path d="M12 6 L12 12 L16 14" variants={iconDrawVariants} />
+          <circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/>
         </svg>
       )
     },
@@ -100,10 +20,7 @@ export default function ServicesV2({ websitesOnly = false }: ServicesV2Props) {
       text: <span>Designed around your clients’ questions, not a template</span>,
       icon: (
         <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#e8ebee" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
-          <motion.path d="M5 4 h14 a2 2 0 0 1 2 2 v14 a2 2 0 0 1 -2 2 H5 a2 2 0 0 1 -2 -2 V6 a2 2 0 0 1 2 -2 Z" variants={iconDrawVariants} />
-          <motion.path d="M16 2 v4" variants={iconDrawVariants} />
-          <motion.path d="M8 2 v4" variants={iconDrawVariants} />
-          <motion.path d="M3 10 h18" variants={iconDrawVariants} />
+          <rect x="3" y="4" width="18" height="18" rx="2" ry="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/>
         </svg>
       )
     },
@@ -111,7 +28,7 @@ export default function ServicesV2({ websitesOnly = false }: ServicesV2Props) {
       text: <span><strong>Fast on phones</strong>, and you can update it without calling a developer</span>,
       icon: (
         <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#e8ebee" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
-          <motion.path d="M13 2L3 14h9l-1 8 10-12h-9l1-8z" variants={iconDrawVariants} />
+          <path d="M13 2L3 14h9l-1 8 10-12h-9l1-8z"/>
         </svg>
       )
     }
@@ -527,82 +444,54 @@ export default function ServicesV2({ websitesOnly = false }: ServicesV2Props) {
                   {websitesOnly ? 'For when your work is better than your website' : 'For when your work is better than your current website'}
                 </motion.p>}
                 
-                <motion.ul
-                  ref={websitesOnly ? bulletsRef : undefined}
-                  initial={false}
-                  animate={loopActive ? (bulletsInView ? 'loop' : 'rest') : undefined}
-                  className={websitesOnly ? 'homepage-services-bullets' : undefined} style={{ listStyle: 'none', padding: 0, margin: 0, display: 'flex', flexDirection: 'column', gap: '16px' }}>
+                <ul className={websitesOnly ? 'homepage-services-bullets' : undefined} style={{ listStyle: 'none', padding: 0, margin: 0, display: 'flex', flexDirection: 'column', gap: '16px' }}>
                   {websitesBullets.map((bullet, idx) => (
                     <motion.li
                       key={idx}
-                      {...(websitesOnly
-                        ? { variants: rowLoopVariants, custom: idx }
-                        : {
-                            initial: { opacity: 0, x: -16, y: 10 },
-                            whileInView: { opacity: 1, x: 0, y: 0 },
-                            viewport: { once: true, amount: 0.25 },
-                            transition: { duration: 0.65, delay: 0.24 + idx * 0.11, ease: [0.16, 1, 0.3, 1] as [number, number, number, number] },
-                          })}
-                      style={{
+                      initial={{ opacity: 0, x: -16, y: 10 }}
+                      whileInView={{ opacity: 1, x: 0, y: 0 }}
+                      viewport={{ once: true, amount: 0.25 }}
+                      transition={{ duration: 0.65, delay: 0.24 + idx * 0.11, ease: [0.16, 1, 0.3, 1] }}
+                      style={{ 
                         fontSize: 'var(--text-body)',
-                        color: '#e8ebee',
-                        display: 'flex',
-                        alignItems: 'center',
-                        gap: '16px',
+                        color: '#e8ebee', 
+                        display: 'flex', 
+                        alignItems: 'center', 
+                        gap: '16px', 
                         lineHeight: 'var(--lh-body)',
                         background: 'rgba(255, 255, 255, 0.04)',
                         borderRadius: '0px',
                         boxShadow: '0 1px 6px rgba(0, 0, 0, 0.1)',
                         border: '1px solid rgba(255, 255, 255, 0.08)',
-                        padding: '8px 24px 8px 8px',
-                        ...(websitesOnly ? { position: 'relative' as const, overflow: 'hidden' } : {})
+                        padding: '8px 24px 8px 8px'
                       }}
                     >
-                      {websitesOnly && (
-                        <motion.div
-                          aria-hidden="true"
-                          variants={sheenVariants}
-                          custom={idx}
-                          style={{
-                            position: 'absolute',
-                            inset: 0,
-                            pointerEvents: 'none',
-                            background: 'linear-gradient(105deg, transparent 42%, rgba(214, 183, 146, 0.09) 50%, rgba(242, 144, 143, 0.09) 54%, transparent 62%)'
-                          }}
-                        />
-                      )}
                       <motion.div
-                        {...(websitesOnly
-                          ? { variants: iconBoxVariants, custom: idx }
-                          : {
-                              initial: { scale: 0.82, opacity: 0 },
-                              whileInView: { scale: 1, opacity: 1 },
-                              viewport: { once: true, amount: 0.25 },
-                              transition: { duration: 0.5, delay: 0.3 + idx * 0.11, ease: [0.16, 1, 0.3, 1] as [number, number, number, number] },
-                            })}
-                        style={{
-                          width: '40px',
-                          height: '40px',
-                          borderRadius: '0px',
+                        initial={{ scale: 0.82, opacity: 0 }}
+                        whileInView={{ scale: 1, opacity: 1 }}
+                        viewport={{ once: true, amount: 0.25 }}
+                        transition={{ duration: 0.5, delay: 0.3 + idx * 0.11, ease: [0.16, 1, 0.3, 1] }}
+                        style={{ 
+                          width: '40px', 
+                          height: '40px', 
+                          borderRadius: '0px', 
                           backgroundColor: 'var(--color-matte-black, #25282e)',
-                          display: 'flex',
-                          alignItems: 'center',
+                          display: 'flex', 
+                          alignItems: 'center', 
                           justifyContent: 'center',
                           boxShadow: '0 1px 4px rgba(0,0,0,0.1)',
                           flexShrink: 0,
-                          border: 'none',
-                          position: 'relative',
-                          zIndex: 1
+                          border: 'none'
                         }}
                       >
                         {bullet.icon}
                       </motion.div>
-                      <div style={{ color: '#e8ebee', fontSize: 'inherit', letterSpacing: 'inherit', position: 'relative', zIndex: 1 }}>
+                      <div style={{ color: '#e8ebee', fontSize: 'inherit', letterSpacing: 'inherit' }}>
                         {bullet.text}
                       </div>
                     </motion.li>
                   ))}
-                </motion.ul>
+                </ul>
                 <div className={websitesOnly ? 'homepage-services-cta' : undefined} style={{ display: 'flex', justifyContent: 'center', marginTop: '64px' }}>
                   <a href="#packages" style={{ background: 'none', border: 0, padding: 0, fontFamily: 'var(--font-label), sans-serif', fontSize: 'var(--text-label)', fontWeight: 600, letterSpacing: '0.105em', color: '#efb4a4', cursor: 'pointer', textDecoration: 'none' }}>
                     SEE WEBSITE PACKAGES <span aria-hidden="true" style={{ marginLeft: '4px' }}>↓</span>
