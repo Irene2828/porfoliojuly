@@ -1,6 +1,7 @@
 'use client';
 
 import { useRef, useState, type ReactNode, type SyntheticEvent } from 'react';
+import { openContact } from '@/app/components/ContactModal';
 import { motion, useInView } from 'framer-motion';
 import heroImage from '@/app/assets/new_me.jpg';
 
@@ -1390,6 +1391,7 @@ export function HireClosing() {
         >
           <a
             href="mailto:iryna@irynasheremeta.com"
+            onClick={(e) => { e.preventDefault(); openContact(); }}
             className="btn hire-closing-btn face-cta"
             style={{ display: 'inline-flex', alignItems: 'center', gap: '0.45rem' }}
           >
