@@ -371,9 +371,9 @@ export default function HeroV2({ variant = 'client' }: { variant?: 'client' | 'h
             padding: 0 !important;
             vertical-align: baseline !important;
           }
-          /* Websites mobile hero: headline +10% and tighter leading (premium) */
+          /* Websites mobile hero: headline as large as fits (+4%; +10% clipped the long lines), tighter leading */
           .hero-websites .hero-name-group .hero-text .headline-mobile {
-            font-size: clamp(3.10rem, 14.05vw, 4.60rem) !important;
+            font-size: clamp(2.93rem, 13.28vw, 4.35rem) !important;
             line-height: 0.92 !important;
           }
           .hero-websites .hero-name-group .hero-text .headline-mobile .headline-line,
