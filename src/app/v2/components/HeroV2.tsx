@@ -21,6 +21,22 @@ export default function HeroV2({ variant = 'client' }: { variant?: 'client' | 'h
           display: none !important;
         }
         /* Headline scaled down (now +5% larger on desktops: 0.84) */
+        /* Websites hero headline colors: "Custom" + "yours." brand pink, middle words white */
+        .hero-websites .hero-text .hero-statement .headline-desktop-accent,
+        .hero-websites .hero-text .hero-statement .headline-mobile-accent {
+          color: #ffffff !important;
+          -webkit-text-fill-color: #ffffff !important;
+        }
+        .hero-websites .hero-text .hero-statement .headline-desktop-serif,
+        .hero-websites .hero-text .hero-statement .headline-mobile-serif {
+          color: #f2908f !important;
+          -webkit-text-fill-color: #f2908f !important;
+        }
+        .hero-websites .hero-text .hero-statement .headline-line:first-child .headline-desktop-serif-normal,
+        .hero-websites .hero-text .hero-statement .headline-line:first-child .headline-mobile-serif-normal {
+          color: #f2908f !important;
+          -webkit-text-fill-color: #f2908f !important;
+        }
         .v2-theme .hero-statement,
         .hero-statement {
           zoom: 0.84;
@@ -1079,11 +1095,11 @@ export default function HeroV2({ variant = 'client' }: { variant?: 'client' | 'h
                   ) : isWebsites ? (
                     <>
                       <span className="hero-body-desktop">
-                        <span className="hero-body-row hero-body-light" style={{ fontWeight: 400 }}>Starting from zero, or stuck with a site that undersells you? Visitors land, can&rsquo;t tell what you do, and leave. <span className="hero-body-finish"><strong className="hero-body-bold">I design and build what fixes it.</strong>{' '}<span className="hero-body-light">So you don&rsquo;t have to.</span></span></span>
+                        <span className="hero-body-row hero-body-light" style={{ fontWeight: 400 }}>Starting from zero, or stuck with a site that undersells you? Visitors land, can&rsquo;t tell what you do, and leave?<br />Let&rsquo;s fix that.</span>
                       </span>
                       <span className="hero-body-mobile">
-                        <span className="hero-body-mobile-text hero-body-light">Starting from zero, or stuck with a site that undersells you? Visitors land, can’t tell what you do, and leave.</span>{' '}
-                        <span className="hero-body-finish"><strong className="hero-body-bold">I design and build what fixes it.</strong>{' '}<span className="hero-body-light hero-mobile-next-line">So you don’t have to.</span></span>
+                        <span className="hero-body-mobile-text hero-body-light">Starting from zero, or stuck with a site that undersells you? Visitors land, can’t tell what you do, and leave?</span>{' '}
+                        <span className="hero-body-finish"><span className="hero-body-light hero-mobile-next-line">Let’s fix that.</span></span>
                       </span>
                     </>
                   ) : (
