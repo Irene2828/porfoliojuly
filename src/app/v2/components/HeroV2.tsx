@@ -216,6 +216,9 @@ export default function HeroV2({ variant = 'client' }: { variant?: 'client' | 'h
           .hero-statement {
             zoom: 0.845 !important; /* +5% headline size on mobile */
           }
+          .hero-websites .hero-statement {
+            zoom: 0.9295 !important; /* +10% from the current homepage mobile size */
+          }
           .v2-theme .hero-name-group .hero-text,
           .hero-name-group .hero-text,
           .hero-text {
@@ -254,6 +257,10 @@ export default function HeroV2({ variant = 'client' }: { variant?: 'client' | 'h
           .hero-body-mobile .hero-body-finish {
             font-size: 15.6px;
             margin-top: 0.5225em;
+          }
+          .hero-body-mobile .hero-mobile-next-line {
+            display: block !important;
+            white-space: nowrap !important;
           }
           .hero-body-desktop {
             display: none !important;
@@ -1072,11 +1079,11 @@ export default function HeroV2({ variant = 'client' }: { variant?: 'client' | 'h
                   ) : isWebsites ? (
                     <>
                       <span className="hero-body-desktop">
-                        <span className="hero-body-row hero-body-light" style={{ fontWeight: 400 }}>Starting from zero, or stuck with a site that undersells you? Visitors land, can&rsquo;t tell what you do, and leave. <span className="hero-body-finish"><strong className="hero-body-bold">I design and build a site that fixes this. End-to-end. So you don&rsquo;t have to.</strong></span></span>
+                        <span className="hero-body-row hero-body-light" style={{ fontWeight: 400 }}>Starting from zero, or stuck with a site that undersells you? Visitors land, can&rsquo;t tell what you do, and leave. <span className="hero-body-finish"><strong className="hero-body-bold">I design and build what fixes it.</strong>{' '}<span className="hero-body-light">So you don&rsquo;t have to.</span></span></span>
                       </span>
                       <span className="hero-body-mobile">
                         <span className="hero-body-mobile-text hero-body-light">Starting from zero, or stuck with a site that undersells you? Visitors land, can’t tell what you do, and leave.</span>{' '}
-                        <span className="hero-body-finish"><strong className="hero-body-bold">I design and build a site that fixes this. End-to-end. So you don’t have to.</strong></span>
+                        <span className="hero-body-finish"><strong className="hero-body-bold">I design and build what fixes it.</strong>{' '}<span className="hero-body-light hero-mobile-next-line">So you don’t have to.</span></span>
                       </span>
                     </>
                   ) : (
