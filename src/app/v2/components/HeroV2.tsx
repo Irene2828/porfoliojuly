@@ -931,7 +931,12 @@ export default function HeroV2({ variant = 'client' }: { variant?: 'client' | 'h
                       <>
                         <span className="headline-line">
                           <span className="headline-desktop-serif-normal">Custom</span>{' '}
-                          <strong className="headline-desktop-accent">websites.</strong>
+                          <strong className="headline-desktop-accent">websites</strong>{' '}
+                          <span className="headline-desktop-serif-normal">designed and built</span>
+                        </span>
+                        <span className="headline-line">
+                          <span className="headline-desktop-serif-normal">around one business &mdash;</span>{' '}
+                          <em className="headline-desktop-serif">yours.</em>
                         </span>
                       </>
                     ) : (
@@ -947,18 +952,20 @@ export default function HeroV2({ variant = 'client' }: { variant?: 'client' | 'h
                         </span>
                       </>
                     )}
-                    <span className="headline-line">
-                      {isHire ? (
-                        <>
-                          <span className="headline-desktop-serif-normal">From problem &mdash;</span>
-                        </>
-                      ) : (
-                        <>
-                          <span className="headline-desktop-serif-normal">Built for one business &mdash;</span>{' '}
-                          <em className="headline-desktop-serif">yours.</em>
-                        </>
-                      )}
-                    </span>
+                    {!isWebsites && (
+                      <span className="headline-line">
+                        {isHire ? (
+                          <>
+                            <span className="headline-desktop-serif-normal">From problem &mdash;</span>
+                          </>
+                        ) : (
+                          <>
+                            <span className="headline-desktop-serif-normal">Built for one business &mdash;</span>{' '}
+                            <em className="headline-desktop-serif">yours.</em>
+                          </>
+                        )}
+                      </span>
+                    )}
                     {isHire && (
                       <>
                         <span className="headline-line">
@@ -980,7 +987,16 @@ export default function HeroV2({ variant = 'client' }: { variant?: 'client' | 'h
                       <>
                         <span className="headline-line">
                           <span className="headline-mobile-serif-normal">Custom</span>{' '}
-                          <strong className="headline-mobile-accent">websites.</strong>
+                          <strong className="headline-mobile-accent">websites</strong>
+                        </span>
+                        <span className="headline-line">
+                          <span className="headline-mobile-serif-normal">designed and built</span>
+                        </span>
+                        <span className="headline-line">
+                          <span className="headline-mobile-serif-normal">around one business &mdash;</span>
+                        </span>
+                        <span className="headline-line">
+                          <em className="headline-mobile-serif">yours.</em>
                         </span>
                       </>
                     ) : (
@@ -1009,7 +1025,7 @@ export default function HeroV2({ variant = 'client' }: { variant?: 'client' | 'h
                           <span className="headline-mobile-serif-normal">solution.</span>
                         </span>
                       </>
-                    ) : (
+                    ) : isWebsites ? null : (
                       <>
                         <span className="headline-line">
                           <span className="headline-mobile-serif-normal">Built for one</span>
