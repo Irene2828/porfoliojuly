@@ -62,7 +62,7 @@ export default function HomePage() {
 
         <FaqSection variant="websites" />
 
-        <Footer />
+        <Footer variant="ticker" />
       </div>
     </ClientWrapper>
   );
