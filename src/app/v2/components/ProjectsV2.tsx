@@ -20,6 +20,7 @@ const textVariant = {
 interface ProjectsV2Props {
   initialProjects?: any[];
   showWorkflowAutomations?: boolean;
+  recentProjects?: boolean;
 }
 
 function DevicePair({ desktopSrc, desktopVideoSrc, phoneImgSrc, phoneVideoSrc, alt, modal = false }: { desktopSrc: string; desktopVideoSrc?: string; phoneImgSrc?: string; phoneVideoSrc?: string; alt: string; modal?: boolean }) {
@@ -43,7 +44,7 @@ function DevicePair({ desktopSrc, desktopVideoSrc, phoneImgSrc, phoneVideoSrc, a
   );
 }
 
-export default function ProjectsV2({ initialProjects = [], showWorkflowAutomations = true }: ProjectsV2Props) {
+export default function ProjectsV2({ initialProjects = [], showWorkflowAutomations = true, recentProjects = false }: ProjectsV2Props) {
   const [selectedProjectId, setSelectedProjectId] = useState<string | null>(null);
   const [hoveredProjectId, setHoveredProjectId] = useState<string | null>(null);
   const HOVER_MEDIA: Record<string, { staticSrc: string; hoverSrc: string }> = {};
@@ -185,6 +186,9 @@ export default function ProjectsV2({ initialProjects = [], showWorkflowAutomatio
     { id: 'workflow-automations', label: 'Workflow Automations' },
   ].filter((group) => showWorkflowAutomations || group.id !== 'workflow-automations')
     .map((group) => ({ ...group, projects: projectsList.filter((p) => TAB_CASE_IDS[group.id as keyof typeof TAB_CASE_IDS].includes(p.id)) }));
+  const visibleGroups = recentProjects
+    ? [{ id: 'recent', label: '', projects: ['v2-3', 'v2-2', 'v2-1'].map((id) => projectsList.find((p) => p.id === id)).filter((p): p is (typeof projectsList)[number] => Boolean(p)) }]
+    : caseGroups;
     const selectedProject = projectsList.find((p) => p.id === selectedProjectId) ?? null;
 
   useEffect(() => {
@@ -821,7 +825,11 @@ export default function ProjectsV2({ initialProjects = [], showWorkflowAutomatio
             textWrap: 'balance'
           }}
         >
-          <span style={{ fontWeight: 400, color: 'var(--color-heading-silver, #4a5461)' }}>Examples of</span>{' '}<span style={{ fontWeight: 400, color: 'var(--color-heading-silver, #4a5461)' }}>my work</span>
+          {recentProjects ? (
+            <span style={{ fontWeight: 400, color: 'var(--color-heading-silver, #4a5461)' }}>Recent projects</span>
+          ) : (
+            <><span style={{ fontWeight: 400, color: 'var(--color-heading-silver, #4a5461)' }}>Examples of</span>{' '}<span style={{ fontWeight: 400, color: 'var(--color-heading-silver, #4a5461)' }}>my work</span></>
+          )}
         </motion.h2>
 
               <div aria-hidden="true" style={{ height: '28px' }} />
@@ -837,11 +845,13 @@ export default function ProjectsV2({ initialProjects = [], showWorkflowAutomatio
           paddingTop: '0.375rem'
         }}
       >
-        {caseGroups.map((group) => (
+        {visibleGroups.map((group) => (
           <div className="case-group" key={group.id} style={{ width: '100%' }}>
-            <h3 style={{ fontFamily: 'var(--font-body)', fontSize: 'var(--text-lead)', fontWeight: 400, lineHeight: 1.35, letterSpacing: '-0.011em', color: '#2b3038', textAlign: 'center', margin: '0 0 1rem' }}>
-              {group.label}
-            </h3>
+            {group.label ? (
+              <h3 style={{ fontFamily: 'var(--font-body)', fontSize: 'var(--text-lead)', fontWeight: 400, lineHeight: 1.35, letterSpacing: '-0.011em', color: '#2b3038', textAlign: 'center', margin: '0 0 1rem' }}>
+                {group.label}
+              </h3>
+            ) : null}
             <div className="cases-grid-container">
           {group.projects.map((project, idx) => {
             return (
