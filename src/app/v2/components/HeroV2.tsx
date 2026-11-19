@@ -21,31 +21,22 @@ export default function HeroV2({ variant = 'client' }: { variant?: 'client' | 'h
           display: none !important;
         }
         /* Headline scaled down (now +5% larger on desktops: 0.84) */
-        /* Websites hero headline colors: pink "Custom websites designed and built", white "yours." */
+        /* Websites hero headline: italic pink "Custom" and "yours.", everything else white (all screens) */
         .hero-websites .hero-text .hero-statement .headline-desktop-accent,
         .hero-websites .hero-text .hero-statement .headline-mobile-accent {
-          color: #f2908f !important;
-          -webkit-text-fill-color: #f2908f !important;
+          color: #ffffff !important;
+          -webkit-text-fill-color: #ffffff !important;
         }
         .hero-websites .hero-text .hero-statement .headline-desktop-serif,
         .hero-websites .hero-text .hero-statement .headline-mobile-serif {
-          color: #ffffff !important;
-          -webkit-text-fill-color: #ffffff !important;
+          color: #f2908f !important;
+          -webkit-text-fill-color: #f2908f !important;
         }
         .hero-websites .hero-text .hero-statement .headline-line:first-child .headline-desktop-serif-normal,
         .hero-websites .hero-text .hero-statement .headline-line:first-child .headline-mobile-serif-normal {
           color: #f2908f !important;
           -webkit-text-fill-color: #f2908f !important;
-        }
-        /* Mobile only: "designed and built" stays white (desktop keeps it pink) */
-        .hero-websites .hero-text .hero-statement .headline-line:not(:first-child) .headline-mobile-accent {
-          color: #ffffff !important;
-          -webkit-text-fill-color: #ffffff !important;
-        }
-        /* Mobile only: "yours." stays pink (desktop has it white) */
-        .hero-websites .hero-text .hero-statement .headline-line .headline-mobile-serif {
-          color: #f2908f !important;
-          -webkit-text-fill-color: #f2908f !important;
+          font-style: italic !important;
         }
         .v2-theme .hero-statement,
         .hero-statement {
