@@ -140,17 +140,29 @@ export default function ContactModal() {
         .contact-modal-hp { position: absolute; left: -9999px; width: 1px; height: 1px; opacity: 0; }
         .contact-modal-error { margin: 0.9rem 0 0; font-size: 13.5px; line-height: 1.5; color: #f2908f; }
         .contact-modal-submit {
-          width: 100%; margin-top: 1.35rem; height: 3.01rem;
+          display: flex; align-items: center; justify-content: center;
+          width: fit-content; min-width: 272px; max-width: 100%;
+          margin: 1.35rem auto 0; height: 3.01rem; padding: 0 1.74rem;
           background: linear-gradient(315deg, #d6b792 0%, #f2908f 100%);
-          color: #000000; border: 1px solid #ffffff; border-radius: 40px;
-          padding: 0 1.74rem; cursor: pointer;
-          font-family: inherit; font-size: 0.72rem; font-weight: 700; letter-spacing: 0.08em; text-transform: uppercase;
-          transition: all 0.25s ease;
+          color: #000000; -webkit-text-fill-color: #000000;
+          border: 1px solid #ffffff; border-radius: 40px;
+          font-family: var(--font-label), 'Plus Jakarta Sans', sans-serif; font-size: 0.72rem; font-weight: 700; letter-spacing: 0.08em; text-transform: uppercase; white-space: nowrap;
+          box-sizing: border-box; cursor: pointer; box-shadow: none; text-shadow: none;
+          transition: transform 0.22s cubic-bezier(0.16, 1, 0.3, 1), background 0.22s ease, border-color 0.22s ease, box-shadow 0.2s ease, color 0.22s ease;
+        }
+        .contact-modal-submit span {
+          font-size: 0.72rem; font-weight: 700; letter-spacing: 0.08em; text-transform: uppercase;
+          white-space: nowrap; display: inline-block; line-height: 1;
+          color: #000000; -webkit-text-fill-color: #000000;
         }
         .contact-modal-submit:hover:not(:disabled) {
           background: linear-gradient(315deg, #ddc19e 0%, #f49c9b 100%);
           transform: translateY(-2px);
           box-shadow: 0 8px 24px rgba(242, 144, 143, 0.28);
+        }
+        @media (max-width: 900px) {
+          .contact-modal-submit { height: 3.25rem; padding: 0 1.88rem; border-radius: 44px; }
+          .contact-modal-submit span { font-size: 0.78rem; }
         }
         .contact-modal-submit:disabled { opacity: 0.6; cursor: default; }
         .contact-modal-alt { margin: 1.1rem 0 0; text-align: center; font-size: 13px; color: rgba(255,255,255,0.5); }
@@ -184,7 +196,7 @@ export default function ContactModal() {
             </h3>
             <p>Thank you — I read every message myself and will get back to you soon.</p>
             <button type="button" className="contact-modal-submit" onClick={close}>
-              Done
+              <span>Done</span>
             </button>
           </div>
         ) : (
@@ -242,7 +254,7 @@ export default function ContactModal() {
               />
               {status === 'error' ? <p className="contact-modal-error">{error}</p> : null}
               <button type="submit" className="contact-modal-submit" disabled={status === 'sending'}>
-                {status === 'sending' ? 'Sending…' : 'Send message'}
+                <span>{status === 'sending' ? 'Sending…' : 'Send message'}</span>
               </button>
               <p className="contact-modal-alt">
                 Prefer email? <a href="mailto:iryna@irynasheremeta.com">iryna@irynasheremeta.com</a>
