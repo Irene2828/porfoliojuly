@@ -37,6 +37,11 @@ export default function HeroV2({ variant = 'client' }: { variant?: 'client' | 'h
           color: #f2908f !important;
           -webkit-text-fill-color: #f2908f !important;
         }
+        /* Mobile only: "designed and built" stays white (desktop keeps it pink) */
+        .hero-websites .hero-text .hero-statement .headline-line:not(:first-child) .headline-mobile-accent {
+          color: #ffffff !important;
+          -webkit-text-fill-color: #ffffff !important;
+        }
         .v2-theme .hero-statement,
         .hero-statement {
           zoom: 0.84;
