@@ -166,7 +166,7 @@ export default function FaqSection({ variant = 'all' }: { variant?: 'all' | 'web
           text-align: left !important;
         }
         .faq-question {
-          font-size: var(--text-subhead) !important;
+          font-size: calc(var(--text-subhead) * 0.95) !important;
           line-height: 1.3;
           font-family: var(--font-heading) !important;
           font-weight: 400 !important;
@@ -273,7 +273,7 @@ export default function FaqSection({ variant = 'all' }: { variant?: 'all' | 'web
             font-size: clamp(1.9rem, 8vw, 2.4rem) !important; margin-left: 0 !important; margin-right: 0 !important;
           }
           .faq-question {
-          font-size: var(--text-subhead) !important;
+          font-size: calc(var(--text-subhead) * 0.95) !important;
           }
           .faq-answer-list li {
             font-size: var(--text-body) !important;
@@ -325,7 +325,7 @@ export default function FaqSection({ variant = 'all' }: { variant?: 'all' | 'web
           textAlign: 'left',
         }}
       >
-      <motion.h2 className={`faq-section-heading${variant === 'websites' ? ' homepage-light-heading' : ''}`} initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true, amount: 0.45 }} transition={{ duration: 0.78, delay: 0.08, ease: [0.16, 1, 0.3, 1] }} style={{ fontFamily: 'var(--font-heading)', fontSize: 'var(--text-section-title)', fontWeight: 400, lineHeight: 1.2, color: 'var(--color-heading-silver)', letterSpacing: '-0.02em', margin: '0 0 2.5rem 0', textAlign: 'center' }}><span className="faq-heading-question">Frequent questions</span><span className="faq-heading-answer">{variant === 'websites' ? ', ' : ' - '}<em>answered</em>.</span></motion.h2>
+      <motion.h2 className={`faq-section-heading${variant === 'websites' ? ' homepage-light-heading' : ''}`} initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true, amount: 0.45 }} transition={{ duration: 0.78, delay: 0.08, ease: [0.16, 1, 0.3, 1] }} style={{ fontFamily: 'var(--font-heading)', fontSize: 'var(--text-section-title)', fontWeight: 400, lineHeight: 1.2, color: 'var(--color-heading-silver)', letterSpacing: '-0.02em', margin: '0 0 2.5rem 0', textAlign: 'center' }}><span className="faq-heading-question">Frequent questions{variant === 'websites' ? ',' : ''}</span><span className="faq-heading-answer">{variant === 'websites' ? ' ' : ' - '}<em>answered</em>.</span></motion.h2>
       <div>
         {visibleFaqs.map((faq, index) => {
             const isOpen = openIndex === index;
