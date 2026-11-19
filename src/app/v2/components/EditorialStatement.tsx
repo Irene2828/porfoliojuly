@@ -1,6 +1,7 @@
 'use client';
 
 import { motion } from 'framer-motion';
+import { openContact } from '@/app/components/ContactModal';
 
 export default function EditorialStatement({ variant = 'default' }: { variant?: 'default' | 'websites' }) {
   const isWebsites = variant === 'websites';
@@ -368,8 +369,9 @@ export default function EditorialStatement({ variant = 'default' }: { variant?: 
             transition={{ duration: 0.72, delay: 0.42, ease: [0.16, 1, 0.3, 1] }}
             style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', gap: '1rem', marginTop: '0rem', marginBottom: '1.25rem', justifyContent: 'center' }}
           >
-            <a 
-              href="mailto:iryna@irynasheremeta.com" 
+            <a
+              href="mailto:iryna@irynasheremeta.com"
+              onClick={(e) => { e.preventDefault(); openContact(); }}
               className="btn prefooter-btn-primary face-cta"
               style={{ display: 'inline-flex', alignItems: 'center', gap: '0.45rem' }}
             >
