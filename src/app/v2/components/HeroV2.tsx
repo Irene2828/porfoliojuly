@@ -371,6 +371,15 @@ export default function HeroV2({ variant = 'client' }: { variant?: 'client' | 'h
             padding: 0 !important;
             vertical-align: baseline !important;
           }
+          /* Websites mobile hero: headline +10% and tighter leading (premium) */
+          .hero-websites .hero-name-group .hero-text .headline-mobile {
+            font-size: clamp(3.10rem, 14.05vw, 4.60rem) !important;
+            line-height: 0.92 !important;
+          }
+          .hero-websites .hero-name-group .hero-text .headline-mobile .headline-line,
+          .hero-websites .hero-name-group .hero-text .headline-mobile .headline-line * {
+            line-height: 0.92 !important;
+          }
           .v2-theme .headline-pair-gap,
           .headline-pair-gap {
             margin-top: 0rem !important; /* same spacing between 2 & 3 as between 1 & 2 */
