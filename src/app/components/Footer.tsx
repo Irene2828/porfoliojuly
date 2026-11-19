@@ -2,7 +2,113 @@
 
 import { motion } from 'framer-motion';
 
-export default function Footer() {
+const TICKER_SEGMENTS = [
+  'Iryna Sheremeta',
+  'Product Designer & AI Builder',
+  'Custom websites — from problem to shipped product',
+  'Montréal',
+  'Remote across Canada',
+];
+
+export default function Footer({ variant }: { variant?: 'standard' | 'ticker' }) {
+  if (variant === 'ticker') {
+    return (
+      <footer
+        className="site-footer-ticker"
+        style={{
+          backgroundColor: '#121316',
+          background: '#121316',
+          width: '100%',
+          position: 'relative',
+          zIndex: 10,
+        }}
+      >
+        <style>{`
+          .site-footer-ticker {
+            background-color: #121316 !important;
+            background: #121316 !important;
+          }
+          .footer-ticker-strip {
+            overflow: hidden;
+            background: linear-gradient(180deg, rgba(255, 255, 255, 0.09), rgba(255, 255, 255, 0.03));
+            -webkit-backdrop-filter: blur(18px) saturate(160%);
+            backdrop-filter: blur(18px) saturate(160%);
+            border-top: 1px solid rgba(255, 255, 255, 0.14);
+            padding: 0.95rem 0;
+          }
+          .footer-ticker-track {
+            display: flex;
+            width: max-content;
+            animation: footerTickerScroll 30s linear infinite;
+          }
+          .site-footer-ticker:hover .footer-ticker-track {
+            animation-play-state: paused;
+          }
+          .footer-ticker-group {
+            display: flex;
+            align-items: center;
+            flex-shrink: 0;
+          }
+          .footer-ticker-item {
+            font-family: var(--font-label), -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            font-size: 0.72rem;
+            font-weight: 600;
+            letter-spacing: 0.14em;
+            text-transform: uppercase;
+            white-space: nowrap;
+            color: #ffffff;
+            -webkit-text-fill-color: #ffffff;
+            padding: 0 1.5rem;
+          }
+          .footer-ticker-item-dim {
+            color: rgba(255, 255, 255, 0.72);
+            -webkit-text-fill-color: rgba(255, 255, 255, 0.72);
+            font-weight: 500;
+          }
+          .footer-ticker-dot {
+            color: rgba(255, 255, 255, 0.38);
+            -webkit-text-fill-color: rgba(255, 255, 255, 0.38);
+            font-size: 0.72rem;
+          }
+          @keyframes footerTickerScroll {
+            from { transform: translateX(0); }
+            to { transform: translateX(-50%); }
+          }
+          @media (prefers-reduced-motion: reduce) {
+            .footer-ticker-track {
+              animation: none;
+              width: 100%;
+              justify-content: center;
+            }
+            .footer-ticker-group-dup {
+              display: none;
+            }
+          }
+        `}</style>
+        <div className="footer-ticker-strip">
+          <div className="footer-ticker-track">
+            {[0, 1].map((n) => (
+              <div
+                className={`footer-ticker-group${n === 1 ? ' footer-ticker-group-dup' : ''}`}
+                aria-hidden={n === 1}
+                key={n}
+              >
+                {TICKER_SEGMENTS.map((segment, i) => (
+                  <span key={i} style={{ display: 'flex', alignItems: 'center' }}>
+                    <span className={`footer-ticker-item${i > 0 ? ' footer-ticker-item-dim' : ''}`}>
+                      {segment}
+                    </span>
+                    <span className="footer-ticker-dot">·</span>
+                  </span>
+                ))}
+              </div>
+            ))}
+          </div>
+        </div>
+      </footer>
+    );
+  }
+
   return (
     <footer 
       className="site-footer-minimal"
