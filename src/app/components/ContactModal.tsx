@@ -140,10 +140,17 @@ export default function ContactModal() {
         .contact-modal-hp { position: absolute; left: -9999px; width: 1px; height: 1px; opacity: 0; }
         .contact-modal-error { margin: 0.9rem 0 0; font-size: 13.5px; line-height: 1.5; color: #f2908f; }
         .contact-modal-submit {
-          width: 100%; margin-top: 1.35rem;
-          background: #f2908f; color: #121316; border: none; border-radius: 999px;
-          padding: 0.95rem 1.5rem; cursor: pointer;
-          font-family: inherit; font-size: 14px; font-weight: 700; letter-spacing: 0.08em; text-transform: uppercase;
+          width: 100%; margin-top: 1.35rem; height: 3.01rem;
+          background: linear-gradient(315deg, #d6b792 0%, #f2908f 100%);
+          color: #000000; border: 1px solid #ffffff; border-radius: 40px;
+          padding: 0 1.74rem; cursor: pointer;
+          font-family: inherit; font-size: 0.72rem; font-weight: 700; letter-spacing: 0.08em; text-transform: uppercase;
+          transition: all 0.25s ease;
+        }
+        .contact-modal-submit:hover:not(:disabled) {
+          background: linear-gradient(315deg, #ddc19e 0%, #f49c9b 100%);
+          transform: translateY(-2px);
+          box-shadow: 0 8px 24px rgba(242, 144, 143, 0.28);
         }
         .contact-modal-submit:disabled { opacity: 0.6; cursor: default; }
         .contact-modal-alt { margin: 1.1rem 0 0; text-align: center; font-size: 13px; color: rgba(255,255,255,0.5); }
