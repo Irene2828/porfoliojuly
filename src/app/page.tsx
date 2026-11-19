@@ -4,7 +4,6 @@ import HeroV2 from './v2/components/HeroV2';
 import ProjectsV2 from './v2/components/ProjectsV2';
 import HowItWorks from './v2/components/HowItWorks';
 import ProcessSection from './v2/components/ProcessSection';
-import AiShowcase from './v2/components/AiShowcase';
 import PackagesSection from './v2/components/PackagesSection';
 import FaqSection from './v2/components/FaqSection';
 import { HireClosing } from './hire/HireSections';
@@ -55,9 +54,6 @@ export default function HomePage() {
 
         {/* Client feedback — Isabelle Guertin's review */}
         <ProcessSection />
-
-        {/* Why Hire Someone If There's AI — showcase */}
-        <AiShowcase />
 
         <div id="packages" style={{ scrollMarginTop: '88px' }}>
           <PackagesSection mode="website" />
