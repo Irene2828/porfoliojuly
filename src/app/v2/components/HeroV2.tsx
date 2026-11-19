@@ -21,24 +21,19 @@ export default function HeroV2({ variant = 'client' }: { variant?: 'client' | 'h
           display: none !important;
         }
         /* Headline scaled down (now +5% larger on desktops: 0.84) */
-        /* Websites hero headline colors: "Custom" + "yours." brand pink, middle words white */
+        /* Websites hero headline colors: pink "Custom websites designed and built", white "yours." */
         .hero-websites .hero-text .hero-statement .headline-desktop-accent,
         .hero-websites .hero-text .hero-statement .headline-mobile-accent {
-          color: #ffffff !important;
-          -webkit-text-fill-color: #ffffff !important;
+          color: #f2908f !important;
+          -webkit-text-fill-color: #f2908f !important;
         }
         .hero-websites .hero-text .hero-statement .headline-desktop-serif,
         .hero-websites .hero-text .hero-statement .headline-mobile-serif {
-          color: #f2908f !important;
-          -webkit-text-fill-color: #f2908f !important;
+          color: #ffffff !important;
+          -webkit-text-fill-color: #ffffff !important;
         }
         .hero-websites .hero-text .hero-statement .headline-line:first-child .headline-desktop-serif-normal,
         .hero-websites .hero-text .hero-statement .headline-line:first-child .headline-mobile-serif-normal {
-          color: #f2908f !important;
-          -webkit-text-fill-color: #f2908f !important;
-        }
-        .hero-websites .hero-text .hero-statement .headline-line:first-child .headline-desktop-accent,
-        .hero-websites .hero-text .hero-statement .headline-line:first-child .headline-mobile-accent {
           color: #f2908f !important;
           -webkit-text-fill-color: #f2908f !important;
         }
