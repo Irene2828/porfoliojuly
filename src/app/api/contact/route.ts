@@ -37,7 +37,7 @@ export async function POST(req: Request) {
     },
     body: JSON.stringify({
       from: 'Website <website@irynasheremeta.com>',
-      to: ['iryna@irynasheremeta.com'],
+      to: ['iryna.herts@gmail.com'],
       reply_to: email,
       subject: subject ? `[Website] ${subject} — ${name}` : `[Website] New inquiry — ${name}`,
       text: `Name: ${name}\nEmail: ${email}\n\n${message}`,
