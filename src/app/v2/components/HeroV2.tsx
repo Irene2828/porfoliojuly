@@ -601,7 +601,7 @@ export default function HeroV2({ variant = 'client' }: { variant?: 'client' | 'h
           }
         }
         /* Mobile websites hero: fill the viewport height (min-height only, nothing ever shrinks);
-           all extra space collects above the portrait — headline and CTA block keep their spacing */
+           extra space collects around the portrait — headline and CTA block keep their spacing */
         @media (max-width: 900px) {
           .v2-theme .hero-section.hero-websites,
           .hero-section.hero-websites {
@@ -615,10 +615,31 @@ export default function HeroV2({ variant = 'client' }: { variant?: 'client' | 'h
           .v2-theme .hero-websites .hero-image-wrapper,
           .hero-websites .hero-image-wrapper {
             margin-top: auto !important;
+            margin-bottom: auto !important;
           }
           .v2-theme .hero-websites .hero-content,
           .hero-websites .hero-content {
-            flex: 0 0 auto !important; /* content keeps its natural height, so the auto margin above the portrait can absorb the free space */
+            flex: 0 0 auto !important; /* content keeps its natural height, so the auto margins around the portrait can absorb the free space */
+          }
+          /* White text sits a touch tighter */
+          .v2-theme .hero-websites .headline-mobile,
+          .hero-websites .headline-mobile,
+          .v2-theme .hero-websites .headline-mobile *,
+          .hero-websites .headline-mobile * {
+            letter-spacing: -0.026em !important;
+          }
+          .v2-theme .hero-websites .hero-frame-paragraph,
+          .hero-websites .hero-frame-paragraph,
+          .v2-theme .hero-websites .hero-frame-paragraph *,
+          .hero-websites .hero-frame-paragraph * {
+            letter-spacing: -0.004em !important;
+          }
+          /* White headline words one touch lighter than the pink ones (500) */
+          .v2-theme .hero-websites .hero-text .hero-statement .headline-mobile .headline-mobile-accent,
+          .hero-websites .hero-text .hero-statement .headline-mobile .headline-mobile-accent,
+          .v2-theme .hero-websites .hero-text .hero-statement .headline-mobile .headline-line:not(:first-child) .headline-mobile-serif-normal,
+          .hero-websites .hero-text .hero-statement .headline-mobile .headline-line:not(:first-child) .headline-mobile-serif-normal {
+            font-weight: 450 !important;
           }
         }
         /* Very small screens (<= 349px, e.g. iPhone 5 / SE 1st gen) */
