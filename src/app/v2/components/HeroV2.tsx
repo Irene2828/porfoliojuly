@@ -600,6 +600,23 @@ export default function HeroV2({ variant = 'client' }: { variant?: 'client' | 'h
             padding-bottom: 3.85rem !important;
           }
         }
+        /* Mobile websites hero: fill the viewport height (min-height only, nothing ever shrinks);
+           all extra space collects above the portrait — headline and CTA block keep their spacing */
+        @media (max-width: 900px) {
+          .v2-theme .hero-section.hero-websites,
+          .hero-section.hero-websites {
+            min-height: 100vh !important;
+            min-height: 100svh !important;
+          }
+          .v2-theme .hero-websites .hero-container,
+          .hero-websites .hero-container {
+            flex: 1 1 auto !important;
+          }
+          .v2-theme .hero-websites .hero-image-wrapper,
+          .hero-websites .hero-image-wrapper {
+            margin-top: auto !important;
+          }
+        }
         /* Very small screens (<= 349px, e.g. iPhone 5 / SE 1st gen) */
         @media (max-width: 349px) {
           .v2-theme .hero-frame-paragraph,
