@@ -434,13 +434,16 @@ export default function HeroV2({ variant = 'client' }: { variant?: 'client' | 'h
             padding: 0 !important;
             vertical-align: baseline !important;
           }
-          /* Websites mobile hero: original size (long lines already fill the width), tighter leading */
+          /* Websites mobile hero: original size (long lines already fill the width), tighter leading.
+             0.92 -> 0.88 saves ~8px over the 4 lines; margin-top returns that space above the
+             headline, so the headline sits lower and everything below it keeps its place */
           .hero-websites .hero-name-group .hero-text .headline-mobile {
-            line-height: 0.92 !important;
+            line-height: 0.88 !important;
+            margin-top: 0.5rem !important;
           }
           .hero-websites .hero-name-group .hero-text .headline-mobile .headline-line,
           .hero-websites .hero-name-group .hero-text .headline-mobile .headline-line * {
-            line-height: 0.92 !important;
+            line-height: 0.88 !important;
           }
           .v2-theme .headline-pair-gap,
           .headline-pair-gap {
