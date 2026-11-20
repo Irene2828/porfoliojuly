@@ -51,7 +51,7 @@ export default function Footer({ variant }: { variant?: 'standard' | 'ticker' })
           }
           .footer-ticker-item {
             font-family: var(--font-label), -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
-            font-size: 0.72rem;
+            font-size: 0.684rem;
             font-weight: 600;
             letter-spacing: 0.14em;
             text-transform: uppercase;

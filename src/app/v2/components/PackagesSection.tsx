@@ -447,7 +447,7 @@ export default function PackagesSection({ onCtaClick, mode = 'website', variant 
           transition={{ duration: 0.7, ease: [0.16, 1, 0.3, 1] }}
           style={{ color: '#ffffff', WebkitTextFillColor: '#ffffff' }}
         >
-          {isAi ? <>Custom <strong>AI products</strong> — built around your problem</> : <>Custom <strong style={{ fontWeight: 600 }}>websites</strong> — built around <em className="packages-heading-accent" style={{ color: '#f2908f', WebkitTextFillColor: '#f2908f', fontStyle: 'italic' }}>your</em> business</>}
+          {isAi ? <>Custom <strong>AI products</strong> — built around your problem</> : 'Custom websites — built around your business'}
         </motion.h2>
 
         {isAi && <div className="packages-scroll-hint" aria-label={`Package ${activePackageDot + 1} of 4`} role="status">{[0, 1, 2, 3].map((dot) => <span key={dot} className={`packages-scroll-dot${activePackageDot === dot ? ' is-active' : ''}`} aria-hidden="true" />)}</div>}

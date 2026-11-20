@@ -1846,6 +1846,12 @@ h1, h2, h3, h4, h5, h6 {
   font-weight: 600 !important;
 }
 
+/* Use the hero headline face for every v2 section heading. */
+.v2-theme section h2,
+.v2-theme section h2 * {
+  font-family: 'Newsreader', 'Source Serif 4', Georgia, serif !important;
+}
+
 /* Double the space below the final collapsed question before its stroke. */
 #faq-section .faq-item:last-child .faq-toggle[aria-expanded="false"] {
   padding-bottom: 3.4rem !important;

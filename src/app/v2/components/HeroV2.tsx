@@ -33,6 +33,9 @@ export default function HeroV2({ variant = 'client' }: { variant?: 'client' | 'h
           -webkit-text-fill-color: #ffffff !important;
           font-style: normal !important;
         }
+        .hero-websites .hero-text .hero-statement .headline-websites-yours {
+          font-style: italic !important;
+        }
         .hero-websites .hero-text .hero-statement .headline-websites-pink {
           color: #f2908f !important;
           -webkit-text-fill-color: #f2908f !important;
@@ -72,6 +75,9 @@ export default function HeroV2({ variant = 'client' }: { variant?: 'client' | 'h
           }
           .hero-websites .hero-statement .headline-mobile .headline-mobile-serif {
             font-weight: 400 !important;
+          }
+          .hero-websites .hero-statement .headline-mobile .headline-mobile-white {
+            letter-spacing: -0.006em !important;
           }
         }
         @media (min-width: 901px) {
@@ -122,7 +128,7 @@ export default function HeroV2({ variant = 'client' }: { variant?: 'client' | 'h
     white-space: nowrap !important;
   }
   .hero-websites .headline-desktop .headline-line {
-    line-height: 0.98 !important;
+    line-height: 1.03 !important;
   }
   .hero-frame-paragraph {
     font-size: 1.2555rem !important;
@@ -1100,20 +1106,8 @@ export default function HeroV2({ variant = 'client' }: { variant?: 'client' | 'h
         .hero-websites .hero-frame-paragraph .hero-body-bold {
           white-space: nowrap;
         }
-        .hero-websites .headline-yours {
-          position: relative;
-        }
-        .hero-websites .headline-yours::after {
-          content: '';
-          position: absolute;
-          left: 0.02em;
-          right: 0.2em;
-          bottom: -0.1em;
-          height: 0.18em;
-          border-top: 0.055em solid #f2908f;
-          border-radius: 68% 32% 0 0 / 100% 100% 0 0;
-          transform: rotate(-6deg);
-          pointer-events: none;
+        .hero-websites .headline-websites-yours {
+          font-style: italic !important;
         }
         @media (min-width: 901px) {
           .hero-websites .hero-frame-paragraph .hero-body-desktop .hero-body-bold {
@@ -1128,10 +1122,10 @@ export default function HeroV2({ variant = 'client' }: { variant?: 'client' | 'h
           }
           .hero-websites .headline-desktop .headline-desktop-serif-normal,
           .hero-websites .headline-desktop .headline-desktop-serif {
-            letter-spacing: -0.013em !important;
+            letter-spacing: -0.016em !important;
           }
           .hero-websites .headline-desktop .headline-desktop-accent:not(.headline-websites-pink) {
-            letter-spacing: 0.022em !important;
+            letter-spacing: 0.019em !important;
           }
         }
       `}</style>
@@ -1164,7 +1158,7 @@ export default function HeroV2({ variant = 'client' }: { variant?: 'client' | 'h
                         </span>
                         <span className="headline-line headline-supporting">
                           <span className="headline-desktop-serif-normal">one business &mdash;</span>{' '}
-                          <em className="headline-desktop-serif headline-yours">yours.</em>
+                          <em className="headline-desktop-serif headline-websites-yours">yours.</em>
                         </span>
                       </>
                     ) : (
@@ -1227,7 +1221,7 @@ export default function HeroV2({ variant = 'client' }: { variant?: 'client' | 'h
                         </span>
                         <span className="headline-line headline-supporting">
                           <span className="headline-mobile-serif-normal headline-mobile-white">business &mdash;</span>{' '}
-                          <em className="headline-mobile-serif headline-mobile-white headline-yours">yours.</em>
+                          <em className="headline-mobile-serif headline-mobile-white headline-websites-yours">yours.</em>
                         </span>
                       </>
                     ) : (
@@ -1283,10 +1277,10 @@ export default function HeroV2({ variant = 'client' }: { variant?: 'client' | 'h
                   ) : isWebsites ? (
                     <>
                       <span className="hero-body-desktop">
-                        <span className="hero-body-row hero-body-light" style={{ fontWeight: 400 }}>Starting from zero, or stuck with a site that undersells you? Visitors land, can&rsquo;t tell what you do, and leave. <strong className="hero-body-bold">Let me handle your problem.</strong></span>
+                        <span className="hero-body-row hero-body-light" style={{ fontWeight: 400 }}>Starting from zero, or stuck with a site that undersells you? Visitors land, can&rsquo;t tell what you do, and leave. <strong className="hero-body-bold">Let me handle this.</strong></span>
                       </span>
                       <span className="hero-body-mobile">
-                        <span className="hero-body-mobile-text hero-body-light">Starting from zero, or stuck with a site that undersells you? Visitors land, can’t tell what you do, and leave. <strong className="hero-body-bold">Let me handle your problem.</strong></span>
+                        <span className="hero-body-mobile-text hero-body-light">Starting from zero, or stuck with a site that undersells you? Visitors land, can’t tell what you do, and leave. <strong className="hero-body-bold">Let me handle this.</strong></span>
                       </span>
                     </>
                   ) : (
