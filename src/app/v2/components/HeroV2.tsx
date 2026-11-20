@@ -628,10 +628,10 @@ export default function HeroV2({ variant = 'client' }: { variant?: 'client' | 'h
           .hero-websites .headline-mobile * {
             letter-spacing: -0.026em !important;
           }
-          .v2-theme .hero-websites .hero-frame-paragraph,
-          .hero-websites .hero-frame-paragraph,
-          .v2-theme .hero-websites .hero-frame-paragraph *,
-          .hero-websites .hero-frame-paragraph * {
+          .v2-theme .hero-websites .hero-frame-paragraph .hero-body-mobile-text,
+          .hero-websites .hero-frame-paragraph .hero-body-mobile-text,
+          .v2-theme .hero-websites .hero-frame-paragraph .hero-body-mobile,
+          .hero-websites .hero-frame-paragraph .hero-body-mobile {
             letter-spacing: -0.004em !important;
           }
           /* White headline words one touch lighter than the pink ones (500) */
