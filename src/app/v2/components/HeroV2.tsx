@@ -642,6 +642,14 @@ export default function HeroV2({ variant = 'client' }: { variant?: 'client' | 'h
             font-weight: 450 !important;
           }
         }
+        /* Headline +5% on iPhone 13 and larger (390px and up); smaller phones keep 0.976.
+           Verified at 390px: the longest line ("designed and built") fits with room to spare */
+        @media (min-width: 390px) and (max-width: 900px) {
+          .v2-theme .hero-websites .hero-statement,
+          .hero-websites .hero-statement {
+            zoom: 1.0248 !important;
+          }
+        }
         /* Very small screens (<= 349px, e.g. iPhone 5 / SE 1st gen) */
         @media (max-width: 349px) {
           .v2-theme .hero-frame-paragraph,
