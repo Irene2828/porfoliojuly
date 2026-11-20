@@ -616,6 +616,10 @@ export default function HeroV2({ variant = 'client' }: { variant?: 'client' | 'h
           .hero-websites .hero-image-wrapper {
             margin-top: auto !important;
           }
+          .v2-theme .hero-websites .hero-content,
+          .hero-websites .hero-content {
+            flex: 0 0 auto !important; /* content keeps its natural height, so the auto margin above the portrait can absorb the free space */
+          }
         }
         /* Very small screens (<= 349px, e.g. iPhone 5 / SE 1st gen) */
         @media (max-width: 349px) {
