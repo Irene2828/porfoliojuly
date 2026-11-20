@@ -52,38 +52,70 @@ const buyUkrainianSteps = [
     title: 'The problem',
     text: (
       <>
-        Ukrainian-made products are <span className="hire-story-step-accent">sold in stores all across Canada</span>, but{' '}
-        there was <span className="hire-story-step-accent">no one place to find them</span> — just
-        scattered lists and word of mouth.
+        Ukrainian-made products are <span className="hire-story-step-accent">sold in stores all across Canada</span>, but
+        there was <span className="hire-story-step-accent">no one place to find them</span>. A directory like this dies
+        without fresh data — so the real product is not the map. It is{' '}
+        <span className="hire-story-step-accent">the flows that keep the map alive</span>.
       </>
     ),
   },
   {
     num: '02',
-    title: 'What I built',
+    title: 'The visitor flow',
     text: (
       <>
-        An <span className="hire-story-step-accent">interactive map and directory</span>: search by
-        city or by product, and see the stores that carry it. One rule decides every listing — the
-        products are made in Ukraine — and <span className="hire-story-step-accent">every store is checked</span> before it appears on the map.
+        Land, explore, act — <span className="hire-story-step-accent">no dead ends</span>. An interactive map with a
+        “Recently added” strip, search, and province and category filters that{' '}
+        <span className="hire-story-step-accent">open upward so nothing is cut off</span>. A store card carries the
+        products, directions and share — every screen answers “what do I do next”.
       </>
     ),
   },
   {
     num: '03',
-    title: 'Built to grow',
+    title: 'Adding, editing, removing',
     text: (
       <>
-        Anyone can <span className="hire-story-step-accent">add a store that’s missing</span>; submissions come in for <span className="hire-story-step-accent">review before they go live</span>. The catalogue grows city by city, without the map turning into a free-for-all.
+        Anyone can add a missing store in one form; the submit always ends in a visible thank-you or a specific error —{' '}
+        <span className="hire-story-step-accent">never silence</span>. Owners suggest edits from their card, but the
+        live card <span className="hire-story-step-accent">does not change until the edit is approved</span>. A removal
+        request never deletes anything — it flags the card for review. Duplicates are caught before they become a
+        second listing.
       </>
     ),
   },
   {
     num: '04',
+    title: 'Running the site',
+    text: (
+      <>
+        <span className="hire-story-step-accent">One inbox runs the whole site</span>: pending stores, suggested edits
+        shown as a field-by-field diff, deletion flags. And{' '}
+        <span className="hire-story-step-accent">an email for every event</span>, the moment it happens — two real
+        stores once sat unseen in the queue for days. That gap is what the notifications fixed.
+      </>
+    ),
+  },
+  {
+    num: '05',
+    title: 'Edge cases, handled',
+    text: (
+      <>
+        An address that cannot be geocoded is accepted but <span className="hire-story-step-accent">flagged for review</span>,
+        not pinned to the middle of Canada. A suggested edit that leaves a field empty means “unchanged” —{' '}
+        <span className="hire-story-step-accent">approving it can never wipe data</span>. When the database connection
+        broke, the public site stayed up on a fallback path while the admin side was repaired.
+      </>
+    ),
+  },
+  {
+    num: '06',
     title: 'Live today',
     text: (
       <>
-        <span className="hire-story-step-accent">26 stores across Canada and counting</span>. I <span className="hire-story-step-accent">scoped it, designed it, built it — and I still run it</span>: new stores, data checks, fixes.
+        <span className="hire-story-step-accent">28 stores across Canada and growing</span>. I{' '}
+        <span className="hire-story-step-accent">scoped it, designed the flows, built it — and I still run it</span>:
+        the community feeds it, one person operates it.
       </>
     ),
   },
