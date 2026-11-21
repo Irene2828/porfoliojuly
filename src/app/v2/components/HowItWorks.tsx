@@ -134,7 +134,7 @@ export default function HowItWorks({ variant = 'default' }: HowItWorksProps) {
         .how-step-title {
           font-family: var(--font-body), 'Plus Jakarta Sans', sans-serif !important;
           font-weight: 500 !important;
-          font-size: calc(var(--text-subhead) * 0.95) !important;
+          font-size: var(--text-subhead) !important;
           line-height: 1.3 !important;
           letter-spacing: -0.02em !important;
           color: #ffffff !important;
@@ -233,7 +233,7 @@ export default function HowItWorks({ variant = 'default' }: HowItWorksProps) {
             font-size: 2.65rem !important;
           }
           .how-step-title {
-            font-size: calc(var(--text-subhead) * 0.95) !important;
+            font-size: var(--text-subhead) !important;
           }
         }
         @media (min-width: 1200px) {
