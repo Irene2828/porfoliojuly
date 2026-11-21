@@ -8,7 +8,7 @@ export default function TshirtCase() {
           font-size: 13px; font-weight: 600; text-transform: uppercase;
           letter-spacing: 0.14em; color: #f2908f; margin: 0 0 18px;
         }
-        .tc-h2 {
+        #tshirt-case .tc-h2 {
           font-family: 'Plus Jakarta Sans', sans-serif !important;
           font-size: 42px; font-weight: 500; line-height: 1.2; letter-spacing: -0.02em;
           color: #000000 !important; -webkit-text-fill-color: #000000 !important;
@@ -48,7 +48,7 @@ export default function TshirtCase() {
         @media (max-width: 760px) {
           .tc-ways { grid-template-columns: 1fr; }
           .tc-guards { grid-template-columns: 1fr; }
-          .tc-h2 { font-size: 31px; }
+          #tshirt-case .tc-h2 { font-size: 31px; }
           .tc-lead { font-size: 17.5px; }
         }
       `}</style>
