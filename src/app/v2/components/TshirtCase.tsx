@@ -9,9 +9,10 @@ export default function TshirtCase() {
           letter-spacing: 0.14em; color: #f2908f; margin: 0 0 18px;
         }
         .tc-h2 {
-          font-family: var(--font-heading), 'Plus Jakarta Sans', sans-serif;
+          font-family: 'Plus Jakarta Sans', sans-serif !important;
           font-size: 42px; font-weight: 500; line-height: 1.2; letter-spacing: -0.02em;
-          color: #000000; margin: 0 0 20px; max-width: 21ch;
+          color: #000000 !important; -webkit-text-fill-color: #000000 !important;
+          margin: 0 0 20px; max-width: 21ch;
         }
         .tc-lead {
           font-family: var(--font-body), 'Plus Jakarta Sans', sans-serif;
