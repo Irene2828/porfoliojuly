@@ -44,6 +44,7 @@ const websiteFaqs = [
     question: 'How fast is this, and what happens after launch?',
     answers: [
       'You see a first version within days, while changes are still cheap. After launch I stay: fixes, edits, new features, per request or on a monthly care plan. You keep the logins, files and setup notes.',
+      'Routine content — products, prices, photos — can live in a simple admin panel you update yourself, or send the updates to me and I handle them. Hosting, backups and monitoring stay on my side either way.',
     ],
   },
   {
@@ -59,15 +60,16 @@ const websiteFaqs = [
     ],
   },
   {
-    question: 'I have a WordPress site. Do I have to stay on WordPress?',
+    question: 'If AI does the building, why does it cost the same?',
     answers: [
-      'No. I rebuild on a modern stack that’s faster, more secure, and needs far less upkeep than a plugin-heavy WordPress site. Your domain, content and search positions come with you, and I set up redirects so visitors and Google land in the right place. You own the site and the code. Nothing ties you to a platform, or to me.',
+      'AI made the building faster — that’s what changed for you: a first version in days instead of weeks. The price was never for typing code. It’s for the decisions — what your site says, in what order, so visitors turn into calls — and for checking that what ships is correct and secure. An accountant with better software didn’t get cheaper; he got more accurate. A dentist with better equipment didn’t cut his price; he cut your risk. A one-prompt site costs less because nobody verified it: keys in public code, no search structure, no one to call when it breaks. This price buys a checked site — and a person who answers for it.',
     ],
   },
   {
-    question: 'Who updates the site after launch?',
+    question: 'What will my site be built and hosted on?',
     answers: [
-      'Whichever way suits you. Routine content (products, partners, photos, prices) can live in a simple admin panel you update yourself. Or send the updates to me and I handle them on a care plan, with a short monthly note on what was done. Hosting, backups and monitoring stay on my side either way.',
+      'I don’t sell one platform — I recommend the setup that fits your project, your goals and your budget. Most of my builds are custom, hosted on Vercel or Cloudflare: fast and secure, no database and no plugins to hack, and you own the code, the domain and the accounts. Sometimes Framer is the right call — a simpler site, a tighter budget, a team that wants to edit pages visually — and I’ll tell you so, with the trade-off named upfront: the site lives inside their platform, and the code doesn’t leave with you. Either way you get the honest recommendation, not the convenient one — and a person who checks what ships and answers for it.',
+      'Already on WordPress? You don’t have to stay. I rebuild on the new setup and bring your domain, content and search positions with me — with redirects set up so visitors and Google land in the right place.',
     ],
   },
 ];
@@ -168,8 +170,8 @@ export default function FaqSection({ variant = 'all' }: { variant?: 'all' | 'web
           font-size: calc(var(--text-subhead) * 0.95) !important;
           line-height: 1.3;
           font-family: var(--font-heading) !important;
-          font-weight: 400 !important;
-          letter-spacing: -0.015em !important;
+          font-weight: 500 !important;
+          letter-spacing: -0.02em !important;
           color: #000000 !important;
           -webkit-text-fill-color: #000000 !important;
         }
