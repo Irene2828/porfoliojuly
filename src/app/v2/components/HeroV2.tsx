@@ -1109,6 +1109,27 @@ export default function HeroV2({ variant = 'client' }: { variant?: 'client' | 'h
         .hero-websites .hero-frame-paragraph .hero-body-bold {
           white-space: nowrap;
         }
+        @media (min-width: 901px) {
+          .v2-theme .hero-section.hero-websites .hero-frame-paragraph .hero-body-bold {
+            font-weight: 600 !important;
+            color: rgba(255, 255, 255, 0.95) !important;
+            -webkit-text-fill-color: rgba(255, 255, 255, 0.95) !important;
+          }
+        }
+        /* CTA row: exact left alignment with the headline on desktop.
+           The primary button is counter-scaled (1.13636, origin right) above 1200px,
+           so its visual left edge sits (buttonWidth x 0.13636) left of the row box.
+           38.14px / 37.01px = measured headline offset + that overflow at each layout regime. */
+        @media (min-width: 1200px) {
+          .v2-theme .hero-websites .hero-ctas-outside {
+            margin-left: 38.14px !important;
+          }
+        }
+        @media (min-width: 1600px) {
+          .v2-theme .hero-websites .hero-ctas-outside {
+            margin-left: 37.01px !important;
+          }
+        }
         .hero-websites .headline-websites-yours {
           font-style: italic !important;
         }
@@ -1280,10 +1301,10 @@ export default function HeroV2({ variant = 'client' }: { variant?: 'client' | 'h
                   ) : isWebsites ? (
                     <>
                       <span className="hero-body-desktop">
-                        <span className="hero-body-row hero-body-light" style={{ fontWeight: 400 }}>Starting from zero, or stuck with a site that undersells you? Visitors land, can&rsquo;t tell what you do, and leave. <strong className="hero-body-bold">Let me handle this.</strong></span>
+                        <span className="hero-body-row hero-body-light" style={{ fontWeight: 400 }}>Starting from zero, or stuck with a site that undersells you? Visitors land, can&rsquo;t tell what you do, and leave. <strong className="hero-body-bold">Let me handle it.</strong></span>
                       </span>
                       <span className="hero-body-mobile">
-                        <span className="hero-body-mobile-text hero-body-light">Starting from zero, or stuck with a site that undersells you? Visitors land, can’t tell what you do, and leave. <strong className="hero-body-bold">Let me handle this.</strong></span>
+                        <span className="hero-body-mobile-text hero-body-light">Starting from zero, or stuck with a site that undersells you? Visitors land, can’t tell what you do, and leave. <strong className="hero-body-bold">Let me handle it.</strong></span>
                       </span>
                     </>
                   ) : (
