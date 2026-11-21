@@ -1122,12 +1122,12 @@ export default function HeroV2({ variant = 'client' }: { variant?: 'client' | 'h
            38.14px / 37.01px = measured headline offset + that overflow at each layout regime. */
         @media (min-width: 1200px) {
           .v2-theme .hero-websites .hero-ctas-outside {
-            margin-left: 38.14px !important;
+            margin-left: 37.22px !important;
           }
         }
         @media (min-width: 1600px) {
           .v2-theme .hero-websites .hero-ctas-outside {
-            margin-left: 37.01px !important;
+            margin-left: 37.6px !important;
           }
         }
         .hero-websites .headline-websites-yours {
