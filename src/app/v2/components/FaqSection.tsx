@@ -167,7 +167,7 @@ export default function FaqSection({ variant = 'all' }: { variant?: 'all' | 'web
           text-align: left !important;
         }
         .faq-question {
-          font-size: calc(var(--text-subhead) * 0.95) !important;
+          font-size: var(--text-subhead) !important;
           line-height: 1.3;
           font-family: var(--font-heading) !important;
           font-weight: 500 !important;
@@ -274,7 +274,7 @@ export default function FaqSection({ variant = 'all' }: { variant?: 'all' | 'web
             font-size: clamp(1.9rem, 8vw, 2.4rem) !important; margin-left: 0 !important; margin-right: 0 !important;
           }
           .faq-question {
-          font-size: calc(var(--text-subhead) * 0.95) !important;
+          font-size: var(--text-subhead) !important;
           }
           .faq-answer-list li {
             font-size: var(--text-body) !important;
