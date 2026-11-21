@@ -49,13 +49,7 @@ const websiteFaqs = [
   {
     question: 'I don’t have a website yet. Where do we start?',
     answers: [
-      'A short call, or a voice note if that’s easier. I ask about your business and your clients, then bring you three visual directions to react to. No brief or prep needed.',
-    ],
-  },
-  {
-    question: 'What do you need from me to start?',
-    answers: [
-      'A short call, or a voice note if that’s easier. No prep and no brief to write. If copy or files are missing, I write them from scratch.',
+      'A short call, or a voice note if that’s easier. I ask about your business and your clients, then bring you three visual directions to react to. No brief or prep needed. If copy or files are missing, I write them from scratch.',
     ],
   },
   {
