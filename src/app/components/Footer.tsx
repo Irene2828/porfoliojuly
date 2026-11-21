@@ -29,12 +29,11 @@ export default function Footer({ variant }: { variant?: 'standard' | 'ticker' })
             background: #121316 !important;
           }
           .footer-ticker-strip {
-            opacity: 0.2;
             overflow: hidden;
-            background: linear-gradient(180deg, rgba(255, 255, 255, 0.04), rgba(255, 255, 255, 0.012));
+            background: linear-gradient(180deg, rgba(255, 255, 255, 0.008), rgba(255, 255, 255, 0.0024));
             -webkit-backdrop-filter: blur(18px) saturate(160%);
             backdrop-filter: blur(18px) saturate(160%);
-            border-top: 1px solid rgba(255, 255, 255, 0.08);
+            border-top: 1px solid rgba(255, 255, 255, 0.016);
             padding: 0.95rem 0;
           }
           .footer-ticker-track {
