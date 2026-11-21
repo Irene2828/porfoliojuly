@@ -615,12 +615,14 @@ export default function ProjectsV2({ initialProjects = [], showWorkflowAutomatio
             margin: 0 0 1.25rem 0 !important;
             text-align: left !important;
           }
-          /* Case captions +50% (Iryna, 20.11): teaser 15px -> 22.5px, Tap to Zoom 13.76px -> 20.64px */
+          /* Case captions (Iryna, 20.11): teaser 22.5px, line width 30ch -> 37.5ch (+25%), line-height 1.5 -> 1.125 (-25%); Tap to Zoom 14.45px (-30% from 20.64px) */
           .recent-projects-layout .preview-card-teaser {
             font-size: 22.5px !important;
+            max-width: 37.5ch !important;
+            line-height: 1.125 !important;
           }
           .recent-projects-layout .preview-card-caption-btn {
-            font-size: 20.64px !important;
+            font-size: 14.45px !important;
           }
           .recent-projects-layout .preview-card-caption-btn {
             display: inline-flex;
