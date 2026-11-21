@@ -34,7 +34,7 @@ export default function HeroV2({ variant = 'client' }: { variant?: 'client' | 'h
           font-style: normal !important;
         }
         .hero-websites .hero-text .hero-statement .headline-websites-yours {
-          font-style: italic !important;
+          font-style: normal !important;
         }
         .hero-websites .hero-text .hero-statement .headline-websites-pink {
           color: #f2908f !important;
@@ -1131,7 +1131,7 @@ export default function HeroV2({ variant = 'client' }: { variant?: 'client' | 'h
           }
         }
         .hero-websites .headline-websites-yours {
-          font-style: italic !important;
+          font-style: normal !important;
         }
         @media (min-width: 901px) {
           .hero-websites .hero-frame-paragraph .hero-body-desktop .hero-body-bold {
