@@ -615,6 +615,13 @@ export default function ProjectsV2({ initialProjects = [], showWorkflowAutomatio
             margin: 0 0 1.25rem 0 !important;
             text-align: left !important;
           }
+          /* Case captions +50% (Iryna, 20.11): teaser 15px -> 22.5px, Tap to Zoom 13.76px -> 20.64px */
+          .recent-projects-layout .preview-card-teaser {
+            font-size: 22.5px !important;
+          }
+          .recent-projects-layout .preview-card-caption-btn {
+            font-size: 20.64px !important;
+          }
           .recent-projects-layout .preview-card-caption-btn {
             display: inline-flex;
             margin: 0 !important;
