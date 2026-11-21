@@ -95,6 +95,10 @@ export default function HowItWorks({ variant = 'default' }: HowItWorksProps) {
           -webkit-text-fill-color: #f2908f !important;
           font-style: italic !important;
         }
+        .v2-theme #how-it-works h2.how-title {
+          font-weight: 500 !important;
+          letter-spacing: -0.02em !important;
+        }
         .v2-theme #how-it-works h2.how-title .how-title-lead {
           font-weight: 600 !important;
           color: #ffffff !important;
@@ -129,16 +133,16 @@ export default function HowItWorks({ variant = 'default' }: HowItWorksProps) {
         }
         .how-step-title {
           font-family: var(--font-body), 'Plus Jakarta Sans', sans-serif !important;
-          font-weight: 400 !important;
-          font-size: calc(var(--text-body) * 1.2) !important;
-          line-height: var(--lh-body) !important;
-          letter-spacing: 0.015em !important;
+          font-weight: 500 !important;
+          font-size: calc(var(--text-subhead) * 0.95) !important;
+          line-height: 1.3 !important;
+          letter-spacing: -0.02em !important;
           color: #ffffff !important;
           -webkit-text-fill-color: #ffffff !important;
         }
         @media (min-width: 901px) {
           .how-step-title {
-            min-height: 3.1em !important;
+            min-height: 2.6em !important;
           }
         }
         .how-step-sub {
@@ -229,7 +233,7 @@ export default function HowItWorks({ variant = 'default' }: HowItWorksProps) {
             font-size: 2.65rem !important;
           }
           .how-step-title {
-            font-size: calc(var(--text-body) * 1.2) !important;
+            font-size: calc(var(--text-subhead) * 0.95) !important;
           }
         }
         @media (min-width: 1200px) {
