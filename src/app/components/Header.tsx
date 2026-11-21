@@ -167,7 +167,7 @@ export default function Header() {
               fontFamily: 'var(--font-heading), -apple-system, BlinkMacSystemFont, "Helvetica Neue", Arial, sans-serif', 
               fontSize: '13.8px', 
               fontWeight: 500, 
-              color: 'var(--header-title-color, rgba(201, 206, 214, 0.77))',
+              color: 'var(--header-brand-color, #e2e4e9)',
               letterSpacing: '0.04em', 
               lineHeight: '1.2'
             }}>
@@ -177,11 +177,11 @@ export default function Header() {
               fontFamily: 'var(--font-heading), -apple-system, BlinkMacSystemFont, "Helvetica Neue", Arial, sans-serif', 
               fontSize: '13px', 
               fontWeight: 400, 
-              color: 'var(--header-brand-color, #e2e4e9)',
+              color: 'var(--header-title-color, rgba(201, 206, 214, 0.77))',
               lineHeight: '1.2', 
               letterSpacing: '0.03em' 
             }}>
-              / Product Designer &amp; AI Builder /
+              / Product Designer &amp; Builder /
             </span>
           </a>
         </div>
@@ -213,7 +213,7 @@ export default function Header() {
       <div className="mobile-header-left">
         <a href="/" aria-label="Home" className="mobile-brand-link">
           <span className="mobile-brand-name">IRYNA SHEREMETA</span>
-          <span className="mobile-brand-title">/ Product Designer &amp; AI Builder /</span>
+          <span className="mobile-brand-title">/ Product Designer &amp; Builder /</span>
         </a>
       </div>
 
