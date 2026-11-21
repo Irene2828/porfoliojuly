@@ -61,12 +61,12 @@ export default function Header() {
           -webkit-text-fill-color: rgba(201, 206, 214, 0.77) !important;
         }
         .v2-theme .header-spacer-desktop a span:first-child {
-          color: rgba(201, 206, 214, 0.77) !important;
-          -webkit-text-fill-color: rgba(201, 206, 214, 0.77) !important;
-        }
-        .v2-theme .header-spacer-desktop a span:last-child {
           color: #e2e4e9 !important;
           -webkit-text-fill-color: #e2e4e9 !important;
+        }
+        .v2-theme .header-spacer-desktop a span:last-child {
+          color: rgba(201, 206, 214, 0.77) !important;
+          -webkit-text-fill-color: rgba(201, 206, 214, 0.77) !important;
         }
         .mobile-brand-title {
           color: rgba(201, 206, 214, 0.77) !important;
