@@ -29,6 +29,7 @@ export default function Footer({ variant }: { variant?: 'standard' | 'ticker' })
             background: #121316 !important;
           }
           .footer-ticker-strip {
+            opacity: 0.2;
             overflow: hidden;
             background: linear-gradient(180deg, rgba(255, 255, 255, 0.04), rgba(255, 255, 255, 0.012));
             -webkit-backdrop-filter: blur(18px) saturate(160%);
