@@ -27,7 +27,7 @@ export default function EditorialStatement({ variant = 'default' }: { variant?: 
             font-family: var(--font-heading) !important;
             font-weight: 400 !important;
             font-style: normal !important;
-            letter-spacing: 0.005em !important;
+            letter-spacing: -0.02em !important;
             color: #ffffff !important;
             -webkit-text-fill-color: #ffffff !important;
             -webkit-font-smoothing: antialiased !important;
@@ -44,7 +44,7 @@ export default function EditorialStatement({ variant = 'default' }: { variant?: 
           .prefooter-closing-mobile .prefooter-closing-row:not(strong) {
             font-weight: 400 !important;
             font-style: normal !important;
-            letter-spacing: 0.015em !important;
+            letter-spacing: -0.02em !important;
             color: #ffffff !important;
             -webkit-text-fill-color: #ffffff !important;
           }
@@ -297,8 +297,8 @@ export default function EditorialStatement({ variant = 'default' }: { variant?: 
               fontFamily: 'var(--font-heading)',
               fontSize: 'var(--closing-heading-size)',
               fontWeight: 300,
-              letterSpacing: '0.015em',
-              lineHeight: 1.35,
+              letterSpacing: '-0.02em',
+              lineHeight: 1.2,
               color: '#ffffff',
               WebkitTextFillColor: '#ffffff',
               textAlign: 'center',
