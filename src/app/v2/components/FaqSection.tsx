@@ -123,6 +123,8 @@ export default function FaqSection({ variant = 'all' }: { variant?: 'all' | 'web
           left: 50%;
           width: 60px;
           height: 1px;
+          padding: 0 !important;
+          box-sizing: border-box;
           background: #2d3139;
           transform: translateX(-50%);
         }
@@ -349,6 +351,7 @@ export default function FaqSection({ variant = 'all' }: { variant?: 'all' | 'web
       `}</style>
       <div className="faq-top-divider" aria-hidden="true" />
       <div
+        className="faq-section-content"
         style={{
           maxWidth: '720px',
           width: '100%',

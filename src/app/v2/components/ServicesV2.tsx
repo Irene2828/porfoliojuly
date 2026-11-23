@@ -132,16 +132,6 @@ export default function ServicesV2({ websitesOnly = false }: ServicesV2Props) {
           color: #ffffff !important;
           -webkit-text-fill-color: #ffffff !important;
         }
-        .homepage-services-kicker {
-          font-family: var(--font-body), 'Plus Jakarta Sans', sans-serif !important;
-          font-size: var(--text-label) !important;
-          font-weight: 600 !important;
-          text-transform: uppercase !important;
-          letter-spacing: 0.14em !important;
-          color: #ffffff !important;
-          background: none !important;
-          -webkit-text-fill-color: #ffffff !important;
-        }
         @media (min-width: 901px) {
           .services-subline {
             font-size: calc(var(--text-body) + 2px) !important;
@@ -423,7 +413,7 @@ export default function ServicesV2({ websitesOnly = false }: ServicesV2Props) {
               {/* Real Card Content (zIndex: 1) */}
               <div className={websitesOnly ? 'homepage-services-card-content' : undefined} style={{ position: 'relative', zIndex: 1, paddingTop: '1.25rem' }}>
                 {websitesOnly && <motion.h2
-                  className="homepage-services-frame-heading homepage-services-kicker"
+                  className="homepage-services-frame-heading how-kicker"
                   initial={{ opacity: 0, y: 16 }}
                   whileInView={{ opacity: 1, y: 0 }}
                   viewport={{ once: true, amount: 0.3 }}

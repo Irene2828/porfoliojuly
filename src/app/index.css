@@ -1845,7 +1845,7 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 /* Double the gap below the final FAQ divider before the prefooter. */
-.v2-theme #faq-section > div {
+.v2-theme #faq-section > .faq-section-content {
   padding-bottom: 6.8rem !important;
 }
 
@@ -1919,6 +1919,11 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 .v2-theme #expertise h2.homepage-services-frame-heading {
+  color: #ffffff !important;
+  -webkit-text-fill-color: #ffffff !important;
+}
+
+.v2-theme #expertise h2.homepage-services-frame-heading.how-kicker {
   color: #ffffff !important;
   -webkit-text-fill-color: #ffffff !important;
 }
