@@ -907,6 +907,10 @@ export default function ProjectsV2({ initialProjects = [], showWorkflowAutomatio
             opacity: 1 !important;
             transform: translateY(0) !important;
           }
+          .recent-projects-layout .case-pair.buyukrainian-pair .pair-phone {
+            right: 10% !important;
+            bottom: -28% !important;
+          }
           .preview-item-container .case-desktop-frame,
           .preview-item-container .case-phone-frame,
           .preview-item-container .case-pair {
