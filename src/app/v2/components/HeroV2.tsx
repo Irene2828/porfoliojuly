@@ -1142,6 +1142,13 @@ export default function HeroV2({ variant = 'client' }: { variant?: 'client' | 'h
           .hero-websites .hero-text .hero-statement .headline-mobile .headline-websites-pink {
             font-weight: 400 !important;
             letter-spacing: 0.010em !important; /* +0.005em letter-spacing trial 22.11.2026 (was 0.005em) */
+            color: #ffffff !important; /* swap 22.11.2026: designed/built white on mobile */
+            -webkit-text-fill-color: #ffffff !important;
+          }
+          .hero-websites .hero-text .hero-statement .headline-mobile .headline-line > .headline-mobile-white.headline-websites-yours {
+            color: #f2908f !important; /* swap 22.11.2026: yours peach italic on mobile */
+            -webkit-text-fill-color: #f2908f !important;
+            font-style: italic !important;
           }
           .hero-websites .hero-text .hero-statement .headline-mobile .headline-line > .headline-mobile-white {
             font-family: 'Newsreader', 'Source Serif 4', Georgia, serif !important;
