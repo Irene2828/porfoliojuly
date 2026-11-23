@@ -723,7 +723,7 @@ export default function HeroV2({ variant = 'client' }: { variant?: 'client' | 'h
           .hero-websites .headline-mobile,
           .v2-theme .hero-websites .headline-mobile *,
           .hero-websites .headline-mobile * {
-            letter-spacing: -0.026em !important;
+            letter-spacing: -0.021em !important; /* +0.005em letter-spacing trial 22.11.2026 (was -0.026em) */
           }
           .v2-theme .hero-websites .hero-frame-paragraph .hero-body-mobile-text,
           .hero-websites .hero-frame-paragraph .hero-body-mobile-text,
@@ -1141,13 +1141,13 @@ export default function HeroV2({ variant = 'client' }: { variant?: 'client' | 'h
           }
           .hero-websites .hero-text .hero-statement .headline-mobile .headline-websites-pink {
             font-weight: 400 !important;
-            letter-spacing: 0.005em !important;
+            letter-spacing: 0.010em !important; /* +0.005em letter-spacing trial 22.11.2026 (was 0.005em) */
           }
           .hero-websites .hero-text .hero-statement .headline-mobile .headline-line > .headline-mobile-white {
             font-family: 'Newsreader', 'Source Serif 4', Georgia, serif !important;
             font-size: 100% !important;
             font-weight: 325 !important;
-            letter-spacing: -0.020em !important;
+            letter-spacing: -0.015em !important; /* +0.005em letter-spacing trial 22.11.2026 (was -0.020em) */
             font-style: normal !important;
             font-synthesis: none !important;
             color: #ffffff !important;
