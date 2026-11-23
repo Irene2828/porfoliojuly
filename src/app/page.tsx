@@ -5,6 +5,7 @@ import ProjectsV2 from './v2/components/ProjectsV2';
 import ServicesV2 from './v2/components/ServicesV2';
 import HowItWorks from './v2/components/HowItWorks';
 import ProcessSection from './v2/components/ProcessSection';
+import BridalAiHomepageShowcase from './v2/components/BridalAiHomepageShowcase';
 import PackagesSection from './v2/components/PackagesSection';
 import FaqSection from './v2/components/FaqSection';
 import Footer from './components/Footer';
@@ -55,6 +56,8 @@ export default function HomePage() {
 
         {/* Client feedback — Isabelle Guertin's review */}
         <ProcessSection variant="websites" />
+
+        <BridalAiHomepageShowcase />
 
         <div id="packages" style={{ scrollMarginTop: '88px' }}>
           <PackagesSection mode="website" variant="websites" />

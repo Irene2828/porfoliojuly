@@ -128,6 +128,10 @@ export default function ServicesV2({ websitesOnly = false }: ServicesV2Props) {
         .see-example-link-light-bg:hover::after {
           width: 100%;
         }
+        .homepage-services-frame-heading {
+          color: #ffffff !important;
+          -webkit-text-fill-color: #ffffff !important;
+        }
         @media (min-width: 901px) {
           .services-subline {
             font-size: calc(var(--text-body) + 2px) !important;
@@ -283,7 +287,7 @@ export default function ServicesV2({ websitesOnly = false }: ServicesV2Props) {
             textWrap: 'balance'
           }}
         >
-          <span style={{ fontWeight: 400, color: 'var(--color-heading-silver, #4a5461)' }}>How I Can Help Your Business</span>
+          <span style={{ fontWeight: 400, color: 'var(--color-heading-silver, #4a5461)' }}>From your problem - to custom-built solution</span>
         </motion.h2>
 
         {/* 3. Subline follows */}
@@ -306,7 +310,7 @@ export default function ServicesV2({ websitesOnly = false }: ServicesV2Props) {
             fontStyle: 'normal'
           }}
         >
-          Start with the problem. The format follows.
+          Start with the problem. The site follows.
         </motion.p>
       </div>
 
@@ -408,6 +412,26 @@ export default function ServicesV2({ websitesOnly = false }: ServicesV2Props) {
 
               {/* Real Card Content (zIndex: 1) */}
               <div className={websitesOnly ? 'homepage-services-card-content' : undefined} style={{ position: 'relative', zIndex: 1, paddingTop: '1.25rem' }}>
+                {websitesOnly && <motion.h2
+                  className="homepage-services-frame-heading"
+                  initial={{ opacity: 0, y: 16 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  viewport={{ once: true, amount: 0.3 }}
+                  transition={{ duration: 0.65, ease: [0.16, 1, 0.3, 1] }}
+                  style={{
+                    fontFamily: 'var(--font-heading)',
+                    fontSize: 'calc(var(--text-section-title) * 0.8)',
+                    fontWeight: 400,
+                    lineHeight: 1.2,
+                    letterSpacing: '-0.02em',
+                    color: '#FFFFFF',
+                    textAlign: 'center',
+                    margin: '0 0 2.25rem 0',
+                    WebkitTextStroke: '0'
+                  }}
+                >
+                  Your new site will be:
+                </motion.h2>}
                 {!websitesOnly && <motion.h3
                   initial={{ opacity: 0, y: 16 }}
                   whileInView={{ opacity: 1, y: 0 }}

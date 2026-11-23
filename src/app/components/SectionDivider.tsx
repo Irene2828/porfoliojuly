@@ -42,7 +42,7 @@ export default function SectionDivider({
         <span className="section-divider-light-line left-line" />
         <span className="section-divider-light-decor section-divider-decor-desktop">/</span>
         <span className="section-divider-light-decor section-divider-decor-mobile">+</span>
-        <span className="section-divider-light-text">{label || 'Recent Projects'}</span>
+        <span className="section-divider-light-text">{label || 'Recent projects'}</span>
         <span className="section-divider-light-decor section-divider-decor-desktop">/</span>
         <span className="section-divider-light-decor section-divider-decor-mobile">+</span>
         <div className="section-divider-light-line right-line" />

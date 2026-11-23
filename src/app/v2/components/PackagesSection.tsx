@@ -14,34 +14,35 @@ interface Package {
 const WEBSITE_PACKAGES: Package[] = [
   {
     name: 'Custom Website',
-    price: 'from $1,500 CAD',
-    bullets: ['Research', 'Three visual directions', 'Design', 'Copy', 'Build', 'Tested launch', 'Hosting set up; you keep the logins'],
+    price: 'from $1,800 CAD',
+    bullets: ['Up to 5 pages', 'Research', 'Three visual directions', 'Design', 'Copy', 'Build', 'Tested launch', 'Hosting set up; you keep the logins'],
   },
   {
-    name: 'Polish & Launch',
+    name: 'Quick Polish & Launch',
     price: 'from $750 CAD',
     lead: 'An AI draft or a dated site, fixed and launched.',
-    bullets: ['Structure', 'Copy', 'Mobile', 'Forms', 'Domain'],
+    bullets: ['Up to 5 pages', 'Structure', 'Copy', 'Mobile', 'Forms', 'Domain'],
   },
   {
     name: 'Website Care',
     price: 'from $100 CAD/month',
-    bullets: ['Updates', 'Small edits', 'Checks', 'Your site stays current without you touching it', 'Larger changes are quoted separately, only when you ask'],
+    lead: 'Keep your site current without touching it.',
+    bullets: ['Updates', 'Small edits', 'Checks', 'Includes up to 1 hour of edits a month.', 'Larger changes are quoted separately, only when you ask'],
   },
 ];
 
 const HOMEPAGE_WEBSITE_PACKAGES: Package[] = [
   {
     name: 'Custom Website',
-    price: 'from $1,500 CAD',
+    price: 'from $1,800 CAD',
     lead: 'New business or a rebuild: a site built around your business, from scratch.',
-    bullets: ['A call to learn your business and clients', 'Three visual directions', 'Design and copy', 'Build', 'A tested launch', 'Hosting set up, and you keep the logins'],
+    bullets: ['Up to 5 pages', 'A call to learn your business and clients', 'Three visual directions', 'Design and copy', 'Build', 'A tested launch', 'Hosting set up, and you keep the logins'],
   },
   {
-    name: 'Polish & Launch',
+    name: 'Quick Polish & Launch',
     price: 'from $750 CAD',
     lead: 'You already have an AI draft or a dated site. I fix it and launch it.',
-    bullets: ['Clearer structure', 'Better copy', 'Mobile fixes', 'Working forms', 'Your domain connected'],
+    bullets: ['Up to 5 pages', 'Clearer structure', 'Better copy', 'Mobile fixes', 'Working forms', 'Your domain connected'],
   },
   {
     name: 'Larger Builds',
@@ -52,7 +53,8 @@ const HOMEPAGE_WEBSITE_PACKAGES: Package[] = [
   {
     name: 'Website Care',
     price: 'from $100 CAD/month',
-    bullets: ['Updates, small edits, regular checks.', 'Your site stays current without you touching it.', 'Bigger changes are quoted separately, only when you ask.'],
+    lead: 'Keep your site current without touching it.',
+    bullets: ['Updates, small edits, regular checks.', 'Includes up to 1 hour of edits a month.', 'Bigger changes are quoted separately, only when you ask.'],
   },
 ];
 
@@ -76,19 +78,40 @@ const AI_PACKAGES: Package[] = [
   },
 ];
 
-export default function PackagesSection({ onCtaClick, mode = 'website', variant = 'default' }: { onCtaClick?: () => void; mode?: 'website' | 'ai'; variant?: 'default' | 'websites' }) {
+const TOOLS_PACKAGES: Package[] = [
+  {
+    name: 'Workflow build',
+    price: 'from $2,500 CAD',
+    lead: 'One repetitive routine, turned into a tool that runs on your accounts.',
+    bullets: ['One routine, start to finish', 'Tested on your real cases', 'A walkthrough for your team'],
+  },
+  {
+    name: 'Agent system setup',
+    price: 'from $5,000 CAD',
+    lead: 'A personal agent system for an owner or a small team.',
+    bullets: ['Memory', 'Rules', 'Schedules', 'Guardrails', 'Set up on the AI you choose'],
+  },
+  {
+    name: 'Care & tuning',
+    price: 'from $200 CAD/month',
+    bullets: ['Monitoring', 'Small rule fixes', 'New scenarios', 'A short monthly note on what’s saved'],
+  },
+];
+
+export default function PackagesSection({ onCtaClick, mode = 'website', variant = 'default' }: { onCtaClick?: () => void; mode?: 'website' | 'ai' | 'tools'; variant?: 'default' | 'websites' }) {
   const isAi = mode === 'ai';
+  const isTools = mode === 'tools';
   const isWebsites = variant === 'websites';
-  const packages = isAi ? AI_PACKAGES : isWebsites ? HOMEPAGE_WEBSITE_PACKAGES : WEBSITE_PACKAGES;
+  const packages = isTools ? TOOLS_PACKAGES : isAi ? AI_PACKAGES : isWebsites ? HOMEPAGE_WEBSITE_PACKAGES : WEBSITE_PACKAGES;
   const packagesClassName = [
     'packages-cards',
-    isAi ? 'ai-packages-cards' : 'website-packages-cards',
+    isTools ? 'tools-packages-cards' : isAi ? 'ai-packages-cards' : 'website-packages-cards',
     isWebsites && !isAi ? 'homepage-website-packages-cards' : '',
   ].filter(Boolean).join(' ');
   const [agentDetailsOpen, setAgentDetailsOpen] = useState(false);
   const [activePackageDot, setActivePackageDot] = useState(0);
   const packagesRailRef = useRef<HTMLDivElement>(null);
-  const [openPackages, setOpenPackages] = useState<Record<string, boolean>>(() => Object.fromEntries([...WEBSITE_PACKAGES, ...HOMEPAGE_WEBSITE_PACKAGES, ...AI_PACKAGES].map((pkg) => [pkg.name, true])));
+  const [openPackages, setOpenPackages] = useState<Record<string, boolean>>(() => Object.fromEntries([...WEBSITE_PACKAGES, ...HOMEPAGE_WEBSITE_PACKAGES, ...AI_PACKAGES, ...TOOLS_PACKAGES].map((pkg) => [pkg.name, true])));
   return (
     <section
       className="packages-section"
@@ -437,17 +460,23 @@ export default function PackagesSection({ onCtaClick, mode = 'website', variant 
 
       <div className="packages-inner">
         <p style={{ fontFamily: 'var(--font-label)', fontSize: 'var(--text-label)', fontWeight: 600, textTransform: 'uppercase', letterSpacing: '0.14em', color: '#f2908f', textAlign: 'center', margin: '0 0 1.05rem 0' }}>
-          {isAi ? 'AI product packages' : 'Website packages'}
+          {isTools ? 'Tools & automations' : isAi ? 'AI product packages' : 'Website packages'}
         </p>
         <motion.h2
-          className="packages-heading"
+          className={isAi ? 'packages-heading' : 'packages-heading packages-heading-website-title'}
           initial={{ opacity: 0, y: 16 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true, amount: 0.45 }}
           transition={{ duration: 0.7, ease: [0.16, 1, 0.3, 1] }}
           style={{ color: '#ffffff', WebkitTextFillColor: '#ffffff' }}
         >
-          {isAi ? <>Custom <strong>AI products</strong> — built around your problem</> : 'Custom websites — built around your business'}
+          {isTools ? (
+            <span className="packages-heading-website">Pick the size of the job.</span>
+          ) : isAi ? (
+            <>Custom <strong>AI products</strong> — built around your problem</>
+          ) : (
+            <span className="packages-heading-website">Pick the size of the job.</span>
+          )}
         </motion.h2>
 
         {isAi && <div className="packages-scroll-hint" aria-label={`Package ${activePackageDot + 1} of 4`} role="status">{[0, 1, 2, 3].map((dot) => <span key={dot} className={`packages-scroll-dot${activePackageDot === dot ? ' is-active' : ''}`} aria-hidden="true" />)}</div>}
@@ -465,7 +494,7 @@ export default function PackagesSection({ onCtaClick, mode = 'website', variant 
                 aria-controls={`package-details-${mode}-${index}`}
                 onClick={() => setOpenPackages((open) => ({ ...open, [pkg.name]: !open[pkg.name] }))}
               >
-                WHAT'S INCLUDED<svg className="agent-setup-toggle-icon" aria-hidden="true" viewBox="0 0 12 12" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" style={{ transform: openPackages[pkg.name] ? 'rotate(180deg)' : undefined }}><path d="m2 4 4 4 4-4" /></svg>
+                WHAT’S INCLUDED<svg className="agent-setup-toggle-icon" aria-hidden="true" viewBox="0 0 12 12" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" style={{ transform: openPackages[pkg.name] ? 'rotate(180deg)' : undefined }}><path d="m2 4 4 4 4-4" /></svg>
               </button>
               <ul
                 id={`package-details-${mode}-${index}`}
@@ -487,7 +516,7 @@ export default function PackagesSection({ onCtaClick, mode = 'website', variant 
             <p className="packages-card-price">from $750 CAD · one-time setup</p>
             <p className="packages-card-text" style={{ marginBottom: '0.65rem' }}>You have a personal AI assistant but use it as a chatbot. I set it up around your business — so it does the work, not just the talking.</p>
             <button type="button" className="agent-setup-toggle" aria-expanded={agentDetailsOpen} onClick={() => setAgentDetailsOpen((open) => !open)}>
-              WHAT'S INCLUDED<svg className="agent-setup-toggle-icon" aria-hidden="true" viewBox="0 0 12 12" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" style={{ transform: agentDetailsOpen ? 'rotate(180deg)' : undefined }}><path d="m2 4 4 4 4-4" /></svg>
+              WHAT’S INCLUDED<svg className="agent-setup-toggle-icon" aria-hidden="true" viewBox="0 0 12 12" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" style={{ transform: agentDetailsOpen ? 'rotate(180deg)' : undefined }}><path d="m2 4 4 4 4-4" /></svg>
             </button>
             {agentDetailsOpen && (
               <div>
@@ -507,13 +536,13 @@ export default function PackagesSection({ onCtaClick, mode = 'website', variant 
         )}
         </div>
 
-        {isWebsites && !isAi && (
-          <p className="packages-honest">Not sure which fits? Tell me about your site and I’ll recommend one, honestly.</p>
+        {(isWebsites || isTools) && !isAi && (
+          <p className="packages-honest">{isTools ? 'Not sure which fits? Tell me about your routine and I’ll tell you which one does.' : 'Not sure which fits? Tell me about your site and I’ll tell you which one does.'}</p>
         )}
 
         <div className="packages-cta-wrap">
-          <a href={isAi ? 'mailto:iryna@irynasheremeta.com?subject=AI%20product%20packages' : 'mailto:iryna@irynasheremeta.com?subject=Website%20packages'} className="packages-btn-primary" onClick={(e) => { e.preventDefault(); onCtaClick?.(); openContact(isAi ? 'AI product packages' : 'Website packages'); }}>
-            <span style={{ letterSpacing: '0.08em' }}>{isWebsites ? 'TELL ME ABOUT YOUR WEBSITE' : 'EMAIL ME YOUR PROBLEM'}</span>
+          <a href={isTools ? 'mailto:iryna@irynasheremeta.com?subject=Tools%20%26%20automations' : isAi ? 'mailto:iryna@irynasheremeta.com?subject=AI%20product%20packages' : 'mailto:iryna@irynasheremeta.com?subject=Website%20packages'} className="packages-btn-primary" onClick={(e) => { e.preventDefault(); onCtaClick?.(); openContact(isTools ? 'Tools & automations' : isAi ? 'AI product packages' : 'Website packages'); }}>
+            <span style={{ letterSpacing: '0.08em' }}>{isTools ? 'TELL ME ABOUT YOUR ROUTINE' : isWebsites ? 'TELL ME ABOUT YOUR WEBSITE' : 'EMAIL ME YOUR PROBLEM'}</span>
             <svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round" style={{ transform: 'translateY(-0.5px)' }}>
               <line x1="7" y1="17" x2="17" y2="7"></line>
               <polyline points="7 7 17 7 17 17"></polyline>

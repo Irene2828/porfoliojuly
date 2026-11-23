@@ -1427,7 +1427,7 @@ export function HireClosing() {
             className="btn hire-closing-btn face-cta"
             style={{ display: 'inline-flex', alignItems: 'center', gap: '0.45rem' }}
           >
-            <span style={{ letterSpacing: '0.08em' }}>LET&apos;S CHAT</span>
+            <span style={{ letterSpacing: '0.08em' }}>LET’S CHAT</span>
             <svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round" style={{ transform: 'translateY(-0.5px)' }}>
               <line x1="7" y1="17" x2="17" y2="7"></line>
               <polyline points="7 7 17 7 17 17"></polyline>
@@ -1938,13 +1938,13 @@ export function HireTestimonial() {
         >
           <blockquote className="hire-t-quote">
             <span className="hire-t-featured">
-              “What sets her apart is her ability to go beyond what&apos;s asked, anticipate needs,
+              “What sets her apart is her ability to go beyond what’s asked, anticipate needs,
               and offer thoughtful solutions.”
             </span>
             <span className="hire-t-quote-sentence">
               Working with Iryna was a great experience from start to finish. She is professional,
               patient, and truly listens to her clients. She delivered a website that perfectly
-              reflects my business and values. I couldn&apos;t be happier with the result and highly
+              reflects my business and values. I couldn’t be happier with the result and highly
               recommend her services!
             </span>
           </blockquote>

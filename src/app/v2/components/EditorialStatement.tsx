@@ -3,8 +3,9 @@
 import { motion } from 'framer-motion';
 import { openContact } from '@/app/components/ContactModal';
 
-export default function EditorialStatement({ variant = 'default' }: { variant?: 'default' | 'websites' }) {
+export default function EditorialStatement({ variant = 'default' }: { variant?: 'default' | 'websites' | 'tools' }) {
   const isWebsites = variant === 'websites';
+  const isTools = variant === 'tools';
   return (
       <section
         className="prefooter-section"
@@ -307,8 +308,8 @@ export default function EditorialStatement({ variant = 'default' }: { variant?: 
             }}
           >
             <span className="prefooter-closing-desktop">
-              {isWebsites ? 'Tell me what your website should be doing, and isn’t.' : <>An outdated website or repetitive work{' '}</>}
-              {!isWebsites && (
+              {isTools ? 'Tell me what’s eating your week.' : isWebsites ? 'Tell me what your website should be doing, and isn’t.' : <>An outdated website or repetitive work{' '}</>}
+              {!isWebsites && !isTools && (
               <motion.span
                 initial={{ opacity: 0, y: 12 }}
                 whileInView={{ opacity: 1, y: 0 }}
@@ -321,7 +322,9 @@ export default function EditorialStatement({ variant = 'default' }: { variant?: 
               )}
             </span>
             <span className="prefooter-closing-mobile">
-              {isWebsites ? (
+              {isTools ? (
+                <span className="prefooter-closing-row">Tell me what’s eating your week.</span>
+              ) : isWebsites ? (
                 <span className="prefooter-closing-row">Tell me what your website should be doing, and isn’t.</span>
               ) : (
                 <>
@@ -357,7 +360,7 @@ export default function EditorialStatement({ variant = 'default' }: { variant?: 
               textWrap: 'balance'
             }}
           >
-              <p style={{ margin: 0, fontWeight: 500 }}>{isWebsites ? 'I’ll reply within 24 hours.' : "Let's fix that."}</p>
+              <p style={{ margin: 0, fontWeight: 500 }}>{isTools ? 'I’ll build the tool.' : isWebsites ? 'I’ll design and build the solution.' : 'Let’s fix that.'}</p>
           </motion.div>
 
           {/* 4. Action CTA Pill Arrival */}
@@ -375,14 +378,14 @@ export default function EditorialStatement({ variant = 'default' }: { variant?: 
               className="btn prefooter-btn-primary face-cta"
               style={{ display: 'inline-flex', alignItems: 'center', gap: '0.45rem' }}
             >
-              <span style={{ letterSpacing: '0.08em' }}>{isWebsites ? 'TELL ME ABOUT YOUR WEBSITE' : 'SEND YOUR PROBLEM MY WAY'}</span>
+              <span style={{ letterSpacing: '0.08em' }}>{isTools ? 'TELL ME ABOUT YOUR ROUTINE' : isWebsites ? 'TELL ME ABOUT YOUR WEBSITE' : 'SEND YOUR PROBLEM MY WAY'}</span>
               <svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round" style={{ transform: 'translateY(-0.5px)' }}>
                 <line x1="7" y1="17" x2="17" y2="7"></line>
                 <polyline points="7 7 17 7 17 17"></polyline>
               </svg>
             </a>
             <p style={{ margin: 0, fontFamily: 'var(--font-body), "Plus Jakarta Sans", sans-serif', fontSize: '0.82rem', fontWeight: 300, letterSpacing: '0.015em', color: 'rgba(255, 255, 255, 0.68)', textAlign: 'center' }}>
-              {isWebsites ? null : <>I&apos;ll reply to you within the next 24 hrs.</>}
+              {isWebsites || isTools ? null : <>I’ll reply to you within the next 24 hrs.</>}
             </p>
           </motion.div>
         </div>

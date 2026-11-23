@@ -3,11 +3,8 @@
 import { motion } from 'framer-motion';
 
 const TICKER_SEGMENTS = [
-  'Iryna Sheremeta',
-  'Product Designer & AI Builder',
-  'Custom websites — from problem to shipped product',
-  'Montréal',
-  'Remote across Canada',
+  'You come with a problem and leave with a custom-built solution.',
+  'Let’s get started',
 ];
 
 export default function Footer({ variant }: { variant?: 'standard' | 'ticker' }) {
@@ -39,7 +36,7 @@ export default function Footer({ variant }: { variant?: 'standard' | 'ticker' })
           .footer-ticker-track {
             display: flex;
             width: max-content;
-            animation: footerTickerScroll 30s linear infinite;
+            animation: footerTickerScroll 120s linear infinite;
           }
           .site-footer-ticker:hover .footer-ticker-track {
             animation-play-state: paused;
@@ -87,10 +84,10 @@ export default function Footer({ variant }: { variant?: 'standard' | 'ticker' })
         `}</style>
         <div className="footer-ticker-strip">
           <div className="footer-ticker-track">
-            {[0, 1].map((n) => (
+            {[0, 1, 2, 3, 4, 5, 6, 7].map((n) => (
               <div
-                className={`footer-ticker-group${n === 1 ? ' footer-ticker-group-dup' : ''}`}
-                aria-hidden={n === 1}
+                className={`footer-ticker-group${n > 0 ? ' footer-ticker-group-dup' : ''}`}
+                aria-hidden={n > 0}
                 key={n}
               >
                 {TICKER_SEGMENTS.map((segment, i) => (

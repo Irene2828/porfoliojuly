@@ -270,7 +270,7 @@ export default function AiShowcase() {
             margin: '0 auto 1.25rem auto',
           }}
         >
-          But wait... can&apos;t AI do it all for me?
+          But wait... can’t AI do it all for me?
         </motion.h2>
         <motion.p
           className="faq-subline faq-body-copy"
@@ -313,7 +313,7 @@ export default function AiShowcase() {
           transition={{ duration: 0.68, delay: 0.16, ease: [0.16, 1, 0.3, 1] }}
           style={{ fontSize: 'var(--text-body)', lineHeight: 'var(--lh-body)', margin: '0 auto 1.25rem auto', textAlign: 'left', maxWidth: '70ch' }}
         >
-          Ask AI to generate the posters, and it drifts: spacing off, brand rules broken, fonts it doesn&apos;t have. And you can&apos;t expect every volunteer to know how to direct AI until it behaves.
+          Ask AI to generate the posters, and it drifts: spacing off, brand rules broken, fonts it doesn’t have. And you can’t expect every volunteer to know how to direct AI until it behaves.
         </motion.p>
         <motion.p
           className="faq-subline faq-body-copy"
@@ -332,7 +332,7 @@ export default function AiShowcase() {
           transition={{ duration: 0.68, delay: 0.24, ease: [0.16, 1, 0.3, 1] }}
           style={{ fontFamily: "var(--font-body), 'Plus Jakarta Sans', sans-serif", fontSize: 'var(--text-lead)', fontWeight: 700, letterSpacing: '-0.011em', lineHeight: 'var(--lh-body)', color: 'rgba(0, 0, 0, 0.78)', textAlign: 'center', margin: '2rem auto 0', maxWidth: '52ch' }}
         >
-          That&apos;s where I can help.
+          That’s where I can help.
         </motion.p>
       </div>
     </section>

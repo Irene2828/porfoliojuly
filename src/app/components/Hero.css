@@ -425,6 +425,22 @@
   }
 }
 
+/* Tablet-sized screens keep both hero actions together, with laptop-like spacing. */
+@media (min-width: 600px) and (max-width: 900px) {
+  .hero-ctas-outside {
+    flex-direction: row !important;
+    justify-content: flex-start !important;
+    align-items: center !important;
+    gap: clamp(0.75rem, 2vw, 1.25rem) !important;
+    flex-wrap: nowrap !important;
+  }
+
+  .hero-ctas-outside .face-cta {
+    width: auto !important;
+    max-width: none !important;
+  }
+}
+
 .hero-text .headline-mockup-bold,
 .headline-mockup-bold {
   color: #f795a9 !important;

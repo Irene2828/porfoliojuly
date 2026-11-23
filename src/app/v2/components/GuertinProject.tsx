@@ -155,7 +155,7 @@ export default function GuertinProject({ kicker, subline, browserTitle, cardsTit
                 <span className="guertin-card-icon">⚡</span> Before: Outdated WordPress
               </h4>
               <p className="guertin-card-desc" style={{ color: 'rgba(255,255,255,0.75)' }}>
-                It didn&apos;t carry her credibility: a 20-year expert behind a generic site, services in insider language, and no clear way for a client in trouble to reach her.
+                It didn’t carry her credibility: a 20-year expert behind a generic site, services in insider language, and no clear way for a client in trouble to reach her.
               </p>
             </motion.div>
 

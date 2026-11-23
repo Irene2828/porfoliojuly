@@ -108,7 +108,7 @@ export default function ProcessSection({ variant = 'default' }: { variant?: 'def
             transform: translateX(5%) !important;
           }
           .homepage-testimonial-single {
-            padding-top: 6.5rem !important;
+            padding-top: 6rem !important;
             padding-bottom: 4.5rem !important;
           }
           .testimonial-quote {
@@ -159,7 +159,7 @@ export default function ProcessSection({ variant = 'default' }: { variant?: 'def
               color: 'var(--color-heading-silver)',
             }}
           >
-            {isWebsites ? 'Working with me, in client’s words:' : 'Working with me, in client’s words:'}
+            {isWebsites ? 'Working with me, in my client’s words:' : 'Working with me, in my client’s words:'}
           </motion.h2>
           <motion.div
             className={`testimonial-single${isWebsites ? ' homepage-testimonial-single' : ''}`}
@@ -182,7 +182,7 @@ export default function ProcessSection({ variant = 'default' }: { variant?: 'def
             }}
           >
             <p className="testimonial-pull-quote">
-              “Your website is so effective that I&apos;m now receiving calls every day from potential clients — sometimes as many as three a day!”
+              “Your website is so effective that I’m now receiving calls every day from potential clients — sometimes as many as three a day!”
             </p>
             <blockquote
               className="testimonial-quote"
@@ -196,7 +196,9 @@ export default function ProcessSection({ variant = 'default' }: { variant?: 'def
                 color: 'rgba(0, 0, 0, 0.64)',
               }}
             >
-              Working with Iryna was a great experience from start to finish. She is professional, patient, and truly listens to her clients. What sets her apart is her ability to go beyond what&apos;s asked, anticipate needs, and offer thoughtful solutions. She delivered a website that perfectly reflects my business and values. I couldn&apos;t be happier with the result and highly recommend her services!
+              {isWebsites
+                ? 'Working with Iryna was a great experience from start to finish. She is professional, patient, and truly listens to her clients. What sets her apart is her ability to go beyond what’s asked, anticipate needs, and offer thoughtful solutions. She delivered a website that perfectly reflects my business and values. I couldn’t be happier with the result and highly recommend her services!'
+                : '“She delivered a website that perfectly reflects my business and values.”'}
             </blockquote>
             <motion.p
               className="testimonial-attribution"

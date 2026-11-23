@@ -4,7 +4,7 @@ import { AnimatePresence, motion } from 'framer-motion';
 import { useState } from 'react';
 
 type HowItWorksProps = {
-  variant?: 'default' | 'websites';
+  variant?: 'default' | 'websites' | 'tools';
 };
 
 export default function HowItWorks({ variant = 'default' }: HowItWorksProps) {
@@ -33,7 +33,7 @@ export default function HowItWorks({ variant = 'default' }: HowItWorksProps) {
       num: '03',
       title: 'I apply care to every detail until we reach the goal.',
       bullets: [
-        { rest: "Hosting and the accounts around it are taken care of — you're set for what comes next" },
+        { rest: 'Hosting and the accounts around it are taken care of — you’re set for what comes next' },
         { rest: 'Tested, set up, handed over.' }
       ],
       
@@ -68,7 +68,36 @@ export default function HowItWorks({ variant = 'default' }: HowItWorksProps) {
       ],
     }
   ];
-  const steps = variant === 'websites' ? websiteSteps : defaultSteps;
+  const toolsSteps = [
+    {
+      num: '01',
+      title: 'I start with the routine, not the software.',
+      bullets: [
+        { rest: 'You show me how it’s done today: the files, the steps, the exceptions.' },
+        { rest: 'We agree what the tool does and what a person still approves.' },
+        { rest: 'You see a working version early, while changes are still cheap.' },
+      ],
+    },
+    {
+      num: '02',
+      title: 'I build it and test it on your real cases.',
+      bullets: [
+        { rest: 'Built around the tools and accounts you already use.' },
+        { rest: 'Tested on real examples, not demos.' },
+        { rest: 'The routine runs itself; approvals stay human.' },
+      ],
+    },
+    {
+      num: '03',
+      title: 'I hand it over, and I stay.',
+      bullets: [
+        { rest: 'A short walkthrough so your team can run it.' },
+        { rest: 'You own the tool, the code and the accounts. Nothing is held hostage.' },
+        { rest: 'Small fixes and new cases on a care plan.' },
+      ],
+    },
+  ];
+  const steps = variant === 'websites' ? websiteSteps : variant === 'tools' ? toolsSteps : defaultSteps;
 
   return (
     <section
@@ -139,6 +168,7 @@ export default function HowItWorks({ variant = 'default' }: HowItWorksProps) {
           letter-spacing: -0.02em !important;
           color: #ffffff !important;
           -webkit-text-fill-color: #ffffff !important;
+          text-wrap: balance !important;
         }
         @media (min-width: 901px) {
           .how-step-title {
@@ -157,11 +187,15 @@ export default function HowItWorks({ variant = 'default' }: HowItWorksProps) {
           -webkit-text-fill-color: #ffffff !important;
         }
         .how-step-card {
-          transition: transform 0.25s ease !important;
+          border: 1px solid rgba(255, 255, 255, 0.16) !important;
+          border-radius: 16px !important;
+          background: rgba(255, 255, 255, 0.03) !important;
+          transition: transform 0.25s ease, background-color 0.25s ease, border-color 0.25s ease !important;
         }
         .how-step-card:hover {
           transform: translateY(-4px) !important;
-          border: none !important;
+          border-color: rgba(255, 255, 255, 0.24) !important;
+          background: rgba(255, 255, 255, 0.07) !important;
         }
         .how-step-label {
           display: block;
@@ -229,6 +263,10 @@ export default function HowItWorks({ variant = 'default' }: HowItWorksProps) {
             grid-row: 1;
           }
           .how-step-card > ul { grid-column: 2; }
+          .how-step-card {
+            box-sizing: border-box !important;
+            padding-inline: 1rem !important;
+          }
           .how-num {
             font-size: 2.65rem !important;
           }
@@ -267,7 +305,7 @@ export default function HowItWorks({ variant = 'default' }: HowItWorksProps) {
           transition={{ duration: 0.68, ease: [0.16, 1, 0.3, 1] }}
           style={{ margin: '0 0 1.05rem 0', textAlign: 'left' }}
         >
-          MY APPROACH TO WORK
+          {variant === 'tools' ? 'How it works' : 'My approach to work'}
         </motion.p>
         <motion.h2
           className="how-title"
@@ -285,7 +323,11 @@ export default function HowItWorks({ variant = 'default' }: HowItWorksProps) {
             textAlign: 'left'
           }}
         >
-          <span className="how-title-lead">Clarity. Logic.</span>{' '}<span className="how-title-last">Care.</span>
+          {variant === 'tools' ? (
+            <span className="how-title-lead">Three stages, from routine to tool.</span>
+          ) : (
+            <><span className="how-title-lead">Clarity. Logic.</span>{' '}<span className="how-title-last">Care.</span></>
+          )}
         </motion.h2>
         <motion.p
           className="how-subcopy"
@@ -304,7 +346,7 @@ export default function HowItWorks({ variant = 'default' }: HowItWorksProps) {
             textAlign: 'left'
           }}
         >
-          {variant === 'websites' ? 'Three stages, from problem to solution.' : 'Three stages - three steps to bring a problem to solution.'}
+          {variant === 'tools' ? 'Start with the routine. Build the tool. Keep the approvals human.' : variant === 'websites' ? 'Three stages — from problem to solution.' : 'Three stages - three steps to bring a problem to solution.'}
         </motion.p>
         <div
           className="how-steps-grid"

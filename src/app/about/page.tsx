@@ -23,7 +23,7 @@ export default function AboutPage() {
           <div className="about-cta-section prefooter-section">
             <h2 className="about-cta-text">
               <span className="about-cta-lead">Need your problem solved by someone who gets business, design and tech?</span>{' '}
-              <span className="about-cta-highlight" style={{ display: 'block' }}>I'd love to help.</span>
+              <span className="about-cta-highlight" style={{ display: 'block' }}>I’d love to help.</span>
             </h2>
             <div className="prefooter-cta-container">
               <AboutCtaButton />

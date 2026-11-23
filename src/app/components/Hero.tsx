@@ -63,7 +63,7 @@ export default function Hero() {
                 className="hero-ctas hero-ctas-outside"
                 style={{ marginTop: '3.8rem' }}
               >
-                <a href="#contact" className="btn btn-primary btn-primary-outline">LET'S WORK ON YOUR NEXT BUILD</a>
+                <a href="#contact" className="btn btn-primary btn-primary-outline">LET’S WORK ON YOUR NEXT BUILD</a>
                 <a href="#work" className="btn btn-secondary btn-secondary-stacked" style={{ opacity: 0.85 }}>
                   SEE WORK EXAMPLES <span className="arrow">↓</span>
                 </a>

@@ -23,19 +23,44 @@ interface ProjectsV2Props {
   recentProjects?: boolean;
 }
 
+function DeviceVideo({ src, poster, alt }: { src: string; poster: string; alt: string }) {
+  const videoRef = useRef<HTMLVideoElement>(null);
+
+  return (
+    <video
+      ref={videoRef}
+      src={src}
+      poster={poster}
+      loop
+      muted
+      playsInline
+      preload="metadata"
+      aria-label={alt}
+      onMouseEnter={(event) => {
+        if (!window.matchMedia('(hover: hover)').matches) return;
+        event.currentTarget.play().catch(() => {});
+      }}
+      onMouseLeave={(event) => {
+        event.currentTarget.pause();
+        event.currentTarget.currentTime = 0;
+      }}
+    />
+  );
+}
+
 function DevicePair({ desktopSrc, desktopVideoSrc, phoneImgSrc, phoneVideoSrc, alt, modal = false, className }: { desktopSrc: string; desktopVideoSrc?: string; phoneImgSrc?: string; phoneVideoSrc?: string; alt: string; modal?: boolean; className?: string }) {
   return (
     <div className={`case-pair${modal ? ' modal-pair' : ''}${className ? ` ${className}` : ''}`}>
       <div className="pair-desktop">
         {desktopVideoSrc ? (
-          <video src={desktopVideoSrc} poster={desktopSrc} autoPlay loop muted playsInline preload="auto" />
+          <DeviceVideo src={desktopVideoSrc} poster={desktopSrc} alt="" />
         ) : (
           <img src={desktopSrc} alt={alt} />
         )}
       </div>
       <div className="pair-phone">
         {phoneVideoSrc ? (
-          <video src={phoneVideoSrc} poster={phoneImgSrc} autoPlay loop muted playsInline preload="auto" />
+          <DeviceVideo src={phoneVideoSrc} poster={phoneImgSrc} alt="" />
         ) : (
           <img src={phoneImgSrc} alt="" />
         )}
@@ -74,7 +99,7 @@ export default function ProjectsV2({ initialProjects = [], showWorkflowAutomatio
         { 
           chip: 'Before', 
           text: 'Designers were the bottleneck.', 
-          sub: "Every poster was made by hand in Figma, one at a time. Volunteers waited days for a single poster, and designers were pulled away from bigger work. Asking AI instead wasn't an answer either: a new layout every time, colours that drift, text that wanders. A national run needs the same poster in every city." 
+          sub: 'Every poster was made by hand in Figma, one at a time. Volunteers waited days for a single poster, and designers were pulled away from bigger work. Asking AI instead wasn’t an answer either: a new layout every time, colours that drift, text that wanders. A national run needs the same poster in every city.'
         },
         { 
           chip: 'After', 
@@ -113,7 +138,7 @@ export default function ProjectsV2({ initialProjects = [], showWorkflowAutomatio
         { 
           chip: 'Before', 
           text: 'Outdated WordPress', 
-          sub: "It didn't carry her credibility: a 20-year expert behind a generic site, services in insider language, and no clear way for a client in trouble to reach her." 
+          sub: 'It didn’t carry her credibility: a 20-year expert behind a generic site, services in insider language, and no clear way for a client in trouble to reach her.'
         },
         { 
           chip: 'After', 
@@ -140,12 +165,12 @@ export default function ProjectsV2({ initialProjects = [], showWorkflowAutomatio
         {
           chip: 'Before',
           text: 'Answers depended on who you asked.',
-          sub: "A simple question — 'what's the employee discount?' — meant minutes of searching through scattered documents, and the answer changed with the person you asked. Wrong answers cost real money: a wrong discount, a wrong return, a wrong procedure."
+            sub: 'A simple question — “what’s the employee discount?” — meant minutes of searching through scattered documents, and the answer changed with the person you asked. Wrong answers cost real money: a wrong discount, a wrong return, a wrong procedure.'
         },
         {
           chip: 'After',
           text: 'A checked answer in seconds',
-          sub: "Ask a question, get a cited answer in seconds, with every step visible — retrieve, draft, judge, approve, log.\n\nThe judge catches bad answers before they reach anyone: the demo shows a clean pass, an honest unknown, and a bad draft caught and fixed. When the documents don't cover the question, the agent says 'I don't know' instead of inventing one."
+            sub: 'Ask a question, get a cited answer in seconds, with every step visible — retrieve, draft, judge, approve, log.\n\nThe judge catches bad answers before they reach anyone: the demo shows a clean pass, an honest unknown, and a bad draft caught and fixed. When the documents don’t cover the question, the agent says “I don’t know” instead of inventing one.'
         }
       ],
       image: '/assets/north-co/01-ask.png'
@@ -172,7 +197,7 @@ export default function ProjectsV2({ initialProjects = [], showWorkflowAutomatio
         {
           chip: 'After',
           text: 'First reply in minutes',
-          sub: "The draft is ready in about two minutes; approving takes about three. Across ten new clients a month, that returns roughly 4.5 hours — and no inquiry is left unanswered. Figures from the practice's first two months; name and details changed for privacy."
+            sub: 'The draft is ready in about two minutes; approving takes about three. Across ten new clients a month, that returns roughly 4.5 hours — and no inquiry is left unanswered. Figures from the practice’s first two months; name and details changed for privacy.'
         }
       ],
       image: '/workflow-setup-demo.mp4'
@@ -181,13 +206,13 @@ export default function ProjectsV2({ initialProjects = [], showWorkflowAutomatio
 
   const [projectsList, setProjectsList] = useState(initialProjectsData);
   const caseGroups = [
-    { id: 'internal-tools', label: 'Internal Apps' },
+    { id: 'internal-tools', label: 'Internal apps' },
     { id: 'websites', label: 'Websites' },
-    { id: 'workflow-automations', label: 'Workflow Automations' },
+    { id: 'workflow-automations', label: 'Workflow automations' },
   ].filter((group) => showWorkflowAutomations || group.id !== 'workflow-automations')
     .map((group) => ({ ...group, projects: projectsList.filter((p) => TAB_CASE_IDS[group.id as keyof typeof TAB_CASE_IDS].includes(p.id)) }));
   const visibleGroups = recentProjects
-    ? [{ id: 'recent', label: '', projects: ['v2-1', 'v2-2', 'v2-3'].map((id) => projectsList.find((p) => p.id === id)).filter((p): p is (typeof projectsList)[number] => Boolean(p)) }]
+    ? [{ id: 'recent', label: '', projects: ['v2-2', 'v2-3'].map((id) => projectsList.find((p) => p.id === id)).filter((p): p is (typeof projectsList)[number] => Boolean(p)) }]
     : caseGroups;
   const homepageProjectCopy: Record<string, { title?: string; teaser: string }> = {
     'v2-3': {
@@ -206,8 +231,8 @@ export default function ProjectsV2({ initialProjects = [], showWorkflowAutomatio
     : project;
   // On the client homepage (recentProjects), use Iryna's own recordings — the same
   // optimized loops the recruiter page uses. Freelance keeps the original flow files.
-  const buDesktopVideo = recentProjects ? '/assets/case-recordings/optimized/buyukrainian-desktop-loop.mp4' : '/buyukrainian-desktop-flow.mp4';
-  const buMobileVideo = recentProjects ? '/assets/case-recordings/optimized/buyukrainian-mobile-loop.mp4' : '/buyukrainian-mobile-flow.mp4';
+  const buDesktopVideo = '/assets/case-recordings/optimized/buyukrainian-desktop-2026-11-21.mp4';
+  const buMobileVideo = '/assets/case-recordings/optimized/buyukrainian-mobile-2026-11-21.mp4';
   const isabelleDesktopVideo = recentProjects ? '/assets/case-recordings/optimized/isabelle-desktop.mp4' : '/isabelle-desktop-flow.mp4';
   const isabelleMobileVideo = recentProjects ? '/assets/case-recordings/optimized/isabelle-mobile.mp4' : '/isabelle-mobile-flow.mp4';
   const tfVideo = recentProjects ? '/assets/case-recordings/optimized/terry-fox-loop.mp4' : '/terry-fox-flow.mp4';
@@ -344,11 +369,11 @@ export default function ProjectsV2({ initialProjects = [], showWorkflowAutomatio
                       <DevicePair
                         modal={isModal}
                         alt={project.title}
-                        desktopSrc={project.id === 'v2-2' ? '/assets/guertin-desktop.png' : '/assets/buyukrainian-desktop.jpg'}
+                        desktopSrc={project.id === 'v2-2' ? '/assets/guertin-desktop.png' : '/assets/case-recordings/posters/buyukrainian-desktop-2026-11-21.jpg'}
                         desktopVideoSrc={project.id === 'v2-2' ? isabelleDesktopVideo : buDesktopVideo}
-                        phoneImgSrc={project.id === 'v2-2' ? '/assets/guertin-mobile.png' : '/assets/buyukrainian-mobile.jpg'}
+                        phoneImgSrc={project.id === 'v2-2' ? '/assets/guertin-mobile.png' : '/assets/case-recordings/posters/buyukrainian-mobile-2026-11-21.jpg'}
                         phoneVideoSrc={project.id === 'v2-2' ? isabelleMobileVideo : buMobileVideo}
-                        className={recentProjects ? (project.id === 'v2-2' ? 'optimized-isabelle-pair' : 'optimized-pair') : undefined}
+                        className={project.id === 'v2-3' ? `buyukrainian-pair${recentProjects ? ' optimized-pair' : ''}` : recentProjects ? 'optimized-isabelle-pair' : undefined}
                       />
                     ) : project.id === 'v2-6' ? (
                       <div className="case-desktop-frame" style={{ width: '100%', maxWidth: '880px', margin: '0 auto', aspectRatio: '16 / 9' }}>
@@ -509,7 +534,7 @@ export default function ProjectsV2({ initialProjects = [], showWorkflowAutomatio
           .cases-grid-container {
             display: grid !important;
             grid-template-columns: 1fr !important;
-            gap: 5rem !important;
+            gap: 10rem !important;
             padding: 0 1.5rem !important;
           }
         }
@@ -561,7 +586,7 @@ export default function ProjectsV2({ initialProjects = [], showWorkflowAutomatio
             display: flex !important;
             flex-direction: column !important;
             align-items: stretch !important;
-            gap: 5rem !important;
+            gap: 10rem !important;
           }
           .recent-projects-layout .cases-grid-item {
             display: flex !important;
@@ -584,8 +609,8 @@ export default function ProjectsV2({ initialProjects = [], showWorkflowAutomatio
             grid-template-columns: minmax(0, 1fr) 300px;
             align-items: center;
             column-gap: 4rem !important;
-            width: min(100%, 1040px) !important;
-            max-width: 1040px !important;
+            width: min(100%, 1200px) !important;
+            max-width: 1200px !important;
           }
           .recent-projects-layout .cases-grid-item:nth-child(1) .preview-item-container {
             column-gap: 6rem !important;
@@ -615,10 +640,10 @@ export default function ProjectsV2({ initialProjects = [], showWorkflowAutomatio
             margin: 0 0 1.25rem 0 !important;
             text-align: left !important;
           }
-          /* Case captions (Iryna, 20.11): teaser 22.5px, line width 30ch -> 37.5ch (+25%), line-height 1.5 -> 1.125 (-25%); Tap to Zoom 14.45px (-30% from 20.64px) */
+          /* Case captions: reduce the desktop teaser size by 10% while keeping the wider line width. */
           .recent-projects-layout .preview-card-teaser {
-            font-size: 22.5px !important;
-            max-width: 37.5ch !important;
+            font-size: 16.2px !important;
+            max-width: 30ch !important;
             line-height: 1.125 !important;
           }
           .recent-projects-layout .preview-card-caption-btn {
@@ -659,7 +684,8 @@ export default function ProjectsV2({ initialProjects = [], showWorkflowAutomatio
           align-items: center !important;
           justify-content: center !important;
           overflow: visible !important;
-          height: 420px !important;
+          height: auto !important;
+          min-height: 0 !important;
           aspect-ratio: auto !important;
           padding: 0 !important;
           width: fit-content !important;
@@ -683,7 +709,7 @@ export default function ProjectsV2({ initialProjects = [], showWorkflowAutomatio
         /* Desktop Case Frame - +30% larger, zero shadow, zero corner radius, Apple-style hairline thin light grey border */
         .case-desktop-frame {
           position: relative;
-          width: min(56vw, 731px) !important; /* +30% larger on desktop from 562px */
+          width: min(70vw, 914px) !important; /* +25% from the previous 731px desktop frame */
           max-width: 100% !important;
           aspect-ratio: 16 / 10 !important;
           height: auto !important;
@@ -696,11 +722,11 @@ export default function ProjectsV2({ initialProjects = [], showWorkflowAutomatio
           box-sizing: border-box;
           display: flex;
           overflow: hidden;
-          transform-origin: left center;
+          transform-origin: center center;
           transition: transform 0.45s cubic-bezier(0.16, 1, 0.3, 1), border-color 0.35s ease;
         }
         .preview-item-container:hover .case-desktop-frame {
-          transform: scale(1.04) translateY(-3px);
+          transform: scale(1.248) translateY(-3px);
           border-color: #c8c8cd !important;
           box-shadow: none !important;
         }
@@ -708,7 +734,7 @@ export default function ProjectsV2({ initialProjects = [], showWorkflowAutomatio
         /* Phone Case Frame - +30% larger, zero shadow, zero corner radius, Apple-style hairline thin light grey border */
         .case-phone-frame {
           position: relative;
-          height: min(32vw, 420px) !important; /* +30% larger on desktop from 323px */
+          height: min(40vw, 525px) !important; /* +25% from the previous 420px desktop frame */
           max-height: 100% !important;
           aspect-ratio: 430 / 932 !important;
           width: auto !important;
@@ -723,11 +749,11 @@ export default function ProjectsV2({ initialProjects = [], showWorkflowAutomatio
           align-items: center;
           justify-content: center;
           overflow: hidden;
-          transform-origin: right center;
+          transform-origin: center center;
           transition: transform 0.45s cubic-bezier(0.16, 1, 0.3, 1), border-color 0.35s ease;
         }
         .preview-item-container:hover .case-phone-frame {
-          transform: scale(1.04) translateY(-3px);
+          transform: scale(1.248) translateY(-3px);
           border-color: #c8c8cd !important;
           box-shadow: none !important;
         }
@@ -865,6 +891,14 @@ export default function ProjectsV2({ initialProjects = [], showWorkflowAutomatio
         .recent-projects-layout .case-pair.optimized-isabelle-pair .pair-phone {
           aspect-ratio: 430 / 932 !important;
         }
+        .recent-projects-layout .case-pair.buyukrainian-pair .pair-desktop,
+        .case-pair.buyukrainian-pair .pair-desktop {
+          aspect-ratio: 1440 / 736 !important;
+        }
+        .recent-projects-layout .case-pair.buyukrainian-pair .pair-phone,
+        .case-pair.buyukrainian-pair .pair-phone {
+          aspect-ratio: 724 / 1456 !important;
+        }
         @media (min-width: 901px) {
           .preview-card-caption {
             opacity: 1 !important;
@@ -873,7 +907,7 @@ export default function ProjectsV2({ initialProjects = [], showWorkflowAutomatio
           .preview-item-container .case-desktop-frame,
           .preview-item-container .case-phone-frame,
           .preview-item-container .case-pair {
-            transform: scale(1.02);
+            transform: scale(1.224);
             transform-origin: center center;
           }
           .recording-card-wrapper .case-pair {
@@ -899,6 +933,7 @@ export default function ProjectsV2({ initialProjects = [], showWorkflowAutomatio
           .recent-projects-layout .preview-card-teaser {
             margin: 0.3rem auto 0.8rem !important;
             text-align: center !important;
+            font-size: 13.5px !important;
           }
           .recent-projects-layout .preview-card-caption-btn {
             margin: 0 auto !important;
@@ -944,6 +979,30 @@ export default function ProjectsV2({ initialProjects = [], showWorkflowAutomatio
             }
           }
         }
+        .recent-projects-tool-link-wrap {
+          display: flex;
+          justify-content: center;
+          margin: 2.5rem 1.5rem 5.1rem;
+          text-align: center;
+        }
+        .recent-projects-tool-link {
+          display: inline-flex;
+          align-items: center;
+          font-family: var(--font-label), sans-serif;
+          font-size: var(--text-label);
+          font-weight: 600;
+          letter-spacing: 0.105em;
+          color: rgba(0, 0, 0, 0.72);
+          text-decoration: none;
+        }
+        .recent-projects-tool-link span {
+          margin-left: 4px;
+          font-size: 1rem;
+          line-height: 1;
+        }
+        .recent-projects-tool-link:hover {
+          color: #000000;
+        }
       `}</style>
       
       
@@ -981,19 +1040,19 @@ export default function ProjectsV2({ initialProjects = [], showWorkflowAutomatio
             letterSpacing: '-0.02em',
             textAlign: 'center',
             width: '100%',
-            margin: '0 auto 14px auto',
+            margin: '0 auto 28px auto',
             WebkitTextStroke: '0',
             textWrap: 'balance'
           }}
         >
           {recentProjects ? (
-            <span style={{ fontWeight: 400, color: 'var(--color-heading-silver, #4a5461)' }}>Recent Projects</span>
+            <span style={{ fontWeight: 400, color: 'var(--color-heading-silver, #4a5461)' }}>Recent projects</span>
           ) : (
             <><span style={{ fontWeight: 400, color: 'var(--color-heading-silver, #4a5461)' }}>Examples of</span>{' '}<span style={{ fontWeight: 400, color: 'var(--color-heading-silver, #4a5461)' }}>my work</span></>
           )}
         </motion.h2>
 
-              <div aria-hidden="true" style={{ height: '28px' }} />
+              <div aria-hidden="true" style={{ height: '56px' }} />
         
       </div>
       
@@ -1003,7 +1062,7 @@ export default function ProjectsV2({ initialProjects = [], showWorkflowAutomatio
         style={{ 
           width: '100%', 
           paddingBottom: '2.25rem',
-          paddingTop: '0.375rem'
+          paddingTop: '0.75rem'
         }}
       >
         {visibleGroups.map((group) => (
@@ -1048,11 +1107,11 @@ export default function ProjectsV2({ initialProjects = [], showWorkflowAutomatio
                     {project.id === 'v2-2' || project.id === 'v2-3' ? (
                       <DevicePair
                         alt={displayProject.title}
-                        desktopSrc={project.id === 'v2-2' ? '/assets/guertin-desktop.png' : '/assets/buyukrainian-desktop.jpg'}
+                        desktopSrc={project.id === 'v2-2' ? '/assets/guertin-desktop.png' : '/assets/case-recordings/posters/buyukrainian-desktop-2026-11-21.jpg'}
                         desktopVideoSrc={project.id === 'v2-2' ? isabelleDesktopVideo : buDesktopVideo}
-                        phoneImgSrc={project.id === 'v2-2' ? '/assets/guertin-mobile.png' : '/assets/buyukrainian-mobile.jpg'}
+                        phoneImgSrc={project.id === 'v2-2' ? '/assets/guertin-mobile.png' : '/assets/case-recordings/posters/buyukrainian-mobile-2026-11-21.jpg'}
                         phoneVideoSrc={project.id === 'v2-2' ? isabelleMobileVideo : buMobileVideo}
-                        className={recentProjects ? (project.id === 'v2-2' ? 'optimized-isabelle-pair' : 'optimized-pair') : undefined}
+                        className={project.id === 'v2-3' ? `buyukrainian-pair${recentProjects ? ' optimized-pair' : ''}` : recentProjects ? 'optimized-isabelle-pair' : undefined}
                       />
                     ) : project.id === 'v2-6' ? (
                       <div className="case-desktop-frame tf-match">
@@ -1139,6 +1198,14 @@ export default function ProjectsV2({ initialProjects = [], showWorkflowAutomatio
           </div>
         ))}
       </div>
+
+      {recentProjects ? (
+        <div className="recent-projects-tool-link-wrap">
+          <a href="/tools" className="recent-projects-tool-link">
+            Need a tool or workflow instead? See what else I build <span aria-hidden="true">→</span>
+          </a>
+        </div>
+      ) : null}
 
       <AnimatePresence>
         {selectedProjectId && selectedProject && (

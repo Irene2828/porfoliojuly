@@ -12,5 +12,10 @@ export default function sitemap(): MetadataRoute.Sitemap {
       changeFrequency: 'monthly',
       priority: 0.7,
     },
+    {
+      url: 'https://www.irynasheremeta.com/tools',
+      changeFrequency: 'monthly',
+      priority: 0.8,
+    },
   ];
 }

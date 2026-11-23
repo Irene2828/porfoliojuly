@@ -5,8 +5,8 @@
 ## Services
 
 - Custom websites — designed and built around the business, with hosting and care available after launch. Packages from $750 CAD.
-- Workflow builds — repetitive routines mapped, automated and tested with the client. From $1,500 CAD.
-- AI agent system setup — custom agents configured on the client's own accounts, with guardrails and human approval points. From $3,000 CAD.
+- Workflow builds — repetitive routines mapped, automated and tested with the client. From $1,800 CAD.
+- AI agent system setup — custom agents configured on the client’s own accounts, with guardrails and human approval points. From $3,000 CAD.
 
 ## Selected work
 

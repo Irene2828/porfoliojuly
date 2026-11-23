@@ -4,12 +4,15 @@ import '@/app/components/Hero.css';
 import { openContact } from '@/app/components/ContactModal';
 import heroImage from '@/app/assets/new_me.jpg';
 
-export default function HeroV2({ variant = 'client' }: { variant?: 'client' | 'hire' | 'websites' } = {}) {
+export default function HeroV2({ variant = 'client' }: { variant?: 'client' | 'hire' | 'websites' | 'tools' } = {}) {
   const isHire = variant === 'hire';
   const isWebsites = variant === 'websites';
+  const isTools = variant === 'tools';
+  const heroVisualSrc = isTools ? '/assets/poster-tool/01-details-and-download.png' : heroImage.src;
+  const heroVisualAlt = isTools ? 'Terry Fox Foundation poster generator' : 'Iryna Sheremeta';
     
   return (
-    <section className={isHire ? 'section hero-section hero-hire' : isWebsites ? 'section hero-section hero-websites' : 'section hero-section'} id="home" style={{ backgroundColor: '#121316', background: '#121316' }}>
+    <section className={isHire ? 'section hero-section hero-hire' : isWebsites ? 'section hero-section hero-websites' : isTools ? 'section hero-section hero-tools' : 'section hero-section'} id="home" style={{ backgroundColor: '#121316', background: '#121316' }}>
       {/* Off-black matte theme rules */}
       <style>{`
         .hero-section,
@@ -92,6 +95,13 @@ export default function HeroV2({ variant = 'client' }: { variant?: 'client' | 'h
         .hero-websites .hero-frame-paragraph .hero-body-bold {
           letter-spacing: 0.025em !important;
         }
+        @media (min-width: 901px) {
+          .v2-theme .hero-websites .hero-frame-paragraph .hero-body-bold,
+          .hero-websites .hero-frame-paragraph .hero-body-bold {
+            display: inline-block !important;
+            margin-top: 0.6rem !important;
+          }
+        }
         .hero-websites .hero-text .hero-statement .headline-line:first-child .headline-desktop-serif-normal,
         .hero-websites .hero-text .hero-statement .headline-line:first-child .headline-mobile-serif-normal {
           color: #ffffff !important;
@@ -103,6 +113,32 @@ export default function HeroV2({ variant = 'client' }: { variant?: 'client' | 'h
         .hero-websites .hero-statement .headline-line:first-child .headline-mobile-serif-normal,
         .hero-websites .hero-statement .headline-line:first-child .headline-mobile-accent {
           font-weight: 500 !important;
+        }
+        .hero-tools .hero-image {
+          border-radius: 10px !important;
+          object-fit: contain !important;
+          object-position: center !important;
+          background: #ffffff !important;
+        }
+        .hero-tools .hero-image-container {
+          background: transparent !important;
+          border-radius: 10px !important;
+          overflow: hidden !important;
+          box-shadow: none !important;
+        }
+        .hero-tools .hero-tools-image-space {
+          width: 100%;
+          height: 100%;
+          background: transparent !important;
+        }
+        .hero-tools .headline-line {
+          white-space: normal !important;
+          max-width: 100% !important;
+          overflow-wrap: normal !important;
+        }
+        .hero-tools .headline-mobile,
+        .hero-tools .headline-desktop {
+          max-width: 100% !important;
         }
         .v2-theme .hero-statement,
         .hero-statement {
@@ -132,11 +168,11 @@ export default function HeroV2({ variant = 'client' }: { variant?: 'client' | 'h
   }
   .hero-frame-paragraph {
     font-size: 1.2555rem !important;
-    letter-spacing: 0.012em !important;
+    letter-spacing: 0.018em !important;
   }
   .hero-frame-paragraph .hero-body-light,
   .hero-frame-paragraph .hero-body-normal {
-    letter-spacing: 0.012em !important;
+    letter-spacing: 0.018em !important;
   }
         }
         @media (min-width: 901px) and (max-width: 1200px) {
@@ -1152,6 +1188,234 @@ export default function HeroV2({ variant = 'client' }: { variant?: 'client' | 'h
             letter-spacing: 0.019em !important;
           }
         }
+        /* Tablet hero: keep the copy block centered on the screen while its type stays left-aligned. */
+        @media (min-width: 601px) and (max-width: 1200px) {
+          .v2-theme .hero-section.hero-websites,
+          .hero-section.hero-websites {
+            min-height: 100svh !important;
+          }
+          .v2-theme .hero-websites .hero-container,
+          .hero-websites .hero-container {
+            flex-direction: column !important;
+            justify-content: center !important;
+            align-items: stretch !important;
+            gap: 1.5rem !important;
+          }
+          .v2-theme .hero-websites .hero-image-wrapper,
+          .hero-websites .hero-image-wrapper {
+            order: 0 !important;
+            top: auto !important;
+            right: auto !important;
+            transform: none !important;
+            margin: 0 calc(-1 * var(--space-md, 2rem)) 0 auto !important;
+            align-self: flex-end !important;
+          }
+          .v2-theme .hero-websites .hero-content,
+          .hero-websites .hero-content {
+            order: 1 !important;
+            flex: 0 1 auto !important;
+            width: 100% !important;
+            max-width: none !important;
+            margin: 0 !important;
+            align-self: stretch !important;
+            transform: none !important;
+            align-items: flex-start !important;
+            text-align: left !important;
+          }
+          .v2-theme .hero-websites .hero-copy-motion,
+          .hero-websites .hero-copy-motion,
+          .v2-theme .hero-websites .hero-name-group,
+          .hero-websites .hero-name-group,
+          .v2-theme .hero-websites .hero-text,
+          .hero-websites .hero-text {
+            width: 100% !important;
+            max-width: 100% !important;
+            align-items: flex-start !important;
+            text-align: left !important;
+          }
+          .v2-theme .hero-websites .hero-statement,
+          .hero-websites .hero-statement,
+          .v2-theme .hero-websites .hero-frame-paragraph,
+          .hero-websites .hero-frame-paragraph {
+            text-align: left !important;
+            align-self: flex-start !important;
+          }
+          .v2-theme .hero-websites .hero-statement,
+          .hero-websites .hero-statement,
+          .v2-theme .hero-websites .headline-desktop,
+          .hero-websites .headline-desktop,
+          .v2-theme .hero-websites .headline-mobile,
+          .hero-websites .headline-mobile {
+            width: 100% !important;
+            max-width: none !important;
+            align-items: flex-start !important;
+            text-align: left !important;
+          }
+          .v2-theme .hero-websites .headline-desktop .headline-line,
+          .hero-websites .headline-desktop .headline-line,
+          .v2-theme .hero-websites .headline-mobile .headline-line,
+          .hero-websites .headline-mobile .headline-line {
+            width: 100% !important;
+            display: block !important;
+            align-self: flex-start !important;
+            text-align: left !important;
+          }
+        }
+        @media (min-width: 601px) and (max-width: 1200px) and (orientation: portrait) {
+          .v2-theme .hero-websites .hero-content,
+          .hero-websites .hero-content {
+            margin-top: clamp(5rem, 10vh, 9rem) !important;
+          }
+          .v2-theme .hero-websites .hero-ctas,
+          .hero-websites .hero-ctas {
+            flex-direction: row !important;
+            flex-wrap: nowrap !important;
+            justify-content: flex-start !important;
+            align-items: center !important;
+            gap: 1.5rem !important;
+          }
+          .v2-theme .hero-websites .hero-ctas > a,
+          .hero-websites .hero-ctas > a {
+            flex: 0 0 auto !important;
+            margin: 0 !important;
+          }
+        }
+        @media (min-width: 601px) and (max-width: 1200px) {
+          .hero-websites .hero-static-quote-card {
+            right: 0 !important;
+          }
+        }
+        .hero-static-quote-card {
+          position: absolute;
+          left: auto;
+          right: 0;
+          bottom: -3.25rem;
+          z-index: 4;
+          width: min(260px, 18vw);
+          padding: 0.8rem 0.95rem;
+          border: 1px solid rgba(255, 255, 255, 0.24);
+          border-radius: 12px;
+          background: #121316;
+          box-sizing: border-box;
+          color: rgba(255, 255, 255, 0.9);
+          text-align: left;
+          pointer-events: none;
+          animation: heroQuoteCycle 7s ease-in-out infinite;
+        }
+        @keyframes heroQuoteCycle {
+          0%, 10% { opacity: 0; }
+          20%, 50% { opacity: 1; }
+          60%, 100% { opacity: 0; }
+        }
+        @media (prefers-reduced-motion: reduce) {
+          .hero-static-quote-card {
+            animation: none;
+            opacity: 1;
+          }
+        }
+        .hero-static-quote-card::after {
+          content: '';
+          position: absolute;
+          right: 0.9rem;
+          bottom: -0.45rem;
+          width: 0.8rem;
+          height: 0.8rem;
+          background: #121316;
+          border-right: 1px solid rgba(255, 255, 255, 0.24);
+          border-bottom: 1px solid rgba(255, 255, 255, 0.24);
+          transform: rotate(45deg);
+        }
+        .hero-static-quote-card p {
+          margin: 0;
+          font-family: var(--font-body), sans-serif;
+          font-size: 0.895rem;
+          line-height: 1.35;
+          font-weight: 400;
+        }
+        .hero-static-quote-card small {
+          display: block;
+          margin-top: 0.45rem;
+          color: rgba(255, 255, 255, 0.58);
+          font-family: var(--font-body), sans-serif;
+          font-size: 0.75rem;
+          line-height: 1.3;
+        }
+        @media (max-width: 900px) {
+          .v2-theme .hero-websites .hero-image-wrapper,
+          .hero-websites .hero-image-wrapper {
+            padding-bottom: 4.25rem !important;
+          }
+          .hero-static-quote-card {
+            left: auto;
+            right: 0;
+            bottom: 0;
+            top: auto;
+            transform: none;
+            width: min(280px, calc(100vw - 3rem));
+            text-align: left;
+          }
+        }
+        @media (min-width: 901px) {
+          .hero-websites .hero-static-quote-card {
+            right: 0;
+          }
+        }
+        .v2-theme .hero-tools .hero-text h1,
+        .v2-theme .hero-tools .headline-mobile,
+        .v2-theme .hero-tools .headline-desktop {
+          width: 100% !important;
+          max-width: 100% !important;
+          white-space: normal !important;
+        }
+        .v2-theme .hero-tools .headline-mobile .headline-line,
+        .v2-theme .hero-tools .headline-desktop .headline-line {
+          width: 100% !important;
+          max-width: 100% !important;
+          white-space: normal !important;
+          overflow-wrap: anywhere !important;
+        }
+        @media (max-width: 900px) {
+          .v2-theme .hero-tools .hero-hover-surface,
+          .hero-tools .hero-hover-surface {
+            display: none !important;
+          }
+          .v2-theme .hero-websites .headline-mobile,
+          .hero-websites .headline-mobile {
+            font-size: 84% !important;
+          }
+          .v2-theme .hero-websites .hero-image-wrapper,
+          .hero-websites .hero-image-wrapper {
+            padding-top: 5.6rem !important;
+            padding-bottom: 0 !important;
+            margin-bottom: 0 !important;
+          }
+          .v2-theme .hero-websites .hero-image-container,
+          .hero-websites .hero-image-container {
+            width: 200px !important;
+            height: 200px !important;
+            max-width: 200px !important;
+            max-height: 200px !important;
+            transform: translateY(-25px) !important;
+          }
+          .v2-theme .hero-websites .hero-static-quote-card,
+          .hero-websites .hero-static-quote-card {
+            display: none !important;
+          }
+          .v2-theme .hero-websites .hero-frame-paragraph,
+          .hero-websites .hero-frame-paragraph {
+            width: calc(100vw - 3rem) !important;
+            max-width: calc(100vw - 3rem) !important;
+            box-sizing: border-box !important;
+          }
+        }
+        @media (min-width: 600px) and (max-width: 900px) {
+          .v2-theme .hero-websites .hero-image-wrapper,
+          .hero-websites .hero-image-wrapper {
+            justify-content: flex-end !important;
+            padding-right: 4rem !important;
+            box-sizing: border-box !important;
+          }
+        }
       `}</style>
     
 
@@ -1185,6 +1449,10 @@ export default function HeroV2({ variant = 'client' }: { variant?: 'client' | 'h
                           <em className="headline-desktop-serif headline-websites-yours">yours.</em>
                         </span>
                       </>
+                    ) : isTools ? (
+                      <span className="headline-line">
+                        <span className="headline-desktop-serif-normal">Repetitive work, turned into a tool your team runs in a minute.</span>
+                      </span>
                     ) : (
                       <>
                         <span className="headline-line">
@@ -1198,7 +1466,7 @@ export default function HeroV2({ variant = 'client' }: { variant?: 'client' | 'h
                         </span>
                       </>
                     )}
-                    {!isWebsites && (
+                    {!isWebsites && !isTools && (
                       <span className="headline-line">
                         {isHire ? (
                           <>
@@ -1248,6 +1516,10 @@ export default function HeroV2({ variant = 'client' }: { variant?: 'client' | 'h
                           <em className="headline-mobile-serif headline-mobile-white headline-websites-yours">yours.</em>
                         </span>
                       </>
+                    ) : isTools ? (
+                      <span className="headline-line">
+                        <span className="headline-mobile-serif-normal headline-mobile-white">Repetitive work, turned into a tool your team runs in a minute.</span>
+                      </span>
                     ) : (
                       <>
                         <span className="headline-line">
@@ -1274,7 +1546,7 @@ export default function HeroV2({ variant = 'client' }: { variant?: 'client' | 'h
                           <span className="headline-mobile-serif-normal">solution.</span>
                         </span>
                       </>
-                    ) : isWebsites ? null : (
+                    ) : isWebsites || isTools ? null : (
                       <>
                         <span className="headline-line">
                           <span className="headline-mobile-serif-normal">Built for one</span>
@@ -1301,10 +1573,19 @@ export default function HeroV2({ variant = 'client' }: { variant?: 'client' | 'h
                   ) : isWebsites ? (
                     <>
                       <span className="hero-body-desktop">
-                        <span className="hero-body-row hero-body-light" style={{ fontWeight: 400 }}>Starting from zero, or stuck with a site that undersells you? Visitors land, can&rsquo;t tell what you do, and leave. <strong className="hero-body-bold">Let me handle it.</strong></span>
+                        <span className="hero-body-row hero-body-light" style={{ fontWeight: 400 }}>Need your first website, or stuck with one that undersells you? Visitors land, can&rsquo;t tell what you do, and leave?<br /><strong className="hero-body-bold">I build what fixes it, so you don&rsquo;t have to.</strong></span>
                       </span>
                       <span className="hero-body-mobile">
-                        <span className="hero-body-mobile-text hero-body-light">Starting from zero, or stuck with a site that undersells you? Visitors land, can’t tell what you do, and leave. <strong className="hero-body-bold">Let me handle it.</strong></span>
+                        <span className="hero-body-mobile-text hero-body-light">Need your first website, or stuck with one that undersells you? Visitors land, can’t tell what you do, and leave?<br /><strong className="hero-body-bold">I build what fixes it, so you don’t have to.</strong></span>
+                      </span>
+                    </>
+                  ) : isTools ? (
+                    <>
+                      <span className="hero-body-desktop">
+                        <span className="hero-body-row hero-body-light" style={{ fontWeight: 400 }}>Got a report, a form, or a follow-up that eats your week? I build the tool that does it the same way every time, so you don’t have to.</span>
+                      </span>
+                      <span className="hero-body-mobile">
+                        <span className="hero-body-mobile-text hero-body-light">Got a report, a form, or a follow-up that eats your week? I build the tool that does it the same way every time, so you don’t have to.</span>
                       </span>
                     </>
                   ) : (
@@ -1340,14 +1621,14 @@ export default function HeroV2({ variant = 'client' }: { variant?: 'client' | 'h
                   className="btn prefooter-btn-primary face-cta"
                   style={{ display: 'inline-flex', alignItems: 'center', gap: '0.45rem', ...(isHire ? { minWidth: '272px' } : {}) }}
                 >
-                  <span>{isHire ? 'GET IN TOUCH' : isWebsites ? 'TELL ME ABOUT YOUR WEBSITE' : 'SEND YOUR PROBLEM MY WAY'}</span>
+                  <span>{isHire ? 'GET IN TOUCH' : isWebsites ? 'TELL ME ABOUT YOUR WEBSITE' : isTools ? 'TELL ME ABOUT YOUR ROUTINE' : 'SEND YOUR PROBLEM MY WAY'}</span>
                   <svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round" style={{ transform: 'translateY(-0.5px)' }}>
                     <line x1="7" y1="17" x2="17" y2="7"></line>
                     <polyline points="7 7 17 7 17 17"></polyline>
                   </svg>
                 </a>
-                <a href="#cases" className="btn btn-secondary btn-secondary-stacked" style={{ color: 'rgba(255, 255, 255, 0.8)' }}>
-                  {isWebsites ? 'SEE RECENT PROJECTS' : 'SEE WHAT I’VE BUILT'} <span className="arrow" style={{ color: 'rgba(255, 255, 255, 0.8)' }}>↓</span>
+                <a href={isTools ? '#two-tools-one-app' : '#cases'} className="btn btn-secondary btn-secondary-stacked" style={{ color: 'rgba(255, 255, 255, 0.8)' }}>
+                  {isWebsites ? 'SEE RECENT PROJECTS' : isTools ? 'SEE WHAT I’VE BUILT' : 'SEE WHAT I’VE BUILT'} <span className="arrow" style={{ color: 'rgba(255, 255, 255, 0.8)' }}>↓</span>
                 </a>
               </div>
             </div>
@@ -1359,7 +1640,11 @@ export default function HeroV2({ variant = 'client' }: { variant?: 'client' | 'h
           <div className="hero-image-container" style={{ position: 'relative', zIndex: 2 }}>
             <div className="hero-image-brackets"></div>
             <div className="hero-image-brackets-left"></div>
-            <img src={heroImage.src} alt="Iryna Sheremeta" className="hero-image" style={{ position: 'relative', zIndex: 2 }} />
+            {isTools ? (
+              <div className="hero-image hero-tools-image-space" aria-hidden="true" />
+            ) : (
+              <img src={heroVisualSrc} alt={heroVisualAlt} className="hero-image" style={{ position: 'relative', zIndex: 2 }} />
+            )}
             <div className="hero-dot-overlay"></div>
 
             {/* Geometric square shapes: Bottom-Left of Image */}
@@ -1437,6 +1722,12 @@ export default function HeroV2({ variant = 'client' }: { variant?: 'client' | 'h
 
           <span className="hero-hover-surface" aria-hidden="true"></span>
         </div>
+        {isWebsites ? (
+          <div className="hero-static-quote-card" aria-label="I’m now receiving calls every day from potential clients.">
+            <p>“I’m now receiving calls every day from potential clients.”</p>
+            <small>Isabelle Guertin, Insurance Claims Expert</small>
+          </div>
+        ) : null}
       </div>
       <div className="hero-bottom-hairline-line"></div>
     </section>

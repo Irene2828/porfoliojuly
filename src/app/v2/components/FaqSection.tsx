@@ -16,7 +16,7 @@ const faqs = [
   {
     question: 'What do you need from me to start?',
     answers: [
-      "A short call, or a voice note if that's easier. No prep, no brief to write.",
+      'A short call, or a voice note if that’s easier. No prep, no brief to write.',
       'Access to the tools involved — when we get there, not before.',
       'Missing copy or files? I write them from scratch.',
     ],
@@ -24,9 +24,9 @@ const faqs = [
   {
     question: 'I already generated a draft. Can you fix it and launch it?',
     answers: [
-      "Yes. Bring it — I'll tell you honestly whether a polish is enough or it needs rebuilding.",
+      'Yes. Bring it — I’ll tell you honestly whether a polish is enough or it needs rebuilding.',
       'Polish covers structure, copy, images, mobile, forms, domain and launch.',
-      "Some drafts need a firm hand. Some need rebuilding. I'll say which one yours is.",
+      'Some drafts need a firm hand. Some need rebuilding. I’ll say which one yours is.',
     ],
   },
   {
@@ -41,10 +41,9 @@ const faqs = [
 
 const websiteFaqs = [
   {
-    question: 'How fast is this, and what happens after launch?',
+    question: 'How long does it take?',
     answers: [
-      'You see a first version within days, while changes are still cheap. After launch I stay: fixes, edits, new features, per request or on a monthly care plan. You keep the logins, files and setup notes.',
-      'Routine content — products, prices, photos — can live in a simple admin panel you update yourself, or send the updates to me and I handle them. Hosting, backups and monitoring stay on my side either way.',
+      'A typical custom website takes 2–4 weeks from our first call to launch, once I have your content. You see three visual directions in the first week, and a working site early in the build, so changes happen while they’re still easy. A polish-and-launch on an existing site usually takes 1–2 weeks. Larger builds are scoped on the call. The biggest factor is how quickly we settle on a direction, and I’ll tell you what to expect on our first call.',
     ],
   },
   {
@@ -60,9 +59,9 @@ const websiteFaqs = [
     ],
   },
   {
-    question: 'If AI does the building, why does it cost the same?',
+    question: 'If AI does the building, what am I paying for?',
     answers: [
-      'AI made the building faster — that’s what changed for you: a first version in days instead of weeks. The price was never for typing code. It’s for the decisions — what your site says, in what order, so visitors turn into calls — and for checking that what ships is correct and secure. An accountant with better software didn’t get cheaper; he got more accurate. A dentist with better equipment didn’t cut his price; he cut your risk. A one-prompt site costs less because nobody verified it: keys in public code, no search structure, no one to call when it breaks. This price buys a checked site — and a person who answers for it.',
+      'AI makes building faster. It doesn’t decide what your site should say, who it’s for, or why a visitor should pick up the phone. That’s what you’re paying for: understanding your business, designing around your clients’ questions, testing everything, and standing behind the result. You also own the site, the code and the accounts.',
     ],
   },
   {
@@ -74,8 +73,30 @@ const websiteFaqs = [
   },
 ];
 
-export default function FaqSection({ variant = 'all' }: { variant?: 'all' | 'websites' } = {}) {
-  const visibleFaqs = variant === 'websites' ? websiteFaqs : faqs;
+const toolsFaqs = [
+  {
+    question: 'Do I need an AI account to run it?',
+    answers: [
+      'Not for tools like the ones above. They run on plain code, the same way every time. If your routine does need AI, I’ll say so up front and set it up on the account you choose.',
+    ],
+  },
+  {
+    question: 'Who owns it?',
+    answers: ['You do: the tool, the code and the accounts.'],
+  },
+  {
+    question: 'What if I need a change later?',
+    answers: ['Small fixes and new cases are covered by a care plan, or I quote them separately when you ask.'],
+  },
+  {
+    question: 'How long does it take?',
+    answers: ['A single-routine tool usually takes 1–3 weeks, once I have your examples and access. Larger builds are scoped on the call.'],
+  },
+];
+
+export default function FaqSection({ variant = 'all' }: { variant?: 'all' | 'websites' | 'tools' } = {}) {
+  const visibleFaqs = variant === 'websites' ? websiteFaqs : variant === 'tools' ? toolsFaqs : faqs;
+  const hasCommaHeading = variant === 'websites' || variant === 'tools';
   const [openIndex, setOpenIndex] = useState<number>(-1);
 
   return (
@@ -326,7 +347,7 @@ export default function FaqSection({ variant = 'all' }: { variant?: 'all' | 'web
           textAlign: 'left',
         }}
       >
-      <motion.h2 className={`faq-section-heading${variant === 'websites' ? ' homepage-light-heading' : ''}`} initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true, amount: 0.45 }} transition={{ duration: 0.78, delay: 0.08, ease: [0.16, 1, 0.3, 1] }} style={{ fontFamily: 'var(--font-heading)', fontSize: 'var(--text-section-title)', fontWeight: 400, lineHeight: 1.2, color: 'var(--color-heading-silver)', letterSpacing: '-0.02em', margin: '0 0 2.5rem 0', textAlign: 'center' }}><span className="faq-heading-question">Frequent questions{variant === 'websites' ? ',' : ''}</span><span className="faq-heading-answer">{variant === 'websites' ? ' ' : ' - '}<em style={variant === 'websites' ? { color: '#f2908f', WebkitTextFillColor: '#f2908f', fontStyle: 'italic' } : undefined}>answered</em>.</span></motion.h2>
+      <motion.h2 className={`faq-section-heading${hasCommaHeading ? ' homepage-light-heading' : ''}`} initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true, amount: 0.45 }} transition={{ duration: 0.78, delay: 0.08, ease: [0.16, 1, 0.3, 1] }} style={{ fontFamily: 'var(--font-heading)', fontSize: 'var(--text-section-title)', fontWeight: 400, lineHeight: 1.2, color: 'var(--color-heading-silver)', letterSpacing: '-0.02em', margin: '0 0 2.5rem 0', textAlign: 'center' }}><span className="faq-heading-question">Frequent questions{hasCommaHeading ? ',' : ''}</span><span className="faq-heading-answer">{hasCommaHeading ? ' ' : ' - '}<em style={hasCommaHeading ? { color: '#f2908f', WebkitTextFillColor: '#f2908f', fontStyle: 'italic' } : undefined}>answered</em>.</span></motion.h2>
       <div>
         {visibleFaqs.map((faq, index) => {
             const isOpen = openIndex === index;
@@ -390,7 +411,7 @@ export default function FaqSection({ variant = 'all' }: { variant?: 'all' | 'web
           })}
         </div>
       </div>
-      <EditorialStatement variant={variant === 'websites' ? 'websites' : 'default'} />
+      {variant !== 'tools' && <EditorialStatement variant={variant === 'websites' ? 'websites' : 'default'} />}
     </section>
   );
 }
