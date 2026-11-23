@@ -192,7 +192,7 @@ export default function Header() {
         {/* Right side (Desktop): Nav links */}
         <nav className="header-nav header-nav-desktop" style={{ marginLeft: 'auto', marginRight: '0', justifyContent: 'flex-end', alignItems: 'center' }}>
           <a href="/#cases" className="nav-link">CASES</a>
-          <a href="/about" className="nav-link">ABOUT ME</a>
+          <a href="/about" className="nav-link">ABOUT</a>
           <a 
             href="mailto:iryna@irynasheremeta.com" 
             onClick={handleCopyEmail} 
@@ -237,7 +237,7 @@ export default function Header() {
             <button className="drawer-close-btn" onClick={() => setIsMenuOpen(false)} aria-label="Close menu">&times;</button>
             <div className="drawer-nav-links">
               <a href="/#cases" onClick={() => setIsMenuOpen(false)} className="drawer-link">CASES</a>
-              <a href="/about" onClick={() => setIsMenuOpen(false)} className="drawer-link">ABOUT ME</a>
+              <a href="/about" onClick={() => setIsMenuOpen(false)} className="drawer-link">ABOUT</a>
               <a 
                 href="mailto:iryna@irynasheremeta.com" 
                 onClick={(e) => { handleCopyEmail(e); setIsMenuOpen(false); }} 
