@@ -347,6 +347,12 @@ export default function HeroV2({ variant = 'client' }: { variant?: 'client' | 'h
             align-items: flex-start !important;
             text-align: left !important;
           }
+          .hero-websites .hero-name-group,
+          .hero-websites .hero-name-group .hero-text,
+          .hero-websites .hero-text {
+            align-items: center !important;
+            text-align: center !important;
+          }
           .v2-theme .hero-text .hero-frame-paragraph,
           .hero-text .hero-frame-paragraph,
           .v2-theme .hero-frame-paragraph,
@@ -364,6 +370,13 @@ export default function HeroV2({ variant = 'client' }: { variant?: 'client' | 'h
           }
           .hero-websites .hero-frame-paragraph {
             font-size: 17.85px !important;
+            text-align: center !important;
+            align-self: center !important;
+          }
+          .hero-websites .hero-statement,
+          .hero-websites .headline-mobile {
+            text-align: center !important;
+            align-self: center !important;
           }
           .v2-theme .hero-frame-paragraph .hero-body-mobile-text,
           .hero-frame-paragraph .hero-body-mobile-text,
@@ -1391,10 +1404,10 @@ export default function HeroV2({ variant = 'client' }: { variant?: 'client' | 'h
           }
           .v2-theme .hero-websites .hero-image-container,
           .hero-websites .hero-image-container {
-            width: 160px !important;
-            height: 160px !important;
-            max-width: 160px !important;
-            max-height: 160px !important;
+            width: 176px !important;
+            height: 176px !important;
+            max-width: 176px !important;
+            max-height: 176px !important;
             transform: translateY(-25px) scale(0.8) !important;
             transform-origin: center center !important;
           }
@@ -1415,6 +1428,54 @@ export default function HeroV2({ variant = 'client' }: { variant?: 'client' | 'h
             justify-content: flex-end !important;
             padding-right: 4rem !important;
             box-sizing: border-box !important;
+          }
+        }
+        @media (max-width: 900px) {
+          /* Final website-hero override: later tablet/mobile rules must not undo centering. */
+          .v2-theme .hero-websites .hero-content,
+          .hero-websites .hero-content,
+          .v2-theme .hero-websites .hero-copy-motion,
+          .hero-websites .hero-copy-motion,
+          .v2-theme .hero-websites .hero-name-group,
+          .hero-websites .hero-name-group,
+          .v2-theme .hero-websites .hero-text,
+          .hero-websites .hero-text {
+            align-items: center !important;
+            text-align: center !important;
+          }
+          .v2-theme .hero-websites .hero-statement,
+          .hero-websites .hero-statement,
+          .v2-theme .hero-websites .headline-mobile,
+          .hero-websites .headline-mobile,
+          .v2-theme .hero-websites .headline-mobile .headline-line,
+          .hero-websites .headline-mobile .headline-line,
+          .v2-theme .hero-websites .hero-statement,
+          .hero-websites .hero-statement {
+            text-align: center !important;
+            align-self: center !important;
+          }
+          .v2-theme .hero-websites .hero-frame-paragraph,
+          .hero-websites .hero-frame-paragraph,
+          .v2-theme .hero-websites .hero-body-mobile,
+          .hero-websites .hero-body-mobile,
+          .v2-theme .hero-websites .hero-body-mobile-text,
+          .hero-websites .hero-body-mobile-text {
+            text-align: left !important;
+            align-self: flex-start !important;
+          }
+          .v2-theme .hero-websites .hero-frame-paragraph .hero-body-mobile .hero-body-bold,
+          .hero-websites .hero-frame-paragraph .hero-body-mobile .hero-body-bold {
+            display: block !important;
+            width: 100% !important;
+            white-space: normal !important;
+            text-align: center !important;
+            margin-top: 1em !important;
+          }
+          .v2-theme .hero-websites .hero-body-mobile .hero-body-mobile-row,
+          .hero-websites .hero-body-mobile .hero-body-mobile-row {
+            display: block !important;
+            width: 100% !important;
+            text-align: center !important;
           }
         }
       `}</style>
@@ -1577,7 +1638,10 @@ export default function HeroV2({ variant = 'client' }: { variant?: 'client' | 'h
                         <span className="hero-body-row hero-body-light" style={{ fontWeight: 400 }}>Need your first website, or stuck with one that undersells you? Visitors land, can&rsquo;t tell what you do, and leave?<br /><strong className="hero-body-bold">I build what fixes it, so you don&rsquo;t have to.</strong></span>
                       </span>
                       <span className="hero-body-mobile">
-                        <span className="hero-body-mobile-text hero-body-light">Need your first website, or stuck with one that undersells you? Visitors land, can’t tell what you do, and leave?<br /><strong className="hero-body-bold">I build what fixes it, so you don’t have to.</strong></span>
+                        <span className="hero-body-mobile-text hero-body-light">
+                          <span className="hero-body-mobile-row">Need your first website, or stuck with one that undersells you? Visitors land, can’t tell what you do, and leave?</span>
+                          <strong className="hero-body-bold">I build what fixes it, so you don’t have to.</strong>
+                        </span>
                       </span>
                     </>
                   ) : isTools ? (

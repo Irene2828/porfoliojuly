@@ -287,7 +287,10 @@ export default function ServicesV2({ websitesOnly = false }: ServicesV2Props) {
             textWrap: 'balance'
           }}
         >
-          <span style={{ fontWeight: 400, color: 'var(--color-heading-silver, #4a5461)' }}>From your problem - to custom-built solution</span>
+          <span style={{ fontWeight: 400, color: 'var(--color-heading-silver, #4a5461)' }}>
+            From your problem - to<br />
+            custom-built solution
+          </span>
         </motion.h2>
 
         {/* 3. Subline follows */}

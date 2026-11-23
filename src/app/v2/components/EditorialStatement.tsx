@@ -283,6 +283,8 @@ export default function EditorialStatement({ variant = 'default' }: { variant?: 
               height: '1px', 
               backgroundColor: '#2d3139', 
               margin: '2rem auto 1rem auto',
+              position: 'relative',
+              top: '-2rem',
               transformOrigin: 'center'
             }}
           />

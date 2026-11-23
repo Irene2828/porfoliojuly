@@ -1564,6 +1564,22 @@ h1, h2, h3, h4, h5, h6 {
     text-wrap: pretty !important;
   }
 
+  /* Website hero: keep the mobile headline and body centered as one text column. */
+  .v2-theme .hero-websites .hero-copy-motion,
+  .v2-theme .hero-websites .hero-name-group,
+  .v2-theme .hero-websites .hero-name-group .hero-text {
+    align-items: center !important;
+    text-align: center !important;
+  }
+
+  .v2-theme .hero-websites .hero-statement,
+  .v2-theme .hero-websites .hero-name-group .hero-text h1,
+  .v2-theme .hero-websites .headline-mobile,
+  .v2-theme .hero-websites .hero-frame-paragraph {
+    text-align: center !important;
+    align-self: center !important;
+  }
+
   .v2-theme .hero-frame-paragraph .hero-body-mobile-text,
   .hero-body-mobile .hero-body-row,
   .hero-body-mobile,

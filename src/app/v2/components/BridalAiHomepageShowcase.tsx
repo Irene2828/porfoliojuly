@@ -35,13 +35,13 @@ export default function BridalAiHomepageShowcase() {
           background: #ffffff;
           color: #000000;
           overflow: hidden;
-          padding: 10.2rem 0 0;
+          padding: 5.1rem 0 0;
           width: 100%;
         }
         .bridal-ai-homepage-inner {
           width: min(1200px, calc(100% - 3rem));
           margin: 0 auto;
-          padding-bottom: 5.1rem;
+          padding-bottom: 2.55rem;
         }
         .bridal-ai-homepage-heading {
           max-width: 720px;
