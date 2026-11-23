@@ -117,6 +117,15 @@ export default function FaqSection({ variant = 'all' }: { variant?: 'all' | 'web
           background-color: #ffffff !important;
           color: #000000 !important;
         }
+        .faq-top-divider {
+          position: absolute;
+          top: 5.1rem;
+          left: 50%;
+          width: 60px;
+          height: 1px;
+          background: #2d3139;
+          transform: translateX(-50%);
+        }
         .faq-kicker {
           font-family: var(--font-body), 'Plus Jakarta Sans', sans-serif !important;
           font-size: var(--text-label) !important;
@@ -338,6 +347,7 @@ export default function FaqSection({ variant = 'all' }: { variant?: 'all' | 'web
           font-weight: 700 !important;
         }
       `}</style>
+      <div className="faq-top-divider" aria-hidden="true" />
       <div
         style={{
           maxWidth: '720px',

@@ -48,6 +48,12 @@ export default function BridalAiHomepageShowcase() {
           margin: 0 auto 3.5rem;
           text-align: center;
         }
+        .bridal-ai-homepage-divider {
+          width: 60px;
+          height: 1px;
+          margin: 0 auto 2.5rem;
+          background: #2d3139;
+        }
         .bridal-ai-homepage-heading h2 {
           margin: 0 auto 1.25rem;
           font-family: var(--font-heading), Georgia, serif;
@@ -149,6 +155,7 @@ export default function BridalAiHomepageShowcase() {
           viewport={{ once: true, amount: 0.35 }}
           transition={{ duration: 0.78, ease: [0.16, 1, 0.3, 1] }}
         >
+          <div className="bridal-ai-homepage-divider" aria-hidden="true" />
           <h2>But wait… can’t AI do it all for me?</h2>
           <p>Take one case. You need a website for your custom bridal atelier. You go to AI.</p>
         </motion.div>
