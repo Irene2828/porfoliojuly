@@ -1,7 +1,6 @@
 import type { Metadata } from 'next';
 import Header from '../components/Header';
 import HeroV2 from '../v2/components/HeroV2';
-import HowItWorks from '../v2/components/HowItWorks';
 import PackagesSection from '../v2/components/PackagesSection';
 import FaqSection from '../v2/components/FaqSection';
 import EditorialStatement from '../v2/components/EditorialStatement';
@@ -24,7 +23,6 @@ export default function ToolsPage() {
         <Header />
         <HeroV2 variant="tools" />
         <ToolsPageSections />
-        <HowItWorks variant="tools" />
         <div id="packages" style={{ scrollMarginTop: '88px' }}>
           <PackagesSection mode="tools" />
         </div>

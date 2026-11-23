@@ -412,26 +412,16 @@ export default function ServicesV2({ websitesOnly = false }: ServicesV2Props) {
 
               {/* Real Card Content (zIndex: 1) */}
               <div className={websitesOnly ? 'homepage-services-card-content' : undefined} style={{ position: 'relative', zIndex: 1, paddingTop: '1.25rem' }}>
-                {websitesOnly && <motion.h2
-                  className="homepage-services-frame-heading how-kicker"
+                {websitesOnly && <motion.p
+                  className="how-kicker"
                   initial={{ opacity: 0, y: 16 }}
                   whileInView={{ opacity: 1, y: 0 }}
                   viewport={{ once: true, amount: 0.3 }}
                   transition={{ duration: 0.65, ease: [0.16, 1, 0.3, 1] }}
-                  style={{
-                    fontFamily: 'var(--font-heading)',
-                    fontSize: 'calc(var(--text-section-title) * 0.8)',
-                    fontWeight: 400,
-                    lineHeight: 1.2,
-                    letterSpacing: '-0.02em',
-                    color: '#FFFFFF',
-                    textAlign: 'center',
-                    margin: '0 0 2.25rem 0',
-                    WebkitTextStroke: '0'
-                  }}
+                  style={{ margin: '0 0 2.25rem 0', textAlign: 'center' }}
                 >
                   Your new site will be:
-                </motion.h2>}
+                </motion.p>}
                 {!websitesOnly && <motion.h3
                   initial={{ opacity: 0, y: 16 }}
                   whileInView={{ opacity: 1, y: 0 }}

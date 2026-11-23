@@ -534,7 +534,7 @@ export default function ProjectsV2({ initialProjects = [], showWorkflowAutomatio
           .cases-grid-container {
             display: grid !important;
             grid-template-columns: 1fr !important;
-            gap: 10rem !important;
+            gap: 5rem !important;
             padding: 0 1.5rem !important;
           }
         }
@@ -562,6 +562,9 @@ export default function ProjectsV2({ initialProjects = [], showWorkflowAutomatio
         @media (max-width: 900px) {
           .cases-grid-wrapper > .case-group:nth-child(2) > h3 {
             margin-bottom: 0.5rem !important;
+          }
+          .recent-projects-layout .cases-grid-wrapper {
+            padding-bottom: 3.375rem !important;
           }
         }
         .cases-grid-wrapper {

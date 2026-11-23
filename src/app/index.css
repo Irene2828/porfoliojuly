@@ -1928,6 +1928,11 @@ h1, h2, h3, h4, h5, h6 {
   -webkit-text-fill-color: #ffffff !important;
 }
 
+.v2-theme #expertise p.how-kicker {
+  color: #ffffff !important;
+  -webkit-text-fill-color: #ffffff !important;
+}
+
 .v2-theme #packages .packages-inner > p:first-child {
   color: #ffffff !important;
   -webkit-text-fill-color: #ffffff !important;

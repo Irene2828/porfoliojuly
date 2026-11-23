@@ -1391,11 +1391,12 @@ export default function HeroV2({ variant = 'client' }: { variant?: 'client' | 'h
           }
           .v2-theme .hero-websites .hero-image-container,
           .hero-websites .hero-image-container {
-            width: 200px !important;
-            height: 200px !important;
-            max-width: 200px !important;
-            max-height: 200px !important;
-            transform: translateY(-25px) !important;
+            width: 160px !important;
+            height: 160px !important;
+            max-width: 160px !important;
+            max-height: 160px !important;
+            transform: translateY(-25px) scale(0.8) !important;
+            transform-origin: center center !important;
           }
           .v2-theme .hero-websites .hero-static-quote-card,
           .hero-websites .hero-static-quote-card {
