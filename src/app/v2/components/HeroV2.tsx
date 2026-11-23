@@ -1394,7 +1394,7 @@ export default function HeroV2({ variant = 'client' }: { variant?: 'client' | 'h
           }
           .v2-theme .hero-websites .headline-mobile,
           .hero-websites .headline-mobile {
-            font-size: 84% !important;
+            font-size: 92.4% !important; /* +10% mobile headline trial 22.11.2026 (was 84%) */
           }
           .v2-theme .hero-websites .hero-image-wrapper,
           .hero-websites .hero-image-wrapper {
