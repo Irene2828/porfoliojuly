@@ -37,7 +37,11 @@ export default function HeroV2({ variant = 'client' }: { variant?: 'client' | 'h
           font-style: normal !important;
         }
         .hero-websites .hero-text .hero-statement .headline-websites-yours {
-          font-style: normal !important;
+          font-style: italic !important;
+        }
+        .hero-websites .hero-text .hero-statement .headline-mobile-serif.headline-websites-yours,
+        .hero-websites .hero-text .hero-statement .headline-desktop-serif.headline-websites-yours {
+          font-style: italic !important;
         }
         .hero-websites .hero-text .hero-statement .headline-websites-pink {
           color: #f2908f !important;
@@ -1187,7 +1191,7 @@ export default function HeroV2({ variant = 'client' }: { variant?: 'client' | 'h
           }
         }
         .hero-websites .headline-websites-yours {
-          font-style: normal !important;
+          font-style: italic !important;
         }
         @media (min-width: 901px) {
           .hero-websites .hero-frame-paragraph .hero-body-desktop .hero-body-bold {
@@ -1439,6 +1443,10 @@ export default function HeroV2({ variant = 'client' }: { variant?: 'client' | 'h
         }
         @media (max-width: 900px) {
           /* Final website-hero override: later tablet/mobile rules must not undo centering. */
+          .v2-theme .hero-section.hero-websites,
+          .hero-section.hero-websites {
+            padding-left: 2.25rem !important;
+          }
           .v2-theme .hero-websites .hero-content,
           .hero-websites .hero-content,
           .v2-theme .hero-websites .hero-copy-motion,
@@ -1483,6 +1491,182 @@ export default function HeroV2({ variant = 'client' }: { variant?: 'client' | 'h
             display: block !important;
             width: 100% !important;
             text-align: center !important;
+          }
+          /* Mobile test: move the geometric frame treatment from the portrait to the headline. */
+          .v2-theme .hero-websites .hero-image-container .hero-shape-bottom-left,
+          .v2-theme .hero-websites .hero-image-container .hero-shape-top-right,
+          .hero-websites .hero-image-container .hero-shape-bottom-left,
+          .hero-websites .hero-image-container .hero-shape-top-right {
+            display: none !important;
+          }
+          .v2-theme .hero-websites .hero-statement,
+          .hero-websites .hero-statement {
+            position: relative !important;
+            overflow: visible !important;
+          }
+          .v2-theme .hero-websites .hero-statement::before,
+          .v2-theme .hero-websites .hero-statement::after,
+          .hero-websites .hero-statement::before,
+          .hero-websites .hero-statement::after {
+            content: '';
+            position: absolute;
+            width: 58px;
+            height: 58px;
+            pointer-events: none;
+            z-index: 0;
+          }
+          .v2-theme .hero-websites .hero-statement::before,
+          .hero-websites .hero-statement::before {
+            top: -1.35rem;
+            left: 0.2rem;
+            background:
+              linear-gradient(rgba(255, 255, 255, 0.28), rgba(255, 255, 255, 0.28)) 0 0 / 58px 1px no-repeat,
+              linear-gradient(rgba(255, 255, 255, 0.18), rgba(255, 255, 255, 0.18)) 0 4px / 58px 1px no-repeat,
+              linear-gradient(rgba(255, 255, 255, 0.28), rgba(255, 255, 255, 0.28)) 0 0 / 1px 58px no-repeat,
+              linear-gradient(rgba(255, 255, 255, 0.18), rgba(255, 255, 255, 0.18)) 4px 0 / 1px 58px no-repeat;
+          }
+          .v2-theme .hero-websites .hero-statement::after,
+          .hero-websites .hero-statement::after {
+            right: 0.2rem;
+            bottom: -1.35rem;
+            background:
+              linear-gradient(rgba(247, 214, 208, 0.32), rgba(247, 214, 208, 0.32)) 100% 100% / 58px 1px no-repeat,
+              linear-gradient(rgba(247, 214, 208, 0.2), rgba(247, 214, 208, 0.2)) 100% calc(100% - 4px) / 58px 1px no-repeat,
+              linear-gradient(rgba(247, 214, 208, 0.32), rgba(247, 214, 208, 0.32)) 100% 100% / 1px 58px no-repeat,
+              linear-gradient(rgba(247, 214, 208, 0.2), rgba(247, 214, 208, 0.2)) calc(100% - 4px) 100% / 1px 58px no-repeat;
+          }
+          .v2-theme .hero-websites .hero-frame-paragraph,
+          .hero-websites .hero-frame-paragraph {
+            width: 82.5% !important;
+            max-width: 82.5% !important;
+            margin-left: 0 !important;
+            margin-right: 0 !important;
+            margin-top: 2.52rem !important;
+            align-self: center !important;
+            text-align: left !important;
+          }
+          .v2-theme .hero-websites .hero-image-wrapper,
+          .hero-websites .hero-image-wrapper {
+            padding-top: 5.6rem !important;
+            padding-bottom: 0 !important;
+            margin-top: 0 !important;
+            margin-bottom: 0 !important;
+          }
+          .v2-theme .hero-websites .hero-content,
+          .hero-websites .hero-content,
+          .v2-theme .hero-websites .hero-copy-motion,
+          .hero-websites .hero-copy-motion,
+          .v2-theme .hero-websites .hero-name-group,
+          .hero-websites .hero-name-group,
+          .v2-theme .hero-websites .hero-text,
+          .hero-websites .hero-text {
+            align-items: flex-start !important;
+            text-align: left !important;
+          }
+          .v2-theme .hero-websites .hero-content,
+          .hero-websites .hero-content {
+            margin-left: -1rem !important;
+            width: calc(100% + 1rem) !important;
+          }
+          .v2-theme .hero-websites .hero-statement,
+          .hero-websites .hero-statement,
+          .v2-theme .hero-websites .headline-mobile,
+          .hero-websites .headline-mobile,
+          .v2-theme .hero-websites .headline-mobile .headline-line,
+          .hero-websites .headline-mobile .headline-line,
+          .v2-theme .hero-websites .hero-frame-paragraph,
+          .hero-websites .hero-frame-paragraph,
+          .v2-theme .hero-websites .hero-body-mobile,
+          .hero-websites .hero-body-mobile,
+          .v2-theme .hero-websites .hero-body-mobile-text,
+          .hero-websites .hero-body-mobile-text,
+          .v2-theme .hero-websites .hero-frame-paragraph .hero-body-mobile .hero-body-bold,
+          .hero-websites .hero-frame-paragraph .hero-body-mobile .hero-body-bold {
+            text-align: left !important;
+            align-self: flex-start !important;
+          }
+          .v2-theme .hero-websites .hero-frame-paragraph .hero-body-mobile .hero-body-bold,
+          .hero-websites .hero-frame-paragraph .hero-body-mobile .hero-body-bold {
+            margin-left: 0 !important;
+            margin-right: 0 !important;
+          }
+          .v2-theme .hero-websites .hero-frame-paragraph,
+          .hero-websites .hero-frame-paragraph {
+            margin-top: 0.63rem !important;
+          }
+          .v2-theme .hero-websites .hero-ctas,
+          .hero-websites .hero-ctas,
+          .v2-theme .hero-websites .hero-ctas-outside,
+          .hero-websites .hero-ctas-outside {
+            align-items: flex-start !important;
+            justify-content: flex-start !important;
+          }
+          .v2-theme .hero-websites .hero-ctas > a,
+          .hero-websites .hero-ctas > a,
+          .v2-theme .hero-websites .hero-ctas-outside > a,
+          .hero-websites .hero-ctas-outside > a {
+            align-self: flex-start !important;
+            margin-left: 0 !important;
+            margin-right: 0 !important;
+          }
+          .v2-theme .hero-websites .hero-image-container .hero-shape-bottom-left,
+          .v2-theme .hero-websites .hero-image-container .hero-shape-top-right,
+          .hero-websites .hero-image-container .hero-shape-bottom-left,
+          .hero-websites .hero-image-container .hero-shape-top-right {
+            display: block !important;
+          }
+          .v2-theme .hero-websites .hero-statement::before,
+          .v2-theme .hero-websites .hero-statement::after,
+          .hero-websites .hero-statement::before,
+          .hero-websites .hero-statement::after {
+            display: none !important;
+          }
+          .v2-theme .hero-websites .hero-body-mobile .hero-body-mobile-row,
+          .hero-websites .hero-body-mobile .hero-body-mobile-row {
+            text-align: left !important;
+          }
+          .v2-theme .hero-websites .hero-ctas .btn-secondary-stacked,
+          .hero-websites .hero-ctas .btn-secondary-stacked,
+          .v2-theme .hero-websites .hero-ctas-outside .btn-secondary-stacked,
+          .hero-websites .hero-ctas-outside .btn-secondary-stacked {
+            display: inline-flex !important;
+            position: relative !important;
+            left: 0 !important;
+            right: auto !important;
+            width: max-content !important;
+            max-width: 100% !important;
+            align-self: flex-start !important;
+            margin: 0 !important;
+            text-align: left !important;
+            transform: none !important;
+          }
+          .v2-theme .hero-websites .hero-ctas,
+          .hero-websites .hero-ctas {
+            margin-top: 2.1735rem !important;
+          }
+          .v2-theme .hero-websites .hero-ctas-outside .face-cta,
+          .hero-websites .hero-ctas-outside .face-cta,
+          .v2-theme .hero-websites .hero-ctas-outside .btn-secondary-stacked,
+          .hero-websites .hero-ctas-outside .btn-secondary-stacked {
+            justify-content: flex-start !important;
+            text-align: left !important;
+          }
+          .v2-theme .hero-websites .hero-text .hero-statement .headline-mobile .headline-line > .headline-mobile-white.headline-websites-yours,
+          .hero-websites .hero-text .hero-statement .headline-mobile .headline-line > .headline-mobile-white.headline-websites-yours {
+            font-style: italic !important;
+          }
+        }
+        @media (min-width: 901px) {
+          .v2-theme .hero-websites .hero-frame-paragraph,
+          .v2-theme .hero-websites .hero-frame-paragraph .hero-body-row,
+          .v2-theme .hero-websites .hero-frame-paragraph .hero-body-light,
+          .v2-theme .hero-websites .hero-frame-paragraph .hero-body-bold,
+          .hero-websites .hero-frame-paragraph,
+          .hero-websites .hero-frame-paragraph .hero-body-row,
+          .hero-websites .hero-frame-paragraph .hero-body-light,
+          .hero-websites .hero-frame-paragraph .hero-body-bold {
+            color: rgba(255, 255, 255, 0.72) !important;
+            -webkit-text-fill-color: rgba(255, 255, 255, 0.72) !important;
           }
         }
       `}</style>
@@ -1578,10 +1762,10 @@ export default function HeroV2({ variant = 'client' }: { variant?: 'client' | 'h
                           <strong className="headline-mobile-accent headline-websites-pink" style={{ fontStyle: 'italic' }}>built</strong>
                         </span>
                         <span className="headline-line headline-supporting">
-                          <span className="headline-mobile-serif-normal headline-mobile-white">around one</span>
+                          <span className="headline-mobile-serif-normal headline-mobile-white">around one business</span>
                         </span>
                         <span className="headline-line headline-supporting">
-                          <span className="headline-mobile-serif-normal headline-mobile-white">business &mdash;</span>{' '}
+                          <span className="headline-mobile-serif-normal headline-mobile-white">&mdash;</span>{' '}
                           <em className="headline-mobile-serif headline-mobile-white headline-websites-yours">yours.</em>
                         </span>
                       </>
@@ -1642,11 +1826,11 @@ export default function HeroV2({ variant = 'client' }: { variant?: 'client' | 'h
                   ) : isWebsites ? (
                     <>
                       <span className="hero-body-desktop">
-                        <span className="hero-body-row hero-body-light" style={{ fontWeight: 400 }}>Need your first website, or stuck with one that undersells you? Visitors land, can&rsquo;t tell what you do, and leave?<br /><strong className="hero-body-bold">I build what fixes it, so you don&rsquo;t have to.</strong></span>
+                        <span className="hero-body-row hero-body-light" style={{ fontWeight: 400 }}>Need your first website, or stuck with one that undersells you?<br /><strong className="hero-body-bold">I build what fixes it, so you don&rsquo;t have to.</strong></span>
                       </span>
                       <span className="hero-body-mobile">
                         <span className="hero-body-mobile-text hero-body-light">
-                          <span className="hero-body-mobile-row">Need your first website, or stuck with one that undersells you? Visitors land, can’t tell what you do, and leave?</span>
+                          <span className="hero-body-mobile-row">Need your first website, or stuck with one that undersells you?</span>
                           <strong className="hero-body-bold">I build what fixes it, so you don’t have to.</strong>
                         </span>
                       </span>
