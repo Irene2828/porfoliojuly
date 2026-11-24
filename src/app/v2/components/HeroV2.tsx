@@ -1655,6 +1655,116 @@ export default function HeroV2({ variant = 'client' }: { variant?: 'client' | 'h
           .hero-websites .hero-text .hero-statement .headline-mobile .headline-line > .headline-mobile-white.headline-websites-yours {
             font-style: italic !important;
           }
+          .v2-theme .hero-section.hero-websites,
+          .hero-section.hero-websites {
+            padding-left: 1.5rem !important;
+            padding-right: 1.5rem !important;
+          }
+          .v2-theme .hero-websites .hero-content,
+          .hero-websites .hero-content {
+            margin-left: 0 !important;
+            width: 100% !important;
+          }
+          .v2-theme .hero-websites .hero-content,
+          .hero-websites .hero-content,
+          .v2-theme .hero-websites .hero-copy-motion,
+          .hero-websites .hero-copy-motion,
+          .v2-theme .hero-websites .hero-name-group,
+          .hero-websites .hero-name-group,
+          .v2-theme .hero-websites .hero-text,
+          .hero-websites .hero-text {
+            align-items: center !important;
+            text-align: center !important;
+          }
+          .v2-theme .hero-websites .hero-statement,
+          .hero-websites .hero-statement,
+          .v2-theme .hero-websites .headline-mobile,
+          .hero-websites .headline-mobile,
+          .v2-theme .hero-websites .headline-mobile .headline-line,
+          .hero-websites .headline-mobile .headline-line {
+            align-self: center !important;
+            text-align: center !important;
+            line-height: 0.968 !important;
+          }
+          .v2-theme .hero-websites .headline-mobile .headline-line *,
+          .hero-websites .headline-mobile .headline-line * {
+            line-height: 0.968 !important;
+          }
+          .v2-theme .hero-websites .hero-frame-paragraph,
+          .hero-websites .hero-frame-paragraph,
+          .v2-theme .hero-websites .hero-body-mobile,
+          .hero-websites .hero-body-mobile,
+          .v2-theme .hero-websites .hero-body-mobile-text,
+          .hero-websites .hero-body-mobile-text {
+            align-self: center !important;
+            text-align: center !important;
+          }
+          .v2-theme .hero-websites .hero-body-mobile .hero-body-mobile-row,
+          .hero-websites .hero-body-mobile .hero-body-mobile-row,
+          .v2-theme .hero-websites .hero-frame-paragraph .hero-body-mobile .hero-body-bold,
+          .hero-websites .hero-frame-paragraph .hero-body-mobile .hero-body-bold {
+            text-align: center !important;
+          }
+          .v2-theme .hero-websites .hero-ctas,
+          .hero-websites .hero-ctas,
+          .v2-theme .hero-websites .hero-ctas-outside,
+          .hero-websites .hero-ctas-outside {
+            align-items: center !important;
+            justify-content: center !important;
+          }
+          .v2-theme .hero-websites .hero-ctas > a,
+          .hero-websites .hero-ctas > a,
+          .v2-theme .hero-websites .hero-ctas-outside > a,
+          .hero-websites .hero-ctas-outside > a {
+            align-self: center !important;
+          }
+          .v2-theme .hero-websites .hero-ctas-outside .face-cta,
+          .hero-websites .hero-ctas-outside .face-cta,
+          .v2-theme .hero-websites .hero-ctas-outside .btn-secondary-stacked,
+          .hero-websites .hero-ctas-outside .btn-secondary-stacked {
+            justify-content: center !important;
+            text-align: center !important;
+          }
+          .v2-theme .hero-websites .hero-statement .headline-mobile,
+          .hero-websites .hero-statement .headline-mobile {
+            font-size: 105% !important;
+            transform: scale(0.9) !important;
+            transform-origin: center top !important;
+            width: 100% !important;
+            max-width: 100% !important;
+            box-sizing: border-box !important;
+          }
+          .v2-theme .hero-websites .headline-mobile .headline-line,
+          .hero-websites .headline-mobile .headline-line {
+            width: 100% !important;
+            max-width: 100% !important;
+            white-space: normal !important;
+            box-sizing: border-box !important;
+          }
+          .v2-theme .hero-websites .headline-mobile .headline-line *,
+          .hero-websites .headline-mobile .headline-line * {
+            white-space: normal !important;
+          }
+          .v2-theme .hero-websites .headline-mobile .headline-line:first-child,
+          .hero-websites .headline-mobile .headline-line:first-child,
+          .v2-theme .hero-websites .headline-mobile .headline-line:first-child *,
+          .hero-websites .headline-mobile .headline-line:first-child * {
+            white-space: nowrap !important;
+          }
+          .v2-theme .hero-websites .hero-ctas-outside .btn-secondary-stacked,
+          .hero-websites .hero-ctas-outside .btn-secondary-stacked {
+            align-self: center !important;
+            margin-left: 0 !important;
+            margin-right: 0 !important;
+            justify-content: center !important;
+            text-align: center !important;
+          }
+          .v2-theme .hero-websites .hero-statement .headline-mobile .headline-websites-pink,
+          .hero-websites .hero-statement .headline-mobile .headline-websites-pink,
+          .v2-theme .hero-websites .hero-statement .headline-mobile .headline-websites-yours,
+          .hero-websites .hero-statement .headline-mobile .headline-websites-yours {
+            font-weight: 400 !important;
+          }
         }
         @media (min-width: 901px) {
           .v2-theme .hero-websites .hero-frame-paragraph,
@@ -1667,6 +1777,14 @@ export default function HeroV2({ variant = 'client' }: { variant?: 'client' | 'h
           .hero-websites .hero-frame-paragraph .hero-body-bold {
             color: rgba(255, 255, 255, 0.72) !important;
             -webkit-text-fill-color: rgba(255, 255, 255, 0.72) !important;
+          }
+          .v2-theme .hero-websites .headline-desktop .headline-line,
+          .hero-websites .headline-desktop .headline-line {
+            line-height: 0.824 !important;
+          }
+          .v2-theme .hero-websites .hero-frame-paragraph,
+          .hero-websites .hero-frame-paragraph {
+            line-height: 1.4 !important;
           }
         }
       `}</style>
@@ -1762,10 +1880,10 @@ export default function HeroV2({ variant = 'client' }: { variant?: 'client' | 'h
                           <strong className="headline-mobile-accent headline-websites-pink" style={{ fontStyle: 'italic' }}>built</strong>
                         </span>
                         <span className="headline-line headline-supporting">
-                          <span className="headline-mobile-serif-normal headline-mobile-white">around one business</span>
+                          <span className="headline-mobile-serif-normal headline-mobile-white">around one</span>
                         </span>
                         <span className="headline-line headline-supporting">
-                          <span className="headline-mobile-serif-normal headline-mobile-white">&mdash;</span>{' '}
+                          <span className="headline-mobile-serif-normal headline-mobile-white">business &mdash;</span>{' '}
                           <em className="headline-mobile-serif headline-mobile-white headline-websites-yours">yours.</em>
                         </span>
                       </>
