@@ -2110,6 +2110,26 @@ export default function HeroV2({ variant = 'client' }: { variant?: 'client' | 'h
             right: -34px !important;
           }
         }
+        @media (max-width: 900px) {
+          /* Mobile body text centered (25.11.2026) — final override, beats the earlier left rules */
+          .v2-theme .hero-websites .hero-frame-paragraph,
+          .hero-websites .hero-frame-paragraph,
+          .v2-theme .hero-websites .hero-body-mobile,
+          .hero-websites .hero-body-mobile,
+          .v2-theme .hero-websites .hero-body-mobile-text,
+          .hero-websites .hero-body-mobile-text,
+          .v2-theme .hero-websites .hero-frame-paragraph .hero-body-mobile,
+          .hero-websites .hero-frame-paragraph .hero-body-mobile,
+          .v2-theme .hero-websites .hero-frame-paragraph .hero-body-mobile-text,
+          .hero-websites .hero-frame-paragraph .hero-body-mobile-text,
+          .v2-theme .hero-websites .hero-frame-paragraph .hero-body-mobile .hero-body-mobile-row,
+          .hero-websites .hero-frame-paragraph .hero-body-mobile .hero-body-mobile-row,
+          .v2-theme .hero-websites .hero-body-mobile .hero-body-mobile-row,
+          .hero-websites .hero-body-mobile .hero-body-mobile-row {
+            text-align: center !important;
+            align-self: center !important;
+          }
+        }
       `}</style>
     
 
