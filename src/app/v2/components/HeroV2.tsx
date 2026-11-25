@@ -2130,6 +2130,21 @@ export default function HeroV2({ variant = 'client' }: { variant?: 'client' | 'h
             align-self: center !important;
           }
         }
+        @media (max-width: 900px) {
+          /* Mobile headline centered (25.11.2026) — variant B: current breaks, centered. Flex container needs align-items; lines need width 100% + text-align. 6-class selectors + last in file beat the later left rules. */
+          .v2-theme .hero-websites .hero-name-group .hero-text .headline-mobile,
+          .hero-websites .hero-name-group .hero-text .headline-mobile {
+            align-items: center !important;
+            justify-content: center !important;
+            text-align: center !important;
+          }
+          .v2-theme .hero-websites .hero-name-group .hero-text .hero-statement .headline-mobile .headline-line,
+          .hero-websites .hero-name-group .hero-text .hero-statement .headline-mobile .headline-line {
+            width: 100% !important;
+            text-align: center !important;
+            align-self: center !important;
+          }
+        }
       `}</style>
     
 
