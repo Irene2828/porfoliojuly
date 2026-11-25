@@ -1807,9 +1807,9 @@ export default function HeroV2({ variant = 'client' }: { variant?: 'client' | 'h
           .hero-websites .hero-text .hero-statement .headline-mobile .headline-mobile-accent:not(.headline-websites-pink) {
             letter-spacing: -0.010em !important;
           }
-          .v2-theme .hero-websites .hero-text .hero-statement .headline-mobile .headline-websites-yours,
-          .hero-websites .hero-text .hero-statement .headline-mobile .headline-websites-yours {
-            font-size: inherit !important;
+          .v2-theme .hero-websites .hero-text .hero-statement .headline-mobile .headline-line > .headline-mobile-white.headline-websites-yours,
+          .hero-websites .hero-text .hero-statement .headline-mobile .headline-line > .headline-mobile-white.headline-websites-yours {
+            font-size: 110% !important;
             letter-spacing: 0.010em !important;
           }
           .v2-theme .hero-websites .hero-frame-paragraph,
