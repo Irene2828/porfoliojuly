@@ -2145,6 +2145,29 @@ export default function HeroV2({ variant = 'client' }: { variant?: 'client' | 'h
             align-self: center !important;
           }
         }
+        @media (max-width: 600px) {
+          .v2-theme .hero-websites .hero-text .hero-statement .headline-mobile .headline-line,
+          .v2-theme .hero-websites .hero-text .hero-statement .headline-mobile .headline-line *,
+          .hero-websites .hero-text .hero-statement .headline-mobile .headline-line,
+          .hero-websites .hero-text .hero-statement .headline-mobile .headline-line * {
+            font-weight: 400 !important;
+          }
+        }
+        @media (min-width: 901px) {
+          .v2-theme .hero-websites .hero-text .hero-statement .headline-desktop .headline-line,
+          .v2-theme .hero-websites .hero-text .hero-statement .headline-desktop .headline-line *,
+          .hero-websites .hero-text .hero-statement .headline-desktop .headline-line,
+          .hero-websites .hero-text .hero-statement .headline-desktop .headline-line * {
+            font-weight: 500 !important;
+          }
+        }
+        .v2-theme .hero-websites .headline-dash,
+        .hero-websites .headline-dash {
+          display: inline-block !important;
+          transform: scaleX(0.88) !important;
+          transform-origin: center center !important;
+          margin-inline: -0.018em !important;
+        }
       `}</style>
     
 
@@ -2174,7 +2197,7 @@ export default function HeroV2({ variant = 'client' }: { variant?: 'client' | 'h
                           <span className="headline-desktop-serif-normal">around</span>
                         </span>
                         <span className="headline-line headline-supporting">
-                          <span className="headline-desktop-serif-normal">one business &mdash;</span>{' '}
+                          <span className="headline-desktop-serif-normal">one business <span className="headline-dash">&mdash;</span></span>{' '}
                           <em className="headline-desktop-serif headline-websites-yours">yours.</em>
                         </span>
                       </>
@@ -2241,7 +2264,7 @@ export default function HeroV2({ variant = 'client' }: { variant?: 'client' | 'h
                           <span className="headline-mobile-serif-normal headline-mobile-white">around one</span>
                         </span>
                         <span className="headline-line headline-supporting">
-                          <span className="headline-mobile-serif-normal headline-mobile-white">business &mdash;</span>{' '}
+                          <span className="headline-mobile-serif-normal headline-mobile-white">business <span className="headline-dash">&mdash;</span></span>{' '}
                           <em className="headline-mobile-serif headline-mobile-white headline-websites-yours">yours.</em>
                         </span>
                       </>

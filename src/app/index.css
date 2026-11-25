@@ -2291,3 +2291,22 @@ h1, h2, h3, h4, h5, h6 {
     line-height: 0.968 !important;
   }
 }
+
+/* Subtle one-step weight increase for the website hero headline. */
+@media (max-width: 600px) {
+  .v2-theme .hero-websites .hero-text .hero-statement .headline-mobile .headline-line,
+  .v2-theme .hero-websites .hero-text .hero-statement .headline-mobile .headline-line *,
+  .hero-websites .hero-text .hero-statement .headline-mobile .headline-line,
+  .hero-websites .hero-text .hero-statement .headline-mobile .headline-line * {
+    font-weight: 400 !important;
+  }
+}
+
+@media (min-width: 901px) {
+  .v2-theme .hero-websites .hero-text .hero-statement .headline-desktop .headline-line,
+  .v2-theme .hero-websites .hero-text .hero-statement .headline-desktop .headline-line *,
+  .hero-websites .hero-text .hero-statement .headline-desktop .headline-line,
+  .hero-websites .hero-text .hero-statement .headline-desktop .headline-line * {
+    font-weight: 500 !important;
+  }
+}
