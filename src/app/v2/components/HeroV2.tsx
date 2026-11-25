@@ -25,6 +25,11 @@ export default function HeroV2({ variant = 'client' }: { variant?: 'client' | 'h
         }
         /* Headline scaled down (now +5% larger on desktops: 0.84) */
         /* Websites hero headline: italic pink "Custom" and "yours.", everything else white (all screens) */
+        .hero-websites .hero-text .hero-statement .headline-desktop *,
+        .hero-websites .hero-text .hero-statement .headline-mobile * {
+          font-family: 'Cormorant Garamond', Georgia, serif !important;
+          font-weight: 300 !important;
+        }
         .hero-websites .hero-text .hero-statement .headline-desktop-accent,
         .hero-websites .hero-text .hero-statement .headline-mobile-accent {
           color: #ffffff !important;
@@ -738,7 +743,7 @@ export default function HeroV2({ variant = 'client' }: { variant?: 'client' | 'h
           /* Keep the mobile accent weight; the white-word rule below handles the white accents. */
           .v2-theme .hero-websites .hero-text .hero-statement .headline-mobile .headline-mobile-accent,
           .hero-websites .hero-text .hero-statement .headline-mobile .headline-mobile-accent {
-            font-weight: 450 !important;
+            font-weight: 400 !important;
           }
         }
         /* Headline +5% on iPhone 13 and larger (390px and up); smaller phones keep 0.976.
@@ -1168,6 +1173,9 @@ export default function HeroV2({ variant = 'client' }: { variant?: 'client' | 'h
         }
         .hero-websites .hero-frame-paragraph .hero-body-bold {
           white-space: nowrap;
+          color: inherit !important;
+          -webkit-text-fill-color: currentColor !important;
+          font-size: inherit !important;
         }
         @media (min-width: 901px) {
           .v2-theme .hero-section.hero-websites .hero-frame-paragraph .hero-body-bold {
@@ -1727,9 +1735,8 @@ export default function HeroV2({ variant = 'client' }: { variant?: 'client' | 'h
           }
           .v2-theme .hero-websites .hero-statement .headline-mobile,
           .hero-websites .hero-statement .headline-mobile {
-            font-size: 105% !important;
-            transform: scale(0.9) !important;
-            transform-origin: center top !important;
+            font-size: 85.05% !important;
+            transform: none !important;
             width: 100% !important;
             max-width: 100% !important;
             box-sizing: border-box !important;
@@ -1765,6 +1772,132 @@ export default function HeroV2({ variant = 'client' }: { variant?: 'client' | 'h
           .hero-websites .hero-statement .headline-mobile .headline-websites-yours {
             font-weight: 400 !important;
           }
+          .v2-theme .hero-websites .hero-statement .headline-mobile .headline-line,
+          .hero-websites .hero-statement .headline-mobile .headline-line,
+          .v2-theme .hero-websites .hero-statement .headline-mobile .headline-line *,
+          .hero-websites .hero-statement .headline-mobile .headline-line * {
+            font-size: 100% !important;
+            letter-spacing: 0.010em !important;
+          }
+          .v2-theme .hero-websites .hero-text .hero-statement .headline-mobile .headline-line,
+          .v2-theme .hero-websites .hero-text .hero-statement .headline-mobile .headline-line *,
+          .hero-websites .hero-text .hero-statement .headline-mobile .headline-line,
+          .hero-websites .hero-text .hero-statement .headline-mobile .headline-line * {
+            font-family: 'Cormorant Garamond', Georgia, serif !important;
+            font-size: 100% !important;
+            font-weight: 300 !important;
+            letter-spacing: 0.010em !important;
+            line-height: 0.968 !important;
+          }
+          .v2-theme .hero-websites .hero-text .hero-statement .headline-mobile .headline-mobile-serif-normal,
+          .v2-theme .hero-websites .hero-text .hero-statement .headline-mobile .headline-mobile-accent:not(.headline-websites-pink),
+          .hero-websites .hero-text .hero-statement .headline-mobile .headline-mobile-serif-normal,
+          .hero-websites .hero-text .hero-statement .headline-mobile .headline-mobile-accent:not(.headline-websites-pink) {
+            font-family: 'Source Serif 4', Georgia, serif !important;
+            font-style: normal !important;
+          }
+          .v2-theme .hero-websites .hero-text .hero-statement .headline-mobile .headline-line:nth-child(2),
+          .v2-theme .hero-websites .hero-text .hero-statement .headline-mobile .headline-line:nth-child(2) *,
+          .hero-websites .hero-text .hero-statement .headline-mobile .headline-line:nth-child(2),
+          .hero-websites .hero-text .hero-statement .headline-mobile .headline-line:nth-child(2) * {
+            font-size: 108% !important;
+            letter-spacing: 0.010em !important;
+          }
+          .v2-theme .hero-websites .hero-text .hero-statement .headline-mobile .headline-mobile-serif-normal,
+          .v2-theme .hero-websites .hero-text .hero-statement .headline-mobile .headline-mobile-accent:not(.headline-websites-pink),
+          .hero-websites .hero-text .hero-statement .headline-mobile .headline-mobile-serif-normal,
+          .hero-websites .hero-text .hero-statement .headline-mobile .headline-mobile-accent:not(.headline-websites-pink) {
+            letter-spacing: -0.010em !important;
+          }
+          .v2-theme .hero-websites .hero-text .hero-statement .headline-mobile .headline-websites-yours,
+          .hero-websites .hero-text .hero-statement .headline-mobile .headline-websites-yours {
+            font-size: 108% !important;
+            letter-spacing: 0.010em !important;
+          }
+          .v2-theme .hero-websites .hero-frame-paragraph,
+          .hero-websites .hero-frame-paragraph {
+            width: 90.75% !important;
+            max-width: 90.75% !important;
+            margin-top: 1.26rem !important;
+          }
+          .v2-theme .hero-websites .hero-content,
+          .hero-websites .hero-content,
+          .v2-theme .hero-websites .hero-copy-motion,
+          .hero-websites .hero-copy-motion,
+          .v2-theme .hero-websites .hero-name-group,
+          .hero-websites .hero-name-group,
+          .v2-theme .hero-websites .hero-text,
+          .hero-websites .hero-text {
+            align-items: flex-start !important;
+            text-align: left !important;
+          }
+          .v2-theme .hero-websites .hero-statement,
+          .hero-websites .hero-statement,
+          .v2-theme .hero-websites .headline-mobile,
+          .hero-websites .headline-mobile,
+          .v2-theme .hero-websites .headline-mobile .headline-line,
+          .hero-websites .headline-mobile .headline-line,
+          .v2-theme .hero-websites .hero-frame-paragraph,
+          .hero-websites .hero-frame-paragraph,
+          .v2-theme .hero-websites .hero-body-mobile,
+          .hero-websites .hero-body-mobile,
+          .v2-theme .hero-websites .hero-body-mobile-text,
+          .hero-websites .hero-body-mobile-text {
+            align-self: flex-start !important;
+            text-align: left !important;
+          }
+          .v2-theme .hero-websites .hero-body-mobile .hero-body-mobile-row,
+          .hero-websites .hero-body-mobile .hero-body-mobile-row,
+          .v2-theme .hero-websites .hero-frame-paragraph .hero-body-mobile .hero-body-bold,
+          .hero-websites .hero-frame-paragraph .hero-body-mobile .hero-body-bold {
+            text-align: left !important;
+          }
+          .v2-theme .hero-websites .hero-frame-paragraph .hero-body-mobile .hero-body-lead,
+          .v2-theme .hero-websites .hero-frame-paragraph .hero-body-mobile .hero-body-bold,
+          .hero-websites .hero-frame-paragraph .hero-body-mobile .hero-body-lead,
+          .hero-websites .hero-frame-paragraph .hero-body-mobile .hero-body-bold {
+            font-weight: 500 !important;
+          }
+          .v2-theme .hero-websites .hero-frame-paragraph .hero-body-mobile .hero-body-lead,
+          .v2-theme .hero-websites .hero-frame-paragraph .hero-body-mobile .hero-body-bold,
+          .hero-websites .hero-frame-paragraph .hero-body-mobile .hero-body-lead,
+          .hero-websites .hero-frame-paragraph .hero-body-mobile .hero-body-bold {
+            color: rgba(255, 255, 255, 0.8) !important;
+            -webkit-text-fill-color: rgba(255, 255, 255, 0.8) !important;
+          }
+          .v2-theme .hero-websites .hero-frame-paragraph .hero-body-mobile .hero-body-lead,
+          .v2-theme .hero-websites .hero-frame-paragraph .hero-body-mobile .hero-body-bold,
+          .hero-websites .hero-frame-paragraph .hero-body-mobile .hero-body-lead,
+          .hero-websites .hero-frame-paragraph .hero-body-mobile .hero-body-bold {
+            display: block !important;
+            width: 100% !important;
+            font-family: inherit !important;
+            font-size: inherit !important;
+            font-weight: 500 !important;
+            line-height: inherit !important;
+            letter-spacing: inherit !important;
+            box-sizing: border-box !important;
+          }
+          .v2-theme .hero-websites .hero-ctas,
+          .hero-websites .hero-ctas,
+          .v2-theme .hero-websites .hero-ctas-outside,
+          .hero-websites .hero-ctas-outside {
+            align-items: center !important;
+            justify-content: center !important;
+          }
+          .v2-theme .hero-websites .hero-ctas > a,
+          .hero-websites .hero-ctas > a,
+          .v2-theme .hero-websites .hero-ctas-outside > a,
+          .hero-websites .hero-ctas-outside > a {
+            align-self: center !important;
+          }
+          .v2-theme .hero-websites .hero-ctas-outside .face-cta,
+          .hero-websites .hero-ctas-outside .face-cta,
+          .v2-theme .hero-websites .hero-ctas-outside .btn-secondary-stacked,
+          .hero-websites .hero-ctas-outside .btn-secondary-stacked {
+            justify-content: center !important;
+            text-align: center !important;
+          }
         }
         @media (min-width: 901px) {
           .v2-theme .hero-websites .hero-frame-paragraph,
@@ -1778,6 +1911,11 @@ export default function HeroV2({ variant = 'client' }: { variant?: 'client' | 'h
             color: rgba(255, 255, 255, 0.72) !important;
             -webkit-text-fill-color: rgba(255, 255, 255, 0.72) !important;
           }
+          .v2-theme .hero-websites .hero-frame-paragraph .hero-body-desktop .hero-body-bold,
+          .hero-websites .hero-frame-paragraph .hero-body-desktop .hero-body-bold {
+            color: #dfe6ee !important;
+            -webkit-text-fill-color: #dfe6ee !important;
+          }
           .v2-theme .hero-websites .headline-desktop .headline-line,
           .hero-websites .headline-desktop .headline-line {
             line-height: 0.824 !important;
@@ -1786,6 +1924,132 @@ export default function HeroV2({ variant = 'client' }: { variant?: 'client' | 'h
           .hero-websites .hero-frame-paragraph {
             line-height: 1.4 !important;
           }
+        }
+        @media (min-width: 1201px) {
+          .v2-theme .hero-websites .hero-statement,
+          .v2-theme .hero-websites .hero-name-group .hero-text h1.hero-statement,
+          .hero-websites .hero-statement,
+          .hero-websites .hero-name-group .hero-text h1.hero-statement {
+            font-size: clamp(71.726px, 6.4553vw, 91.814px) !important;
+          }
+          .v2-theme .hero-websites .hero-static-quote-card,
+          .hero-websites .hero-static-quote-card {
+            transform: scale(1.1) !important;
+            transform-origin: bottom right !important;
+            padding: 0.88rem 1.045rem !important;
+          }
+        }
+        .v2-theme .hero-websites .hero-frame-paragraph .hero-body-bold,
+        .hero-websites .hero-frame-paragraph .hero-body-bold {
+          font-family: inherit !important;
+          font-size: inherit !important;
+          font-weight: 400 !important;
+          font-style: normal !important;
+          letter-spacing: inherit !important;
+          line-height: inherit !important;
+          color: inherit !important;
+          -webkit-text-fill-color: currentColor !important;
+        }
+        .v2-theme .hero-websites .hero-frame-paragraph .hero-body-lead,
+        .v2-theme .hero-websites .hero-frame-paragraph .hero-body-bold,
+        .hero-websites .hero-frame-paragraph .hero-body-lead,
+        .hero-websites .hero-frame-paragraph .hero-body-bold {
+          font-family: inherit !important;
+          font-size: inherit !important;
+          font-weight: 600 !important;
+          font-style: normal !important;
+          letter-spacing: inherit !important;
+          line-height: inherit !important;
+          color: inherit !important;
+          -webkit-text-fill-color: currentColor !important;
+        }
+        @media (min-width: 1201px) {
+          .v2-theme .hero-websites .hero-frame-paragraph .hero-body-desktop .hero-body-lead,
+          .hero-websites .hero-frame-paragraph .hero-body-desktop .hero-body-lead {
+            font-weight: 350 !important;
+          }
+          .v2-theme .hero-websites .hero-frame-paragraph .hero-body-desktop .hero-body-bold,
+          .hero-websites .hero-frame-paragraph .hero-body-desktop .hero-body-bold {
+            font-weight: 350 !important;
+          }
+        }
+        @media (max-width: 900px) {
+          .v2-theme .hero-websites .hero-frame-paragraph .hero-body-mobile .hero-body-lead,
+          .v2-theme .hero-websites .hero-frame-paragraph .hero-body-mobile .hero-body-bold,
+          .hero-websites .hero-frame-paragraph .hero-body-mobile .hero-body-lead,
+          .hero-websites .hero-frame-paragraph .hero-body-mobile .hero-body-bold {
+            font-weight: 400 !important;
+            color: rgba(255, 255, 255, 0.72) !important;
+            -webkit-text-fill-color: rgba(255, 255, 255, 0.72) !important;
+          }
+        }
+        @media (min-width: 1201px) {
+          .hero-websites .hero-frame-paragraph .hero-body-desktop .hero-body-lead,
+          .hero-websites .hero-frame-paragraph .hero-body-desktop .hero-body-bold {
+            color: rgba(255, 255, 255, 0.94) !important;
+            -webkit-text-fill-color: rgba(255, 255, 255, 0.94) !important;
+          }
+          .hero-websites .headline-desktop .headline-desktop-serif-normal,
+          .hero-websites .headline-desktop .headline-desktop-accent:not(.headline-websites-pink) {
+            letter-spacing: -0.022em !important;
+          }
+          .hero-websites .headline-desktop .headline-websites-pink,
+          .hero-websites .headline-desktop .headline-desktop-serif.headline-websites-yours {
+            letter-spacing: -0.016em !important;
+          }
+          .hero-websites .hero-static-quote-card p {
+            line-height: 1.45 !important;
+            letter-spacing: 0.01em !important;
+          }
+          .hero-websites .hero-static-quote-card small {
+            margin-top: 0.55rem !important;
+            line-height: 1.4 !important;
+            letter-spacing: 0.01em !important;
+          }
+        }
+        @media (max-width: 900px) {
+          .v2-theme .hero-websites .headline-mobile .headline-line:nth-child(2) > *,
+          .hero-websites .headline-mobile .headline-line:nth-child(2) > * {
+            color: #f2908f !important;
+            -webkit-text-fill-color: #f2908f !important;
+          }
+        }
+        @media (max-width: 600px) {
+          .v2-theme .hero-websites .hero-frame-paragraph .hero-body-mobile .hero-body-bold,
+          .hero-websites .hero-frame-paragraph .hero-body-mobile .hero-body-bold {
+            margin-top: 0.5em !important;
+          }
+          .v2-theme .hero-websites .headline-mobile,
+          .hero-websites .headline-mobile,
+          .v2-theme .hero-websites .headline-mobile .headline-line,
+          .hero-websites .headline-mobile .headline-line {
+            line-height: 0.8712 !important;
+          }
+        }
+        @media (min-width: 1201px) {
+          .hero-websites .headline-desktop,
+          .hero-websites .headline-desktop .headline-line {
+            line-height: 1.0815 !important;
+          }
+          .hero-websites .hero-frame-paragraph {
+            font-size: 1.1927rem !important;
+            margin-top: 1.87rem !important;
+          }
+          .hero-websites .hero-static-quote-card {
+            box-shadow: 0 16px 36px rgba(0, 0, 0, 0.2), 0 2px 9px rgba(255, 255, 255, 0.05) !important;
+          }
+        }
+        .hero-websites .hero-image-container .hero-shape-bottom-left,
+        .hero-websites .hero-image-container .hero-shape-top-right {
+          filter: none !important;
+        }
+        .hero-websites .hero-image-container {
+          box-shadow: none !important;
+          -webkit-box-shadow: none !important;
+        }
+        .hero-websites .hero-image-container .hero-shape-bottom-left svg,
+        .hero-websites .hero-image-container .hero-shape-top-right svg {
+          filter: drop-shadow(0 4px 8px rgba(0, 0, 0, 0.34)) drop-shadow(0 0 3px rgba(255, 255, 255, 0.12)) !important;
         }
       `}</style>
     
@@ -1944,11 +2208,11 @@ export default function HeroV2({ variant = 'client' }: { variant?: 'client' | 'h
                   ) : isWebsites ? (
                     <>
                       <span className="hero-body-desktop">
-                        <span className="hero-body-row hero-body-light" style={{ fontWeight: 400 }}>Need your first website, or stuck with one that undersells you?<br /><strong className="hero-body-bold">I build what fixes it, so you don&rsquo;t have to.</strong></span>
+                        <span className="hero-body-row hero-body-light" style={{ fontWeight: 400 }}><span className="hero-body-lead">Need your first website, or stuck with one that undersells you?</span><br /><strong className="hero-body-bold">I build what fixes it, so you don&rsquo;t have to.</strong></span>
                       </span>
                       <span className="hero-body-mobile">
                         <span className="hero-body-mobile-text hero-body-light">
-                          <span className="hero-body-mobile-row">Need your first website, or stuck with one that undersells you?</span>
+                          <span className="hero-body-mobile-row hero-body-lead">Need your first website, or stuck with one that undersells you?</span>
                           <strong className="hero-body-bold">I build what fixes it, so you don’t have to.</strong>
                         </span>
                       </span>

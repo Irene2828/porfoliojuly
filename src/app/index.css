@@ -2168,3 +2168,20 @@ h1, h2, h3, h4, h5, h6 {
     padding-inline: var(--space-md, 2rem) !important;
   }
 }
+
+/* Final mobile website-hero headline normalization: one face, one size, one tracking value. */
+@media (max-width: 900px) {
+  .v2-theme .hero-websites .hero-text .hero-statement .headline-mobile {
+    font-family: 'Cormorant Garamond', Georgia, serif !important;
+    font-size: 85.05% !important;
+  }
+
+  .v2-theme .hero-websites .hero-text .hero-statement .headline-mobile .headline-line,
+  .v2-theme .hero-websites .hero-text .hero-statement .headline-mobile .headline-line * {
+    font-family: 'Cormorant Garamond', Georgia, serif !important;
+    font-size: 100% !important;
+    font-weight: 300 !important;
+    letter-spacing: 0.010em !important;
+    line-height: 0.968 !important;
+  }
+}
