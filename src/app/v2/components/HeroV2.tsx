@@ -2073,9 +2073,8 @@ export default function HeroV2({ variant = 'client' }: { variant?: 'client' | 'h
             display: inline-flex !important;
             align-self: center !important;
             justify-content: center !important;
-            text-align: left !important;
-            padding-left: 1.88rem !important;
-            padding-right: 0.5rem !important;
+            text-align: center !important;
+            padding-inline: 0.5rem !important;
             margin-left: 0 !important;
             transform: none !important;
           }
@@ -2182,10 +2181,10 @@ export default function HeroV2({ variant = 'client' }: { variant?: 'client' | 'h
           .v2-theme .hero-section.hero-websites .hero-ctas-outside > .btn-secondary-stacked {
             padding-inline: 0.5rem !important;
           }
-          .hero-websites .hero-ctas-outside > .btn > :first-child {
+          .hero-websites .hero-ctas-outside > .btn > .hero-cta-label {
             grid-column: 2;
           }
-          .hero-websites .hero-ctas-outside > .btn > :last-child {
+          .hero-websites .hero-ctas-outside > .btn > .hero-cta-arrow {
             grid-column: 3;
             justify-self: start;
           }
@@ -2410,14 +2409,14 @@ export default function HeroV2({ variant = 'client' }: { variant?: 'client' | 'h
                   className="btn prefooter-btn-primary face-cta"
                   style={{ display: 'inline-flex', alignItems: 'center', gap: '0.45rem', ...(isHire ? { minWidth: '272px' } : {}) }}
                 >
-                  <span>{isHire ? 'GET IN TOUCH' : isWebsites ? 'TELL ME ABOUT YOUR WEBSITE' : isTools ? 'TELL ME ABOUT YOUR ROUTINE' : 'SEND YOUR PROBLEM MY WAY'}</span>
-                  <svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round" style={{ transform: 'translateY(-0.5px)' }}>
+                  <span className="hero-cta-label">{isHire ? 'GET IN TOUCH' : isWebsites ? 'TELL ME ABOUT YOUR WEBSITE' : isTools ? 'TELL ME ABOUT YOUR ROUTINE' : 'SEND YOUR PROBLEM MY WAY'}</span>
+                  <svg className="hero-cta-arrow" aria-hidden="true" width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round" style={{ transform: 'translateY(-0.5px)' }}>
                     <line x1="7" y1="17" x2="17" y2="7"></line>
                     <polyline points="7 7 17 7 17 17"></polyline>
                   </svg>
                 </a>
                 <a href={isTools ? '#two-tools-one-app' : '#cases'} className="btn btn-secondary btn-secondary-stacked" style={{ color: 'rgba(255, 255, 255, 0.8)' }}>
-                  <span>{isWebsites ? 'SEE RECENT PROJECTS' : 'SEE WHAT I’VE BUILT'}</span>{' '}<span className="arrow" style={{ color: 'rgba(255, 255, 255, 0.8)' }}>↓</span>
+                  <span className="hero-cta-label">{isWebsites ? 'SEE RECENT PROJECTS' : 'SEE WHAT I’VE BUILT'}</span>{' '}<span className="arrow hero-cta-arrow" aria-hidden="true" style={{ color: 'rgba(255, 255, 255, 0.8)' }}>↓</span>
                 </a>
               </div>
             </div>
