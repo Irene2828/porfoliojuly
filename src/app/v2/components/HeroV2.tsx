@@ -2051,6 +2051,65 @@ export default function HeroV2({ variant = 'client' }: { variant?: 'client' | 'h
         .hero-websites .hero-image-container .hero-shape-top-right svg {
           filter: drop-shadow(0 4px 8px rgba(0, 0, 0, 0.34)) drop-shadow(0 0 3px rgba(255, 255, 255, 0.12)) !important;
         }
+        @media (max-width: 600px) {
+          .v2-theme .hero-websites .hero-ctas,
+          .hero-websites .hero-ctas,
+          .v2-theme .hero-websites .hero-ctas-outside,
+          .hero-websites .hero-ctas-outside {
+            width: 90.75% !important;
+            max-width: 90.75% !important;
+            align-self: flex-start !important;
+            align-items: flex-start !important;
+            justify-content: flex-start !important;
+          }
+          .v2-theme .hero-websites .hero-ctas > a,
+          .hero-websites .hero-ctas > a,
+          .v2-theme .hero-websites .hero-ctas-outside > a,
+          .hero-websites .hero-ctas-outside > a {
+            align-self: flex-start !important;
+            margin-left: 0 !important;
+            margin-right: 0 !important;
+          }
+          .v2-theme .hero-websites .hero-ctas-outside .btn-secondary-stacked,
+          .hero-websites .hero-ctas-outside .btn-secondary-stacked {
+            display: inline-flex !important;
+            align-self: flex-start !important;
+            justify-content: flex-start !important;
+            text-align: left !important;
+            padding-left: 1.88rem !important;
+            padding-right: 0.5rem !important;
+            margin-left: 0 !important;
+            transform: none !important;
+          }
+          .v2-theme .hero-websites .hero-image-wrapper,
+          .hero-websites .hero-image-wrapper {
+            align-self: center !important;
+            width: 100% !important;
+            max-width: 100% !important;
+            justify-content: center !important;
+            padding-left: 0 !important;
+            padding-right: 0 !important;
+            margin-left: 0 !important;
+            margin-right: 0 !important;
+            box-sizing: border-box !important;
+          }
+          .v2-theme .hero-websites .hero-image-container,
+          .hero-websites .hero-image-container {
+            margin-left: 0 !important;
+            margin-right: 0 !important;
+            left: 0 !important;
+            transform: translateY(-25px) scale(0.8) !important;
+            transform-origin: center center !important;
+          }
+          .v2-theme .hero-websites .hero-image-container .hero-shape-bottom-left,
+          .hero-websites .hero-image-container .hero-shape-bottom-left {
+            left: -34px !important;
+          }
+          .v2-theme .hero-websites .hero-image-container .hero-shape-top-right,
+          .hero-websites .hero-image-container .hero-shape-top-right {
+            right: -34px !important;
+          }
+        }
       `}</style>
     
 

@@ -288,8 +288,8 @@ export default function ServicesV2({ websitesOnly = false }: ServicesV2Props) {
           }}
         >
           <span style={{ fontWeight: 400, color: 'var(--color-heading-silver, #4a5461)' }}>
-            From your problem - to<br />
-            custom-built solution
+            From problem - to<br />
+            solution
           </span>
         </motion.h2>
 
