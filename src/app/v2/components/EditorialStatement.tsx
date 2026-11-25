@@ -126,7 +126,7 @@ export default function EditorialStatement({ variant = 'default' }: { variant?: 
           }
           @media (max-width: 900px) {
             .prefooter-closing-line {
-              font-size: clamp(1.0064rem, 5.24vw, 1.416rem) !important;
+              font-size: clamp(1.184rem, 6.16vw, 2.36rem) !important; /* 24px on mobile — matches index.css, one size, no fight */
               line-height: 1.35 !important;
               text-align: left !important;
               width: 100% !important;
@@ -140,6 +140,10 @@ export default function EditorialStatement({ variant = 'default' }: { variant?: 
               font-weight: 600 !important;
               color: #f2908f !important;
               -webkit-text-fill-color: #f2908f !important;
+            }
+            .prefooter-closing-subtext,
+            .prefooter-closing-subtext p {
+              font-size: 1.15rem !important; /* explicit mobile subtext size (18.4px) */
             }
             .prefooter-closing-mobile .prefooter-closing-row {
               font-style: normal !important;
