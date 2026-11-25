@@ -1606,14 +1606,14 @@ export default function HeroV2({ variant = 'client' }: { variant?: 'client' | 'h
           .hero-websites .hero-ctas,
           .v2-theme .hero-websites .hero-ctas-outside,
           .hero-websites .hero-ctas-outside {
-            align-items: flex-start !important;
-            justify-content: flex-start !important;
+            align-items: center !important;
+            justify-content: center !important;
           }
           .v2-theme .hero-websites .hero-ctas > a,
           .hero-websites .hero-ctas > a,
           .v2-theme .hero-websites .hero-ctas-outside > a,
           .hero-websites .hero-ctas-outside > a {
-            align-self: flex-start !important;
+            align-self: center !important;
             margin-left: 0 !important;
             margin-right: 0 !important;
           }
@@ -1735,7 +1735,7 @@ export default function HeroV2({ variant = 'client' }: { variant?: 'client' | 'h
           }
           .v2-theme .hero-websites .hero-statement .headline-mobile,
           .hero-websites .hero-statement .headline-mobile {
-            font-size: 85.05% !important;
+            font-size: 93.55% !important; /* +10% mobile headline 25.11.2026 (was 85.05%) */
             transform: none !important;
             width: 100% !important;
             max-width: 100% !important;
@@ -2058,23 +2058,23 @@ export default function HeroV2({ variant = 'client' }: { variant?: 'client' | 'h
           .hero-websites .hero-ctas-outside {
             width: 90.75% !important;
             max-width: 90.75% !important;
-            align-self: flex-start !important;
-            align-items: flex-start !important;
-            justify-content: flex-start !important;
+            align-self: center !important;
+            align-items: center !important;
+            justify-content: center !important;
           }
           .v2-theme .hero-websites .hero-ctas > a,
           .hero-websites .hero-ctas > a,
           .v2-theme .hero-websites .hero-ctas-outside > a,
           .hero-websites .hero-ctas-outside > a {
-            align-self: flex-start !important;
+            align-self: center !important;
             margin-left: 0 !important;
             margin-right: 0 !important;
           }
           .v2-theme .hero-websites .hero-ctas-outside .btn-secondary-stacked,
           .hero-websites .hero-ctas-outside .btn-secondary-stacked {
             display: inline-flex !important;
-            align-self: flex-start !important;
-            justify-content: flex-start !important;
+            align-self: center !important;
+            justify-content: center !important;
             text-align: left !important;
             padding-left: 1.88rem !important;
             padding-right: 0.5rem !important;
