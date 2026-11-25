@@ -1796,11 +1796,9 @@ export default function HeroV2({ variant = 'client' }: { variant?: 'client' | 'h
             font-family: 'Source Serif 4', Georgia, serif !important;
             font-style: normal !important;
           }
-          .v2-theme .hero-websites .hero-text .hero-statement .headline-mobile .headline-line:nth-child(2),
-          .v2-theme .hero-websites .hero-text .hero-statement .headline-mobile .headline-line:nth-child(2) *,
-          .hero-websites .hero-text .hero-statement .headline-mobile .headline-line:nth-child(2),
-          .hero-websites .hero-text .hero-statement .headline-mobile .headline-line:nth-child(2) * {
-            font-size: 108% !important;
+          .v2-theme .hero-websites .hero-text .hero-statement .headline-mobile > .headline-line:nth-child(-n+2),
+          .hero-websites .hero-text .hero-statement .headline-mobile > .headline-line:nth-child(-n+2) {
+            font-size: 115% !important;
             letter-spacing: 0.010em !important;
           }
           .v2-theme .hero-websites .hero-text .hero-statement .headline-mobile .headline-mobile-serif-normal,
@@ -1811,7 +1809,7 @@ export default function HeroV2({ variant = 'client' }: { variant?: 'client' | 'h
           }
           .v2-theme .hero-websites .hero-text .hero-statement .headline-mobile .headline-websites-yours,
           .hero-websites .hero-text .hero-statement .headline-mobile .headline-websites-yours {
-            font-size: 108% !important;
+            font-size: inherit !important;
             letter-spacing: 0.010em !important;
           }
           .v2-theme .hero-websites .hero-frame-paragraph,
@@ -2168,6 +2166,42 @@ export default function HeroV2({ variant = 'client' }: { variant?: 'client' | 'h
           transform-origin: center center !important;
           margin-inline: -0.018em !important;
         }
+        @media (max-width: 900px) {
+          .v2-theme .hero-section.hero-websites .hero-ctas-outside {
+            align-self: center !important;
+            align-items: center !important;
+            justify-content: center !important;
+          }
+          .v2-theme .hero-section.hero-websites .hero-ctas-outside > .btn {
+            display: inline-grid !important;
+            grid-template-columns: 1fr auto 1fr;
+            align-items: center;
+            align-self: center !important;
+            text-align: center !important;
+          }
+          .v2-theme .hero-section.hero-websites .hero-ctas-outside > .btn-secondary-stacked {
+            padding-inline: 0.5rem !important;
+          }
+          .hero-websites .hero-ctas-outside > .btn > :first-child {
+            grid-column: 2;
+          }
+          .hero-websites .hero-ctas-outside > .btn > :last-child {
+            grid-column: 3;
+            justify-self: start;
+          }
+        }
+        @media (max-width: 375px) {
+          .v2-theme .hero-websites .hero-text .hero-statement .headline-mobile,
+          .hero-websites .hero-text .hero-statement .headline-mobile {
+            font-size: min(93.55%, 10.6vw) !important;
+          }
+          .v2-theme .hero-section.hero-websites .hero-ctas-outside > .face-cta {
+            padding-inline: 0.5rem !important;
+          }
+          .v2-theme .hero-section.hero-websites .hero-ctas-outside > .face-cta > span {
+            font-size: 0.72rem !important;
+          }
+        }
       `}</style>
     
 
@@ -2383,7 +2417,7 @@ export default function HeroV2({ variant = 'client' }: { variant?: 'client' | 'h
                   </svg>
                 </a>
                 <a href={isTools ? '#two-tools-one-app' : '#cases'} className="btn btn-secondary btn-secondary-stacked" style={{ color: 'rgba(255, 255, 255, 0.8)' }}>
-                  {isWebsites ? 'SEE RECENT PROJECTS' : isTools ? 'SEE WHAT I’VE BUILT' : 'SEE WHAT I’VE BUILT'} <span className="arrow" style={{ color: 'rgba(255, 255, 255, 0.8)' }}>↓</span>
+                  <span>{isWebsites ? 'SEE RECENT PROJECTS' : 'SEE WHAT I’VE BUILT'}</span>{' '}<span className="arrow" style={{ color: 'rgba(255, 255, 255, 0.8)' }}>↓</span>
                 </a>
               </div>
             </div>
