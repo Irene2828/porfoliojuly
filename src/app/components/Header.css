@@ -513,6 +513,31 @@
   }
 }
 
+@media (min-width: 1700px) {
+  .header-inner-wrapper {
+    max-width: 1393.92px;
+    padding-inline: 1.936rem;
+  }
+
+  .header-nav-desktop {
+    gap: 1.925rem !important;
+  }
+
+  .header-nav-desktop .nav-link,
+  .nav-link {
+    font-size: 13.75px !important;
+    padding-inline: 0.495rem;
+  }
+
+  .header-spacer-desktop a > span:first-child {
+    font-size: 15.18px !important;
+  }
+
+  .header-spacer-desktop a > .header-brand-title {
+    font-size: 14.3px !important;
+  }
+}
+
 
 
 

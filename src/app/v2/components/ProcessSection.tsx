@@ -28,6 +28,14 @@ export default function ProcessSection({ variant = 'default' }: { variant?: 'def
           color: var(--color-heading-silver) !important;
           -webkit-text-fill-color: var(--color-heading-silver) !important;
         }
+        .testimonial-heading.homepage-light-heading {
+          color: #000000 !important;
+          -webkit-text-fill-color: #000000 !important;
+        }
+        #process .testimonials-grey-container h2.testimonial-heading.homepage-light-heading {
+          color: #000000 !important;
+          -webkit-text-fill-color: #000000 !important;
+        }
         .testimonial-quote {
           font-family: var(--font-body), 'Plus Jakarta Sans', sans-serif !important;
           font-style: normal !important;

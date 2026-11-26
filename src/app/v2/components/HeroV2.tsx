@@ -2201,6 +2201,127 @@ export default function HeroV2({ variant = 'client' }: { variant?: 'client' | 'h
             font-size: 0.72rem !important;
           }
         }
+        /* Wide screens: keep the hero-to-header rhythm independent of viewport height. */
+        @media (min-width: 1600px) {
+          html body #home.hero-section.hero-websites {
+            height: 792px !important;
+            min-height: 792px !important;
+            max-height: 792px !important;
+            align-items: center !important;
+          }
+          html body #home.hero-section.hero-websites > .hero-container {
+            padding-top: 1.5rem !important;
+          }
+          html body #home.hero-section.hero-websites .hero-content {
+            margin-left: 0 !important;
+          }
+        }
+        @media (max-width: 900px) {
+          /* Keep the mobile hero body centered consistently across every variant. */
+          html body #home.hero-section .hero-frame-paragraph,
+          html body #home.hero-section .hero-body-mobile,
+          html body #home.hero-section .hero-body-mobile-text,
+          html body #home.hero-section .hero-body-mobile-row,
+          html body #home.hero-section .hero-body-mobile .hero-body-bold {
+            text-align: center !important;
+            align-self: center !important;
+          }
+        }
+        @media (min-width: 601px) and (max-width: 900px) {
+          /* Tablet portrait hero image: center the portrait and its decor as one unit. */
+          html body #home.hero-section .hero-image-wrapper {
+            align-self: center !important;
+            justify-content: center !important;
+            padding-left: 0 !important;
+            padding-right: 0 !important;
+            margin-left: auto !important;
+            margin-right: auto !important;
+            transform: none !important;
+          }
+          html body #home.hero-section .hero-image-container {
+            margin-left: auto !important;
+            margin-right: auto !important;
+          }
+        }
+        @media (min-width: 901px) {
+          /* Desktop hero headline: increase the existing line spacing by 10%. */
+          html body #home.hero-section .headline-desktop,
+          html body #home.hero-section .headline-desktop .headline-line {
+            line-height: 0.85 !important;
+          }
+          html body #home.hero-section .headline-desktop {
+            font-size: 95% !important;
+          }
+          html body #home.hero-section .headline-desktop .headline-dash {
+            transform: scaleX(0.82) !important;
+          }
+          html body #home.hero-section .hero-static-quote-card {
+            padding-left: 16.72px !important;
+            padding-right: 16.72px !important;
+            border-width: 1.25px !important;
+            bottom: -8rem !important;
+            background: rgba(255, 255, 255, 0.10) !important;
+            width: min(273px, 18.9vw) !important;
+          }
+          html body #home.hero-section .hero-static-quote-card::after {
+            border-right-width: 1.25px !important;
+            border-bottom-width: 1.25px !important;
+            background: rgba(255, 255, 255, 0.10) !important;
+          }
+        }
+        @media (max-width: 900px) {
+          /* Normalize every mobile headline row so Custom/websites matches the rest. */
+          html body #home.hero-section .headline-mobile .headline-line,
+          html body #home.hero-section .headline-mobile .headline-line * {
+            font-size: 100% !important;
+          }
+        }
+        @media (max-width: 1200px) {
+          /* Match the desktop white treatment on mobile and tablet. */
+          html body #home.hero-section.hero-websites .headline-websites-yours {
+            color: #ffffff !important;
+            -webkit-text-fill-color: #ffffff !important;
+          }
+        }
+        @media (max-width: 900px) {
+          /* One shared mobile headline size: remove all row-specific scaling. */
+          html body #home.hero-section.hero-websites .headline-mobile .headline-line,
+          html body #home.hero-section.hero-websites .headline-mobile .headline-line * {
+            font-size: inherit !important;
+          }
+          html body #home.hero-section.hero-websites .headline-mobile .headline-websites-pink,
+          html body #home.hero-section.hero-websites .headline-mobile .headline-websites-yours {
+            /* Cormorant italic has a smaller visible body than the normal face. */
+            font-size: 108% !important;
+          }
+        }
+        .v2-theme .hero-websites .headline-websites-yours,
+        .hero-websites .headline-websites-yours {
+          position: relative !important;
+          display: inline-block !important;
+        }
+        .v2-theme .hero-websites .headline-websites-yours::after,
+        .hero-websites .headline-websites-yours::after {
+          content: '';
+          position: absolute;
+          left: 7%;
+          right: 1%;
+          bottom: -0.12em;
+          height: 0.08em;
+          border-top: 2px solid #f2908f;
+          border-radius: 50%;
+          opacity: 0.9;
+          transform: rotate(-3deg);
+          transform-origin: left center;
+          pointer-events: none;
+        }
+        @media (max-width: 900px) {
+          .v2-theme .hero-websites .headline-websites-yours::after,
+          .hero-websites .headline-websites-yours::after {
+            bottom: -0.14em;
+            border-top-width: 1.5px;
+          }
+        }
       `}</style>
     
 

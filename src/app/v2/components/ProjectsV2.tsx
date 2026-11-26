@@ -1053,7 +1053,7 @@ export default function ProjectsV2({ initialProjects = [], showWorkflowAutomatio
           }}
         >
           {recentProjects ? (
-            <span style={{ fontWeight: 400, color: 'var(--color-heading-silver, #4a5461)' }}>Recent projects</span>
+            <span style={{ fontWeight: 400, color: 'var(--color-heading-silver, #4a5461)' }}>Recent Case Studies</span>
           ) : (
             <><span style={{ fontWeight: 400, color: 'var(--color-heading-silver, #4a5461)' }}>Examples of</span>{' '}<span style={{ fontWeight: 400, color: 'var(--color-heading-silver, #4a5461)' }}>my work</span></>
           )}

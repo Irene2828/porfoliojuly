@@ -118,9 +118,113 @@ export default function BridalAiHomepageShowcase() {
           margin-top: 2rem;
           text-align: center;
         }
+        .bridal-ai-concepts {
+          margin-top: 7rem;
+          margin-bottom: 5.1rem;
+          display: grid;
+          gap: 1.5rem;
+        }
+        .bridal-ai-concepts-heading {
+          margin: 0 0 1.25rem;
+          font-family: var(--font-body), 'Plus Jakarta Sans', sans-serif;
+          font-size: calc(var(--text-label) * 2);
+          font-weight: 400;
+          line-height: 1.4;
+          letter-spacing: -0.011em;
+          text-align: center;
+          color: rgba(0, 0, 0, 0.72);
+        }
+        .bridal-ai-concepts-grid {
+          display: grid;
+          grid-template-columns: repeat(2, minmax(0, 1fr));
+          gap: 1.5rem;
+        }
+        .bridal-ai-concept-card {
+          min-width: 0;
+          border: 0;
+          border-radius: 0;
+          box-shadow: none;
+          background: #ffffff;
+        }
+        .bridal-ai-concept-card img {
+          display: block;
+          width: 100%;
+          aspect-ratio: 4 / 3;
+          object-fit: cover;
+          border: 0;
+          border-radius: 0;
+        }
+        .bridal-ai-concept-card-content {
+          padding: 1.25rem 1.25rem 1.35rem;
+        }
+        .bridal-ai-concept-card h3 {
+          margin: 0;
+          font-family: var(--font-heading), Georgia, serif;
+          font-size: calc(var(--text-body) + 2px);
+          font-weight: 400;
+          line-height: 1.2;
+          letter-spacing: -0.015em;
+          color: #000000;
+        }
+        .bridal-ai-concept-card p {
+          margin: 0.5rem 0 1rem;
+          font-family: var(--font-body), 'Plus Jakarta Sans', sans-serif;
+          font-size: var(--text-body);
+          font-weight: 300;
+          line-height: 1.45;
+          letter-spacing: -0.011em;
+          color: rgba(0, 0, 0, 0.72);
+        }
+        .bridal-ai-concept-card-meta {
+          display: flex;
+          align-items: center;
+          justify-content: space-between;
+          gap: 1rem;
+          font-family: var(--font-body), 'Plus Jakarta Sans', sans-serif;
+          font-size: var(--text-label);
+          line-height: 1.3;
+        }
+        .bridal-ai-concept-card-label {
+          color: rgba(0, 0, 0, 0.5);
+          letter-spacing: 0.08em;
+          text-transform: uppercase;
+        }
+        .bridal-ai-concept-card-link {
+          color: rgba(0, 0, 0, 0.76);
+          text-decoration: underline;
+          text-decoration-thickness: 1px;
+          text-underline-offset: 0.2em;
+        }
+        .bridal-ai-concept-card-link:hover {
+          color: #000000;
+        }
         @media (min-width: 901px) {
+          .bridal-ai-concept-card {
+            position: relative;
+            width: 120%;
+            transition: transform 260ms cubic-bezier(0.16, 1, 0.3, 1), z-index 0ms linear 260ms;
+          }
+          .bridal-ai-concept-card:nth-child(1) {
+            justify-self: start;
+            transform: translateY(-1.25rem);
+          }
+          .bridal-ai-concept-card:nth-child(2) {
+            justify-self: end;
+            transform: translateY(1.25rem);
+          }
+          .bridal-ai-concept-card:nth-child(1):hover {
+            z-index: 2;
+            transform: translateY(-1.25rem) scale(1.035);
+            transition-delay: 0ms;
+          }
+          .bridal-ai-concept-card:nth-child(2):hover {
+            z-index: 2;
+            transform: translateY(1.25rem) scale(1.035);
+            transition-delay: 0ms;
+          }
           .bridal-ai-homepage-heading p,
-          .bridal-ai-homepage-body {
+          .bridal-ai-homepage-body,
+          .bridal-ai-concept-card p {
             font-size: calc(var(--text-body) + 2px);
           }
         }
@@ -143,6 +247,12 @@ export default function BridalAiHomepageShowcase() {
           }
           .bridal-ai-homepage-body {
             margin-top: 2rem;
+          }
+          .bridal-ai-concepts {
+            margin-top: 5.5rem;
+          }
+          .bridal-ai-concepts-grid {
+            grid-template-columns: minmax(0, 1fr);
           }
         }
       `}</style>
@@ -189,13 +299,60 @@ export default function BridalAiHomepageShowcase() {
               controls
               aria-label="Atelier Camille custom bridal atelier website demo"
             />
-            <p className="bridal-ai-homepage-caption">An example I built for this page.</p>
+            <p className="bridal-ai-homepage-caption">Examples I built.</p>
           </div>
         </div>
 
         <p className="bridal-ai-homepage-body">
           I use AI too. The difference is knowing what your site should say, who it’s for, and why a visitor should pick up the phone.
         </p>
+
+        <section className="bridal-ai-concepts" aria-labelledby="bridal-ai-concepts-heading">
+          <h3 id="bridal-ai-concepts-heading" className="bridal-ai-concepts-heading">
+            Same story, two more businesses
+          </h3>
+          <div className="bridal-ai-concepts-grid">
+            <article className="bridal-ai-concept-card">
+              <a href="https://petit-sourire.vercel.app" target="_blank" rel="noreferrer">
+                <img
+                  src="/bridal-homepage/petit-sourire-concept-hero.png"
+                  alt="Petit Sourire children's dental clinic concept homepage"
+                  loading="lazy"
+                />
+              </a>
+              <div className="bridal-ai-concept-card-content">
+                <h3>Petit Sourire</h3>
+                <p>A children&apos;s dental clinic that makes parents feel calm before the first visit.</p>
+                <div className="bridal-ai-concept-card-meta">
+                  <span className="bridal-ai-concept-card-label">Concept</span>
+                  <a className="bridal-ai-concept-card-link" href="https://petit-sourire.vercel.app" target="_blank" rel="noreferrer">
+                    View the concept
+                  </a>
+                </div>
+              </div>
+            </article>
+
+            <article className="bridal-ai-concept-card">
+              <a href="https://slowburn-smokehouse.vercel.app" target="_blank" rel="noreferrer">
+                <img
+                  src="/bridal-homepage/slowburn-smokehouse-concept-hero.png"
+                  alt="SlowBurn Smokehouse BBQ concept homepage"
+                  loading="lazy"
+                />
+              </a>
+              <div className="bridal-ai-concept-card-content">
+                <h3>SlowBurn Smokehouse</h3>
+                <p>A Kingston smokehouse that sells the ritual of low &amp; slow, not just a menu.</p>
+                <div className="bridal-ai-concept-card-meta">
+                  <span className="bridal-ai-concept-card-label">Concept</span>
+                  <a className="bridal-ai-concept-card-link" href="https://slowburn-smokehouse.vercel.app" target="_blank" rel="noreferrer">
+                    View the concept
+                  </a>
+                </div>
+              </div>
+            </article>
+          </div>
+        </section>
       </div>
     </section>
   );

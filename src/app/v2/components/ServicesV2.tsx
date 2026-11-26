@@ -132,9 +132,18 @@ export default function ServicesV2({ websitesOnly = false }: ServicesV2Props) {
           color: #ffffff !important;
           -webkit-text-fill-color: #ffffff !important;
         }
+        .homepage-services-card-content .how-kicker,
+        .homepage-services-bullets strong {
+          letter-spacing: 0.015em !important;
+        }
         @media (min-width: 901px) {
           .services-subline {
             font-size: calc(var(--text-body) + 2px) !important;
+          }
+        }
+        @media (min-width: 601px) {
+          .services-heading-title {
+            white-space: nowrap;
           }
         }
         @media (max-width: 860px) {
@@ -287,9 +296,8 @@ export default function ServicesV2({ websitesOnly = false }: ServicesV2Props) {
             textWrap: 'balance'
           }}
         >
-          <span style={{ fontWeight: 400, color: 'var(--color-heading-silver, #4a5461)' }}>
-            From problem - to<br />
-            solution
+          <span className="services-heading-title" style={{ fontWeight: 400, color: 'var(--color-heading-silver, #4a5461)' }}>
+            From problem - to solution
           </span>
         </motion.h2>
 
@@ -415,16 +423,6 @@ export default function ServicesV2({ websitesOnly = false }: ServicesV2Props) {
 
               {/* Real Card Content (zIndex: 1) */}
               <div className={websitesOnly ? 'homepage-services-card-content' : undefined} style={{ position: 'relative', zIndex: 1, paddingTop: '1.25rem' }}>
-                {websitesOnly && <motion.p
-                  className="how-kicker"
-                  initial={{ opacity: 0, y: 16 }}
-                  whileInView={{ opacity: 1, y: 0 }}
-                  viewport={{ once: true, amount: 0.3 }}
-                  transition={{ duration: 0.65, ease: [0.16, 1, 0.3, 1] }}
-                  style={{ margin: '0 0 2.25rem 0', textAlign: 'center' }}
-                >
-                  Your new site will be:
-                </motion.p>}
                 {!websitesOnly && <motion.h3
                   initial={{ opacity: 0, y: 16 }}
                   whileInView={{ opacity: 1, y: 0 }}
