@@ -1,11 +1,18 @@
 import { NextResponse, type NextRequest } from 'next/server';
-import { withAuth } from 'next-auth/middleware';
 
 // HOLDING PAGE — the whole portfolio is under development.
-// Every route shows this page (including /hire and /freelance) until
-// this file is reverted. Revert: restore the previous version of this
-// file (`git checkout src/middleware.ts`) and redeploy. Nothing else
-// was changed, and the /admin GitHub auth below is preserved as-is.
+// Every route shows this page (including /hire, /freelance and /admin)
+// until this file is reverted. Revert: restore the previous version of
+// this file (`git checkout src/middleware.ts`) and redeploy — that brings
+// back the next-auth GitHub gate for /admin. Nothing else was changed.
+//
+// NOTE (27.11.2026): the previous version wrapped this in next-auth's
+// withAuth. That made every request fail with next-auth's "Server error —
+// There is a problem with the server configuration" page, because the
+// project's next-auth config (NEXTAUTH_URL / secret) is not set in the
+// Vercel env — the old gate only ran on /admin, so nobody noticed. The
+// holding page needs no auth at all, so withAuth is deliberately NOT
+// used here. Do not re-add it without setting the next-auth env vars.
 const HOLDING_HTML = `<!doctype html>
 <html lang="en">
 <head>
@@ -70,7 +77,7 @@ const HOLDING_HTML = `<!doctype html>
 </body>
 </html>`;
 
-function holdingMiddleware(req: NextRequest) {
+export function middleware(req: NextRequest) {
   const { pathname } = req.nextUrl;
   if (pathname.startsWith('/_next/') || pathname === '/favicon.ico') {
     return NextResponse.next();
@@ -79,18 +86,6 @@ function holdingMiddleware(req: NextRequest) {
     headers: { 'content-type': 'text/html; charset=utf-8' },
   });
 }
-
-export default withAuth(holdingMiddleware, {
-  callbacks: {
-    authorized({ req, token }) {
-      const { pathname } = req.nextUrl;
-      if (!pathname.startsWith('/admin')) return true;
-      const allowedGithubId = process.env.AUTHORIZED_GITHUB_ID || 'Irene2828';
-      const username = token?.username as string;
-      return !!username && username.toLowerCase() === allowedGithubId.toLowerCase();
-    },
-  },
-});
 
 export const config = {
   matcher: ['/((?!_next/static|_next/image|favicon.ico).*)'],
